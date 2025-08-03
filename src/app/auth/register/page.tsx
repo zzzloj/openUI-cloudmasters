@@ -95,24 +95,34 @@ export default function RegisterPage() {
     return (
       <Flex fillWidth horizontal="center" paddingY="xl">
         <Flex fillWidth horizontal="center">
-          <Card padding="xl" radius="l" shadow="l" maxWidth="s">
-          <Column gap="l" horizontal="center">
-            <Flex gap="m" vertical="center">
-              <Icon name="check-circle" size="l" />
-              <Heading variant="display-strong-s">Регистрация успешна!</Heading>
-            </Flex>
-            
-            <Text variant="body-default-s" onBackground="neutral-weak" align="center">
-              Ваш аккаунт создан. Сейчас вы будете перенаправлены на страницу входа.
-            </Text>
+          <Flex
+            background="page"
+            border="neutral-alpha-weak"
+            radius="m-4"
+            shadow="l"
+            padding="4"
+            horizontal="center"
+            zIndex={1}
+          >
+            <Card padding="xl" radius="l" shadow="l" maxWidth="s">
+              <Column gap="l" horizontal="center">
+                <Flex gap="m" vertical="center">
+                  <Icon name="check-circle" size="l" />
+                  <Heading variant="display-strong-s">Регистрация успешна!</Heading>
+                </Flex>
+                
+                <Text variant="body-default-s" onBackground="neutral-weak" align="center">
+                  Ваш аккаунт создан. Сейчас вы будете перенаправлены на страницу входа.
+                </Text>
 
-            <Badge background="success-medium">
-              Аккаунт создан
-            </Badge>
-                  </Column>
-      </Card>
+                <Badge background="success-medium">
+                  Аккаунт создан
+                </Badge>
+              </Column>
+            </Card>
+          </Flex>
+        </Flex>
       </Flex>
-    </Flex>
     );
   }
 
@@ -127,91 +137,101 @@ export default function RegisterPage() {
       />
       
       <Flex fillWidth horizontal="center">
-        <Card padding="xl" radius="l" shadow="l" maxWidth="s">
-        <Column gap="l" horizontal="center">
-          <Flex gap="m" vertical="center">
-            <Icon name="user-plus" size="l" />
-            <Heading variant="display-strong-s">Регистрация</Heading>
-          </Flex>
-          
-          <Text variant="body-default-s" onBackground="neutral-weak" align="center">
-            Создайте новый аккаунт для доступа к админ-панели
-          </Text>
-
-          <form onSubmit={handleSubmit} style={{ width: "100%" }}>
-            <Column gap="m" fillWidth>
-              <Flex gap="m" fillWidth>
-                <Input
-                  id="firstName"
-                  label="Имя"
-                  value={formData.firstName}
-                  onChange={(e) => handleInputChange("firstName", e.target.value)}
-                  required
-                />
-                
-                <Input
-                  id="lastName"
-                  label="Фамилия"
-                  value={formData.lastName}
-                  onChange={(e) => handleInputChange("lastName", e.target.value)}
-                  required
-                />
+        <Flex
+          background="page"
+          border="neutral-alpha-weak"
+          radius="m-4"
+          shadow="l"
+          padding="4"
+          horizontal="center"
+          zIndex={1}
+        >
+          <Card padding="xl" radius="l" shadow="l" maxWidth="s">
+            <Column gap="l" horizontal="center">
+              <Flex gap="m" vertical="center">
+                <Icon name="user-plus" size="l" />
+                <Heading variant="display-strong-s">Регистрация</Heading>
               </Flex>
               
-              <Input
-                id="email"
-                label="Email"
-                type="email"
-                value={formData.email}
-                onChange={(e) => handleInputChange("email", e.target.value)}
-                required
-                errorMessage={error}
-              />
-              
-              <PasswordInput
-                id="password"
-                label="Пароль"
-                value={formData.password}
-                onChange={(e) => handleInputChange("password", e.target.value)}
-                required
-                errorMessage={error}
-              />
-              
-              <PasswordInput
-                id="confirmPassword"
-                label="Подтвердите пароль"
-                value={formData.confirmPassword}
-                onChange={(e) => handleInputChange("confirmPassword", e.target.value)}
-                required
-                errorMessage={error}
-              />
-              
-              <Button 
-                type="submit" 
-                variant="primary" 
-                fillWidth
-                loading={loading}
-                disabled={loading}
-              >
-                {loading ? "Регистрация..." : "Зарегистрироваться"}
-              </Button>
-            </Column>
-          </form>
+              <Text variant="body-default-s" onBackground="neutral-weak" align="center">
+                Создайте новый аккаунт для доступа к админ-панели
+              </Text>
 
-          <Flex gap="s" vertical="center">
-            <Text variant="body-default-s" onBackground="neutral-weak">
-              Уже есть аккаунт?
-            </Text>
-            <Button 
-              variant="secondary" 
-              href="/auth/login"
-              prefixIcon="login"
-            >
-              Войти
-            </Button>
-          </Flex>
-        </Column>
-      </Card>
+              <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+                <Column gap="m" fillWidth>
+                  <Flex gap="m" fillWidth>
+                    <Input
+                      id="firstName"
+                      label="Имя"
+                      value={formData.firstName}
+                      onChange={(e) => handleInputChange("firstName", e.target.value)}
+                      required
+                    />
+                    
+                    <Input
+                      id="lastName"
+                      label="Фамилия"
+                      value={formData.lastName}
+                      onChange={(e) => handleInputChange("lastName", e.target.value)}
+                      required
+                    />
+                  </Flex>
+                  
+                  <Input
+                    id="email"
+                    label="Email"
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange("email", e.target.value)}
+                    required
+                    errorMessage={error}
+                  />
+                  
+                  <PasswordInput
+                    id="password"
+                    label="Пароль"
+                    value={formData.password}
+                    onChange={(e) => handleInputChange("password", e.target.value)}
+                    required
+                    errorMessage={error}
+                  />
+                  
+                  <PasswordInput
+                    id="confirmPassword"
+                    label="Подтвердите пароль"
+                    value={formData.confirmPassword}
+                    onChange={(e) => handleInputChange("confirmPassword", e.target.value)}
+                    required
+                    errorMessage={error}
+                  />
+                  
+                  <Button 
+                    type="submit" 
+                    variant="primary" 
+                    fillWidth
+                    loading={loading}
+                    disabled={loading}
+                  >
+                    {loading ? "Регистрация..." : "Зарегистрироваться"}
+                  </Button>
+                </Column>
+              </form>
+
+              <Flex gap="s" vertical="center">
+                <Text variant="body-default-s" onBackground="neutral-weak">
+                  Уже есть аккаунт?
+                </Text>
+                <Button 
+                  variant="secondary" 
+                  href="/auth/login"
+                  prefixIcon="login"
+                >
+                  Войти
+                </Button>
+              </Flex>
+            </Column>
+          </Card>
+        </Flex>
       </Flex>
     </Flex>
   );

@@ -73,77 +73,87 @@ export default function LoginPage() {
       />
       
       <Flex fillWidth horizontal="center">
-        <Card padding="xl" radius="l" shadow="l" maxWidth="s">
-        <Column gap="l" horizontal="center">
-          <Flex gap="m" vertical="center">
-            <Icon name="login" size="l" />
-            <Heading variant="display-strong-s">Вход в систему</Heading>
-          </Flex>
-          
-          <Text variant="body-default-s" onBackground="neutral-weak" align="center">
-            Введите ваши учетные данные для доступа к админ-панели
-          </Text>
+        <Flex
+          background="page"
+          border="neutral-alpha-weak"
+          radius="m-4"
+          shadow="l"
+          padding="4"
+          horizontal="center"
+          zIndex={1}
+        >
+          <Card padding="xl" radius="l" shadow="l" maxWidth="s">
+            <Column gap="l" horizontal="center">
+              <Flex gap="m" vertical="center">
+                <Icon name="login" size="l" />
+                <Heading variant="display-strong-s">Вход в систему</Heading>
+              </Flex>
+              
+              <Text variant="body-default-s" onBackground="neutral-weak" align="center">
+                Введите ваши учетные данные для доступа к админ-панели
+              </Text>
 
-          <form onSubmit={handleSubmit} style={{ width: "100%" }}>
-            <Column gap="m" fillWidth>
-              <Input
-                id="email"
-                label="Email"
-                type="email"
-                value={formData.email}
-                onChange={(e) => handleInputChange("email", e.target.value)}
-                required
-                errorMessage={error}
-              />
-              
-              <PasswordInput
-                id="password"
-                label="Пароль"
-                value={formData.password}
-                onChange={(e) => handleInputChange("password", e.target.value)}
-                required
-                errorMessage={error}
-              />
-              
-              <Button 
-                type="submit" 
-                variant="primary" 
-                fillWidth
-                loading={loading}
-                disabled={loading}
-              >
-                {loading ? "Вход..." : "Войти"}
-              </Button>
+              <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+                <Column gap="m" fillWidth>
+                  <Input
+                    id="email"
+                    label="Email"
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange("email", e.target.value)}
+                    required
+                    errorMessage={error}
+                  />
+                  
+                  <PasswordInput
+                    id="password"
+                    label="Пароль"
+                    value={formData.password}
+                    onChange={(e) => handleInputChange("password", e.target.value)}
+                    required
+                    errorMessage={error}
+                  />
+                  
+                  <Button 
+                    type="submit" 
+                    variant="primary" 
+                    fillWidth
+                    loading={loading}
+                    disabled={loading}
+                  >
+                    {loading ? "Вход..." : "Войти"}
+                  </Button>
+                </Column>
+              </form>
+
+              <Flex gap="s" vertical="center">
+                <Text variant="body-default-s" onBackground="neutral-weak">
+                  Нет аккаунта?
+                </Text>
+                <Button 
+                  variant="secondary" 
+                  href="/auth/register"
+                  prefixIcon="user-plus"
+                >
+                  Зарегистрироваться
+                </Button>
+              </Flex>
+
+              <Flex gap="s" vertical="center">
+                <Text variant="body-default-s" onBackground="neutral-weak">
+                  Забыли пароль?
+                </Text>
+                <Button 
+                  variant="secondary" 
+                  href="/auth/reset-password"
+                  prefixIcon="key"
+                >
+                  Восстановить
+                </Button>
+              </Flex>
             </Column>
-          </form>
-
-          <Flex gap="s" vertical="center">
-            <Text variant="body-default-s" onBackground="neutral-weak">
-              Нет аккаунта?
-            </Text>
-            <Button 
-              variant="secondary" 
-              href="/auth/register"
-              prefixIcon="user-plus"
-            >
-              Зарегистрироваться
-            </Button>
-          </Flex>
-
-          <Flex gap="s" vertical="center">
-            <Text variant="body-default-s" onBackground="neutral-weak">
-              Забыли пароль?
-            </Text>
-            <Button 
-              variant="secondary" 
-              href="/auth/reset-password"
-              prefixIcon="key"
-            >
-              Восстановить
-            </Button>
-          </Flex>
-        </Column>
-      </Card>
+          </Card>
+        </Flex>
       </Flex>
     </Flex>
   );

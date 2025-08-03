@@ -53,32 +53,42 @@ export default function ResetPasswordPage() {
     return (
       <Flex fillWidth horizontal="center" paddingY="xl">
         <Flex fillWidth horizontal="center">
-          <Card padding="xl" radius="l" shadow="l" maxWidth="s">
-          <Column gap="l" horizontal="center">
-            <Flex gap="m" vertical="center">
-              <Icon name="mail" size="l" />
-              <Heading variant="display-strong-s">Проверьте email</Heading>
-            </Flex>
-            
-            <Text variant="body-default-s" onBackground="neutral-weak" align="center">
-              Мы отправили инструкции по восстановлению пароля на ваш email.
-            </Text>
+          <Flex
+            background="page"
+            border="neutral-alpha-weak"
+            radius="m-4"
+            shadow="l"
+            padding="4"
+            horizontal="center"
+            zIndex={1}
+          >
+            <Card padding="xl" radius="l" shadow="l" maxWidth="s">
+              <Column gap="l" horizontal="center">
+                <Flex gap="m" vertical="center">
+                  <Icon name="mail" size="l" />
+                  <Heading variant="display-strong-s">Проверьте email</Heading>
+                </Flex>
+                
+                <Text variant="body-default-s" onBackground="neutral-weak" align="center">
+                  Мы отправили инструкции по восстановлению пароля на ваш email.
+                </Text>
 
-            <Badge background="info-medium">
-              Email отправлен
-            </Badge>
+                <Badge background="info-medium">
+                  Email отправлен
+                </Badge>
 
-            <Button 
-              variant="secondary" 
-              href="/auth/login"
-              prefixIcon="arrow-left"
-            >
-              Вернуться к входу
-            </Button>
-                  </Column>
-      </Card>
+                <Button 
+                  variant="secondary" 
+                  href="/auth/login"
+                  prefixIcon="arrow-left"
+                >
+                  Вернуться к входу
+                </Button>
+              </Column>
+            </Card>
+          </Flex>
+        </Flex>
       </Flex>
-    </Flex>
     );
   }
 
@@ -93,58 +103,68 @@ export default function ResetPasswordPage() {
       />
       
       <Flex fillWidth horizontal="center">
-        <Card padding="xl" radius="l" shadow="l" maxWidth="s">
-        <Column gap="l" horizontal="center">
-          <Flex gap="m" vertical="center">
-            <Icon name="key" size="l" />
-            <Heading variant="display-strong-s">Восстановление пароля</Heading>
-          </Flex>
-          
-          <Text variant="body-default-s" onBackground="neutral-weak" align="center">
-            Введите ваш email для получения инструкций по восстановлению пароля
-          </Text>
-
-          <form onSubmit={handleSubmit} style={{ width: "100%" }}>
-            <Column gap="m" fillWidth>
-              <Input
-                id="email"
-                label="Email"
-                type="email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  setError(undefined);
-                }}
-                required
-                errorMessage={error}
-              />
+        <Flex
+          background="page"
+          border="neutral-alpha-weak"
+          radius="m-4"
+          shadow="l"
+          padding="4"
+          horizontal="center"
+          zIndex={1}
+        >
+          <Card padding="xl" radius="l" shadow="l" maxWidth="s">
+            <Column gap="l" horizontal="center">
+              <Flex gap="m" vertical="center">
+                <Icon name="key" size="l" />
+                <Heading variant="display-strong-s">Восстановление пароля</Heading>
+              </Flex>
               
-              <Button 
-                type="submit" 
-                variant="primary" 
-                fillWidth
-                loading={loading}
-                disabled={loading}
-              >
-                {loading ? "Отправка..." : "Отправить инструкции"}
-              </Button>
-            </Column>
-          </form>
+              <Text variant="body-default-s" onBackground="neutral-weak" align="center">
+                Введите ваш email для получения инструкций по восстановлению пароля
+              </Text>
 
-          <Flex gap="s" vertical="center">
-            <Text variant="body-default-s" onBackground="neutral-weak">
-              Вспомнили пароль?
-            </Text>
-            <Button 
-              variant="secondary" 
-              href="/auth/login"
-              prefixIcon="login"
-            >
-              Войти
-            </Button>
-          </Flex>
-        </Column>
-      </Card>
+              <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+                <Column gap="m" fillWidth>
+                  <Input
+                    id="email"
+                    label="Email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      setError(undefined);
+                    }}
+                    required
+                    errorMessage={error}
+                  />
+                  
+                  <Button 
+                    type="submit" 
+                    variant="primary" 
+                    fillWidth
+                    loading={loading}
+                    disabled={loading}
+                  >
+                    {loading ? "Отправка..." : "Отправить инструкции"}
+                  </Button>
+                </Column>
+              </form>
+
+              <Flex gap="s" vertical="center">
+                <Text variant="body-default-s" onBackground="neutral-weak">
+                  Вспомнили пароль?
+                </Text>
+                <Button 
+                  variant="secondary" 
+                  href="/auth/login"
+                  prefixIcon="login"
+                >
+                  Войти
+                </Button>
+              </Flex>
+            </Column>
+          </Card>
+        </Flex>
       </Flex>
     </Flex>
   );
