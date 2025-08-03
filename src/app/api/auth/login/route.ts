@@ -110,9 +110,9 @@ export async function POST(request: NextRequest) {
       "Set-Cookie",
       cookie.serialize("authToken", token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
+        secure: false, // Изменено для работы без HTTPS
         maxAge: 60 * 60 * 24, // 24 часа
-        sameSite: "strict",
+        sameSite: "lax", // Изменено для лучшей совместимости
         path: "/",
       })
     );

@@ -14,9 +14,9 @@ export async function POST(request: NextRequest) {
       "Set-Cookie",
       cookie.serialize("authToken", "", {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
+        secure: false, // Изменено для работы без HTTPS
         maxAge: 0, // Немедленное удаление
-        sameSite: "strict",
+        sameSite: "lax", // Изменено для лучшей совместимости
         path: "/",
       })
     );
