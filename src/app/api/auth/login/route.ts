@@ -1,28 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
 import * as cookie from "cookie";
-import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-
-// В реальном приложении здесь была бы база данных
-// Для демонстрации используем простой объект
-const users: any[] = [
-  // Добавим тестового пользователя
-  {
-    id: "1",
-    firstName: "Admin",
-    lastName: "User",
-    email: "admin@example.com",
-    password: "$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdBPj4J/8JZqKGi", // "password123"
-    role: "admin"
-  }
-];
+import { 
+  getUserByEmail, 
+  getUserByUsername, 
+  verifyPassword, 
+  updateLastVisit, 
+  updateFailedLogins, 
+  resetFailedLogins,
+  Member
+} from "@/lib/database";
 
 const JWT_SECRET = process.env.JWT_SECRET || "your-secret-key";
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
+    console.log('Login request body:', body);
     const { emailOrUsername, password } = body;
+    console.log('Extracted data:', { emailOrUsername, password });
 
     // Валидация
     if (!emailOrUsername || !password) {
@@ -33,29 +29,62 @@ export async function POST(request: NextRequest) {
     }
 
     // Поиск пользователя по email или username
-    const user = users.find(u => u.email === emailOrUsername || u.username === emailOrUsername);
+    console.log('Searching for user:', emailOrUsername);
+    let user: Member | null = await getUserByEmail(emailOrUsername);
+    console.log('User by email:', user ? 'found' : 'not found');
+    
     if (!user) {
+      user = await getUserByUsername(emailOrUsername);
+      console.log('User by username:', user ? 'found' : 'not found');
+    }
+
+    if (!user) {
+      console.log('User not found');
+      return NextResponse.json(
+        { message: "Неверный email/имя пользователя или пароль" },
+        { status: 401 }
+      );
+    }
+    
+    console.log('User found:', user.member_id, user.name, user.email);
+
+    // Проверка пароля
+    const isPasswordValid = verifyPassword(password, user.members_pass_salt, user.members_pass_hash);
+    if (!isPasswordValid) {
+      // Обновляем счетчик неудачных попыток входа
+      const failedLogins = user.failed_logins || '';
+      const failedLoginCount = (user.failed_login_count || 0) + 1;
+      const newFailedLogins = `${Date.now()},${request.headers.get('x-forwarded-for') || 'unknown'}\n${failedLogins}`;
+      
+      await updateFailedLogins(user.member_id, newFailedLogins, failedLoginCount);
+
       return NextResponse.json(
         { message: "Неверный email/имя пользователя или пароль" },
         { status: 401 }
       );
     }
 
-    // Проверка пароля
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!isPasswordValid) {
+    // Проверка бана пользователя
+    if (user.member_banned) {
       return NextResponse.json(
-        { message: "Неверный email/имя пользователя или пароль" },
-        { status: 401 }
+        { message: "Ваш аккаунт заблокирован" },
+        { status: 403 }
       );
     }
+
+    // Сброс неудачных попыток входа при успешном входе
+    await resetFailedLogins(user.member_id);
+
+    // Обновление времени последнего визита
+    await updateLastVisit(user.member_id);
 
     // Создание JWT токена
     const token = jwt.sign(
       {
-        userId: user.id,
+        userId: user.member_id,
         email: user.email,
-        role: user.role
+        username: user.name,
+        displayName: user.members_display_name
       },
       JWT_SECRET,
       { expiresIn: "24h" }
@@ -66,11 +95,11 @@ export async function POST(request: NextRequest) {
       {
         message: "Вход выполнен успешно",
         user: {
-          id: user.id,
-          firstName: user.firstName,
-          lastName: user.lastName,
+          id: user.member_id,
+          username: user.name,
           email: user.email,
-          role: user.role
+          displayName: user.members_display_name,
+          joined: user.joined
         }
       },
       { status: 200 }

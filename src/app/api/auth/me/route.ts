@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
+import { getUserByEmail } from "@/lib/database";
 
 const JWT_SECRET = process.env.JWT_SECRET || "your-secret-key";
 
@@ -19,17 +20,36 @@ export async function GET(request: NextRequest) {
     try {
       const decoded = jwt.verify(authToken, JWT_SECRET) as any;
       
-      // В реальном приложении здесь была бы проверка в базе данных
-      const user = {
-        id: decoded.userId,
-        email: decoded.email,
-        role: decoded.role
-      };
+            // Получение актуальных данных пользователя из базы данных
+      const user = await getUserByEmail(decoded.email);
+      
+      if (!user) {
+        return NextResponse.json(
+          { message: "Пользователь не найден" },
+          { status: 401 }
+        );
+      }
+
+      // Проверка бана пользователя
+      if (user.member_banned) {
+        return NextResponse.json(
+          { message: "Ваш аккаунт заблокирован" },
+          { status: 403 }
+        );
+      }
 
       return NextResponse.json(
         { 
           message: "Авторизован",
-          user
+          user: {
+            id: user.member_id,
+            username: user.name,
+            email: user.email,
+            displayName: user.members_display_name,
+            joined: user.joined,
+            lastVisit: user.last_visit,
+            posts: user.posts
+          }
         },
         { status: 200 }
       );

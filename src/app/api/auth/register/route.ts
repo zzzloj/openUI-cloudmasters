@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import * as cookie from "cookie";
 import bcrypt from "bcryptjs";
-
-// В реальном приложении здесь была бы база данных
-// Для демонстрации используем простой объект
-const users: any[] = [];
+import { 
+  getUserByEmail, 
+  getUserByUsername, 
+  createUser, 
+  generateSalt, 
+  hashPassword 
+} from "@/lib/database";
 
 export async function POST(request: NextRequest) {
   try {
@@ -44,7 +47,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Проверка существования пользователя по email
-    const existingUserByEmail = users.find(user => user.email === email);
+    const existingUserByEmail = await getUserByEmail(email);
     if (existingUserByEmail) {
       return NextResponse.json(
         { message: "Пользователь с таким email уже существует" },
@@ -53,7 +56,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Проверка существования пользователя по username
-    const existingUserByUsername = users.find(user => user.username === username);
+    const existingUserByUsername = await getUserByUsername(username);
     if (existingUserByUsername) {
       return NextResponse.json(
         { message: "Пользователь с таким именем уже существует" },
@@ -61,42 +64,52 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Хеширование пароля
-    const hashedPassword = await bcrypt.hash(password, 12);
+    // Генерация соли и хеширование пароля
+    const salt = generateSalt();
+    const hashedPassword = hashPassword(password, salt);
 
-    // Создание пользователя
-    const newUser = {
-      id: Date.now().toString(),
-      username,
-      firstName,
-      lastName,
+    // Получение IP адреса
+    const ipAddress = request.headers.get('x-forwarded-for') || 
+                     request.headers.get('x-real-ip') || 
+                     '127.0.0.1';
+
+    // Текущее время в Unix timestamp
+    const joined = Math.floor(Date.now() / 1000);
+
+    // Создание пользователя в базе данных
+    const userData = {
+      name: username,
       email,
-      password: hashedPassword,
-      securityAnswer,
-      createdAt: new Date().toISOString(),
-      role: "user"
+      members_pass_hash: hashedPassword,
+      members_pass_salt: salt,
+      ip_address: ipAddress,
+      joined,
+      members_display_name: `${firstName} ${lastName}`,
+      members_seo_name: username.toLowerCase().replace(/[^a-z0-9]/g, '-'),
+      members_l_display_name: `${firstName} ${lastName}`,
+      members_l_username: username
     };
 
-    users.push(newUser);
+    console.log("Попытка создания пользователя:", userData);
+    
+    const result = await createUser(userData);
+    console.log("Результат создания пользователя:", result);
 
-    // В реальном приложении здесь было бы сохранение в базу данных
     console.log("Новый пользователь зарегистрирован:", {
-      id: newUser.id,
-      username: newUser.username,
-      email: newUser.email,
-      firstName: newUser.firstName,
-      lastName: newUser.lastName
+      username: userData.name,
+      email: userData.email,
+      displayName: userData.members_display_name
     });
 
     return NextResponse.json(
       { 
         message: "Пользователь успешно зарегистрирован",
         user: {
-          id: newUser.id,
-          username: newUser.username,
-          firstName: newUser.firstName,
-          lastName: newUser.lastName,
-          email: newUser.email
+          username: userData.name,
+          firstName,
+          lastName,
+          email: userData.email,
+          displayName: userData.members_display_name
         }
       },
       { status: 201 }
