@@ -93,8 +93,8 @@ export default function RegisterPage() {
 
   if (success) {
     return (
-      <Column fillWidth horizontal="center" paddingY="xl">
-        <Card padding="xl" radius="l" shadow="l" maxWidth="s">
+      <Column maxWidth="s" gap="xl" horizontal="center" paddingY="xl">
+        <Card padding="xl" radius="l" shadow="l">
           <Column gap="l" horizontal="center">
             <Flex gap="m" vertical="center">
               <Icon name="check-circle" size="l" />
@@ -115,7 +115,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <Column fillWidth horizontal="center" paddingY="xl">
+    <Column maxWidth="s" gap="xl" horizontal="center" paddingY="xl">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -124,7 +124,7 @@ export default function RegisterPage() {
         path="/auth/register"
       />
       
-      <Card padding="xl" radius="l" shadow="l" maxWidth="s">
+      <Card padding="xl" radius="l" shadow="l">
         <Column gap="l" horizontal="center">
           <Flex gap="m" vertical="center">
             <Icon name="user-plus" size="l" />
