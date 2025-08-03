@@ -1,0 +1,148 @@
+"use client";
+
+import React, { useState } from "react";
+import {
+  Column,
+  Flex,
+  Heading,
+  Text,
+  Button,
+  Card,
+  Input,
+  PasswordInput,
+  Icon,
+  Schema
+} from "@once-ui-system/core";
+import { baseURL } from "@/resources";
+import { useRouter } from "next/navigation";
+
+export default function LoginPage() {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | undefined>(undefined);
+  const router = useRouter();
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+    setError(undefined);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(undefined);
+
+    try {
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Успешный вход
+        router.push("/admin");
+      } else {
+        setError(data.message || "Ошибка входа");
+      }
+    } catch (err) {
+      setError("Ошибка сети");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <Column maxWidth="s" gap="xl" horizontal="center" paddingY="xl">
+      <Schema
+        as="webPage"
+        baseURL={baseURL}
+        title="Вход - CloudMasters"
+        description="Страница входа в админ-панель"
+        path="/auth/login"
+      />
+      
+      <Card padding="xl" radius="l" shadow="l">
+        <Column gap="l" horizontal="center">
+          <Flex gap="m" vertical="center">
+            <Icon name="login" size="l" />
+            <Heading variant="display-strong-s">Вход в систему</Heading>
+          </Flex>
+          
+          <Text variant="body-default-s" onBackground="neutral-weak" align="center">
+            Введите ваши учетные данные для доступа к админ-панели
+          </Text>
+
+          <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+            <Column gap="m" fillWidth>
+              <Input
+                id="email"
+                label="Email"
+                type="email"
+                value={formData.email}
+                onChange={(e) => handleInputChange("email", e.target.value)}
+                required
+                errorMessage={error}
+              />
+              
+              <PasswordInput
+                id="password"
+                label="Пароль"
+                value={formData.password}
+                onChange={(e) => handleInputChange("password", e.target.value)}
+                required
+                errorMessage={error}
+              />
+              
+              <Button 
+                type="submit" 
+                variant="primary" 
+                fillWidth
+                loading={loading}
+                disabled={loading}
+              >
+                {loading ? "Вход..." : "Войти"}
+              </Button>
+            </Column>
+          </form>
+
+          <Flex gap="s" vertical="center">
+            <Text variant="body-default-s" onBackground="neutral-weak">
+              Нет аккаунта?
+            </Text>
+            <Button 
+              variant="secondary" 
+              href="/auth/register"
+              prefixIcon="user-plus"
+            >
+              Зарегистрироваться
+            </Button>
+          </Flex>
+
+          <Flex gap="s" vertical="center">
+            <Text variant="body-default-s" onBackground="neutral-weak">
+              Забыли пароль?
+            </Text>
+            <Button 
+              variant="secondary" 
+              href="/auth/reset-password"
+              prefixIcon="key"
+            >
+              Восстановить
+            </Button>
+          </Flex>
+        </Column>
+      </Card>
+    </Column>
+  );
+} 

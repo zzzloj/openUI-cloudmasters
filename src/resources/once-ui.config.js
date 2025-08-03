@@ -13,6 +13,9 @@ const routes = {
   "/admin/content": true,
   "/admin/seo": true,
   "/admin/settings": true,
+  "/auth/login": true,
+  "/auth/register": true,
+  "/auth/reset-password": true,
 };
 
 const display = {

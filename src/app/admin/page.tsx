@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import {
   Column,
   Flex,
@@ -12,8 +14,69 @@ import {
   Schema
 } from "@once-ui-system/core";
 import { baseURL } from "@/resources";
+import { useRouter } from "next/navigation";
+
+interface User {
+  id: string;
+  email: string;
+  role: string;
+}
 
 export default function AdminDashboard() {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    checkAuth();
+  }, []);
+
+  const checkAuth = async () => {
+    try {
+      const response = await fetch("/api/auth/me");
+      if (response.ok) {
+        const data = await response.json();
+        setUser(data.user);
+      } else {
+        // Не авторизован, перенаправляем на страницу входа
+        router.push("/auth/login");
+        return;
+      }
+    } catch (error) {
+      console.error("Ошибка проверки аутентификации:", error);
+      router.push("/auth/login");
+      return;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/auth/logout", { method: "POST" });
+      router.push("/auth/login");
+    } catch (error) {
+      console.error("Ошибка выхода:", error);
+    }
+  };
+
+  if (loading) {
+    return (
+      <Column maxWidth="xl" gap="xl" horizontal="center" paddingY="xl">
+        <Card padding="xl" radius="l" shadow="l">
+          <Column gap="l" horizontal="center">
+            <Icon name="spinner" size="l" />
+            <Text>Загрузка...</Text>
+          </Column>
+        </Card>
+      </Column>
+    );
+  }
+
+  if (!user) {
+    return null; // Перенаправление уже произошло
+  }
+
   return (
     <Column maxWidth="xl" gap="xl">
       <Schema
@@ -26,13 +89,24 @@ export default function AdminDashboard() {
       
       {/* Header */}
       <Flex fillWidth horizontal="between" vertical="center" paddingY="l">
-        <Heading variant="display-strong-l">Админ-панель</Heading>
-        <Button 
-          variant="secondary" 
-          prefixIcon="logout"
-        >
-          Выйти
-        </Button>
+        <Flex gap="m" vertical="center">
+          <Heading variant="display-strong-l">Админ-панель</Heading>
+          <Badge background="success-medium">
+            {user.role === "admin" ? "Администратор" : "Пользователь"}
+          </Badge>
+        </Flex>
+        <Flex gap="m" vertical="center">
+          <Text variant="body-default-s" onBackground="neutral-weak">
+            {user.email}
+          </Text>
+          <Button 
+            variant="secondary" 
+            prefixIcon="logout"
+            onClick={handleLogout}
+          >
+            Выйти
+          </Button>
+        </Flex>
       </Flex>
 
       {/* Dashboard Stats */}
