@@ -38,6 +38,10 @@ export async function GET(request: NextRequest) {
         );
       }
 
+      // Определение роли пользователя
+      const isAdmin = user.member_group_id === 4;
+      const role = isAdmin ? "admin" : "user";
+
       return NextResponse.json(
         { 
           message: "Авторизован",
@@ -48,7 +52,10 @@ export async function GET(request: NextRequest) {
             displayName: user.members_display_name,
             joined: user.joined,
             lastVisit: user.last_visit,
-            posts: user.posts
+            posts: user.posts,
+            memberGroupId: user.member_group_id,
+            role: role,
+            isAdmin: isAdmin
           }
         },
         { status: 200 }

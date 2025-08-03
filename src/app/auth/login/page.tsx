@@ -50,8 +50,14 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (response.ok) {
-        // Успешный вход
-        router.push("/admin");
+        // Успешный вход - проверяем роль пользователя
+        if (data.user && data.user.isAdmin) {
+          // Админ - перенаправляем в админ-панель
+          router.push("/admin");
+        } else {
+          // Обычный пользователь - перенаправляем на главную страницу
+          router.push("/");
+        }
       } else {
         setError(data.message || "Ошибка входа");
       }

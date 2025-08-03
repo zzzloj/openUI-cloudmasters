@@ -20,6 +20,8 @@ interface User {
   id: string;
   email: string;
   role: string;
+  isAdmin: boolean;
+  memberGroupId: number;
 }
 
 export default function AdminDashboard() {
@@ -36,6 +38,14 @@ export default function AdminDashboard() {
       const response = await fetch("/api/auth/me");
       if (response.ok) {
         const data = await response.json();
+        
+        // Проверяем права доступа к админ-панели
+        if (!data.user.isAdmin) {
+          // Не админ - перенаправляем на главную страницу
+          router.push("/");
+          return;
+        }
+        
         setUser(data.user);
       } else {
         // Не авторизован, перенаправляем на страницу входа

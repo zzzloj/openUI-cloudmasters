@@ -84,11 +84,16 @@ export async function POST(request: NextRequest) {
         userId: user.member_id,
         email: user.email,
         username: user.name,
-        displayName: user.members_display_name
+        displayName: user.members_display_name,
+        memberGroupId: user.member_group_id
       },
       JWT_SECRET,
       { expiresIn: "24h" }
     );
+
+    // Определение роли пользователя
+    const isAdmin = user.member_group_id === 4;
+    const role = isAdmin ? "admin" : "user";
 
     // Создание ответа с куки
     const response = NextResponse.json(
@@ -99,7 +104,10 @@ export async function POST(request: NextRequest) {
           username: user.name,
           email: user.email,
           displayName: user.members_display_name,
-          joined: user.joined
+          joined: user.joined,
+          memberGroupId: user.member_group_id,
+          role: role,
+          isAdmin: isAdmin
         }
       },
       { status: 200 }
