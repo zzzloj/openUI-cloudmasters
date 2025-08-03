@@ -41,8 +41,8 @@ export default function AdminDashboard() {
         
         // Проверяем права доступа к админ-панели
         if (!data.user.isAdmin) {
-          // Не админ - перенаправляем на главную страницу
-          router.push("/");
+          // Не админ - перенаправляем в профиль
+          router.push("/profile");
           return;
         }
         

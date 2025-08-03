@@ -50,14 +50,8 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (response.ok) {
-        // Успешный вход - проверяем роль пользователя
-        if (data.user && data.user.isAdmin) {
-          // Админ - перенаправляем в админ-панель
-          router.push("/admin");
-        } else {
-          // Обычный пользователь - перенаправляем на главную страницу
-          router.push("/");
-        }
+        // Успешный вход - все пользователи перенаправляются в профиль
+        router.push("/profile");
       } else {
         setError(data.message || "Ошибка входа");
       }
@@ -74,7 +68,7 @@ export default function LoginPage() {
         as="webPage"
         baseURL={baseURL}
         title="Вход - CloudMasters"
-        description="Страница входа в админ-панель"
+        description="Страница входа в систему"
         path="/auth/login"
       />
       
@@ -96,7 +90,7 @@ export default function LoginPage() {
               </Flex>
               
               <Text variant="body-default-s" onBackground="neutral-weak" align="center">
-                Введите ваши учетные данные для доступа к админ-панели
+                Введите ваши учетные данные для входа в систему
               </Text>
 
               <form onSubmit={handleSubmit} style={{ width: "100%" }}>

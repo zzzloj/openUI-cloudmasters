@@ -268,56 +268,56 @@ export const Header = () => {
                     {/* Десктопная версия */}
                     <Flex className="s-flex-hide" gap="s" vertical="center">
                       <Text variant="body-default-xs" onBackground="neutral-weak">
-                        {user.email}
+                        {user.displayName || user.username || user.email}
                       </Text>
+                      {user.isAdmin && (
+                        <Button 
+                          variant="secondary" 
+                          size="s"
+                          href="/admin"
+                          prefixIcon="settings"
+                        >
+                          Админ
+                        </Button>
+                      )}
                       <Button 
                         variant="secondary" 
                         size="s"
-                        href="/admin"
-                        prefixIcon="settings"
+                        href="/profile"
+                        prefixIcon="user"
                       >
-                        Админ
+                        Профиль
                       </Button>
                       <Button 
                         variant="secondary" 
                         size="s"
                         href="/api/auth/logout"
                         prefixIcon="logout"
-                        onClick={async (e: React.MouseEvent) => {
-                          e.preventDefault();
-                          try {
-                            await fetch("/api/auth/logout", { method: "POST" });
-                            window.location.href = "/";
-                          } catch (error) {
-                            console.error("Ошибка выхода:", error);
-                          }
-                        }}
                       >
                         Выйти
                       </Button>
                     </Flex>
                     {/* Мобильная версия */}
                     <Flex className="s-flex-show" gap="s" vertical="center">
+                      {user.isAdmin && (
+                        <Button 
+                          variant="secondary" 
+                          size="s"
+                          href="/admin"
+                          prefixIcon="settings"
+                        />
+                      )}
                       <Button 
                         variant="secondary" 
                         size="s"
-                        href="/admin"
-                        prefixIcon="settings"
+                        href="/profile"
+                        prefixIcon="user"
                       />
                       <Button 
                         variant="secondary" 
                         size="s"
                         href="/api/auth/logout"
                         prefixIcon="logout"
-                        onClick={async (e: React.MouseEvent) => {
-                          e.preventDefault();
-                          try {
-                            await fetch("/api/auth/logout", { method: "POST" });
-                            window.location.href = "/";
-                          } catch (error) {
-                            console.error("Ошибка выхода:", error);
-                          }
-                        }}
                       />
                     </Flex>
                   </>
@@ -338,7 +338,7 @@ export const Header = () => {
                         variant="primary" 
                         size="s"
                         href="/auth/register"
-                        prefixIcon="user-plus"
+                        prefixIcon="userPlus"
                       >
                         Регистрация
                       </Button>
