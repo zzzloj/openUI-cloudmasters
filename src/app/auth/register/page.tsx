@@ -26,13 +26,14 @@ export default function RegisterPage() {
     password: "",
     confirmPassword: "",
     securityAnswer: "",
+    agreeToTerms: false,
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
   const [success, setSuccess] = useState(false);
   const router = useRouter();
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: string, value: string | boolean) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
@@ -47,6 +48,10 @@ export default function RegisterPage() {
     }
     if (formData.password.length < 8) {
       setError("Пароль должен содержать минимум 8 символов");
+      return false;
+    }
+    if (!formData.agreeToTerms) {
+      setError("Необходимо согласиться с правилами портала");
       return false;
     }
     return true;
@@ -223,14 +228,32 @@ export default function RegisterPage() {
                     required
                   />
                   
-                  <Button 
-                    variant="secondary" 
-                    href="/terms"
-                    prefixIcon="document"
-                    fillWidth
-                  >
-                    Согласие с правилами портала
-                  </Button>
+                  <Flex gap="m" vertical="center" paddingY="s">
+                    <input
+                      type="checkbox"
+                      id="agreeToTerms"
+                      checked={formData.agreeToTerms}
+                      onChange={(e) => handleInputChange("agreeToTerms", e.target.checked)}
+                      style={{
+                        width: "16px",
+                        height: "16px",
+                        accentColor: "var(--brand-background-strong)"
+                      }}
+                    />
+                    <Flex gap="s" vertical="center">
+                      <Text variant="body-default-s">
+                        Я согласен с{" "}
+                        <Button 
+                          variant="secondary" 
+                          href="/terms"
+                          prefixIcon="document"
+                          style={{ padding: 0, textDecoration: "underline" }}
+                        >
+                          правилами портала
+                        </Button>
+                      </Text>
+                    </Flex>
+                  </Flex>
                   
                   <Button 
                     type="submit" 

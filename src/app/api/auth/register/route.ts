@@ -9,12 +9,19 @@ const users: any[] = [];
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { username, firstName, lastName, email, password, securityAnswer } = body;
+    const { username, firstName, lastName, email, password, securityAnswer, agreeToTerms } = body;
 
     // Валидация
     if (!username || !firstName || !lastName || !email || !password || !securityAnswer) {
       return NextResponse.json(
         { message: "Все поля обязательны для заполнения" },
+        { status: 400 }
+      );
+    }
+
+    if (!agreeToTerms) {
+      return NextResponse.json(
+        { message: "Необходимо согласиться с правилами портала" },
         { status: 400 }
       );
     }
