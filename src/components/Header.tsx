@@ -138,7 +138,7 @@ export const Header = () => {
         data-border="rounded"
       >
         <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Flex>{person.location}</Flex>}
+          {display.time && <TimeDisplay />}
         </Flex>
         <Flex fillWidth horizontal="center">
           <Flex
@@ -240,7 +240,6 @@ export const Header = () => {
             textVariant="body-default-s"
             gap="20"
           >
-            <Flex className="s-flex-hide">{display.time && <TimeDisplay />}</Flex>
           </Flex>
         </Flex>
       </Flex>
