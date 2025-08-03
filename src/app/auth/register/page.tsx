@@ -240,19 +240,17 @@ export default function RegisterPage() {
                         accentColor: "var(--brand-background-strong)"
                       }}
                     />
-                    <Flex gap="s" vertical="center">
-                      <Text variant="body-default-s">
-                        Я согласен с{" "}
-                        <Button 
-                          variant="secondary" 
-                          href="/terms"
-                          prefixIcon="document"
-                          style={{ padding: 0, textDecoration: "underline" }}
-                        >
-                          правилами портала
-                        </Button>
-                      </Text>
-                    </Flex>
+                    <Text variant="body-default-s">
+                      Я согласен с{" "}
+                      <Button 
+                        variant="secondary" 
+                        href="/terms"
+                        prefixIcon="document"
+                        style={{ padding: 0, textDecoration: "underline" }}
+                      >
+                        правилами портала
+                      </Button>
+                    </Text>
                   </Flex>
                   
                   <Button 
