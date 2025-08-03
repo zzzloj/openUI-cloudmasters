@@ -9,10 +9,10 @@ const users: any[] = [];
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { firstName, lastName, email, password } = body;
+    const { username, firstName, lastName, email, password, securityAnswer } = body;
 
     // Валидация
-    if (!firstName || !lastName || !email || !password) {
+    if (!username || !firstName || !lastName || !email || !password || !securityAnswer) {
       return NextResponse.json(
         { message: "Все поля обязательны для заполнения" },
         { status: 400 }
@@ -36,11 +36,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Проверка существования пользователя
-    const existingUser = users.find(user => user.email === email);
-    if (existingUser) {
+    // Проверка существования пользователя по email
+    const existingUserByEmail = users.find(user => user.email === email);
+    if (existingUserByEmail) {
       return NextResponse.json(
         { message: "Пользователь с таким email уже существует" },
+        { status: 409 }
+      );
+    }
+
+    // Проверка существования пользователя по username
+    const existingUserByUsername = users.find(user => user.username === username);
+    if (existingUserByUsername) {
+      return NextResponse.json(
+        { message: "Пользователь с таким именем уже существует" },
         { status: 409 }
       );
     }
@@ -51,10 +60,12 @@ export async function POST(request: NextRequest) {
     // Создание пользователя
     const newUser = {
       id: Date.now().toString(),
+      username,
       firstName,
       lastName,
       email,
       password: hashedPassword,
+      securityAnswer,
       createdAt: new Date().toISOString(),
       role: "user"
     };
@@ -64,6 +75,7 @@ export async function POST(request: NextRequest) {
     // В реальном приложении здесь было бы сохранение в базу данных
     console.log("Новый пользователь зарегистрирован:", {
       id: newUser.id,
+      username: newUser.username,
       email: newUser.email,
       firstName: newUser.firstName,
       lastName: newUser.lastName
@@ -74,6 +86,7 @@ export async function POST(request: NextRequest) {
         message: "Пользователь успешно зарегистрирован",
         user: {
           id: newUser.id,
+          username: newUser.username,
           firstName: newUser.firstName,
           lastName: newUser.lastName,
           email: newUser.email

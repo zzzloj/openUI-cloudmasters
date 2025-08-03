@@ -16,6 +16,7 @@ const routes = {
   "/auth/login": true,
   "/auth/register": true,
   "/auth/reset-password": true,
+  "/terms": true,
 };
 
 const display = {

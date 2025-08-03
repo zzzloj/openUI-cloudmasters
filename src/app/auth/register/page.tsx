@@ -19,11 +19,13 @@ import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
+    username: "",
     firstName: "",
     lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
+    securityAnswer: "",
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
@@ -67,10 +69,12 @@ export default function RegisterPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          username: formData.username,
           firstName: formData.firstName,
           lastName: formData.lastName,
           email: formData.email,
           password: formData.password,
+          securityAnswer: formData.securityAnswer,
         }),
       });
 
@@ -153,12 +157,18 @@ export default function RegisterPage() {
                 <Heading variant="display-strong-s">Регистрация</Heading>
               </Flex>
               
-              <Text variant="body-default-s" onBackground="neutral-weak" align="center">
-                Создайте новый аккаунт для доступа к админ-панели
-              </Text>
+
 
               <form onSubmit={handleSubmit} style={{ width: "100%" }}>
                 <Column gap="m" fillWidth>
+                  <Input
+                    id="username"
+                    label="Имя пользователя"
+                    value={formData.username}
+                    onChange={(e) => handleInputChange("username", e.target.value)}
+                    required
+                  />
+                  
                   <Flex gap="m" fillWidth>
                     <Input
                       id="firstName"
@@ -204,6 +214,23 @@ export default function RegisterPage() {
                     required
                     errorMessage={error}
                   />
+                  
+                  <Input
+                    id="securityAnswer"
+                    label="Ответ на контрольный вопрос"
+                    value={formData.securityAnswer}
+                    onChange={(e) => handleInputChange("securityAnswer", e.target.value)}
+                    required
+                  />
+                  
+                  <Button 
+                    variant="secondary" 
+                    href="/terms"
+                    prefixIcon="document"
+                    fillWidth
+                  >
+                    Согласие с правилами портала
+                  </Button>
                   
                   <Button 
                     type="submit" 
