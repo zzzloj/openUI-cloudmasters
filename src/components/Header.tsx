@@ -10,16 +10,86 @@ import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
 type TimeDisplayProps = {
-  timeZone: string;
-  locale?: string; // Optionally allow locale, defaulting to 'en-GB'
+  fallbackTimeZone?: string;
+  locale?: string;
 };
 
-const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
+const TimeDisplay: React.FC<TimeDisplayProps> = ({ fallbackTimeZone = "Europe/Moscow", locale = "ru-RU" }) => {
   const [currentTime, setCurrentTime] = useState("");
+  const [userTimeZone, setUserTimeZone] = useState<string | null>(null);
+  const [userLocation, setUserLocation] = useState<string>("");
+
+  useEffect(() => {
+    // Определяем часовой пояс пользователя
+    const detectUserTimeZone = () => {
+      try {
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        setUserTimeZone(timeZone);
+        
+        // Получаем название города из часового пояса
+        const timeZoneNames: { [key: string]: string } = {
+          "Europe/Moscow": "Москва",
+          "Europe/London": "Лондон",
+          "America/New_York": "Нью-Йорк",
+          "America/Los_Angeles": "Лос-Анджелес",
+          "Asia/Tokyo": "Токио",
+          "Asia/Shanghai": "Шанхай",
+          "Asia/Jakarta": "Джакарта",
+          "Australia/Sydney": "Сидней",
+          "Europe/Berlin": "Берлин",
+          "Europe/Paris": "Париж",
+          "Asia/Dubai": "Дубай",
+          "Asia/Kolkata": "Мумбаи",
+          "America/Sao_Paulo": "Сан-Паулу",
+          "Africa/Cairo": "Каир",
+          "Europe/Rome": "Рим",
+          "Europe/Madrid": "Мадрид",
+          "America/Toronto": "Торонто",
+          "America/Chicago": "Чикаго",
+          "America/Denver": "Денвер",
+          "Pacific/Auckland": "Окленд",
+          "Asia/Singapore": "Сингапур",
+          "Asia/Bangkok": "Бангкок",
+          "Asia/Ho_Chi_Minh": "Хошимин",
+          "Asia/Manila": "Манила",
+          "Asia/Kuala_Lumpur": "Куала-Лумпур",
+          "Asia/Hong_Kong": "Гонконг",
+          "Asia/Taipei": "Тайбэй",
+          "Asia/Tehran": "Тегеран",
+          "Asia/Karachi": "Карачи",
+          "Asia/Dhaka": "Дакка",
+          "Asia/Colombo": "Коломбо",
+          "Asia/Kathmandu": "Катманду",
+          "Asia/Ulaanbaatar": "Улан-Батор",
+          "Asia/Vladivostok": "Владивосток",
+          "Asia/Yekaterinburg": "Екатеринбург",
+          "Asia/Novosibirsk": "Новосибирск",
+          "Asia/Omsk": "Омск",
+          "Asia/Krasnoyarsk": "Красноярск",
+          "Asia/Irkutsk": "Иркутск",
+          "Asia/Yakutsk": "Якутск",
+          "Asia/Magadan": "Магадан",
+          "Asia/Kamchatka": "Петропавловск-Камчатский",
+          "Asia/Anadyr": "Анадырь",
+        };
+        
+        const cityName = timeZoneNames[timeZone] || timeZone.split('/').pop()?.replace('_', ' ') || timeZone;
+        setUserLocation(cityName);
+      } catch (error) {
+        console.error("Ошибка определения часового пояса:", error);
+        setUserTimeZone(fallbackTimeZone);
+        setUserLocation("Москва");
+      }
+    };
+
+    detectUserTimeZone();
+  }, [fallbackTimeZone]);
 
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
+      const timeZone = userTimeZone || fallbackTimeZone;
+      
       const options: Intl.DateTimeFormatOptions = {
         timeZone,
         hour: "2-digit",
@@ -27,17 +97,24 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" })
         second: "2-digit",
         hour12: false,
       };
+      
       const timeString = new Intl.DateTimeFormat(locale, options).format(now);
       setCurrentTime(timeString);
     };
 
-    updateTime();
-    const intervalId = setInterval(updateTime, 1000);
+    if (userTimeZone || fallbackTimeZone) {
+      updateTime();
+      const intervalId = setInterval(updateTime, 1000);
+      return () => clearInterval(intervalId);
+    }
+  }, [userTimeZone, fallbackTimeZone, locale]);
 
-    return () => clearInterval(intervalId);
-  }, [timeZone, locale]);
-
-  return <>{currentTime}</>;
+  return (
+    <Flex gap="s" vertical="center">
+      <span>{userLocation}</span>
+      <span>{currentTime}</span>
+    </Flex>
+  );
 };
 
 export default TimeDisplay;
@@ -163,7 +240,7 @@ export const Header = () => {
             textVariant="body-default-s"
             gap="20"
           >
-            <Flex className="s-flex-hide">{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
+            <Flex className="s-flex-hide">{display.time && <TimeDisplay />}</Flex>
           </Flex>
         </Flex>
       </Flex>
