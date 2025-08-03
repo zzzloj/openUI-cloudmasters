@@ -264,12 +264,13 @@ export const Header = () => {
               <>
                 {user ? (
                   // Пользователь авторизован
-                  <Flex gap="m" vertical="center">
-                    <Text variant="body-default-s" onBackground="neutral-weak">
+                  <Flex gap="s" vertical="center">
+                    <Text variant="body-default-xs" onBackground="neutral-weak">
                       {user.email}
                     </Text>
                     <Button 
                       variant="secondary" 
+                      size="s"
                       href="/admin"
                       prefixIcon="settings"
                     >
@@ -277,6 +278,7 @@ export const Header = () => {
                     </Button>
                     <Button 
                       variant="secondary" 
+                      size="s"
                       href="/api/auth/logout"
                       prefixIcon="logout"
                       onClick={async (e: React.MouseEvent) => {
@@ -294,9 +296,10 @@ export const Header = () => {
                   </Flex>
                 ) : (
                   // Пользователь не авторизован
-                  <Flex gap="m" vertical="center">
+                  <Flex gap="s" vertical="center">
                     <Button 
                       variant="secondary" 
+                      size="s"
                       href="/auth/login"
                       prefixIcon="login"
                     >
@@ -304,6 +307,7 @@ export const Header = () => {
                     </Button>
                     <Button 
                       variant="primary" 
+                      size="s"
                       href="/auth/register"
                       prefixIcon="user-plus"
                     >
