@@ -355,7 +355,7 @@ export const Header = () => {
                         variant="primary" 
                         size="s"
                         href="/auth/register"
-                        prefixIcon="user-plus"
+                        prefixIcon="userPlus"
                       />
                     </Flex>
                   </>

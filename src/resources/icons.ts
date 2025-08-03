@@ -12,6 +12,8 @@ import {
   HiOutlineDocument,
   HiOutlineGlobeAsiaAustralia,
   HiOutlineRocketLaunch,
+  HiOutlineKey,
+  HiOutlineUserPlus,
 } from "react-icons/hi2";
 
 import {
@@ -45,7 +47,9 @@ export const iconLibrary: Record<string, IconType> = {
   threads: FaThreads,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   document: HiOutlineDocument,
-  rocket: HiOutlineRocketLaunch
+  rocket: HiOutlineRocketLaunch,
+  login: HiOutlineKey,
+  userPlus: HiOutlineUserPlus,
 };
 
 export type IconLibrary = typeof iconLibrary;
