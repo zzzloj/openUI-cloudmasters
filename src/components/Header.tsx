@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { Fade, Flex, Line, ToggleButton } from "@once-ui-system/core";
+import { Fade, Flex, Line, ToggleButton, Button, Text } from "@once-ui-system/core";
 
 import { routes, display, person, about, blog, work, gallery } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
@@ -121,6 +121,26 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const [user, setUser] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await fetch("/api/auth/me");
+        if (response.ok) {
+          const userData = await response.json();
+          setUser(userData.user);
+        }
+      } catch (error) {
+        console.error("Ошибка проверки авторизации:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    checkAuth();
+  }, []);
 
   return (
     <>
@@ -240,6 +260,59 @@ export const Header = () => {
             textVariant="body-default-s"
             gap="20"
           >
+            {!loading && (
+              <>
+                {user ? (
+                  // Пользователь авторизован
+                  <Flex gap="m" vertical="center">
+                    <Text variant="body-default-s" onBackground="neutral-weak">
+                      {user.email}
+                    </Text>
+                    <Button 
+                      variant="secondary" 
+                      href="/admin"
+                      prefixIcon="settings"
+                    >
+                      Админ
+                    </Button>
+                    <Button 
+                      variant="secondary" 
+                      href="/api/auth/logout"
+                      prefixIcon="logout"
+                      onClick={async (e: React.MouseEvent) => {
+                        e.preventDefault();
+                        try {
+                          await fetch("/api/auth/logout", { method: "POST" });
+                          window.location.href = "/";
+                        } catch (error) {
+                          console.error("Ошибка выхода:", error);
+                        }
+                      }}
+                    >
+                      Выйти
+                    </Button>
+                  </Flex>
+                ) : (
+                  // Пользователь не авторизован
+                  <Flex gap="m" vertical="center">
+                    <Button 
+                      variant="secondary" 
+                      href="/auth/login"
+                      prefixIcon="login"
+                    >
+                      Войти
+                    </Button>
+                    <Button 
+                      variant="primary" 
+                      href="/auth/register"
+                      prefixIcon="user-plus"
+                    >
+                      Регистрация
+                    </Button>
+                  </Flex>
+                )}
+              </>
+            )}
           </Flex>
         </Flex>
       </Flex>
