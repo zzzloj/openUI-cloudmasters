@@ -63,7 +63,7 @@ export default function LoginPage() {
   };
 
   return (
-    <Column maxWidth="s" gap="xl" horizontal="center" paddingY="xl">
+    <Column fillWidth horizontal="center" paddingY="xl">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -72,7 +72,7 @@ export default function LoginPage() {
         path="/auth/login"
       />
       
-      <Card padding="xl" radius="l" shadow="l">
+      <Card padding="xl" radius="l" shadow="l" maxWidth="s">
         <Column gap="l" horizontal="center">
           <Flex gap="m" vertical="center">
             <Icon name="login" size="l" />
