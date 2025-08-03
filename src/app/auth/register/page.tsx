@@ -80,6 +80,7 @@ export default function RegisterPage() {
           email: formData.email,
           password: formData.password,
           securityAnswer: formData.securityAnswer,
+          agreeToTerms: formData.agreeToTerms,
         }),
       });
 
