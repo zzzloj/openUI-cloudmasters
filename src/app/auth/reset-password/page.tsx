@@ -51,8 +51,9 @@ export default function ResetPasswordPage() {
 
   if (success) {
     return (
-      <Column maxWidth="s" gap="xl" horizontal="center" paddingY="xl">
-        <Card padding="xl" radius="l" shadow="l">
+      <Flex fillWidth horizontal="center" paddingY="xl">
+        <Flex fillWidth horizontal="center">
+          <Card padding="xl" radius="l" shadow="l" maxWidth="s">
           <Column gap="l" horizontal="center">
             <Flex gap="m" vertical="center">
               <Icon name="mail" size="l" />
@@ -74,14 +75,15 @@ export default function ResetPasswordPage() {
             >
               Вернуться к входу
             </Button>
-          </Column>
-        </Card>
-      </Column>
+                  </Column>
+      </Card>
+      </Flex>
+    </Flex>
     );
   }
 
   return (
-    <Column maxWidth="s" gap="xl" horizontal="center" paddingY="xl">
+    <Flex fillWidth horizontal="center" paddingY="xl">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -90,7 +92,8 @@ export default function ResetPasswordPage() {
         path="/auth/reset-password"
       />
       
-      <Card padding="xl" radius="l" shadow="l">
+      <Flex fillWidth horizontal="center">
+        <Card padding="xl" radius="l" shadow="l" maxWidth="s">
         <Column gap="l" horizontal="center">
           <Flex gap="m" vertical="center">
             <Icon name="key" size="l" />
@@ -142,6 +145,7 @@ export default function ResetPasswordPage() {
           </Flex>
         </Column>
       </Card>
-    </Column>
+      </Flex>
+    </Flex>
   );
 } 

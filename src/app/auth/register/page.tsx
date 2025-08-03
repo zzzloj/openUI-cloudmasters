@@ -93,8 +93,9 @@ export default function RegisterPage() {
 
   if (success) {
     return (
-      <Column maxWidth="s" gap="xl" horizontal="center" paddingY="xl">
-        <Card padding="xl" radius="l" shadow="l">
+      <Flex fillWidth horizontal="center" paddingY="xl">
+        <Flex fillWidth horizontal="center">
+          <Card padding="xl" radius="l" shadow="l" maxWidth="s">
           <Column gap="l" horizontal="center">
             <Flex gap="m" vertical="center">
               <Icon name="check-circle" size="l" />
@@ -108,14 +109,15 @@ export default function RegisterPage() {
             <Badge background="success-medium">
               Аккаунт создан
             </Badge>
-          </Column>
-        </Card>
-      </Column>
+                  </Column>
+      </Card>
+      </Flex>
+    </Flex>
     );
   }
 
   return (
-    <Column maxWidth="s" gap="xl" horizontal="center" paddingY="xl">
+    <Flex fillWidth horizontal="center" paddingY="xl">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -124,7 +126,8 @@ export default function RegisterPage() {
         path="/auth/register"
       />
       
-      <Card padding="xl" radius="l" shadow="l">
+      <Flex fillWidth horizontal="center">
+        <Card padding="xl" radius="l" shadow="l" maxWidth="s">
         <Column gap="l" horizontal="center">
           <Flex gap="m" vertical="center">
             <Icon name="user-plus" size="l" />
@@ -209,6 +212,7 @@ export default function RegisterPage() {
           </Flex>
         </Column>
       </Card>
-    </Column>
+      </Flex>
+    </Flex>
   );
 } 
