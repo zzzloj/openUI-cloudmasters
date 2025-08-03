@@ -9,6 +9,10 @@ const routes = {
   "/work": true,
   "/blog": true,
   "/gallery": true,
+  "/admin": true,
+  "/admin/content": true,
+  "/admin/seo": true,
+  "/admin/settings": true,
 };
 
 const display = {

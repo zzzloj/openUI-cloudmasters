@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import {
   Column,
   Flex,
@@ -11,68 +9,11 @@ import {
   Icon,
   Grid,
   Badge,
-  Input,
-  Select,
   Schema
 } from "@once-ui-system/core";
-import { baseURL, about, person, home } from "@/resources";
+import { baseURL } from "@/resources";
 
 export default function AdminDashboard() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Простая аутентификация (в продакшене использовать JWT)
-    if (username === "admin" && password === "admin123") {
-      setIsAuthenticated(true);
-    } else {
-      alert("Неверные учетные данные");
-    }
-  };
-
-  if (!isAuthenticated) {
-    return (
-      <Column maxWidth="s" gap="xl" horizontal="center" paddingY="xl">
-        <Schema
-          as="webPage"
-          baseURL={baseURL}
-          title="Admin Panel - CloudMasters"
-          description="Админ-панель для управления контентом"
-          path="/admin"
-        />
-        <Card padding="xl" radius="l" shadow="l">
-          <Column gap="l" horizontal="center">
-            <Heading variant="display-strong-s">Вход в админ-панель</Heading>
-            <form onSubmit={handleLogin}>
-              <Column gap="m">
-                <Input
-                  id="username"
-                  label="Имя пользователя"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                />
-                <Input
-                  id="password"
-                  label="Пароль"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-                <Button type="submit" variant="primary" fillWidth>
-                  Войти
-                </Button>
-              </Column>
-            </form>
-          </Column>
-        </Card>
-      </Column>
-    );
-  }
-
   return (
     <Column maxWidth="xl" gap="xl">
       <Schema
@@ -88,7 +29,6 @@ export default function AdminDashboard() {
         <Heading variant="display-strong-l">Админ-панель</Heading>
         <Button 
           variant="secondary" 
-          onClick={() => setIsAuthenticated(false)}
           prefixIcon="logout"
         >
           Выйти
