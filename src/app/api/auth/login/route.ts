@@ -22,21 +22,21 @@ const JWT_SECRET = process.env.JWT_SECRET || "your-secret-key";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { email, password } = body;
+    const { emailOrUsername, password } = body;
 
     // Валидация
-    if (!email || !password) {
+    if (!emailOrUsername || !password) {
       return NextResponse.json(
-        { message: "Email и пароль обязательны" },
+        { message: "Email/имя пользователя и пароль обязательны" },
         { status: 400 }
       );
     }
 
-    // Поиск пользователя
-    const user = users.find(u => u.email === email);
+    // Поиск пользователя по email или username
+    const user = users.find(u => u.email === emailOrUsername || u.username === emailOrUsername);
     if (!user) {
       return NextResponse.json(
-        { message: "Неверный email или пароль" },
+        { message: "Неверный email/имя пользователя или пароль" },
         { status: 401 }
       );
     }
@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
       return NextResponse.json(
-        { message: "Неверный email или пароль" },
+        { message: "Неверный email/имя пользователя или пароль" },
         { status: 401 }
       );
     }

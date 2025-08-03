@@ -16,31 +16,22 @@ const users: any[] = [
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { email } = body;
+    const { emailOrUsername } = body;
 
     // Валидация
-    if (!email) {
+    if (!emailOrUsername) {
       return NextResponse.json(
-        { message: "Email обязателен" },
+        { message: "Email или имя пользователя обязательно" },
         { status: 400 }
       );
     }
 
-    // Проверка email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { message: "Неверный формат email" },
-        { status: 400 }
-      );
-    }
-
-    // Поиск пользователя
-    const user = users.find(u => u.email === email);
+    // Поиск пользователя по email или username
+    const user = users.find(u => u.email === emailOrUsername || u.username === emailOrUsername);
     if (!user) {
       // Для безопасности не сообщаем, что пользователь не найден
       return NextResponse.json(
-        { message: "Если пользователь с таким email существует, вы получите инструкции" },
+        { message: "Если пользователь с таким email/именем пользователя существует, вы получите инструкции" },
         { status: 200 }
       );
     }
@@ -50,15 +41,15 @@ export async function POST(request: NextRequest) {
     // 2. Сохранение токена в базу данных с временем истечения
     // 3. Отправка email с ссылкой для сброса пароля
 
-    console.log("Запрос на сброс пароля для:", email);
+    console.log("Запрос на сброс пароля для:", emailOrUsername);
 
     // Имитация отправки email
     setTimeout(() => {
-      console.log(`Email с инструкциями по сбросу пароля отправлен на: ${email}`);
+      console.log(`Email с инструкциями по сбросу пароля отправлен на: ${user.email}`);
     }, 1000);
 
     return NextResponse.json(
-      { message: "Если пользователь с таким email существует, вы получите инструкции" },
+      { message: "Если пользователь с таким email/именем пользователя существует, вы получите инструкции" },
       { status: 200 }
     );
 

@@ -16,7 +16,7 @@ import {
 import { baseURL } from "@/resources";
 
 export default function ResetPasswordPage() {
-  const [email, setEmail] = useState("");
+  const [emailOrUsername, setEmailOrUsername] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
   const [success, setSuccess] = useState(false);
@@ -32,7 +32,7 @@ export default function ResetPasswordPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ emailOrUsername }),
       });
 
       const data = await response.json();
@@ -119,19 +119,18 @@ export default function ResetPasswordPage() {
                 <Heading variant="display-strong-s">Восстановление пароля</Heading>
               </Flex>
               
-              <Text variant="body-default-s" onBackground="neutral-weak" align="center">
-                Введите ваш email для получения инструкций по восстановлению пароля
-              </Text>
+                              <Text variant="body-default-s" onBackground="neutral-weak" align="center">
+                  Введите ваш email или имя пользователя для получения инструкций по восстановлению пароля
+                </Text>
 
               <form onSubmit={handleSubmit} style={{ width: "100%" }}>
                 <Column gap="m" fillWidth>
                   <Input
-                    id="email"
-                    label="Email"
-                    type="email"
-                    value={email}
+                    id="emailOrUsername"
+                    label="Email или Имя пользователя"
+                    value={emailOrUsername}
                     onChange={(e) => {
-                      setEmail(e.target.value);
+                      setEmailOrUsername(e.target.value);
                       setError(undefined);
                     }}
                     required

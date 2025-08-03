@@ -18,7 +18,7 @@ import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({
-    email: "",
+    emailOrUsername: "",
     password: "",
   });
   const [loading, setLoading] = useState(false);
@@ -96,11 +96,10 @@ export default function LoginPage() {
               <form onSubmit={handleSubmit} style={{ width: "100%" }}>
                 <Column gap="m" fillWidth>
                   <Input
-                    id="email"
-                    label="Email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
+                    id="emailOrUsername"
+                    label="Email или Имя пользователя"
+                    value={formData.emailOrUsername}
+                    onChange={(e) => handleInputChange("emailOrUsername", e.target.value)}
                     required
                     errorMessage={error}
                   />
