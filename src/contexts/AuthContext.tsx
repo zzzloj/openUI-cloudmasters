@@ -1,126 +1,130 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { User, AuthResult, RegisterData, LoginData } from '@/lib/auth';
+
+interface User {
+  id: number;
+  email: string;
+  name?: string;
+  members_display_name?: string;
+  member_group_id: number;
+  is_activated: boolean;
+}
 
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  login: (data: LoginData) => Promise<AuthResult>;
-  register: (data: RegisterData) => Promise<AuthResult>;
+  login: (emailOrUsername: string, password: string) => Promise<void>;
+  register: (email: string, username: string, password: string) => Promise<void>;
   logout: () => void;
-  updateProfile: (data: Partial<User>) => Promise<AuthResult>;
-  changePassword: (oldPassword: string, newPassword: string) => Promise<AuthResult>;
+  updateProfile: (data: Partial<User>) => Promise<void>;
+  changePassword: (currentPassword: string, newPassword: string) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export function useAuth() {
+export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;
-}
+};
 
 interface AuthProviderProps {
   children: ReactNode;
 }
 
-export function AuthProvider({ children }: AuthProviderProps) {
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Проверяем токен при загрузке
   useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const token = localStorage.getItem('authToken');
+        if (token) {
+          const response = await fetch('/api/auth/me', {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          });
+          
+          if (response.ok) {
+            const data = await response.json();
+            setUser(data.user);
+          } else {
+            localStorage.removeItem('authToken');
+          }
+        }
+      } catch (error) {
+        console.error('Ошибка проверки авторизации:', error);
+        localStorage.removeItem('authToken');
+      } finally {
+        setLoading(false);
+      }
+    };
+
     checkAuth();
   }, []);
 
-  const checkAuth = async () => {
-    try {
-      const token = localStorage.getItem('auth_token');
-      if (token) {
-        const response = await fetch('/api/auth/me', {
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        });
-        
-        if (response.ok) {
-          const data = await response.json();
-          setUser(data.user);
-        } else {
-          localStorage.removeItem('auth_token');
-        }
-      }
-    } catch (error) {
-      console.error('Auth check error:', error);
-      localStorage.removeItem('auth_token');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const login = async (data: LoginData): Promise<AuthResult> => {
+  const login = async (emailOrUsername: string, password: string) => {
     try {
       const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ emailOrUsername, password }),
       });
 
-      const result = await response.json();
-
-      if (result.success && result.token) {
-        localStorage.setItem('auth_token', result.token);
-        setUser(result.user);
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('authToken', data.token);
+        setUser(data.user);
+      } else {
+        const error = await response.json();
+        throw new Error(error.message || 'Ошибка входа');
       }
-
-      return result;
     } catch (error) {
-      console.error('Login error:', error);
-      return { success: false, error: 'Ошибка авторизации' };
+      console.error('Ошибка входа:', error);
+      throw error;
     }
   };
 
-  const register = async (data: RegisterData): Promise<AuthResult> => {
+  const register = async (email: string, username: string, password: string) => {
     try {
       const response = await fetch('/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ email, username, password }),
       });
 
-      const result = await response.json();
-
-      if (result.success && result.token) {
-        localStorage.setItem('auth_token', result.token);
-        setUser(result.user);
+      if (response.ok) {
+        const data = await response.json();
+        // После регистрации автоматически входим
+        await login(email, password);
+      } else {
+        const error = await response.json();
+        throw new Error(error.message || 'Ошибка регистрации');
       }
-
-      return result;
     } catch (error) {
-      console.error('Registration error:', error);
-      return { success: false, error: 'Ошибка регистрации' };
+      console.error('Ошибка регистрации:', error);
+      throw error;
     }
   };
 
   const logout = () => {
-    localStorage.removeItem('auth_token');
+    localStorage.removeItem('authToken');
     setUser(null);
+    window.location.href = '/';
   };
 
-  const updateProfile = async (data: Partial<User>): Promise<AuthResult> => {
+  const updateProfile = async (data: Partial<User>) => {
     try {
-      const token = localStorage.getItem('auth_token');
-      if (!token) {
-        return { success: false, error: 'Не авторизован' };
-      }
-
+      const token = localStorage.getItem('authToken');
       const response = await fetch('/api/auth/profile', {
         method: 'PUT',
         headers: {
@@ -130,42 +134,38 @@ export function AuthProvider({ children }: AuthProviderProps) {
         body: JSON.stringify(data),
       });
 
-      const result = await response.json();
-
-      if (result.success && result.user) {
-        setUser(result.user);
-        if (result.token) {
-          localStorage.setItem('auth_token', result.token);
-        }
+      if (response.ok) {
+        const updatedUser = await response.json();
+        setUser(updatedUser.user);
+      } else {
+        const error = await response.json();
+        throw new Error(error.message || 'Ошибка обновления профиля');
       }
-
-      return result;
     } catch (error) {
-      console.error('Profile update error:', error);
-      return { success: false, error: 'Ошибка обновления профиля' };
+      console.error('Ошибка обновления профиля:', error);
+      throw error;
     }
   };
 
-  const changePassword = async (oldPassword: string, newPassword: string): Promise<AuthResult> => {
+  const changePassword = async (currentPassword: string, newPassword: string) => {
     try {
-      const token = localStorage.getItem('auth_token');
-      if (!token) {
-        return { success: false, error: 'Не авторизован' };
-      }
-
-      const response = await fetch('/api/auth/password', {
-        method: 'PUT',
+      const token = localStorage.getItem('authToken');
+      const response = await fetch('/api/auth/change-password', {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({ oldPassword, newPassword }),
+        body: JSON.stringify({ currentPassword, newPassword }),
       });
 
-      return await response.json();
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Ошибка смены пароля');
+      }
     } catch (error) {
-      console.error('Password change error:', error);
-      return { success: false, error: 'Ошибка изменения пароля' };
+      console.error('Ошибка смены пароля:', error);
+      throw error;
     }
   };
 
@@ -184,4 +184,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
       {children}
     </AuthContext.Provider>
   );
-} 
+};
+
+export default AuthContext; 
