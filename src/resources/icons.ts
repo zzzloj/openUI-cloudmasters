@@ -14,6 +14,7 @@ import {
   HiOutlineRocketLaunch,
   HiOutlineKey,
   HiOutlineUserPlus,
+  HiOutlineChatBubbleLeftRight,
 } from "react-icons/hi2";
 
 import {
@@ -50,6 +51,7 @@ export const iconLibrary: Record<string, IconType> = {
   rocket: HiOutlineRocketLaunch,
   login: HiOutlineKey,
   userPlus: HiOutlineUserPlus,
+  forum: HiOutlineChatBubbleLeftRight,
 };
 
 export type IconLibrary = typeof iconLibrary;

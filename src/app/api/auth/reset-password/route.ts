@@ -1,17 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-
-// В реальном приложении здесь была бы база данных
-// Для демонстрации используем простой объект
-const users: any[] = [
-  {
-    id: "1",
-    firstName: "Admin",
-    lastName: "User",
-    email: "admin@example.com",
-    password: "$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdBPj4J/8JZqKGi",
-    role: "admin"
-  }
-];
+import { getUserByEmail, getUserByUsername, query } from "@/lib/database";
+import { sendPasswordResetEmail, generateCode } from "@/lib/email";
 
 export async function POST(request: NextRequest) {
   try {
@@ -27,7 +16,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Поиск пользователя по email или username
-    const user = users.find(u => u.email === emailOrUsername || u.username === emailOrUsername);
+    let user = await getUserByEmail(emailOrUsername);
+    if (!user) {
+      user = await getUserByUsername(emailOrUsername);
+    }
+
     if (!user) {
       // Для безопасности не сообщаем, что пользователь не найден
       return NextResponse.json(
@@ -36,17 +29,36 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // В реальном приложении здесь было бы:
-    // 1. Генерация токена для сброса пароля
-    // 2. Сохранение токена в базу данных с временем истечения
-    // 3. Отправка email с ссылкой для сброса пароля
+    // Проверка активации аккаунта
+    if (!user.is_activated) {
+      return NextResponse.json(
+        { message: "Аккаунт не активирован. Сначала активируйте аккаунт." },
+        { status: 400 }
+      );
+    }
+
+    // Генерация кода восстановления
+    const resetCode = generateCode(6);
+    const resetExpires = Math.floor(Date.now() / 1000) + (60 * 60); // 1 час
+
+    // Сохранение кода восстановления в базу данных
+    await query(
+      "UPDATE members SET reset_code = ?, reset_expires = ? WHERE member_id = ?",
+      [resetCode, resetExpires, user.member_id]
+    );
+
+    // Отправка email с кодом восстановления
+    const emailSent = await sendPasswordResetEmail(
+      user.email,
+      user.members_display_name || user.name,
+      resetCode
+    );
+
+    if (!emailSent) {
+      console.warn("Не удалось отправить email восстановления пароля на", user.email);
+    }
 
     console.log("Запрос на сброс пароля для:", emailOrUsername);
-
-    // Имитация отправки email
-    setTimeout(() => {
-      console.log(`Email с инструкциями по сбросу пароля отправлен на: ${user.email}`);
-    }, 1000);
 
     return NextResponse.json(
       { message: "Если пользователь с таким email/именем пользователя существует, вы получите инструкции" },

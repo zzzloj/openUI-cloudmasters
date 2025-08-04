@@ -8,6 +8,7 @@ import { Fade, Flex, Line, ToggleButton, Button, Text } from "@once-ui-system/co
 import { routes, display, person, about, blog, work, gallery } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
+import { useAuth } from "@/contexts/AuthContext";
 
 type TimeDisplayProps = {
   fallbackTimeZone?: string;
@@ -121,26 +122,7 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
-  const [user, setUser] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        const response = await fetch("/api/auth/me");
-        if (response.ok) {
-          const userData = await response.json();
-          setUser(userData.user);
-        }
-      } catch (error) {
-        console.error("Ошибка проверки авторизации:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    checkAuth();
-  }, []);
+  const { user, loading, logout } = useAuth();
 
   return (
     <>
@@ -176,73 +158,96 @@ export const Header = () => {
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {routes["/about"] && (
-                <>
+                <Flex className="s-flex-hide">
                   <ToggleButton
-                    className="s-flex-hide"
                     prefixIcon="person"
                     href="/about"
                     label={about.label}
                     selected={pathname === "/about"}
                   />
+                </Flex>
+              )}
+              {routes["/about"] && (
+                <Flex className="s-flex-show">
                   <ToggleButton
-                    className="s-flex-show"
                     prefixIcon="person"
                     href="/about"
                     selected={pathname === "/about"}
                   />
-                </>
+                </Flex>
               )}
               {routes["/work"] && (
-                <>
+                <Flex className="s-flex-hide">
                   <ToggleButton
-                    className="s-flex-hide"
                     prefixIcon="grid"
                     href="/work"
                     label={work.label}
                     selected={pathname.startsWith("/work")}
                   />
+                </Flex>
+              )}
+              {routes["/work"] && (
+                <Flex className="s-flex-show">
                   <ToggleButton
-                    className="s-flex-show"
                     prefixIcon="grid"
                     href="/work"
                     selected={pathname.startsWith("/work")}
                   />
-                </>
+                </Flex>
               )}
               {routes["/blog"] && (
-                <>
+                <Flex className="s-flex-hide">
                   <ToggleButton
-                    className="s-flex-hide"
                     prefixIcon="book"
                     href="/blog"
                     label={blog.label}
                     selected={pathname.startsWith("/blog")}
                   />
+                </Flex>
+              )}
+              {routes["/blog"] && (
+                <Flex className="s-flex-show">
                   <ToggleButton
-                    className="s-flex-show"
                     prefixIcon="book"
                     href="/blog"
                     selected={pathname.startsWith("/blog")}
                   />
-                </>
+                </Flex>
               )}
               {routes["/gallery"] && (
-                <>
+                <Flex className="s-flex-hide">
                   <ToggleButton
-                    className="s-flex-hide"
                     prefixIcon="gallery"
                     href="/gallery"
                     label={gallery.label}
                     selected={pathname.startsWith("/gallery")}
                   />
+                </Flex>
+              )}
+              {routes["/gallery"] && (
+                <Flex className="s-flex-show">
                   <ToggleButton
-                    className="s-flex-show"
                     prefixIcon="gallery"
                     href="/gallery"
                     selected={pathname.startsWith("/gallery")}
                   />
-                </>
+                </Flex>
               )}
+              <Flex className="s-flex-hide">
+                <ToggleButton
+                  prefixIcon="forum"
+                  href="/forum"
+                  label="Форум"
+                  selected={pathname.startsWith("/forum")}
+                />
+              </Flex>
+              <Flex className="s-flex-show">
+                <ToggleButton
+                  prefixIcon="forum"
+                  href="/forum"
+                  selected={pathname.startsWith("/forum")}
+                />
+              </Flex>
               {display.themeSwitcher && (
                 <>
                   <Line background="neutral-alpha-medium" vert maxHeight="24" />
@@ -268,9 +273,9 @@ export const Header = () => {
                     {/* Десктопная версия */}
                     <Flex className="s-flex-hide" gap="s" vertical="center">
                       <Text variant="body-default-xs" onBackground="neutral-weak">
-                        {user.displayName || user.username || user.email}
+                        {user.members_display_name || user.name || user.email}
                       </Text>
-                      {user.isAdmin && (
+                      {user.member_group_id === 4 && (
                         <Button 
                           variant="secondary" 
                           size="s"
@@ -291,7 +296,7 @@ export const Header = () => {
                       <Button 
                         variant="secondary" 
                         size="s"
-                        href="/api/auth/logout"
+                        onClick={logout}
                         prefixIcon="logout"
                       >
                         Выйти
@@ -299,7 +304,7 @@ export const Header = () => {
                     </Flex>
                     {/* Мобильная версия */}
                     <Flex className="s-flex-show" gap="s" vertical="center">
-                      {user.isAdmin && (
+                      {user.member_group_id === 4 && (
                         <Button 
                           variant="secondary" 
                           size="s"
@@ -316,7 +321,7 @@ export const Header = () => {
                       <Button 
                         variant="secondary" 
                         size="s"
-                        href="/api/auth/logout"
+                        onClick={logout}
                         prefixIcon="logout"
                       />
                     </Flex>
@@ -338,7 +343,7 @@ export const Header = () => {
                         variant="primary" 
                         size="s"
                         href="/auth/register"
-                        prefixIcon="userPlus"
+                        prefixIcon="user-plus"
                       >
                         Регистрация
                       </Button>

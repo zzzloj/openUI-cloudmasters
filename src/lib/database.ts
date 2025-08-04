@@ -30,6 +30,9 @@ export interface Member {
   failed_login_count: number;
   member_banned: number;
   posts: number;
+  activation_code: string | null;
+  activation_expires: number | null;
+  is_activated: number;
 }
 
 // Создание пула соединений
@@ -75,12 +78,16 @@ export async function createUser(userData: {
   members_seo_name: string;
   members_l_display_name: string;
   members_l_username: string;
+  activation_code?: string;
+  activation_expires?: number;
+  is_activated?: number;
 }) {
   const sql = `
     INSERT INTO members (
       name, email, members_pass_hash, members_pass_salt, ip_address, 
       joined, members_display_name, members_seo_name, 
       members_l_display_name, members_l_username,
+      activation_code, activation_expires, is_activated,
       member_group_id, posts, warn_lastwarn, restrict_post, login_anonymous,
       mgroup_others, org_perm_id, member_login_key, member_login_key_expire,
       has_gallery, members_auto_dst, members_created_remote, members_disable_pm,
@@ -90,6 +97,7 @@ export async function createUser(userData: {
       tc_lastsync, fb_session, ipsconnect_id, gallery_perms
     ) VALUES (
       ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+      ?, ?, ?,
       2, 0, 0, '0', '0&0',
       '', '', '', 0,
       0, 1, 0, 0,
@@ -110,7 +118,10 @@ export async function createUser(userData: {
     userData.members_display_name,
     userData.members_seo_name,
     userData.members_l_display_name,
-    userData.members_l_username
+    userData.members_l_username,
+    userData.activation_code || null,
+    userData.activation_expires || null,
+    userData.is_activated || 0
   ]);
   
   return result;

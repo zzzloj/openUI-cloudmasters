@@ -1,124 +1,46 @@
-import { NextRequest, NextResponse } from "next/server";
-import * as cookie from "cookie";
-import bcrypt from "bcryptjs";
-import { 
-  getUserByEmail, 
-  getUserByUsername, 
-  createUser, 
-  generateSalt, 
-  hashPassword 
-} from "@/lib/database";
+import { NextRequest, NextResponse } from 'next/server';
+import { registerUser } from '@/lib/auth';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { username, firstName, lastName, email, password, securityAnswer, agreeToTerms } = body;
+    const { name, email, password, display_name } = body;
 
-    // Валидация
-    if (!username || !firstName || !lastName || !email || !password || !securityAnswer) {
+    if (!name || !email || !password) {
       return NextResponse.json(
-        { message: "Все поля обязательны для заполнения" },
+        { success: false, error: 'Имя, email и пароль обязательны' },
         { status: 400 }
       );
     }
 
-    if (!agreeToTerms) {
-      return NextResponse.json(
-        { message: "Необходимо согласиться с правилами портала" },
-        { status: 400 }
-      );
-    }
-
-    // Проверка email
+    // Валидация email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { message: "Неверный формат email" },
+        { success: false, error: 'Неверный формат email' },
         { status: 400 }
       );
     }
 
-    // Проверка длины пароля
-    if (password.length < 8) {
+    // Валидация пароля
+    if (password.length < 6) {
       return NextResponse.json(
-        { message: "Пароль должен содержать минимум 8 символов" },
+        { success: false, error: 'Пароль должен содержать минимум 6 символов' },
         { status: 400 }
       );
     }
 
-    // Проверка существования пользователя по email
-    const existingUserByEmail = await getUserByEmail(email);
-    if (existingUserByEmail) {
-      return NextResponse.json(
-        { message: "Пользователь с таким email уже существует" },
-        { status: 409 }
-      );
+    const result = await registerUser({ name, email, password, display_name });
+
+    if (result.success) {
+      return NextResponse.json(result);
+    } else {
+      return NextResponse.json(result, { status: 400 });
     }
-
-    // Проверка существования пользователя по username
-    const existingUserByUsername = await getUserByUsername(username);
-    if (existingUserByUsername) {
-      return NextResponse.json(
-        { message: "Пользователь с таким именем уже существует" },
-        { status: 409 }
-      );
-    }
-
-    // Генерация соли и хеширование пароля
-    const salt = generateSalt();
-    const hashedPassword = hashPassword(password, salt);
-
-    // Получение IP адреса
-    const ipAddress = request.headers.get('x-forwarded-for') || 
-                     request.headers.get('x-real-ip') || 
-                     '127.0.0.1';
-
-    // Текущее время в Unix timestamp
-    const joined = Math.floor(Date.now() / 1000);
-
-    // Создание пользователя в базе данных
-    const userData = {
-      name: username,
-      email,
-      members_pass_hash: hashedPassword,
-      members_pass_salt: salt,
-      ip_address: ipAddress,
-      joined,
-      members_display_name: `${firstName} ${lastName}`,
-      members_seo_name: username.toLowerCase().replace(/[^a-z0-9]/g, '-'),
-      members_l_display_name: `${firstName} ${lastName}`,
-      members_l_username: username
-    };
-
-    console.log("Попытка создания пользователя:", userData);
-    
-    const result = await createUser(userData);
-    console.log("Результат создания пользователя:", result);
-
-    console.log("Новый пользователь зарегистрирован:", {
-      username: userData.name,
-      email: userData.email,
-      displayName: userData.members_display_name
-    });
-
-    return NextResponse.json(
-      { 
-        message: "Пользователь успешно зарегистрирован",
-        user: {
-          username: userData.name,
-          firstName,
-          lastName,
-          email: userData.email,
-          displayName: userData.members_display_name
-        }
-      },
-      { status: 201 }
-    );
-
   } catch (error) {
-    console.error("Ошибка регистрации:", error);
+    console.error('Register API error:', error);
     return NextResponse.json(
-      { message: "Внутренняя ошибка сервера" },
+      { success: false, error: 'Внутренняя ошибка сервера' },
       { status: 500 }
     );
   }

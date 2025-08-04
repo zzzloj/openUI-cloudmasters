@@ -1,77 +1,45 @@
-import { NextRequest, NextResponse } from "next/server";
-import jwt from "jsonwebtoken";
-import { getUserByEmail } from "@/lib/database";
-
-const JWT_SECRET = process.env.JWT_SECRET || "your-secret-key";
+import { NextRequest, NextResponse } from 'next/server';
+import { getUserFromToken } from '@/lib/auth';
 
 export async function GET(request: NextRequest) {
   try {
-    // Получение токена из куки
-    const authToken = request.cookies.get("authToken")?.value;
-
-    if (!authToken) {
+    const authHeader = request.headers.get('authorization');
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
       return NextResponse.json(
-        { message: "Не авторизован" },
+        { success: false, error: 'Токен не предоставлен' },
         { status: 401 }
       );
     }
 
-    // Проверка JWT токена
-    try {
-      const decoded = jwt.verify(authToken, JWT_SECRET) as any;
-      
-            // Получение актуальных данных пользователя из базы данных
-      const user = await getUserByEmail(decoded.email);
-      
-      if (!user) {
-        return NextResponse.json(
-          { message: "Пользователь не найден" },
-          { status: 401 }
-        );
-      }
+    const token = authHeader.substring(7);
+    const user = await getUserFromToken(token);
 
-      // Проверка бана пользователя
-      if (user.member_banned) {
-        return NextResponse.json(
-          { message: "Ваш аккаунт заблокирован" },
-          { status: 403 }
-        );
-      }
-
-      // Определение роли пользователя
-      const isAdmin = user.member_group_id === 4;
-      const role = isAdmin ? "admin" : "user";
-
+    if (!user) {
       return NextResponse.json(
-        { 
-          message: "Авторизован",
-          user: {
-            id: user.member_id,
-            username: user.name,
-            email: user.email,
-            displayName: user.members_display_name,
-            joined: user.joined,
-            lastVisit: user.last_visit,
-            posts: user.posts,
-            memberGroupId: user.member_group_id,
-            role: role,
-            isAdmin: isAdmin
-          }
-        },
-        { status: 200 }
-      );
-
-    } catch (jwtError) {
-      return NextResponse.json(
-        { message: "Недействительный токен" },
+        { success: false, error: 'Недействительный токен' },
         { status: 401 }
       );
     }
 
+    return NextResponse.json({
+      success: true,
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        display_name: user.members_display_name,
+        seo_name: user.members_seo_name,
+        member_group_id: user.member_group_id,
+        posts: user.posts,
+        joined: user.joined,
+        last_activity: user.last_activity,
+        last_visit: user.last_visit
+      }
+    });
   } catch (error) {
-    console.error("Ошибка проверки аутентификации:", error);
+    console.error('Me API error:', error);
     return NextResponse.json(
-      { message: "Внутренняя ошибка сервера" },
+      { success: false, error: 'Внутренняя ошибка сервера' },
       { status: 500 }
     );
   }

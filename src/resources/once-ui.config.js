@@ -9,6 +9,10 @@ const routes = {
   "/work": true,
   "/blog": true,
   "/gallery": true,
+  "/forum": true,
+  "/forum/new-topic": true,
+  "/forum/category/[id]": true,
+  "/forum/topic/[id]": true,
   "/admin": true,
   "/admin/content": true,
   "/admin/seo": true,
@@ -16,6 +20,7 @@ const routes = {
   "/auth/login": true,
   "/auth/register": true,
   "/auth/reset-password": true,
+  "/auth/activate": true,
   "/terms": true,
   "/profile": true,
 };

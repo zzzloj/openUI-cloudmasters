@@ -1,0 +1,19 @@
+// Адаптивные классы для скрытия/показа элементов
+.s-flex-hide {
+  display: flex;
+}
+
+.s-flex-show {
+  display: none;
+}
+
+// На мобильных устройствах (маленькие экраны)
+@media (max-width: 768px) {
+  .s-flex-hide {
+    display: none;
+  }
+  
+  .s-flex-show {
+    display: flex;
+  }
+} 
