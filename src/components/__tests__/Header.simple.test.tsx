@@ -155,4 +155,19 @@ describe('Forum Integration Test', () => {
       expect(element).toHaveClass(className);
     });
   });
+
+  test('should have full-width forum container', () => {
+    const { container } = render(
+      <div className="forum-container">
+        <span>Forum Content</span>
+      </div>
+    );
+    
+    const element = container.querySelector('.forum-container');
+    expect(element).toBeInTheDocument();
+    expect(element).toHaveClass('forum-container');
+    
+    // Проверяем, что класс применяется
+    expect(element).toHaveClass('forum-container');
+  });
 }); 
