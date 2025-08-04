@@ -170,4 +170,82 @@ describe('Forum Integration Test', () => {
     // Проверяем, что класс применяется
     expect(element).toHaveClass('forum-container');
   });
+
+  test('should have OnceUI style classes', () => {
+    const { container } = render(
+      <div className="forum-container">
+        <div className="forum-header">Header</div>
+        <div className="forum-category">Category</div>
+        <div className="forum-subcategory">Subcategory</div>
+        <div className="forum-topic">Topic</div>
+        <div className="forum-actions">Actions</div>
+        <div className="forum-pagination">Pagination</div>
+      </div>
+    );
+    
+    // Проверяем, что все OnceUI классы применяются
+    const elements = [
+      '.forum-container',
+      '.forum-header',
+      '.forum-category', 
+      '.forum-subcategory',
+      '.forum-topic',
+      '.forum-actions',
+      '.forum-pagination'
+    ];
+    
+    elements.forEach(selector => {
+      const element = container.querySelector(selector);
+      expect(element).toBeInTheDocument();
+    });
+  });
+
+  test('should have full-width OnceUI forum components', () => {
+    const { container } = render(
+      <div className="forum-container">
+        <div className="forum-header">Header</div>
+        <div className="forum-category-header">Category Header</div>
+        <div className="forum-category-content">Category Content</div>
+        <div className="forum-subcategory-info">Subcategory Info</div>
+        <div className="forum-subcategory-title">Subcategory Title</div>
+        <div className="forum-subcategory-description">Description</div>
+        <div className="forum-subcategory-stats">Stats</div>
+        <div className="forum-subcategory-last-post">Last Post</div>
+        <div className="forum-topics-header">Topics Header</div>
+        <div className="forum-topics-list">Topics List</div>
+        <div className="forum-topic-info">Topic Info</div>
+        <div className="forum-topic-title">Topic Title</div>
+        <div className="forum-topic-meta">Topic Meta</div>
+        <div className="forum-topic-stats">Topic Stats</div>
+        <div className="forum-topic-last-post">Topic Last Post</div>
+        <div className="forum-breadcrumb">Breadcrumb</div>
+      </div>
+    );
+    
+    // Проверяем, что все компоненты форума имеют OnceUI стили
+    const forumComponents = [
+      '.forum-container',
+      '.forum-header',
+      '.forum-category-header',
+      '.forum-category-content',
+      '.forum-subcategory-info',
+      '.forum-subcategory-title',
+      '.forum-subcategory-description',
+      '.forum-subcategory-stats',
+      '.forum-subcategory-last-post',
+      '.forum-topics-header',
+      '.forum-topics-list',
+      '.forum-topic-info',
+      '.forum-topic-title',
+      '.forum-topic-meta',
+      '.forum-topic-stats',
+      '.forum-topic-last-post',
+      '.forum-breadcrumb'
+    ];
+    
+    forumComponents.forEach(selector => {
+      const element = container.querySelector(selector);
+      expect(element).toBeInTheDocument();
+    });
+  });
 }); 

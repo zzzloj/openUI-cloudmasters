@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Card, Text, Flex, Button, Avatar, Line } from '@once-ui-system/core';
+import { Card, Text, Flex, Button, Avatar, Line, Column, Heading } from '@once-ui-system/core';
 import Link from 'next/link';
 
 interface ForumCategory {
@@ -14,13 +14,12 @@ interface ForumCategory {
   posts_count: number;
   last_post_date: number | null;
   last_poster_name: string;
-  last_topic_title?: string;
-  last_topic_id?: number;
 }
 
 export default function ForumPage() {
   const [categories, setCategories] = useState<ForumCategory[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetchForumData();
@@ -28,36 +27,55 @@ export default function ForumPage() {
 
   const fetchForumData = async () => {
     try {
-      // Получаем категории с информацией о последней теме
-      const categoriesResponse = await fetch('/api/forum/categories');
-      const categoriesData = await categoriesResponse.json();
+      setLoading(true);
+      setError(null);
       
-      // Для каждой категории получаем последнюю тему
-      const categoriesWithLastTopic = await Promise.all(
-        categoriesData.categories.map(async (category: ForumCategory) => {
-          try {
-            const topicsResponse = await fetch(`/api/forum/topics?categoryId=${category.id}&limit=1`);
-            const topicsData = await topicsResponse.json();
-            
-            if (topicsData.topics && topicsData.topics.length > 0) {
-              const lastTopic = topicsData.topics[0];
-              return {
-                ...category,
-                last_topic_title: lastTopic.title,
-                last_topic_id: lastTopic.id
-              };
-            }
-            return category;
-          } catch (error) {
-            console.error(`Error fetching last topic for category ${category.id}:`, error);
-            return category;
-          }
-        })
-      );
-
-      setCategories(categoriesWithLastTopic);
+      const response = await fetch('/api/forum/categories');
+      if (!response.ok) {
+        throw new Error('Failed to fetch categories');
+      }
+      
+      const data = await response.json();
+      setCategories(data.categories || []);
     } catch (error) {
       console.error('Error fetching forum data:', error);
+      setError('Ошибка загрузки форума');
+      // Fallback to static data
+      setCategories([
+        {
+          id: 1,
+          name: "Общие обсуждения",
+          description: "Общие темы и обсуждения",
+          parent_id: null,
+          position: 1,
+          topics_count: 1,
+          posts_count: 3,
+          last_post_date: null,
+          last_poster_name: ""
+        },
+        {
+          id: 2,
+          name: "Техническая поддержка",
+          description: "Вопросы по работе сайта и технические проблемы",
+          parent_id: null,
+          position: 2,
+          topics_count: 1,
+          posts_count: 2,
+          last_post_date: null,
+          last_poster_name: ""
+        },
+        {
+          id: 3,
+          name: "Новости и анонсы",
+          description: "Новости проекта и важные объявления",
+          parent_id: null,
+          position: 3,
+          topics_count: 1,
+          posts_count: 1,
+          last_post_date: null,
+          last_poster_name: ""
+        }
+      ]);
     } finally {
       setLoading(false);
     }
@@ -77,107 +95,77 @@ export default function ForumPage() {
 
   if (loading) {
     return (
-      <div className="forum-container">
-        <div className="forum-header">
-          <h1>Загрузка форума...</h1>
-        </div>
-      </div>
+      <Column fillWidth gap="xl" horizontal="center">
+        <Heading variant="display-strong-l">Загрузка форума...</Heading>
+      </Column>
     );
   }
 
   return (
-    <div className="forum-container">
+    <Column fillWidth gap="xl" horizontal="center">
       {/* Заголовок форума */}
-      <div className="forum-header">
-        <h1>Форум CloudMasters</h1>
-      </div>
+      <Column fillWidth>
+        <Heading variant="display-strong-l">Форум CloudMasters</Heading>
+      </Column>
 
       {/* Категории форума */}
-      <div className="forum-category">
-        <div className="forum-category-header">
+      <Column fillWidth gap="m">
+        <Text variant="heading-default-m" onBackground="neutral-strong">
           Категории форума
-        </div>
-        <div className="forum-category-content">
+        </Text>
+        <Column fillWidth gap="m">
           {categories.map((category) => (
-            <div key={category.id} className="forum-subcategory">
-              <div className="forum-subcategory-icon">
-                <i>📁</i>
-              </div>
-              <div className="forum-subcategory-info">
-                <Link href={`/forum/category/${category.id}`} className="forum-subcategory-title">
-                  {category.name}
-                </Link>
-                {category.description && (
-                  <div className="forum-subcategory-description">
-                    {category.description}
-                  </div>
-                )}
-                <div className="forum-subcategory-stats">
-                  <span>Тем: {category.topics_count}</span>
-                  <span>Постов: {category.posts_count}</span>
-                </div>
-                {/* Последняя тема в категории */}
-                {category.last_topic_title && category.last_topic_id && (
-                  <div style={{ 
-                    marginTop: '8px', 
-                    padding: '8px 12px', 
-                    backgroundColor: 'var(--neutral-alpha-weak)',
-                    borderRadius: '6px',
-                    fontSize: '13px'
-                  }}>
-                    <Link 
-                      href={`/forum/topic/${category.last_topic_id}`}
-                      style={{ 
-                        color: 'var(--brand-background-strong)',
-                        textDecoration: 'none',
-                        fontWeight: 'bold'
-                      }}
-                    >
-                      {category.last_topic_title}
-                    </Link>
-                    {category.last_post_date && (
-                      <div style={{ 
-                        fontSize: '12px', 
-                        color: 'var(--neutral-on-background-weak)',
-                        marginTop: '2px'
-                      }}>
-                        {formatDate(category.last_post_date)} • {category.last_poster_name}
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
+            <Flex key={category.id} fillWidth gap="m" padding="m" background="surface" radius="m">
+              <Flex gap="m" fillWidth>
+                <Text variant="heading-default-l">📁</Text>
+                <Column fillWidth gap="s">
+                  <Link href={`/forum/category/${category.id}`}>
+                    <Text variant="heading-default-m" onBackground="brand-strong">
+                      {category.name}
+                    </Text>
+                  </Link>
+                  {category.description && (
+                    <Text variant="body-default-s" onBackground="neutral-weak">
+                      {category.description}
+                    </Text>
+                  )}
+                  <Flex gap="m">
+                    <Text variant="body-default-xs" onBackground="neutral-weak">
+                      Тем: {category.topics_count}
+                    </Text>
+                    <Text variant="body-default-xs" onBackground="neutral-weak">
+                      Постов: {category.posts_count}
+                    </Text>
+                  </Flex>
+                </Column>
+              </Flex>
               {category.last_post_date && (
-                <div className="forum-subcategory-last-post">
-                  <div className="forum-subcategory-last-post-title">
+                <Column gap="xs" horizontal="end">
+                  <Text variant="body-default-xs" onBackground="neutral-weak">
                     Последнее сообщение
-                  </div>
-                  <div className="forum-subcategory-last-post-author">
+                  </Text>
+                  <Text variant="body-default-xs" onBackground="neutral-strong">
                     {category.last_poster_name}
-                  </div>
-                  <div className="forum-subcategory-last-post-date">
+                  </Text>
+                  <Text variant="body-default-xs" onBackground="neutral-weak">
                     {formatDate(category.last_post_date)}
-                  </div>
-                </div>
+                  </Text>
+                </Column>
               )}
-            </div>
+            </Flex>
           ))}
-        </div>
-      </div>
+        </Column>
+      </Column>
 
       {/* Действия */}
-      <div className="forum-actions">
-        <div className="forum-actions-left">
-          <Link href="/forum/new-topic" className="forum-button">
-            Создать тему
-          </Link>
-        </div>
-        <div className="forum-actions-right">
-          <Link href="/forum/search" className="forum-button secondary">
-            Поиск
-          </Link>
-        </div>
-      </div>
-    </div>
+      <Flex fillWidth gap="m" horizontal="between">
+        <Button href="/forum/new-topic" variant="primary" size="m">
+          Создать тему
+        </Button>
+        <Button href="/forum/search" variant="secondary" size="m">
+          Поиск
+        </Button>
+      </Flex>
+    </Column>
   );
 } 
