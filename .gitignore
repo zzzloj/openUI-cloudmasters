@@ -34,3 +34,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.tssrc/lib/database.ts
+
+# logs
+logs/
+*.log
+server.log
+
+# database
+*.sql
+!create_member_groups.sql
