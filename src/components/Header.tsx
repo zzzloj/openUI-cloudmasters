@@ -288,7 +288,7 @@ export const Header = () => {
                       <Button 
                         variant="secondary" 
                         size="s"
-                        href="/profile"
+                        href={`/profile/${user.id}`}
                         prefixIcon="user"
                       >
                         Профиль
@@ -315,7 +315,7 @@ export const Header = () => {
                       <Button 
                         variant="secondary" 
                         size="s"
-                        href="/profile"
+                        href={`/profile/${user.id}`}
                         prefixIcon="user"
                       />
                       <Button 

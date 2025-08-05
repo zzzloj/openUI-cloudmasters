@@ -121,7 +121,7 @@ export default function CategoryPage() {
 
       {/* Темы в категории */}
       <div className="forum-topics-header">
-        Темы в категории "{category.name}"
+        Темы в категории &quot;{category.name}&quot;
       </div>
       <div className="forum-topics-list">
         {topics.length === 0 ? (

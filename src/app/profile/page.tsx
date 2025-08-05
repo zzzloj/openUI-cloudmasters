@@ -53,6 +53,10 @@ export default function ProfilePage() {
           displayName: data.user.displayName || "",
           email: data.user.email || ""
         });
+        
+        // Перенаправляем на новую страницу профиля
+        router.push(`/profile/${data.user.id}`);
+        return;
       } else {
         // Не авторизован, перенаправляем на страницу входа
         router.push("/auth/login");
@@ -107,7 +111,7 @@ export default function ProfilePage() {
         <Card padding="xl" radius="l" shadow="l">
           <Column gap="l" horizontal="center">
             <Icon name="spinner" size="l" />
-            <Text>Загрузка профиля...</Text>
+            <Text>Перенаправление на профиль...</Text>
           </Column>
         </Card>
       </Column>
