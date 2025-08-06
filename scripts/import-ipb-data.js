@@ -6,11 +6,16 @@ const path = require('path');
 
 // Конфигурация для подключения к IPB базе данных
 const ipbConfig = {
-  host: 'localhost',
-  user: 'root',
-  password: 'Admin2024@',
-  database: 'ipb_database', // Измените на имя вашей IPB базы
-  charset: 'utf8mb4'
+  host: '31.31.197.38',
+  user: 'u3189440_default',
+  password: 'Jy35v35T8IbVbqM3',
+  database: 'u3189440_tower',
+  port: 3306,
+  charset: 'utf8',
+  connectionLimit: 10,
+  acquireTimeout: 60000,
+  timeout: 60000,
+  reconnect: true
 };
 
 // Конфигурация для нашей базы данных
@@ -61,7 +66,7 @@ class IPBImporter {
       // Получаем группы из IPB
       const [ipbGroups] = await this.ipbConnection.execute(`
         SELECT id, name, description, permissions
-        FROM member_groups
+        FROM cldmember_groups
         ORDER BY id
       `);
 
@@ -105,7 +110,7 @@ class IPBImporter {
           member_id, name, members_display_name, members_l_username,
           email, member_group_id, joined, last_visit, posts,
           title, member_banned, ip_address
-        FROM members
+        FROM cldmembers
         ORDER BY member_id
       `);
 
@@ -154,7 +159,7 @@ class IPBImporter {
       // Получаем форумы из IPB
       const [ipbForums] = await this.ipbConnection.execute(`
         SELECT id, name, description, parent_id, position
-        FROM forums
+        FROM cldforums
         ORDER BY position, id
       `);
 
@@ -197,7 +202,7 @@ class IPBImporter {
         SELECT 
           tid, title, forum_id, starter_id, posts, views,
           pinned, state, start_date, last_post
-        FROM topics
+        FROM cldtopics
         ORDER BY tid
       `);
 
@@ -245,7 +250,7 @@ class IPBImporter {
       const [ipbPosts] = await this.ipbConnection.execute(`
         SELECT 
           pid, topic_id, author_id, post, post_date, ip_address
-        FROM posts
+        FROM cldposts
         ORDER BY pid
       `);
 

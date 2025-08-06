@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Card, Text, Flex, Button, Avatar, Line } from '@once-ui-system/core';
+import { Card, Text, Flex, Button, Avatar, Line, Column, Heading, Badge, Grid } from '@once-ui-system/core';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
@@ -82,127 +82,150 @@ export default function CategoryPage() {
 
   if (loading) {
     return (
-      <div className="forum-container">
-        <div className="forum-header">
-          <h1>Загрузка...</h1>
-        </div>
-      </div>
+      <Column maxWidth="xl" gap="xl" horizontal="center" paddingY="xl">
+        <Heading variant="display-strong-l">Загрузка...</Heading>
+      </Column>
     );
   }
 
   if (!category) {
     return (
-      <div className="forum-container">
-        <div className="forum-header">
-          <h1>Категория не найдена</h1>
-        </div>
-      </div>
+      <Column maxWidth="xl" gap="xl" horizontal="center" paddingY="xl">
+        <Heading variant="display-strong-l">Категория не найдена</Heading>
+      </Column>
     );
   }
 
   return (
-    <div className="forum-container">
+    <Column maxWidth="xl" gap="xl" horizontal="center" paddingY="xl">
       {/* Хлебные крошки */}
-      <div className="forum-breadcrumb">
-        <Link href="/forum">Форум</Link>
-        <span>→</span>
-        <span>{category.name}</span>
-      </div>
+      <Flex gap="s" vertical="center">
+        <Link href="/forum">
+          <Text variant="body-strong-s">Форум</Text>
+        </Link>
+        <Text variant="body-default-s">→</Text>
+        <Text variant="body-strong-s">{category.name}</Text>
+      </Flex>
 
       {/* Заголовок категории */}
-      <div className="forum-header">
-        <h1>{category.name}</h1>
-        {category.description && (
-          <p style={{ margin: '10px 0 0 0', fontSize: '14px', opacity: 0.8 }}>
-            {category.description}
-          </p>
-        )}
-      </div>
+      <Card padding="xl" radius="l" shadow="l">
+        <Column gap="m">
+          <Heading variant="display-strong-l">{category.name}</Heading>
+          {category.description && (
+            <Text variant="body-default-m" color="secondary">
+              {category.description}
+            </Text>
+          )}
+          <Flex gap="l" vertical="center">
+            <Badge>
+              Тем: {category.topics_count}
+            </Badge>
+            <Badge>
+              Сообщений: {category.posts_count}
+            </Badge>
+          </Flex>
+        </Column>
+      </Card>
 
       {/* Темы в категории */}
-      <div className="forum-topics-header">
-        Темы в категории &quot;{category.name}&quot;
-      </div>
-      <div className="forum-topics-list">
-        {topics.length === 0 ? (
-          <div style={{ padding: '20px', textAlign: 'center', color: '#7f8c8d' }}>
-            В этой категории пока нет тем
-          </div>
-        ) : (
-          topics.map((topic) => (
-            <div key={topic.id} className="forum-topic">
-              <div className={`forum-topic-icon ${topic.is_pinned ? 'pinned' : ''} ${topic.is_locked ? 'locked' : ''}`}>
-                <i>
-                  {topic.is_pinned ? '📌' : topic.is_locked ? '🔒' : '💬'}
-                </i>
-              </div>
-              <div className="forum-topic-info">
-                <Link href={`/forum/topic/${topic.id}`} className="forum-topic-title">
-                  {topic.title}
-                </Link>
-                <div className="forum-topic-meta">
-                  <span>Автор: {topic.author_name}</span>
-                  <span>{formatDate(topic.created_at)}</span>
-                </div>
-              </div>
-              <div className="forum-topic-stats">
-                <div className="forum-topic-stats-item">
-                  Ответов: {topic.posts_count}
-                </div>
-                <div className="forum-topic-stats-item">
-                  Просмотров: {topic.views_count}
-                </div>
-              </div>
-              {topic.last_post_date && (
-                <div className="forum-topic-last-post">
-                  <div className="forum-topic-last-post-title">
-                    Последнее сообщение
-                  </div>
-                  <div className="forum-topic-last-post-author">
-                    {topic.last_poster_name}
-                  </div>
-                  <div className="forum-topic-last-post-date">
-                    {formatDate(topic.last_post_date)}
-                  </div>
-                </div>
-              )}
-            </div>
-          ))
-        )}
-      </div>
+      <Card padding="xl" radius="l" shadow="l">
+        <Column gap="l">
+          <Heading variant="body-strong-xl">
+            Темы в категории &quot;{category.name}&quot;
+          </Heading>
+          
+          {topics.length === 0 ? (
+            <Text variant="body-default-m" color="secondary">
+              В этой категории пока нет тем
+            </Text>
+          ) : (
+            <Column gap="m">
+              {topics.map((topic) => (
+                <Card key={topic.id} padding="m" radius="m" shadow="s">
+                  <Grid columns={4} gap="m">
+                    <Flex gap="s" vertical="center">
+                      <Text variant="body-default-l">
+                        {topic.is_pinned ? '📌' : topic.is_locked ? '🔒' : '💬'}
+                      </Text>
+                    </Flex>
+                    
+                    <Column gap="xs" style={{ gridColumn: 'span 2' }}>
+                      <Link href={`/forum/topic/${topic.id}`}>
+                        <Text variant="body-strong-m" color="primary">
+                          {topic.title}
+                        </Text>
+                      </Link>
+                      <Flex gap="m" vertical="center">
+                        <Text variant="body-default-s" color="secondary">
+                          Автор: {topic.author_name}
+                        </Text>
+                        <Text variant="body-default-s" color="secondary">
+                          {formatDate(topic.created_at)}
+                        </Text>
+                      </Flex>
+                    </Column>
+                    
+                    <Column gap="xs">
+                      <Text variant="body-default-s" color="secondary">
+                        Ответов: {topic.posts_count}
+                      </Text>
+                      <Text variant="body-default-s" color="secondary">
+                        Просмотров: {topic.views_count}
+                      </Text>
+                    </Column>
+                  </Grid>
+                  
+                  {topic.last_post_date && (
+                    <>
+                      <Line marginTop="m" />
+                      <Flex gap="m" vertical="center">
+                        <Text variant="body-default-s" color="secondary">
+                          Последнее сообщение от {topic.last_poster_name}
+                        </Text>
+                        <Text variant="body-default-s" color="secondary">
+                          {formatDate(topic.last_post_date)}
+                        </Text>
+                      </Flex>
+                    </>
+                  )}
+                </Card>
+              ))}
+            </Column>
+          )}
+        </Column>
+      </Card>
 
       {/* Пагинация */}
       {totalPages > 1 && (
-        <div className="forum-pagination">
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
-            <Link
-              key={pageNum}
-              href="#"
-              className={pageNum === page ? 'active' : ''}
-              onClick={(e) => {
-                e.preventDefault();
-                setPage(pageNum);
-              }}
-            >
-              {pageNum}
-            </Link>
-          ))}
-        </div>
+        <Card padding="m" radius="m" shadow="s">
+          <Flex gap="s" vertical="center">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+              <Button
+                key={pageNum}
+                variant={pageNum === page ? "primary" : "secondary"}
+                size="s"
+                onClick={() => setPage(pageNum)}
+              >
+                {pageNum}
+              </Button>
+            ))}
+          </Flex>
+        </Card>
       )}
 
       {/* Действия */}
-      <div className="forum-actions">
-        <div className="forum-actions-left">
-          <Link href="/forum" className="forum-button secondary">
+      <Flex gap="l" vertical="center" fillWidth>
+        <Link href="/forum">
+          <Button variant="secondary" size="m">
             ← Назад к форуму
-          </Link>
-        </div>
-        <div className="forum-actions-right">
-          <Link href={`/forum/new-topic?category=${categoryId}`} className="forum-button">
+          </Button>
+        </Link>
+        <Link href={`/forum/new-topic?category=${categoryId}`}>
+          <Button variant="primary" size="m">
             Создать тему
-          </Link>
-        </div>
-      </div>
-    </div>
+          </Button>
+        </Link>
+      </Flex>
+    </Column>
   );
 } 

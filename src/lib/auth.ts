@@ -15,6 +15,8 @@ export interface User {
   last_activity: number;
   last_visit: number;
   ip_address: string;
+  members_pass_hash: string;
+  members_pass_salt: string;
 }
 
 export interface AuthResult {

@@ -1,5 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { query } from '@/lib/database';
+import mysql from 'mysql2/promise';
+
+const dbConfig = {
+  host: 'localhost',
+  user: 'root',
+  password: 'Admin2024@',
+  database: 'cloudmasters',
+  charset: 'utf8mb4'
+};
 
 export async function GET(
   request: NextRequest,
@@ -9,13 +17,17 @@ export async function GET(
     const { id } = await params;
     const categoryId = id;
 
-    const categories = await query(`
+    const connection = await mysql.createConnection(dbConfig);
+
+    const [categories] = await connection.query(`
       SELECT 
-        id, name, description, parent_id, position,
-        topics_count, posts_count, last_post_date, last_poster_name
-      FROM forum_categories 
+        id, name, description, position,
+        topics, posts, last_post, last_poster_name
+      FROM cldforums 
       WHERE id = ?
-    `, [categoryId]) as any[];
+    `, [categoryId]) as [any[], any];
+
+    await connection.end();
 
     if (categories.length === 0) {
       return NextResponse.json(
@@ -24,7 +36,22 @@ export async function GET(
       );
     }
 
-    return NextResponse.json({ category: categories[0] });
+    const category = categories[0];
+    
+    // Формируем ответ в нужном формате
+    const categoryData = {
+      id: category.id,
+      name: category.name,
+      description: category.description || '',
+      parent_id: null,
+      position: category.position || 0,
+      topics_count: category.topics || 0,
+      posts_count: category.posts || 0,
+      last_post_date: category.last_post,
+      last_poster_name: category.last_poster_name || ''
+    };
+
+    return NextResponse.json({ category: categoryData });
   } catch (error) {
     console.error('Error fetching forum category:', error);
     return NextResponse.json(

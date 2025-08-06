@@ -4,11 +4,12 @@ const mysql = require('mysql2/promise');
 
 // Конфигурация для подключения к IPB базе данных
 const ipbConfig = {
-  host: 'localhost',
-  user: 'root',
-  password: 'Admin2024@',
-  database: 'ipb_database', // Измените на имя вашей IPB базы
-  charset: 'utf8mb4'
+  host: '31.31.197.38',
+  user: 'u3189440_default',
+  password: 'Jy35v35T8IbVbqM3',
+  database: 'u3189440_tower',
+  port: 3306,
+  charset: 'utf8'
 };
 
 // Конфигурация для нашей базы данных
@@ -35,10 +36,10 @@ async function analyzeIPBStructure() {
       console.log(`  - ${tableName}`);
     });
     
-    // Анализируем ключевые таблицы
+    // Анализируем ключевые таблицы с префиксом cld
     const keyTables = [
-      'members', 'member_groups', 'forums', 'topics', 'posts',
-      'forum_perms', 'forum_tracker', 'profile_portal'
+      'cldmembers', 'cldmember_groups', 'cldforums', 'cldtopics', 'cldposts',
+      'cldforum_perms', 'cldforum_tracker', 'cldprofile_portal'
     ];
     
     console.log('\n🔍 Анализ структуры ключевых таблиц:');
@@ -73,7 +74,7 @@ async function analyzeIPBStructure() {
           COUNT(CASE WHEN member_group_id = 4 THEN 1 END) as admins,
           COUNT(CASE WHEN member_group_id = 3 THEN 1 END) as moderators,
           COUNT(CASE WHEN joined > 0 THEN 1 END) as active_users
-        FROM members
+        FROM cldmembers
       `);
       
       if (members.length > 0) {
@@ -84,7 +85,7 @@ async function analyzeIPBStructure() {
         console.log(`  Активных пользователей: ${stats.active_users}`);
       }
     } catch (error) {
-      console.log('  ❌ Не удалось проанализировать пользователей');
+      console.log('  ❌ Не удалось проанализировать пользователей:', error.message);
     }
     
     // Анализ форума
@@ -92,9 +93,9 @@ async function analyzeIPBStructure() {
     try {
       const [forumStats] = await ipbConnection.execute(`
         SELECT 
-          (SELECT COUNT(*) FROM topics) as total_topics,
-          (SELECT COUNT(*) FROM posts) as total_posts,
-          (SELECT COUNT(*) FROM forums) as total_forums
+          (SELECT COUNT(*) FROM cldtopics) as total_topics,
+          (SELECT COUNT(*) FROM cldposts) as total_posts,
+          (SELECT COUNT(*) FROM cldforums) as total_forums
       `);
       
       if (forumStats.length > 0) {
@@ -104,7 +105,7 @@ async function analyzeIPBStructure() {
         console.log(`  Всего форумов: ${stats.total_forums}`);
       }
     } catch (error) {
-      console.log('  ❌ Не удалось проанализировать форум');
+      console.log('  ❌ Не удалось проанализировать форум:', error.message);
     }
     
     await ipbConnection.end();
@@ -162,11 +163,11 @@ async function generateMappingReport() {
   console.log('\n📋 Отчет о маппинге полей:\n');
   
   const fieldMapping = {
-    'members': {
+    'cldmembers': {
       'member_id': 'id',
       'name': 'name',
-      'members_display_name': 'display_name',
-      'members_l_username': 'username',
+      'members_display_name': 'members_display_name',
+      'members_l_username': 'members_l_username',
       'email': 'email',
       'member_group_id': 'member_group_id',
       'joined': 'joined',
@@ -176,20 +177,20 @@ async function generateMappingReport() {
       'member_banned': 'member_banned',
       'ip_address': 'ip_address'
     },
-    'member_groups': {
+    'cldmember_groups': {
       'id': 'id',
       'name': 'name',
       'description': 'description',
       'permissions': 'permissions'
     },
-    'forums': {
+    'cldforums': {
       'id': 'id',
       'name': 'name',
       'description': 'description',
       'parent_id': 'parent_id',
       'position': 'position'
     },
-    'topics': {
+    'cldtopics': {
       'tid': 'id',
       'title': 'title',
       'forum_id': 'forum_id',
@@ -201,7 +202,7 @@ async function generateMappingReport() {
       'start_date': 'created_at',
       'last_post': 'last_post_date'
     },
-    'posts': {
+    'cldposts': {
       'pid': 'id',
       'topic_id': 'topic_id',
       'author_id': 'author_id',

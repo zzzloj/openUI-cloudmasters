@@ -97,13 +97,13 @@ export default function ActivatePage() {
                 status === "loading" ? "animate-spin" : ""
               }`}
             />
-            <Heading level={1} size="l" align="center">
+            <Heading size="l" align="center">
               Активация аккаунта
             </Heading>
           </div>
 
           <div className="text-center">
-            <Badge variant={getStatusColor()} size="l">
+            <Badge>
               {status === "loading" && "Активация..."}
               {status === "success" && "Успешно!"}
               {status === "error" && "Ошибка"}

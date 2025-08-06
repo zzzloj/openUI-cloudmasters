@@ -24,16 +24,11 @@ export function LoginForm() {
     setError('');
 
     try {
-      const result = await login({ email, password });
-      
-      if (result.success) {
-        // Перенаправление будет обработано в AuthContext
-        window.location.href = '/';
-      } else {
-        setError(result.error || 'Ошибка авторизации');
-      }
+      await login(email, password);
+      // Если login не выбросил ошибку, значит авторизация успешна
+      window.location.href = '/';
     } catch (error) {
-      setError('Произошла ошибка при авторизации');
+      setError(error instanceof Error ? error.message : 'Произошла ошибка при авторизации');
     } finally {
       setLoading(false);
     }
@@ -43,7 +38,7 @@ export function LoginForm() {
     return (
       <Card padding="xl" style={{ maxWidth: '400px', width: '100%' }}>
         <Flex direction="column" gap="l">
-          <Text variant="h2" align="center">
+          <Text variant="body-strong-xl" align="center">
             Загрузка...
           </Text>
         </Flex>
@@ -54,7 +49,7 @@ export function LoginForm() {
   return (
     <Card padding="xl" style={{ maxWidth: '400px', width: '100%' }}>
       <Flex direction="column" gap="l">
-        <Text variant="h2" align="center">
+        <Text variant="body-strong-xl" align="center">
           Вход в аккаунт
         </Text>
         
@@ -67,10 +62,11 @@ export function LoginForm() {
         <form onSubmit={handleSubmit}>
           <Flex direction="column" gap="m">
             <div>
-              <Text variant="label" marginBottom="xs">
+              <Text variant="body-strong-s" marginBottom="xs">
                 Email
               </Text>
               <Input
+                id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -81,10 +77,11 @@ export function LoginForm() {
             </div>
 
             <div>
-              <Text variant="label" marginBottom="xs">
+              <Text variant="body-strong-s" marginBottom="xs">
                 Пароль
               </Text>
               <PasswordInput
+                id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Введите ваш пароль"
@@ -104,7 +101,7 @@ export function LoginForm() {
         </form>
 
         <Flex direction="column" gap="s" align="center">
-          <Text variant="body" color="weak">
+          <Text variant="body-default-s" color="weak">
             Нет аккаунта?{' '}
             <Link href="/auth/register" style={{ color: 'var(--brand-background-strong)' }}>
               Зарегистрироваться

@@ -42,23 +42,13 @@ export function RegisterForm() {
     }
 
     try {
-      const result = await register({ 
-        name, 
-        email, 
-        password, 
-        display_name: displayName || name 
-      });
-      
-      if (result.success) {
-        setSuccess('Регистрация успешна! Вы будете перенаправлены на главную страницу.');
-        setTimeout(() => {
-          window.location.href = '/';
-        }, 2000);
-      } else {
-        setError(result.error || 'Ошибка регистрации');
-      }
+      await register(email, name, password);
+      setSuccess('Регистрация успешна! Вы будете перенаправлены на главную страницу.');
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 2000);
     } catch (error) {
-      setError('Произошла ошибка при регистрации');
+      setError(error instanceof Error ? error.message : 'Произошла ошибка при регистрации');
     } finally {
       setLoading(false);
     }
@@ -68,7 +58,7 @@ export function RegisterForm() {
     return (
       <Card padding="xl" style={{ maxWidth: '500px', width: '100%' }}>
         <Flex direction="column" gap="l">
-          <Text variant="h2" align="center">
+          <Text variant="body-strong-xl" align="center">
             Загрузка...
           </Text>
         </Flex>
@@ -79,7 +69,7 @@ export function RegisterForm() {
   return (
     <Card padding="xl" style={{ maxWidth: '500px', width: '100%' }}>
       <Flex direction="column" gap="l">
-        <Text variant="h2" align="center">
+        <Text variant="body-strong-xl" align="center">
           Регистрация
         </Text>
         
@@ -98,10 +88,11 @@ export function RegisterForm() {
         <form onSubmit={handleSubmit}>
           <Flex direction="column" gap="m">
             <div>
-              <Text variant="label" marginBottom="xs">
+              <Text variant="body-strong-s" marginBottom="xs">
                 Имя пользователя *
               </Text>
               <Input
+                id="username"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -112,10 +103,11 @@ export function RegisterForm() {
             </div>
 
             <div>
-              <Text variant="label" marginBottom="xs">
+              <Text variant="body-strong-s" marginBottom="xs">
                 Отображаемое имя
               </Text>
               <Input
+                id="displayName"
                 type="text"
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
@@ -125,10 +117,11 @@ export function RegisterForm() {
             </div>
 
             <div>
-              <Text variant="label" marginBottom="xs">
+              <Text variant="body-strong-s" marginBottom="xs">
                 Email *
               </Text>
               <Input
+                id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -139,23 +132,25 @@ export function RegisterForm() {
             </div>
 
             <div>
-              <Text variant="label" marginBottom="xs">
+              <Text variant="body-strong-s" marginBottom="xs">
                 Пароль *
               </Text>
               <PasswordInput
+                id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Введите пароль (минимум 6 символов)"
+                placeholder="Введите пароль"
                 required
                 disabled={loading}
               />
             </div>
 
             <div>
-              <Text variant="label" marginBottom="xs">
+              <Text variant="body-strong-s" marginBottom="xs">
                 Подтвердите пароль *
               </Text>
               <PasswordInput
+                id="confirmPassword"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="Повторите пароль"
@@ -175,10 +170,10 @@ export function RegisterForm() {
         </form>
 
         <Flex direction="column" gap="s" align="center">
-          <Text variant="body" color="weak">
+          <Text variant="body-default-s" color="weak">
             Уже есть аккаунт?{' '}
             <Link href="/auth/login" style={{ color: 'var(--brand-background-strong)' }}>
-              Войти
+              Войти в систему
             </Link>
           </Text>
         </Flex>

@@ -29,15 +29,22 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
       const checkRouteEnabled = () => {
         if (!pathname) return false;
 
+        // Проверяем точное совпадение
         if (pathname in routes) {
           return routes[pathname as keyof typeof routes];
         }
 
-        const dynamicRoutes = ["/blog", "/work"] as const;
+        // Проверяем динамические маршруты
+        const dynamicRoutes = ["/blog", "/work", "/forum"] as const;
         for (const route of dynamicRoutes) {
           if (pathname?.startsWith(route) && routes[route]) {
             return true;
           }
+        }
+
+        // Специальная обработка для форума
+        if (pathname?.startsWith('/forum/')) {
+          return true; // Разрешаем все маршруты форума
         }
 
         return false;

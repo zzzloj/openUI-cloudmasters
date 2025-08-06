@@ -23,6 +23,23 @@ const routes = {
   "/auth/activate": true,
   "/terms": true,
   "/profile": true,
+  "/profile/[id]": true,
+  // API роуты
+  "/api/profile/[id]": true,
+  "/api/forums": true,
+  "/api/forums/[id]/topics": true,
+  "/api/topics/[id]/posts": true,
+  "/api/avatar/[id]": true,
+  "/api/forum/categories": true,
+  "/api/forum/categories/[id]": true,
+  "/api/forum/topics": true,
+  "/api/forum/topics/[id]": true,
+  "/api/forum/posts": true,
+  "/api/forum/posts/[id]": true,
+  "/api/auth/login": true,
+  "/api/auth/register": true,
+  "/api/auth/reset-password": true,
+  "/api/auth/activate": true,
 };
 
 const display = {

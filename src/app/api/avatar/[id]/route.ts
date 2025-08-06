@@ -11,34 +11,45 @@ const dbConfig = {
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const connection = await mysql.createConnection(dbConfig);
     
-    // Получаем информацию о пользователе
+    // Получаем данные пользователя из IPB структуры
     const [members] = await connection.execute(`
       SELECT 
         member_id,
         name,
-        members_display_name
-      FROM members 
+        members_display_name,
+        avatar_type,
+        avatar_location,
+        avatar_size
+      FROM cldmembers
       WHERE member_id = ?
-    `, [params.id]) as [any[], mysql.FieldPacket[]];
+    `, [id]) as [any[], any];
 
     await connection.end();
 
-    if (!members || members.length === 0) {
+    if (members.length === 0) {
+      return NextResponse.json({ error: 'Пользователь не найден' }, { status: 404 });
+    }
+
+    const member = members[0];
+
+    // Проверяем, есть ли у пользователя кастомный аватар
+    if (member.avatar_type && member.avatar_location && member.avatar_type !== 'none') {
+      // Если есть кастомный аватар, возвращаем его
+      return NextResponse.redirect(`https://89.111.170.207/uploads/avatars/${member.avatar_location}`);
+    } else {
       // Возвращаем дефолтный аватар
       return NextResponse.redirect('https://89.111.170.207/images/default-avatar.svg');
     }
 
-    // Возвращаем дефолтный аватар для всех пользователей
-    return NextResponse.redirect('https://89.111.170.207/images/default-avatar.svg');
-
   } catch (error) {
-    console.error('Avatar API error:', error);
+    console.error('Ошибка получения аватара:', error);
     // В случае ошибки возвращаем дефолтный аватар
     return NextResponse.redirect('https://89.111.170.207/images/default-avatar.svg');
   }
-} 
+}

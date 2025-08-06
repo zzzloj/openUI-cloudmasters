@@ -1,6 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { query, generateSalt, hashPassword } from "@/lib/database";
 
+interface User {
+  member_id: number;
+  name: string;
+  email: string;
+  reset_code: string;
+  reset_expires: number;
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -23,19 +31,20 @@ export async function POST(request: NextRequest) {
     }
 
     // Проверяем код восстановления в базе данных
-    const [users] = await query(
+    const result = await query(
       "SELECT member_id, name, email, reset_code, reset_expires FROM members WHERE email = ? AND reset_code = ?",
       [email, code]
-    );
+    ) as User[];
 
-    if (!users || users.length === 0) {
+    // Проверяем, что результат является массивом
+    if (!Array.isArray(result) || result.length === 0) {
       return NextResponse.json(
         { message: "Неверный код восстановления" },
         { status: 400 }
       );
     }
 
-    const user = users[0];
+    const user = result[0];
     const currentTime = Math.floor(Date.now() / 1000);
 
     // Проверяем, не истек ли срок действия кода
