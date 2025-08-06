@@ -19,6 +19,7 @@ interface ForumTopic {
   created_at: number;
   last_post_date: number | null;
   last_poster_name: string;
+  last_poster_id: number;
   forum_name: string;
 }
 
@@ -157,7 +158,22 @@ export default function CategoryPage() {
                       </Link>
                       <Flex gap="m" vertical="center">
                         <Text variant="body-default-s" color="secondary">
-                          Автор: {topic.author_name}
+                          Автор: <Link 
+                            href={`/profile/${topic.author_id}`}
+                            style={{
+                              color: 'var(--brand-background-strong)',
+                              textDecoration: 'none',
+                              fontWeight: 'bold'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.textDecoration = 'underline';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.textDecoration = 'none';
+                            }}
+                          >
+                            {topic.author_name}
+                          </Link>
                         </Text>
                         <Text variant="body-default-s" color="secondary">
                           {formatDate(topic.created_at)}
@@ -180,7 +196,22 @@ export default function CategoryPage() {
                       <Line marginTop="m" />
                       <Flex gap="m" vertical="center">
                         <Text variant="body-default-s" color="secondary">
-                          Последнее сообщение от {topic.last_poster_name}
+                          Последнее сообщение от <Link 
+                            href={`/profile/${topic.last_poster_id || topic.author_id}`}
+                            style={{
+                              color: 'var(--brand-background-strong)',
+                              textDecoration: 'none',
+                              fontWeight: 'bold'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.textDecoration = 'underline';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.textDecoration = 'none';
+                            }}
+                          >
+                            {topic.last_poster_name}
+                          </Link>
                         </Text>
                         <Text variant="body-default-s" color="secondary">
                           {formatDate(topic.last_post_date)}

@@ -36,7 +36,8 @@ export async function GET(request: NextRequest) {
         approved as is_approved,
         start_date as created_at,
         last_post,
-        last_poster_name
+        last_poster_name,
+        last_poster_id
       FROM cldtopics 
       WHERE approved = 1
     `;
@@ -90,6 +91,7 @@ export async function GET(request: NextRequest) {
       created_at: topic.created_at,
       last_post_date: topic.last_post,
       last_poster_name: topic.last_poster_name || '',
+      last_poster_id: topic.last_poster_id || topic.author_id,
       forum_name: '' // Можно добавить JOIN для получения имени форума
     }));
 

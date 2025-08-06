@@ -151,7 +151,22 @@ export default function TopicPage() {
       <div className="forum-header">
         <h1>{topic.title}</h1>
         <div style={{ marginTop: '10px', fontSize: '14px', opacity: 0.8 }}>
-          Автор: {topic.author_name} • {formatDate(topic.created_at)} • 
+          Автор: <Link 
+            href={`/profile/${topic.author_id}`}
+            style={{
+              color: 'var(--brand-background-strong)',
+              textDecoration: 'none',
+              fontWeight: 'bold'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.textDecoration = 'underline';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.textDecoration = 'none';
+            }}
+          >
+            {topic.author_name}
+          </Link> • {formatDate(topic.created_at)} • 
           Ответов: {topic.posts_count} • Просмотров: {topic.views_count}
         </div>
       </div>
@@ -173,7 +188,22 @@ export default function TopicPage() {
               </div>
               <div className="forum-topic-info">
                 <div className="forum-topic-title">
-                  {post.author_name}
+                  <Link 
+                    href={`/profile/${post.author_id}`}
+                    style={{
+                      color: 'var(--brand-background-strong)',
+                      textDecoration: 'none',
+                      fontWeight: 'bold'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.textDecoration = 'underline';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.textDecoration = 'none';
+                    }}
+                  >
+                    {post.author_name}
+                  </Link>
                   {post.is_first_post && (
                     <span style={{ 
                       marginLeft: '8px', 
