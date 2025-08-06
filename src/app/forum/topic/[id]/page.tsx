@@ -59,7 +59,7 @@ export default function TopicPage() {
       const topicData = await topicResponse.json();
       
       // Получаем посты в теме
-      const postsResponse = await fetch(`/api/forum/posts?topicId=${topicId}&page=${page}&limit=20`);
+      const postsResponse = await fetch(`/api/forum/posts?topic_id=${topicId}&page=${page}&limit=20`);
       const postsData = await postsResponse.json();
 
       setTopic(topicData.topic);
@@ -189,13 +189,14 @@ export default function TopicPage() {
                   <span>{formatDate(post.created_at)}</span>
                   <span>#{index + 1}</span>
                 </div>
-                <div style={{ 
-                  marginTop: '10px', 
-                  lineHeight: '1.6',
-                  color: 'var(--neutral-on-background-strong)'
-                }}>
-                  {post.content}
-                </div>
+                <div 
+                  style={{ 
+                    marginTop: '10px', 
+                    lineHeight: '1.6',
+                    color: 'var(--neutral-on-background-strong)'
+                  }}
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
               </div>
             </div>
           ))
