@@ -20,96 +20,17 @@ interface ProfileData {
   id: number;
   name: string;
   display_name: string;
-  seo_name: string;
   email: string;
-  member_group_id: number;
-  member_group: any;
-  joined: number;
-  last_visit: number;
-  last_activity: number;
+  joined: string;
+  last_visit: string | null;
+  group_id: number;
+  is_banned: boolean;
   posts: number;
   title: string;
-  warn_level: number;
-  member_banned: boolean;
-  has_blog: boolean;
-  has_gallery: boolean;
-  profile_views: number;
-  day_posts: string;
-  bitoptions: number;
-  uploader: string;
-  time_offset: string;
-  language: number;
-  skin: number;
-  dst_in_use: boolean;
-  coppa_user: boolean;
-  view_sigs: boolean;
-  view_img: boolean;
-  auto_track: string;
-  temp_ban: string;
-  login_anonymous: string;
-  ignored_users: string;
-  mgroup_others: string;
-  org_perm_id: string;
-  member_login_key: string;
-  member_login_key_expire: number;
-  blogs_recache: boolean;
-  members_auto_dst: boolean;
-  members_created_remote: boolean;
-  members_cache: string;
-  members_disable_pm: number;
-  members_l_display_name: string;
-  members_l_username: string;
-  failed_logins: string;
-  failed_login_count: number;
+  last_activity: string | null;
+  ip_address: string;
   members_pass_hash: string;
   members_pass_salt: string;
-  fb_uid: number;
-  fb_emailhash: string;
-  fb_lastsync: number;
-  vk_uid: number;
-  vk_token: string;
-  live_id: string;
-  twitter_id: string;
-  twitter_token: string;
-  twitter_secret: string;
-  notification_cnt: number;
-  tc_lastsync: number;
-  fb_session: string;
-  fb_token: string;
-  ips_mobile_token: string;
-  unacknowledged_warnings: boolean;
-  ipsconnect_id: number;
-  ipsconnect_revalidate_url: string;
-  gallery_perms: string;
-  activation_code: string;
-  activation_expires: number;
-  is_activated: boolean;
-  reset_code: string;
-  reset_expires: number;
-  birthday: {
-    day: number;
-    month: number;
-    year: number;
-  };
-  messages: {
-    new: number;
-    total: number;
-    reset: number;
-    show_notification: number;
-  };
-  misc: string;
-  allow_admin_mails: boolean;
-  restrict_post: string;
-  mod_posts: string;
-  warn_lastwarn: number;
-  ip_address: string;
-  stats: {
-    total_posts: number;
-    total_topics: number;
-    last_post_date: number | null;
-  };
-  recent_posts: any[];
-  user_topics: any[];
 }
 
 export default function ProfilePage() {
@@ -126,12 +47,19 @@ export default function ProfilePage() {
   const fetchProfile = async () => {
     try {
       const response = await fetch(`/api/profile/${params.id}`);
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        setError(errorData.error || 'Ошибка загрузки профиля');
+        return;
+      }
+      
       const data = await response.json();
       
-      if (data.success) {
-        setProfile(data.profile);
+      if (data.error) {
+        setError(data.error);
       } else {
-        setError(data.error || 'Ошибка загрузки профиля');
+        setProfile(data);
       }
     } catch (error) {
       console.error('Error fetching profile:', error);
@@ -141,8 +69,8 @@ export default function ProfilePage() {
     }
   };
 
-  const formatDate = (timestamp: number) => {
-    return new Date(timestamp * 1000).toLocaleDateString('ru-RU', {
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('ru-RU', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -151,16 +79,17 @@ export default function ProfilePage() {
     });
   };
 
-  const formatRelativeDate = (timestamp: number) => {
-    const now = Math.floor(Date.now() / 1000);
-    const diff = now - timestamp;
+  const formatRelativeDate = (dateString: string) => {
+    const now = new Date();
+    const date = new Date(dateString);
+    const diff = Math.floor((now.getTime() - date.getTime()) / 1000);
     
     if (diff < 60) return 'только что';
     if (diff < 3600) return `${Math.floor(diff / 60)} мин. назад`;
     if (diff < 86400) return `${Math.floor(diff / 3600)} ч. назад`;
     if (diff < 2592000) return `${Math.floor(diff / 86400)} дн. назад`;
     
-    return formatDate(timestamp);
+    return formatDate(dateString);
   };
 
   const getMemberGroupColor = (groupId: number) => {
@@ -212,53 +141,38 @@ export default function ProfilePage() {
     <Column maxWidth="xl" gap="xl" horizontal="center" paddingY="xl">
       <Schema
         as="webPage"
-        baseURL="https://cloudmasters.ru"
-        title={`Профиль ${profile.display_name || profile.name} - CloudMasters`}
-        description={`Профиль пользователя ${profile.display_name || profile.name}`}
+        baseURL="https://demo.magic-portfolio.com"
+        title={`${profile.display_name} - Профиль пользователя`}
+        description={`Профиль пользователя ${profile.display_name} на форуме CloudMasters`}
         path={`/profile/${profile.id}`}
       />
-      
+
       {/* Profile Header */}
       <Card padding="xl" radius="l" shadow="l">
-        <Flex gap="l" vertical="center">
-          <Avatar 
-            size="xl" 
-            src={`/api/avatar/${profile.id}`}
-          />
-          <Column gap="s" fillWidth>
-            <Flex gap="m" vertical="center">
-              <Heading variant="display-strong-l">
-                {profile.display_name || profile.name}
-              </Heading>
-              <Badge background={getMemberGroupColor(profile.member_group_id)}>
-                {getMemberGroupName(profile.member_group_id)}
-              </Badge>
-              {profile.member_banned && (
-                <Badge background="danger-medium">Заблокирован</Badge>
-              )}
-            </Flex>
-            {profile.title && (
+        <Column gap="l">
+          <Flex horizontal="between" vertical="center">
+            <Column gap="s">
+              <Heading variant="display-strong-l">{profile.display_name}</Heading>
               <Text variant="body-default-s" onBackground="neutral-weak">
                 {profile.title}
               </Text>
-            )}
-            <Text variant="body-default-s" onBackground="neutral-weak">
-              На сайте с {formatDate(profile.joined)}
-            </Text>
-          </Column>
-          <Flex gap="m" vertical="center">
-            <Button variant="secondary" prefixIcon="message">
-              Написать сообщение
-            </Button>
-            <Button variant="secondary" prefixIcon="user">
-              Подписаться
-            </Button>
+            </Column>
+            <Avatar size="xl" src={`/api/avatar/${profile.id}`} />
           </Flex>
-        </Flex>
+          
+          <Flex gap="m" vertical="center">
+            <Badge background={getMemberGroupColor(profile.group_id)}>
+              {getMemberGroupName(profile.group_id)}
+            </Badge>
+            {profile.is_banned && (
+              <Badge background="danger-medium">Заблокирован</Badge>
+            )}
+          </Flex>
+        </Column>
       </Card>
 
       {/* Profile Stats */}
-      <Grid columns={4} gap="m">
+      <Grid columns={3} gap="m">
         <Card padding="l" radius="m">
           <Column gap="s" horizontal="center">
             <Icon name="message" size="l" />
@@ -270,19 +184,12 @@ export default function ProfilePage() {
         </Card>
         <Card padding="l" radius="m">
           <Column gap="s" horizontal="center">
-            <Icon name="document" size="l" />
-            <Text variant="display-strong-xl">{profile.stats.total_topics}</Text>
-            <Text variant="body-default-s" onBackground="neutral-weak">
-              Тем
+            <Icon name="calendar" size="l" />
+            <Text variant="display-strong-s">
+              {formatDate(profile.joined)}
             </Text>
-          </Column>
-        </Card>
-        <Card padding="l" radius="m">
-          <Column gap="s" horizontal="center">
-            <Icon name="eye" size="l" />
-            <Text variant="display-strong-xl">{profile.profile_views}</Text>
             <Text variant="body-default-s" onBackground="neutral-weak">
-              Просмотров
+              Дата регистрации
             </Text>
           </Column>
         </Card>
@@ -299,161 +206,26 @@ export default function ProfilePage() {
         </Card>
       </Grid>
 
-      {/* Profile Content */}
+      {/* Profile Info */}
       <Card padding="xl" radius="l" shadow="l">
         <Column gap="l">
-          <Heading variant="display-strong-s">Последние сообщения</Heading>
-          {profile.recent_posts.length > 0 ? (
-            <Column gap="m">
-              {profile.recent_posts.map((post: any) => (
-                <Card key={post.id} padding="m" radius="m">
-                  <Column gap="s">
-                    <Flex horizontal="between" vertical="center">
-                      <Text variant="heading-strong-s">{post.topic_title}</Text>
-                      <Text variant="body-default-xs" onBackground="neutral-weak">
-                        {formatRelativeDate(post.created_at)}
-                      </Text>
-                    </Flex>
-                    <Text variant="body-default-s" onBackground="neutral-weak">
-                      {post.content.substring(0, 200)}...
-                    </Text>
-                    <Text variant="body-default-xs" onBackground="neutral-weak">
-                      в разделе {post.forum_name}
-                    </Text>
-                  </Column>
-                </Card>
-              ))}
-            </Column>
-          ) : (
-            <Text variant="body-default-s" onBackground="neutral-weak">
-              Пользователь пока не оставлял сообщений
-            </Text>
-          )}
-        </Column>
-      </Card>
-
-      {/* User Topics */}
-      <Card padding="xl" radius="l" shadow="l">
-        <Column gap="l">
-          <Heading variant="display-strong-s">Созданные темы</Heading>
-          {profile.user_topics.length > 0 ? (
-            <Column gap="m">
-              {profile.user_topics.map((topic: any) => (
-                <Card key={topic.id} padding="m" radius="m">
-                  <Column gap="s">
-                    <Flex horizontal="between" vertical="center">
-                      <Text variant="heading-strong-s">{topic.title}</Text>
-                      <Text variant="body-default-xs" onBackground="neutral-weak">
-                        {formatRelativeDate(topic.created_at)}
-                      </Text>
-                    </Flex>
-                    <Flex gap="m" vertical="center">
-                      <Text variant="body-default-xs" onBackground="neutral-weak">
-                        {topic.posts_count} сообщений
-                      </Text>
-                      <Text variant="body-default-xs" onBackground="neutral-weak">
-                        {topic.views_count} просмотров
-                      </Text>
-                      <Text variant="body-default-xs" onBackground="neutral-weak">
-                        в разделе {topic.forum_name}
-                      </Text>
-                    </Flex>
-                  </Column>
-                </Card>
-              ))}
-            </Column>
-          ) : (
-            <Text variant="body-default-s" onBackground="neutral-weak">
-              Пользователь пока не создавал тем
-            </Text>
-          )}
-        </Column>
-      </Card>
-
-      {/* Activity Info */}
-      <Card padding="xl" radius="l" shadow="l">
-        <Column gap="l">
-          <Heading variant="display-strong-s">Активность</Heading>
+          <Heading variant="display-strong-s">Информация о пользователе</Heading>
           <Column gap="m">
-            <Flex horizontal="between" vertical="center" paddingY="s">
-              <Flex gap="m" vertical="center">
-                <Icon name="login" size="s" />
-                <Text>Последний вход</Text>
-              </Flex>
-              <Text variant="body-default-s">
-                {profile.last_visit ? formatRelativeDate(profile.last_visit) : 'Неизвестно'}
-              </Text>
+            <Flex horizontal="between" vertical="center">
+              <Text variant="body-default-s" onBackground="neutral-weak">Email:</Text>
+              <Text variant="body-default-s">{profile.email}</Text>
             </Flex>
-            <hr style={{ border: 'none', borderTop: '1px solid var(--neutral-alpha-weak)', margin: '8px 0' }} />
-            <Flex horizontal="between" vertical="center" paddingY="s">
-              <Flex gap="m" vertical="center">
-                <Icon name="message" size="s" />
-                <Text>Последнее сообщение</Text>
-              </Flex>
-              <Text variant="body-default-s">
-                {profile.stats.last_post_date ? formatRelativeDate(profile.stats.last_post_date) : 'Нет сообщений'}
-              </Text>
+            <Flex horizontal="between" vertical="center">
+              <Text variant="body-default-s" onBackground="neutral-weak">IP адрес:</Text>
+              <Text variant="body-default-s">{profile.ip_address}</Text>
             </Flex>
-            <hr style={{ border: 'none', borderTop: '1px solid var(--neutral-alpha-weak)', margin: '8px 0' }} />
-            <Flex horizontal="between" vertical="center" paddingY="s">
-              <Flex gap="m" vertical="center">
-                <Icon name="eye" size="s" />
-                <Text>Просмотры профиля</Text>
-              </Flex>
-              <Text variant="body-default-s">{profile.profile_views}</Text>
+            <Flex horizontal="between" vertical="center">
+              <Text variant="body-default-s" onBackground="neutral-weak">Последний визит:</Text>
+              <Text variant="body-default-s">
+                {profile.last_visit ? formatDate(profile.last_visit) : 'Неизвестно'}
+              </Text>
             </Flex>
           </Column>
-        </Column>
-      </Card>
-
-      {/* Additional Info */}
-      <Card padding="xl" radius="l" shadow="l">
-        <Column gap="l">
-          <Heading variant="display-strong-s">Дополнительная информация</Heading>
-          <Grid columns={2} gap="l">
-            <Column gap="m">
-              <Text variant="body-default-s" onBackground="neutral-weak">
-                Email
-              </Text>
-              <Text variant="heading-strong-s">{profile.email}</Text>
-            </Column>
-            <Column gap="m">
-              <Text variant="body-default-s" onBackground="neutral-weak">
-                IP адрес
-              </Text>
-              <Text variant="heading-strong-s">{profile.ip_address}</Text>
-            </Column>
-            <Column gap="m">
-              <Text variant="body-default-s" onBackground="neutral-weak">
-                Часовой пояс
-              </Text>
-              <Text variant="heading-strong-s">{profile.time_offset || 'Не указан'}</Text>
-            </Column>
-            <Column gap="m">
-              <Text variant="body-default-s" onBackground="neutral-weak">
-                Язык
-              </Text>
-              <Text variant="heading-strong-s">{profile.language || 'Не указан'}</Text>
-            </Column>
-            {profile.birthday.day && (
-              <Column gap="m">
-                <Text variant="body-default-s" onBackground="neutral-weak">
-                  Дата рождения
-                </Text>
-                <Text variant="heading-strong-s">
-                  {profile.birthday.day}.{profile.birthday.month}.{profile.birthday.year}
-                </Text>
-              </Column>
-            )}
-            <Column gap="m">
-              <Text variant="body-default-s" onBackground="neutral-weak">
-                Статус аккаунта
-              </Text>
-              <Badge background={profile.is_activated ? 'success-medium' : 'warning-medium'}>
-                {profile.is_activated ? 'Активирован' : 'Не активирован'}
-              </Badge>
-            </Column>
-          </Grid>
         </Column>
       </Card>
     </Column>
