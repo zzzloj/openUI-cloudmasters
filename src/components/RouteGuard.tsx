@@ -47,6 +47,11 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
           return true; // Разрешаем все маршруты форума
         }
 
+        // Специальная обработка для профилей
+        if (pathname?.startsWith('/profile/')) {
+          return true; // Разрешаем все маршруты профилей
+        }
+
         return false;
       };
 
