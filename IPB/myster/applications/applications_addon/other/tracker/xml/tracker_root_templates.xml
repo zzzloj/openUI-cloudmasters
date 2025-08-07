@@ -1,0 +1,2381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="tracker" templategroups="a:11:{s:12:&quot;skin_tracker&quot;;s:5:&quot;exact&quot;;s:19:&quot;skin_tracker_global&quot;;s:5:&quot;exact&quot;;s:18:&quot;skin_tracker_issue&quot;;s:5:&quot;exact&quot;;s:17:&quot;skin_tracker_like&quot;;s:5:&quot;exact&quot;;s:17:&quot;skin_tracker_post&quot;;s:5:&quot;exact&quot;;s:21:&quot;skin_tracker_projects&quot;;s:5:&quot;exact&quot;;s:20:&quot;skin_tracker_profile&quot;;s:5:&quot;exact&quot;;s:19:&quot;skin_tracker_search&quot;;s:5:&quot;exact&quot;;s:16:&quot;skin_tracker_ucp&quot;;s:5:&quot;exact&quot;;s:17:&quot;skin_tracker_view&quot;;s:5:&quot;exact&quot;;s:21:&quot;skin_tracker_timeline&quot;;s:5:&quot;exact&quot;;}">
+  <templategroup group="skin_tracker_global">
+    <template>
+      <template_group>skin_tracker_global</template_group>
+      <template_content><![CDATA[<if test="$this->request['showproject']">
+	<li class='special'><label for='s_tracker_project' title='{$this->lang->words['context_search_project']}'><input type='radio' name='search_app' value="tracker:project:{$this->request['showproject']}" class='input_radio' id='s_tracker_project' checked='checked' /> <strong>{$this->lang->words['context_search_project']}</strong></label></li>
+<else />
+	<if test="$this->request['showissue']">
+		<li class='special'><label for='s_tracker_issue' title='{$this->lang->words['context_search_issue']}'><input type='radio' name='search_app' value="tracker:issue:{$this->request['showissue']}" class='input_radio' id='s_tracker_issue' checked='checked' /> <strong>{$this->lang->words['context_search_issue']}</strong></label></li>
+	<else />
+		<if test="ipsRegistry::$appSearch = TRUE"></if>
+	</if>
+</if>]]></template_content>
+      <template_name>contextSearch</template_name>
+      <template_data/>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_global</template_group>
+      <template_content><![CDATA[<select class='input_select' id='{$name}' name='{$name}'>
+{$data}
+</select>]]></template_content>
+      <template_name>dropdown_wrapper</template_name>
+      <template_data><![CDATA[$name="",$data=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_global</template_group>
+      <template_content><![CDATA[<!-- Tracker Javascript/CSS -->
+<script type='text/javascript' src='{$this->settings['board_url']}/public/js/ips.tracker.js'></script>
+
+<!-- Tracker RTL -->
+<php>$this->isRtlLang	= false;</php>
+<foreach loop="langData:$this->cache->getCache('lang_data') as $data">
+	<if test="checkrtl:|:intval($this->member->language_id) == intval($data['lang_id'])">
+		<if test="isrtl:|:$data['lang_isrtl']">
+			<if test="$this->isRtlLang = true"></if>
+		</if>
+	</if>
+</foreach>
+<if test="importrtlcss:|:$this->isRtlLang AND is_file( DOC_IPS_ROOT_PATH . '/' . PUBLIC_DIRECTORY . '/style_css/iptracker_rtl.css' )">
+	<link rel="stylesheet" type="text/css" media="screen" href="{$this->settings['public_dir']}style_css/iptracker_rtl.css" />
+</if>]]></template_content>
+      <template_name>includeCSS</template_name>
+      <template_data/>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_global</template_group>
+      <template_content><![CDATA[<a href="{$this->settings['base_url']}app=tracker&amp;showproject={$project['project_id']}">{$project['project_title']}</a>]]></template_content>
+      <template_name>projectLink</template_name>
+      <template_data>$project=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_global</template_group>
+      <template_content><![CDATA[<div class="formsubtitle">
+    <b><a href="{$this->settings['base_url']}autocom=tracker&amp;showissue={$issue['issue_id']}">{$issue['issue_title']}</a></b>
+</div>
+<div class="tablepad">
+    {$this->lang->words['bt_portal_last_issue_in']} <a href="{$this->settings['base_url']}autocom=tracker&amp;showproject={$issue['project_id']}">{$issue['project_title']}</a> {$this->lang->words['bt_portal_last_issue_at']} {$issue['date']}
+</div>]]></template_content>
+      <template_name>tmpl_issuerow</template_name>
+      <template_data><![CDATA[$issue=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_global</template_group>
+      <template_content><![CDATA[<br />
+<div class="borderwrap">
+    <div class="maintitle"><{CAT_IMG}>&nbsp;{$this->lang->words['bt_portal_latest_issues_title']}</div>
+    $issues
+</div>]]></template_content>
+      <template_name>tmpl_latestissues</template_name>
+      <template_data><![CDATA[$issues=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+  <templategroup group="skin_tracker_issue">
+    <template>
+      <template_group>skin_tracker_issue</template_group>
+      <template_content><![CDATA[<script type='text/javascript'>
+	ipb.tracker.project_id 	= {$issue['project_id']};
+	ipb.tracker.issue_id	= {$issue['issue_id']};
+	ipb.tracker.starter_id	= {$issue['starter_id']};
+	ipb.tracker.lang['bt_people']	= "{$this->lang->words['bt_people']}";
+	ipb.tracker.lang['bt_person']	= "{$this->lang->words['bt_person']}";
+	ipb.tracker.lang['bt_can']		= "{$this->lang->words['bt_can_reproduce']}";
+	ipb.tracker.lang['bt_cant']		= "{$this->lang->words['bt_cant_reproduce']}";
+</script>
+
+<div class='ipsBox ipsForm_vertical ipsLayout ipsLayout_withright tracker clearfix' id='issue_wrap'>
+	<div class='ipsLayout_right tracker' id='right_block'>
+		<div class='trackerSideFix'>		
+			<div class='ipsBox_container ipsSideBlock trackerSideBlock' id='issue_information'>
+				<h3><img src='{$this->settings['img_url']}/promote_article.png' alt='' />{$this->lang->words['bt_issue_information']}</h3>
+				<ul class='issueInfo'>
+					<li>
+						<label for='issue_id'>{$this->lang->words['bt_issue_id']}</label>
+						<p class='ipsField_content' id='issue_id'>#{$issue['issue_display_id']}</p>
+					</li>
+					<if test="$project['enable_suggestions']">
+						<li>
+							<label for='issue_type'>{$this->lang->words['bt_issue_type']}</label>
+							<p class='ipsField_content' id='issue_type'>{$this->lang->words['bt_type_'.$issue['type']]}</p>
+						</li>
+					</if>
+					<foreach loop="$issue['fields'] as $k => $v">
+						<if test="$v['data'] && $v['type']!='firstpost'">
+							<li class='editableField clearfix clear <if test="$v['dropdown']['type']=='text'">textbox</if>' id='field_{$v['keyword']}'>
+								<if test="isset($v['dropdown']) && $v['dropdown'] && !is_numeric($v['keyword'])">
+								<p class='ipsField_content dropdown' id='field_dropdown_{$v['keyword']}' style='display:none;'>
+									<if test="$v['dropdown']['type']=='text'">
+										<input type='text' name='{$v['dropdown']['key']}' id='{$v['dropdown']['key']}' value='{$v['dropdown']['data']}' class='input_text' />
+									<else />
+										{$v['dropdown']['data']}
+									</if>
+								</p>
+								</if>
+								<label for='field_{$v['keyword']}'>{$v['title']}</label>
+								<p class='ipsField_content' id='field_content_{$v['keyword']}'>{$v['data']}</p>
+							</li>
+						</if>
+					</foreach>
+					<if test="isset($this->registry->tracker->issues()->extra) && $this->registry->tracker->issues()->extra">
+					<li id='changedFields'>
+						<div style='text-align:center;'><a href='{parse url="showproject={$issue['project_id']}{$this->registry->tracker->issues()->extra}" base="publicWithApp"}' class='ipsButton_secondary'>{$this->lang->words['bt_issue_return']}</a></div>
+					</li>
+					</if>
+				</ul>
+			</div>
+			<if test="trackerReproGraph:|:$issue['type']=='issue' OR !$issue['type']">
+				<div class='ipsBox_container ipsSideBlock trackerSideBlock'>
+					<h3><img src='{$this->settings['img_url']}/tracker/chart_bar.png' alt='' />{$this->lang->words['bt_issue_confirms']}</h3>
+					<ul class='issueInfo'>
+						<li>
+							<div style='width:100%; display:inline-block; max-height: 10px; margin-bottom: 5px;'>
+								<span class='ipsBadge ipsBadge_green tracker' id='repro_bar_up' style='width:{$issue['repro_up_width']}%;' data-tooltip="{parse expression="sprintf( $this->lang->words['bt_can_reproduce'], $issue['repro_up'], $issue['repro_up'] == 1 ? $this->lang->words['bt_person'] : $this->lang->words['bt_people'] )"}">{$this->lang->words['bt_issue_yes']} ({$issue['repro_up']})</span><span class='ipsBadge ipsBadge_red tracker' id='repro_bar_down' style='width:{$issue['repro_down_width']}%;' data-tooltip="{parse expression="sprintf( $this->lang->words['bt_cant_reproduce'], $issue['repro_down'], $issue['repro_down'] == 1 ? $this->lang->words['bt_person'] : $this->lang->words['bt_people'] )"}">{$this->lang->words['bt_issue_no']} ({$issue['repro_down']})</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</if>
+			<if test="trackerIssueSideBarPrePrivacy:|:1==1"></if>
+			<if test="$this->registry->tracker->fields()->active('privacy', $issue['project_id']) && $this->registry->tracker->fields()->field('privacy')->checkPermission('show')">
+				<div class='ipsPad' style='text-align:center;'>
+					<if test="$issue['module_privacy']">
+						<if test="$this->registry->tracker->fields()->field('privacy')->checkPermission('update')">
+							<a href='{parse url="showissue={$issue['issue_id']}&do=public&secure_key={$this->member->form_hash}" base="publicWithApp"}' class='ipsButton important'>{$this->lang->words['bt_issue_priv_tog']}</a>
+						<else />
+							<span class='ipsButton important reset_cursor'>{$this->lang->words['bt_issue_priv']}</span>
+						</if>
+					<else />
+						<if test="$this->registry->tracker->fields()->field('privacy')->checkPermission('update')">
+							<a href='{parse url="showissue={$issue['issue_id']}&do=private&secure_key={$this->member->form_hash}" base="publicWithApp"}' class='ipsButton'>{$this->lang->words['bt_issue_not_priv_tog']}</a>
+						<else />
+							<span class='ipsButton reset_cursor'>{$this->lang->words['bt_issue_not_priv']}</span>
+						</if>
+					</if>
+				</div>
+			</if>
+			<if test="trackerIssueSideBarPostPrivacy:|:1==1"></if>
+		</div>
+	</div>
+	
+	<div class='ipsLayout_content'>
+		<div class='ipsBox_container clearfix clear' style='margin-bottom:15px;'>		
+			<!-- First Post -->
+			<div class='post left trackerFirstPost<if test="$issue['module_privacy'] && $this->registry->tracker->fields()->active('privacy', $issue['project_id'])"> moderated</if>' id='post_{$issue['firstpost']}'>
+				<div class='row2 ipsPad_half'>
+					<div class='right ipsPad_half'>
+						<!-- follow, reply, etc -->
+						{$issue['like']}
+						
+						<if test="$issue['state']=='closed'"><span class='ipsBadge ipsBadge_red'>{$this->lang->words['bt_issue_locked_tag']}</span>&nbsp;</if>
+						<if test="$issue['module_privacy'] && $this->registry->tracker->fields()->active('privacy', $issue['project_id'])"><span class='ipsBadge ipsBadge_red'>{$this->lang->words['bt_issue_priv_tag']}</span></if>
+						
+						<if test="$this->member->tracker['reply_perms']">
+							<a href="{parse url="module=post&amp;section=post&amp;do=postreply&amp;pid={$project['project_id']}&amp;iid={$issue['issue_id']}" base="publicWithApp"}" title="{$this->lang->words['tt_reply_to_post']}" class='ipsButton_secondary smallMargin_right'>{$this->lang->words['bt_issue_reply_short']}</a>
+						</if>
+						
+						<!-- SUGGESTIONS -->
+						<if test="$issue['type'] == 'suggestion' && $project['enable_suggestions']">
+							<br class='clear' /><br />
+							<div class='right'>
+								<a href="{parse url="module=projects&amp;section=issues&amp;iid={$issue['issue_id']}&amp;do=rate&amp;type=suggestion&amp;score=1" base="publicWithApp"}" class='thumbsUp clickable smallMargin_right' title='{$this->lang->words['bt_issue_like_do']}'>
+									<img src='{$this->settings['img_url']}/tracker/thumb_up.png' alt='' /> <strong>{$issue['sug_up']}</strong>
+								</a>
+								<a href="{parse url="module=projects&amp;section=issues&amp;iid={$issue['issue_id']}&amp;do=rate&amp;type=suggestion&amp;score=-1" base="publicWithApp"}" class='thumbsDown clickable' title="{$this->lang->words['bt_issue_like_dont']}">
+									<img src='{$this->settings['img_url']}/tracker/thumb_down.png' alt='' /> <strong>{$issue['sug_down']}</strong>
+								</a>
+							</div>
+						</if>
+						<!-- / SUGGESTIONS -->
+					</div>
+					
+					<a href='{parse url="showuser={$issue['starter_id']}" template="showuser" seotitle="{$issue['starter_name_seo']}" base="public"}' class='ipsUserPhotoLink left ipsPad_half'>
+						<img src='{$issue['firstPost']['poster']['pp_small_photo']}' alt='{$this->lang->words['photo']}' class='ipsUserPhoto ipsUserPhoto_medium' />
+					</a>
+							
+					<h1 class='ipsType_pagetitle'>{$issue['title']}</h1>
+					<div class='desc'>{$this->lang->words['posted_by']} <strong>{parse template="userHoverCard" group="skin_global" params="$issue['firstPost']['poster']"}</strong> {$this->lang->words['bt_issue_on']} <strong>{$issue['start_date']}</strong></div>
+					<br class='clear' />
+				</div>
+				
+				
+				<div class='post_block'>
+					<div id='post_{$issue['firstPost']['row']['pid']}' class='post_body'>
+						<div class='ipsTextBlock ipsPad'>
+							<div class='tracker_post post'>
+								<foreach loop="$issue['fields'] as $k => $v">
+									<if test="$v['type']=='firstpost' && $v['data']">
+										<strong>{$v['title']}:</strong> {$v['data']}<br /><br />
+									</if>
+								</foreach>
+								{$issue['firstPost']['row']['post']}
+							</div>
+							{$issue['firstPost']['row']['attachmentHtml']}
+							<br />
+							<if test="postEditBy:|:$issue['firstPost']['row']['edit_by']">
+								<p class='edit'>
+									{$issue['firstPost']['row']['edit_by']}
+									<if test="postEditByReason:|:$issue['firstPost']['row']['post_edit_reason'] != ''">
+										<br />
+										<span class='reason'>{$issue['firstPost']['row']['post_edit_reason']}</span>
+									</if>
+								</p>
+							</if>
+						</div>
+					</div>
+					<ul class='post_controls clearfix'>
+						<li class='top hide'><a href='#top' class='top' title='{$this->lang->words['back_top']}'>{$this->lang->words['back_top']}</a></li>
+						<if test="replyButton:|:$this->member->tracker['reply_perms']">
+							<if test="multiquote:|:!empty( $issue['firstPost']['row']['_mq_selected'] )">
+								<li class='selected multiquote' id='multiq_{$issue['firstPost']['row']['pid']}' style='display: none'>
+							<else />
+								<li class='multiquote' id='multiq_{$issue['firstPost']['row']['pid']}' style='display: none'>
+							</if>
+								<a href="{parse url="module=post&amp;section=post&amp;do=postreply&amp;pid={$issue['project_id']}&amp;iid={$issue['issue_id']}&amp;qpid={$issue['firstPost']['row']['pid']}" base="publicWithApp"}" title="{$this->lang->words['quote_with_mq']}">Multiquote</a>
+							</li>
+							<li><a href="{parse url="module=post&amp;section=post&amp;do=postreply&amp;pid={$issue['project_id']}&amp;iid={$issue['issue_id']}&amp;qpid={$issue['firstPost']['row']['pid']}" base="publicWithApp"}"  class='_ips_trigger_quote ipsButton_secondary' pid="{$issue['firstPost']['row']['pid']}" title="{$this->lang->words['tt_reply_to_post']}">{$this->lang->words['post_reply']}</a></li>
+							</if>
+							<if test="canEdit:|:$issue['firstPost']['row']['_can_edit'] === TRUE">
+								<li class='post_edit'><a href='{parse url="module=post&amp;section=post&amp;do=postedit&amp;pid={$issue['project_id']}&amp;iid={$issue['issue_id']}&amp;p={$issue['firstPost']['row']['pid']}&amp;st={$this->request['st']}" base="publicWithApp"}' title='{$this->lang->words['post_edit_title']}' class='edit_post' id='edit_post_{$issue['firstPost']['row']['pid']}'>{$this->lang->words['post_edit']}</a></li>
+							</if>
+							<if test="canDelete:|:$issue['firstPost']['row']['_can_delete'] === TRUE">
+								<li class='post_del' id='del_post_{$issue['firstPost']['row']['pid']}'>
+									<a href='{parse url="module=moderate&amp;section=mod&amp;do=dodelissue&amp;pid={$issue['project_id']}&amp;iid={$issue['issue_id']}&amp;pid={$issue['project_id']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['post_delete_title']}' class='delete_issue'>{$this->lang->words['post_delete']}</a>
+								</li>
+							</if>
+							<if test="canReportPost:|: $this->memberData['member_id']">
+							<li class='report'>
+									<a href='{parse url="app=core&amp;module=reports&amp;rcom=tracker&amp;tid={$issue['issue_id']}&amp;pid={$issue['firstPost']['row']['pid']}&amp;forum_id={$issue['project_id']}&amp;st={$this->request['st']}" base="public"}'>{$this->lang->words['report']}</a>
+							</li>
+							<if test="postIsReported:|:$this->memberData['_cache']['report_temp']['post_marker']['post'][ $issue['firstPost']['row']['pid'] ]['gfx'] > 0 && $this->memberData['_cache']['report_temp']['post_marker']['post'][ $issue['firstPost']['row']['pid'] ]['info']['com_id'] == $this->caches['report_plugins']['tracker']['com_id']">
+								<li class='report'>
+									<a href="{$this->settings['base_url']}app=core&amp;module=reports&amp;section=reports&amp;do=show_report&amp;rid={$this->memberData['_cache']['report_temp']['post_marker']['post'][$issue['firstPost']['row']['pid']]['info']['id']}" id='post-report-{$issue['firstPost']['row']['pid']}' class='ipbmenu'> <span id="rstat-{$this->memberData['_cache']['report_temp']['post_marker']['post'][ $issue['firstPost']['row']['pid'] ]['info']['id']}"><img src="{$this->settings['img_url']}/reports/post_alert_{$this->memberData['_cache']['report_temp']['post_marker']['post'][$issue['firstPost']['row']['pid']]['gfx']}.png" alt="" /></span> </a>
+								</li>
+							</if>
+						</if>
+					</ul>
+				</div>
+			</div>
+			<!-- / First Post -->
+		</div>
+		
+		<if test="trackerIssueHasReplies:|:count($replies)">
+			<if test="trackerHasPagination:|:$other['pagination']">
+				<div class='clearfix clear ipsBox_container left' style='padding-left: 4px; margin-bottom: 15px;'>{$other['pagination']}</div>
+			</if>
+			
+			<div class='ipsComment_wrap clear'>
+				<foreach loop="$replies as $k => $v">
+					<if test="trackerFeedStory:|:isset($v['field_update'])">
+						<if test="trackerFeedStorySameLine:|:$v['new_feed']">
+							<div class='trackerFeedStory'>
+								<div class='left feedImage'>
+									<a class='ipsUserPhotoLink' href='{parse url="showuser={$v['poster']['member_id']}" template="showuser" seotitle="{$v['poster']['members_seo_name']}" base="public"}'><img src='{$v['poster']['pp_small_photo']}' class='ipsUserPhoto ipsUserPhoto_tiny' /> {parse template="userHoverCard" group="global" params="$v['poster']"}</a>&nbsp;
+								</div>
+						</if>
+						
+						<div class='reset_cursor left'>{$v['entryLang']} <strong>{$v['value']}</strong><if test="trackerFeedStorySameLine:|:!$v['end_next_feed']">,&nbsp;</if></div>
+						
+						<if test="endFeedSameLine:|:$v['end_next_feed']">
+							<img data-tooltip="{parse date="$v['date']" format="short"}" src='{$this->settings['img_url']}/icon_follow_freq.png' alt='' class='trackerFeedImage clock' />
+								<if test="canDelete:|:$v['_can_delete'] === TRUE">
+									<a href='{parse url="module=moderate&amp;section=mod&amp;do=dodelfeed&amp;mid={$v['mid']}&amp;date={$v['date']}&amp;issue_id={$v['issue_id']}&amp;auth_key={$this->member->form_hash}&amp;pid={$issue['project_id']}&amp;st={$this->request['st']}" base="publicWithApp"}' title='{$this->lang->words['bt_issue_delete_entry']}' class='remove clickable ipsBadge ipsBadge_lightgrey'>x</a>
+								</if>
+							</div>
+							
+							<br class='clear' />
+						</if>
+					<else />
+						<if test="isRealPost:|:$v['row']['pid']">
+							<a id='entry{$v['row']['pid']}'></a>
+							<div class='ipsBox_container ipsComment clearfix clear'>
+								<div class='ipsComment_author'>
+									<a class='ipsUserPhotoLink' href='{parse url="showuser={$v['poster']['member_id']}" template="showuser" seotitle="{$v['poster']['members_seo_name']}" base="public"}'><img src='{$v['poster']['pp_small_photo']}' class='ipsUserPhoto ipsUserPhoto_medium' /></a><br />{parse template="userHoverCard" group="global" params="$v['poster']"}<br />
+									<if test="rankimage:|:$v['poster']['member_rank_img']">
+										<if test="rankimageimage:|:$v['poster']['member_rank_img_i'] == 'img'">
+											<img src='{$v['poster']['member_rank_img']}' alt='' /><br />
+										<else />
+											{$v['poster']['member_rank_img']}<br />
+										</if>
+									</if>
+									<a rel='bookmark' class='desc lighter ipsType_smaller linkToPost' href='{parse url="showissue={$issue['issue_id']}&amp;view=findpost&amp;p={$v['row']['pid']}" seotitle="{$issue['title_seo']}" base="publicWithApp"}' id='post_{$v['row']['pid']}_link' title='{$this->lang->words['bt_issue_tt_link']}'>{parse date="$v['row']['post_date']" format="short"}</a>
+								</div>
+								<div class='trackerPostBody post_block'>
+									<div id='post_{$v['row']['pid']}' class='post_body'>
+										<div class='ipsTextBlock ipsPad'>
+											<div class='tracker_post post'>
+												{$v['row']['post']}
+												{$v['row']['attachmentHtml']}
+												<br />
+												<if test="postEditBy:|:$v['row']['edit_by']">
+													<p class='edit'>
+														{$v['row']['edit_by']}
+														<if test="postEditByReason:|:$v['row']['post_edit_reason'] != ''">
+															<br />
+															<span class='reason'>{$this->lang->words['reason_for_edit']} {$v['row']['post_edit_reason']}</span>
+														</if>
+													</p>
+												</if>
+											</div>
+										</div>
+									</div>
+									<ul class='post_controls clearfix'>
+										<li class='top hide'><a href='#top' class='top' title='{$this->lang->words['back_top']}'>{$this->lang->words['back_top']}</a></li>
+										<if test="replyButton:|:$this->member->tracker['reply_perms']">
+											<if test="multiquote:|:!empty( $v['row']['_mq_selected'] )">
+												<li class='selected multiquote' id='multiq_{$v['row']['pid']}' style='display: none'>
+											<else />
+												<li class='multiquote' id='multiq_{$v['row']['pid']}' style='display: none'>
+											</if>
+												<a href="{parse url="module=post&amp;section=post&amp;do=postreply&amp;pid={$issue['project_id']}&amp;iid={$issue['issue_id']}&amp;qpid={$v['row']['pid']}" base="publicWithApp"}" title="{$this->lang->words['quote_with_mq']}">{$this->lang->words['bt_issue_mq']}</a>
+											</li>
+											<li><a href="{parse url="module=post&amp;section=post&amp;do=postreply&amp;pid={$issue['project_id']}&amp;iid={$issue['issue_id']}&amp;qpid={$v['row']['pid']}" base="publicWithApp"}"  class='_ips_trigger_quote ipsButton_secondary' pid="{$v['row']['pid']}" title="{$this->lang->words['tt_reply_to_post']}">{$this->lang->words['post_reply']}</a></li>
+											</if>
+											<if test="canEdit:|:$v['row']['_can_edit'] === TRUE">
+												<li class='post_edit'><a href='{parse url="module=post&amp;section=post&amp;do=postedit&amp;pid={$issue['project_id']}&amp;iid={$issue['issue_id']}&amp;p={$v['row']['pid']}&amp;st={$this->request['st']}" base="publicWithApp"}' title='{$this->lang->words['post_edit_title']}' class='edit_post' id='edit_post_{$v['row']['pid']}'>{$this->lang->words['post_edit']}</a></li>
+											</if>
+											<if test="canDelete:|:$v['row']['_can_delete'] === TRUE">
+												<li class='post_del' id='del_post_{$v['row']['pid']}'>
+													<a href='{parse url="module=moderate&amp;section=mod&amp;do=dodelpost&amp;p={$v['row']['pid']}&amp;iid={$issue['issue_id']}&amp;pid={$issue['project_id']}&amp;auth_key={$this->member->form_hash}&amp;st={$this->request['st']}" base="publicWithApp"}' title='{$this->lang->words['post_delete_title']}' class='delete_post'>{$this->lang->words['post_delete']}</a>
+												</li>
+											</if>
+											<if test="canReportPost:|: $this->memberData['member_id']">
+											<li class='report'>
+													<a href='{parse url="app=core&amp;module=reports&amp;rcom=tracker&amp;tid={$issue['issue_id']}&amp;pid={$v['row']['pid']}&amp;forum_id={$issue['project_id']}&amp;st={$this->request['st']}" base="public"}'>{$this->lang->words['report']}</a>
+											</li>
+											<if test="postIsReported:|:$this->memberData['_cache']['report_temp']['post_marker']['post'][ $v['row']['pid'] ]['gfx'] > 0 && $this->memberData['_cache']['report_temp']['post_marker']['post'][ $v['row']['pid'] ]['info']['com_id'] == $this->caches['report_plugins']['tracker']['com_id']">
+												<li class='report'>
+													<a href="{$this->settings['base_url']}app=core&amp;module=reports&amp;section=reports&amp;do=show_report&amp;rid={$this->memberData['_cache']['report_temp']['post_marker']['post'][$v['row']['pid']]['info']['id']}" id='post-report-{$v['row']['pid']}' class='ipbmenu'> <span id="rstat-{$this->memberData['_cache']['report_temp']['post_marker']['post'][ $v['row']['pid'] ]['info']['id']}"><img src="{$this->settings['img_url']}/reports/post_alert_{$this->memberData['_cache']['report_temp']['post_marker']['post'][$v['row']['pid']]['gfx']}.png" alt="" /></span> </a>
+												</li>
+											</if>
+										</if>
+									</ul>
+									<br class='clear' />
+								</div>
+							</div>
+						</if>
+					</if>
+				</foreach>
+			</div>
+		</if>
+		<if test="trackerHasPagination:|:$other['pagination']">
+			<div class='clearfix clear ipsBox_container left' style='padding-left: 4px; margin-bottom: 15px;'>{$other['pagination']}</div>
+			<br class='clear' />
+		</if>
+		<!-- Fast reply -->
+		<if test="fastReply:|:$other['fast_reply'] && ! $this->memberData['restrict_post']">
+		<hr />
+		<div id='fast_reply_wrapper' class='clear'>
+			<form action="{parse url="module=post&amp;section=post&amp;do=postreply&amp;whichaction=save" base="publicWithApp"}" method="post" id='ips_fastReplyForm'>
+			<a id="fastreply"></a>
+			<div class='ipsType_subtitle'>{$this->lang->words['bt_issue_reply_add_a']}</div>
+			<br />
+				<input type="hidden" name="auth_key" value="{$this->member->form_hash}" />
+				<input type="hidden" name="pid" value="{$issue['project_id']}" />
+				<input type="hidden" name="iid" value="{$issue['issue_id']}" />
+				<input type="hidden" name="st" value="{$this->request['st']}" />
+				<input type="hidden" name="bounce" value="{$this->registry->tracker->issues()->extra}" />
+				<input type="hidden" name="fast_reply_used" value="1" />
+				<if test="isMember:|:$this->memberData['member_id']">
+					<a href="{parse url="showuser={$this->memberData['member_id']}" seotitle="{$this->memberData['members_seo_name']}" template="showuser" base="public"}" title='{$this->lang->words['your_profile']}' class='ipsUserPhotoLink left'><img src='{$this->memberData['pp_small_photo']}' alt="{$this->memberData['members_display_name']}{$this->lang->words['users_photo']}" class='ipsUserPhoto ipsUserPhoto_medium' /></a>
+				<else />
+					<div class='left'>{IPSMember::buildNoPhoto(0, 'small' )}</div>
+				</if>
+				<div id='commentReply' class='ipsBox_withphoto clearfix'>
+					{parse editor="Post" options="array( 'type' => 'full', 'minimize' => 1, 'height' => 180 )"}
+					<br />
+					
+					<fieldset class='right'>
+						<input type="checkbox" name="return_to_listing" class="input_check" value="yes" id="return_to_listing" checked="checked" /> <label class='ipsType_small desc' style='margin-right: 15px;' for='return_to_listing'>{$this->lang->words['bt_issue_return_to_listing']}</label><input type='submit' name="submit" class='input_submit' value='{$this->lang->words['qr_post']}' tabindex='0' accesskey='s' id='submit_post' />&nbsp;&nbsp;<input type='submit' name="preview" class='input_submit alt' value='{$this->lang->words['qr_more_opts']}' tabindex='0' id='full_compose' />			
+					</fieldset>
+				</div>
+			</form>
+		</div>
+		<script type='text/javascript'>
+			ipb.tracker.fastReplyId	= '{$this->settings['_lastEditorId']}';
+		</script>
+		<else />
+			<if test="loadJsManually:|:$other['load_editor_js']">
+				{parse template="editorLoadJs" group="editors" params="$other['smilies']"}
+			</if>
+		</if>
+		<!-- / Fast reply -->
+	</div>
+</div>
+<hr />
+<!-- MOD LINKS -->
+<if test="modOptions:|:$other['mod_links'] && ($this->memberData['g_tracker_can_del_issues'] || ($issue['state']!='closed' &&  $this->memberData['g_tracker_can_lock']) || ($issue['state']=='closed' &&  $this->memberData['g_tracker_can_unlock']) || $this->memberData['g_tracker_can_move'])">
+<div class='ipsBox ipsPad clear clearfix' id='issue_mod'>
+	<div class='row2 ipsBox_container clearfix'>
+		<if test="showMoveOptions:|:$this->memberData['g_tracker_can_move']">
+			<div class='moderation_bar right' id='issue_mod_1'>
+				<form action="{$this->settings['base_url']}" method="post">
+					<input type="hidden" name="app" value="tracker" />
+					<input type="hidden" name="module" value="moderate" />
+					<input type="hidden" name="section" value="mod" />
+					<input type="hidden" name="auth_key" value="{$this->member->form_hash}" />
+					<input type="hidden" name="pid" value="{$project['project_id']}" />
+					<input type="hidden" name="do" value="domove" />
+					<input type="hidden" name="iid" value="{$issue['issue_id']}" />
+					{$this->lang->words['bt_issue_update_to']}
+					{$other['p_dd']}
+					<input type="submit" value="{$this->lang->words['bt_global_go']}" class="input_submit alt" />
+				</form>
+			</div>
+		</if>
+		<if test="showMoreOptions:|:$this->memberData['g_tracker_can_del_issues'] || ($issue['state']!='closed' &&  $this->memberData['g_tracker_can_lock']) || ($issue['state']=='closed' &&  $this->memberData['g_tracker_can_unlock'])">
+			<div class='moderation_bar left' id='issue_mod_2'>
+				<if test="showDeleteOptions:|:$this->memberData['g_tracker_can_del_issues']">
+					<a href='{$this->settings['base_url']}app=tracker&amp;module=moderate&amp;section=mod&amp;do=dodelissue&amp;pid={$project['project_id']}&amp;iid={$issue['issue_id']}&amp;auth_key={$this->member->form_hash}' class='delete_issue ipbmenu input_submit alt ipsPad_half left'>{$this->lang->words['bt_issue_delete']}</a>
+				</if>
+				<if test="showLockOptions:|:($issue['state']!='closed' &&  $this->memberData['g_tracker_can_lock']) || ($issue['state']=='closed' &&  $this->memberData['g_tracker_can_unlock'])">
+					<a href="{$this->settings['base_url']}app=tracker&amp;module=moderate&amp;section=mod&amp;do=do<if test="$issue['state']=='closed'">unlock<else />lock</if>&amp;pid={$project['project_id']}&amp;iid={$issue['issue_id']}&amp;auth_key={$this->member->form_hash}" class='ipbmenu input_submit alt ipsPad_half left' style='margin-left: 5px;'><if test="$issue['state']=='closed'">{$this->lang->words['bt_issue_unlock']}<else />{$this->lang->words['bt_issue_lock']}</if></a>
+				</if>
+			</div>
+		</if>
+	</div>
+</div>
+</if>
+
+<hr />
+
+<div class='topic_controls clear ipsPad_top_bottom_half'>
+	<div class='ipsPad_top_slimmer right'>
+		<a href='{parse url="showproject={$project['project_id']}" template="showproject" seotitle="{$project['title_seo']}" base="publicWithApp"}' class="ipsType_small desc">{parse expression="sprintf( $this->lang->words['bt_go_back_to'], $project['title'] )"}</a>
+		<if test="hasUnreadNext:|:$project['_hasUnreadIssues']">
+			&middot; <a href='{parse url="showissue={$issue['issue_id']}&amp;view=nextunread" template="showissue" seotitle="{$issue['title_seo']}" base="publicWithApp"}' class="ipsType_small desc">{$this->lang->words['bt_goto_next_unread_issue']}</a>
+		</if>
+	</div>
+	<if test="modOptionsLink:|:$other['mod_links'] && ($this->memberData['g_tracker_can_del_issues'] || ($issue['state']!='closed' &&  $this->memberData['g_tracker_can_lock']) || ($issue['state']=='closed' &&  $this->memberData['g_tracker_can_unlock']) || $this->memberData['g_tracker_can_move'])">
+		<div class='moderation_bar ipsType_small' style='text-align: center; width: 40%;margin:0 auto;'>
+			<a href='#' id='moderator_toggle'><img src='{$this->settings['img_url']}/moderation_cog.png' />&nbsp; {$this->lang->words['show_moderation_tools']}</a>
+		</div>
+	</if>
+	
+</div>
+
+<if test="canShare:|:$this->settings['sl_enable']">
+	<br />
+	<div class='clear clearfix left'>
+		{IPSLib::shareLinks( $issue['title'] )}
+	</div>
+	<br />
+</if>
+
+<!-- ACTIVE USERS -->
+<if test="trackerActiveUsers:|:$this->settings['show_active'] && $this->memberData['gbw_view_online_lists'] && is_array( $other['active_users'] ) && count( $other['active_users'] ) && !$this->settings['tracker_au_topic']">
+	<div id='topic_stats' class='statistics clear clearfix'>
+		<div id='topic_active_users' class='active_users'>
+			<h4 class='statistics_head'>{parse expression="sprintf( $this->lang->words['bt_active_users_title_topic'], $other['active_users']['TOTAL'] )"}</h4>
+			<p class='statistics_brief desc'>{parse expression="sprintf( $this->lang->words['active_users_detail'], $other['active_users']['MEMBERS'], $other['active_users']['GUESTS'], $other['active_users']['ANON'] )"}</p>
+			<if test="auNames:|:count( $other['active_users']['NAMES'] )">
+				<br />
+				<p>
+					<span class='name'>{parse expression="implode( ",</span> <span class='name'>", $other['active_users']['NAMES'] )"}</span>
+				</p>
+			</if>
+		</div>
+	</div>
+</if>
+
+<if test="scrollToPost:|:$this->request['gopid']">
+<script type='text/javascript'>
+	var gopid = "{$this->request['gopid']}".replace(/&amp;/g, '');
+	ipb.tracker.scrollToPost( parseInt( gopid ) );
+</script>
+</if>
+
+<if test="disablelightbox:|:!$this->settings['disable_lightbox']">
+	{parse template="include_lightbox" group="global" params=""}
+</if>
+{parse template="include_highlighter" group="global" params="1"}]]></template_content>
+      <template_name>issueTemplate</template_name>
+      <template_data>$issue=array(),$project=array(),$replies=array(),$other=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_issue</template_group>
+      <template_content><![CDATA[<br />
+<div class='moderation_bar tracker_mod rounded'>
+<table cellspacing="0" cellpadding='0'>
+<tr>
+ <td align='left' nowrap='nowrap'>
+{$lock} {$delete}
+ </td>
+ <td align='right'>
+{$manage}
+ </td>
+</tr>
+</table>
+</div>]]></template_content>
+      <template_name>mod_panel</template_name>
+      <template_data><![CDATA[$lock="",$delete="",$manage=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_issue</template_group>
+      <template_content><![CDATA[<!--Begin Msg Number {$post['pid']}-->
+<div class='post_block first entry<if test="$post['queued']==1"> moderated</if>' id='post_id_{$post['pid']}'>
+	<a id='entry{$post['pid']}'></a>
+	<if test="userIgnored:|:$post['_ignored'] == 1">
+		<div class='post_ignore'>
+			{$this->lang->words['bt_issue_ignored_user']} <a href='{parse url="showuser={$author['member_id']}" base="public"}'>{$author['members_display_name']}</a> {parse template="user_popup" group="global" params="$author['member_id'], $author['members_seo_name']"}. <a href='#' title='{$this->lang->words['bt_issue_ignore_view']}' id='unhide_post_{$post['pid']}'>{$this->lang->words['bt_issue_ignored_user_view']}</a>
+		</div>
+	</if>
+	<div class='post_wrap' <if test="isNotIgnoring:|:$post['_ignored'] == 1">style='display: none'</if>>
+		<h3 class='row2'>
+			<span class='post_id'><a href='{parse url="showissue={$post['issue_id']}&amp;view=findpost&amp;p={$post['pid']}" seotitle="{$post['title_seo']}" base="publicWithApp"}' id='post_{$post['pid']}_link' class='linkToPost' rel='bookmark' title='{$this->lang->words['bt_issue_tt_link']}'>#{$post['post_count']}</a></span>
+			<if test="$author['member_id']">
+				<if test="$author['_online']">
+					{parse replacement="user_online"}
+				<else />
+					{parse replacement="user_offline"}
+				</if> &nbsp;
+					<address class="author vcard"><a class="url fn" href='{parse url="showuser={$author['member_id']}" base="public" template="showuser" seotitle="{$author['members_seo_name']}"}'>{$author['members_display_name']}</a>{parse template="user_popup" group="global" params="$author['member_id'], $author['members_seo_name']"}</address>
+			<else />
+				{$author['members_display_name']}
+			</if>
+			<if test="$post['_show_ip']">
+				<span class='ip right ipsType_small'>({$this->lang->words['ip']}:
+				<if test="$author['g_access_cp']">
+					<em>{$this->lang->words['ip_private']}</em>
+				<else />
+					<a href="{parse url="app=core&amp;module=usercp&amp;tab=members&amp;area=modIpaddress&amp;do=custom&amp;ip={$post['ip_address']}" base="public"}" title='{$this->lang->words['bt_issue_ip']}'>{$post['ip_address']}</a>
+				</if>
+				)</span>
+			</if>
+		</h3>
+		<div class='author_info'>
+			{parse template="userInfoPane" group="global" params="$author, $post['pid'], array()"}
+		</div>
+		<div class='post_body'>
+			<p class='posted_info'>
+				<if test="$post['icon_id']">
+					<img src="{$this->settings['public_dir']}/style_extra/post_icons/icon{$post['icon_id']}.gif" alt="{$this->lang->words['bt_issue_icon']}" />&nbsp;
+				</if>
+				{$this->lang->words['bt_issue_posted']} <abbr class="published">{$post['post_date']}</abbr>
+			</p>
+			<div class='post entry-content'>
+				{$v['row']}
+				{$post['attachmentHtml']}
+				<br />
+				<if test="$post['edit_by']">
+					<p class='edit'>
+						{$post['edit_by']}
+						<if test="$post['post_edit_reason'] != ''">
+							<br />
+							<span class='reason'>{$this->lang->words['reason_for_edit']}: {$post['post_edit_reason']}</span>
+						</if>
+					</p>
+				</if>
+			</div>
+		</div>
+		<ul class='post_controls'>
+			<li class='report'>
+				<a href="{parse url="app=core&amp;module=reports&amp;rcom=tracker&amp;tid={$post['issue_id']}&amp;pid={$post['pid']}" base="public"}">{parse replacement="report_post_icon"} {$this->lang->words['bt_issue_report_post']}</a>
+			</li>
+			<if test="$this->member->tracker['reply_perms']">
+				<if test="isset( $post['_mq_selected'] ) && $post['_mq_selected']">
+					<li class='selected multiquote' id='multiq_{$post['pid']}' style='display: none'>
+				<else />
+					<li class='multiquote' id='multiq_{$post['pid']}' style='display: none'>
+				</if>
+					<a href="{parse url="module=post&amp;section=post&amp;do=postreply&amp;pid={$post['project_id']}&amp;iid={$post['issue_id']}&amp;qpid={$post['pid']}" base="public"}" title="{$this->lang->words['bt_issue_mq_title']}">{parse replacement="mq_post_icon"} {$this->lang->words['bt_issue_mq']}</a>
+				</li>
+				<li><a href="{parse url="module=post&amp;section=post&amp;do=postreply&amp;pid={$post['project_id']}&amp;iid={$post['issue_id']}&amp;qpid={$post['pid']}" base="publicWithApp"}" title="{$this->lang->words['tt_reply_to_post']}">{parse replacement="reply_post_icon"} {$this->lang->words['bt_issue_reply_short']}</a></li>
+			</if>
+			{$post['edit_button']}
+			{$post['delete_button']}
+			<if test="$this->member->tracker['moderator_can_manage']">
+				<li class='post_toggle' id='toggle_post_{$post['pid']}' style='display: none'>
+					<a href='{parse url="app=forums&amp;module=forums&amp;section=moderate&amp;do=postchoice&amp;tact=unapprove&amp;selectedpids[{$post['pid']}]=1" base="public"}' title='' class='toggle_post'>{parse replacement="edit_post_icon"} <span id='toggletext_post_{$post['pid']}'><if test="$post['queued']==1">{$this->lang->words['bt_issue_approve']}<else />{$this->lang->words['bt_issue_unapprove']}</if></span></a>
+				</li>
+			</if>
+		</ul>
+		<script type='text/javascript'>
+			if( $('toggle_post_{$post['pid']}') )
+			{
+				$('toggle_post_{$post['pid']}').show();
+			}
+		</script>
+		<if test="$post['_ignored'] == 1">
+			<script type='text/javascript'>
+				ipb.tracker.setPostHidden( {$post['pid']} );
+				$('unhide_post_{$post['pid']}').show();
+			</script>
+		</if>
+	</div>		
+</div>
+<hr />]]></template_content>
+      <template_name>RenderRow</template_name>
+      <template_data><![CDATA[$post="",$author=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+  <templategroup group="skin_tracker_like">
+    <template>
+      <template_group>skin_tracker_like</template_group>
+      <template_content><![CDATA[{parse striping="faverave" classes="row1,row2"}
+<h3>Liked By</h3>
+<div class='general_box likepop'>
+	<foreach loop="$data as $mid => $data">
+		<div class='{parse striping="faverave"}'>
+			<em class='desc'>Added: {parse date="$data['like_added']" format="short"}</em>
+			<img src='{$data['pp_thumb_photo']}' width='{$data['pp_thumb_width']}' height='{$data['pp_thumb_height']}' class='photo' />
+			<div>
+				<strong>{$data['members_display_name']}</strong>
+				<p class='desc'>
+					{parse expression="IPSLib::makeNameFormatted( $data['g_title'], $data['g_id'] )"}
+					<br />
+					Joined: {parse date="$data['joined']" format="joined"}
+				</p>
+			</div>
+		</div>
+	</foreach>
+</div>]]></template_content>
+      <template_name>likeMoreDialogue</template_name>
+      <template_data>$data, $relId</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_like</template_group>
+      <template_content><![CDATA[<h3>{$this->lang->words['fave_title']}</h3>
+<input type="hidden" name="anon" id="like_anon" class="input_check" value="1" />
+<div class='general_box'>
+	<fieldset>
+		<ul>
+			<li class='field checkbox'>
+				<input type="checkbox" name="notify" id="like_notify" class="input_check" value="1" />
+				<label for="like_notify">{parse expression="sprintf($this->lang->words['label_notify'], $data['notifyType'][1])"}</label>
+			</li>
+			<li class='field'>
+				<label for="like_freq">{$this->lang->words['label_freq']}
+					<select name="freq" id="like_freq" class="input_select">
+						<foreach loop="$data['frequencies'] as $freq">
+							<option value="$freq">{$this->lang->words[ 'freq_' . $freq ]}</option>
+						</foreach>
+					</select>
+				</label>		 				
+			</li>
+			<li class="submit" style="float:right">
+				<input type="submit" value="Set Favorite" class="input_submit _fsubmit" />
+			</li>
+	</fieldset>
+</div>]]></template_content>
+      <template_name>likeSetDialogue</template_name>
+      <template_data>$app, $area, $relid, $data</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_like</template_group>
+      <template_content><![CDATA[{parse js_module="like"}
+<div class='__like right' data-app="{$data['app']}" data-area="{$data['area']}" data-relid="{$relId}" data-isfave="{$data['iFave']}">
+	<span class='ipsButton_extra right _fmore clickable' data-tooltip=" member(s) track this issue"
+	<a href='#' title="<if test="$data['iFave']">{$this->lang->words['bt_unlike']}<else />{$this->lang->words['bt_like']}</if>" class='ipsButton_secondary clickable ftoggle <if test="$data['iFave']"> on</if><if test="$opts['button-new-line']"> _newline</if>'><if test="$data['iFave']">{$this->lang->words['bt_project_unwatch']}<else />{$this->lang->words['bt_project_watch']}</if></a>
+</div>
+<script type="text/javascript">
+	var FAVE_TEMPLATE = new Template( "<h3>{$this->lang->words['unset_fave_title']}</h3><div class='general_box'><span class='desc'>{$this->lang->words['unset_fave_words']}</span><br /><p style='text-align:right'><input type='button' value='{$this->lang->words['unset_button']}' class='input_submit _funset' /></p></div>");
+</script>]]></template_content>
+      <template_name>likeSummary</template_name>
+      <template_data>$data, $relId, $opts</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_like</template_group>
+      <template_content><![CDATA[<if test="IPS_IS_AJAX">
+<a href='#' title="<if test="$data['iFave']">{$this->lang->words['bt_unlike']}<else />{$this->lang->words['bt_like']}</if>" class='ftoggle <if test="$data['iFave']"> on</if><if test="$opts['button-new-line']"> _newline</if>'>{parse replacement="watch_forum_on"} <if test="$data['iFave']">{$this->lang->words['bt_project_unwatch']}<else />{$this->lang->words['bt_project_watch']}</if></a></if>
+</if>]]></template_content>
+      <template_name>likeSummaryContents</template_name>
+      <template_data>$data, $relId, $opts=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+  <templategroup group="skin_tracker_post">
+    <template>
+      <template_group>skin_tracker_post</template_group>
+      <template_content><![CDATA[<div class="table_wrap">
+	<h3 class="bar">{$this->lang->words['bt_post_errors_found']}</h3>
+	<div class="row1">$data</div>
+</div>
+<br />]]></template_content>
+      <template_name>errors</template_name>
+      <template_data><![CDATA[$data=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_post</template_group>
+      <template_content><![CDATA[<h1 class='ipsType_pagetitle'>{$formData['title']}</h1>
+<br />
+<form id='postingform' action="{$this->settings['base_url']}" method='post' enctype='multipart/form-data'>
+	<div class='ipsBox ipsForm_vertical ipsLayout ipsLayout_withright ipsPostForm clearfix'>
+		<div class='ipsBox_container ipsLayout_right ipsPostForm_sidebar'>
+		<if test="(is_array($formData['fields']) && count($formData['fields']) > 0 ) || $formData['suggestions']">
+			<if test="$formData['suggestions']">
+			<div class='ipsPostForm_sidebar_block'>
+				<h3 class='bar'>{$this->lang->words['bt_post_issue_type']}</h3>
+				<ul class='ipsPad ipsForm ipsForm_vertical ipsType_small'>
+					<li class='ipsField'>
+						<ul>
+							<li>
+								<input type='radio' name='type' value='issue' id='issue_type_issue' checked='checked' class='input_radio' />
+								<label for='issue_type_issue'>{$this->lang->words['bt_post_issue']}</label>
+							</li>
+							<li style='margin-top: 2px;'>
+								<input type='radio' name='type' value='suggestion' id='issue_type_sug' />
+								<label for='issue_type_sug'>{$this->lang->words['bt_post_sugg']}</label>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			</if>
+			<if test="is_array($formData['fields']) && count($formData['fields']) > 0">
+			<div class='ipsPostForm_sidebar_block'>
+				<h3 class='bar'>{$this->lang->words['bt_post_issue_info']}</h3>
+				<ul class='ipsPad ipsForm ipsForm_vertical ipsType_small'>
+					<foreach loop="$formData['fields'] as $k => $v">
+						<li class='ipsField'>
+							<p class='ipsField_content'>
+								<label for='{$v['title']}'><strong>{$v['title']}</strong></label>
+							</p>
+							<if test="$v['type']=='text'">
+								<input type='text' name='{$v['key']}' id='{$v['key']}' class='input_text' value='{$v['data']}' />
+							<else />
+								<if test="$v['type']=='area'">
+									<textarea name='{$v['key']}' id='{$v['key']}' rows='5' cols='25' class='input_text'>{$v['data']}</textarea>
+								<else />
+									{$v['data']}
+								</if>
+							</if>
+						</li>
+					</foreach>
+				</ul>
+			</div>
+			</if>
+		</if>
+			<div class='ipsPostForm_sidebar_block'>
+				<h3 class='bar'>{$this->lang->words['post_options']}</h3>
+				<ul class='ipsPad ipsForm ipsForm_vertical ipsType_small'>
+				<if test="htmlstatus:|:is_array( $formData['checkBoxes']['html'] ) AND count( $formData['checkBoxes']['html'] )">
+					<li class='ipsField'>
+						<select name="post_htmlstatus" class="input_select">
+							<option value="0"{$formData['checkBoxes']['html'][0]}>{$this->lang->words['pp_nohtml']}</option>
+							<option value="1"{$formData['checkBoxes']['html'][1]}>{$this->lang->words['pp_html1']}</option>
+							<option value="2"{$formData['checkBoxes']['html'][2]}>{$this->lang->words['pp_html2']}</option>
+						</select>
+					</li>
+				</if>
+					<li class='ipsField ipsField_checkbox'>
+						<input type="checkbox" name="enableemo" class="input_check" value="yes" id='enable_emo' {$formData['checkBoxes']['emo']} />
+						<p class='ipsField_content'>
+							<label for='enable_emo'>{$this->lang->words['enable_emo']}</label>
+						</p>
+					</li>
+				<if test="enablesig:|:$this->memberData['member_id']">
+					<li class='ipsField ipsField_checkbox'>
+						<input type="checkbox" name="enablesig" class="input_check" value="yes" id='enable_sig' {$formData['checkBoxes']['sig']} />
+						<p class='ipsField_content'>
+							<label for='enable_sig'>{$this->lang->words['enable_sig']}</label>
+						</p>
+					</li>
+					<if test="tracking:|:$formData['checkBoxes']['tra'] == '-tracking-'">
+						<li class='ipsField'><span class='desc'>{$this->lang->words['already_sub']}</span><li>
+					<else />
+						<li class='ipsField ipsField_checkbox'>
+							<input type="checkbox" name="enabletrack" class="input_check" id='enable_track' value="1" {$formData['checkBoxes']['tra']} />
+							<p class='ipsField_content'>
+								<label for='enable_track'>{$this->lang->words['bt_enable_track']}</label>
+							</p>
+						</li>
+					</if>
+				</if>
+				</ul>
+			</div>
+			<if test="edit_options_check:|:isset($formData['extraData']['showEditOptions']) && $formData['extraData']['showEditOptions']">
+				<div class='ipsPostForm_sidebar_block'>
+					<h3 class='bar'>{$this->lang->words['edit_options']}</h3>
+					<ul class='ipsPad ipsForm ipsForm_vertical'>
+						<li class='ipsField ipsField_checkbox'>
+							<input type="checkbox" name="add_edit" value="1" id='append_edit' <if test="checkShowEdit:|:$formData['extraData']['checked']">checked="checked"</if> class="input_check" />
+							<p class='ipsField_content'>
+								<label for='append_edit'>{$this->lang->words['append_edit']}</label>
+							</p>
+						</li>
+						<if test="showeditreason:|:$formData['extraData']['showReason']">
+							<li class='ipsField'>
+								<label for='post_edit_reason'><strong>{$this->lang->words['reason_for_edit']}</strong></label>
+								<p class='ipsField_content'>
+									<input type="text" name="post_edit_reason" id='post_edit_reason' value="{$formData['extraData']['reasonForEdit']}" size='30' maxlength='250' class='input_text' />
+								</p>
+							</li>
+						</if>
+					</ul>
+				</div>
+			</if>
+		</div>
+		<div class='ipsBox_container ipsLayout_content'>
+			<ul class='ipsForm ipsForm_vertical ipsPad'>
+				<if test="logged_in_check:|:!$this->memberData['member_id']">
+					<li class='ipsField'>
+						<label for='username' class='ipsField_title'>{$this->lang->words['guest_name']}</label>
+						<p class='ipsField_content'>
+							<input type='text' name='UserName' id='username' size='50' value='{$this->request['UserName']}' maxlength="{$this->settings['max_user_name_length']}" class='input_text' tabindex='0' />
+						</p>
+					</li>
+					<if test="guestCaptcha:|:$formData['captchaHTML']">
+						{$formData['captchaHTML']}
+					</if>
+				</if>
+
+				<if test="edit_title_check:|:$formData['formType'] == 'new' OR ( $formData['formType'] == 'edit' AND $formData['canEditTitle'] )">
+					<li class='ipsField ipsField_primary'>
+						<label for='topic_title' class='ipsField_title'>{$this->lang->words['bt_post_title']}</label>
+						<p class='ipsField_content'>
+							<input id='topic_title' class='input_text' type="text" size="65" maxlength="{$this->settings['topic_title_max_len']}" name="TopicTitle" value="{$formData['topicTitle']}" tabindex="0" />
+						</p>
+					</li>
+				</if>
+
+				<if test="edit_tags_check:|:$formData['formType'] == 'new' OR ( $formData['formType'] == 'edit')">
+					<if test="hazTag:|:$formData['tagBox']">
+						<li class='ipsField tag_field'>
+							<label for='ipbTags' class='ipsField_title'>{$this->lang->words['bt_issue_tags']}</label>
+							<p class='ipsField_content'>{$formData['tagBox']}</p>
+						</li>
+					</if>
+				</if>
+
+				<li class='ipsField ipsField_editor'>
+					{$formData['editor']}
+				</li>
+			</ul>
+			<if test="upload_form_check:|:$formData['uploadForm']">
+				<fieldset class='attachments'>
+					{$formData['uploadForm']}
+				</fieldset>
+			</if>
+		</div>
+	</div>
+	<fieldset class='submit clear'>
+		<input type='hidden' name='st' value='{$this->request['st']}' />
+		<input type='hidden' name='app' value='tracker' />
+		<input type='hidden' name='module' value='post' />
+		<input type='hidden' name='section' value='post' />
+		<input type='hidden' name='do' value='{$formData['doCode']}' />
+		<input type='hidden' name='whichaction' value='save' />
+		<input type='hidden' name='project_id' value='{$formData['project_id']}' />
+		<input type='hidden' name='pid' value='{$formData['project_id']}' />
+		<input type='hidden' name='s' value='{$this->member->session_id}' />
+		<input type='hidden' name='iid' value='{$formData['issue_id']}' />
+		<input type='hidden' name='p' value='{$formData['p']}' />
+		<input type='hidden' name='auth_key' value='{$this->member->form_hash}' />
+		<input type='hidden' name='attach_post_key' value='{$formData['attach_post_key']}' />
+		<input type='hidden' name='removeattachid' value='0' />
+
+		<input type="submit" name="dosubmit" value="{$formData['buttonText']}" tabindex="0" class="input_submit" accesskey="s"  />&nbsp;
+		<input type="submit" name="preview" value="{$this->lang->words['button_preview']}" tabindex="0" class="input_submit alt" />
+		{$this->lang->words['or']} <if test="cancelposting:|:$form['t']">
+				<a href='{parse url="showissue={$formData['issue_id']}" template="showissue" seotitle="{$formData['seoIssue']}" base="publicWithApp"}' title='{$this->lang->words['cancel']}' class='cancel' tabindex='0'>{$this->lang->words['cancel']}</a>
+			<else />
+				<a href='{parse url="showproject={$formData['project_id']}" template="showproject" seotitle="{$formData['seoProject']}" base="publicWithApp"}' title='{$this->lang->words['cancel']}' class='cancel' tabindex='0'>{$this->lang->words['cancel']}</a>
+			</if>
+	</fieldset>
+</form>]]></template_content>
+      <template_name>postTemplate</template_name>
+      <template_data>$formData=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_post</template_group>
+      <template_content><![CDATA[<if test="postpreview:|:$data AND trim($data) != '<br />' AND trim($data) != '<br>'">
+	<if test="disablelightbox:|:!$this->settings['disable_lightbox']">
+		{parse template="include_lightbox" group="global" params=""}
+	</if>
+	<h2 class='maintitle'>{$this->lang->words['bt_post_preview']}</h2>
+	<div class='post_wrap ipsBox' id='post_preview'>
+		<div class='ipsBox_container ipsPad'>
+			<div class='post entry-content'>{$data}</div>
+		</div>
+	</div>
+	<br />
+</if>]]></template_content>
+      <template_name>preview</template_name>
+      <template_data><![CDATA[$data=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+  <templategroup group="skin_tracker_profile">
+    <template>
+      <template_group>skin_tracker_profile</template_group>
+      <template_content><![CDATA[<style type='text/css'>
+	.tab_tracker_issues .general_box {
+		/*max-height: 250px;*/
+		overflow: auto !important;
+	}
+		.tab_tracker_issues h4 {
+			font-size: 1.05em;
+			font-weight: normal;
+			padding: 6px 0 0 6px;
+		}
+
+		.tab_tracker_issues .post_body {
+			background-color: #fafbfc;
+			border-bottom: 1px solid #d5dde5;
+			padding: 10px 10px 25px 18px;
+			line-height: 140%;
+			margin-left: 0;
+		}
+
+		.tab_tracker_issues p.posted_info {
+			padding: 0 0 6px 6px;
+			margin: 0;
+		}
+</style>
+<h3 class='bar'>{$this->lang->words['tab_issues_posted']}</h3>
+<div class='general_box alt'>
+	<ol>
+		$content
+	</ol>
+</div>]]></template_content>
+      <template_name>tabIssues</template_name>
+      <template_data>$content</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_profile</template_group>
+      <template_content><![CDATA[<h3 class='bar'>{$this->lang->words['err_tab_message']}</h3>
+<div class='general_box'>
+	{$this->lang->words[$error]}
+</div>]]></template_content>
+      <template_name>tabNoContent</template_name>
+      <template_data>$error</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+  <templategroup group="skin_tracker_projects">
+    <template>
+      <template_group>skin_tracker_projects</template_group>
+      <template_content><![CDATA[<if test="$this->request['module']=='ajax'">
+	<h3>{$this->lang->words['attach_page_title']}: $title</h3>
+	<if test="$pages">
+		<div class='topic_controls' style='padding-top: 4px;'>{$pages}</div>
+	</if>
+<else />
+	<if test="$pages">
+		<div class='topic_controls'>{$pages}</div>
+	</if>
+	<h3 class='maintitle'>{$this->lang->words['attach_page_title']}: $title</h3>
+</if>
+<table class='ipb_table'>
+	<tr class='header'>
+		<if test="guestthumb:|:$this->memberData['member_id'] || $this->settings['guests_img']">
+			<th>&nbsp;</th>
+		</if>
+		<th>{$this->lang->words['attach_title']}</th>
+		<th>{$this->lang->words['attach_size']}</th>
+		<th>{$this->lang->words['attach_post']}</th>
+	</tr>
+	{parse striping="attachies" classes="row1,row2"}
+	<if test="count($rows)">
+		<foreach loop="attachments:$rows as $data">
+			<tr class='{parse striping="attachies"}' id="{$data['attach_id']}">
+			<if test="guestthumb:|:$this->memberData['member_id'] || $this->settings['guests_img']">
+				<td class="altrow short">
+					<img src="{$this->settings['mime_img']}/{$data['image']}" alt="{$this->lang->words['attached_file']}" />
+				</td>
+			</if>
+				<td>
+					<a href="{parse url="app=core&amp;module=attach&amp;section=attach&amp;attach_rel_module=post&amp;attach_id={$data['attach_id']}" base="public"}" title="{$data['attach_file']}">{$data['short_name']}</a><br />
+					<span class="desc">( {$this->lang->words['attach_hits']}: {$data['attach_hits']} )<br />( {$this->lang->words['attach_post_date']} {$data['attach_date']} )</span>
+				</td>
+				<td class="altrow short">{$data['real_size']}</td>
+				<td class='short'><a href="{parse url="showissue={$data['issue_id']}&amp;view=findpost&amp;pid={$data['pid']}" base="publicWithApp"}" title="{$this->lang->words['view_post']}">{$data['pid']}</a></td>
+			</tr>
+		</foreach>
+	</if>
+</table>
+<if test="$pages">
+	<br />
+	<div class='topic_controls'>{$pages}</div>
+</if>]]></template_content>
+      <template_name>attachments</template_name>
+      <template_data>$title, $rows, $pages</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_projects</template_group>
+      <template_content><![CDATA[<a href='{parse url="showissue={$row['issue_id']}&amp;view=getnewpost" seotitle="{$row['title_seo']}" template="showissue" base="publicWithApp"}'>{parse replacement="f_newpost"}</a>]]></template_content>
+      <template_name>goNewPost</template_name>
+      <template_data><![CDATA[$row=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_projects</template_group>
+      <template_content><![CDATA[<php>
+	$template	= $this->registry->tracker->parseJavascriptTemplate("{parse template="version_li" group="tracker_projects"}");
+	$remove		= $this->registry->tracker->parseJavascriptTemplate("{parse template="version_remove" group="tracker_projects" params="$versions"}");
+</php>
+<script type='text/javascript'>
+	ipb.tracker.templates['version_li'] 	= new Template("{$template}");
+	ipb.tracker.templates['version_remove']	= new Template("{$remove}");
+</script>
+<ul class='menu'>
+	<li class='active'>{$this->lang->words['bt_project_versions']}</li>
+	<li id='save_project' class='save'>{$this->lang->words['bt_project_ver_save']}</li>
+	<li id='add_version' class='button'>{$this->lang->words['bt_project_ver_add']}</li>
+</ul>
+
+<php>$fixed_in = $this->registry->tracker->fields()->getFieldByKeyword('fixed_in');</php>
+
+<div style='margin: 5px;'>
+	<ul style='width: 100%;' id='versions'>
+		<li>
+			<table width='100%' cellpadding='0' cellspacing='0'>
+				<tr class='header double_pad'>
+					<th width='2%'>&nbsp;</th>
+					<th width='33%'>{$this->lang->words['bt_project_version']}</th>
+					<th width='15%'>{$this->lang->words['bt_project_version_type']}&nbsp;&nbsp;<img src='{$this->settings['img_url']}/information.png' alt='Help' id='versionInfo' class='clickable' /></th>
+					<th style='text-align:center;' width='15%'>{$this->lang->words['bt_project_version_default']}</th>
+					<th style='text-align:center;' width='5%'>&nbsp;</th>
+				</tr>
+			</table>
+		</li>
+		<if test="count($versions)">
+			<if test="$noversions="style='display:none;'""></if>
+			<foreach loop="$versions as $k => $v">
+				<if test="$staff=''"></if>
+				<if test="$open=''"></if>
+				<if test="$locked=''"></if>
+				<if test="$default=''"></if>
+				
+				<if test="$v['permissions']=='open'">
+					<if test="$staff="style='display:none;'""></if>
+					<if test="$locked="style='display:none;'""></if>
+				<else />
+					<if test="$v['permissions']=='locked'">
+						<if test="$staff="style='display:none;'""></if>
+						<if test="$open="style='display:none;'""></if>
+					<else />
+						<if test="$locked="style='display:none;'""></if>
+						<if test="$open="style='display:none;'""></if>
+					</if>
+				</if>
+				
+				<if test="$v['report_default']">
+					<if test="$default="checked='checked'""></if>
+				</if>
+				
+				<li id='version_{$v['version_id']}' class='isDraggable'>
+					<input type='hidden' name='versions[{$v['version_id']}][save_type]' id='versionSaveType-{$v['version_id']}' value='save' />
+					<input type='hidden' name='versions[{$v['version_id']}][move_to]' id='versionMoveTo-{$v['version_id']}' value='' />
+					<table width='100%' cellpadding='0' cellspacing='0'>
+						<tr class='double_pad'>
+							<td width='2%'>
+								<div class='draghandle'>
+									<img src='{$this->settings['img_url']}/tracker/drag_icon.png' alt='' />
+								</div>
+							</td>
+							<td width='33%'>
+								<input type='text' id='versionValue-{$v['version_id']}' name='versions[{$v['version_id']}][human]' value='{$v['human']}' class='input_text' size='45' />
+							</td>
+							<td width='15%'>
+								<input type='hidden' id='versionTypeRel-{$v['version_id']}' name='versions[{$v['version_id']}][type]' value='{$v['permissions']}' />
+								<span id='versionType-{$v['version_id']}' class='clickable version_types' rel='{$v['permissions']}'><span {$open} rel='open'>{$this->lang->words['bt_project_ver_open']}</span><span {$locked} rel='locked'>{$this->lang->words['bt_project_ver_locked']}</span><span {$staff} rel='staff'>{$this->lang->words['bt_project_ver_staff']}</span></span>
+							</td>
+							<td width='15%' align='center'>
+								<input type='hidden' id='versionDefault-{$v['version_id']}' name='versions[{$v['version_id']}][default]' value='0' />
+								<input type='radio' id='defaultVersion-{$v['version_id']}' name='defaultVersion' class='textinput' {$default} />
+							</td>
+							<td width='5%' align='center' id='versionTDRemove-{$v['version_id']}'>
+								<img id='versionRemove-{$v['version_id']}' rel='edit' src='{$this->settings['img_url']}/delete.png' class='clickable version_remove' />
+							</td>
+						</tr>
+					</table>
+				</li>
+			</foreach>
+		</if>
+		<li id='no_versions' {$noversions}>
+			<table width='100%' cellpadding='0' cellspacing='0'>
+				<tr class='double_pad light'>
+					<td style='text-align:center; width:100%;'>{$this->lang->words['bt_project_ver_none']}</td>
+				</tr>
+			</table>
+		</li>
+	</ul>
+</div>]]></template_content>
+      <template_name>manageProject</template_name>
+      <template_data>$project=array(),$versions=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_projects</template_group>
+      <template_content><![CDATA[<div class="borderwrap">
+    <div class="maintitle">$title</div>
+        <div class="tablepad">
+            $msg
+            <br /><br />
+        </div>
+        <div class="formsubtitle" align="center"><a href="#" onclick="window.close();">{$this->lang->words['bt_mod_close']}</a></div>
+    </div>]]></template_content>
+      <template_name>mod_simple_page</template_name>
+      <template_data><![CDATA[$title="",$msg=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_projects</template_group>
+      <template_content><![CDATA[<if test="trackerIndexTemplate_offline:|:!$this->settings['tracker_is_online']">
+<p class='message'><strong>{$this->lang->words['bt_error_offline']}</strong><br />{$this->lang->words['bt_error_offline_msg']}<br /><em>{$this->settings['tracker_offline_message']}</em></p>
+<br />
+</if>
+<div class='category_block block_wrap'>
+	<h3 class='maintitle'>{$this->lang->words['bt_overview']}</h3>
+	<div class='ipsBox table_wrap'>
+		<div class='ipsBox_container'>
+			<table cellpadding='0' cellspacing='0' class='ipb_table' id='tracker_project_listing'>			
+			<if test="trackerIndexTemplate_projectsWrapper:|:$html[0]==0 AND $html[1]=='project_root'">
+					<tr class="row2">
+						<td colspan="4" align="center">
+							<br />
+							<strong>{$this->lang->words['bt_view_none']}</strong>
+							<br />
+						</td>
+					</tr>
+			<else />
+				<if test="trackerIndexTemplate_projectsCount:|:count( $html[2] ) != 0">
+					<foreach loop="trackerIndexTemplate_projects:$html[2] as $id => $data">
+						<tr class='<if test="hasUnreadClass:|:$data['_has_unread']">unread</if> project' id='project_{$data['project_id']}'>
+							<php>
+								$fromPro = isset($this->request['showproject']) ? $this->request['showproject'] : $this->request['pid'];
+								$fromPro = ($fromPro > 0) ? "&amp;fromProject={$fromPro}" : '';
+							</php>
+							<td align='center' class='col_c_icon'>
+							<if test="hasUnreadClass:|:$data['_has_unread']">
+								<a class='project_marker' id='p__{$data['project_id']}' href='{$this->settings['base_url']}app=tracker&amp;module=projects&amp;section=markProjectsRead&amp;pid={$data['project_id']}{$fromPro}&amp;i=1&amp;secure_key={$this->member->form_hash}' data-tooltip="{$this->lang->words['bt_project_mark_read']}">
+									<img src='{$this->settings['img_url']}/f_icon.png' alt='{$this->lang->words['bt_project_new']}' />
+								</a>
+							<else />
+								<img class='project_image' src='{$this->settings['img_url']}/f_icon_read.png' alt='{$this->lang->words['bt_project_no_new']}' />
+							</if>						
+							</td>
+							<td style='width:49%;'>
+								<h4><a href='{parse url="showproject={$data['project_id']}" seotitle="{$data['title_seo']}" template="showproject" base="publicWithApp"}'>{$data['title']}</a></h4>
+								<if test="trackerProjectTemplate_show_sub_projects:|:isset( $data['project_sub_projects'] ) AND count($data['project_sub_projects']) != 0">
+									<if test="$total=0"></if>
+									<ol class='ipsList_inline ipsType_small subforums'>
+										<foreach loop="trackerProjectTemplate_inline_subproject:$data['project_sub_projects'] as $k => $v">
+											<if test="$total++"></if>
+											<li <if test="$v['project_new_items'] > 0">class='unread'</if>><a href='{parse url="showproject={$v['project_id']}" seotitle="{$v['name_seo']}" template="showproject" base="publicWithApp"}' title='{$v['title']}'>{$v['title']}</a><if test="isNotLast:|:count($data['project_sub_projects'])>$total">,</if></li>
+										</foreach>
+									</ol>
+								</if>
+								<p class='desc'>{$data['description']}</p>
+							</td>
+							<td class='edit_options'>
+								<if test="trackerProjectTemplate_projectEdit:|:strstr( $data['alter_versions'], ',' . $this->memberData['member_group_id'] . ',' ) OR $data['alter_versions'] == '*' && ! $data['cat_only']">
+									<span class='ipsBadge ipsBadge_lightgrey clickable p_edit'>{$this->lang->words['bt_project_edit']}</span>
+								</if>
+							</td>
+							<td class='stats ipsType_small'><strong>{parse format_number="$data['_total']"}</strong> {$this->lang->words['bt_project_issues']}<br /><strong>{parse format_number="$data['_replies']"}</strong> {$this->lang->words['bt_project_replies']}</td>
+							<if test="trackerProjectTemplate_showlastpost:|:$this->settings['tracker_show_last_post']">
+								<td class='col_c_post'>
+									<php>
+										foreach( array('title','poster_name') as $k => $v )
+										{
+											if ( !isset($data['last_post'][$v]) OR $data['last_post'][$v] == '' )
+											{
+												$data['last_post'][$v] = '--';
+											}
+										}
+									</php>
+									
+									<if test="trackerHideLastInfo:|:$data['last_post']['protected']">
+										<ul class='last_post'>
+											<li class='desc'>{$this->lang->words['bt_protected']}</li>
+										</ul>
+									<else />
+										<if test="hasphoto:|:$data['last_post']['user']['pp_small_photo']">
+											<a href='{parse url="showuser={$data['last_post']['poster_id']}" template="showuser" seotitle="{$data['last_post']['poster_seo_name']}" base="public"}' class='ipsUserPhotoLink left'>
+												<img src='{$data['last_post']['user']['pp_small_photo']}' alt='{$this->lang->words['photo']}' class='ipsUserPhoto ipsUserPhoto_mini' />
+											</a>
+										</if>
+										<ul class='last_post ipsType_small'>
+											<if test="!$data['last_post']['issue_id']">
+												<li class='desc lighter'><em>{$this->lang->words['bt_global_none']}</em></li>
+											<else />
+												<li>
+													<a href='{parse url="showissue={$data['last_post']['issue_id']}&amp;view=getnewpost" seotitle="{$data['last_post']['title_seo']}" template="showissue" base="publicWithApp"}' title="{$data['last_post']['title']}">
+														{parse expression="IPSText::truncate( $data['last_post']['title'], 28)"}
+													</a>
+												</li>
+												<if test="lastPosterID:|:$data['last_post']['poster_id']">
+													<li>By {parse expression="IPSMember::makeProfileLink($data['last_post']['poster_name'], $data['last_post']['poster_id'], $data['last_post']['poster_seo_name'])"}</li>
+												</if>
+												<li class='desc lighter blend_links'><a href='{parse url="showissue={$data['last_post']['issue_id']}&amp;view=getlastpost" base="publicWithApp" template="showissue" seotitle="{$data['last_post']['title_seo']}"}' title='{$this->lang->words['bt_view_last_post']}'>{parse date="$data['last_post']['datetime']" format="DATE"}</a></li>
+											</if>
+											
+										</ul>
+									</if>
+								</td>
+							</if>
+						</tr>
+					</foreach>
+					
+				<else />
+					<tr class='row2'>
+						<if test="$this->settings['tracker_show_last_post']">
+							<td colspan='4' align='center'>
+						<else />
+							<td colspan='3' align='center'>
+						</if>
+							{$this->lang->words['bt_view_none']}
+						</td>
+					</tr>
+				</if>
+				</if>
+			</table>
+		</div>
+	</div>
+</div>
+<br />
+<if test="trackerIndexTemplate_lastFiveWrapper:|:count($lastFive) && $this->memberData['member_id']">
+	<br />
+	<h3 class='maintitle'>{$this->lang->words['bt_project_last_five']}</h3>
+	<div class='ipsBox'>
+		<div class='ipsBox_container'>
+			<table class='ipb_table'>
+				<if test="trackerIndexTemplate_lastFiveForeach:|:1==1">
+					{parse template="trackerIssueRow" group="tracker_projects" params="$lastFive,1"}
+				</if>
+			</table>
+		</div>
+	</div>
+	<br />
+</if>
+
+<if test="$this->settings['tracker_show_active']">
+
+<div id='board_stats'>
+	<ul class='ipsType_small ipsList_inline'>
+		<li class='clear'>
+			<span class='value'>{$stats['totals']['posts']}</span> {$this->lang->words['bt_stats_posts']}
+		</li>
+		<li class='clear'>
+			<span class='value'>{$stats['totals']['issues']}</span> {$this->lang->words['bt_stats_issues']}
+		</li>
+		<li class='clear'>
+			<span class='value'>{$stats['totals']['projects']}</span> {$this->lang->words['bt_stats_projects']}
+		</li>
+	</ul>
+</div>
+<!-- Tracker Stats -->
+
+<if test="trackerActiveUsers:|:$this->settings['show_active'] && $this->memberData['gbw_view_online_lists']">
+	<div id='topic_stats' class='statistics clear clearfix'>
+		<div id='topic_active_users' class='active_users'>
+			<h4 class='statistics_head'>{parse expression="sprintf( $this->lang->words['bt_active_users'], $this->registry->tracker->totalOnline['TOTAL'], $this->settings['tracker_au_cutoff'] )"}</h4>
+			<p class='statistics_brief desc'>{parse expression="sprintf( $this->lang->words['active_users_detail'], $this->registry->tracker->totalOnline['MEMBERS'], $this->registry->tracker->totalOnline['GUESTS'], $this->registry->tracker->totalOnline['ANON'] )"}</p>
+			<if test="auNames:|:count( $this->registry->tracker->totalOnline['NAMES'] )">
+				<br />
+				<p>
+					<span class='name'>{parse expression="implode( ",</span> <span class='name'>", $this->registry->tracker->totalOnline['NAMES'] )"}</span>
+				</p>
+			</if>
+		</div>
+	</div>
+</if>
+<!-- Tracker Stats -->
+</if>]]></template_content>
+      <template_name>trackerIndexTemplate</template_name>
+      <template_data><![CDATA[$html="",$stats=array(),$lastFive=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_projects</template_group>
+      <template_content><![CDATA[<if test="trackerIssueRow_hasIssues:|:count($issues)">
+			<php>$count=0;</php>
+			<foreach loop="$issues as $data">
+				<php>
+					$count++;
+					$percent = 43 - (($data['fields']['colspan']-4)*5);
+					
+					if ( $hideColumns OR $data['fields']['colspan'] == 4 )
+					{
+						$percent = 59;
+					}
+					
+					$project	= $this->registry->tracker->projects()->getProject( $data['project_id'] );
+				</php>
+				<tr class='issue <if test="!$data['folder_img']['is_read']">unread</if> expandable'>
+					<td class='col_f_icon altrow short'>{parse template="generateTopicIcon" group="global_other" params="$data['folder_img'], isset($data['_unreadUrl']) ? $data['_unreadUrl'] : ''"}</td>
+					<td style='width:{$percent}%;'>
+						<h4><a href='{parse url="showissue={$data['issue_id']}{$data['extra']}" seotitle="{$data['title_seo']}" template="showissue" base="publicWithApp"}' title="{$this->lang->words['bt_issue_started_on']}: {$data['start_date']}" class='issue_title'>{$data['title']}</a></h4><br />				
+						
+						<if test="issueIsPrivate:|:$data['module_privacy'] && $this->registry->tracker->fields()->checkPermission( $project, 'privacy', 'show' )">
+							<span class='ipsBadge ipsBadge_red'>{$this->lang->words['bt_badge_private']}</span>
+						</if>
+						
+						<span class='desc lighter blend_links'>
+						<foreach loop="trackerIssueRow_fields:$data['fields'] as $k => $v">
+							<if test="trackerIssueRow_fields_inline:|:$k!='colspan' && $v['type']=='inline'">
+								{$v['data']}
+							</if>
+						</foreach>
+							<if test="hasTags:|:isset($data['tags']) AND $data['tags'] && !$project['disable_tagging']">
+								&nbsp; <img src='{$this->settings['img_url']}/icon_tag.png' /> {$data['tags']['formatted']['truncatedWithLinks']}
+							</if>
+						</span>
+						<if test="multipages:|:isset( $data['pages'] ) AND is_array( $data['pages'] ) AND count( $data['pages'] )">
+							<ul class='mini_pagination'>
+							<foreach loop="pages:$data['pages'] as $page">
+									<if test="haslastpage:|:$page['last']">
+										<li><a href="{parse url="showissue={$data['issue_id']}&amp;st={$page['st']}" seotitle="{$data['title_seo']}" template="showissue" base="publicWithApp"}" title='{$this->lang->words['bt_page_go_to']} {$page['page']}'>{$page['page']} {$this->lang->words['_rarr']}</a></li>
+									<else />
+										<li><a href="{parse url="showissue={$data['issue_id']}&amp;st={$page['st']}" seotitle="{$data['title_seo']}" template="showissue" base="publicWithApp"}" title='{$this->lang->words['bt_page_go_to']} {$page['page']}'>{$page['page']}</a></li>
+									</if>
+							</foreach>
+							</ul>
+						</if>
+					</td>
+					<if test="!$hideColumns">
+						<foreach loop="trackerIssueRow_fields:$data['fields'] as $k => $v">
+							<if test="trackerIssueRow_fields_column:|:$k!='colspan' && $v['type']=='column'">
+								<td style='text-align:center;'>{$v['data']}</td>
+							</if>
+						</foreach>
+					</if>
+					<td class='col_f_views desc blend_links'>
+						<ul>
+							<li>
+							<if test="isHot:|:$data['folder_img']['is_hot']">
+								<span class='ipsBadge ipsBadge_orange'>{$this->lang->words['bt_issue_hot']}</span>&nbsp;
+							</if>
+							{$data['posts']} {$this->lang->words['bt_project_posts']}</li>
+							<li>{$this->lang->words['bt_project_started']} <if test="$data['starter_id']">{parse expression="IPSMember::makeProfileLink($data['i_starter_name'], $data['starter_id'], $data['i_starter_seo_name'])"}<else />-{$data['starter_name']}-</if></li>
+						</ul>
+					</td>
+					<td class='col_f_post'>
+						<a href='{parse url="showuser={$data['last_poster_id']}" seotitle="{$data['last_poster_name_seo']}" template="showuser" base="public"}' class='ipsUserPhotoLink left'>
+							<img src='{$data['user']['pp_small_photo']}' class='ipsUserPhoto ipsUserPhoto_mini' />
+						</a>
+						<ul class='last_post ipsType_small'>
+							<li>{parse expression="IPSMember::makeProfileLink($data['i_last_poster_name'], $data['last_poster_id'], $data['i_last_poster_name_seo'])"}</li>
+							<li>
+								<a href='{parse url="showissue={$data['issue_id']}&amp;view=getlastpost" seotitle="{$data['title_seo']}" template="showissue" base="publicWithApp"}' title='{$this->lang->words['goto_last_post']}'>{parse date="$data['_last_post']" format="DATE"}</a>
+							</li>								
+						</ul>
+					</td>
+				</tr>
+			</foreach>
+		<else />
+			<tr class='double_pad row1'>
+				<td style='text-align:center;' colspan='{$this->settings['colspan']}'>{$this->lang->words['bt_project_none']}</td>
+			</tr>
+		</if>]]></template_content>
+      <template_name>trackerIssueRow</template_name>
+      <template_data>$issues=array(),$hideColumns=0</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_projects</template_group>
+      <template_content><![CDATA[<script type='text/javascript'>
+ipb.tracker.project_id = {$project['project_id']};
+ipb.vars['tracker_ajax_interface'] = {$this->settings['tracker_ajax_interface']};
+</script>
+<if test="trackerProjectTemplate_projectLike:|:!$project['cat_only']">{$project['like']}</if>
+<h1 class='ipsType_pagetitle'>{$project['title']}</h1>
+<if test="count($project['subprojects'][2])">
+<br class='clear' />
+<div class='category_block block_wrap'>
+	<h3 class='maintitle'>{$this->lang->words['bt_project_subprojects']}</h3>
+	<div class='ipsBox table_wrap'>
+		<div class='ipsBox_container'>
+			<table cellpadding='0' cellspacing='0' class='ipb_table' id='tracker_project_listing'>	
+			<foreach loop="trackerProjectTemplate_subproject_loop:$project['subprojects'][2] as $k => $v">
+				<tr class='<if test="hasUnreadClass:|:$v['_has_unread']">unread</if> project' id='project_{$v['project_id']}'>
+					<php>
+						$fromPro = isset($this->request['showproject']) ? $this->request['showproject'] : $this->request['pid'];
+						$fromPro = ($fromPro > 0) ? "&amp;fromProject={$fromPro}" : '';
+					</php>
+					<td align='center' class='col_c_icon'>
+						<if test="$v['_has_unread']">
+						<a class='project_marker' id='p__{$v['project_id']}' href='{$this->settings['base_url']}app=tracker&amp;module=projects&amp;section=markProjectsRead&amp;pid={$v['project_id']}{$fromPro}&amp;i=1&amp;secure_key={$this->member->form_hash}' data-tooltip="{$this->lang->words['bt_project_mark_read']}">
+							<img src='{$this->settings['img_url']}/f_icon.png' alt='{$this->lang->words['bt_project_new']}' />
+						</a>
+					<else />
+						<img class='project_image' src='{$this->settings['img_url']}/f_icon_read.png' alt='{$this->lang->words['bt_project_no_new']}' />
+					</if>						
+					</td>
+					<td style='width:49%;'>
+						<h4><a href='{parse url="showproject={$v['project_id']}" seotitle="{$v['title_seo']}" template="showproject" base="publicWithApp"}'>{$v['title']}</a></h4>
+						<p class='desc'>{$v['description']}</p>
+						<if test="trackerProjectTemplate_show_sub_projects:|:isset( $v['project_sub_projects'] ) AND count($v['project_sub_projects']) != 0">
+							<if test="$total=0"></if>
+							<ol class='ipsList_inline ipsType_small subforums'>
+								<foreach loop="trackerProjectTemplate_inline_subproject:$v['project_sub_projects'] as $k => $v">
+									<if test="$total++"></if>
+									<li <if test="$v['project_new_items'] > 0">class='unread'</if>><a href='{parse url="showproject={$v['project_id']}" seotitle="{$v['name_seo']}" template="showproject" base="publicWithApp"}' title='{$v['title']}'>{$v['title']}</a><if test="isNotLast:|:count($data['project_sub_projects'])>$total">,</if></li>
+								</foreach>
+							</ol>
+						</if>
+					</td>
+					<td class='edit_options'>
+						<if test="trackerProjectTemplate_projectEdit:|:strstr( $v['alter_versions'], ',' . $this->memberData['member_group_id'] . ',' ) OR $v['alter_versions'] == '*' && ! $v['cat_only']">
+							<span class='ipsBadge ipsBadge_lightgrey clickable p_edit'>{$this->lang->words['bt_project_edit']}</span>
+						</if>
+					</td>
+					<td class='stats ipsType_small'><strong>{parse format_number="$v['_total']"}</strong> {$this->lang->words['bt_project_issues']}<br /><strong>{parse format_number="$v['_replies']"}</strong> {$this->lang->words['bt_project_replies']}</td>
+					<if test="trackerProjectTemplate_showlastpost:|:$this->settings['tracker_show_last_post']">
+						<td class='col_c_post'>
+							<php>
+								foreach( array('title','poster_name') as $a => $b )
+								{
+									if ( !isset($v['last_post'][$b]) OR $v['last_post'][$b] == '' )
+									{
+										$v['last_post'][$b] = '--';
+									}
+								}
+							</php>
+							
+							<if test="trackerHideLastInfo:|:$v['last_post']['protected']">
+								<ul class='last_post'>
+									<li class='desc'>{$this->lang->words['bt_protected']}</li>
+								</ul>
+							<else />
+								<if test="hasphoto:|:$v['last_post']['user']['pp_small_photo']">
+									<a href='{parse url="showuser={$v['last_post']['poster_id']}" template="showuser" seotitle="{$v['last_post']['poster_seo_name']}" base="public"}' class='ipsUserPhotoLink left'>
+										<img src='{$v['last_post']['user']['pp_small_photo']}' alt='{$this->lang->words['photo']}' class='ipsUserPhoto ipsUserPhoto_mini' />
+									</a>
+								</if>
+								<ul class='last_post ipsType_small'>
+									<if test="!$v['last_post']['issue_id']">
+										<li class='desc lighter'><em>{$this->lang->words['bt_global_none']}</em></li>
+									<else />
+										<li>
+											<a href='{parse url="showissue={$v['last_post']['issue_id']}&amp;view=getnewpost" seotitle="{$v['last_post']['title_seo']}" template="showissue" base="publicWithApp"}' title="{$v['last_post']['title']}">
+												{parse expression="IPSText::truncate( $v['last_post']['title'], 28)"}
+											</a>
+										</li>
+										<if test="lastPosterID:|:$v['last_post']['poster_id']">
+											<li>By {parse expression="IPSMember::makeProfileLink($v['last_post']['poster_name'], $v['last_post']['poster_id'], $v['last_post']['poster_seo_name'])"}</li>
+										</if>
+										<li class='desc lighter blend_links'><a href='{parse url="showissue={$v['last_post']['issue_id']}&amp;view=getlastpost" base="publicWithApp" template="showissue" seotitle="{$v['last_post']['title_seo']}"}' title='{$this->lang->words['bt_view_last_post']}'>{parse date="$v['last_post']['datetime']" format="DATE"}</a></li>
+									</if>
+									
+								</ul>
+							</if>
+						</td>
+					</if>
+				</tr>
+			</foreach>
+			</table>
+		</div>
+	</div>
+</div>
+<br class='clear' />
+</if>
+<if test="trackerProjectTemplate_isCatOnly:|:!$project['cat_only']">
+<div id='tracker_pagination' class='left'>
+	<if test="trackerProjectTemplate_pagination:|:$project['SHOW_PAGES']">{$project['SHOW_PAGES']}</if>
+</div>
+<ul class='topic_buttons'>
+	<if test="trackerProjectTemplate_startIssue:|:$this->member->tracker['start_perms'] && !$project['cat_only']">
+		<li><a href='{parse url="app=tracker&amp;module=post&amp;section=post&amp;do=postnew&amp;pid={$project['project_id']}" base="public"}' title='{$this->lang->words['bt_start_issue']}' accesskey='s'>{$this->lang->words['bt_start_issue']}</a></li>
+	<else />
+		<li class='disabled'><span>{$this->lang->words['bt_start_issue_cant']}</span></li>
+	</if>
+	<if test="trackerProjectTemplate_myIssues:|:$this->memberData['member_id'] && !$project['cat_only']">
+		<li<if test="$this->request['issuefilter']=='istarted'"> class='important'</if>>
+			<a href='{parse url="showproject={$project['project_id']}<if test="$this->request['issuefilter']!='istarted'">&amp;issuefilter=istarted</if>" base="publicWithApp" template="showproject" seotitle="{$project['title_seo']}"}' title='{$this->lang->words['bt_my_issues']}'>{$this->lang->words['bt_my_issues']}</a>
+		</li>
+	</if>
+	<li class='non_button'>
+		<a href='{parse url="module=projects&amp;section=markProjectsRead&amp;pid={$project['project_id']}&amp;fromProject={$project['project_id']}&amp;secure_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['mark_as_read']}'><img src='{$this->settings['img_url']}/icon_check.png' /> &nbsp;{$this->lang->words['bt_mark_as_read']}</a>
+	</li>
+</ul>
+<br class='clear' />
+	<php>$percent = 43 - (($fields['colspan']-4)*5); if( $data['fields']['colspan'] == 4 ){ $percent = 59; }</php>
+	<div class='ipsFilterbar maintitle'>
+		<ul class='ipsList_inline ipsType_small'>
+			<li <if test="ka_last_post:|:empty($this->request['sort_key']) || $this->request['sort_key'] == 'last_post'">class='active'</if>><a href='{parse url="showproject={$project['project_id']}&amp;st={$this->request['st']}&amp;sort_key=last_post&amp;sort_by=Z-A" base="publicWithApp" seotitle="{$project['title_seo']}" template="showproject"}'>{$this->lang->words['sort_recent']}</a></li>
+			<li <if test="ka_start_date:|:$this->request['sort_key'] == 'start_date'">class='active'</if>><a href='{parse url="showproject={$project['project_id']}&amp;st={$this->request['st']}&amp;sort_key=start_date&amp;sort_by=Z-A" base="publicWithApp" seotitle="{$project['title_seo']}" template="showproject"}'>{$this->lang->words['sort_start']}</a></li>
+			<li <if test="ka_replies:|:$this->request['sort_key'] == 'posts'">class='active'</if>><a href='{parse url="showproject={$project['project_id']}&amp;st={$this->request['st']}&amp;sort_key=posts&amp;sort_by=Z-A" base="publicWithApp" seotitle="{$project['title_seo']}" template="showproject"}'>{$this->lang->words['sort_replies']}</a></li>
+			<!--<li><a href='#project_filter_menucontent' id='project_filter'>{$this->lang->words['sort_custom']}</a></li>-->
+		</ul>
+	</div>
+	<div class='ipsBox'>
+		<div class='ipsBox_container'>
+			<table class='ipb_table topic_list hover_rows' id='project_table'>
+				<tr class='header' id='issue_header'>
+					<th class='col_f_icon'>&nbsp;</th>
+					<th width='{$percent}%'>{$this->lang->words['bt_project_issue_title']}</th>
+					<!--FIELD HEADERS-->
+					<if test="count($fields) > 0">
+					<foreach loop="trackerProjectTemplate_fields_header:$fields as $k => $v">
+						<if test="trackerProjectTemplate_fields_header_column:|:$k!='colspan' && $v['type']=='column'">
+							<php>
+							if ( $fields['colspan'] == 4 )
+							{
+								$fields['colspan'] = 5;
+							}
+							$this->settings['colspan'] = $fields['colspan'];
+							$width	 = 25 / ($fields['colspan']-4);
+							</php>
+							<th width='{$width}%' style='text-align:center;'>{$v['title']}</th>
+						</if>
+					</foreach>
+					</if>
+					<!--/FIELD HEADERS/-->
+					<th class='col_f_views stats'>{$this->lang->words['bt_project_stats']}</th>
+					<th class='col_f_post'>{$this->lang->words['bt_project_last_action']}</th>
+				</tr>
+				{parse template="trackerIssueRow" group="tracker_projects" params="$issues"}
+			</table>
+		</div>
+		<ul class='issue_list' id='issue_list'>
+			<!--Filters-->
+			<li class='footer'>
+				<table width='100%' cellpadding='0' cellspacing='0'>
+					<tr class='dark'>
+						<td style='text-align:right;'>
+							<form action="{$this->settings['base_url']}app=tracker&amp;showproject={$project['project_id']}&amp;changefilter=1" method="post">
+								<input id='submit_filters' type="submit" value="{$this->lang->words['bt_project_sort_submit']}" class="input_submit alt right" />
+								
+								<if test="trackerProjectTemplate_filters:|:count($this->registry->tracker->show['custom']) > 0">
+								<foreach loop="trackerProjectTemplate_filters_loop:$this->registry->tracker->show['custom'] as $k => $v">
+								{$v}
+								</foreach><br />
+								</if>
+								<select name="sort_key">{$this->registry->tracker->show['sort_by']}</select>
+								<select name="sort_by">{$this->registry->tracker->show['sort_order']}</select>
+								<select name="prune_day">{$this->registry->tracker->show['sort_prune']}</select>
+								<select name="issuefilter">{$this->registry->tracker->show['issue_filter']}</select>
+
+								<if test="isset($this->request['st']) && intval($this->request['st']) > 0"><input type="hidden" name="st" id="st" value="{$this->request['st']}" /></if>
+								<!--<input id='remember_filters' type='checkbox' name='remember' value='1' /> {$this->lang->words['bt_project_remember_options']}-->
+							</form>
+						</td>
+					</tr>
+				</table>
+			</li>
+		</ul>
+	</div>
+	
+	<div id='tracker_pagination_bottom' class='left'>
+		<if test="trackerProjectTemplate_pagination:|:$project['SHOW_PAGES']">{$project['SHOW_PAGES']}</if>
+	</div>
+	
+	<if test="trackerProjectTemplate_fixedin_list:|:$project['fixed_in']">
+		<div style='margin-top: 5px;' class='right'>
+			<form action='{$this->settings['base_url']}app=tracker&amp;module=projects&amp;section=projects&amp;do=fixedlist&amp;project_id={$project['project_id']}' method='post'>
+				{$this->lang->words['bt_project_item_list1']} 
+				{$project['fixed_in']} <input type="submit" value="{$this->lang->words['bt_global_go']}" class="input_submit alt" />
+			</form>
+		</div>
+	</if>
+	<br class='clear' />
+</if>
+
+<if test="$project['moderator'] || ( $this->settings['show_active'] && $this->memberData['gbw_view_online_lists'] && !$this->settings['tracker_au_project_index'] && count( $active ) )">
+<div id='topic_stats' class='statistics clear clearfix'>
+	<if test="trackerProjectTemplate_stats_moderators:|:$project['moderator']">
+		<div class='right ipsType_small'>
+			<img src='{$this->settings['img_url']}/icon_users.png' /> &nbsp;{$this->lang->words['bt_overview_project_leader']}
+			<foreach loop="moderators:$project['moderator'] as $p => $r">
+				{$r}<if test="moderatorscomma:|:$p + 1 != count( $project['moderator'] )">,</if>
+			</foreach>
+		</div>
+	</if>
+	<if test="trackerActiveUsers:|:$this->settings['show_active'] && $this->memberData['gbw_view_online_lists'] && !$this->settings['tracker_au_project_index'] && count( $active )">
+	<div id='topic_active_users' class='active_users'>
+		<h4 class='statistics_head'>{parse expression="sprintf( $this->lang->words['bt_active_users_project'], $active['TOTAL'] )"}</h4>
+		<p class='statistics_brief desc'>{parse expression="sprintf( $this->lang->words['active_users_detail'], $active['MEMBERS'], $active['GUESTS'], $active['ANON'] )"}</p>
+		<if test="auNames:|:count( $active['NAMES'] )">
+			<br />
+			<p>
+				<span class='name'>{parse expression="implode( ",</span> <span class='name'>", $active['NAMES'] )"}</span>
+			</p>
+		</if>
+	</div>
+	</if>
+</div>
+</if>]]></template_content>
+      <template_name>trackerProjectTemplate</template_name>
+      <template_data>$project=array(),$issues=array(),$fields=array(),$active=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_projects</template_group>
+      <template_content><![CDATA[<input type='hidden' id='versionSaveType-#{id}' value='new' />
+<input type='hidden' id='versionMoveTo-#{id}' value='' />
+<table width='100%' cellpadding='0' cellspacing='0'>
+	<tr class='double_pad'>
+		<td width='2%'>
+			<div class='draghandle'>
+				<img src='{$this->settings['img_url']}/tracker/drag_icon.png' alt='' />
+			</div>
+		</td>
+		<td width='33%'>
+			<input type='text' id='versionValue-#{id}' value='' class='input_text' size='45' />
+		</td>
+		<td width='15%'>
+			<span id='versionType-#{id}' class='clickable version_types' rel='open'><span rel='open'>{$this->lang->words['bt_project_ver_open']}</span><span rel='locked'>{$this->lang->words['bt_project_ver_locked']}</span><span rel='staff'>{$this->lang->words['bt_project_ver_staff']}</span></span>
+		</td>
+		<td width='15%' align='center'>
+			<input type='radio' id='defaultVersion-#{id}' name='defaultVersion' class='textinput' />
+		</td>
+		<td width='5%' align='center' id='versionTDRemove-#{id}'>
+			<img id='versionRemove-#{id}' rel='new' src='{$this->settings['img_url']}/delete.png' class='clickable' />
+		</td>
+	</tr>
+</table>]]></template_content>
+      <template_name>version_li</template_name>
+      <template_data/>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_projects</template_group>
+      <template_content><![CDATA[<p>{$this->lang->words['bt_project_ver_remove_1']}</p>
+	<p>{$this->lang->words['bt_project_ver_remove_2']}</p>
+	<br /><br />
+	<div style='text-align:center; font-weight:bold;'>{$this->lang->words['bt_project_ver_new_ver']}&nbsp;<select style='margin-left: 7px;' name='versionSend-#{id}' id='versionSend-#{id}'>
+		<option value='nva'>{$this->lang->words['bt_project_ver_nva']}</option>
+		
+	<foreach loop="$versions as $v">
+		<option value='{$v['version_id']}'>{$v['human']}</option>
+	</foreach>
+	
+	</select></div>
+	<br />
+	<div style='text-align:center;' class='popup_buttons'>
+		<a href='javascript:void(0);' id='versionDoRemove-#{id}'>{$this->lang->words['bt_project_ver_remove']}</a>
+		<a href='javascript:void(0);' id='versionDoRemoveCancel-#{id}' class='cancel_button'>{$this->lang->words['bt_project_ver_cancel']}</a>
+	</div>]]></template_content>
+      <template_name>version_remove</template_name>
+      <template_data>$versions</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+  <templategroup group="skin_tracker_search">
+    <template>
+      <template_group>skin_tracker_search</template_group>
+      <template_content><![CDATA[<table class='ipb_table topic_list' id='forum_table'>
+	<if test="count($results)">
+		<foreach loop="NCresultsAsForum:$results as $v">
+			<tr class='<if test="hasUnreadClass:|:$v['_has_unread']">unread</if> project' id='project_{$v['project_id']}'>
+					<php>
+						$fromPro = isset($this->request['showproject']) ? $this->request['showproject'] : $this->request['pid'];
+						$fromPro = ($fromPro > 0) ? "&amp;fromProject={$fromPro}" : '';
+					</php>
+					<td align='center' class='col_c_icon'>
+						<if test="$v['_has_unread']">
+						<a class='project_marker' id='p__{$v['project_id']}' href='{$this->settings['base_url']}app=tracker&amp;module=projects&amp;section=markProjectsRead&amp;pid={$v['project_id']}{$fromPro}&amp;i=1&amp;secure_key={$this->member->form_hash}' data-tooltip="{$this->lang->words['bt_project_mark_read']}">
+							<img src='{$this->settings['img_url']}/f_icon.png' alt='{$this->lang->words['bt_project_new']}' />
+						</a>
+					<else />
+						<img class='project_image' src='{$this->settings['img_url']}/f_icon_read.png' alt='{$this->lang->words['bt_project_no_new']}' />
+					</if>
+					</td>
+					<td style='width:49%;'>
+						<h4><a href='{parse url="app=tracker&amp;showproject={$v['project_id']}" seotitle="{$v['title_seo']}" template="showproject" base="public"}'>{$v['title']}</a></h4>
+						<p class='desc'>{$v['description']}</p>
+						<if test="trackerProjectTemplate_show_sub_projects:|:isset( $v['project_sub_projects'] ) AND count($v['project_sub_projects']) != 0">
+							<if test="$total=0"></if>
+							<ol class='ipsList_inline ipsType_small subforums'>
+								<foreach loop="trackerProjectTemplate_inline_subproject:$v['project_sub_projects'] as $k => $v">
+									<if test="$total++"></if>
+									<li <if test="$v['project_new_items'] > 0">class='unread'</if>><a href='{parse url="showproject={$v['project_id']}" seotitle="{$v['name_seo']}" template="showproject" base="publicWithApp"}' title='{$v['title']}'>{$v['title']}</a><if test="isNotLast:|:count($data['project_sub_projects'])>$total">,</if></li>
+								</foreach>
+							</ol>
+						</if>
+						<if test="isFollowedStuff:|:count($v['_followData'])">
+							{parse template="followData" group="search" params="$v['_followData']"}
+						</if>
+					</td>
+				<td class='stats ipsType_small'><strong>{parse format_number="$v['_total']"}</strong> {$this->lang->words['bt_project_issues']}<br /><strong>{parse format_number="$v['_replies']"}</strong> {$this->lang->words['bt_project_replies']}</td>
+					<if test="trackerProjectTemplate_showlastpost:|:$this->settings['tracker_show_last_post']">
+						<td class='col_c_post'>
+							<php>
+								foreach( array('title','poster_name') as $a => $b )
+								{
+									if ( !isset($v['last_post'][$b]) OR $v['last_post'][$b] == '' )
+									{
+										$v['last_post'][$b] = '--';
+									}
+								}
+							</php>
+
+							<if test="trackerHideLastInfo:|:$v['last_post']['protected']">
+								<ul class='last_post'>
+									<li class='desc'>{$this->lang->words['bt_protected']}</li>
+								</ul>
+							<else />
+								<if test="hasphoto:|:$v['last_post']['user']['pp_small_photo']">
+									<a href='{parse url="showuser={$v['last_post']['poster_id']}" template="showuser" seotitle="{$v['last_post']['poster_seo_name']}" base="public"}' class='ipsUserPhotoLink left'>
+										<img src='{$v['last_post']['user']['pp_small_photo']}' alt='{$this->lang->words['photo']}' class='ipsUserPhoto ipsUserPhoto_mini' />
+									</a>
+								</if>
+								<ul class='last_post ipsType_small'>
+									<if test="!$v['last_post']['issue_id']">
+										<li class='desc lighter'><em>{$this->lang->words['bt_global_none']}</em></li>
+									<else />
+										<li>
+											<a href='{parse url="showissue={$v['last_post']['issue_id']}&amp;view=getnewpost" seotitle="{$v['last_post']['title_seo']}" template="showissue" base="publicWithApp"}' title="{$v['last_post']['title']}">
+												{parse expression="IPSText::truncate( $v['last_post']['title'], 28)"}
+											</a>
+										</li>
+										<if test="lastPosterID:|:$v['last_post']['poster_id']">
+											<li>By {parse expression="IPSMember::makeProfileLink($v['last_post']['poster_name'], $v['last_post']['poster_id'], $v['last_post']['poster_seo_name'])"}</li>
+										</if>
+										<li class='desc lighter blend_links'><a href='{parse url="showissue={$v['last_post']['issue_id']}&amp;view=getlastpost" base="publicWithApp" template="showissue" seotitle="{$v['last_post']['title_seo']}"}' title='{$this->lang->words['bt_view_last_post']}'>{parse date="$v['last_post']['datetime']" format="DATE"}</a></li>
+									</if>
+
+								</ul>
+							</if>
+						</td>
+					</if>
+				<td class='col_f_mod'>
+					<input class='input_check checkall toggle_notify_on' type="checkbox" name="likes[]" value="{$v['_followData']['like_app']}-{$v['_followData']['like_area']}-{$v['_followData']['like_rel_id']}" />
+				</td>
+			</tr>
+		</foreach>
+	</if>
+</table>]]></template_content>
+      <template_name>followedContentProjectsWrapperProjects</template_name>
+      <template_data>$results</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_search</template_group>
+      <template_content><![CDATA[<php>
+	$count++;
+</php>
+<tr class='__topic __issue_id{$data['issue_id']}<if test="$data['module_privacy'] == 1"> moderated</if>' id='trow_{$data['issue_id']}'>
+	<td class='col_f_icon short'>{parse template="generateTopicIcon" group="global_other" params="$data['folder_img'], isset($data['_unreadUrl']) ? $data['_unreadUrl'] : ''"}</td>
+	<td>
+		<a href='{parse url="app=tracker&amp;showissue={$data['issue_id']}<if test="isNewPostTR:|:$this->request['do']=='new_posts' OR $this->request['do']=='active'">&amp;view=getnewpost<else /><if test="resultIsPostTR:|:$data['pid']">&amp;view=findpost</if>&amp;p={$data['pid']}</if>&amp;hl={$data['cleanSearchTerm']}&amp;fromsearch=1" seotitle="{$data['title_seo']}" template="showissue" base="public"}' title='{$this->lang->words['view_result']}'>{$data['issue_title']}</a><span class='desc blend_links'><span class='desc lighter'> in</span> <a href='{parse url="app=tracker&amp;showproject={$data['project_id']}" base="public" seotitle="{$data['project']['title_seo']}" template="showproject"}'>{$data['project']['title']}</a></span>
+		<if test="multipages:|:isset( $data['pages'] ) AND is_array( $data['pages'] ) AND count( $data['pages'] )">
+			<ul class='mini_pagination'>
+			<foreach loop="pages:$data['pages'] as $page">
+					<if test="haslastpage:|:$page['last']">
+						<li><a href="{parse url="app=tracker&amp;showissue={$data['issue_id']}&amp;st={$page['st']}" seotitle="{$data['title_seo']}" template="showissue" base="public"}" title='{$this->lang->words['topic_goto_page']} {$page['page']}'>{$page['page']} {$this->lang->words['_rarr']}</a></li>
+					<else />
+						<li><a href="{parse url="app=tracker&amp;showissue={$data['issue_id']}&amp;st={$page['st']}" seotitle="{$data['title_seo']}" template="showissue" base="public"}" title='{$this->lang->words['topic_goto_page']} {$page['page']}'>{$page['page']}</a></li>
+					</if>
+			</foreach>
+			</ul>
+		</if>
+		<br />
+		<foreach loop="$data['fields'] as $k => $v">
+			<if test="$k!='colspan' && $v['type']=='inline'">
+				{$v['data']}
+			</if>
+		</foreach>
+		<if test="isFollowedStuff:|:count($data['_followData'])">
+			{parse template="followData" group="search" params="$data['_followData']"}
+		</if>
+	</td>
+	<td class='col_f_views stats'>
+		<ul>
+			<li>{parse format_number="$data['posts']"} <if test="replylang:|:intval($data['posts']) == 1">{$this->lang->words['reply']}<else />{$this->lang->words['replies']}</if></li>
+			<li class='views desc'>{$this->lang->words['forum_started_by']} <if test="$data['starter_id']">{parse expression="IPSMember::makeProfileLink($data['starter_name'], $data['starter_id'], $data['starter_seo_name'])"}<else />-{$data['starter_name']}-</if></li>
+		</ul>
+	</td>
+	<td class='col_f_post'>
+		<a href='{parse url="showuser={$data['last_poster_id']}" seotitle="{$data['last_poster_name_seo']}" template="showuser" base="public"}' class='ipsUserPhotoLink left'>
+			<img src='{$data['user']['pp_small_photo']}' class='ipsUserPhoto ipsUserPhoto_mini' />
+		</a>
+		<ul class='last_post ipsType_small'>
+			<li>{parse expression="IPSMember::makeProfileLink($data['last_poster_name'], $data['last_poster_id'], $data['last_poster_name_seo'])"}</li>
+			<li>
+				<a href='{parse url="app=tracker&amp;showissue={$data['issue_id']}&amp;view=getlastpost" seotitle="{$data['title_seo']}" template="showissue" base="public"}' title='{$this->lang->words['goto_last_post']}'>{parse date="$data['_last_post']" format="DATE"}</a>
+			</li>								
+		</ul>
+	</td>
+	<td class='col_f_mod'>
+		<input class='input_check checkall toggle_notify_on' type="checkbox" name="likes[]" value="{$data['_followData']['like_app']}-{$data['_followData']['like_area']}-{$data['_followData']['like_rel_id']}" />
+	</td>
+</tr>
+<if test="$data['pid']">
+<script type='text/javascript'>
+ipb.global.searchResults[ {$data['issue_id']} ] = { pid: {parse expression="intval($data['pid'])"}, searchterm:"{$data['cleanSearchTerm']}" };
+</script>
+</if>]]></template_content>
+      <template_name>issuePostSearchResultAsProject</template_name>
+      <template_data>$data, $resultAsTitle=false</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_search</template_group>
+      <template_content><![CDATA[<table class='ipb_table'>
+	<if test="count($results)">
+		<foreach loop="NCresultsAsForum:$results as $result">
+			{$result['html']}
+		</foreach>
+	</if>
+</table>]]></template_content>
+      <template_name>searchResultsAsForum</template_name>
+      <template_data>$results</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_search</template_group>
+      <template_content><![CDATA[<span class='search_msg'>{$this->lang->words['bt_search_message']}</span>
+<fieldset>
+	<ul class='ipsForm_horizontal'>
+		<li class='ipsField ipsField_select'>
+			<label class='ipsField_title' for='project_filter'>{$this->lang->words['s_find_project']}</label>
+			<p class='ipsField_content'>
+				<select class='input input_select' name='search_app_filters[tracker][projects][]' size='6' multiple='multiple' id='project_filter'>
+					{$projects}
+				</select>
+			</p>
+		</li>
+		<li class='ipsField ipsField_select'>
+			<label class='ipsField_title' for='tracker_type'>{$this->lang->words['s_tracker_content']}</label>
+			<p class='ipsField_content'>
+				<select id='tracker_type' class='input_select' name='search_app_filters[tracker][contentOnly]'>
+					<option value='0'>{$this->lang->words['s_search_issues_posts']}</option>
+				</select>
+			</p>
+		</li>
+		<li class='ipsField ipsField_select'>
+			<label class='ipsField_title' for='tracker_display'>{$this->lang->words['s_tracker_display']}</label>
+			<div class='ipsField_content'>
+				<ul>
+					<li class='search_app'>
+						<input type='radio' id='tracker_noPreview' name='search_app_filters[tracker][noPreview]' value='1' checked="checked" />&nbsp;
+						<label for='tracker_noPreview' style='font-weight:normal;'>{$this->lang->words['s_tracker_asissues']}</label>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</fieldset>]]></template_content>
+      <template_name>trackerAdvancedSearchFilters</template_name>
+      <template_data>$projects</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+  <templategroup group="skin_tracker_timeline">
+    <template>
+      <template_group>skin_tracker_timeline</template_group>
+      <template_content><![CDATA[{$issueData['SHOW_PAGES']}
+<br />
+<br style='clear:both;' />
+<table cellspacing='0' cellpadding='0' class='ipb_table timeline_no_border'>
+	<caption class='maintitle'>
+		<span class='right desc'><a href='{parse url="showissue={$issueData['issue_id']}" seotitle="{$issueData['name_seo']}" template="showissue" base="publicWithApp"}' title='{$this->lang->words['bt_timeline_return']}'>{$this->lang->words['bt_timeline_return']}</a></span>
+		{$this->lang->words['bt_timeline_viewing']} {$issueData['title']}	
+	</caption>
+</table>
+	{parse striping="timeline" classes="row1,row2"}
+	
+	<foreach loop="$data as $k => $v">
+		<if test="isset( $v['timelineNewDay'] ) && $v['timelineNewDay'] == true">
+			<if test="isset( $v['timelineEndDay'] ) && $v['timelineEndDay'] == true">
+				</table>
+				</div>
+			</if>
+			
+			<h3 class='timeline_day bar'>
+				<span class='timelineCollapse desc right' id='collapse-{$v['timelineStamp']}'>{$this->lang->words['bt_timeline_collapse']}</span>
+				{$v['timelineDay']} <span class='desc'>({$daysData[ $v['timelineDay'] ]} {$this->lang->words['bt_timeline_entries']})</span>
+			</h3>
+			
+		<div class='collapsedTable' id='day-{$v['timelineStamp']}'>
+		<table cellspacing='0' cellpadding='0' class='ipb_table timeline_no_border'>
+		</if>
+		
+		<tr class='{parse striping="timeline"}'>
+			<td class='timeline_icon altrow'>
+				<if test="$v['module']=='severity'">
+					<img src='{$this->settings['img_url']}/tracker/severity.png' alt='{$this->lang->words['bt_timeline_change_sev']}' />
+				</if>
+				
+				<if test="$v['module']=='version'">
+					<img src='{$this->settings['img_url']}/tracker/version.png' alt='{$this->lang->words['bt_timeline_change_ver']}' />
+				</if>
+				
+				<if test="$v['module']=='post'">
+					<img src='{$this->settings['img_url']}/tracker/reply.png' alt='{$this->lang->words['bt_timeline_change_reply']}' />
+				</if>
+				
+				<if test="$v['module']=='attach'">
+					<img src='{$this->settings['img_url']}/tracker/attach.png' alt='{$this->lang->words['bt_timeline_change_att']}' />
+				</if>
+				
+				<if test="$v['module']=='issue_started'">
+					<img src='{$this->settings['img_url']}/tracker/issue_submitted.png' alt='{$this->lang->words['bt_timeline_issue_started']}' />
+				</if>
+				
+				<if test="$v['module']=='status'">
+					<img src='{$this->settings['img_url']}/tracker/status.png' alt='{$this->lang->words['bt_timeline_change_stat']}' />
+				</if>
+				
+				<if test="$v['module']=='issue_lock' && $v['new_value']=='closed'">
+					<img src='{$this->settings['img_url']}/tracker/issue_locked.png' alt='{$this->lang->words['bt_timeline_change_clos']}' />
+				</if>
+				
+				<if test="$v['module']=='issue_lock' && $v['new_value']=='open'">
+					<img src='{$this->settings['img_url']}/tracker/issue_unlocked.png' alt='{$this->lang->words['bt_timeline_change_reop']}' />
+				</if>
+				
+				<if test="$v['module']=='custom'">
+					<img src='{$this->settings['img_url']}/tracker/custom.png' alt='{$this->lang->words['bt_timeline_change_cf']}' />
+				</if>
+			</td>
+			
+			<td class='timeline_entry altrow'>
+				<php>
+					$v['field_type_display']		= $v['module'];
+					$v['new_value_display']	= $v['new_value'];
+					$v['changed']					= $this->lang->words['bt_timeline_changed'];
+					$v['to']						= $this->lang->words['bt_timeline_to'];
+					
+					if ( $v['module'] == 'severity' )
+					{
+						$v['new_value_display'] = "<span class='severity-{$v['new_value']}'>" . $v['new_value'] . ' - ' . $this->lang->words['bt_global_severity_dd_' .  $v['new_value'] ] . '</span>';
+					}
+					
+					if ( $v['module'] == 'version' && $v['field_extra'] == 'fixed' )
+					{
+						$v['field_type_display']	= $this->lang->words['bt_timeline_fixed_in_ver'];
+					}
+					
+					if ( $v['module'] == 'post' )
+					{
+						$v['field_type_display']		= '';
+						$v['changed']					= $this->lang->words['bt_timeline_added_reply'];
+						$v['new_value_display']	= '';
+						$v['to']						= '';
+					}
+					
+					if ( $v['module'] == 'attach' )
+					{
+						$v['field_type_display']		= '';
+						$v['changed']					= $this->lang->words['bt_timeline_added_att'];
+						$v['new_value_display']	= '';
+						$v['to'] 						= '';
+					}
+					
+					if ( $v['module'] == 'issue_started' )
+					{
+						$v['field_type_display']		= '';
+						$v['changed']					= $this->lang->words['bt_timeline_created_issue'];
+						$v['new_value_display']	= '';
+						$v['to'] 						= '';
+					}
+					
+					if ( $v['module'] == 'issue_lock' )
+					{
+						$v['field_type_display']		= '';
+						$v['new_value_display']	= '';
+						$v['to']						= $this->lang->words['bt_timeline_issue'];
+						
+						if ( $v['new_value'] == 'closed' )
+						{
+							$v['changed'] = 'closed';
+						}
+						else
+						{
+							$v['changed'] = 'reopened';
+						}
+					}
+					
+					if ( $v['module'] == 'status' )
+					{
+						$v['new_value_display']	= $this->registry->tracker->status[ $v['new_value'] ]['cat_title'];
+					}
+				</php>
+				<a href='{parse url="showuser={$v['member_id']}" seotitle="{$v['members_seo_name']}" template="showuser" base="public"}'>{$v['members_display_name']}</a>{parse template="user_popup" group="global" params="$v['member_id'],$v['members_seo_name']"} {$v['changed']} {$v['field_type_display']} {$v['to']} <strong>{$v['new_value_display']}</strong>
+			</td>
+			
+			<td class='timeline_date altrow desc'>
+				{$v['timelineEntryDate']}
+			</td>
+		</tr>
+	</foreach>
+</table>
+</div>]]></template_content>
+      <template_name>showTimeline</template_name>
+      <template_data>$data=array(),$issueData=array(),$daysData=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+  <templategroup group="skin_tracker_ucp">
+    <template>
+      <template_group>skin_tracker_ucp</template_group>
+      <template_content><![CDATA[<form action="{parse url="app=core&amp;module=usercp&amp;tab=tracker&amp;area=watch&amp;watch=$method&amp;do=saveWatch" base="public"}" method="post" name="REPLIER">
+<input type="hidden" name="auth_key" value="{$this->member->form_hash}" />
+<input type="hidden" name="iid" value="{$issue['issue_id']}" />
+<input type="hidden" name="pid" value="{$project['project_id']}" />
+<input type="hidden" name="st" value="{$this->request['st']}" />
+<fieldset class='row1'>
+	<if test="$issue['issue_id'] != ''">
+		<h3>{$this->lang->words['tracker_subs_c_title']} {$this->lang->words['tracker_for']} <a href='{parse url="app=tracker&amp;showissue={$issue['issue_id']}&amp;st={$this->request['st']}" base="public"}' title='{$this->lang->words['issue_title']}'>{$issue['issue_title']}</a></h3>
+		<br />
+		<p class='message unspecific'>{$this->lang->words['tracker_subs_exp_text']}</p>
+	<else />
+		<h3>{$this->lang->words['tracker_subs_c_title']}{$this->lang->words['tracker_for']}{$project['project_title']}</h3>
+		<br />
+		<p class='message unspecific'>{$this->lang->words['tracker_subsf_exp_text']}</p>
+	</if>
+	
+	<ul>
+		<li class='field checkbox'>
+			<input class='input_radio' type="radio" id='email_none' name="emailtype" value="none" />
+			<if test="$issue['tid'] != ''">
+				<label for='email_none'><strong>{$this->lang->words['tracker_subs_none_title']}</strong></label>
+				<span class='desc'>{$this->lang->words['tracker_subs_none_desc']}</span>
+			<else />
+				<label for='email_none'><strong>{$this->lang->words['tracker_subsf_none_title']}</strong></label>
+				<span class="desc">{$this->lang->words['tracker_subsf_none_desc']}</span>
+			</if>
+		</li>
+		<li class='field checkbox'>
+			<input class='input_radio' type="radio" id='email_delayed' name="emailtype" value="delayed" checked="checked" />
+			<if test="$issue['tid'] != ''">
+				<label for='email_delayed'><strong>{$this->lang->words['tracker_subs_delayed']}</strong></label>
+				<span class="desc">{$this->lang->words['tracker_subs_delayed_desc']}</span>
+			<else />
+				<label for='email_delayed'><strong>{$this->lang->words['tracker_subsf_delayed']}</strong></label>
+				<span class="desc">{$this->lang->words['tracker_subsf_delayed_desc']}</span>
+			</if>
+		</li>
+		<li class='field checkbox'>
+			<input class='input_radio' type="radio" id='email_immediate' name="emailtype" value="immediate" />
+			<if test="$issue['tid'] != ''">
+				<label for='email_immediate'><strong>{$this->lang->words['tracker_subs_immediate']}</strong></label>
+				<span class="desc">{$this->lang->words['tracker_subs_immediate_desc']}</span>
+			<else />
+				<label for='email_immediate'><strong>{$this->lang->words['tracker_subsf_immediate']}</strong></label>
+				<span class="desc">{$this->lang->words['tracker_subsf_immediate_desc']}</span>
+			</if>
+		</li>
+		<li class='field checkbox'>
+			<input class='input_radio' type="radio" id='email_daily' name="emailtype" value="daily" />
+			<if test="$issue['tid'] != ''">
+				<label for='email_daily'><strong>{$this->lang->words['tracker_subs_daily']}</strong></label>
+				<span class="desc">{$this->lang->words['tracker_subs_daily_desc']}</span>
+			<else />
+				<label for='email_daily'><strong>{$this->lang->words['tracker_subsf_daily']}</strong></label>
+				<span class="desc">{$this->lang->words['tracker_subsf_daily_desc']}</span>
+			</if>
+		</li>
+		<li class='field checkbox'>
+			<input class='input_radio' type="radio" id='email_weekly' name="emailtype" value="weekly" />
+			<if test="$issue['tid'] != ''">
+				<label for='email_weekly'><strong>{$this->lang->words['tracker_subs_weekly']}</strong></label>
+				<span class="desc">{$this->lang->words['tracker_subs_weekly_desc']}</span>
+			<else />
+				<label for='email_weekly'><strong>{$this->lang->words['tracker_subsf_weekly']}</strong></label>
+				<span class="desc">{$this->lang->words['tracker_subsf_weekly_desc']}</span>
+			</if>
+		</li>
+	</ul>
+</fieldset>
+<fieldset class='submit'>
+	<input type="submit" value="{$this->lang->words['tracker_subs_submit']}" class="input_submit" /> {$this->lang->words['or']}
+	<if test="$issue['tid'] != ''">
+		<a href='{parse url="app=tracker&amp;showissue={$issue['issue_id']}" base="public"}' title='{$this->lang->words['cancel']}' class='cancel'>{$this->lang->words['cancel']}</a>
+	<else />
+		<a href='{parse url="app=tracker&amp;showproject={$project['project_id']}" base="public"}' title='{$this->lang->words['cancel']}' class='cancel'>{$this->lang->words['cancel']}</a>
+	</if>
+</fieldset>
+</form>]]></template_content>
+      <template_name>watchChoices</template_name>
+      <template_data><![CDATA[$project="",$issue="",$method=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_ucp</template_group>
+      <template_content><![CDATA[<fieldset class='row1'>
+	<h3 class='maintitle'>{$this->lang->words['tracker_subs_header']}</h3>
+	<form action="{parse url="app=core&amp;module=usercp&amp;tab=tracker&amp;area=updateWatchIssues&amp;do=saveIt" base="public"}" id="checkBoxForm" method="post">
+	<input type="hidden" name="authKey" value="{$this->member->form_hash}" />
+	<table class='ipb_table' summary="{$this->lang->words['tracker_ucp_user_attach']}">
+		<tr class='header'>
+			<th scope='col' width="5%">&nbsp;</th>
+			<th scope='col' width="50%">{$this->lang->words['tracker_subs_issue']}</th>
+			<th scope='col' align="center" width="5%">{$this->lang->words['tracker_subs_replies']}</th>
+			<th scope='col' align="center" width="5%">{$this->lang->words['tracker_subs_view']}</th>
+			<th scope='col' width="30%">{$this->lang->words['tracker_subs_last_post']}</th>
+			<th scope='col' align="center" width="5%" class='short'><input class='checkbox' id="checkAllIssues" type="checkbox" value="{$this->lang->words['tracker_check_all']}" /><!-- SKINNOTE: Add select all back --></th>
+		</tr>
+		<if test="is_array( $mainProjectArray ) AND count( $mainProjectArray )">
+			<foreach loop="projects:$mainProjectArray as $id => $data">
+				<tr>
+					<td colspan="6" class="row2"><b>{$data['project_name']}</b></td>
+				</tr>
+				<if test="is_array( $mainProjectArray[ $id ]['_issues'] )">
+					{parse striping="issues" classes="row1,row2"}
+					<foreach loop="issues:$mainProjectArray[ $id ]['_issues'] as $issueID => $issueData">
+						<tr>
+							<td class="row1" align="center" width="5%">{parse replacement="{$issueData['folder_img']}"}</td>
+							<td class="row1">
+								<a href="{parse url="app=tracker&amp;showissue={$issueData['issue_id']}" base="public"}">{$issueData['issue_title']}</a>&nbsp;
+								<div class="desc">
+									{$issueData['description']}
+									<if test="$issueData['description']">
+										<br />
+									</if>
+									{$this->lang->words['tracker_subs_start']} {parse date="$issueData['track_started']" format="long"}
+									<br />
+									{$this->lang->words['tracker_subs_c_type']}: {$this->lang->words[ $issueData['_type'] ]}
+								</div>
+							</td>
+							<td class="row1" align="center">{$issueData['posts']}</td>
+							<td class="row1" align="center">{$issueData['views']}</td>
+							<td class="row1">{parse date="$issueData['_last_post']" format="long"}<br />{$this->lang->words['tracker_subs_by']} {$issueData['last_poster']}</td>
+							<td class="row1" align="center"><input class='input_check checkall' type="checkbox" name="issueIDs[{$issueData['itid']}]" value="1" /></td>
+						</tr>
+					</foreach>
+				</if>
+			</foreach>
+		<else />
+			<tr>
+				<td class="row2" align="center" colspan="6">{$this->lang->words['tracker_subs_none']}</td>
+			</tr>
+		</if>
+	</table>
+<if test="count($mainProjectArray)">
+	<div class='filter_bar rounded'>
+		<select name="trackchoice">
+			<option value="unsubscribe">{$this->lang->words['tracker_subs_delete']}</option>
+			<option value="none">{$this->lang->words['tracker_subs_c_change']} {$this->lang->words['tracker_subs_none_title']}</option>
+			<option value="immediate">{$this->lang->words['tracker_subs_c_change']} {$this->lang->words['tracker_subs_immediate']}</option>
+			<option value="delayed">{$this->lang->words['tracker_subs_c_change']} {$this->lang->words['tracker_subs_delayed']}</option>
+			<option value="daily">{$this->lang->words['tracker_subs_c_change']} {$this->lang->words['tracker_subs_daily']}</option>
+			<option value="weekly">{$this->lang->words['tracker_subs_c_change']} {$this->lang->words['tracker_subs_weekly']}</option>
+		</select>&nbsp;&nbsp;
+		<input type="submit" class="input_submit alt" value="{$this->lang->words['tracker_with_selected']}" />
+	</div>
+</if>
+</form>
+<div align="right" style="padding: 5px;">
+	<if test="$this->settings['subs_autoprune'] > 0">
+		{parse expression="sprintf( $this->lang->words['tracker_auto_prune'], $this->settings['subs_autoprune'] )"}
+	<else />
+		{$this->lang->words['tracker_no_auto_prune']}
+	</if>
+</div>
+<div align="right" style="padding: 5px;">
+	<form action="{parse url="app=core&module=usercp&tab=tracker&area=issuesubs" base="public"}" method="post">
+		{$this->lang->words['tracker_show_issues_from']}
+		<select name="datecut">
+			<option value='1'>{$this->lang->words['tracker_subs_today']}</option>
+			<foreach loop="days:array( 1,7,14,21,30,60,90,365 ) as $day">
+				<if test="$day == $dateCut">
+					<option value='$day' selected="selected">{parse expression="sprintf( $this->lang->words['tracker_subs_day'], $day )"}</option>
+				<else />
+					<option value='$day'>{parse expression="sprintf( $this->lang->words['tracker_subs_day'], $day )"}</option>
+				</if>
+			</foreach>
+			<if test="$dateCut == 1000">
+				<option value='1000' selected='selected'>{$this->lang->words['tracker_subs_all']}</option>
+			<else />
+				<option value='1000'>{$this->lang->words['tracker_subs_all']}</option>
+			</if>
+		</select>
+ 	<input type="submit" class='input_submit alt' value="{$this->lang->words['jmp_go']}" />
+ 	</form>
+</div>
+</fieldset>
+<script type='text/javascript'>
+	ipb.global.registerCheckAll( 'checkAllIssues', 'checkall' );
+</script>]]></template_content>
+      <template_name>watchedIssues</template_name>
+      <template_data>$mainProjectArray, $dateCut</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_tracker_ucp</template_group>
+      <template_content><![CDATA[<br />
+<div class='row1'>
+	<form action="{parse url="app=core&amp;module=usercp&amp;tab=tracker&amp;area=updateWatchProjects&amp;do=saveIt" base="public"}" id="checkBoxForm" method="post">
+		<input type="hidden" name="authKey" value="{$this->member->form_hash}" />
+		<h3 class='maintitle'>{$this->lang->words['tracker_subs_header']}</h3>
+		<table class='ipb_table' summary="{$this->lang->words['tracker_ucp_watched_projects']}">
+			<tr class='header'>
+				<th scope='col' width="5%">&nbsp;</th>
+				<th scope='col' width="50%">{$this->lang->words['tracker_ft_project']}</th>
+				<th scope='col' align="center" width="10%">{$this->lang->words['tracker_ft_issues']}</th>
+				<th scope='col' align="center" width="35%">{$this->lang->words['tracker_ft_last_post']}</th>
+				<th scope='col' align="center" width="5%" class='short'><input id="checkAllProjects" type="checkbox" value="{$this->lang->words['tracker_check_all']}" /><!-- SKINNOTE: add check all functionality back --></th>
+			</tr>
+			<if test="is_array( $projectArray['_projects'] ) AND count( $projectArray['_projects'] )">
+				<foreach loop="$projectArray['_projects'] as $projectID => $data">
+					{parse variable="rowCol" oncondition="$data['_depth'] > 0" value="row1"}
+					<tr>
+						<td class="{parse variable="rowCol"}" align="center" width="5%">{parse replacement="{$data['folder_icon']}"}</td>
+						<td class="{parse variable="rowCol"}">
+							<b><a href="{parse url="app=tracker&amp;showproject={$data['project_id']}" base="public"}" template="showproject"}">{$data['project_title']}</a></b>
+							<div class="desc">
+								{$data['project_description']}
+								<br />
+								{$this->lang->words['tracker_subs_c_type']}: {$this->lang->words[ $data['_type'] ]}
+								<if test="$data['_newIssues']">
+									<p><strong><a href="{parse url="app=tracker&amp;showproject={$data['project_id']}&amp;show=sinceLastVisit" base="public"}" template="showproject"}">{$data['_newIssues']} {$this->lang->words['tracker_ucp_reply_since']}</a></strong></p>
+								</if>
+							</div>
+						</td>
+						<td class="{parse variable="rowCol"}" align="center">{$data['project_num_issues']}</td>
+						<td class="{parse variable="rowCol"}">
+							{parse date="$data['project_last_post']" format="long"}<br />{$this->lang->words['tracker_in']}
+							<a href='{parse url="app=tracker&amp;showissue={$data['project_last_issue_id']}&amp;view=getlastpost" base="public"}" template="showissue"}'>{$data['project_last_issue_title']}</a>
+							<br />{$this->lang->words['tracker_by']}
+							<if test="isset($data['project_last_poster_name'])">
+								<if test="$data['project_last_poster_id']">
+									<a href='{parse url="showuser={$data['project_last_poster_id']}" base="public"}" template="showuser"}'>{$data['project_last_poster_name']}</a> {parse template="user_popup" group="global" params="$data['project_last_poster_id']"}
+								<else />
+									{$data['project_last_poster_name']}
+								</if>
+							<else />
+								{$this->lang->words['tracker_f_none']}
+							</if>
+						</td>
+						<td class="{parse variable="rowCol"}" align="center"><input class='input_check checkall' type="checkbox" name="projectIDs[{$data['project_id']}]" value="1" /></td>
+					</tr>
+				</foreach>
+			<else />
+				<tr>
+					<td colspan='6' class='short'>{$this->lang->words['tracker_project_subs_none']}</td>
+				</tr>
+			</if>
+		</table>
+		
+		<if test="count($projectArray)">
+			<div class='moderation_bar rounded with_action'>
+				<select name="trackchoice">
+					<option value="unsubscribe">{$this->lang->words['tracker_subs_delete']}</option>
+					<option value="none">{$this->lang->words['tracker_subs_c_change']} {$this->lang->words['tracker_subsf_none_title']}</option>
+					<option value="immediate">{$this->lang->words['tracker_subs_c_change']} {$this->lang->words['tracker_subsf_immediate']}</option>
+					<option value="delayed">{$this->lang->words['tracker_subs_c_change']} {$this->lang->words['tracker_subsf_delayed']}</option>
+					<option value="daily">{$this->lang->words['tracker_subs_c_change']} {$this->lang->words['tracker_subsf_daily']}</option>
+					<option value="weekly">{$this->lang->words['tracker_subs_c_change']} {$this->lang->words['tracker_subsf_weekly']}</option>
+				</select>&nbsp;&nbsp;
+				<input type="submit" class="input_submit alt" value="{$this->lang->words['tracker_with_selected']}" />
+			</div>
+		</if>
+	</form>
+</div>
+<script type='text/javascript'>
+	ipb.global.registerCheckAll( 'checkAllProjects', 'checkall' );
+</script>]]></template_content>
+      <template_name>watchedProjects</template_name>
+      <template_data>$projectArray=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

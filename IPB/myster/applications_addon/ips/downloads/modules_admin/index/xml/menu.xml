@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Overview</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Overview</subitemtitle>
+					<subitemlang>idm_overview</subitemlang>
+					<subsection>overview</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Settings</subitemtitle>
+					<subitemlang>idm_settings</subitemlang>
+					<subsection>settings</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Paid Files Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Paid Files Settings</subitemtitle>
+					<subitemlang>idm_paidfiles</subitemlang>
+					<subsection>nexus</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+			<condition><![CDATA[
+					return IPSLib::appIsInstalled( 'nexus' );
+				]]></condition>
+		</item>
+		<item>
+			<title>Stats</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Statistics</subitemtitle>
+					<subitemlang>idm_stats</subitemlang>
+					<subsection>stats</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

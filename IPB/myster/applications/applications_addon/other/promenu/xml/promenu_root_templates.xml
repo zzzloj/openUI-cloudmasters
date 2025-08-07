@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="promenu" templategroups="a:2:{s:17:&quot;skin_promenu_plus&quot;;s:5:&quot;exact&quot;;s:16:&quot;skin_promenuplus&quot;;s:5:&quot;loose&quot;;}">
+  <templategroup group="skin_promenu_plus">
+    <template>
+      <template_group>skin_promenu_plus</template_group>
+      <template_content><![CDATA[<if test="$this->settings['promenu_menus_remote_jquery']">
+	<script>
+		iIsHere = false;
+		if (!window.jQuery) {
+			document.write("<" + "script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></" + "script>");
+			iIsHere = true;
+		}
+	</script>
+<else />
+	<script>
+		iIsHere = false;
+		if (!window.jQuery) {
+			document.write("<" + "script type='text/javascript' src='{parse url="js/3rd_party/jquery-1.8.3.min.js" base="public_dir"}'></" + "script>");
+			iIsHere = true;
+		}
+	</script>
+</if>
+<script>
+	if(iIsHere){
+		projQ = jQuery.noConflict();
+	}
+	else{
+		projQ = jQuery;
+	}
+</script>
+<if test="$this->registry->profunctions->CanItouch() && !$this->settings['promenu_disable_tab_pop']">
+	<if test="$this->settings['promenu_jquery_ui_css']">
+		<link rel="stylesheet" type="text/css"  href="{$this->settings['promenu_jquery_ui_css']}" />
+	</if>
+	<if test="$this->settings['promenu_menus_remote_jquery']">
+		<script>
+			if (!jQuery.ui) {
+				document.write("<" + "script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js'></" + "script>");
+			}	
+		</script>
+	<else />
+		<script>
+			if (!jQuery.ui) {
+				document.write("<" + "script type='text/javascript' src='{parse url="js/3rd_party/jquery-ui-1.9.2.custom.min.js" base="public_dir"}'></" + "script>");
+			}	
+		</script>	
+	</if>
+</if>]]></template_content>
+      <template_name>proJS</template_name>
+      <template_data/>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_promenu_plus</template_group>
+      <template_content><![CDATA[<li id="nav_app_{$data['promenu_menus_nav_app']}" class="{$data['promenu_menus_click']} <if test="$data['promenu_menus_parent_id'] || $data['promenu_menus_has_sub'] || $data['promenu_menus_block']">skip_moremenu</if>">
+	<a id="cpromenu_{$data['promenu_menus_id']}" class="{$data['promenu_menus_hovernoclick']} <if test="!$data['promenu_menus_icon_check']">{$data['promenu_menus_arrow']}</if> {$data['promenu_menus_attr']['class']}" style="{$data['promenu_menus_attr']['style']}" {$data['promenu_menus_attr']['attr']} {$data['promenu_menus_url']} >
+			<if test="$data['promenu_menus_icon_check']">
+				<span class="non_sprite">
+					<img src="{$data['promenu_menus_icon']}" width="{$data['promenu_menus_icon_w']}px" height="{$data['promenu_menus_icon_h']}px"/>
+				</span>
+			<else />
+				<if test="$data['promenu_menus_icon']">
+					<span class="sprites {$data['promenu_menus_icon_class']}_icon"></span>
+				</if>
+			</if>		
+		<span <if test="$data['promenu_menus_icon_check'] && $data['promenu_menus_arrow']">class="<if test="$data['promenu_menus_parent_id']">custom_icon</if> {$data['promenu_menus_arrow']}"</if> <if test="$data['promenu_menus_arrow']">style="padding-right:15px;background-origin: padding-box !important;"</if>>
+			<if test="$data['promenu_menus_img_as_title_check']">
+				<img src="{$data['promenu_menus_title_icon']}" width="{$data['promenu_menus_img_as_title_w']}" height="{$data['promenu_menus_img_as_title_h']}" style="vertical-align: bottom;"/>
+			<else />
+				{$data['promenu_menus_name']}
+			</if>
+		</span>
+	</a>
+	<if test="!$data['promenu_menus_is_mega']">	
+		<if test="$data['promenu_menus_has_sub']">
+			<div  class="boxShadow <if test="!$data['promenu_menus_parent_id'] && !$group['promenu_groups_is_vertical']"> baseRoot </if>" style="display: none; position: absolute;">
+				<ul>
+					<if test="$data['promenu_menus_block']">
+						<li class="{$data['promenu_menus_click']}" style="position:relative;">
+							<div class="blocks">
+								{$data['promenu_menus_block']}
+							</div>
+						</li>
+					</if>
+					<foreach loop="$menu[$data['promenu_menus_id']] as $k => $c">
+						{parse template="proMain" group="promenu_plus" params="$c, $menu, $group,0"}
+					</foreach>
+				</ul>
+			</div>
+		</if>
+		<if test="$data['promenu_menus_block']">
+			<div class="boxShadow  blocks <if test="!$data['promenu_menus_parent_id'] && !$group['promenu_groups_is_vertical']"> baseRoot </if>" style="display: none; position: absolute;">
+				{$data['promenu_menus_block']}
+			</div>
+		</if>
+	<else />
+		<if test="$data['promenu_menus_has_sub'] || $data['promenu_menus_block']">
+			<div class="boxShadow mega<if test="!$data['promenu_menus_parent_id'] && !$group['promenu_groups_is_vertical']"> baseRoot </if>" style="display:none;position:absolute;">
+				<table>
+					<if test="$data['promenu_menus_block']">
+						<tr>
+							<td class="blocks" colspan="{$data['promenu_menus_mega_column_count']}">
+								{$data['promenu_menus_block']}
+							</td>
+						</tr>
+					</if>
+					<tr>
+					<if test="count($menu[$data['promenu_menus_id']]) && is_array($menu[$data['promenu_menus_id']])">
+						<foreach loop="$menu[$data['promenu_menus_id']] as $k => $c">
+							<php>
+								if($i >= $data['promenu_menus_mega_column_count'])
+								{
+									$i = 0;
+								}
+							</php>
+							{parse template="proMega" group="promenu_plus" params="$c, $menu, $group, 1, $data['promenu_menus_mega_column_count'], $i"}
+							<php>
+								$i++;
+							</php>
+						</foreach>
+				</if>
+				<if test="$i != $data['promenu_menus_mega_column_count']">
+					</tr>
+				</if>
+				</table>
+			</div>
+		</if>
+	</if>
+</li>
+<if test="$data['promenu_menus_by_url']">
+<script>
+	projQ("#nav_app_{$data['promenu_menus_nav_app']}").ProActivationByUrl({ByUrlGroup: {$group['promenu_groups_by_url']}, ByUrlMenu: {$data['promenu_menus_by_url']} });
+</script>
+</if>]]></template_content>
+      <template_name>proMain</template_name>
+      <template_data>$data, $menu, $group=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_promenu_plus</template_group>
+      <template_content><![CDATA[<if test="$isMega">
+	<td class="col" class="{$data['promenu_menus_click']}" style="vertical-align:top;">
+<else />
+	<div class="col" class="{$data['promenu_menus_click']}" style="vertical-align:top;">
+</if>
+	<a class="<if test="$data['promenu_menus_has_sub'] || $data['promenu_menus_block']">mainParent</if> {$data['promenu_menus_attr']['class']}" style="cursor:pointer;{$data['promenu_menus_attr']['style']}" {$data['promenu_menus_attr']['attr']} {$data['promenu_menus_url']} >
+			<if test="$data['promenu_menus_icon_check']">
+				<div class="non_sprite">
+					<img src="{$data['promenu_menus_icon']}" width="{$data['promenu_menus_icon_w']}px" height="{$data['promenu_menus_icon_h']}px" style="vertical-align: bottom;"/>
+				</div>
+			<else />
+				<if test="$data['promenu_menus_icon']">
+					<div class="sprites {$data['promenu_menus_icon_class']}_icon"></div>
+				</if>
+			</if>		
+		<span <if test="$data['promenu_menus_icon_check'] && $data['promenu_menus_arrow']">class="<if test="$data['promenu_menus_parent_id']">custom_icon</if>"</if>>
+			<if test="$data['promenu_menus_img_as_title_check']">
+				<img src="{$data['promenu_menus_title_icon']}" width="{$data['promenu_menus_img_as_title_w']}" height="{$data['promenu_menus_img_as_title_h']}" style="vertical-align: bottom;" />
+			<else />
+				{$data['promenu_menus_name']}
+			</if>
+		</span>	
+	</a>
+	<if test="$data['promenu_menus_has_sub'] || $data['promenu_menus_block']">
+		<if test="$data['promenu_menus_block']">
+			<div class="blocks">
+				{$data['promenu_menus_block']}
+			</div>
+		</if>
+		<if test="$data['promenu_menus_has_sub']">
+			<foreach loop="$menu[$data['promenu_menus_id']] as $k => $c">
+				{parse template="proMega" group="promenu_plus" params="$c, $menu, $group"}
+			</foreach>
+		</if>
+	</if>
+<if test="$isMega">
+	</td>
+	<php>
+		$html='';
+		if($i == $shift){
+			$html = '</tr><tr>';
+			$i =0;
+		}
+	</php>
+	{$html}	
+<else />
+	</div>
+</if>]]></template_content>
+      <template_name>proMega</template_name>
+      <template_data>$data, $menu, $group=array(), $isMega=0, $shift=0, $i=0</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_promenu_plus</template_group>
+      <template_content><![CDATA[<div <if test="!$data['promenu_menus_parent_id']">class="category"</if>>
+			<a class="<if test="$data['promenu_menus_has_sub'] || $data['promenu_menus_block']">mainParent</if> {$data['promenu_menus_attr']['class']}" style="{$data['promenu_menus_attr']['style']}" {$data['promenu_menus_attr']['attr']} {$data['promenu_menus_url']} >
+				<if test="$data['promenu_menus_icon_check']">
+					<div class="non_sprite">
+						<img src="{$data['promenu_menus_icon']}" width="{$data['promenu_menus_icon_w']}px" height="{$data['promenu_menus_icon_h']}px"/>
+					</div>
+				<else />
+					<if test="$data['promenu_menus_icon']">
+						<div class="sprites {$data['promenu_menus_icon_class']}_icon"></div>
+					</if>
+				</if>		
+				<if test="$data['promenu_menus_img_as_title_check']">
+					<img src="{$data['promenu_menus_title_icon']}" width="{$data['promenu_menus_img_as_title_w']}" height="{$data['promenu_menus_img_as_title_h']}" />
+				<else />
+					{$data['promenu_menus_name']}
+				</if>	
+			</a>
+			<if test="$data['promenu_menus_has_sub'] || $data['promenu_menus_block']">
+				<if test="$data['promenu_menus_block']">
+					<div class="blocks othersubs">
+						{$data['promenu_menus_block']}
+					</div>
+				</if>
+				<if test="$data['promenu_menus_has_sub']">
+					<foreach loop="$menu[$data['promenu_menus_id']] as $k => $c">
+						<div class="othersubs">
+							{parse template="proOther" group="promenu_plus" params="$c, $menu, $group, 0"}
+						</div>
+					</foreach>
+				</if>
+			</if>
+		</div>]]></template_content>
+      <template_name>proOther</template_name>
+      <template_data>$data, $menu, $group=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

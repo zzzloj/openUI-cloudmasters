@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blockexport>
+  <portalblock> 
+    <block>
+      <title>Example Block (PHP)</title>
+      <align>3</align> 
+      <show_block>1</show_block> 
+      <template>1</template>       
+      <block_code><![CDATA[<?php
+
+print "This is an example block <strong>".IPSMember::makeProfileLink( $this->memberData['members_display_name'], $this->memberData['member_id'], $this->memberData['members_seo_name'] )."</strong>, for <strong>{$this->settings['board_name']}</strong>.<br /><br />";
+
+print "PHP and most IPB code will work in <a href='".$this->registry->getClass('output')->buildSEOUrl( "app=portal", 'public', 'false', 'app=portal' )."'>here</a>.";
+
+?>]]></block_code>
+    </block> 
+    <block>
+      <title>Example Block (HTML)</title>
+      <align>3</align>
+      <show_block>1</show_block>    
+      <block_code><![CDATA[<div class='ipsSideBlock clearfix'>
+    <h3>Example Block (HTML)</h3>
+    This is an example html block without the use of the sidebar block template.<br /><br />
+
+   HTML and IPB css will work in here.
+</div>]]></block_code>
+    </block>                   
+  </portalblock>
+</blockexport>

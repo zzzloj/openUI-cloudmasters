@@ -1,232 +1,323 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
-import {
-  Column,
-  Flex,
-  Heading,
-  Text,
-  Button,
-  Card,
-  Icon,
-  Grid,
-  Badge,
-  Schema
-} from "@once-ui-system/core";
-import { baseURL } from "@/resources";
-import { useRouter } from "next/navigation";
+import { useEffect, useState } from 'react';
+import { Card, Button, Text, Column, Flex, Icon, Badge, Heading, Grid } from '@once-ui-system/core';
+import { 
+  FaUsers, 
+  FaComments, 
+  FaFileAlt, 
+  FaChartLine, 
+  FaExclamationTriangle,
+  FaClock,
+  FaEye,
+  FaPlus,
+  FaCog
+} from 'react-icons/fa';
 
-interface User {
-  id: string;
-  email: string;
-  role: string;
-  isAdmin: boolean;
-  memberGroupId: number;
+interface DashboardStats {
+  totalUsers: number;
+  totalTopics: number;
+  totalPosts: number;
+  newUsersToday: number;
+  newTopicsToday: number;
+  newPostsToday: number;
+  activeUsers: number;
+  systemStatus: 'online' | 'warning' | 'error';
+}
+
+interface RecentActivity {
+  id: number;
+  type: 'user' | 'topic' | 'post' | 'system';
+  title: string;
+  description: string;
+  time: string;
+  user?: string;
 }
 
 export default function AdminDashboard() {
-  const [user, setUser] = useState<User | null>(null);
+  const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [recentActivity, setRecentActivity] = useState<RecentActivity[]>([]);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
 
   useEffect(() => {
-    checkAuth();
+    loadDashboardData();
   }, []);
 
-  const checkAuth = async () => {
+  const loadDashboardData = async () => {
     try {
-      const response = await fetch("/api/auth/me");
-      if (response.ok) {
-        const data = await response.json();
-        
-        // Проверяем права доступа к админ-панели
-        if (data.user.member_group_id !== 4) {
-          // Не админ - перенаправляем в профиль
-          router.push("/profile");
-          return;
+      // Загружаем статистику
+      const statsResponse = await fetch('/api/admin/forum/stats', {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
-        
-        setUser(data.user);
-      } else {
-        // Не авторизован, перенаправляем на страницу входа
-        router.push("/auth/login");
-        return;
+      });
+
+      if (statsResponse.ok) {
+        const statsData = await statsResponse.json();
+        setStats({
+          totalUsers: statsData.totalUsers,
+          totalTopics: statsData.totalTopics,
+          totalPosts: statsData.totalPosts,
+          newUsersToday: statsData.newUsersToday,
+          newTopicsToday: statsData.newTopicsToday,
+          newPostsToday: statsData.newPostsToday,
+          activeUsers: Math.floor(Math.random() * 50) + 10, // Временные данные
+          systemStatus: 'online' as const
+        });
       }
+
+      // Загружаем последнюю активность
+      setRecentActivity([
+        {
+          id: 1,
+          type: 'user',
+          title: 'Новый пользователь',
+          description: 'Зарегистрировался новый участник',
+          time: '2 минуты назад',
+          user: 'alex_2024'
+        },
+        {
+          id: 2,
+          type: 'topic',
+          title: 'Новая тема',
+          description: 'Создана тема в разделе "Общие вопросы"',
+          time: '5 минут назад',
+          user: 'maria_s'
+        },
+        {
+          id: 3,
+          type: 'post',
+          title: 'Новое сообщение',
+          description: 'Добавлено сообщение в тему "Помощь с настройкой"',
+          time: '8 минут назад',
+          user: 'admin'
+        },
+        {
+          id: 4,
+          type: 'system',
+          title: 'Система',
+          description: 'Автоматическое резервное копирование завершено',
+          time: '15 минут назад'
+        }
+      ]);
+
     } catch (error) {
-      console.error("Ошибка проверки аутентификации:", error);
-      router.push("/auth/login");
-      return;
+      console.error('Ошибка загрузки данных дашборда:', error);
     } finally {
       setLoading(false);
     }
   };
 
-  const handleLogout = async () => {
-    try {
-      await fetch("/api/auth/logout", { method: "POST" });
-      router.push("/auth/login");
-    } catch (error) {
-      console.error("Ошибка выхода:", error);
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'online': return 'success';
+      case 'warning': return 'warning';
+      case 'error': return 'danger';
+      default: return 'default';
+    }
+  };
+
+  const getActivityIcon = (type: string) => {
+    switch (type) {
+      case 'user': return <FaUsers />;
+      case 'topic': return <FaFileAlt />;
+      case 'post': return <FaComments />;
+      case 'system': return <FaCog />;
+      default: return <FaChartLine />;
     }
   };
 
   if (loading) {
     return (
-      <Column maxWidth="xl" gap="xl" horizontal="center" paddingY="xl">
+      <Flex fillWidth horizontal="center" paddingY="xl">
         <Card padding="xl" radius="l" shadow="l">
           <Column gap="l" horizontal="center">
             <Icon name="spinner" size="l" />
-            <Text>Загрузка...</Text>
+            <Text>Загрузка админки...</Text>
           </Column>
         </Card>
-      </Column>
+      </Flex>
     );
-  }
-
-  if (!user) {
-    return null; // Перенаправление уже произошло
   }
 
   return (
     <Column maxWidth="xl" gap="xl">
-      <Schema
-        as="webPage"
-        baseURL={baseURL}
-        title="Admin Panel - CloudMasters"
-        description="Админ-панель для управления контентом"
-        path="/admin"
-      />
-      
-      {/* Header */}
+      {/* Заголовок */}
       <Flex fillWidth horizontal="between" vertical="center" paddingY="l">
-        <Flex gap="m" vertical="center">
-          <Heading variant="display-strong-l">Админ-панель</Heading>
-          <Badge background="success-medium">
-            {user.role === "admin" ? "Администратор" : "Пользователь"}
-          </Badge>
-        </Flex>
-        <Flex gap="m" vertical="center">
+        <Column gap="s">
+          <Heading variant="display-strong-l">Панель управления</Heading>
           <Text variant="body-default-s" onBackground="neutral-weak">
-            {user.email}
+            Добро пожаловать в панель администратора
           </Text>
-          <Button 
-            variant="secondary" 
-            prefixIcon="logout"
-            onClick={handleLogout}
-          >
-            Выйти
-          </Button>
-        </Flex>
+        </Column>
+        <Button 
+          variant="primary" 
+          prefixIcon="plus"
+        >
+          Быстрое действие
+        </Button>
       </Flex>
 
-      {/* Dashboard Stats */}
-      <Grid columns={3} gap="m">
-        <Card padding="l" radius="m">
-          <Column gap="s">
-            <Flex horizontal="between" vertical="center">
-              <Text variant="heading-strong-s">Контент</Text>
-              <Icon name="document" size="l" />
-            </Flex>
-            <Text variant="display-strong-xl">12</Text>
-            <Text variant="body-default-s" onBackground="neutral-weak">
-              Страниц контента
-            </Text>
-          </Column>
-        </Card>
+      {/* Статистика */}
+      {stats && (
+        <Grid columns={4} gap="m">
+          <Card padding="l" radius="m">
+            <Column gap="s">
+              <Flex horizontal="between" vertical="center">
+                <Text variant="heading-strong-s">Всего пользователей</Text>
+                <FaUsers size={24} className="text-blue-500" />
+              </Flex>
+              <Text variant="display-strong-xl">{stats.totalUsers}</Text>
+              <Text variant="body-default-s" onBackground="neutral-weak">
+                +{stats.newUsersToday} сегодня
+              </Text>
+            </Column>
+          </Card>
 
-        <Card padding="l" radius="m">
-          <Column gap="s">
-            <Flex horizontal="between" vertical="center">
-              <Text variant="heading-strong-s">SEO</Text>
-              <Icon name="search" size="l" />
-            </Flex>
-            <Text variant="display-strong-xl">8.5</Text>
-            <Text variant="body-default-s" onBackground="neutral-weak">
-              Рейтинг SEO
-            </Text>
-          </Column>
-        </Card>
+          <Card padding="l" radius="m">
+            <Column gap="s">
+              <Flex horizontal="between" vertical="center">
+                <Text variant="heading-strong-s">Всего тем</Text>
+                <FaFileAlt size={24} className="text-green-500" />
+              </Flex>
+              <Text variant="display-strong-xl">{stats.totalTopics}</Text>
+              <Text variant="body-default-s" onBackground="neutral-weak">
+                +{stats.newTopicsToday} сегодня
+              </Text>
+            </Column>
+          </Card>
 
-        <Card padding="l" radius="m">
-          <Column gap="s">
-            <Flex horizontal="between" vertical="center">
-              <Text variant="heading-strong-s">Настройки</Text>
-              <Icon name="settings" size="l" />
-            </Flex>
-            <Text variant="display-strong-xl">24</Text>
-            <Text variant="body-default-s" onBackground="neutral-weak">
-              Параметров
-            </Text>
-          </Column>
-        </Card>
-      </Grid>
+          <Card padding="l" radius="m">
+            <Column gap="s">
+              <Flex horizontal="between" vertical="center">
+                <Text variant="heading-strong-s">Всего сообщений</Text>
+                <FaComments size={24} className="text-purple-500" />
+              </Flex>
+              <Text variant="display-strong-xl">{stats.totalPosts}</Text>
+              <Text variant="body-default-s" onBackground="neutral-weak">
+                +{stats.newPostsToday} сегодня
+              </Text>
+            </Column>
+          </Card>
 
-      {/* Quick Actions */}
+          <Card padding="l" radius="m">
+            <Column gap="s">
+              <Flex horizontal="between" vertical="center">
+                <Text variant="heading-strong-s">Активные пользователи</Text>
+                <FaChartLine size={24} className="text-orange-500" />
+              </Flex>
+              <Text variant="display-strong-xl">{stats.activeUsers}</Text>
+              <Text variant="body-default-s" onBackground="neutral-weak">
+                сейчас онлайн
+              </Text>
+            </Column>
+          </Card>
+        </Grid>
+      )}
+
+      {/* Статус системы */}
       <Card padding="xl" radius="l">
         <Column gap="l">
-          <Heading variant="display-strong-s">Быстрые действия</Heading>
-          <Grid columns={2} gap="m">
-            <Button 
-              variant="secondary" 
-              prefixIcon="edit"
-              href="/admin/content"
-            >
-              Управление контентом
-            </Button>
-            <Button 
-              variant="secondary" 
-              prefixIcon="search"
-              href="/admin/seo"
-            >
-              SEO настройки
-            </Button>
-            <Button 
-              variant="secondary" 
-              prefixIcon="settings"
-              href="/admin/settings"
-            >
-              Настройки сайта
-            </Button>
-            <Button 
-              variant="secondary" 
-              prefixIcon="analytics"
-              href="/admin/analytics"
-            >
-              Аналитика
-            </Button>
+          <Heading variant="display-strong-s">Статус системы</Heading>
+          <Grid columns={3} gap="m">
+            <Flex gap="m" vertical="center">
+              <Badge background="success-medium">
+                {stats?.systemStatus === 'online' ? 'Онлайн' : 'Ошибка'}
+              </Badge>
+              <Text variant="body-default-s">Основная система</Text>
+            </Flex>
+            
+            <Flex gap="m" vertical="center">
+              <Badge background="success-medium">Онлайн</Badge>
+              <Text variant="body-default-s">База данных</Text>
+            </Flex>
+            
+            <Flex gap="m" vertical="center">
+              <Badge background="success-medium">Онлайн</Badge>
+              <Text variant="body-default-s">Кеш</Text>
+            </Flex>
           </Grid>
         </Column>
       </Card>
 
-      {/* Recent Activity */}
-      <Card padding="xl" radius="l">
-        <Column gap="l">
-          <Heading variant="display-strong-s">Последняя активность</Heading>
-          <Column gap="m">
-            <Flex horizontal="between" vertical="center" paddingY="s">
-              <Flex gap="m" vertical="center">
-                <Icon name="edit" size="s" />
-                <Text>Обновлена главная страница</Text>
-              </Flex>
-              <Badge background="success-medium">2 часа назад</Badge>
-            </Flex>
-            <Flex horizontal="between" vertical="center" paddingY="s">
-              <Flex gap="m" vertical="center">
-                <Icon name="search" size="s" />
-                <Text>Изменены SEO мета-теги</Text>
-              </Flex>
-              <Badge background="info-medium">1 день назад</Badge>
-            </Flex>
-            <Flex horizontal="between" vertical="center" paddingY="s">
-              <Flex gap="m" vertical="center">
-                <Icon name="settings" size="s" />
-                <Text>Обновлены настройки темы</Text>
-              </Flex>
-              <Badge background="warning-medium">3 дня назад</Badge>
-            </Flex>
+      {/* Последняя активность и быстрые действия */}
+      <Grid columns={2} gap="l">
+        <Card padding="xl" radius="l">
+          <Column gap="l">
+            <Heading variant="display-strong-s">Последняя активность</Heading>
+            <Column gap="m">
+              {recentActivity.map((activity) => (
+                <Flex key={activity.id} horizontal="between" vertical="center" paddingY="s">
+                  <Flex gap="m" vertical="center">
+                    <div className="text-gray-500">
+                      {getActivityIcon(activity.type)}
+                    </div>
+                    <Column gap="xs">
+                      <Text variant="body-default-s">{activity.title}</Text>
+                      <Text variant="body-default-s" onBackground="neutral-weak">
+                        {activity.description}
+                      </Text>
+                      <Flex gap="s" vertical="center">
+                        <FaClock size={12} className="text-gray-400" />
+                        <Text variant="body-default-xs" onBackground="neutral-weak">
+                          {activity.time}
+                        </Text>
+                        {activity.user && (
+                          <>
+                            <Text variant="body-default-xs" onBackground="neutral-weak">•</Text>
+                            <Text variant="body-default-xs" onBackground="neutral-medium">
+                              {activity.user}
+                            </Text>
+                          </>
+                        )}
+                      </Flex>
+                    </Column>
+                  </Flex>
+                </Flex>
+              ))}
+            </Column>
           </Column>
-        </Column>
-      </Card>
+        </Card>
+
+        <Card padding="xl" radius="l">
+          <Column gap="l">
+            <Heading variant="display-strong-s">Быстрые действия</Heading>
+            <Grid columns={2} gap="m">
+              <Button 
+                variant="secondary" 
+                prefixIcon="person"
+                className="justify-start h-12"
+              >
+                Управление пользователями
+              </Button>
+              
+              <Button 
+                variant="secondary" 
+                prefixIcon="forum"
+                className="justify-start h-12"
+              >
+                Управление форумами
+              </Button>
+              
+              <Button 
+                variant="secondary" 
+                prefixIcon="settings"
+                className="justify-start h-12"
+              >
+                Настройки системы
+              </Button>
+              
+              <Button 
+                variant="secondary" 
+                prefixIcon="eye"
+                className="justify-start h-12"
+              >
+                Просмотр логов
+              </Button>
+            </Grid>
+          </Column>
+        </Card>
+      </Grid>
     </Column>
   );
 } 

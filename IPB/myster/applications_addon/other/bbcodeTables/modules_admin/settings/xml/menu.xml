@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Custom Templates</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Custom Templates</subitemtitle>
+					<subsection>customTemplates</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>BBCode Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>BBCode Settings</subitemtitle>
+					<subsection>settings</subsection>
+					<subitemurl>do=settings</subitemurl>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

@@ -1,0 +1,2330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ccs_record_notification</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+<#POSTER#> has posted a new _RLS_ titled "<#TITLE#>" in the category "<#CATEGORY#>".
+
+You can view the full _RLS_ and comments at this link:
+
+<#LINK#>
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ccs_record_pend_notification</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+<#POSTER#> has posted a new _RLS_ titled "<#TITLE#>".  This _RLS_ is pending moderator approval.
+
+You can view the full _RLS_ and comments at this link:
+
+<#LINK#>
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>subject__ccs_record_pend_notification</word_key>
+      <word_default><![CDATA[<a href='%s'>%s</a> was posted and is pending approval]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>subject__ccs_record_notification</word_key>
+      <word_default><![CDATA[<a href='%s'>%s</a> was posted in category <a href='%s'>%s</a>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>noperm_view_database</word_key>
+      <word_default>You do not have permission to view _RLP_ in this database.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>noperm_add_database</word_key>
+      <word_default>You do not have permission to add _RLP_ to this database.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>noperm_comment_database</word_key>
+      <word_default>You can not comment on _RLP_ in this database.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>subject__ccs_comment_notification</word_key>
+      <word_default><![CDATA[<a href='%s'>%s</a> posted a comment on <a href='%s'>%s</a>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ccs_comment_notification</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+<#POSTER#> has posted a new comment on "<#TITLE#>".
+
+<#POSTER#> said:
+======================================================================
+<#TEXT#>
+======================================================================
+
+PLEASE DO NOT REPLY DIRECTLY TO THIS EMAIL!
+You can view the full _RLS_ and comments at this link:
+
+<#LINK#>
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>noperm_list_database</word_key>
+      <word_default>You do not have permission to view this database.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_page_permission</word_key>
+      <word_default>You do not have permission to view this page.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_page_specified</word_key>
+      <word_default>We could not find the page you were looking for.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comment_bad_formhash</word_key>
+      <word_default>The key used to identify you was not valid.  Please go back and resubmit the form.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>last_updated_record</word_key>
+      <word_default>Last updated</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_not_found</word_key>
+      <word_default>_RUS_ not found</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_comments</word_key>
+      <word_default>No comments have been made yet</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_perm_leave_comment</word_key>
+      <word_default>You do not have permission to leave comments on this _RLS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>leave_a_comment</word_key>
+      <word_default>Leave a comment</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comment_post_submit</word_key>
+      <word_default>Submit</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_comment_submitted</word_key>
+      <word_default>No comment was submitted.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>couldnot_comment_record</word_key>
+      <word_default>We could not determine which _RLS_ you were attempting to leave a comment for.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comment_saved_success</word_key>
+      <word_default>The comment has been successfully saved</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>submitted_record</word_key>
+      <word_default>Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>submitted_by_record</word_key>
+      <word_default>Submitted by</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>edit_record_button_no</word_key>
+      <word_default>You cannot edit this _RLS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>edit_record_button</word_key>
+      <word_default>Edit</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>field__views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>field__rating</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>field__saved</word_key>
+      <word_default>Submission Date</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>field__updated</word_key>
+      <word_default>Last Updated Date</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>field__member</word_key>
+      <word_default>Member ID</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>add_record_button</word_key>
+      <word_default>Add _RUS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>add_record_button_no</word_key>
+      <word_default>You cannot add _RLP_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_records_found</word_key>
+      <word_default>No _RLP_ found</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>field__id</word_key>
+      <word_default>_RUS_ ID</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>db_records__in</word_key>
+      <word_default>in</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>db_records__results</word_key>
+      <word_default>results per page</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>db_records__order</word_key>
+      <word_default>order with</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>db_records__desc</word_key>
+      <word_default>Descending (Z-A)</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>db_records__asc</word_key>
+      <word_default>Ascending (A-Z)</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>db_records__sortorder</word_key>
+      <word_default>Sort order</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>db_records__sortby</word_key>
+      <word_default>Sort by</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>dbrecord_resort</word_key>
+      <word_default>Sort</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>db_records__search</word_key>
+      <word_default>Search</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_edited_success1</word_key>
+      <word_default>The _RLS_ has been updated successfully, however it has been set to publish in the future</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_edited_success</word_key>
+      <word_default>The _RLS_ has been updated successfully.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_edit_not_found</word_key>
+      <word_default>We could not find the _RLS_ you were attempting to edit.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>dbfield_required</word_key>
+      <word_default>You must supply a value for the following required field: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_edit_no_perm</word_key>
+      <word_default>You do not have permission to edit this _RLS_.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>dbfield_invalidvalue</word_key>
+      <word_default>You supplied an invalid value for the field: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>dbfield_too_long</word_key>
+      <word_default>You supplied more than the maximum allowed characters for the following field: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_saved_success</word_key>
+      <word_default>The _RLS_ has been added to the database successfully.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>listing_subcats_of</word_key>
+      <word_default>Subcategories of</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>welcome_back_pre</word_key>
+      <word_default>Welcome back, </word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>welcome_login_link</word_key>
+      <word_default>Login</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>welcome_register_link</word_key>
+      <word_default>Register</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>welcome_useremail</word_key>
+      <word_default>Email address</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>sign_in_button</word_key>
+      <word_default>Sign In</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>delete_comment_js</word_key>
+      <word_default>Are you sure you want to delete this comment?</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>welcome_name_and_email</word_key>
+      <word_default>Username or email</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>enter_name</word_key>
+      <word_default>Username</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_unlocked_success</word_key>
+      <word_default>The _RLS_ has been successfully unlocked.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>nofind_lock_record</word_key>
+      <word_default>We could not find the _RLS_ you were attempting to lock or unlock.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>delete_record</word_key>
+      <word_default>Delete</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>noperm_del_record</word_key>
+      <word_default>You do not have permission to delete _RLP_.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>nofind_del_record</word_key>
+      <word_default>We could not find the _RLS_ you were attempting to delete.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_deleted_success</word_key>
+      <word_default>The _RLS_ has been successfully deleted.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>delete_comment_link</word_key>
+      <word_default>Delete</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>noperm_del_comment</word_key>
+      <word_default>You do not have permission to delete comments.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>nofind_del_comment</word_key>
+      <word_default>We could not find the comment you were attempting to delete.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comment_deleted_success</word_key>
+      <word_default>The comment has been successfully deleted.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_locked_success</word_key>
+      <word_default>The _RLS_ has been successfully locked.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>noperm_lock_record</word_key>
+      <word_default>You do not have permission to lock or unlock _RLP_.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>lock_record</word_key>
+      <word_default>Lock</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>unlock_record</word_key>
+      <word_default>Unlock</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>save_button_record</word_key>
+      <word_default>Save</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>details__head</word_key>
+      <word_default>Details</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>add_record_title</word_key>
+      <word_default>Adding _RUS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>edit_record_title</word_key>
+      <word_default>Editing _RUS_:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>navigation_prefix</word_key>
+      <word_default>_RUS_:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>must_select_cat</word_key>
+      <word_default>You must select a category</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_form_cat</word_key>
+      <word_default>Category</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>category_record</word_key>
+      <word_default>Category</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>latestrecord_on</word_key>
+      <word_default>on</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_cats_found</word_key>
+      <word_default>No Categories Found</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>th_lr_name</word_key>
+      <word_default>Latest _RUS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>latestrecord_by</word_key>
+      <word_default>by</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>latestrecord_id</word_key>
+      <word_default/>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>th_cat_name</word_key>
+      <word_default>Category Name</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>th_records_name</word_key>
+      <word_default>Total _RUP_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_latest_record</word_key>
+      <word_default>No _RUP_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_online_friends</word_key>
+      <word_default>None of your friends are currently online</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>online_friends</word_key>
+      <word_default>Online friends</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>page_last_updated</word_key>
+      <word_default>Last updated:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>session__viewingc</word_key>
+      <word_default>Viewing category:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>nopage_id_red</word_key>
+      <word_default>We could not find the page you were looking for.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ccs_search_button</word_key>
+      <word_default>Page</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>poll_finished</word_key>
+      <word_default>This poll is completed</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>poll_discuss</word_key>
+      <word_default>Discuss this poll</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>session__viewing</word_key>
+      <word_default>Viewing page:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>session__viewingr</word_key>
+      <word_default>Viewing record:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>poll_vote</word_key>
+      <word_default>Vote!</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>poll_noguest</word_key>
+      <word_default>Log in to vote</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>poll_novote</word_key>
+      <word_default>You cannot vote</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>poll_voted</word_key>
+      <word_default>You have already voted</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>poll_total_votes</word_key>
+      <word_default>Total: %s votes</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_fields_setup_user</word_key>
+      <word_default>There are no fields that you are allowed to modify. If you are the administrator, you should either turn off user modifications for this database, or edit your fields to allow at least one to be populated by users.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ccs_offline_title</word_key>
+      <word_default>OFFLINE</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>poll_title</word_key>
+      <word_default>Website Poll</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_pinned_success</word_key>
+      <word_default>The _RLS_ has been successfully pinned.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>couldnot_find_record</word_key>
+      <word_default>We could not find the _RLS_ you were attempting to view.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_unpinned_success</word_key>
+      <word_default>The _RLS_ has been successfully unpinned.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>noperm_pin_record</word_key>
+      <word_default>You do not have permission to pin or unpin _RLP_.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>nofind_pin_record</word_key>
+      <word_default>We could not find the _RLS_ you were attempting to pin.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>pin_record</word_key>
+      <word_default>Pin</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>confirm_button</word_key>
+      <word_default>Confirm</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>unpin_record</word_key>
+      <word_default>Unpin</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_view_perm_rec</word_key>
+      <word_default>You do not have permission to view this _RLS_.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>delete_record_confirm</word_key>
+      <word_default>Delete _RUS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>delete_record_info</word_key>
+      <word_default><![CDATA[There is no undoing this action. When you click confirm, the _RLS_, all of it's revisions, comments, and attachments will be permanently removed.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comment_saved_approval</word_key>
+      <word_default>The comment has been saved successfully, but must be approved before it is visible.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>noperm_add_category</word_key>
+      <word_default>You do not have permission to add _RLP_ to this category.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_cats_can_view</word_key>
+      <word_default>You do not have permission to view any of the categories.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_view_perm_cat</word_key>
+      <word_default>You do not have permission to view this category.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_saved_success2</word_key>
+      <word_default>The _RLS_ has been added, however it has been set to publish in the future</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>noperm_app_record</word_key>
+      <word_default>You do not have permission to approve or unapprove _RLP_.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_unapprove_success</word_key>
+      <word_default>The _RLS_ has been successfully hidden</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_approve_success</word_key>
+      <word_default>The _RLS_ has been successfully approved</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_saved_success1</word_key>
+      <word_default>The _RLS_ has been added, however it must be approved before it will be visible</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>approve_record</word_key>
+      <word_default>Approve</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>nofind_app_record</word_key>
+      <word_default>We could not find the _RLS_ you were attempting to approve or unapprove.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>unhide_record</word_key>
+      <word_default>Unhide</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>unapprove_record</word_key>
+      <word_default>Hide</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>attach_preview</word_key>
+      <word_default>Please note that attachments within a preview may not be available to download, and will not parse within other fields if inserted into them.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_preview_title</word_key>
+      <word_default>Preview</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>preview_button_record</word_key>
+      <word_default>Preview</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>_attachments_count</word_key>
+      <word_default>%s attachments</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>your_search_results</word_key>
+      <word_default>results</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>your_search</word_key>
+      <word_default>Your search for the term</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>your_search_returned</word_key>
+      <word_default>returned</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ccsattach_button</word_key>
+      <word_default>Add to _RUS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>dbfield_mem_invalid</word_key>
+      <word_default>An invalid member name was entered for field: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>select_one_rel</word_key>
+      <word_default>Select Option</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>validator__custom</word_key>
+      <word_default>Custom Regex</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>validator__custom_error</word_key>
+      <word_default>The value you supplied for %s appears to be invalid.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>validator__integer</word_key>
+      <word_default>Integer</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>validator__integer_error</word_key>
+      <word_default>Only numbers are allowed for %s.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>validator__alpha</word_key>
+      <word_default>Alpha-numeric</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>validator__alpha_error</word_key>
+      <word_default>Only letters and numbers are allowed for %s.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>validator__email</word_key>
+      <word_default>Email Address</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>validator__email_error</word_key>
+      <word_default>The email address you supplied appears to be invalid for %s.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>validator__url_error</word_key>
+      <word_default>The URL you supplied appears to be invalid for %s.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>validator__url</word_key>
+      <word_default>URL</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>database_lang_pu</word_key>
+      <word_default>Records</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>database_lang_su</word_key>
+      <word_default>Record</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>database_lang_pl</word_key>
+      <word_default>records</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>end_watch_c_success</word_key>
+      <word_default>You have stopped watching the category</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>database_lang_sl</word_key>
+      <word_default>record</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>start_watch_c_success</word_key>
+      <word_default>You have started watching the category successfully</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>end_watch_r_success</word_key>
+      <word_default>You have stopped watching the _RLS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>cannot_find_to_watch</word_key>
+      <word_default>We could not find the item you were attempting to watch.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>start_watch_r_success</word_key>
+      <word_default>You have started watching the _RLS_ successfully</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>members_only_watch</word_key>
+      <word_default>You must register a user account before you can watch categories and _RLP_.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>watch_category</word_key>
+      <word_default>Watch Category</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>watch_category_stop</word_key>
+      <word_default>Stop Watching Category</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>watch_record</word_key>
+      <word_default>Watch _RUS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>watch_record_stop</word_key>
+      <word_default>Stop Watching _RUS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>rm_uf__file</word_key>
+      <word_default>Remove existing file</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ccs_subcats</word_key>
+      <word_default>Subcategories</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ignored_comments_not</word_key>
+      <word_default>View comment</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comment_view_anyways</word_key>
+      <word_default>Click here to view anyways.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comment_ignored_rep</word_key>
+      <word_default>This comment by %s is hidden because the author has a reputation lower than your threshold.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>log_comment_del</word_key>
+      <word_default>Deleted an IP.Content comment posted in a topic</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>log_topic_del</word_key>
+      <word_default>Deleted an IP.Content auto-generated topic</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comment__pastcutoff</word_key>
+      <word_default>The comment cutoff date has passed.  No new comments are allowed on this _RLS_.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comment__notallowed</word_key>
+      <word_default>Comments are not allowed on this _RLS_.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>uploadfield__already</word_key>
+      <word_default>A file is already present.  Selecting a new file will overwrite the existing file.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>field_upload_error__5</word_key>
+      <word_default>The file you attempted to upload is not allowed: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>field_upload_error__4</word_key>
+      <word_default>There was an error while attempting to store the file: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>field_upload_error__3</word_key>
+      <word_default>The file you attempted to upload is too large: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>share_links_db</word_key>
+      <word_default>Share:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>field_upload_error__1</word_key>
+      <word_default>No file was selected to upload: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>field_upload_error__2</word_key>
+      <word_default>The file you attempted to upload is not allowed: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote__copyonly</word_key>
+      <word_default>The post will be copied to an article, and a link to the article will be added to the post.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>post_promoted_to_article_mv</word_key>
+      <word_default>This post has been promoted to an article</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>post_promoted_to_article</word_key>
+      <word_default>This post has been promoted to an article</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote_no_catid</word_key>
+      <word_default>You did not select a category to submit the article to.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote__moveonly_nl</word_key>
+      <word_default>The post will be removed when the article is created.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote__moveonly</word_key>
+      <word_default>The post will be replaced with a link to the article when the article is created.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote__copyonly_nl</word_key>
+      <word_default>The post will be copied to an article.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote_no_leave_link</word_key>
+      <word_default>Do not leave a link to the article</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote_link_leftmove</word_key>
+      <word_default>The post will be replaced with a link to the new article</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote_link_leftcpmv</word_key>
+      <word_default>If you choose to copy the post, the post will be updated with a link to the article.  If you move the post, the post will be replaced with a link to the article.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote_link_leftcopy</word_key>
+      <word_default>A link to the new article will be added to the post</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote__method</word_key>
+      <word_default>Promote Method</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote_copy_t</word_key>
+      <word_default>Copy Post</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote_move_t</word_key>
+      <word_default>Move Post</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote_post_to_article</word_key>
+      <word_default>Promote post to article</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote__cats</word_key>
+      <word_default>Select category</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote_no_db_id</word_key>
+      <word_default>There was an internal problem finding the articles database.  Please notify an administrator.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>nopost_to_promote</word_key>
+      <word_default>We could not find the post you were attempting to promote.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>noperm_promote</word_key>
+      <word_default>You do not have permission to promote posts to articles.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote_disabled</word_key>
+      <word_default>The administrator does not allow posts to be promoted to articles.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote_to_article</word_key>
+      <word_default>Promote to Article</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ss_record_posted</word_key>
+      <word_default>Published:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ss_comment_posted</word_key>
+      <word_default>Comment posted:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ss_type_comm_suff</word_key>
+      <word_default>%s Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ss_type_pages</word_key>
+      <word_default>Pages</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ss_db_views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ss_db_rating</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ss_db_editdate</word_key>
+      <word_default>Last Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>cldt_categories</word_key>
+      <word_default>Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ss_page_date</word_key>
+      <word_default>Last Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ss_page_title</word_key>
+      <word_default>Page Title</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ss_db_comm_date</word_key>
+      <word_default>Post Date</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ss_db_adddate</word_key>
+      <word_default>Date Added</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>archdt_articles</word_key>
+      <word_default>_RLP_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>archdt_viewcat</word_key>
+      <word_default>View this category</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>archdt_nosearchresults</word_key>
+      <word_default>Your search did not return any results</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>archdt_mostviewed</word_key>
+      <word_default>Most Viewed</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>archdt_title</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>archdt_highrated</word_key>
+      <word_default>Highest Rated</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>archdt_mostrecent</word_key>
+      <word_default>Most Recent</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>archdt_sortby</word_key>
+      <word_default>Sort by:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>archdt_archives</word_key>
+      <word_default>Archives</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>archdt_searchresults</word_key>
+      <word_default>Search Results</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>avdt_subscribe</word_key>
+      <word_default>Watch this _RLS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>avdt_stopsubs</word_key>
+      <word_default>Stop watching this _RLS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>fpdt_prevarts</word_key>
+      <word_default><![CDATA[Previous _RUP_ &rarr;]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>fpdt_noarticles</word_key>
+      <word_default>There are no _RLP_ in this category yet.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>fpdt_addone</word_key>
+      <word_default><![CDATA[Add one now &rarr;]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>fpdt_viewarchives</word_key>
+      <word_default>View archives</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>fpdt_in</word_key>
+      <word_default>in</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>fpdt_readstory</word_key>
+      <word_default><![CDATA[Read story &rarr;]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>fpdt_comments</word_key>
+      <word_default>comments</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comments_title</word_key>
+      <word_default>Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>fpdt_latestnews</word_key>
+      <word_default>Latest News</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>cat_viewmoderatedc</word_key>
+      <word_default>View unapproved comments</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>cat_viewmoderated</word_key>
+      <word_default>View unapproved _RLP_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>category_unapprovedclink</word_key>
+      <word_default>There are %s unapproved comments</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>category_unapprovedlink</word_key>
+      <word_default>There are %s unapproved _RLP_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>frontpage_nextpage</word_key>
+      <word_default><![CDATA[Next Page &raquo;]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>bad_plugin_file</word_key>
+      <word_default>There is a problem with a custom plugin installed for this database.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>other_contributors</word_key>
+      <word_default>Other contributors:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>posttopic_dl_attach_pre</word_key>
+      <word_default><![CDATA[Download attachment:&nbsp;]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>nosearchpermview</word_key>
+      <word_default>You do not have permission to view the content for this item</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote_associate</word_key>
+      <word_default>Use original topic for article comments?</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote_associate_auto</word_key>
+      <word_default>The original topic will be used for article comments</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comment_for_prefix</word_key>
+      <word_default><![CDATA[Comment for:&nbsp;]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>click_for_article</word_key>
+      <word_default>Click here to view the _RLS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>frontpage_previouspage</word_key>
+      <word_default><![CDATA[&laquo; Previous Page]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote__viewattach</word_key>
+      <word_default><![CDATA[[url=%s]View attachment: %s[/url]]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>error_loading_db_template</word_key>
+      <word_default>There was an error loading the template to display this page.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>notify__short__ccs_approval_notifications</word_key>
+      <word_default>Articles pending approval</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>notify__ccs_approval_notifications</word_key>
+      <word_default>Notification method to use for articles pending approval</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>notify__short__ccs_notifications</word_key>
+      <word_default>Article subscriptions</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>notify__ccs_notifications</word_key>
+      <word_default>Notification method to use for article subscriptions</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>article_unpublished</word_key>
+      <word_default>Unpublished</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>follow_record</word_key>
+      <word_default>Follow this %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>unfollow_record</word_key>
+      <word_default>Unfollow this %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>rate_article</word_key>
+      <word_default>Rate %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>context_search_category</word_key>
+      <word_default>This category</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>context_search_database</word_key>
+      <word_default>This database</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>filter_submit</word_key>
+      <word_default>Update Filters</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>filter_custom</word_key>
+      <word_default>Custom</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>filter_most_views</word_key>
+      <word_default>Most Views</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>filter_start_date</word_key>
+      <word_default>Date Added</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>filter_last_updated</word_key>
+      <word_default>Recently Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ab__hotvideos</word_key>
+      <word_default>Hot Videos</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>like_totalcount_like</word_key>
+      <word_default>%s member(s) follow this</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ab__recent_videos</word_key>
+      <word_default>Recent Videos</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ab__ourlatestvideo</word_key>
+      <word_default>Our Latest Video</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ab__viewothercats</word_key>
+      <word_default>View Other Content</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ab__searchbutton</word_key>
+      <word_default>Search</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ab__searcharticles</word_key>
+      <word_default>Search _RUP_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ab__seealllink</word_key>
+      <word_default><![CDATA[See All &rarr;]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ccs_active_users</word_key>
+      <word_default>%s user(s) are online (in the past %s minutes)</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>followed_comments_sub</word_key>
+      <word_default>%s (Comments)</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ab__viewourarticles</word_key>
+      <word_default><![CDATA[View our articles &rarr;]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ab__viewothermedia</word_key>
+      <word_default><![CDATA[View other media &rarr;]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ab__categories</word_key>
+      <word_default>Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>report_record_title</word_key>
+      <word_default>Reporting _RLS_ or comment</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>report_record_msg</word_key>
+      <word_default><![CDATA[<b>Enter your report</b>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>rc_comment_pre</word_key>
+      <word_default>Comment for: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comment_block</word_key>
+      <word_default>Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>reports_no_record</word_key>
+      <word_default>We could not find the record being reported.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_form_staticfurl_desc</word_key>
+      <word_default>If not supplied, we will generate a friendly URL for you automatically</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>article_template_default</word_key>
+      <word_default>--Use Default--</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>static_furl_in_use</word_key>
+      <word_default>The static FURL name you specified is already in use.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>report_record_page</word_key>
+      <word_default>Report this _RLS_ to a moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>report_record_pagec</word_key>
+      <word_default>Report this comment to a moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>promote_form_author_desc</word_key>
+      <word_default>Leave blank to use the member who made the post as the _RLS_ author</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_form_author_desc</word_key>
+      <word_default>Leave blank to use your account if adding a new _RLS_, or to retain the current author upon submission if editing</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_article_template</word_key>
+      <word_default>Article Template</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_form_author</word_key>
+      <word_default>_RUS_ Author</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_form_metakeywords</word_key>
+      <word_default>Meta Keywords</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_form_metadescription</word_key>
+      <word_default>Meta Description</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>editing_revision</word_key>
+      <word_default>Editing Revision</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>revision_edit_success</word_key>
+      <word_default>The changes to the revision have been saved</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>report_record</word_key>
+      <word_default>Report</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>report_section_title_record</word_key>
+      <word_default>_RUS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_form_staticfurl</word_key>
+      <word_default>Static FURL Name</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_revision_to_edit</word_key>
+      <word_default>We could not find the revision you were attempting to edit.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_revision_to_compare</word_key>
+      <word_default>We could not find the revision you were attempting to compare.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>rev_removedhtml</word_key>
+      <word_default>Removed</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>rev_addedhtml</word_key>
+      <word_default>Added</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comparing_revisions_for</word_key>
+      <word_default><![CDATA[Comparing Revisions For &quot;%s&quot;]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>delete_rev_sure</word_key>
+      <word_default>Are you sure you want to delete this revision?  There is no undoing this action!</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>revision_deleted_success</word_key>
+      <word_default>The revision has been deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>revision_restored_success</word_key>
+      <word_default>The revision has been restored</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_revision_to_restore</word_key>
+      <word_default>We could not find the revision you were attempting to restore.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>all_saved_revisions</word_key>
+      <word_default><![CDATA[All Revisions For &quot;%s&quot;]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_revision_to_delete</word_key>
+      <word_default>We could not find the revision you were attempting to delete.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>restore_rev_sure</word_key>
+      <word_default>Are you sure you wish to restore this revision?</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>revision_link_compare</word_key>
+      <word_default>Compare</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>revision_link_restore</word_key>
+      <word_default>Restore</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>revision_link_delete</word_key>
+      <word_default>Delete</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>revision_link_edit</word_key>
+      <word_default>Edit</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_revisions_found</word_key>
+      <word_default>No revisions found</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>revision_th_member</word_key>
+      <word_default>Triggering Member</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>dbfield_sm_parseerror</word_key>
+      <word_default><![CDATA[A parsing error occurred for the field '%s': %s]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_sm_field_selected</word_key>
+      <word_default><![CDATA[<em>Nothing selected</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>sm_button_add</word_key>
+      <word_default>Add Media</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>sm_button_clear</word_key>
+      <word_default>Reset</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>record_revisions</word_key>
+      <word_default>View Revisions</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_revision_access</word_key>
+      <word_default>You do not have permission to manage revisions.</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>revisions_pagetitle_pre</word_key>
+      <word_default>Revisions:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>revisions_navigation</word_key>
+      <word_default>Manage Revisions</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>revision_th_date</word_key>
+      <word_default>Revision Date</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>sm_field__count</word_key>
+      <word_default>%s items</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>sform_tags</word_key>
+      <word_default>_RUS_ Tags</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>menu_hook_preview</word_key>
+      <word_default>PREVIEW</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>nexus_purchase_content</word_key>
+      <word_default>%s purchased by %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>nexus_ticket_content</word_key>
+      <word_default>Started by %s %s (Status: %s)</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>nexus_invoice_content</word_key>
+      <word_default><![CDATA[&#36;%s (%s)]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>nexus_so_notshipped</word_key>
+      <word_default><![CDATA[<em>Not shipped yet</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>nexus_trans_content</word_key>
+      <word_default><![CDATA[&#36;%s via %s (%s)]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>nexus_so_content</word_key>
+      <word_default>%s shipped via %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comments_queued_tooltip</word_key>
+      <word_default>%s comments pending approval</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ccsc_queued_badge</word_key>
+      <word_default>(+%s Unapproved)</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_comment_delete_title</word_key>
+      <word_default>Delete this comment</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_comment_unhide_title</word_key>
+      <word_default>Restore this comment</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_deleted_by</word_key>
+      <word_default>Deleted by:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_deleted_on</word_key>
+      <word_default>On:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_deleted_because</word_key>
+      <word_default>Reason:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_nocomments_approval</word_key>
+      <word_default>There are no comments pending approval</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_nocomments_deleted</word_key>
+      <word_default>There are no hidden comments</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>rel_related_ft</word_key>
+      <word_default>Related pages</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>comments_pending_app_title</word_key>
+      <word_default>View comments pending approval</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>category_listing_pt</word_key>
+      <word_default>Categories in %s</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ccs_extra_opts_ttl</word_key>
+      <word_default>Extra Options</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_comment_edit_title</word_key>
+      <word_default>Edit this comment</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_comment_approve_title</word_key>
+      <word_default>Approve this comment</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_deleted_records</word_key>
+      <word_default>There are no records currently hidden in this database</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>no_unapproved_records</word_key>
+      <word_default>There are no records pending approval in this database</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_comment_info</word_key>
+      <word_default><![CDATA[Comments stored in the forums can be managed from the <a href='%s'>Posts</a> tab.  Only comments not stored in the forums will be displayed here.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_in_database</word_key>
+      <word_default>In Database:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_in_record</word_key>
+      <word_default>In Record:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_record_updated</word_key>
+      <word_default>Updated:</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_record_comments</word_key>
+      <word_default>comments</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_record_views</word_key>
+      <word_default>views</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_tab_ccsdeletedcomments</word_key>
+      <word_default>Database Record Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_tab_deletedrecords</word_key>
+      <word_default>Database Records</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_tab_ccscomments</word_key>
+      <word_default>Database Record Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>modcp_tab_unapprovedrecords</word_key>
+      <word_default>Database Records</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>category_listing</word_key>
+      <word_default>Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>dbname_page_title</word_key>
+      <word_default>%s (Page %s)</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>xxxxx_js_5star</word_key>
+      <word_default>Rate _RLS_ 5 stars</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>xxxxx_js_4star</word_key>
+      <word_default>Rate _RLS_ 4 stars</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>xxxxx_js_3star</word_key>
+      <word_default>Rate _RLS_ 3 stars</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>xxxxx_js_2star</word_key>
+      <word_default>Rate _RLS_ 2 stars</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>xxxxx_js_1star</word_key>
+      <word_default>Rate _RLS_ 1 star</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ccscat_markread</word_key>
+      <word_default>Mark category as read</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>fulltopic_news_feed</word_key>
+      <word_default>Full topic</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>badurl_redirect</word_key>
+      <word_default>We could not determine what page to send you to</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>lock_on_submit</word_key>
+      <word_default>Lock _RLS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>hide_on_submit</word_key>
+      <word_default>Hide _RLS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>pin_on_submit</word_key>
+      <word_default>Pin _RLS_</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>notify_record_title</word_key>
+      <word_default><![CDATA[<a href='%s'>%s</a> posted _RLS_ '<a href='%s'>%s</a>']]></word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>mod_actions_on_submit</word_key>
+      <word_default>Moderation actions</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>ss_db_relevancy</word_key>
+      <word_default>Relevancy</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>update_topic_too_desc</word_key>
+      <word_default>Checking this box will cause the first post in the topic used to store comments to also be updated</word_default>
+    </lang>
+    <lang>
+      <word_app>ccs</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>update_topic_too</word_key>
+      <word_default>Update Topic</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

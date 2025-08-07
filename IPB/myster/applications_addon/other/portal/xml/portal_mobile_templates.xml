@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="portal" templategroups="a:1:{s:11:&quot;skin_portal&quot;;s:5:&quot;exact&quot;;}">
+  <templategroup group="skin_portal">
+    <template>
+      <template_group>skin_portal</template_group>
+      <template_content><![CDATA[<div class='master_list'>
+
+    <foreach loop="articles:$articles as $topic">
+
+	<h2 class='title'>
+		<a href='{parse url="showtopic={$topic['tid']}" base="public" seotitle="{$topic['title_seo']}" template="showtopic"}'>{IPSText::truncate( $topic['title'], intval( $this->settings['portal_topic_title_truncate'] ) )}</a>
+	</h2>
+
+        <div class='topic_reply' id='entry{$topic['tid']}'>
+
+            <h2 class='secondary'> 
+		
+                 <a href='{parse url="showuser={$topic['member_id']}" seotitle="{$topic['members_seo_name']}" template="showuser" base="public"}'><img src='{$topic['pp_thumb_photo']}' alt='{$r['members_display_name']} {$this->lang->words['photo']}' width='{$topic['pp_thumb_width']}' height='{$topic['pp_thumb_height']}' class='left photo' /></a> <if test="$topic['members_display_name']">{parse template="userHoverCard" group="global" params="$topic"}<else />{$this->settings['guest_name_pre']}{$topic['starter_name']}{$this->settings['guest_name_suf']}</if>
+                {$this->lang->words['in']} <a href='{parse url="showforum={$topic['id']}" base="public" seotitle="{$topic['name_seo']}" template="showforum"}'>{$topic['name']}</a>
+
+                 <span class='subtext'>
+                      {parse date="$topic['start_date']" format="DATE"}
+                 </span>
+
+	    </h2>
+	    <div id="post-{$topic['tid']}" class='row post line_spacing'>
+                <if test="truncateTopic:|:$this->settings['portal_topic_truncate']">
+                    {IPSText::truncate( IPSText::getTextClass( 'bbcode' )->stripAllTags( strip_tags( $topic['post'], '<br>' ) ), intval( $this->settings['portal_topic_truncate'] ) )}
+                     <div class='ipsPad_half'>
+                         &nbsp;<a href='{parse url="showtopic={$topic['tid']}" base="public" seotitle="{$topic['title_seo']}" template="showtopic"}' class='right clearfix'><span class='ipsButton_secondary'>Перейти к теме</span></a>
+                     </div>
+                <else />{$topic['post']}</if>
+                 <!--IBF.ATTACHMENT_{$topic['pid']}-->
+	    </div>  
+          
+        </div>
+</foreach>
+</div>
+<if test="pagesBottom:|:$pages"><div class='topic_controls'>{$pages}</div></if>]]></template_content>
+      <template_name>articles</template_name>
+      <template_data>$articles, $pages=''</template_data>
+      <template_updated>1339729468</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_portal</template_group>
+      <template_content><![CDATA[<div class='master_list' id='topic_list'>
+<h2>{$this->lang->words['discuss_title']}</h2>
+<foreach loop="topics_hook:$topics as $r">
+			<div class='row touch-row' id="topic-{$r['tid']}">
+				<div class='icon'>
+					<a href='{parse url="showuser={$r['member_id']}" template="showuser" seotitle="{$r['members_seo_name']}" base="public"}' title='{$this->lang->words['view_profile']}'><img src='{$r['pp_mini_photo']}' alt="{$r['members_display_name']}{$this->lang->words['photo']}" class='photo' /></a>	
+				</div>
+				<strong><a class='title' href='{parse url="showtopic={$r['tid']}" base="public" template="showtopic" seotitle="{$r['title_seo']}"}' rel='bookmark' class='ipsType_small' title='{$this->lang->words['view_topic']}'>{$r['topic_title']}</a></strong>
+				<br />
+				<span class='subtext'><if test="$r['members_display_name']"><a href='{parse url="showuser={r['member_id']}" template="showuser" seotitle="{$r['members_seo_name']}" base="public"}' title='{$this->lang->words['view_profile']}'>{$r['members_display_name']}</a><else />{$this->settings['guest_name_pre']}{$r['starter_name']}{$this->settings['guest_name_suf']}</if> &middot; {parse date="$r['start_date']" format="short"}</span>
+			</div>
+</foreach>
+</div>]]></template_content>
+      <template_name>latestPosts</template_name>
+      <template_data>$topics=array()</template_data>
+      <template_updated>1339729468</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_portal</template_group>
+      <template_content><![CDATA[<div class='master_list'>
+    <h2><a href="{parse url="app=members&amp;module=online&amp;section=online" base="public"}">{$this->lang->words['online_title']}</a></h2>
+<div class='row post line_spacing'>
+		<span class='desc'>{parse expression="sprintf( $this->lang->words['online_split'], intval($active['MEMBERS']), intval($active['visitors']), intval($active['ANON']) )"}</span>
+		<br /><br />
+		<p>
+			<span class='name'>{parse expression="implode( ",</span> <span class='name'>", $active['NAMES'] )"}</span>					
+		</p>
+</div>
+</div>]]></template_content>
+      <template_name>onlineUsers</template_name>
+      <template_data>$active</template_data>
+      <template_updated>1339729468</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_portal</template_group>
+      <template_content><![CDATA[{parse js_module="topic"}
+<div class='master_list'>
+    <h2><a href='{parse url="showtopic={$topic['tid']}" base="public" seotitle="{$topic['title_seo']}" template="showtopic"}'>{$this->lang->words['poll_title']}</a></h2>
+<div class='row post line_spacing'>
+    {$content['html']}</div>
+</div>]]></template_content>
+      <template_name>pollWrapper</template_name>
+      <template_data><![CDATA[$content='',$topic=array()]]></template_data>
+      <template_updated>1339729468</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_portal</template_group>
+      <template_content><![CDATA[<if test="showBlocks:|:is_array( $blocks ) AND count( $blocks )">
+     <foreach loop="showBlockCode:$blocks as $block">
+          <if test="templateHeader:|:$block['template']"><div class='master_list'><h2>{$block['title']}</h2><div class='row post line_spacing'></if>
+              {$block['block_code']}
+          <if test="templateFooter:|:$block['template']"></div></div></if>
+     </foreach>
+</if>]]></template_content>
+      <template_name>showBlocks</template_name>
+      <template_data>$blocks=array()</template_data>
+      <template_updated>1339729468</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_portal</template_group>
+      <template_content><![CDATA[<div class='master_list' id='topic_list'>
+        <h2>{$this->lang->words['links_title']}</h2>
+	
+	<foreach loop="links:$links as $link">
+             <div class='row touch-row' id="link-{$id}">
+			&bull; <a href="{$link[1]}">{$link[2]}</a>
+             </div>		
+	</foreach>	
+</div>]]></template_content>
+      <template_name>siteNavigation</template_name>
+      <template_data>$links=array()</template_data>
+      <template_updated>1339729468</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_portal</template_group>
+      <template_content><![CDATA[<div class='master_list' id='member_list'>
+<h2>{$this->lang->words['top_posters']}</h2>
+<foreach loop="members:$members as $member">
+			<div class='row touch-row' id="member-{$member['member_id']}">
+				<div class='icon'>
+					<a href='{parse url="showuser={$member['member_id']}" template="showuser" seotitle="{$member['members_seo_name']}" base="public"}' title='{$this->lang->words['view_profile']}'><img src='{$member['pp_mini_photo']}' alt="{$member['members_display_name']}{$this->lang->words['photo']}" class='photo' /></a>	
+				</div>
+				<strong>{$member['rank']}. {IPSMember::makeProfileLink( IPSMember::makeNameFormatted( $member['members_display_name'], $member['member_group_id'] ), $member['member_id'], $member['members_seo_name'] )}</strong>
+				<br />
+				<span class='subtext'>{parse format_number="$member['posts']"} {$this->lang->words['posts']}</span>
+			</div>
+</foreach>
+</div>]]></template_content>
+      <template_name>topPosters</template_name>
+      <template_data>$members=array()</template_data>
+      <template_updated>1315759933</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template> 
+    <template>
+      <template_group>skin_portal</template_group>
+      <template_content><![CDATA[<div class='master_list' id='member_list'>
+<h2>{$this->lang->words['newest_members']}</h2>
+<foreach loop="members:$members as $member">
+			<div class='row touch-row' id="member-{$member['member_id']}">
+				<div class='icon'>
+					<a href='{parse url="showuser={$member['member_id']}" template="showuser" seotitle="{$member['members_seo_name']}" base="public"}' title='{$this->lang->words['view_profile']}'><img src='{$member['pp_mini_photo']}' alt="{$member['members_display_name']}{$this->lang->words['photo']}" class='photo' /></a>	
+				</div>
+				<strong>{$member['rank']}. {IPSMember::makeProfileLink( IPSMember::makeNameFormatted( $member['members_display_name'], $member['member_group_id'] ), $member['member_id'], $member['members_seo_name'] )}</strong>
+				<br />
+				<span class='subtext'>{$this->lang->words['joined']}: {parse date="$member['joined']" format="short"}</span>
+			</div>
+</foreach>
+</div>]]></template_content>
+      <template_name>newestMembers</template_name>
+      <template_data>$members=array()</template_data>
+      <template_updated>1267626640</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_portal</template_group>
+      <template_content><![CDATA[<div class='master_list' id='topic_list'>
+<h2>{$this->lang->words['newest_posts']}</h2>
+<foreach loop="post_row:$rows as $r">
+			<div class='row touch-row' id="topic-{$r['tid']}">
+				<div class='icon'>
+					<a href='{parse url="showuser={$r['author']['member_id']}" template="showuser" seotitle="{$r['author']['members_seo_name']}" base="public"}' title='{$this->lang->words['view_profile']}'><img src='{$r['author']['pp_mini_photo']}' alt="{$r['author']['members_display_name']}{$this->lang->words['photo']}" class='photo' /></a>	
+				</div>
+				<strong><a class='title' href='{parse url="showtopic={$r['tid']}&amp;view=findpost&amp;p={$r['pid']}" base="public" template="showtopic" seotitle="{$r['title_seo']}"}' rel='bookmark' class='ipsType_small' title='{$this->lang->words['view_topic']}'>{$r['topic_title']}</a></strong>
+				<br />
+				<span class='subtext'><if test="$r['author']['members_display_name']"><a href='{parse url="showuser={r['author']['member_id']}" template="showuser" seotitle="{$r['author']['members_seo_name']}" base="public"}' title='{$this->lang->words['view_profile']}'>{$r['author']['members_display_name']}</a><else />{$this->settings['guest_name_pre']}{$r['author']['starter_name']}{$this->settings['guest_name_suf']}</if> &middot; {parse date="$r['post_date']" format="short"}<br />
+{parse expression="IPSText::truncate( $r['post'], $this->settings['portal_NewPostsChars'] )"}</span>
+			</div>
+</foreach>
+</div>]]></template_content>
+      <template_name>newestPosts</template_name>
+      <template_data>$rows=array()</template_data>
+      <template_updated>1315838152</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>    
+    <template>
+      <template_group>skin_portal</template_group>
+      <template_content><![CDATA[<if test="disablelightbox:|:!$this->settings['disable_lightbox']">
+{parse template="include_lightbox" group="global" params=""}
+</if>
+
+<if test="topBlocks:|:is_array( $topBlocks) AND count( $topBlocks)">
+      <div id='top_blocks' class='ipsLayout ipsLayout_content clearfix'>
+           {parse template="showBlocks" group="portal" params="$topBlocks"}
+      </div>
+</if>
+
+<div class='ipsLayout <if test="setupLeftBlockSide:|:count( $leftBlocks ) OR !$this->settings['portal_hide_column']">ipsLayout_withleft ipsLayout_{$this->settings['portal_left_style']}</if> <if test="setupRightBlockSide:|:count( $rightBlocks ) OR !$this->settings['portal_hide_column']">ipsLayout_withright ipsLayout_{$this->settings['portal_right_style']}</if> clearfix'>
+      <div class='ipsLayout_left'>
+           {parse template="showBlocks" group="portal" params="$leftBlocks"}
+      </div>
+      <div class='ipsLayout_content clearfix'>
+           {parse template="showBlocks" group="portal" params="$mainBlocks"}
+      </div>
+      <div class='ipsLayout_right'>
+           {parse template="showBlocks" group="portal" params="$rightBlocks"} 
+      </div>
+</div>
+
+<if test="bottomBlocks:|:is_array( $bottomBlocks) AND count( $bottomBlocks)">
+      <div id='bottom_blocks' class='ipsLayout ipsLayout_content clearfix'>
+           {parse template="showBlocks" group="portal" params="$bottomBlocks"}
+      </div>
+</if>
+
+{parse template="include_highlighter" group="global" params="1"}]]></template_content>
+      <template_name>skeletonTemplate</template_name>
+      <template_data>$leftBlocks, $mainBlocks, $rightBlocks, $topBlocks, $bottomBlocks</template_data>
+      <template_updated>1339729468</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+  </templategroup>
+</templates>

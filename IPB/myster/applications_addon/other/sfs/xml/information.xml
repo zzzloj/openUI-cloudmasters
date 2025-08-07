@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<information>
+  <data>
+    <name>Stop Forum Spam</name>
+    <public_name>Stop Forum Spam</public_name>
+    <hide_tab>1</hide_tab>
+    <author>Coding Lair Mods</author>
+    <description>Check incoming registrations against SFS DB.</description>
+    <disabledatinstall>0</disabledatinstall>
+    <global_caches/>
+    <website/>
+    <update_check/>
+    <templategroups/>
+  </data>
+</information>

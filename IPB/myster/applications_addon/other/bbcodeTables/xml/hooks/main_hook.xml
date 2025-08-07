@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name>Custom BBCode Tables</hook_name>
+      <hook_desc>The use of custom tables in bbcode</hook_desc>
+      <hook_author>Zafer BAHADIR</hook_author>
+      <hook_email>zbahadir@msn.com</hook_email>
+      <hook_website>http://www.ipbaccess.com</hook_website>
+      <hook_update_check/>
+      <hook_requirements><![CDATA[a:3:{s:21:"required_applications";a:0:{}s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+      <hook_version_human>1.0.0</hook_version_human>
+      <hook_version_long>1.0.0.0</hook_version_long>
+      <hook_extra_data><![CDATA[a:2:{s:7:"display";a:1:{s:9:"templates";s:29:"From bbcodeTables: bbcode_main";}s:9:"templates";a:1:{s:12:"bbcodeTables";a:1:{i:0;s:11:"bbcode_main";}}}]]></hook_extra_data>
+      <hook_key>bbcodeTables</hook_key>
+      <hook_global_caches/>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>bbcodeTables_main.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>bbcodeTables</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:9:"skin_post";s:12:"skinFunction";s:16:"postFormTemplate";s:4:"type";s:2:"if";s:2:"id";s:15:"logged_in_check";s:8:"position";s:11:"pre.startif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class bbcodeTables
+{
+	public $registry;
+	public function __construct()
+	{
+		$this->registry     =  ipsRegistry::instance();
+        $this->settings     =& $this->registry->fetchSettings();
+        $this->member       =  $this->registry->member();
+        $this->memberData   =  $this->registry->member()->fetchMemberData();
+        $this->lang         =  $this->registry->getClass('class_localization');
+        $this->lang->loadLanguageFile(array('public_bbcodeTables'),'bbcodeTables');
+	}
+
+	public function getOutput()
+	{
+
+        if(!$this->settings['bbcodeTables_on'])
+        {
+            return false;
+        }
+
+        if(!in_array($this->memberData['member_group_id'], explode(",", $this->settings['bbcodeTables_groups'])))
+        {
+            return false;
+        }
+
+        if(!in_array($_GET['f'], explode(",", $this->settings['bbcodeTables_forums'])))
+        {
+            return false;
+        }
+
+        return $this->registry->output->getTemplate('bbcodeTables')->bbcode_main();
+	}
+}]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings/>
+  <hookextras_language/>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates/>
+  <hookextras_css/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

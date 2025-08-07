@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name><![CDATA[(JG32/JG33) Forum Spammer IP &amp; Email Check]]></hook_name>
+      <hook_desc><![CDATA[Queries stopforumspam.com for known spammer IP&#39;s]]></hook_desc>
+      <hook_author>Shady</hook_author>
+      <hook_email>shady@interwebbies.com</hook_email>
+      <hook_website>http://codinglair.com/index.php?act=idx</hook_website>
+      <hook_update_check>http://codinglair.com/forum/resource_updates.php?resource=sfsHook</hook_update_check>
+      <hook_requirements><![CDATA[a:3:{s:21:"required_applications";a:0:{}s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+      <hook_version_human>2.0.6</hook_version_human>
+      <hook_version_long>13009</hook_version_long>
+      <hook_extra_data><![CDATA[a:2:{s:7:"display";a:1:{s:8:"database";s:51:"ALTER TABLE banfilters ADD sfs tinyint(1) DEFAULT 0";}s:8:"database";a:1:{s:5:"alter";a:1:{i:0;a:6:{s:9:"altertype";s:3:"add";s:5:"table";s:10:"banfilters";s:5:"field";s:3:"sfs";s:8:"newfield";s:0:"";s:9:"fieldtype";s:10:"tinyint(1)";s:7:"default";s:1:"0";}}}}]]></hook_extra_data>
+      <hook_key>stopForumSpam</hook_key>
+      <hook_global_caches/>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>stopForumSpam.php</hook_file_real>
+      <hook_type>commandHooks</hook_type>
+      <hook_classname>stopForumSpam</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:27:"public_core_global_register";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class stopForumSpam extends (~extends~) {
+
+    public function registerProcessForm() {
+        $this->DB->build(array('select' => 'wlID', 'from' => 'sfs_whitelist', 'where' => 'wlInfo = "'. $this->member->ip_address .'" OR wlInfo = "'. $this->request['EmailAddress']. '"'));
+        $this->DB->execute();
+    
+        if (!$this->DB->GetTotalRows()) {
+            $ts = array();
+            $sfs = $this->DB->buildAndFetch(array('select' => '*', 'from' => 'sfs_settings'));
+            require_once(IPS_KERNEL_PATH.'classFileManagement.php');
+            $this->sfsChk = new classFileManagement();
+            $em = urlencode(iconv($this->settings['gb_char_set'], "UTF-8", $this->request['EmailAddress']));
+            $ts['email'] = $this->request['EmailAddress'];
+            $ts["ip"] = $this->member->ip_address;
+            $ts["nm"] = $this->request['members_display_name'];
+            $c = $this->sfsChk->getFileContents("http://www.stopforumspam.com/api?ip={$ts['ip']}&email={$em}&f=serial");
+            $r = unserialize($c);
+
+            if ($sfs['checkType'] == "0" || $sfs['checkType'] == "1") {
+                if ($r['ip']['appears'] == "1") {
+                    $is = explode(" ", $r['ip']['lastseen']);
+                    $isa = explode("-", $is[0]);
+                    $ts["w"] = mktime(0, 0, 0, $isa[1], $isa[2], $isa[0]);
+                    $id = (time() - $ts["w"]) / 86400;
+                    $ts["t"] = "IP";
+                    
+                    if ($sfs['ipAtAll']) {
+                        $this->spammerFound($ts, $sfs, $r);
+                    }
+                    
+                    if ($sfs['ipNumTimes'] <> "0" && $r['ip']['frequency'] > $sfs['ipNumTimes']) {
+                        $this->spammerFound($ts, $sfs, $r);
+                    }
+                    
+                    if (round($id) < $sfs['ipDaysAgo']) {
+                        $this->spammerFound($ts, $sfs, $r);
+                    }
+                    
+                    if ($sfs['ipConfidence'] <> "0" && round($r['ip']['confidence']) > $sfs['ipConfidence']) {
+                        $this->spammerFound($ts, $sfs, $r);
+                    }
+                }
+            }
+            
+            if ($sfs['checkType'] == "0" || $sfs['checkType'] == "2") {
+                if ($r['email']['appears'] == "1") {
+                   $es = explode(" ", $r['email']['lastseen']);
+                   $esa = explode("-", $es[0]);
+                   $ts["w"] = mktime(0, 0, 0, $esa[1], $esa[2], $esa[0]);
+                   $ed = (time() - $ts['w']) / 86400;
+                   $ts["t"] = "Email";
+                   
+                   if ($sfs['emAtAll']) {
+                       $this->spammerFound($ts, $sfs, $r);
+                   }
+                   
+                   if ($sfs['emNumTimes'] <> "0" && $r['email']['frequency'] > $sfs['emNumTimes']) {
+                       $this->spammerFound($ts, $sfs, $r);
+                   }
+                   
+                   
+                   if (round($ed) < $sfs['emDaysAgo']) {
+                       $this->spammerFound($ts, $sfs, $r);
+                   }
+                   
+                   if ($sfs['emConfidence'] <> "0" && round($r['email']['confidence']) > $sfs['emConfidence']) {
+                       $this->spammerFound($ts, $sfs, $r);
+                   }
+                }
+            }
+        }
+        return parent::registerProcessForm();
+    }
+    
+    private function spammerFound($ts, $sfs, $r) {
+        $lt = strtolower($ts['t']);
+        $nc = $sfs['blockCount'] + 1;
+        $now = time();
+        $cf = round($r[$lt]['confidence']);
+        $this->DB->update("sfs_settings", array("blockCount" => $nc));
+        $this->DB->update("sfs_blocked", "blockDate= {$now}, timesBlocked = timesBlocked + 1, sfsFreq = {$r[$lt]['frequency']}, sfsLast = {$ts['w']}, sfsConf = {$cf}", "blockedBy = '".$ts['t']."' AND blockUN = '".$ts['nm']."' AND blockEM = '".$ts['email']."' AND blockIP = '".$ts['ip']."'", false, true);
+        if (!$this->DB->getAffectedRows()) {
+            $this->DB->insert("sfs_blocked", array("blockDate" => $now, "blockedBy" => $ts['t'], "blockUN" => $ts['nm'], "blockEM" => $ts['email'], "blockIP" => $ts['ip'], "timesBlocked" => "1", "sfsFreq" => $r[$lt]['frequency'], "sfsLast" => $ts['w'], "sfsConf" => $cf));
+        }
+        $y = date(Y);
+        $m = date(M);
+        $this->DB->update("sfs_tracking", "`{$m}` = `{$m}` + 1, yearTot = yearTot + 1", "year = {$y}", false, true);
+        if (!$this->DB->getAffectedRows()) {
+            $this->DB->insert("sfs_tracking", array("year" => "{$y}", "{$m}" => "1", "yearTot" => "1"));
+        }
+        
+        if ($sfs['addBan'] > "0") {
+            $this->DB->build(array('select' => 'ban_id', 'from' => 'banfilters', 'where' => "ban_content = '".$ts[$lt]."'"));
+            $this->DB->execute();
+            
+            if (!$this->DB->GetTotalRows()) {
+                $this->DB->insert('banfilters', array('ban_type' => $lt,
+                                                       'ban_content' => $ts[$lt],
+                                                       'ban_date' => time(),
+                                                       'ban_reason' => 'Automatically added by Stop Forum Spam App',
+                                                       'sfs' => '1'
+                ));
+                if ($lt == "ip") {
+                    $cache = array();
+                    $this->DB->build(array('select' => 'ban_content', 'from' => 'banfilters', 'where' => "ban_type='ip'"));
+                    $this->DB->execute();
+                    while ($f = $this->DB->fetch()) {
+                        $cache[] = $f['ban_content'];
+                    }
+                    $this->cache->setCache('banfilters', $cache, array('array' => 1));
+                }
+            }
+        }
+        
+        if ($sfs['emailTo'] != '' && $sfs['emailSub'] != '') {
+            if ($r['ip']['appears'] == "1") {
+                $ptei = "IP Confidence: {$r['ip']['confidence']}% likelihood that this IP belongs to a spammer
+IP Seen: This IP has appeared in the SFS DB {$r['ip']['frequency']} times
+IP Last reported on: {$r['ip']['lastseen']}
+SFS Info: http://www.stopforumspam.com/search/{$ts['ip']}";
+                $htei = "<b>IP Confidence:</b> {$r['ip']['confidence']}% likelihood that this IP belongs to a spammer<br />
+<b>IP Seen:</b> This ip has appeared in the SFS DB {$r['ip']['frequency']} times<br />
+<b>IP Last reported on:</b> {$r['ip']['lastseen']}<br />
+<b>SFS Info:</b> <a href='http://www.stopforumspam.com/search/{$ts['ip']}'>http://www.stopforumspam.com/search/{$ts['ip']}</a>";
+            } else {
+                $ptei = "This IP does not appear in the SFS database";
+                $htei = "This IP does not appear in the SFS database";
+            }
+            
+            if ($r['email']['appears'] == "1") {
+                $ptee = "Email Confidence: {$r['email']['confidence']}% likelihood that this email belongs to a spammer
+Email Seen: This email has appeared in the SFS DB {$r['email']['frequency']} times
+Email Last reported on: {$r['email']['lastseen']}
+SFS Info: http://www.stopforumspam.com/search/{$ts['email']}";
+                $htee = "<b>Email Confidence:</b> {$r['email']['confidence']}% likelihood that this email belongs to a spammer<br />
+<b>Email Seen:</b> This email has appeared in the SFS DB {$r['email']['frequency']} times<br />
+<b>Email Last reported on:</b> {$r['email']['lastseen']}<br />
+<b>SFS Info:</b> <a href='http://www.stopforumspam.com/search/{$ts['email']}'>http://www.stopforumspam.com/search/{$ts['email']}</a>";
+            } else {
+                $ptee = "This email does not appear in the SFS database";
+                $htee = "This email does not appear in the SFS database";
+            }
+            
+            IPSText::getTextClass('email')->html_email = true;
+            IPSText::getTextClass('email')->setHtmlEmail(true);
+            IPSText::getTextClass('email')->subject = $sfs['emailSub'];
+            IPSText::getTextClass('email')->to = $sfs['emailTo'];
+            IPSText::getTextClass('email')->from = $this->settings['email_out'];
+                
+            IPSText::getTextClass('email')->setPlainTextTemplate('A recent attempt to register on your forum was blocked.  Here are the details of that registration attempt.
+            
+Registration Details
+*----------------------------------*
+Username: '.$ts['nm'].'
+Email: '.$ts['email'].'
+IP Address: '.$ts['ip'].'
+*----------------------------------*
+
+Stop Forum Spam Details
+*----------------------------------*
+'
+.$ptei.
+'
+
+'
+.$ptee.
+'
+*----------------------------------*');
+
+            IPSText::getTextClass('email')->setHtmlTemplate('
+<html>
+<head>
+<title>Registration Blocked</title>
+<style type="text/css">
+
+body {
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 11px;
+color: #333;
+line-height: 20px;
+background-color: #eee;
+}
+
+p {
+padding: 5px 5px 5px 0;
+margin: 0;
+text-align: left;
+}
+
+h1 {
+font-size: 14px;
+background-color: #666;
+padding: 5px 5px 5px 7px;
+color: #fff;
+text-shadow: 1px 1px 0 #333;
+margin: 5px 0 5px 0;
+}
+
+.contentWrap {
+border: 1px solid #ddd;
+padding: 10px 20px 10px 20px;
+width: 80%;
+background-color: #fff;
+margin-top: 10px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 10px;
+}
+
+hr {
+height: 1px;
+border-width: 0;
+color: #ddd;
+background-color: #ddd
+}
+
+a:link {
+color: #00f;
+text-decoration: none;
+}
+
+a:visited {
+color: #00f;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="contentWrap">
+
+<h1>Registration Details</h1>
+<p>A recent attempt to register on your forum was blocked. Here are the details of that registration attempt.</p>
+<p><b>Username:</b> '.$ts['nm'].'<br />
+<b>Email:</b> '.$ts['email'].'<br />
+<b>IP Address:</b> '.$ts['ip'].'</p>
+</div>
+
+<div class="contentWrap">
+<h1>Stop Forum Spam Details</h1>
+
+<p>'.$htei.'</p>
+
+<hr />
+
+<p>'.$htee.'</p>
+</div>
+
+</body>
+</html>');
+                
+        IPSText::getTextClass('email')->sendMail();
+        }
+        IPSText::getTextClass('bbcode')->parse_html = TRUE;
+        IPSText::getTextClass('bbcode')->parse_bbcode = TRUE;
+        $err = IPSText::getTextClass('bbcode')->preDisplayParse($sfs['errorMessage']);
+        $this->registry->output->showError($err);
+    }  
+}
+
+?>]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings/>
+  <hookextras_language/>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates/>
+  <hookextras_css/>
+  <hookextras_replacements/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter>
+    <alter>
+      <altertype>add</altertype>
+      <table>banfilters</table>
+      <field>sfs</field>
+      <newfield/>
+      <fieldtype>tinyint(1)</fieldtype>
+      <default>0</default>
+    </alter>
+  </hookextras_database_alter>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="gsidebars" templategroups="a:1:{s:14:&quot;skin_gsidebars&quot;;s:5:&quot;exact&quot;;}">
+  <templategroup group="skin_gsidebars">
+    <template>
+      <template_group>skin_gsidebars</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>showAdverts</template_name>
+      <template_data>$adverts, $title</template_data>
+      <template_updated>1306960085</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_gsidebars</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>showHTML</template_name>
+      <template_data>$html, $width</template_data>
+      <template_updated>1306960085</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_gsidebars</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>showSidebar</template_name>
+      <template_data>$html</template_data>
+      <template_updated>1306960085</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_gsidebars</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>standardSidebar</template_name>
+      <template_data>$html</template_data>
+      <template_updated>1306960085</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

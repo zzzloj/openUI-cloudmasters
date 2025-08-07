@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name>Go To Wall Button</hook_name>
+      <hook_desc>Shows a button that brings to the wall of the forum you are in.</hook_desc>
+      <hook_author>Devian</hook_author>
+      <hook_email>dean.warrior@gmail.com</hook_email>
+      <hook_website/>
+      <hook_update_check/>
+      <hook_requirements><![CDATA[a:4:{s:20:"hook_ipb_version_min";i:0;s:20:"hook_ipb_version_max";i:0;s:20:"hook_php_version_min";s:1:"0";s:20:"hook_php_version_max";s:1:"0";}]]></hook_requirements>
+      <hook_version_human>1.0</hook_version_human>
+      <hook_version_long>1000</hook_version_long>
+      <hook_extra_data><![CDATA[a:4:{s:13:"settingGroups";a:1:{s:0:"";s:2:"48";}s:8:"settings";a:0:{}s:7:"display";a:2:{s:8:"settings";s:33:"Setting groups: Go To Wall Button";s:8:"language";s:55:"From topicslist_public_gotowall: gotowall, goto_noperms";}s:8:"language";a:1:{s:26:"topicslist_public_gotowall";a:2:{s:0:"";s:8:"gotowall";i:1;s:12:"goto_noperms";}}}]]></hook_extra_data>
+      <hook_key>goToWall</hook_key>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>goToWallButton.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>goToWallButton</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:10:"skin_forum";s:12:"skinFunction";s:18:"forumIndexTemplate";s:4:"type";s:2:"if";s:2:"id";s:11:"usercanpost";s:8:"position";s:11:"pre.startif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+# Last Modified: May 2nd 2011, 14:17
+class goToWallButton
+{
+	
+	 protected $registry;
+    
+    public function __construct()
+    {
+        $this->registry    = ipsRegistry::instance();
+        $this->settings   =& $this->registry->fetchSettings();
+        $this->memberData = $this->registry->member()->fetchMemberData();
+        $this->lang       =  $this->registry->getClass('class_localization');
+		$this->request    =& $this->registry->fetchRequest();
+    }
+    
+    
+	public function getOutput()
+	{
+	
+	$this->lang->loadLanguageFile( array( 'public_gotowall' ), 'topicslist' );
+	$appear = FALSE;		
+
+    $forum_data = $this->registry->output->getTemplate('forum')->functionData['forumIndexTemplate'][0]['forum_data'];
+	
+	foreach( explode( ',', $this->settings['tl_fenabled'] ) as $fid ){
+		
+		if( $fid == $this->request['f'] ) {
+			$appear = TRUE;
+			break;
+		}	
+	
+	}
+	
+	if( $appear ){
+	foreach( explode( ',' , $this->settings['tl_genabled'] ) as $g )
+	{
+		if( $g == $this->memberData['member_group_id'] ) {
+			$ok_l = TRUE;
+			break;
+			}
+		}
+		
+		if( !$ok_l ) {
+		
+			$appear = FALSE;
+			$noperms = TRUE;
+		}		
+	}
+	
+	
+	if( !$appear And ( $this->settings['tl_button']  And  $noperms  ) ){
+	
+					return <<<HTML
+<li class='disabled'><span>{$this->lang->words['goto_noperms']}</span></li>
+HTML;
+}
+	
+	
+	if( $appear ){
+				
+		
+			return <<<HTML
+<li><a href='index.php?&amp;app=topicslist&amp;module=list&amp;section=view&amp;f={$this->request['f']}' title='{$this->lang->words['gotowall']}' ><img src='{$this->settings['img_url']}/wall.png' alt='{$this->lang->words['gotowall']}' /> {$this->lang->words['gotowall']} </a></li>
+HTML;
+			}
+			
+			else return '';
+
+	
+
+}
+}
+
+?>]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_title>Go To Wall Button</conf_title_title>
+      <conf_title_desc>Manage Go To Wall Button Hook</conf_title_desc>
+      <conf_title_noshow>0</conf_title_noshow>
+      <conf_title_keyword>topicslist_button</conf_title_keyword>
+      <conf_title_app>topicslist</conf_title_app>
+      <conf_title_tab>Topics Wall</conf_title_tab>
+    </setting>
+    <setting>
+      <conf_id>378</conf_id>
+      <conf_title>Show a disabled button if user has no access</conf_title>
+      <conf_description>If set to yes, users that cannot access Topics Wall will see a disabled button. Otherwise, nothing will appear.</conf_description>
+      <conf_group>48</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tl_button</conf_key>
+      <conf_value/>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>button topics wall gotowall</conf_keywords>
+      <conf_title_keyword>topicslist_button</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </hookextras_settings>
+  <hookextras_language>
+    <language>
+      <word_app>topicslist</word_app>
+      <word_pack>public_gotowall</word_pack>
+      <word_key>goto_noperms</word_key>
+      <word_default>You cannot access Topics Wall</word_default>
+      <word_custom/>
+      <word_js>0</word_js>
+    </language>
+    <language>
+      <word_app>topicslist</word_app>
+      <word_pack>public_gotowall</word_pack>
+      <word_key>gotowall</word_key>
+      <word_default>Go to Wall</word_default>
+      <word_custom/>
+      <word_js>0</word_js>
+    </language>
+  </hookextras_language>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates/>
+  <hookextras_css/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

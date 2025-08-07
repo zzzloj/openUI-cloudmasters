@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<css>
+  <cssfile>
+    <css_set_id>0</css_set_id>
+    <css_updated>1369791761</css_updated>
+    <css_group>ipcontent</css_group>
+    <css_content>
+.ipsLayout_content .subcat {
+	margin-bottom: 10px;
+	padding: 15px 0 10px;
+	border-top: 1px solid #d8d8d8;
+	overflow: hidden;
+}
+
+	.ipsLayout_content .subcat h2 {
+		float: left;
+		width: 180px;
+		font-weight: normal;
+	}
+	
+		.ipsLayout_content .subcat h2 .desc {
+			display: block;
+			margin-top: 10px;
+		}
+		
+		.ipsLayout_content .subcat h2 img {
+			vertical-align: middle;
+			margin-right: 5px;
+		}
+
+		.ipsLayout_content .subcat h2 a {
+			text-decoration: none;
+		}
+
+	.ipsLayout_content .subcat em.moderated {
+		padding: 5px;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+	}
+
+.ipsLayout_content .children {
+	overflow: hidden;
+	font-size: 11px;
+	margin-top: 8px;
+	float: left;
+	clear: left;
+	max-width: 180px;
+	margin-left: 20px;
+	line-height: 130%;
+}
+
+
+.ipsLayout_content .pagelinks a {
+	display: inline-block;
+	text-decoration: none;
+	margin-left: 5px;
+	padding: 4px 7px 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+	.ipsLayout_content .pagelinks a:hover {
+		text-decoration: none !important;
+	}
+
+.ipsLayout_content .links {
+	display: inline-block;
+}
+
+.article-pages {
+	overflow: hidden;
+}
+
+span.pagination.no_pages {
+	display: none;
+	height: 0px;
+}
+
+
+
+#category_list, #recent_articles, #recent_comments {
+	padding: 0px;
+	overflow: hidden;
+}
+
+	#category_list h3, #recent_articles h3, #recent_comments h3 {
+		margin: 0px 0px 3px 0px;
+	}
+
+		#category_list h3 a {
+			font-size: 10px;
+			text-decoration: none;
+			float: right;
+			font-weight: normal;
+			padding-top: 2px;
+		}
+
+	#category_list ul a {
+		text-decoration: none;
+		display: block;
+		padding: 8px 12px;
+		background-color: #fafbfc;
+		border-right: 10px solid #1d3652;
+	}
+
+		#category_list ul a:hover {
+			background: #d5dde5;
+			border-right: 10px solid #1d3652;
+		}
+
+	#category_list li {
+		font-size: 12px;
+		margin: 0 0 3px 0;
+	}
+
+		#category_list ul ul {
+			margin-top: 3px;
+		}
+
+			#category_list ul ul li a {
+				font-size: 11px;
+				padding: 6px 12px 6px 25px;
+			}
+
+	#article_sidebar .block_list {
+		padding-top: 0px;
+	}
+
+		#recent_articles .block_list li {
+			padding-right: 10px;
+		}
+
+	#recent_comments .photo {
+		float: left;
+		margin-right: 8px;
+	}
+
+	#recent_comments .desc {
+		font-size: 0.9em;
+	}
+
+
+
+/* Some misc/global styles */
+ 
+.section_title, .post_form h2 {
+	font-size: 22px !important;
+	font-weight: bold;
+	border-bottom: 2px solid #cbcbcb;
+	padding-bottom: 3px;
+	margin-bottom: 5px;
+}
+
+.add_link, .post_block .share_links a {
+	display: inline-block;
+	text-decoration: none;
+	margin-left: 5px;
+	padding: 4px 7px 4px;
+	color: #fff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	font-size: 11px;
+	cursor: pointer;
+}
+
+	.add_link:hover, .post_block .share_links a:hover {
+		text-decoration: none !important;
+		color: #fff;
+	}
+
+.add_link {
+	position: relative;
+	top: -4px;
+}
+
+.desc {
+	font-size: 11px;
+	color: #858585;
+} 
+
+/* Videos system */
+
+.videos {
+	width: 78%;
+}
+
+#videos_latest {
+	text-align: center;
+}
+
+	#videos_latest h2, #videos_recent h2 {
+		text-align: left;
+		font-size: 22px !important;
+		font-weight: bold;
+		border-bottom: 2px solid #cbcbcb;
+		padding-bottom: 3px;
+		margin-bottom: 5px;
+	}
+
+#videos_recent {
+	clear: both;
+	width: 100%;
+	margin-top: 20px;
+}
+
+	.video_thumb {
+		padding: 10px;
+		width: 140px;
+		height: 140px;
+		overflow: hidden;
+		margin: 10px 3px 3px 3px;
+		float: left;
+	}
+		
+		.video_thumb img {
+			margin-bottom: 5px;
+		}
+		
+		.video_thumb a {
+			color: #30587f;
+			font-size: 11px;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		
+		.video_thumb .time {
+			color: #979797;
+			font-size: 11px;
+		}
+		
+		.video_thumb .rating {
+			margin-top: 8px;
+			display: inline-block;
+		}
+
+/* Mini calendar */
+.mini_cal td, .mini_cal th {
+	text-align: center;
+	padding: 4px;
+}
+
+	.mini_cal th {
+		font-weight: bold;
+	}
+
+/* Unpublished articles - give a diff color */
+.unpublished, body .unpublished td,
+.unpublished td.altrow, .post_block.unpublished,
+body td.unpublished {
+	background-color: #d5eaff;
+}
+
+	.unpublished, .unpublished a {
+		color: #0056ff;
+	}
+
+
+.teaser {
+	margin-bottom: 30px;
+}
+
+/* Block styles (overridden to match skin) */
+.ccsBase {
+	background: #fcfcfc !important;
+}
+
+.ccsBase .ccsBlockTitle {
+	background: #DBE2EC !important;
+	font: normal 14px helvetica, arial, sans-serif !important;
+	color: #204066 !important;
+	padding: 8px 10px !important;
+}
+
+/* Backgrounds */
+.ccsRow_1 { background: #fff !important; }
+.ccsRow_2 { background: #f1f6f9 !important; }
+.ccsRow_3 { background: #f7fbfc !important; }
+.ccsRow_4 { }
+
+/* Text */
+.ccsText_light { color: #777777 !important; }
+
+
+/* User photos */
+.ccsUserPhoto { 
+	border: 1px solid #d5d5d5 !important;
+	-webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.1) !important; 
+	-moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.1) !important;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.1) !important;
+}
+
+/* Social sharing */
+.ipsForm .ipsField.ipsField_checkbox p.ipsField_content {
+    margin-top: 3px;
+}</css_content>
+    <css_position>1</css_position>
+    <css_app>ccs</css_app>
+    <css_app_hide>1</css_app_hide>
+    <css_attributes><![CDATA[title="Main" media="screen,print"]]></css_attributes>
+    <css_removed>0</css_removed>
+    <css_modules/>
+    <css_master_key>root</css_master_key>
+  </cssfile>
+  <cssfile>
+    <css_set_id>0</css_set_id>
+    <css_updated>1369791761</css_updated>
+    <css_group>ipcontent_print</css_group>
+    <css_content>#header, 
+#menu_bar, 
+.site_callout, 
+#ccs_breadcrumb,
+.ipsLayout_right,
+.share_links,
+#main_comment_wrap .no_messages {
+	display: none;
+}
+
+h1.article_title {
+	display: block;
+}
+
+.article_body img.photo {
+	float: right;
+	padding: 10px;
+}</css_content>
+    <css_position>2</css_position>
+    <css_app>ccs</css_app>
+    <css_app_hide>1</css_app_hide>
+    <css_attributes><![CDATA[title="Main" media="print"]]></css_attributes>
+    <css_removed>0</css_removed>
+    <css_modules/>
+    <css_master_key>root</css_master_key>
+  </cssfile>
+</css>

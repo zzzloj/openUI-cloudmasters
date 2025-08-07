@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>bbcodeTables</conf_title_keyword>
+      <conf_title_title>Custom BBCode Tables</conf_title_title>
+      <conf_title_desc>The use of custom tables in bbcode</conf_title_desc>
+      <conf_title_tab>IPBAccess</conf_title_tab>
+      <conf_title_app>bbcodeTables</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Custom BBCode Tables On</conf_title>
+      <conf_description>Custom BBCode Tables on or off</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bbcodeTables_on</conf_key>
+      <conf_start_group>Custom BBCode Tables - Main Settings</conf_start_group>
+      <conf_default>0</conf_default>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_title_keyword>bbcodeTables</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+
+    <setting>
+      <conf_title>Groups access</conf_title>
+      <conf_description/>
+      <conf_type>multi</conf_type>
+      <conf_key>bbcodeTables_groups</conf_key>
+      <conf_default>4</conf_default>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[$key = 'bbcodeTables_groups';
+if ( $save == 1) {
+    if ( is_array($_POST[ $key ]) ) {
+        $_POST[ $key ] = implode(",",$_POST[ $key ]);
+    } else {
+        $_POST[ $key ] = "";
+    }
+}
+if ( $show == 1 ) {
+    $key .= '[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>20</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bbcodeTables</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+
+    <setting>
+      <conf_title>Forums</conf_title>
+      <conf_description>Forums that will be effective</conf_description>
+      <conf_type>multi</conf_type>
+      <conf_key>bbcodeTables_forums</conf_key>
+      <conf_extra>#show_forums#</conf_extra>
+      <conf_evalphp><![CDATA[$key = 'bbcodeTables_forums';
+if ( $save == 1){
+    if ( is_array($_POST[ $key ]) )    {
+        $_POST[ $key ] = implode(",",$_POST[ $key ]);
+    } else {
+        $_POST[ $key ] = "";
+    }
+}
+if ( $show == 1 ) {
+    $key .= '[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>30</conf_position>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_title_keyword>bbcodeTables</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+
+    <setting>
+      <conf_title>Custom Teplate</conf_title>
+      <conf_description>Custom Template</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bbcodeTables_usect</conf_key>
+      <conf_start_group></conf_start_group>
+      <conf_default>0</conf_default>
+      <conf_protected>1</conf_protected>
+      <conf_position>35</conf_position>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_title_keyword>bbcodeTables</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>TH CSS Settings</conf_title>
+      <conf_description>TD cell css settins. A css tag per line</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>bbcodeTables_thcss_settings</conf_key>
+      <conf_default>
+color: #FFFFFF;
+background: #386493;
+font-weight: bold;
+border-bottom: 1px solid #F7F7F7;
+border-left: 1px solid #F7F7F7;
+padding:3px;
+margin-bottom: 1px;
+      </conf_default>
+      <conf_start_group>Custom BBCode Settings</conf_start_group>
+      <conf_protected>1</conf_protected>
+      <conf_position>40</conf_position>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_title_keyword>bbcodeTables</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Upper Left Corner CSS Settings</conf_title>
+      <conf_description>TD cell css settins. A css tag per line</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>bbcodeTables_tecss_settings</conf_key>
+      <conf_default>
+color: #FFFFFF;
+background: #FF0000;
+font-weight: bold;
+      </conf_default>
+      <conf_protected>1</conf_protected>
+      <conf_position>40</conf_position>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_title_keyword>bbcodeTables</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+
+    <setting>
+      <conf_title>TD CSS Reverse Settings</conf_title>
+      <conf_description>TD cell css settins. A css tag per line</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>bbcodeTables_tdcss_rsettings</conf_key>
+      <conf_default>
+color: #000000;
+background: #DBDBDB;
+font-weight: bold;
+border-bottom: 1px solid #F7F7F7;
+border-left: 1px solid #F7F7F7;
+padding:3px;
+      </conf_default>
+      <conf_protected>1</conf_protected>
+      <conf_position>55</conf_position>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_title_keyword>bbcodeTables</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+
+    <setting>
+      <conf_title>TD CSS Settings</conf_title>
+      <conf_description>TD cell css settins. A css tag per line</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>bbcodeTables_tdcss_settings</conf_key>
+      <conf_default>
+color: #000000;
+background: #EBEBEB;
+font-weight: bold;
+border-bottom: 1px solid #F7F7F7;
+border-left: 1px solid #F7F7F7;
+padding:3px;
+      </conf_default>
+      <conf_protected>1</conf_protected>
+      <conf_position>60</conf_position>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_title_keyword>bbcodeTables</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>bbcodeTables_Custom</conf_title_keyword>
+      <conf_title_title>Custom BBCode Tables - Custom Template</conf_title_title>
+      <conf_title_desc>BBCode Tables Custom Template</conf_title_desc>
+      <conf_title_tab>IPBAccess</conf_title_tab>
+      <conf_title_app>bbcodeTables</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+
+    <setting>
+      <conf_title>Table CSS Settings</conf_title>
+      <conf_description>Defined can use HTML CSS tags.&#13;
+</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>bbcodeTables_Tables</conf_key>
+      <conf_default>
+border: 2px solid #006699;
+//background-color: #FF00CC;
+//background: #00CC00;
+      </conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group>Table CSS Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bbcodeTables_Custom</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+
+    <setting>
+      <conf_title>Table HTML Settings</conf_title>
+      <conf_description>Defined can use HTML tags.&#13;
+</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>bbcodeTables_Tables_HTML</conf_key>
+      <conf_default>
+border=1
+      </conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group></conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bbcodeTables_Custom</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+
+    <setting>
+      <conf_title>TH Header Settings</conf_title>
+      <conf_description>Defined can use HTML CSS tags.&#13;
+</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>bbcodeTables_TH</conf_key>
+      <conf_default>
+background-color: #00A9FB;
+color: #FFFFFF;
+      </conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group>TH Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bbcodeTables_Custom</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+
+    <setting>
+      <conf_title>TD Settings</conf_title>
+      <conf_description>Defined can use HTML CSS tags.&#13;
+</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>bbcodeTables_TD</conf_key>
+      <conf_default>
+background-color: #000000;
+color: #FFFFFF;
+      </conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>20</conf_position>
+      <conf_start_group>TD Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bbcodeTables_Custom</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+
+    <setting>
+      <conf_title>Upper Left Corner TH CSS Settings</conf_title>
+      <conf_description>Defined can use HTML CSS tags.&#13;
+</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>bbcodeTables_TE</conf_key>
+      <conf_default>
+background-color: #FF0000;
+color: #FFFF00;
+      </conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>30</conf_position>
+      <conf_start_group>TH Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>bbcodeTables_Custom</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+
+  </settinggroup>
+</settingexport>

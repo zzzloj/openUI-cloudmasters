@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Post Templates</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Post Templates</subitemtitle>
+					<subsection>templates</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+        <item>
+			<title>Forum Templates</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Forums</subitemtitle>
+					<subsection>forums</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+                <subitem>
+					<subitemtitle>Configure Forum</subitemtitle>
+					<subsection>forums</subsection>
+					<subitemurl>do=edit</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

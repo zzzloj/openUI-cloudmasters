@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>g_testemunhos_remover_comentario</word_key>
+      <word_default>Can delete comments?</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>g_testemunhos_destacar</word_key>
+      <word_default>Can pin/unpin testimonials?</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>g_testemunhos_fechar</word_key>
+      <word_default>Can open/close testimonials?</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>g_testemunhos_banir_membro</word_key>
+      <word_default>Can ban members from the Testimonials System?</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>g_testemunhos_remover_testemunho</word_key>
+      <word_default>Can delete testimonials?</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>g_testemunhos_aprovar</word_key>
+      <word_default>Can approve/unapprove testimonials and comments?</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>g_testemunhos_postar_removereditby</word_key>
+      <word_default><![CDATA[Allow user to remove 'Edited by' legend?]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>g_testemunhos_editar</word_key>
+      <word_default>Can edit others testimonials and comments?</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>g_testemunhos_edit_max_time</word_key>
+      <word_default>Edit time restriction (in minutes)?</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>g_testemunhos_postar_comentarios</word_key>
+      <word_default>Can post comments in testimonials?</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>g_testemunhos_report</word_key>
+      <word_default>Can report testimonials and comments?</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>g_testemunhos_postar_testemunhos</word_key>
+      <word_default>Can post new testimonials?</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>post</word_key>
+      <word_default>Posts</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>mod</word_key>
+      <word_default>Moderation</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>g_testemunhos_use</word_key>
+      <word_default>Can use the Testimonials System?</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>perms</word_key>
+      <word_default>Permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>stats_value</word_key>
+      <word_default>Value</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>upgrade_date</word_key>
+      <word_default>Updated on</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>upgrade_version</word_key>
+      <word_default>Version</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>upgrade_history</word_key>
+      <word_default>Update History</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>quick_stats</word_key>
+      <word_default>Quick Stats</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>total_views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>total_testemunhos_unapproved</word_key>
+      <word_default>Pending Testimonials</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>total_comentarios</word_key>
+      <word_default>Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>total_testemunhos</word_key>
+      <word_default>Testimonials</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>overview_title</word_key>
+      <word_default>Testimonials System Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>novalid_userid</word_key>
+      <word_default>User ID invalid!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>unban</word_key>
+      <word_default>Unban this member</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>user_unbanned</word_key>
+      <word_default>This user is unbanned from Testimonials System!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>testemunho_modlog_unban</word_key>
+      <word_default><![CDATA[User <b>%s</b> Unbanned]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>nobanned</word_key>
+      <word_default>No banned users were found!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_r_grupo</word_key>
+      <word_default>Group</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_r_bannedon</word_key>
+      <word_default>Banned on</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_r_joined</word_key>
+      <word_default>Registered</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_r_userid</word_key>
+      <word_default>ID</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_r_username</word_key>
+      <word_default>User</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>resultado_users</word_key>
+      <word_default>Users found on your search</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_users</word_key>
+      <word_default>Search for Banned Members</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_userid</word_key>
+      <word_default>User ID</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>manage_banned</word_key>
+      <word_default>Manage Banned Members</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_user</word_key>
+      <word_default>User Name</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>resultado</word_key>
+      <word_default>Logs found on your search</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>manage_logs</word_key>
+      <word_default>Manage Logs</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_logs</word_key>
+      <word_default>Search Logs</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_r_ip</word_key>
+      <word_default>IP</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_r_title</word_key>
+      <word_default>Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_r_tid</word_key>
+      <word_default>ID</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_action</word_key>
+      <word_default>Action</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_tid</word_key>
+      <word_default>Testimonial ID</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_search</word_key>
+      <word_default>Search</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_where</word_key>
+      <word_default>Sort by:</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_title</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_id</word_key>
+      <word_default>Mod ID</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>search_name</word_key>
+      <word_default>Moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>nologs</word_key>
+      <word_default>No logs were found!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>autor</word_key>
+      <word_default>Author</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>done</word_key>
+      <word_default>%s Topics and its posts were converted into Testimonials and Comments!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>data</word_key>
+      <word_default>Date</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>notopics</word_key>
+      <word_default><![CDATA[There aren't new topics to be converted.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>proceed</word_key>
+      <word_default>CONVERT</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>titulo</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>posts</word_key>
+      <word_default>Posts</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>testemunhos_offline</word_key>
+      <word_default>Testimonials System is OFFLINE!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>testemunhos_offline_desc</word_key>
+      <word_default><![CDATA[To turn Testimonials System ONLINE, click on SETTINGS links and choose <strong>YES</strong> on <strong>System Online ?</strong> setting.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>novalid_forum</word_key>
+      <word_default>The forum you selected is invalid!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>forum_stats2</word_key>
+      <word_default><![CDATA[<br />To assurance the right functioning of this tool, 30 topics and posts will be converted into Testimonials and Comments per cycle.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>next</word_key>
+      <word_default><![CDATA[Next >>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>forum_stats</word_key>
+      <word_default><![CDATA[<br />There are <b>%s topics</b> and <b>%s posts</b> in this forum. <b>%s topics were already converted.</b>. <br /><br />Select below which topics you want to convert into Testimonials and click on CONVERT button.<br /><br />To assurance the right functioning of this tool, 30 topics and posts will be converted into Testimonials and Comments per cycle.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>tool_convert_desc_desc</word_key>
+      <word_default>Step 1: Select source forum</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>tool_convert_desc_desc2</word_key>
+      <word_default>After selecting a valid forum, click on button below.</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>tool_convert_desc_desc3</word_key>
+      <word_default>Step 2: Select which topics you want to convert</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>tool_convert</word_key>
+      <word_default>Tool to Convert Topics</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>tool_convert_desc</word_key>
+      <word_default><![CDATA[<br />This tool will convert topis and post into testimonials and comments. Useful if you already use a forum as testimonials area.<br /><br />Select the source forum.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>site</word_key>
+      <word_default>Site</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>mod</word_key>
+      <word_default>About</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>autor</word_key>
+      <word_default>Author</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>versao</word_key>
+      <word_default>Version</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>visao_geral</word_key>
+      <word_default>Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>stats_stats</word_key>
+      <word_default>Statistic</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>delete_cat</word_key>
+      <word_default>Category successfully deleted.</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>admin_testemunhos</word_pack>
+      <word_key>total_testemunhoscats</word_key>
+      <word_default>Categories</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

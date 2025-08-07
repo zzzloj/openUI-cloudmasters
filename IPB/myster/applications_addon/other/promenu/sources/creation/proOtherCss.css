@@ -1,0 +1,40 @@
+#{menu_id} {
+	background-color: #fff;
+	width: 100%;
+	font-size: 13px;
+	min-height: 200px;
+	left: 0;
+	z-index: 15000;
+}
+
+#{menu_id} .main_widths {
+	min-width: 980px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+#{menu_id} .category {
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px;
+}
+
+#{menu_id} .category > a {
+	width: 0 !important;
+	min-width: 100px; /* change this to adjust your category minimum width */
+	cursor: pointer;
+	display: block;
+	word-wrap: break-word;
+}
+
+#{menu_id} .mainParent {
+	text-decoration: underline;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: block;
+}
+
+#{menu_id} .blocks {
+	margin-top: 5px;
+}

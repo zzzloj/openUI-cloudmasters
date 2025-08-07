@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Articles Configuration</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Articles Configuration</subitemtitle>
+					<subitemlang>ccs_articles</subitemlang>
+					<subsection>configure</subsection>
+					<subitemurl>do=home</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Promote Article Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Promote Article Settings</subitemtitle>
+					<subitemlang>ccs_promote</subitemlang>
+					<subsection>settings</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Frontpage Manager</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Frontpage Manager</subitemtitle>
+					<subitemlang>ccs_frontpage</subitemlang>
+					<subsection>frontpage</subsection>
+					<subitemurl>do=frontpage</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Manage Articles</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Articles</subitemtitle>
+					<subitemlang>ccs_man_articles</subitemlang>
+					<subsection>articles</subsection>
+					<subitemurl>do=articles</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Create New Article</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Create New Article</subitemtitle>
+					<subitemlang>ccs_new_article</subitemlang>
+					<subsection>articles</subsection>
+					<subitemurl>do=add</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Manage Categories</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Categories</subitemtitle>
+					<subitemlang>ccs_man_cats</subitemlang>
+					<subsection>categories</subsection>
+					<subitemurl>do=list</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Manage Fields</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Fields</subitemtitle>
+					<subitemlang>ccs_man_fields</subitemlang>
+					<subsection>fields</subsection>
+					<subitemurl>do=fields</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Manage Editors</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Editors</subitemtitle>
+					<subitemlang>ccs_man_editors</subitemlang>
+					<subsection>editors</subsection>
+					<subitemurl>do=editors</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

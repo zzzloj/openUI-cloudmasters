@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>subject__question_pending</word_key>
+      <word_default>A new FAQ has been submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>notify__question_pending</word_key>
+      <word_default><![CDATA[Notify me when new FAQ's are pending approval]]></word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>questions</word_key>
+      <word_default>Questions</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>question</word_key>
+      <word_default>Question</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>no_questions_yet</word_key>
+      <word_default>No questions have been created yet.</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>name</word_key>
+      <word_default>Name</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>manage_questions</word_key>
+      <word_default>Manage Questions</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>faq</word_key>
+      <word_default>Frequently Asked Questions</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>edit_question</word_key>
+      <word_default>Edit Question</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>add_question</word_key>
+      <word_default>Add Question</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>answer</word_key>
+      <word_default>Answer</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>collections</word_key>
+      <word_default>Collections</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>question_pending</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+A new question has been submitted to the FAQ and is pending approval.
+
+You can view the question here: <#LINK#>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>width</word_key>
+      <word_default>Popup Width</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>public_faq</word_pack>
+      <word_key>width_desc</word_key>
+      <word_default><![CDATA[Enter the width of the popup window in pixels (default is 600).<br />Use &quot;auto&quot; to auto-size the window. Useful for questions that contain embedded media.]]></word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

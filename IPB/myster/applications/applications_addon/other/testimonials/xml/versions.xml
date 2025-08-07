@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<versions>
+	<version>
+		<human>1.0.0</human>
+		<long>10000</long>
+	</version>
+	<version>
+		<human>1.1.0</human>
+		<long>11000</long>
+	</version>
+	<version>
+		<human>1.1.1</human>
+		<long>11001</long>
+	</version>
+	<version>
+		<human>1.1.2</human>
+		<long>11002</long>
+	</version>
+	<version>
+		<human>1.2.0</human>
+		<long>12000</long>
+	</version>
+</versions>

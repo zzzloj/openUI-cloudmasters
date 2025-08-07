@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<css>
+  <cssfile>
+    <css_set_id>0</css_set_id>
+    <css_updated>1362163272</css_updated>
+    <css_group>iptracker</css_group>
+    <css_content>/* New Classes for 2.1 */
+.smallMargin_right { margin-right: 5px; }
+.topMarginHeader{ margin-top: 7px; }
+.thumbsUp, .thumbsUp:hover { color: green; }
+.thumbsDown, .thumbsDown:hover { color: red; }
+.width100 { width: 100%; }
+.thumbsUp, .thumbsDown { text-decoration: none; }
+ul.pagination { padding: 10px; }
+.post_body { margin: 0 !important; padding-top: 0 !important; }
+.post_body .post { font-size: inherit !important; }
+.col_f_views, .col_m_replies { width: 120px !important; }
+.reset_cursor { cursor: default; }
+
+/* Posted images need making smaller */
+img.bbc_img {
+	max-width: 600px !important;
+	max-height: 600px !important;
+}
+
+#issue_wrap { position: relative; }
+
+#right_block.moving {
+	position: fixed;
+	top: 9px;
+}
+
+#right_block.hit_bottom {
+	bottom: -9px;
+	right: 260px !important;
+	position: absolute;
+}
+
+tr.project td span.p_edit {
+	opacity: 0.25;
+	-moz-opacity: 0.25;
+	-webkit-opacity: 0.25;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-trasnsition: all 0.2s ease-in-out;
+}
+
+	tr.project:hover td span.p_edit {
+		opacity: 1.0;
+		-moz-opacity: 1.0;
+		-webkit-opacity: 1.0;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-trasnsition: all 0.2s ease-in-out;
+	}
+
+/* Confirmations */
+span.ipsBadge_green.tracker {
+	-moz-border-radius: 4px 0 0 4px;
+	-webkit-border-radius: 4px 0 0 4px;
+	border-radius: 4px 0 0 4px;
+	border-right: 0;
+}
+
+span.ipsBadge_red.tracker {
+	-moz-border-radius: 0 4px 4px 0;
+	-webkit-border-radius: 0 4px 4px 0;
+	border-radius: 0 4px 4px 0;
+	border-left: 0;
+}
+
+span.ipsBadge_red.tracker,
+span.ipsBadge_green.tracker {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	min-width: 20%;
+	max-width: 80%;
+}
+
+.trackerPostBody { margin-left: 150px !important; position: relative; }
+.trackerPostBody ul.post_controls { position: absolute; bottom: 0; right: 10px; clear: none; padding: 0; margin: 0; }
+.trackerPostBody.post_block { border-bottom: none; }
+
+.ipsLayout_withright.tracker {
+	padding-right: 260px !important;
+}
+
+.ipsLayout_right.tracker {
+	width: 241px !important;
+	margin-right: -251px !important;
+}
+
+ul#issue_list {
+	margin-top: 10px;
+}
+
+.trackerSideFix {
+	background: transparent !important;
+	border: none !important;
+	width: 100% !important;
+	padding: 0 !important;
+}
+
+.trackerSideBlock {
+	padding: 0;
+	clear: both;
+}
+	.trackerSideBlock h3 {
+		margin: 0 !important;
+	}
+	
+		.trackerSideBlock h3 img {
+			margin-right: 5px;
+			margin-top: -5px;
+		}
+	
+	.trackerSideBlock h3 .mod_links { opacity: 0.0; }
+	.trackerSideBlock h3:hover .mod_links { opacity: 1; }
+
+.trackerFirstPost {
+	width: 100%;
+}
+
+.issueInfo {
+	padding: 5px;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+	.issueInfo li {
+		min-height: 23px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		border-bottom: 1px solid #D6E2EB;
+		width: 100%;
+	}
+	
+	.issueInfo li p { margin-left: 45%; }
+	.issueInfo li p.dropdown { margin-left: 0; float: right; width: 54%; text-align: left; }
+	.issueInfo li p.dropdown select { margin-top: -2px; }
+	
+	/* Dropdown widths */
+	.issueInfo li p.dropdown .input_text { 
+		padding: 2px;
+		margin-top: -1px;
+	}
+	
+	/* Dont have last one with big padding or border */
+	.issueInfo li:last-child {
+		padding-bottom: 3px;
+		border-bottom: none;
+	}
+	
+		.issueInfo li label {
+			display: block;
+			float: left;
+			text-align: left;
+			width: 40%;
+			font-weight: bold;
+			margin-top: 5px;
+			margin-left: 3px;
+			/*margin-right: 10px;*/
+		}
+	
+.sev_full {
+	padding: 2px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.ipsComment_author {
+	width: 120px !important;
+	padding-right: 20px !important;
+}
+
+.ipsComment {
+	margin-bottom: 15px !important;
+}
+
+.trackerFeedStory {
+	font-size: 0.85em;
+	margin-left: 130px;
+}
+		.trackerFeedStory a.ipsUserPhotoLink img {
+			float: left;
+			margin-top: -5px;
+			margin-right: 5px;
+		}
+	
+	.trackerFeedStory .trackerFeedImage {
+		margin-top: -4px;
+		margin-left: 5px;
+		opacity: 0.2;
+		-moz-opacity: 0.2;
+		-webkit-opacity: 0.2;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-trasnsition: all 0.2s ease-in-out;
+	}
+	
+	.trackerFeedStory:hover .trackerFeedImage,
+	.trackerFeedImage:hover {
+		opacity: 0.8;
+		-moz-opacity: 0.8;
+		-webkit-opacity: 0.8;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-trasnsition: all 0.2s ease-in-out;
+	}
+	
+	/* Delete feed for terabyte.. */
+	.trackerFeedStory a.remove {
+		opacity: 0.1;
+		-moz-opacity: 0.1;
+		-webkit-opacity: 0.1;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-trasnsition: all 0.2s ease-in-out;
+		padding: 3px !important;
+		margin-left: 3px;
+		font-size: 0.7em !important;
+		height: auto !important;
+		line-height: normal !important;
+	}
+	
+	.trackerFeedStory:hover a.remove {
+		opacity: 1.0;
+		-moz-opacity: 1.0;
+		-webkit-opacity: 1.0;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-trasnsition: all 0.2s ease-in-out;
+	}
+	
+	/* Buttons opacity */
+	.trackerButtonsHidden {
+		opacity: 0.3;
+		-moz-opacity: 0.3;
+		-webkit-opacity: 0.3;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		margin-right: 15px;
+	}
+	
+	.trackerButtonsHidden:hover {
+		opacity: 1.0;
+		-moz-opacity: 1.0;
+		-webkit-opacity: 1.0;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+	}
+
+/* Common */
+.no_overflow { overflow: hidden !important; }
+.draghandle { cursor: move; }
+
+table.tracker_table a {
+		text-decoration: none;
+	}
+	
+		table.tracker_table a:hover {
+			text-decoration: underline;
+		}
+	
+table.tracker_table { font-size: 0.9em; }
+
+#submit_filters { margin: 5px 0 0 10px; }
+
+/* Versions */
+div.tracker_popup span.version_types span {
+	background: #6A6A6A;
+	color: white;
+	padding: 4px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+/* Inner popup */
+div.tracker_popup.info {
+	background: black url({style_images_url}/opacity50.png);
+	-webkit-box-shadow: 2px 5px 10px grey;
+	-moz-box-shadow: 2px 5px 10px grey;
+	box-shadow: 2px 5px 10px grey;
+}
+
+div.tracker_popup_attach {
+	width: 20px;
+	background: black;
+	height: 10px;
+	position: absolute;
+	top: -9px;
+}
+
+	div.tracker_popup_attach.top {
+		background: transparent url({style_images_url}/tracker/arrow_top.png);
+	}
+
+/* Popup */
+div.tracker_popup {
+	position: fixed;
+	z-index: 999;
+	background: transparent url({style_images_url}/opacity50.png);
+	padding: 3px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 5px 10px black;
+	-moz-box-shadow: 0px 5px 10px black;
+	box-shadow: 0px 5px 10px black;
+}
+
+	div.tracker_popup div.tracker_inner {
+		background: white;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+	
+	div.tracker_popup div.popup_wrap {
+		padding: 10px;
+		padding-bottom: 0;
+		overflow-y: auto;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+	
+	div.tracker_popup li.cat h4 {
+		font-size: 1.2em;
+		font-weight: bold;
+		border-bottom: 1px solid black;
+		margin-bottom: 7px;
+	}
+	
+	div.tracker_popup div.close_popup {
+		cursor: pointer;
+	}
+	
+	div.tracker_popup ul.errors {
+		list-style: square;
+		margin-left: 40px;
+		margin-top: 7px;
+	}
+	
+	div.tracker_popup ul.menu {
+		background: #DEE6ED;
+		margin: -10px;
+		margin-bottom: 15px;
+		display: block;
+		border-bottom: 1px solid #ccc;
+		height: 34px;
+		max-height: 34px;
+	}
+		div.tracker_popup ul.menu li:first-child {
+			margin-left: 10px;
+		}
+		
+		div.tracker_popup ul.menu li {
+			width: auto;
+			padding: 10px;
+			margin-top: 3px;
+			float: left;
+			cursor: pointer;
+		}
+		
+			div.tracker_popup ul.menu li.save,
+			div.tracker_popup ul.menu li.button {
+				float: right;
+				padding: 4px;
+				color: white;
+				border-radius: 4px;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				width: auto;
+				margin-right: 10px;
+				margin-top: 6px;
+				background: #CE3C92; /* old browsers */
+				background: -moz-linear-gradient(top, #CE3C92 0%, #AB156D 100%); /* firefox */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#CE3C92), color-stop(100%,#AB156D)); /* webkit */
+				color: #fff;
+				text-shadow: -1px -1px 0 #97115f;
+				border-color: #9d1263;
+				font-size: 0.9em;
+			}
+		
+			div.tracker_popup ul.menu li.active {
+				font-weight: bold;
+				text-align: center;
+				background-color: #F1F4F7;
+				border: 1px solid #ccc;
+				border-bottom: none;
+				height: 11px;
+				max-height: 11px;
+				padding-top: 8px;
+				margin-top: 5px;
+				cursor: default;
+			}
+
+div#tracker_overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: black;
+	z-index: 998;
+}
+
+ul.popup_buttons {
+	float: right;
+}
+
+	.popup_buttons li,
+	.popup_buttons a {
+		padding: 4px;
+		color: white;
+		cursor: pointer;
+		background: #528F6C;
+		border-radius: 4px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		margin-left: 5px;
+		text-decoration: none;
+	}
+	
+		.popup_buttons li.disabled, .popup_buttons a.disabled { background: grey; cursor: default; }
+		.popup_buttons a:hover { text-decoration: none !important; }
+		
+		.popup_buttons li.cancel_button, .popup_buttons a.cancel_button {
+			background: #DB6E6E;
+		}
+
+tr.double_pad th,
+tr.double_pad td {
+	padding: 10px;
+}
+
+tr.single_pad th,
+tr.single_pad td {
+	padding: 5px;
+}
+
+/*tr.light td { background: #EEF3F8; border-bottom: 2px solid white; }
+tr.dark td { background: #E4EBF2; border-bottom: 2px solid white; }*/
+
+.logged_in { z-index: 6 !important; }
+#search { z-index: 5 !important; }
+	
+p.description { font-size: 0.9em; }
+		
+/* Issue overlay */
+div.issue_overlay {
+	text-align: center;
+	margin: 0 auto;
+	z-index: 999;
+}
+
+/* Severities */
+td.severity_1, td.severity_2, td.severity_3, td.severity_4, td.severity_5 {
+	width: 0.75% !important;
+	max-width: 0.75% !important;
+}</css_content>
+    <css_position>1</css_position>
+    <css_app>tracker</css_app>
+    <css_app_hide>1</css_app_hide>
+    <css_attributes><![CDATA[title="Main" media="screen"]]></css_attributes>
+    <css_modules/>
+    <css_removed>0</css_removed>
+    <css_master_key>root</css_master_key>
+  </cssfile>
+</css>

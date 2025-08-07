@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<css>
+  <cssfile>
+    <css_set_id>0</css_set_id>
+    <css_updated>1368290091</css_updated>
+    <css_group>promenu_plus</css_group>
+    <css_content><![CDATA[/** icons **/
+.non_sprite {
+	display: inline-block;
+}
+.non_sprite img {
+	vertical-align: bottom;
+}
+
+/** load the sprite **/
+.sprites {
+	margin-bottom: -2px;
+	display: inline-block;
+	background-image: url({style_images_url}/promenu/icons/promenu_default_icons.png) !important;
+	background-repeat: no-repeat !important;
+	width: 14px;
+	height: 14px;
+}
+
+.Arcade_icon {
+	background-position: 0px 0px;
+}
+
+.Blog_icon {
+	background-position: 0px -28px;
+}
+
+.Calendar_icon {
+	background-position: 0px -56px;
+}
+
+.Cart_icon {
+	background-position: 0px -84px;
+}
+
+.Chat_icon {
+	background-position: 0px -112px;
+}
+
+.Download_icon {
+	background-position: 0px -140px;
+}
+
+.Forums_icon {
+	background-position: 0px -168px;
+}
+
+.Gallery_icon {
+	background-position: 0px -196px;
+}
+
+.Help_icon {
+	background-position: 0px -224px;
+}
+
+.Home_icon {
+	background-position: 0px -252px;
+}
+
+.Info_icon {
+	background-position: 0px -280px;
+}
+
+.Media_icon {
+	background-position: 0px -308px;
+}
+
+.Members_icon {
+	background-position: 0px -336px;
+}
+
+.More_icon {
+	background-position: 0px -364px;
+}
+
+.News_icon {
+	background-position: 0px -392px;
+}
+
+.Shoutbox_icon {
+	background-position: 0px -420px;
+}
+.ipsList_vertical > li {
+	margin: 3px 0px;
+}
+
+/** primary menu **/
+
+
+
+/** Hover styling **/
+#community_app_menu div  li:hover > a, #community_app_menu  li:hover > a, #community_app_menu li.click.click_active > a, #more_apps_menucontentul  li > a:hover{
+	background-color: #173455; 
+	color: #FFF;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+}
+
+/** active styling **/
+#community_app_menu .active > a, #more_apps_menucontentul .active > a, #community_app_menu .active:hover > a  {
+	background-color: #FFF ;
+	color: #0b5794 ;
+}
+
+/** no active/hover background color, for menus, blocks, mega, etc **/
+#community_app_menu  li > div > ul > li > a, #community_app_menu .blocks, #community_app_menu .mega, #more_apps_menucontentul  li > a {
+	background-color: #1C3B5F;
+}
+
+#community_app_menu li > div > ul > li > a, #community_app_menu .mega td.col > a, #community_app_menu .mega	div.col > a {
+	display: block !important;
+	white-space: nowrap !important;
+	color: #FFF;
+}
+
+#community_app_menu li > div > ul > li > a {
+	padding: 6px 15px 8px;
+}
+
+#community_app_menu li, #more_apps_menucontentul  li {
+	cursor: pointer;
+	position: relative;
+	top: 0;
+}
+
+#community_app_menu .custom_icon {
+	display: inline-block;
+	position: relative;
+}
+
+#community_app_menu .custom_icon, #community_app_menu li > div > ul > li > a, #community_app_menu .mega .col {
+	min-width: 150px;
+}
+
+#community_app_menu .mega {
+	padding: 10px;
+}
+
+#community_app_menu .downarrow, #community_app_menu li.click.click_active > a.downarrow {
+	background-image: url({style_images_url}/promenu/arrows/primary/down_arrow.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: right center !important;
+	background-origin: content-box !important;
+}
+
+#community_app_menu .otherarrow {
+	background-image: url({style_images_url}/promenu/arrows/primary/other_arrow.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: right center !important;
+	background-origin: content-box !important;
+}
+
+#community_app_menu li.active > .downarrow{
+	background-image: url({style_images_url}/promenu/arrows/primary/down_arrow_active.png) !important;
+}
+
+#community_app_menu li.active > .otherarrow{
+	background-image: url({style_images_url}/promenu/arrows/primary/other_arrow_active.png) !important;
+}
+
+#community_app_menu a.mainParent {
+	text-decoration: underline;
+	font-weight: bold;
+	padding: 5px 0px 5px 0px;
+}
+
+#community_app_menu .blocks {
+	color:#FFF;
+}
+
+/***header menu****/
+
+#header_menu {
+	top: 0;
+	left:0;
+	width: 100%;
+	position: absolute;
+	text-align: left;
+	font-size: 13px;
+}
+
+#header_app_menu > li {
+	margin: 0px 3px 0 0;
+}
+
+#header_app_menu > li > a, #header_app_menu li > div > ul > li > a, #header_app_menu .mega td.col > a, #header_app_menu .mega div.col > a {
+	color: #8A8A8A;
+	white-space: nowrap !important;
+	display: block !important;
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#header_app_menu .mega {
+	padding: 10px;
+}
+
+#header_app_menu > li > a, #header_app_menu li > div > ul > li > a {
+	padding: 6px 15px 8px;
+}
+
+/** active styling **/
+#header_app_menu .active > a, #header_app_menu .active:hover > a  {
+	background-color: #292929 ;
+	color: #FC6D32;
+}
+
+/** hover styling **/
+#header_app_menu  li:hover > a, #header_app_menu li > ul > li > a:hover, #header_app_menu li.click_active > a {
+	background-color: #292929;
+	color: #FFF;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+}
+
+/** standard background coloring for menus, blocks, etc **/
+#header_menu, #header_app_menu  li > div > ul > li > a, #header_app_menu .blocks, #header_app_menu .mega {
+	background-color: #181818 ;
+}
+
+#header_app_menu li {
+	cursor: pointer;
+	position: relative;
+	top: 0;
+}
+
+#header_app_menu .custom_icon {
+	display: inline-block;
+	position: relative;
+}
+
+#header_app_menu .custom_icon, #header_app_menu li > div > ul > li > a {
+	min-width: 150px;
+}
+
+#header_app_menu .downarrow {
+	background-image: url({style_images_url}/promenu/arrows/header/down_arrow.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: right center !important;
+	background-origin: content-box !important;
+}
+
+#header_app_menu .otherarrow {
+	background-image: url({style_images_url}/promenu/arrows/header/other_arrow.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: right center !important;
+	background-origin: content-box !important;
+}
+
+#header_app_menu li.active > .otherarrow, #header_app_menu li:hover > a.otherarrow, #header_app_menu li.click_active .otherarrow {
+	background-image: url({style_images_url}/promenu/arrows/header/other_arrow_active.png) !important;
+}
+
+#header_app_menu li.active > .downarrow, #header_app_menu li:hover .downarrow, #header_app_menu li.click_active .downarrow {
+	background-image: url({style_images_url}/promenu/arrows/header/down_arrow_active.png) !important;
+}
+
+#header_app_menu .mega .col {
+	min-width: 150px;
+}
+
+#header_app_menu a.mainParent {
+	text-decoration: underline;
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#header_app_menu .blocks {
+	color:#FFF;
+}
+/***Footer menu****/
+
+#footer_menu {
+	text-align: left;
+	margin-top: 20px;
+	vertical-align: top;
+	width: 100%;
+	z-index: 15000;
+}
+
+#footer_menu .main_widths {
+	min-width: 940px;
+	margin-left: 10px;
+}
+
+#footer_menu .category {
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px;
+}
+
+#footer_menu .category > a {
+	width: 0 !important;
+	min-width: 100px; /* change this to adjust your category minimum width */
+	cursor: pointer;
+	display: block;
+	word-wrap: break-word;
+}
+#footer_menu .mainParent {
+	text-decoration: underline;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: block;
+}
+
+#footer_menu .blocks {
+	margin-top: 5px;
+	word-wrap: break-word;
+}
+
+/***Site menu***/
+
+#site_menu {
+	background-color: #fff;
+	text-align: left;
+	vertical-align: top;
+	width: 100%;
+	font-size: 13px;
+	min-height: 200px;
+	left: 0;
+	z-index: 15000;
+}
+
+#site_menu .main_widths {
+	min-width: 980px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+#site_menu .category {
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px;
+}
+
+#site_menu .category > a {
+	width: 0 !important;
+	min-width: 100px; /* change this to adjust your category minimum width */
+	cursor: pointer;
+	display: block;
+	word-wrap: break-word;
+}
+
+#site_menu .mainParent {
+	text-decoration: underline;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: block;
+}
+
+#site_menu .blocks {
+	margin-top: 5px;
+}]]></css_content>
+    <css_position>2</css_position>
+    <css_app>promenu</css_app>
+    <css_app_hide>0</css_app_hide>
+    <css_attributes><![CDATA[title="Main" media="screen"]]></css_attributes>
+    <css_modules/>
+    <css_removed>0</css_removed>
+    <css_master_key>root</css_master_key>
+  </cssfile>
+</css>

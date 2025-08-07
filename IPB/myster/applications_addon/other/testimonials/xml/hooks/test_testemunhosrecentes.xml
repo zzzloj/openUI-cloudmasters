@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name>(RC34) Recent Testimonials</hook_name>
+      <hook_desc>Will show most recent testimonials</hook_desc>
+      <hook_author>-RAW-</hook_author>
+      <hook_email>raw@rawcodes.net</hook_email>
+      <hook_website>http://rawcodes.net</hook_website>
+      <hook_update_check/>
+      <hook_requirements><![CDATA[a:3:{s:21:"required_applications";a:0:{}s:20:"hook_php_version_min";s:1:"0";s:20:"hook_php_version_max";s:1:"0";}]]></hook_requirements>
+      <hook_version_human>1.1.0</hook_version_human>
+      <hook_version_long>11000</hook_version_long>
+      <hook_extra_data><![CDATA[a:3:{s:7:"display";a:1:{s:9:"templates";s:37:"From skin_boards: testemunhosRecentes";}s:9:"templates";a:1:{s:11:"skin_boards";a:1:{i:0;s:19:"testemunhosRecentes";}}s:8:"database";a:0:{}}]]></hook_extra_data>
+      <hook_key>sos_testemunhosrecentes</hook_key>
+      <hook_global_caches/>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>testimonialsRecents.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>testimonialsRecents</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_boards";s:12:"skinFunction";s:18:"boardIndexTemplate";s:4:"type";s:7:"foreach";s:2:"id";s:11:"side_blocks";s:8:"position";s:9:"outer.pre";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+/**
+ * @author -RAW-
+ * @copyright 2012
+ * @link http://rawcodes.net
+ * @filesource Testimonial System
+ * @version 1.1.0
+ */
+ 
+
+class testimonialsRecents
+{
+	public $registry;
+	public $settings;
+	public $DB;
+	public $lang;
+	
+	public function __construct()
+	{
+		$this->registry   =  ipsRegistry::instance();
+		$this->memberData =& $this->registry->member()->fetchMemberData();
+		$this->settings   =& $this->registry->fetchSettings();
+		$this->DB         =  $this->registry->DB();
+		$this->lang       =  $this->registry->getClass('class_localization');
+	}
+	
+	public function getOutput()
+	{
+		/* Iniciate */
+		$return  = "";
+		$rows    = array();
+		
+		/* Linguagem */
+		$this->registry->class_localization->loadLanguageFile( array( 'public_testemunhos' ), 'testimonials' );
+	
+		/* User can view ? */
+		if ( $this->memberData['sostestemunhos_view'] )
+		{
+			/* Testemunhos */
+			$this->DB->build( array( 'select'   => 't.t_id, t.t_title, t.t_title_seo, t.t_date, t.t_member_id',
+									 'from'     => array( 'testemunhos' => 't' ),
+									 'where'    => 't.t_approved=1',
+									 'add_join' => array( 0 => array( 'select' => 'm.member_id, m.member_group_id, m.members_display_name, m.members_seo_name',
+																	  'from'   => array( 'members' => 'm' ),
+																	  'where'  => 'm.member_id=t.t_member_id',
+																	  'type'   => 'left' ) ),
+									 'order'    => 't.t_date DESC',
+									 'limit'    => array( 0, 5 ),
+							)	   );
+			$this->DB->execute();
+			
+			while ( $row = $this->DB->fetch() )
+			{
+				$rows[] = $row;
+			}
+			
+			$return .= $this->registry->output->getTemplate( 'boards' )->testemunhosRecentes( $rows );
+		}
+		
+		/* Return */
+		return $return;
+	}	
+}]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings/>
+  <hookextras_language/>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates>
+    <templates>
+      <template_group>skin_boards</template_group>
+      <template_content><![CDATA[<div class='general_box clearfix'>
+	<h3><img src='{$this->settings['img_url']}/book_open.png' alt='{$this->lang->words['icon']}' /> {$this->lang->words['testemunhos_recentes']}</h3>
+	<ul class='hfeed block_list'>
+<if test="recenttestemunhos:|:is_array( $testemunhos ) && count( $testemunhos )">
+{parse striping="recent_testemunhos" classes="row1,row2 altrow"}
+<foreach loop="testemunhos_hook:$testemunhos as $r">
+		<li class='hentry {parse striping="recent_testemunhos"}'><a href='{parse url="app=testimonials&showtestimonial={$r['t_id']}" base="public" seotitle="{$r['t_title_seo']}" template="testemunho"}' title='{$this->lang->words['testemunho_post_add_preview']}'>{parse expression="IPSText::truncate( $r['t_title'], 40 )"}</a><br />
+		{$this->lang->words['by']} <address class="author vcard">
+<if test="hasAuthor:|:$r['t_member_id']">
+			<a class="url fn" href="{parse url="showuser={$r['t_member_id']}" template="showuser" seotitle="{$r['members_seo_name']}" base="public"}" title='{$this->lang->words['view_profile']}'>{$r['members_display_name']}</a>{parse template="user_popup" group="global" params="$r['t_member_id'], $r['members_seo_name']"}
+<else />
+			{$this->settings['guest_name_pre']}{$this->lang->words['global_guestname']}{$this->settings['guest_name_suf']}
+</if>
+		</address><br />
+		<span class='date'><abbr class="published" title="{parse expression="date( 'c', $r['t_date'] )"}">{parse date="$r['t_date']" format="short"}</abbr></span></li>
+</foreach>
+<else />
+		<li>{$this->lang->words['no_testemunhos']}</li>
+</if>
+	</ul>
+</div>]]></template_content>
+      <template_name>testemunhosRecentes</template_name>
+      <template_data>$testemunhos=array()</template_data>
+      <template_updated>1351711657</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>1</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </templates>
+  </hookextras_templates>
+  <hookextras_css/>
+  <hookextras_replacements/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

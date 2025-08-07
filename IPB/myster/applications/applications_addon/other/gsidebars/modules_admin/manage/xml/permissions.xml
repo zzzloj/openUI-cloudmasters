@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>Manage Global Sidebars</grouptitle>
+		<items>
+			<item>
+				<key>manage</key>
+				<string>Can manage global sidebars?</string>
+			</item>											
+		</items>
+	</group>
+</permissions>

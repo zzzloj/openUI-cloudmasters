@@ -1,0 +1,2333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>perm_gallery_bypass</word_key>
+      <word_default>Bypass Moderation</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>perm_gallery_comments</word_key>
+      <word_default>Add Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>perm_gallery_post</word_key>
+      <word_default>Upload Images / Create Albums</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_totalalbums</word_key>
+      <word_default>Total Albums</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>perm_gallery_rate</word_key>
+      <word_default>Rate Albums / Images</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_totalcomments</word_key>
+      <word_default>Total Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_upgradehistory</word_key>
+      <word_default>Gallery Upgrade History</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>perm_gallery_images</word_key>
+      <word_default>View Albums / Images</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_possibleerrors</word_key>
+      <word_default>Warning: Possible errors found in IP.Gallery configuration</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_totalimages</word_key>
+      <word_default>Total Images</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_totaldiskspace</word_key>
+      <word_default>Total Diskspace</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_quickstats</word_key>
+      <word_default>Gallery Quick Stats</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_possiblefixes</word_key>
+      <word_default>Possible Fix(es)</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_problem</word_key>
+      <word_default>Problem</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_viewfreport</word_key>
+      <word_default>View File Report</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_takeaction</word_key>
+      <word_default>Take Action</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_clearbwlogs</word_key>
+      <word_default>Clear Bandwidth Logs for this File</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_changeowner</word_key>
+      <word_default>Change File Owner</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_imageloads</word_key>
+      <word_default>Image Loads</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_percentofloads</word_key>
+      <word_default>Percent of total loads</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_clearratinglogs</word_key>
+      <word_default>Clear Rating Logs for this File</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_top5files</word_key>
+      <word_default>Top 5 Files</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_transfer</word_key>
+      <word_default>Transfer</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_percentoftransfer</word_key>
+      <word_default>Percent of total transfer</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_affectedsetting</word_key>
+      <word_default>Affected Setting</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_member</word_key>
+      <word_default>Member</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_top5disk</word_key>
+      <word_default>Top 5 Diskspace Users</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_viewgreport</word_key>
+      <word_default>View Group Report</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_percentoffiles</word_key>
+      <word_default>Percent of total files</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_group</word_key>
+      <word_default>Group</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_diskspaceusage</word_key>
+      <word_default>Diskspace Usage</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_uploadedfiles</word_key>
+      <word_default>Uploaded files</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_viewmreport</word_key>
+      <word_default>View member report</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_groupoverview</word_key>
+      <word_default>Group Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_takeactiononfile</word_key>
+      <word_default>Take Action on the File</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_totalviews</word_key>
+      <word_default>Total Views</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_top5bw</word_key>
+      <word_default>Top 5 Bandwidth Users</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_statchart</word_key>
+      <word_default>Statistical Chart</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_totaldisk</word_key>
+      <word_default>Total Gallery Diskspace</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_percentusage</word_key>
+      <word_default>Percent of total usage</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_totalupload</word_key>
+      <word_default>Total Gallery Uploads</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_avg_rates</word_key>
+      <word_default>Average Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_actions_taken</word_key>
+      <word_default>Actions have been taken</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_rates</word_key>
+      <word_default>Total Rates</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_comments</word_key>
+      <word_default>Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_date</word_key>
+      <word_default>Date Added</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_type</word_key>
+      <word_default>File Type</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_unk</word_key>
+      <word_default>Unknown</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_album</word_key>
+      <word_default>Album</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_maskname</word_key>
+      <word_default>Masked Name</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_thumb</word_key>
+      <word_default>Has Thumbnail?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_cat</word_key>
+      <word_default>Category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_uploadedby</word_key>
+      <word_default>Uploaded By</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_size</word_key>
+      <word_default>File Size</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_approved</word_key>
+      <word_default>Approved</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_gen_overview</word_key>
+      <word_default>General Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_overview</word_key>
+      <word_default>File Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_ttlg_rating</word_key>
+      <word_default>Total images rated by this group</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_result_title</word_key>
+      <word_default>File Report for %s</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_file_report_title</word_key>
+      <word_default>File Report</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_avgg_rating</word_key>
+      <word_default>Average rating given by this group</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_mem_dis_up</word_key>
+      <word_default>Disable Uploading</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_mem_action_msg</word_key>
+      <word_default><![CDATA[The member&#39;s new restriction settings are now in effect]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_mem_action_log</word_key>
+      <word_default>Member ID %s Gallery permissions set to %s</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_mem_dis_gal</word_key>
+      <word_default>Disable Gallery Access</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_group_result_title</word_key>
+      <word_default>Group Report for %s</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_mem_action_submit</word_key>
+      <word_default>Update Member</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_transfer_nop</word_key>
+      <word_default>Total Transfer</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_views_percent</word_key>
+      <word_default>Percent of all views</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_average</word_key>
+      <word_default>Average File Size</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_take_mem_action</word_key>
+      <word_default>Take action against member?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_ttl_rating</word_key>
+      <word_default>Total images rated by this user</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_mem_result_bw_tbl</word_key>
+      <word_default>Bandwidth Overview for the past %s hours</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_bandwidth_user_trans</word_key>
+      <word_default>Percent of user transfer</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_comments</word_key>
+      <word_default>Total Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_ups_percent</word_key>
+      <word_default>Percent of all uploads</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_top_views_bandwidth</word_key>
+      <word_default>Top 5 files viewed in the past %s hours</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_bandwidth_user_views</word_key>
+      <word_default>Percent of user views</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_other_tbl_header</word_key>
+      <word_default>Other Information</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_average_all</word_key>
+      <word_default>Total Average File Size</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_avg_rating</word_key>
+      <word_default>Average rating given by this user</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_mem_result_page_title</word_key>
+      <word_default>Member Report for %s</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_disk_percent</word_key>
+      <word_default>Percent of all diskspace used</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_mem_disk_over</word_key>
+      <word_default>Diskspace Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_no_member_found</word_key>
+      <word_default>The member could not be found</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_no_search_term</word_key>
+      <word_default>You did not enter a search term</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_mem_results_none</word_key>
+      <word_default>No results found, please try to broaden your search</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_mem_results_cnt</word_key>
+      <word_default>%s Results</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_member_page_detail</word_key>
+      <word_default>Select which member you would like to view a report on</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_results_page_title</word_key>
+      <word_default>Search Results</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_bandwidth_loads</word_key>
+      <word_default>Image Loads</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_view_file_alt</word_key>
+      <word_default>View file report</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_bandwidth_file</word_key>
+      <word_default>File</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_bandwidth_transfer</word_key>
+      <word_default>Transfer</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_bandwidth_tpercent</word_key>
+      <word_default>Percent of total transfer</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_view_mem_alt</word_key>
+      <word_default>View member report</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_h_bandwidth</word_key>
+      <word_default>Bandwidth Usage</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_transfer</word_key>
+      <word_default>Total Transfer (past %s hours)</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_views</word_key>
+      <word_default>Total Views</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_js_confirm_empty</word_key>
+      <word_default>Are you sure you wish to empty this category? There will be no other confirmation screens, and you cannot undo this action!</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_uploads</word_key>
+      <word_default>Total Gallery Uploads</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_chart_bw_usage</word_key>
+      <word_default>Bandwidth Usage ( Previous %s hours )</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_group_tbl_header</word_key>
+      <word_default>Group Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_overview_tbl_header</word_key>
+      <word_default>Overall Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_cats_emptycat</word_key>
+      <word_default>Empty Category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_page_title</word_key>
+      <word_default>Statistics Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_chart_bw_none</word_key>
+      <word_default>No data</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>stats_td_diskspace</word_key>
+      <word_default>Total Gallery Diskspace</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_mod_edit</word_key>
+      <word_default>Edit</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_js_confirm_delete</word_key>
+      <word_default>Are you sure you wish to delete this category and all of the images and albums contained in it? There will be no other confirmation screens, and you cannot undo this action!</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_cats_editsettings</word_key>
+      <word_default>Edit Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_mod_remove</word_key>
+      <word_default>Remove</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_cats_deletecat</word_key>
+      <word_default>Delete Category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_cats_resynchcat</word_key>
+      <word_default>Resynchronize Category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_cats_newcat</word_key>
+      <word_default>New Category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gallery_moderators</word_key>
+      <word_default>Moderators</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gallery_subcats</word_key>
+      <word_default>Subcategories</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gallery_nocats</word_key>
+      <word_default><![CDATA[You have not created any categories yet. Click the 'Add New Category' button to begin.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_categories_overview</word_key>
+      <word_default>Categories Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gallery_catname</word_key>
+      <word_default>Category name</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gallery_addmod</word_key>
+      <word_default>Add Moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gallery_addnewcat</word_key>
+      <word_default>Add New Category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gallery_subcats_for</word_key>
+      <word_default>%s subcategories</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>fc_group_prefix</word_key>
+      <word_default>Group:</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gallery_categories</word_key>
+      <word_default>Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_media_size</word_key>
+      <word_default>Video upload size for this group (in kB)?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_media</word_key>
+      <word_default>Can upload videos?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_access</word_key>
+      <word_default>Can access gallery?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_delete</word_key>
+      <word_default>Can delete own images and comments?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_deletealb</word_key>
+      <word_default>Can delete own albums?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_deletealb_desc</word_key>
+      <word_default>This will allow members to delete their own images, regardless of the previous option.</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_aimages</word_key>
+      <word_default>Limit number of images in an album?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_images</word_key>
+      <word_default>Maximum daily image views?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_albums</word_key>
+      <word_default>Can create public albums?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_albumsf</word_key>
+      <word_default>Can create friend-only albums?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_edit</word_key>
+      <word_default>Can edit own images and comments?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_alimit</word_key>
+      <word_default>Limit number of albums?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_albumsp</word_key>
+      <word_default>Can create private albums?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_transfer</word_key>
+      <word_default>Maximum daily transfer (in kB)?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_uploads</word_key>
+      <word_default>Maximum upload size for this group (in kB)?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>category_move_othercats</word_key>
+      <word_default>Move subcategories to</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gf_groups_td_diskspace</word_key>
+      <word_default>Maximum diskspace for this group (in kB)?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>category_delete_contents</word_key>
+      <word_default>Delete images and albums</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cat_not_found_delete</word_key>
+      <word_default>We could not find the category you were attempting to move the images or albums to</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>groups_desc_features</word_key>
+      <word_default><![CDATA[Feature &amp; Access Control]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>groups_desc_albums</word_key>
+      <word_default>Album Permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>groups_desc_control</word_key>
+      <word_default>Group Permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>category_delete_perm</word_key>
+      <word_default>Continuing will permanently delete this category.  There will be no further confirmation screens!</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>category_deleted_gall</word_key>
+      <word_default><![CDATA[The category '%s' has been deleted]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cat_delete_move_itself</word_key>
+      <word_default>You can not move items from this deleted category into itself</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>groups_desc_diskspace</word_key>
+      <word_default><![CDATA[Diskspace &amp; Bandwidth Control]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>delete_category_go</word_key>
+      <word_default>Delete Category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>category_move_contentsa</word_key>
+      <word_default>Move albums to</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>category_move_contentsi</word_key>
+      <word_default>Move images to</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_albums_info</word_key>
+      <word_default>Albums: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>delete_categories_modal</word_key>
+      <word_default>Delete Category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_submit</word_key>
+      <word_default>Save Moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_images_info</word_key>
+      <word_default>Images: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_commedit</word_key>
+      <word_default>Can edit comments?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_cancover</word_key>
+      <word_default>Can set cover images?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcatmods_apply_albums</word_key>
+      <word_default>The permissions specified below will also apply to any albums underneath the categories this moderator can moderate</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_commdelete</word_key>
+      <word_default>Can delete comments?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_canmove</word_key>
+      <word_default>Can move images and albums?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_canhide</word_key>
+      <word_default>Can hide images?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_commapprove</word_key>
+      <word_default>Can approve comments?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_candel</word_key>
+      <word_default>Can delete images and albums?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_canedit</word_key>
+      <word_default>Can edit images and albums?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_canapprove</word_key>
+      <word_default>Can approve images?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_categories</word_key>
+      <word_default>Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_gom</word_key>
+      <word_default>Group or Member</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_group_addedit</word_key>
+      <word_default><![CDATA[The group '%s' was added or updated as a moderator]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_type_desc</word_key>
+      <word_default>Member-specific privileges are honored over group-inherited privileges</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_type</word_key>
+      <word_default>Moderator Type</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_form_title</word_key>
+      <word_default>Moderator Management</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_h3_modsettings</word_key>
+      <word_default>Moderator Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_member_deleted</word_key>
+      <word_default><![CDATA[The member '%s' was deleted as a moderator from one or more categories]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_group_deleted</word_key>
+      <word_default><![CDATA[The group '%s' was deleted as a moderator from one or more categories]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_category_added</word_key>
+      <word_default><![CDATA[The category '%s' has been successfully added]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_nocatsfound</word_key>
+      <word_default>You did not select any categories for this moderator to moderate</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_nogroup</word_key>
+      <word_default>You did not select a valid group to moderate the categories</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_member_addedit</word_key>
+      <word_default><![CDATA[The member '%s' was added or updated as a moderator]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_nomember</word_key>
+      <word_default>You did not select a valid member to moderate the categories</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_type_group</word_key>
+      <word_default>Group</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_error_notfound</word_key>
+      <word_default>We could not find the moderator you were attempting to edit.</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_type_member</word_key>
+      <word_default>Member</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_nocats_moderators</word_key>
+      <word_default>You must create categories before you can assign moderators to those categories.</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_image_approval</word_key>
+      <word_default>Require Image Approval</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_category_edited</word_key>
+      <word_default><![CDATA[The category '%s' has been successfully updated]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_error_noname</word_key>
+      <word_default>You must specify a category name.</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_ttl_tagging</word_key>
+      <word_default>Tagging</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_tagging</word_key>
+      <word_default>Allow Tagging</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_resynched_succ</word_key>
+      <word_default>The category has been resynchronized</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_error_invparent</word_key>
+      <word_default>You have specified an invalid parent category.</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_sortorder</word_key>
+      <word_default>Sort Order</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_predefinedtags</word_key>
+      <word_default>Pre-defined Tags</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_cascade_albums</word_key>
+      <word_default>If you allow album creation in this category, this setting applies to images within the albums in this category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_type</word_key>
+      <word_default>Category Type</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_ttl_features</word_key>
+      <word_default>Category Features</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_comment_app_desc</word_key>
+      <word_default><![CDATA[If enabled, comments will need to be approved by moderators before they become visible, unless the uploader has the 'Bypass Moderation' permission.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_watermark</word_key>
+      <word_default>Watermark</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_sortkey</word_key>
+      <word_default>Sort By</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galmod_error_notfounddel</word_key>
+      <word_default>We could not find the moderator you were attempting to delete.</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_image_approval_desc</word_key>
+      <word_default><![CDATA[If enabled, images will need to be approved by moderators before they become visible, unless the uploader has the 'Bypass Moderation' permission.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_rating</word_key>
+      <word_default>Allow Ratings</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_comments</word_key>
+      <word_default>Allow Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_comment_app</word_key>
+      <word_default>Require Comment Approval</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_ttl_sorting</word_key>
+      <word_default>Sorting Options</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_pdt_desc</word_key>
+      <word_default>If defined, and the closed tagging system is enabled, these pre-defined tags will override the globally pre-defined tags</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_parent</word_key>
+      <word_default>Parent Category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_description_desc</word_key>
+      <word_default>HTML Allowed</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_description</word_key>
+      <word_default>Category Description</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_name</word_key>
+      <word_default>Category Name</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_rules_text</word_key>
+      <word_default>Rules Text</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_form_rules_title</word_key>
+      <word_default>Rules Title</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcats_sort_desc</word_key>
+      <word_default>Descending (Z-A)</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcats_sort_aname</word_key>
+      <word_default>Album Name</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcats_sort_asc</word_key>
+      <word_default>Ascending (A-Z)</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cats_form_ratings</word_key>
+      <word_default>Allow ratings of album and images</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcats_sort_arate</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcats_sort_ccount</word_key>
+      <word_default>Number of Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcats_sort_adate</word_key>
+      <word_default>Last Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcats_sort_rating</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcats_sort_caption</word_key>
+      <word_default>Image Caption</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcats_sort_comments</word_key>
+      <word_default>Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcats_sort_idate</word_key>
+      <word_default>Upload Date</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcats_sort_views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>category_mode_album</word_key>
+      <word_default>Albums Only: Allow album creation only (do not allow direct image uploads)</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>category_mode_img</word_key>
+      <word_default>Images Only: Allow image uploads only (do not allow members to create albums)</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>category_mode_none</word_key>
+      <word_default>No Submissions: Do not allow album or image submissions (useful for categories with subcategories)</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gallery_adminlog_delete_images</word_key>
+      <word_default>%s images deleted from category %s</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>up_to_100_albums_deleted</word_key>
+      <word_default>Up to 100 albums deleted...</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gallery_adminlog_empty_images</word_key>
+      <word_default>%s images emptied from category %s</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcats_sort_imgcount</word_key>
+      <word_default>Number of Images</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cats_form_comments</word_key>
+      <word_default>Allow comments on images</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cats_empty_done</word_key>
+      <word_default>The contents of the category have been emptied</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cats_form_parent</word_key>
+      <word_default>Category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cats_form_description</word_key>
+      <word_default>Album description</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cats_form_name</word_key>
+      <word_default>Album name</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gallery_adminlog_empty_albums</word_key>
+      <word_default>%s albums deleted from category %s</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cats_add_button</word_key>
+      <word_default>Add album</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_permissions</word_key>
+      <word_default>Permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cats_add_page_title</word_key>
+      <word_default>Add album</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cats_edit_page_title</word_key>
+      <word_default><![CDATA[Edit &#39;%s&#39; album]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>category_save_button</word_key>
+      <word_default>Save Category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_empty_done</word_key>
+      <word_default>The contents of the album have been emptied</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_catoptions</word_key>
+      <word_default>Options</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_rules</word_key>
+      <word_default>Rules</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_basics</word_key>
+      <word_default>Basic Info</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>edit_category_title</word_key>
+      <word_default>Editing Category: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>add_category_title</word_key>
+      <word_default>Adding Category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cat_not_found_edit</word_key>
+      <word_default>We could not find the category you were attempting to edit.</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_edit_msg</word_key>
+      <word_default>The album has been saved</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_edit_noid</word_key>
+      <word_default>We could not determine what album you are editing</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_private</word_key>
+      <word_default>Private</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_page_title</word_key>
+      <word_default>Album Manager</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_link_rebuild</word_key>
+      <word_default>Rebuild Images</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_create_public</word_key>
+      <word_default>Public Album</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_link_resynch</word_key>
+      <word_default>Resynchronize</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_link_empty</word_key>
+      <word_default>Empty Album</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_link_edit</word_key>
+      <word_default>Edit Album</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gbl_no</word_key>
+      <word_default>No</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gbl_yes</word_key>
+      <word_default>Yes</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_watermark</word_key>
+      <word_default>Full path to watermark image</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_phpinfo</word_key>
+      <word_default>Check phpinfo()</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_select_suite</word_key>
+      <word_default>Select an image suite to use</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_dir_store_images</word_key>
+      <word_default>Directory to store images?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_fixes_13</word_key>
+      <word_default>Make sure the watermark is uploaded, and that you have entered the correct path - not URL</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_fixes_7</word_key>
+      <word_default>Ensure that GD is compiled with jpeg support</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_errors_13</word_key>
+      <word_default>Incorrect Watermark Path</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_errors_8</word_key>
+      <word_default>GIF Support Error</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_fixes_9</word_key>
+      <word_default>Ensure that GD is compiled with png support</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_im_path</word_key>
+      <word_default>Full path to Image Magick</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_errors_10</word_key>
+      <word_default>GD 2.0 Error</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_fixes_10</word_key>
+      <word_default><![CDATA[Ensure that GD 2.0 is installed properly, the server reports your GD version as: <i>%s</i>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_errors_9</word_key>
+      <word_default>PNG Support Error</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_fixes_8</word_key>
+      <word_default>Ensure that GD is compiled with gif read and create support</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_errors_6</word_key>
+      <word_default>GD Error</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_quick_searches</word_key>
+      <word_default>Quick Searches</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_errors_7</word_key>
+      <word_default>JPEG Support Error</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_fixes_6</word_key>
+      <word_default>Ensure that the GD 2 is installed correctly</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_errors_1</word_key>
+      <word_default><![CDATA[Image directory doesn't exist]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>error_no_user</word_key>
+      <word_default><![CDATA[Album owner doesn't exist, please check the name entered]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_fixes_2</word_key>
+      <word_default>CHMOD the directory to %s</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_file_search_submit</word_key>
+      <word_default>Find Image</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_member_search</word_key>
+      <word_default>Member Search</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_fixes_1</word_key>
+      <word_default>Ensure that the path is correct</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_member_search_submit</word_key>
+      <word_default>Find Member</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_group_search</word_key>
+      <word_default>Group Search</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_stats_updated</word_key>
+      <word_default>The statistics have been updated successfully</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_file_search</word_key>
+      <word_default>Image Search</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_group_search_submit</word_key>
+      <word_default>Find Group</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>rebuild_gal_images</word_key>
+      <word_default>Image Descriptions</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_page_title</word_key>
+      <word_default>Gallery Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_errors_2</word_key>
+      <word_default>Image directory is not writeable</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>rebuild_gal_comms</word_key>
+      <word_default>Gallery Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_fixes_5</word_key>
+      <word_default>Ensure that the IM is installed and that the path is right</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cats_form_album_owner_desc</word_key>
+      <word_default>This is the display name of the album owner</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cat_tools_resync</word_key>
+      <word_default><![CDATA[Recount &amp; Resync Categories]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_add_button</word_key>
+      <word_default>Add Album</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cats_form_is_public</word_key>
+      <word_default>Album Privacy</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_errors_5</word_key>
+      <word_default>Image Magick Error</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>acp_album_resync_done</word_key>
+      <word_default>The album has been synchronized (comment and image counts updated, etc)</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_g_nosetup</word_key>
+      <word_default>(Cannot create albums. Edit group to allow access.)</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cats_form_album_owner</word_key>
+      <word_default>Album Owner</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_manage_show_after_forum</word_key>
+      <word_default>Show on the board index after forum:</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_group_edit</word_key>
+      <word_default>Edit</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_removed_msg</word_key>
+      <word_default>The album has been removed</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_delete_confirm</word_key>
+      <word_default>This action will remove all images contained in this album! Only proceed if you wish to permanently delete the contents of this album</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_tool_resync</word_key>
+      <word_default><![CDATA[Recount &amp; Resync Albums]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_parent_none</word_key>
+      <word_default>None</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>overview_rebuild_stats</word_key>
+      <word_default>Rebuild Statistics</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_tool_perms</word_key>
+      <word_default>Rebuild Image Permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>albums_tool_images</word_key>
+      <word_default>Rebuild All Images</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>task_bw_trimmed</word_key>
+      <word_default>Bandwidth data trimmed</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_sort_options__key</word_key>
+      <word_default>Sort By</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_sort_desc</word_key>
+      <word_default>Descending (Z-A)</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_sort_asc</word_key>
+      <word_default>Ascending (A-Z)</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>form_aratings_desc</word_key>
+      <word_default>The chosen option is only honored when the parent category allows ratings</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_sort_name</word_key>
+      <word_default>Name</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_sort_rating</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_sort_comments</word_key>
+      <word_default>Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_sort_views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_memgal_display</word_key>
+      <word_default>Display Method</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_sort_idate</word_key>
+      <word_default>Upload Date</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>form_watermark_title</word_key>
+      <word_default>Watermark album images</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>wm_apply_member_choose</word_key>
+      <word_default>Apply watermark</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>wm_apply_member_force</word_key>
+      <word_default>Force watermark (Album owner cannot edit)</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>wm_force_option_watermark</word_key>
+      <word_default>Force watermark on direct images but allow members to choose</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>wm_dont_watermark</word_key>
+      <word_default><![CDATA[Don't watermark]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>wm_force_watermark</word_key>
+      <word_default>Force watermark on every image</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>wm_optional_watermark</word_key>
+      <word_default>Allow members to choose per-album</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>wm_album_choose</word_key>
+      <word_default>Allow members to choose per-image</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>form_acomments_desc</word_key>
+      <word_default>The chosen option is only honored when the parent category allows comments</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_owned_by</word_key>
+      <word_default>Owned by</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>warning_no_watermark</word_key>
+      <word_default><![CDATA[Please note that the watermark option won't work at all until you specify a valid image in the settings!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>tools_button</word_key>
+      <word_default>Tools</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>no_albums</word_key>
+      <word_default>There are no albums to display.</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>error_no_parent_album</word_key>
+      <word_default>You must select a category that accepts albums</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>acp_manage_albums</word_key>
+      <word_default>Manage Albums</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_form_memgalnote</word_key>
+      <word_default>Only public albums are allowed in the selected category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_album_memgalnote</word_key>
+      <word_default><![CDATA[Private and friend-only albums are only allowed in the category '%s']]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_memgal_display_desc</word_key>
+      <word_default><![CDATA[Specify how to display the contents of the special members albums category.  If you choose to 'Show Members', albums will be grouped by member within this category. Members can override this option and filter how they prefer when browsing the category.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>memgal_display_images</word_key>
+      <word_default>Show Images</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>memgal_display_members</word_key>
+      <word_default>Show Members</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>memgal_display_albums</word_key>
+      <word_default>Show Albums</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>task_tmp_images_gone</word_key>
+      <word_default>Deleted %s temporary orphaned images</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cat_mem_gallery</word_key>
+      <word_default>This is the special member albums category that allows friend-only and private album submissions, in addition to normal album submissions</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>save_defaults_button</word_key>
+      <word_default>Save Defaults</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>form_watermark_desc</word_key>
+      <word_default><![CDATA[The chosen option is only honored when the parent category is set to 'Allow members to choose per-album']]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>defaults_saved_alb</word_key>
+      <word_default>The album default preferences have been saved</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>configure_album_defaults</word_key>
+      <word_default>Configure Album Defaults</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>js__resynch_albums</word_key>
+      <word_default>Resynchronizing Albums</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>js__resynch_cats</word_key>
+      <word_default>Resynchronizing Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>js__rebuild_images</word_key>
+      <word_default>Rebuilding Images</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>searchcat_nocat</word_key>
+      <word_default>--Any Category--</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>in_cat_pref</word_key>
+      <word_default>in category</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_search_clear</word_key>
+      <word_default>Clear search results</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>js__reset_perms</word_key>
+      <word_default>Rebuilding Image Permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>cat_no_album_dis</word_key>
+      <word_default>Categories that do not allow album creation are disabled</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_owner_friends_only</word_key>
+      <word_default>Owner Friends Only</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_owner_only</word_key>
+      <word_default>Owner Only (Private)</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>galcat_type_display_desc</word_key>
+      <word_default><![CDATA[<strong>Warning:</strong> If you change the category type, any existing content in the category will no longer be displayed.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_defaults_locked</word_key>
+      <word_default>Locked: this field CANNOT be changed by users</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>album_defaults_unlocked</word_key>
+      <word_default>This field can be changed by users</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_gallery</word_pack>
+      <word_key>gal_totalcategories</word_key>
+      <word_default>Total Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__galstats_groups</word_key>
+      <word_default>Can run group reports?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__galstats_memberalter</word_key>
+      <word_default>Can change member access privileges?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__galstats_filealter</word_key>
+      <word_default>Can change file ownership?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__galstats_members</word_key>
+      <word_default>Can run member reports?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__galstats_files</word_key>
+      <word_default>Can run file reports?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__category_managet</word_key>
+      <word_default>Category Management</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__category_empty</word_key>
+      <word_default>Can empty categories?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__album_empty</word_key>
+      <word_default>Can empty albums?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__album_delete</word_key>
+      <word_default>Can delete albums?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__stats_reports</word_key>
+      <word_default>Stats Reports</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__album_manage</word_key>
+      <word_default>Can edit and resynchronize album information for members?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__category_delete</word_key>
+      <word_default>Can delete categories?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__category_manage</word_key>
+      <word_default>Can add and edit categories?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__gallery_add_album</word_key>
+      <word_default>Add New Album</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__album_add</word_key>
+      <word_default>Can add albums for members?</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>r__album_managet</word_key>
+      <word_default>Album Management</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__gallery_category_manager</word_key>
+      <word_default>Category Manager</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__gallery_stats</word_key>
+      <word_default>Statistics</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__gallery_overview</word_key>
+      <word_default>Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__gallery_album_defautls</word_key>
+      <word_default>Album Defaults</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__gallery_album_manager</word_key>
+      <word_default>Album Manager</word_default>
+    </lang>
+    <lang>
+      <word_app>gallery</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__gallery_settings</word_key>
+      <word_default>Settings</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

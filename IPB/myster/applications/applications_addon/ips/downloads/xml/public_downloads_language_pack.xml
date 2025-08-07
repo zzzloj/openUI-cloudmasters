@@ -1,0 +1,3616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_message_del</word_key>
+      <word_default>%s files deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_message_unpinned</word_key>
+      <word_default>%s files unpinned</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_message_br</word_key>
+      <word_default>%s files removed from broken file status</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_message_huh</word_key>
+      <word_default>You must choose an action to perform on the selected files!</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_appnotify</word_key>
+      <word_default>Hello %s,
+
+This message is to notify you that your recently submitted file %s has been approved.
+This message was automatically generated.  Please contact an admin with any questions.  Thanks!</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>subsription_notifications</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+<#AUTHOR#> has just updated the file "<#TITLE#>" to which you are currently subscribed.
+
+You may wish to login to <#BOARD_NAME#> and download the update(s) to this file.
+
+The file download can be found here:
+<#URL#>
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>subsription_notifications_new</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+<#AUTHOR#> has just submitted a file "<#TITLE#>" to a category you are currently subscribed to.
+
+The file download can be found here:
+<#URL#>
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_loc_cat</word_key>
+      <word_default>Viewing Download Category:</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_loc_file</word_key>
+      <word_default>Viewing Download:</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_loc_idx</word_key>
+      <word_default>Viewing Download Manager</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>submission_approve</word_key>
+      <word_default>Your submission was successful!  An administrator must review your submission before it will be available publicly.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>submission_live</word_key>
+      <word_default>Your submission was successful!  We are taking you there now.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cannot_delete</word_key>
+      <word_default>You do not have permission to delete this file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cannot_find_to_addsub</word_key>
+      <word_default>We could not find the specified file to subscribe you to it</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cannot_find_to_rmsub</word_key>
+      <word_default>Could not find the file to unsubscribe you from</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cannot_rate_file</word_key>
+      <word_default>You do not have permission to rate this file.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cannot_find_to_toggle</word_key>
+      <word_default>Could not find the file to approve or unapprove.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cannot_find_to_report</word_key>
+      <word_default>We could not find the specified file to report as broken</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cannot_find_to_unreport</word_key>
+      <word_default>We could not find the specified file to remove the broken file flag</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cannot_do_download</word_key>
+      <word_default>You do not have permission to download this file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cannot_find_to_del</word_key>
+      <word_default>We could not find the specified file to delete</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>not_your_file</word_key>
+      <word_default>This is not your file, thus you cannot edit it</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_bad_cat</word_key>
+      <word_default>One of the categories you tried to search in you do not have permission to access</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_bad_time</word_key>
+      <word_default>The date or time you entered was invalid.  Please try again</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_no_terms</word_key>
+      <word_default>You did not supply any criteria to search by or we could not find any results matching the criteria you supplied</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_upload_mainerror</word_key>
+      <word_default>We could not upload the file. Please contact an administrator</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_not_found</word_key>
+      <word_default>We could not find the file specified</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_ftp_error2</word_key>
+      <word_default>The uploaded files cannot be stored in the location specified by the administrator</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_upload_error7</word_key>
+      <word_default>You submitted an invalid file type for your screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_ftp_error1</word_key>
+      <word_default>The uploaded files cannot be stored in the location specified by the administrator</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_upload_error5</word_key>
+      <word_default>We could not validate the image you attempted to upload. Please contact an administrator or try a different image</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_upload_error3</word_key>
+      <word_default>The file you uploaded was too big. Please review the size of the file you attempted to upload and the allowed maximum file size</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_error_cfield2</word_key>
+      <word_default>One of the fields you completed is in an invalid format.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_noupload_error1</word_key>
+      <word_default>You did not submit any files with your download record.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_upload_error8</word_key>
+      <word_default>The screenshot you attempted to upload was too large</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_upload_error6</word_key>
+      <word_default>Screenshots are required, however you did not submit one</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_upload_error4</word_key>
+      <word_default>There was an error attempting to move the file to its storage directory. Please contact an administrator</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_upload_error2</word_key>
+      <word_default>The filetype you tried to upload is not in the list of approved file types</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_error_file</word_key>
+      <word_default>You did not choose any file to upload</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_upload_error9</word_key>
+      <word_default>The website you linked to is not allowed</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_upload_error1</word_key>
+      <word_default><![CDATA[There was an error processing the file. Make sure that after selecting your file that you click the 'Attach File' button before submitting.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_error_cfield</word_key>
+      <word_default>You left a required field blank</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_error_cfield1</word_key>
+      <word_default>One of the fields you completed had more data than is allowed.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>no_downloads_categories</word_key>
+      <word_default>There do not appear to be any categories created yet.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_error_filedesc</word_key>
+      <word_default>A file description is required</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_error_screenshot</word_key>
+      <word_default>Screenshots are required in this category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>no_addthiscat_permissions</word_key>
+      <word_default>You do not have permission to add files to this category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_error_filename</word_key>
+      <word_default>A filename is required</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>error_generic</word_key>
+      <word_default>An internal error occurred. Please contact an administrator</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>no_addfile_permissions</word_key>
+      <word_default>We could not find any categories that you have permission to submit to</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>no_permitted_categories</word_key>
+      <word_default>You do not have access to this section of the site.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>no_downloads_permissions</word_key>
+      <word_default>Sorry, but you do not have access to any of the functions in our Download Manager</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ucp_downloads</word_key>
+      <word_default>Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ucp_views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ucp_rating</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ucp_blank_row</word_key>
+      <word_default><![CDATA[We're sorry, but we did not find any files that matched your criteria.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ucp_rm_sel</word_key>
+      <word_default>Remove Selected Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ucp_submitted</word_key>
+      <word_default>Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ucp_updated</word_key>
+      <word_default>Last Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_filependingsub</word_key>
+      <word_default><![CDATA[A new file <a href='%s'>%s</a> is pending approval]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ucp_notupdated</word_key>
+      <word_default><![CDATA[<i>Never</i>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ucp_filename</word_key>
+      <word_default>File Name</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_subject</word_key>
+      <word_default><![CDATA[Your submitted file <a href='%s'>%s</a> was %s]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_filepending</word_key>
+      <word_default><![CDATA[Hello %s,
+
+This message is to notify you that a file '%s' has been submitted and is pending approval.
+This message was automatically generated.  Please visit the Moderator Panel (%s) to review the file and approve or deny it, as appropriate.  Thanks!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_modsubjectbroke</word_key>
+      <word_default><![CDATA[A file <a href='%s'>%s</a> was reported broken]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_del_lang</word_key>
+      <word_default>deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_filebroke</word_key>
+      <word_default><![CDATA[Hello %s,
+
+This message is to notify you that your file '%s' has been reported broken.
+This message was automatically generated.  No action is required on your part at this time.  Our staff will review the report and take action on the file appropriately.  Thanks!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_subjectbroke</word_key>
+      <word_default><![CDATA[Your file <a href='%s'>%s</a> was reported broken]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_dennotify</word_key>
+      <word_default>Hello %s,
+
+This message is to notify you that your file %s was deleted.
+This message was automatically generated.  Please contact an admin with any questions.  Thanks!</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_app_lang</word_key>
+      <word_default>approved</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_modfilebroke</word_key>
+      <word_default><![CDATA[Hello %s,
+
+This message is to notify you that a file '%s' has been reported broken.
+This message was automatically generated.  Please visit the Moderator Panel (%s) to review the file and update it appropriately.  Thanks!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_message_pinned</word_key>
+      <word_default>%s files pinned</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_message_unapp</word_key>
+      <word_default>%s files unapproved</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_submit</word_key>
+      <word_default>Submit</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_select</word_key>
+      <word_default>With selected...</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_delete</word_key>
+      <word_default>Delete</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_approve</word_key>
+      <word_default>Approve</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_rembroke</word_key>
+      <word_default>Remove Broken File Flag</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_message_app</word_key>
+      <word_default>%s files approved</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_broke_top</word_key>
+      <word_default>Files Reported Broken</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_pend_top</word_key>
+      <word_default>Files Pending Approval</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_unbroken</word_key>
+      <word_default>The broken file flag has been removed</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_broken</word_key>
+      <word_default>The file has been reported as broken</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_approve</word_key>
+      <word_default>The file is now visible to the public</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_unapprove</word_key>
+      <word_default>The file is now hidden from public view</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_filedeleted</word_key>
+      <word_default>File Successfully Deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_nav</word_key>
+      <word_default>Moderation Panel</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dppage_button</word_key>
+      <word_default>Purchase File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dppage_starting</word_key>
+      <word_default>You are about to purchase this file. Before continuing, you must agree to the disclaimer below.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>files_below</word_key>
+      <word_default>Your files are available below.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>or_leave_a_review</word_key>
+      <word_default>Or leave a review</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>rate_file_blurb</word_key>
+      <word_default>Rating files helps other users!</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>rate_this_file</word_key>
+      <word_default>Rate this file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>agree_and_dl</word_key>
+      <word_default><![CDATA[Agree &amp; Download]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dpage_button_short</word_key>
+      <word_default>Download</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dpage_header_version</word_key>
+      <word_default>Downloading revision of</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dpage_button</word_key>
+      <word_default>Download File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dpage_starting</word_key>
+      <word_default>Your file is ready for download. Before downloading, you must agree to the disclaimer below.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>t_updated</word_key>
+      <word_default>File Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dpage_header</word_key>
+      <word_default>Downloading file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>t_clickhere</word_key>
+      <word_default>Click here to download this file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>t_category</word_key>
+      <word_default>File Category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>t_submitted</word_key>
+      <word_default>File Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>t_fileauthor</word_key>
+      <word_default>File Submitter</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_last_ten</word_key>
+      <word_default>Files Recently Uploaded</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_last_visit</word_key>
+      <word_default>New Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>t_filename</word_key>
+      <word_default>File Name</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_sortorder</word_key>
+      <word_default>Sort order</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_limitresults</word_key>
+      <word_default>Limit results</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>resort_button</word_key>
+      <word_default>Sort Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_sortby2</word_key>
+      <word_default>Sort files by</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_sortby</word_key>
+      <word_default>and sort results by</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_nolimit</word_key>
+      <word_default>No Limit</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_path</word_key>
+      <word_default>Specify a path</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>image_link</word_key>
+      <word_default>Link to an image</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>image_path</word_key>
+      <word_default>Specify a path</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_filterby</word_key>
+      <word_default>Show file type</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_link</word_key>
+      <word_default>Link to a file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>adding_file_to</word_key>
+      <word_default>Adding your file to</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>change_category</word_key>
+      <word_default>Change category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>step_1</word_key>
+      <word_default>Step %s: Select your file(s)</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>step_2</word_key>
+      <word_default>Step %s: Add screenshots</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>step_3</word_key>
+      <word_default>Step %s: Provide file information</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_currently_in</word_key>
+      <word_default>Your file is currently in</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>thanks_for_voting</word_key>
+      <word_default>Thank you for submitting your rating of this file!</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>comment_notice_subject</word_key>
+      <word_default><![CDATA[A new comment has been left on the file <a href='%s'>%s</a>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sub_notice_subject_new</word_key>
+      <word_default><![CDATA[The file <a href='%s'>%s</a> has just been submitted]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sub_notice_subject</word_key>
+      <word_default><![CDATA[The file <a href='%s'>%s</a> has been updated]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_filefile</word_key>
+      <word_default>Upload File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_filename</word_key>
+      <word_default>File Name</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_filedesc</word_key>
+      <word_default>Description</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_requiress</word_key>
+      <word_default>Screenshot Required</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_maxsize</word_key>
+      <word_default>Maximum Size: </word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cfield_required</word_key>
+      <word_default>This field is required</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_filelang</word_key>
+      <word_default>%s file in</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_addfile_header</word_key>
+      <word_default>Add a</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_editfile_header</word_key>
+      <word_default>Update</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_allowed</word_key>
+      <word_default>Allowed</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_removess</word_key>
+      <word_default>Remove existing screenshot?</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_screenshot</word_key>
+      <word_default>Screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>what_can_i_upload</word_key>
+      <word_default>What file types can I upload?</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>required</word_key>
+      <word_default>(Required)</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>add_button</word_key>
+      <word_default>Add Submission</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>edit_button</word_key>
+      <word_default>Update Submission</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>continue_button</word_key>
+      <word_default>Continue...</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_submit_title_header</word_key>
+      <word_default>Add, Edit or Update a File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_submit_nav_header</word_key>
+      <word_default>Select a Category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_submit_start_form</word_key>
+      <word_default>Please select a category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>select_cat_to_cont</word_key>
+      <word_default>Select a category before continuing</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>unreportbroken</word_key>
+      <word_default>Complete report</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>reportbroken</word_key>
+      <word_default>Is this file broken?</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>unnapprovefile</word_key>
+      <word_default>Unapprove file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>approvefile</word_key>
+      <word_default>Approve file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>deletefile</word_key>
+      <word_default>Delete file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>newversion</word_key>
+      <word_default>Upload new version</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>editfile</word_key>
+      <word_default>Edit file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>subtofile</word_key>
+      <word_default>Watch this file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>already_subscribed</word_key>
+      <word_default>Stop watching file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>findallbymem</word_key>
+      <word_default><![CDATA[View member's files]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_approvedby</word_key>
+      <word_default>Approved by</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_approvedon</word_key>
+      <word_default>Approved on</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_votesnump</word_key>
+      <word_default>with a total of</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_votesnum</word_key>
+      <word_default>votes</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>fileby</word_key>
+      <word_default>by</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_topiclang</word_key>
+      <word_default>Support Topic</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>already_voted</word_key>
+      <word_default>You rated this file %s out of 5</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_showtopic</word_key>
+      <word_default>Click here to visit support topic</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>filesize</word_key>
+      <word_default>File Size</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>filepurchases</word_key>
+      <word_default>Purchases</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>fileviews</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>filetype</word_key>
+      <word_default>File Type</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>fileinfo_son</word_key>
+      <word_default>on</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_infoheader</word_key>
+      <word_default>File Information</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_broken_text</word_key>
+      <word_default>This file has been reported as broken because</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>filescreenshot</word_key>
+      <word_default>Screenshots</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ss_clickhere</word_key>
+      <word_default>View Screenshots</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ss_notavail</word_key>
+      <word_default>Not Available</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ss_notavail2</word_key>
+      <word_default>Screenshot Not Available</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>filename</word_key>
+      <word_default>File Name</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>filecategory</word_key>
+      <word_default>In Category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>submittedon</word_key>
+      <word_default>Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>lastupdated</word_key>
+      <word_default>Last Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>filedownloads</word_key>
+      <word_default>Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>no_direct_files</word_key>
+      <word_default><![CDATA[There are no files directly in this category. Files listed below are from this category&#39;s subcategories, or you can click on a subcategory in the menu to narrow your results.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>no_files_in_category</word_key>
+      <word_default><![CDATA[This category doesn't have any files yet]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>fileinfo_submitted</word_key>
+      <word_default>Submission Information</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>fileinfo_name</word_key>
+      <word_default>File Name</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sidebar_broken</word_key>
+      <word_default>broken files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sidebar_pending</word_key>
+      <word_default>pending</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sidebar_downloads</word_key>
+      <word_default>downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sidebar_files</word_key>
+      <word_default>files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catdis_in</word_key>
+      <word_default>in</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>reviews</word_key>
+      <word_default>reviews</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>view_comments</word_key>
+      <word_default>See reviews of this download</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>com_qued</word_key>
+      <word_default>Unapproved reviews:</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cat_qued</word_key>
+      <word_default>Unapproved files:</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catdis_fileviews</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catdis_filedls</word_key>
+      <word_default>Downloads: </word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catdis_filesubmitted</word_key>
+      <word_default>Submitted: </word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catdis_fileauthor</word_key>
+      <word_default>Submitter: </word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catdis_ssnone</word_key>
+      <word_default>No Screenshots Available</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catdis_filename</word_key>
+      <word_default>File Name: </word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catdis_ssalt</word_key>
+      <word_default>Screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catdis_added</word_key>
+      <word_default>Added</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catdis_updated</word_key>
+      <word_default>Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catinfo_subcats</word_key>
+      <word_default>Subcategories: </word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catinfo_latestinfo</word_key>
+      <word_default>Latest Submission</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catinfo_totaldownloads</word_key>
+      <word_default>Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catinfo_totalcomment</word_key>
+      <word_default>review</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catinfo_totalcomments</word_key>
+      <word_default>reviews</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catinfo_totalviews</word_key>
+      <word_default>views</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catinfo_description</word_key>
+      <word_default>Description</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catinfo_totalfiles</word_key>
+      <word_default>Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catfile_author</word_key>
+      <word_default>Submitted by</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catfile_date1</word_key>
+      <word_default>Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>catfile_date</word_key>
+      <word_default>Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_rss_desc</word_key>
+      <word_default>This is the RSS feed of the last ten file submissions accepted into our database.  This RSS feed is always up to date as it is dynamically updated.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cat_no_info</word_key>
+      <word_default><![CDATA[<i>No Information</i>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>category_main_header</word_key>
+      <word_default>Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>rss_error_message</word_key>
+      <word_default>RSS ERROR</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>rss_disabled</word_key>
+      <word_default>The RSS feed has been disabled</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_rss_title</word_key>
+      <word_default>Last 10 Submissions RSS Feed</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_offline_msg</word_key>
+      <word_default>Download Manager Offline</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>randomfile_header</word_key>
+      <word_default>Random Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>stats_noneyet</word_key>
+      <word_default><![CDATA[<i>N/A</i>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>active_users_guests</word_key>
+      <word_default>guests</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>mini_stats_members</word_key>
+      <word_default>active users</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>active_users_header</word_key>
+      <word_default>%s user(s) are online (in the past %s minutes)</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>mini_stats_views</word_key>
+      <word_default>views</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dl_restrict_weekly_bw</word_key>
+      <word_default>You have exceeded the maximum amount of bandwidth allotted to you by the administrator for the week.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dl_restrict_min_posts</word_key>
+      <word_default>You do not have enough posts to download files yet.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>mini_stats_downloads</word_key>
+      <word_default>downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>mini_stats_files</word_key>
+      <word_default>files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_cat_selectcat</word_key>
+      <word_default>Select Category...</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_suredelete</word_key>
+      <word_default>Are you sure you wish to delete the item(s)?</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dl_restrict_monthly_dl</word_key>
+      <word_default>You have exceeded the maximum amount of downloads allotted to you by the administrator for the month.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dl_restrict_weekly_dl</word_key>
+      <word_default>You have exceeded the maximum amount of downloads allotted to you by the administrator for the week.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dl_restrict_daily_dl</word_key>
+      <word_default>You have exceeded the maximum amount of downloads allotted to you by the administrator for the day.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dl_restrict_monthly_bw</word_key>
+      <word_default>You have exceeded the maximum amount of bandwidth allotted to you by the administrator for the month.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dl_restrict_daily_bw</word_key>
+      <word_default>You have exceeded the maximum amount of bandwidth allotted to you by the administrator for the day.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_not_approved</word_key>
+      <word_default>This file has not yet been approved.  Only moderators, and the person who submitted the file can see it.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dl_restrict_posts_p_dl</word_key>
+      <word_default>You have not posted enough times since the last file you downloaded.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_report_name</word_key>
+      <word_default>Reporting file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>NO_ID_PASSED</word_key>
+      <word_default>No ID was passed for versioning control</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>broken_reason</word_key>
+      <word_default>Please enter the reason for your report</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>broken_confirm</word_key>
+      <word_default>Confirm Report</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>version_unhide_succesful</word_key>
+      <word_default>The version was successfully unhidden</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>version_remove_succesful</word_key>
+      <word_default>The version was successfully removed</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>FILE_NOT_FOUND</word_key>
+      <word_default>We could not find the requested file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ONLY_LOCAL_BACKUP</word_key>
+      <word_default>Versioning control is only supported when locally storing the files on the server</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>version_hide_succesful</word_key>
+      <word_default>The version was successfully hidden</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>version_restore_succesful</word_key>
+      <word_default>The version was successfully restored as the most current</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>bversion_alt_unhide</word_key>
+      <word_default>Show To Members</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>bversion_alt_hide</word_key>
+      <word_default>Hide From Members</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>bversion_alt_delete</word_key>
+      <word_default>Delete</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>bversion_alt_restore</word_key>
+      <word_default>Restore</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>bversion_ops</word_key>
+      <word_default>Operations</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>bversion_alt_download</word_key>
+      <word_default>Download</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>bversion_updated</word_key>
+      <word_default>Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>bversion_name</word_key>
+      <word_default>Name</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>bversion_filename</word_key>
+      <word_default>Filename</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>older_versions</word_key>
+      <word_default>Saved Versions</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>restorefile</word_key>
+      <word_default>Restore Last Version</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_filesspath</word_key>
+      <word_default>Path to Screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_filepath</word_key>
+      <word_default>Path to File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_filessurl</word_key>
+      <word_default>Link to Screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_fileurl</word_key>
+      <word_default>Link to File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>latest_downloads</word_key>
+      <word_default>Latest Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sortby_comments</word_key>
+      <word_default>Reviews</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sortby_title</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sortby_submitted</word_key>
+      <word_default>Submission date</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sortby_views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sortby_rating</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sortby_updated</word_key>
+      <word_default>Date updated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sortby_downloads</word_key>
+      <word_default>Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ss_import_note</word_key>
+      <word_default><![CDATA[<b>Note</b>: File must be uploaded to your configured screenshots directory]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>import_note</word_key>
+      <word_default><![CDATA[<b>Note</b>: File must be uploaded to your configured downloads directory]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>multimod_submit</word_key>
+      <word_default>Move files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_mmod_success</word_key>
+      <word_default>The selected action has been taken on the files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>multimod_cat</word_key>
+      <word_default>Select Category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_uploaded_bytes</word_key>
+      <word_default>bytes</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_uploaded_bps</word_key>
+      <word_default>kB/sec</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_uploaded_est</word_key>
+      <word_default>Estimated seconds remaining: </word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_portal_random</word_key>
+      <word_default>Random Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>mod_button</word_key>
+      <word_default>With selected</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_unapprove</word_key>
+      <word_default>Unapprove</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_move</word_key>
+      <word_default>Move</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_broken_info</word_key>
+      <word_default>Reported by %s on %s</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>imported_desc</word_key>
+      <word_default>File imported by an administrator</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>top_downloads</word_key>
+      <word_default>Top Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_uploaded_of</word_key>
+      <word_default>of</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_reuploadfile</word_key>
+      <word_default>Upload a new file to replace existing one?</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_upload_progress</word_key>
+      <word_default>Upload Progress...</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_uploaded_st</word_key>
+      <word_default>Uploaded</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dl_restrict_sim</word_key>
+      <word_default>You may not download any more files until your other downloads are complete</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>no_downloads_cats_created</word_key>
+      <word_default>There have been no categories created yet</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_alreadyuploaded</word_key>
+      <word_default>Existing file present.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ajax_rate_error</word_key>
+      <word_default>There was an error processing the request</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ucp_manage_downloads</word_key>
+      <word_default>Files I Downloaded</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>no_guest_report</word_key>
+      <word_default>The administrator requires that you login before reporting reviews.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>task_idmurls</word_key>
+      <word_default>%s dynamic download urls cleared</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>task_idmviews</word_key>
+      <word_default>Download file views updated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>downloads_member_restricted</word_key>
+      <word_default>You are not permitted to download files at this time.  Please try again later.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>reports_turned_off</word_key>
+      <word_default>The administrator is not accepting any new reports at this time.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>report_no_comment</word_key>
+      <word_default>We could not find the comment you were attempting to report.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>task_idmsessions</word_key>
+      <word_default>%s uncleared IP.Downloads sessions cleared</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>task_idmprune</word_key>
+      <word_default>Old download logs pruned</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>captcha_failed</word_key>
+      <word_default>The verification code did not match the one displayed.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>generic_downloads</word_key>
+      <word_default>Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>markread_no_id</word_key>
+      <word_default>Could not determine which category you were marking as read.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>files_downloaded_summary</word_key>
+      <word_default>A list of files you have downloaded</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>your_subscriptions_summary</word_key>
+      <word_default>A list of files you have subscribed to</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>files_you_sub_summary</word_key>
+      <word_default>A list of files you have submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>your_comment</word_key>
+      <word_default>Your comment</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>select_cats_to_moveto</word_key>
+      <word_default>Select a category to move the file(s) to</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ss_linkupload</word_key>
+      <word_default>Upload or link to screenshots instead?</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>add_another_sslink</word_key>
+      <word_default>Add another screenshot link</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>add_another_filelink</word_key>
+      <word_default>Add another link</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>ss_import_disk</word_key>
+      <word_default>Import from disk instead?</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_linkupload</word_key>
+      <word_default>Upload or link to files instead?</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>submit_manage_screenshots</word_key>
+      <word_default>Screenshots</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_import_disk</word_key>
+      <word_default>Import from disk instead?</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>submit_manage_files</word_key>
+      <word_default>Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_management</word_key>
+      <word_default>File Management</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>category_search_button</word_key>
+      <word_default>Category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_posted_by</word_key>
+      <word_default>Posted by</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>files_submitted_summary</word_key>
+      <word_default>A list of files this member has submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>comment_search_button</word_key>
+      <word_default>Comment</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_search_button</word_key>
+      <word_default>File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idm_find_in_cat</word_key>
+      <word_default><![CDATA[Find in <strong>downloads category</strong>:]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>files_broken_summary</word_key>
+      <word_default>A list of files reported broken</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>table_caption_pending</word_key>
+      <word_default>Files Pending Approval</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>submit_preview_button</word_key>
+      <word_default>Preview</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>submit_post_button</word_key>
+      <word_default>Post</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>files_pending_approval</word_key>
+      <word_default>A list of files pending approval</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>rate_file_2</word_key>
+      <word_default>Rate file 2 star</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>rate_file_3</word_key>
+      <word_default>Rate file 3 star</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>rate_file_4</word_key>
+      <word_default>Rate file 4 star</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>rate_file_5</word_key>
+      <word_default>Rate file 5 star</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>votes_cnt</word_key>
+      <word_default>Votes</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>you_voted</word_key>
+      <word_default>You voted</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_description</word_key>
+      <word_default>Description</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>prev_revisions_summary</word_key>
+      <word_default>A list of previous versioned files of</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>show_filter_options</word_key>
+      <word_default>Show filter options</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>rate_file_1</word_key>
+      <word_default>Rate file 1 star</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>rate_file</word_key>
+      <word_default>Rate File:</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>list_files_summary</word_key>
+      <word_default>A list of files in</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>download_plural</word_key>
+      <word_default>downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>download_singular</word_key>
+      <word_default>download</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>view_pending_comments</word_key>
+      <word_default>View pending reviews</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>view_file_named_title</word_key>
+      <word_default>View file named</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>select_all_files</word_key>
+      <word_default>Select all files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>mark_cat_read</word_key>
+      <word_default>Mark this category as read</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>fileinfo_uploaded_by</word_key>
+      <word_default>Uploaded By</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>anon_users</word_key>
+      <word_default>Anonymous Users</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>latest_submitter</word_key>
+      <word_default>Latest Submitter</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>latest_file</word_key>
+      <word_default>Latest File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>total_categories</word_key>
+      <word_default>Total Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>random_files_table</word_key>
+      <word_default>Displaying random files from Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>total_downloads</word_key>
+      <word_default>Total Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>total_authors</word_key>
+      <word_default>Total Authors</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>view_file</word_key>
+      <word_default>View File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>view_category</word_key>
+      <word_default>View Category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>view_queued</word_key>
+      <word_default>View Unapproved Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>toggle_random_files</word_key>
+      <word_default>Toggle random files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>latest_file_th</word_key>
+      <word_default>Latest File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>queued_files_sprintf</word_key>
+      <word_default>There are %s unapproved files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>stats_th</word_key>
+      <word_default>Stats</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>downloads_table_summary</word_key>
+      <word_default>Categories in Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>noupload_perm_alt</word_key>
+      <word_default>You cannot upload a new file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderation_alt</word_key>
+      <word_default>Moderation</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>upload_file_alt</word_key>
+      <word_default>Upload File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>no_category_selected</word_key>
+      <word_default>You did not select a category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>select_several</word_key>
+      <word_default>You can select more than one file at a time by holding Ctrl (on Windows) or Command (on Mac) and selecting your files.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>log_topic_del</word_key>
+      <word_default>Deleted an IP.Downloads Auto-Generated topic</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>err_UNKNOWN</word_key>
+      <word_default>An unknown error occurred: </word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>gotosubcat</word_key>
+      <word_default>Go to category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>filesize_unknown</word_key>
+      <word_default><![CDATA[<em>Unknown</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>attach_delete</word_key>
+      <word_default>Delete</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>task_idmtemprecords</word_key>
+      <word_default>%s temporary download files were cleared out</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>trouble_uploading</word_key>
+      <word_default>Trouble uploading?</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>switch_to_basic</word_key>
+      <word_default>Try switching to our basic uploader</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>switch_to_advanced</word_key>
+      <word_default>Try our advanced uploader which supports multiple file uploading (modern browser required)</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>viewmember_other_files</word_key>
+      <word_default>View other files from this member</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>browse_other_cats</word_key>
+      <word_default>Browse Other Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>browse_other_cats_files</word_key>
+      <word_default>files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>browse_other_cats_views</word_key>
+      <word_default>views</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>all_downloads_by</word_key>
+      <word_default>files </word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>attach_files_help</word_key>
+      <word_default>Help with attaching files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>clear_selection</word_key>
+      <word_default>Clear Selection</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>attach_selected</word_key>
+      <word_default>Attach File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>attach_selectedss</word_key>
+      <word_default>Attach Screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>swf_attach_selectedss</word_key>
+      <word_default>Click to Upload Screenshots</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>swf_attach_selectedfiles</word_key>
+      <word_default>Click to Upload Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_error_nexus_fee</word_key>
+      <word_default>%s Your price is too low for any payment to be received. To continue anyway, press the submit button again.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_error_nexus</word_key>
+      <word_default>You did not select an associated package.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_cost_desc_fee</word_key>
+      <word_default>A %s transaction fee will be deducted.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_paid</word_key>
+      <word_default>Paid</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_nexus</word_key>
+      <word_default>Associate with Nexus package</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_package</word_key>
+      <word_default>Package</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_nexus_type</word_key>
+      <word_default>File Type</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_cost_desc_both</word_key>
+      <word_default>%s%% commission, plus a %s transaction fee will be deducted.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_cost_desc_percent</word_key>
+      <word_default>%s%% commission will be deducted.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_free</word_key>
+      <word_default>Free</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_sort_title</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_sort_relevancy</word_key>
+      <word_default>Relevancy</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cat_search_pre</word_key>
+      <word_default>In Category: </word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>nodownloaders_yet</word_key>
+      <word_default>No one has downloaded this file yet</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dpage_buy</word_key>
+      <word_default>Buy Now</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>dpage_buy_another</word_key>
+      <word_default>Buy Another</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_cost</word_key>
+      <word_default>Price</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_sort_views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_sort_updated</word_key>
+      <word_default>Last Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_sort_submitted</word_key>
+      <word_default>Submission Date</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_sort_rating</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>like__file</word_key>
+      <word_default>File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>search_sort_downloads</word_key>
+      <word_default>Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>mark_idm_as_read</word_key>
+      <word_default>Mark All Categories Read</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>like__cat</word_key>
+      <word_default>Category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>like__index</word_key>
+      <word_default>Index</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_downloaded_by</word_key>
+      <word_default><![CDATA[Members who have downloaded '%s']]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>noauth_for_filechange</word_key>
+      <word_default><![CDATA[We could not find the member you were attempting to set as this file's owner.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>author_changed</word_key>
+      <word_default>The owner of this file has been updated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_downloaded_by_ajax</word_key>
+      <word_default>Downloaded By</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>changeauth_perms</word_key>
+      <word_default>You do not have permission to perform that action.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cannot_find_downloads</word_key>
+      <word_default>We could not find the file you were attempting to view downloaders for.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>nofile_for_authchange</word_key>
+      <word_default>We could not find the file you were attempting to update.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cannot_view_downloads</word_key>
+      <word_default>You cannot view the list of members that have downloaded this file.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>change_author_submit</word_key>
+      <word_default>Update</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>find_idm_paidfree</word_key>
+      <word_default>Show files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>change_author</word_key>
+      <word_default>Change author?</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>change_author_name</word_key>
+      <word_default>Author name: </word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>find_idm_category</word_key>
+      <word_default><![CDATA[Find in <strong>category</strong>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>s_idmsearch_desc</word_key>
+      <word_default><![CDATA[These additional filters can be used to find <strong>files</strong>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_fileversion</word_key>
+      <word_default>File Version</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_filechanges</word_key>
+      <word_default>Change Log</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>nochanges_yet</word_key>
+      <word_default>No changes have been recorded in this version</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>changelog_pt</word_key>
+      <word_default>%s Changelog</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>nochanges_at_all</word_key>
+      <word_default>No changes have been recorded for this file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_changelog</word_key>
+      <word_default>Changes in %s</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>changelog_ucfirst</word_key>
+      <word_default>Changelog</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>filecomment_notifications</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+<#AUTHOR#> has just commented on the file "<#TITLE#>" to which you are currently subscribed.
+
+You can review the new comment here:
+<#URL#>
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>required_fields</word_key>
+      <word_default>Required fields</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>portal_no_users</word_key>
+      <word_default>No users to show</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>max_file_size_is</word_key>
+      <word_default>Maximum file size is</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>portal_no_downloads</word_key>
+      <word_default>No downloads to show</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>new_version_submit_h3</word_key>
+      <word_default>Uploading A New Version</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>new_version_notice</word_key>
+      <word_default><![CDATA[When you save the changes to your file below, a new version of your submission will be saved, with the current existing version archived as a previous version.<br /><br />Users will be able to download previous versions when reviewing your file listing, and administrators will be able to restore a previous version if need be.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>whats_new_in_v</word_key>
+      <word_default><![CDATA[What's New in Version]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>changelog</word_key>
+      <word_default>Changelog</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>see_full_changelog</word_key>
+      <word_default>See full changelog</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>user_reviews</word_key>
+      <word_default>user reviews</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>previous_versions</word_key>
+      <word_default>Previous Versions</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_support_tooltip</word_key>
+      <word_default>Get support for this file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_support</word_key>
+      <word_default>SUPPORT TOPIC</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_information</word_key>
+      <word_default>File Information</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>submitter</word_key>
+      <word_default>Submitter</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>total_files</word_key>
+      <word_default>Total Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>free</word_key>
+      <word_default>FREE</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>watchers</word_key>
+      <word_default>watchers</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>_by</word_key>
+      <word_default>By</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>most_watched</word_key>
+      <word_default>Most Watched</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>highest_rated</word_key>
+      <word_default>Highest Rated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>whats_new</word_key>
+      <word_default><![CDATA[What's New]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>top_authors</word_key>
+      <word_default>Top Authors</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>top_dl</word_key>
+      <word_default>Top Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>top_paid</word_key>
+      <word_default>Top Paid Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>top_free</word_key>
+      <word_default>Top Free Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>toggle</word_key>
+      <word_default>Toggle</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>view_all</word_key>
+      <word_default>View all</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>click_to_set_main</word_key>
+      <word_default>Set this as the main screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>main_screenshot</word_key>
+      <word_default>Main screenshot</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>COM_comment_button_post</word_key>
+      <word_default>Submit Review</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>filter_most_comments</word_key>
+      <word_default>Most Reviewed</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>filter_highest_rated</word_key>
+      <word_default>Highest Rated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>filter_most_recent</word_key>
+      <word_default>Most Recent</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>filter_most_popular</word_key>
+      <word_default>Most Popular</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>free_only</word_key>
+      <word_default>Free only</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>paid_only</word_key>
+      <word_default>Paid only</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>free_and_paid</word_key>
+      <word_default><![CDATA[Free &amp; Paid]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>purchase_plural</word_key>
+      <word_default>purchases</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>purchase_singular</word_key>
+      <word_default>purchase</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renews_warning</word_key>
+      <word_default>Renewal Terms cannot be edited once saved</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renews_cost</word_key>
+      <word_default>Renewal Cost</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renews_term</word_key>
+      <word_default>Renewal Term</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renews_on</word_key>
+      <word_default>I will specify renewal terms</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renews_off</word_key>
+      <word_default>No renewals - one off payment</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renew_term_prefix</word_key>
+      <word_default>Renewals Term: </word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renew_term</word_key>
+      <word_default>Every %d %s</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renew_term_years</word_key>
+      <word_default>years</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renew_term_yearly</word_key>
+      <word_default>Annually</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renew_term_months</word_key>
+      <word_default>months</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renew_term_biyearly</word_key>
+      <word_default>Bi-Yearly</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renew_term_monthly</word_key>
+      <word_default>Monthly</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renew_term_days</word_key>
+      <word_default>days</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renew_term_weekly</word_key>
+      <word_default>Weekly</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renew_term_fortnightly</word_key>
+      <word_default>Fortnightly</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renew_term_weeks</word_key>
+      <word_default>weeks</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_renew</word_key>
+      <word_default>(Expired) Renew Purchase</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renew_term_none</word_key>
+      <word_default>No Renewals</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renew_term_daily</word_key>
+      <word_default>Daily</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>noselectedfiles</word_key>
+      <word_default>You did not select any files to moderate.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>topauthors_ttldls</word_key>
+      <word_default>Total File Downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>set_featured_file</word_key>
+      <word_default>Set As Featured</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>unset_featured_file</word_key>
+      <word_default>Unset As Featured</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>featured_file_head</word_key>
+      <word_default>Featured Download</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>unfeatured_file_ok</word_key>
+      <word_default>The file has been successfully unfeatured</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_unpinfile</word_key>
+      <word_default>Unpin</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>nofile_for_feature</word_key>
+      <word_default>We could not find the file you were attempting to feature or unfeature.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>featured_file_ok</word_key>
+      <word_default>The file has been successfully featured</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>noperm_for_feature</word_key>
+      <word_default>You do not have permission to feature or unfeature files.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modact_pinfile</word_key>
+      <word_default>Pin</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>unpin_file</word_key>
+      <word_default>Unpin File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>pin_file</word_key>
+      <word_default>Pin File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_unpinned</word_key>
+      <word_default>The file has been successfully unpinned</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>moderate_pinned</word_key>
+      <word_default>The file has been successfully pinned</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cannot_find_to_pin</word_key>
+      <word_default>We could not find the file you were attempting to pin.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>listing_broken</word_key>
+      <word_default>Broken</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>notify__new_filecomment</word_key>
+      <word_default>Notification method to use when a file I follow receives a new comment</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>notify__file_approved</word_key>
+      <word_default>Notification method to use when a file I submitted is approved or denied</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>listing_pinned</word_key>
+      <word_default>Pinned</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>listing_featured</word_key>
+      <word_default>Featured</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>notify__updated_file</word_key>
+      <word_default>Notification method to use when a file I follow is updated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>notify__new_file</word_key>
+      <word_default>Notification method to use when a file is submitted to a category I follow</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>nofiles_pending_approval</word_key>
+      <word_default>There are no files currently awaiting approval</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>nofiles_pending_broken</word_key>
+      <word_default>There are no files currently reported broken</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>downloaders_pt</word_key>
+      <word_default>%s Downloaders</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>view_all_downloaders</word_key>
+      <word_default>View All Downloaders</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>notify__file_mybroken</word_key>
+      <word_default>Notify me when a file I submitted is reported broken</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>notify__file_broken</word_key>
+      <word_default><![CDATA[[Moderators] Notify me when a file is reported broken]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>notify__file_pending</word_key>
+      <word_default><![CDATA[[Moderators] Notify me when a file is submitted and pending approval]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>version_h3_bar</word_key>
+      <word_default>Version </word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>previousversion_h3bar</word_key>
+      <word_default>(Previous Version)</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_dl_currate</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renewals_submit_every</word_key>
+      <word_default>Every</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>submit_renewals</word_key>
+      <word_default>Renewals</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modcp_mtab_brokefiles</word_key>
+      <word_default>Broken Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>like__files</word_key>
+      <word_default>files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>reason_report_req</word_key>
+      <word_default>You must supply a reason for reporting this file broken</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modcp_tab_unapprovedfiles</word_key>
+      <word_default>Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modcp_tab_brokenfiles</word_key>
+      <word_default>Files Reported Broken</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sharedmedia_lastupdated</word_key>
+      <word_default>Last Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>followed_type__files</word_key>
+      <word_default>Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>followed_type__categories</word_key>
+      <word_default>Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>notify__short__new_file</word_key>
+      <word_default>File I am watching is updated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>notify__short__file_approved</word_key>
+      <word_default>File I submitted is approved</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sharedmedia_downloads</word_key>
+      <word_default>Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sharedmedia_cat</word_key>
+      <word_default>Category:</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>statistics</word_key>
+      <word_default>Statistics</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>addfile_upload_error_changelog</word_key>
+      <word_default>You must provide a file version too if you enter a change log</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>error_profile_no_files</word_key>
+      <word_default><![CDATA[This member doesn't have any files yet]]></word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>revision_delete_confirm</word_key>
+      <word_default>Are you sure you want to delete this revision?</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>profile_last_x_files</word_key>
+      <word_default>Last %s submitted files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>like_totalcount_follow_file</word_key>
+      <word_default>%s member(s) follow this file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>like_unfollow_file</word_key>
+      <word_default>unfollow this file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>like_ucfirst_unfollow_file</word_key>
+      <word_default>Unfollow this file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>like_follow_file</word_key>
+      <word_default>follow this file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>like_ucfirst_follow_file</word_key>
+      <word_default>Follow this file</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>like_ucfirst_unfollow_cat</word_key>
+      <word_default>Unfollow this category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>like_totalcount_follow_cat</word_key>
+      <word_default>%s member(s) follow this category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>like_unfollow_cat</word_key>
+      <word_default>unfollow this category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>like_follow_cat</word_key>
+      <word_default>follow this category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>like_ucfirst_follow_cat</word_key>
+      <word_default>Follow this category</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>show_moderation_tools</word_key>
+      <word_default>Show moderation tools</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>feed_tp_all</word_key>
+      <word_default>All Time</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cat_sort_custom</word_key>
+      <word_default>Custom</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>feed_tp_week</word_key>
+      <word_default>Past Week</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>feed_tp_year</word_key>
+      <word_default>Past Year</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_files_search</word_key>
+      <word_default>Files</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>sform_tags</word_key>
+      <word_default>File Tags</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>report_comment_page</word_key>
+      <word_default>Report this comment to a moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>similarfiles_header</word_key>
+      <word_default>Other files you may be interested in ..</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>in_idm_file_uc</word_key>
+      <word_default>In File</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>modcp_tab_idmcomments</word_key>
+      <word_default>File Reviews</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_comments_search</word_key>
+      <word_default>Reviews</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>reactivate_confirm</word_key>
+      <word_default>Are you sure you wish to reactivate this purchase?  If it is expired, you will need to renew the purchase before gaining access to download the file.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>renew_confirm</word_key>
+      <word_default>Are you sure you wish to renew this purchase?</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>feed_tp_month</word_key>
+      <word_default>Past Month</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>you_did_not_upload</word_key>
+      <word_default>You did not upload any files.  You must upload at least one file to continue.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>error_generating_invoice</word_key>
+      <word_default>An error occurred while trying to generate your invoice. Please try again or contact an administrator. (%s)</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>wait_period_remaining</word_key>
+      <word_default>You must wait %s seconds before you can download this file.  Once %s seconds have passed, please refresh this page.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>idmjs_wait_str</word_key>
+      <word_default>Download starts in %s seconds</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>purchase_cancelled_no</word_key>
+      <word_default>The purchase has been cancelled.  You will no longer have access to download the file unless you reactivate the purchase.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cfield_drop_selectone</word_key>
+      <word_default>Select One</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cancel_confirm</word_key>
+      <word_default>Are you sure you wish to cancel this purchase? You will lose access to download the file on %s.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>purchase_cancelled</word_key>
+      <word_default>The purchase has been cancelled.  You will still have access to download the file until %s.</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_no_renewals</word_key>
+      <word_default>The file does not have any renewal terms, and subsequently cannot be cancelled, renewed or reactivated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>purchase_reactivated_renew</word_key>
+      <word_default>The purchase has been reactivated but is expired and will need to be renewed</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cannot_find_purchase</word_key>
+      <word_default>We could not find the purchase you were attempting to update</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>purchase_reactivated</word_key>
+      <word_default>The purchase has been reactivated</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>cannot_reactivate_p</word_key>
+      <word_default>You are unable to reactivate this purchase</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_purchid</word_key>
+      <word_default>(expires on %s)</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_cancelpurchase</word_key>
+      <word_default>(Active) Cancel Purchase</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_reactivate</word_key>
+      <word_default>(Cancelled) Reactivate Purchase</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>file_nexus_manage</word_key>
+      <word_default>Manage %s</word_default>
+    </lang>
+    <lang>
+      <word_app>downloads</word_app>
+      <word_pack>public_downloads</word_pack>
+      <word_key>manage_file_purchases</word_key>
+      <word_default>Manage Purchases</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

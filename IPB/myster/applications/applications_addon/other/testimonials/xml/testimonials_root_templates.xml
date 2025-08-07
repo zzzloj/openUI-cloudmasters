@@ -1,0 +1,1470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="testimonials" templategroups="a:1:{s:17:&quot;skin_testimonials&quot;;s:5:&quot;exact&quot;;}">
+  <templategroup group="skin_testimonials">
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[<if test="$this->memberData['sostestemunhos_banir_membros']">
+	<li class='report'>
+		<a href='{parse url="module=testemunhos&amp;section=moderate&amp;do=ban&amp;ID={$this->request['showtestimonial']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['banir_desc']}'> {$this->lang->words['banir']}</a>
+	</li>
+</if>]]></template_content>
+      <template_name>banFromComment</template_name>
+      <template_data><![CDATA[$title="",$body=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[<form action='{$this->settings['base_url']}' method='post' id='postingform'>
+<input type='hidden' name='auth_key' value='{$this->member->form_hash}' />
+<input type='hidden' name='app' value='testimonials' />
+<input type='hidden' name='module' value='testemunhos' />
+<input type='hidden' name='section' value='moderate' />
+<input type='hidden' name='do' value='doBanMember' />
+<input type='hidden' name='ID' value='{$this->request['ID']}' />
+<input type='hidden' name='memberid' value='{$author}' />
+<input type='hidden' name='membername' value='{$author_name}' />
+<h2 class='maintitle'>{$this->lang->words['banir_desc']}</h2>
+<div class='generic_bar'></div>
+<div class='post_form'>
+	<p class='row1 field'>
+	{$text}
+	</p>
+	<fieldset class='submit'>
+		<input type="submit" class='input_submit' value="{$this->lang->words['banir']}" /> {$this->lang->words['or']} <a href='{parse url="app=testimonials" base="public"}' title='{$this->lang->words['cancel']}' class='cancel'>{$this->lang->words['cancel']}</a>
+	</fieldset>
+</div>
+</form>]]></template_content>
+      <template_name>banMember</template_name>
+      <template_data>$text, $author, $author_name</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[<form action='{$this->settings['base_url']}' method='post' id='postingform'>
+<input type='hidden' name='auth_key' value='{$this->member->form_hash}' />
+<input type='hidden' name='app' value='testimonials' />
+<input type='hidden' name='module' value='testemunhos' />
+<input type='hidden' name='section' value='moderate' />
+<input type='hidden' name='do' value='doDelete' />
+<input type='hidden' name='ID' value='{$this->request['ID']}' />
+<h2 class='maintitle'>{$this->lang->words['testemunho_deletar']}: {$testemunho['t_title']}</h2>
+<div class='generic_bar'></div>
+<div class='post_form'>
+	<p class='row1 field'>
+	{$this->lang->words['testemunho_deletar_confirm']}{$text}
+	</p>
+	<fieldset class='submit'>
+		<input type="submit" class='input_submit' value="{$this->lang->words['testemunho_deletar']}" /> {$this->lang->words['or']} <a href='{parse url="{$where}" base="public"}' title='{$this->lang->words['cancel']}' class='cancel'>{$this->lang->words['cancel']}</a>
+	</fieldset>
+</div>
+</form>]]></template_content>
+      <template_name>deleteTestemunho</template_name>
+      <template_data>$testemunho, $where, $text</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[<a href='{$this->settings['base_url_with_app']}showtestimonial={$row['t_id']}&amp;view=getnewpost'>{parse replacement="f_newpost"}</a>]]></template_content>
+      <template_name>goNewPost</template_name>
+      <template_data>$row</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[{parse js_module="testemunhos"}
+	  <div class='topic_controls'>
+	<if test="$this->settings['testemunhos_announcment'] == 2 OR $this->settings['testemunhos_announcment'] == 5">
+		<div class="{$this->settings['testemunhos_tipoanuncio']}">
+			{$this->settings['testemunhos_anuncio']}
+		</div>
+		<br />
+	</if>
+	{$testemunhosPages} 
+	<div class='topic_controls'>
+	<ul class='topic_buttons'>
+		<if test="newTestemunhoButton:|:$this->memberData['sostestemunhos_postar_testemunhos']">
+			<li><a href='{parse url="module=testemunhos&amp;section=post&amp;cid={$cat['c_id']}&amp;do=new" base="publicWithApp"}' title='{$this->lang->words['novo_testemunho']}' accesskey='n'>{parse replacement="topic_icon"} {$this->lang->words['novo_testemunho']}</a></li>
+		<else />
+			<li class='disabled'><span>{$this->lang->words['novo_testemunho']}</span></li>
+		</if>
+
+	</ul>
+</div>
+<br />
+	
+		<h2 class='maintitle'>
+			{$this->lang->words['testemunhos']}<if test="testimonials:|:$testemunhos"><span class='desc right' style='margin-left: 5px;'><a href='{parse url="module=testemunhos&amp;section=markasread&amp;marktype=all&amp;authKey={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunhos_mark_all_as_read']}'>({$this->lang->words['testemunhos_mark_all_as_read']})</a></span></if>
+		</h2>
+<div class='category_block block_wrap'>
+<div class='ipsBox'><table class='ipb_table topic_list' id='forum_table'>
+
+
+		<!-- TESTEMUNHOS -->
+		<if test="is_array($testemunhos) AND count($testemunhos)">
+			{parse striping="testemunhosTable" classes="row1,row2"}
+
+			<foreach loop="testemunhos:$testemunhos as $tid => $data">
+				<tr class='{parse striping="testemunhosTable"} <if test="$data['t_approved']== 0">moderated</if>'>
+					<td class='col_f_icon short altrow'>{parse replacement="{$data['folder_img']}"}</td>
+					<td>
+	
+
+
+
+					<if test="$data['t_pinned'] == 1">
+						<span class='ipsBadge ipsBadge_green'>{$this->lang->words['testemunho_destaque']}</span>&nbsp;&nbsp;
+					</if>
+						
+{$data['go_new_post']} <a href='{parse url="showtestimonial={$data['t_id']}" seotitle="{$data['t_title_seo']}" template="testimonials" base="publicWithApp"}'>{$data['t_title']}</a>
+<br />
+<span class='desc lighter blend_links'>Started by: {IPSMember::makeProfileLink( $this->registry->getClass('testemunhosLibrary')->makeNameFormatted( $data['members_display_name'], $data['member_group_id'] ), $data['t_member_id'], $data['members_seo_name'])} {parse template="user_popup" group="global" params="$data['t_member_id'], $data['members_seo_name']"}, {$data['t_date']}</span>
+
+					</td>
+
+
+
+
+
+
+			<td>
+					<if test="$this->memberData['sostestemunhos_aprovar'] == 1 || $this->memberData['sostestemunhos_remover_testemunho'] == 1 || $this->memberData['sostestemunhos_fechar'] == 1 || $this->memberData['sostestemunhos_destacar'] == 1">
+						<ul class='topic_moderation right rounded' style='padding-top: 10px;'>
+							<if test="$this->memberData['sostestemunhos_aprovar'] == 1">
+								<if test="$data['t_approved']">
+									<li class='t_approved'><a href='{parse url="module=testemunhos&amp;section=moderate&amp;st={$this->request['st']}&amp;do=unapprove&amp;ID={$data['t_id']}&amp;cid={$data['t_cat']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_desaprovar']}'><img src='{$this->settings['img_url']}/eye2.png' alt='{$this->lang->words['testemunho_desaprovar']}' title='{$this->lang->words['testemunho_desaprovar']}' /></a></li>
+								<else />
+									<li class='t_unapproved'><a href='{parse url="module=testemunhos&amp;section=moderate&amp;st={$this->request['st']}&amp;do=approve&amp;ID={$data['t_id']}&amp;cid={$data['t_cat']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_aprovar']}'><img src='{$this->settings['img_url']}/eye1.png' alt='{$this->lang->words['testemunho_aprovar']}' title='{$this->lang->words['testemunho_aprovar']}' /></a></li>
+								</if>
+							</if>
+							<if test="$this->memberData['sostestemunhos_remover_testemunho'] == 1">
+								<li class='delete'><a href='{parse url="module=testemunhos&amp;section=moderate&amp;st={$this->request['st']}&amp;do=delete&amp;ID={$data['t_id']}&amp;cid={$data['t_cat']}&l=i&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}'><img src='{$this->settings['img_url']}/delete.png' alt='{$this->lang->words['testemunho_deletar']}' title='{$this->lang->words['testemunho_deletar']}' /></a></li>
+							</if>
+							<if test="$this->memberData['sostestemunhos_destacar'] == 1">
+								<if test="$data['t_pinned'] == 0">
+									<li class='t_pinned'><a href='{parse url="module=testemunhos&amp;section=moderate&amp;st={$this->request['st']}&amp;do=pin&amp;ID={$data['t_id']}&amp;cid={$data['t_cat']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_pin']}'><img src='{$this->settings['img_url']}/award.png' alt='{$this->lang->words['testemunho_pin']}' title='{$this->lang->words['testemunho_pin']}' /></a></li>
+								<else />
+									<li class='t_unapproved'><a href='{parse url="module=testemunhos&amp;section=moderate&amp;st={$this->request['st']}&amp;do=unpin&amp;ID={$data['t_id']}&amp;cid={$data['t_cat']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_unpin']}'><img src='{$this->settings['img_url']}/award_delete.png' alt='{$this->lang->words['testemunho_unpin']}' title='{$this->lang->words['testemunho_unpin']}' /></a></li>
+								</if>
+							</if>
+							<if test="$this->memberData['sostestemunhos_fechar'] == 1">
+								<if test="$data['t_open'] == 0">
+									<li class='t_closed'><a href='{parse url="module=testemunhos&amp;section=moderate&amp;st={$this->request['st']}&amp;do=open&amp;ID={$data['t_id']}&amp;cid={$data['t_cat']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_abrir']}'><img src='{$this->settings['img_url']}/lock_open.png' alt='{$this->lang->words['testemunho_abrir']}' title='{$this->lang->words['testemunho_abrir']}' /></a></li>
+								<else />
+									<li class='t_unapproved'><a href='{parse url="module=testemunhos&amp;section=moderate&amp;st={$this->request['st']}&amp;do=close&amp;ID={$data['t_id']}&amp;cid={$data['t_cat']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_fechar']}'><img src='{$this->settings['img_url']}/lock.png' alt='{$this->lang->words['testemunho_fechar']}' title='{$this->lang->words['testemunho_fechar']}' /></a></li>
+								</if>
+							</if>
+						</ul>
+					</if>
+			</td>
+
+
+					<td class='col_c_stats ipsType_small'>
+
+
+
+						<if test="$data['t_comments'] >= 2">
+							{$data['t_comments']} {$this->lang->words['comentarios']}
+						<else />
+							{$data['t_comments']} {$this->lang->words['comentarios']}
+						</if>
+<br />
+{$data['t_views']} {$this->lang->words['views']}
+					</td>
+
+
+				
+	
+
+	
+
+
+					
+					<td class='col_c_post' align='left'>
+
+<if test="$data['t_id'] && $data['t_comments'] > 0">
+				<a href='{parse url="showuser={$data['last_author_id']}" seotitle="{$data['members_seo_name']}" template="showuser" base="public"}' title='{$this->lang->words['view_profile']}' class='ipsUserPhotoLink'>
+			
+			<img src='{$data['pp_mini_photo']}' alt="{parse expression="sprintf($this->lang->words['users_photo'],$data['members_display_name'])"}" class='ipsUserPhoto ipsUserPhoto_mini left'/>
+			
+				</a>
+						<ul class='last_post ipsType_small'>	
+												
+<li>
+							<li><a href='{parse url="app=testimonials&amp;showtestimonial={$data['t_id']}&amp;view=getnewpost" base="public" template="showtestimonial" seotitle="{$data['t_title_seo']}"}' title='{$this->lang->words['view_last_post']}'>{parse replacement="f_lastpost"}</a> <a href='{parse url="app=testimonials&amp;showtestimonial={$data['t_id']}&amp;view=getnewpost" base="public" template="showtestimonial" seotitle="{$data['t_title_seo']}"}' title='{$this->lang->words['view_last_post']}'>{$data['t_last_comment']}</a></li>
+							<li>
+
+{$this->lang->words['lastc_tes']} {$this->lang->words['por']}: {$data['last_author']}
+</b>
+
+</li>
+
+						</ul>
+<else />
+<ul class='last_post ipsType_small'>
+<li class='desc lighter'>
+<em>{$this->lang->words['no_com']}</em>
+</li>
+</if>
+
+					</td>
+				</tr>
+			</foreach>
+		<else />
+			<tr> 
+				<td colspan='5' class='no_messages'>{$this->lang->words['no_testemunhos']}</td>
+			</tr>
+		</if>
+		<!-- FIM TESTEMUNHOS -->
+	</table></div>
+	<br />
+		<div id='forum_filter' class='filter_bar rounded'>
+			<span id='show_filters' class='clickable' style='display: none'>{$this->lang->words['opcoes_filtrar']}</span>
+			<form id='filter_form' action="{parse url="app=testimonials&module=testemunhos&section=list&showcat={$cat['c_id']}&changefilters=1" base="publicWithApp"}" method="post">
+			<fieldset>
+				<label for='sort_type'>{$this->lang->words['testemunhos_filter_sortby']}:</label> {$filters['sort_type']}
+				<label for='sort_order'>{$this->lang->words['testemunhos_filter_sortorder']}:</label> {$filters['sort_order']}
+				<label for='max_results'>{$this->lang->words['testemunhos_filter_results']}:</label> {$filters['max_results']}
+				<input type='checkbox' value='1' name='remember' class='input_check' id='remember_filter' /> <label for='remember_filter'>{$this->lang->words['testemunhos_filter_remember']}</label>
+				<input type="submit" value="{$this->lang->words['testemunhos_filter_do']}" class="input_submit alt" />
+			</fieldset>
+			</form>
+			<script type='text/javascript'>
+				if( $('filter_form' ) ){
+					$('filter_form').hide();
+					$('show_filters').show();
+				}
+			</script>
+		</div>
+</div>
+
+
+
+<div class='topic_controls'>
+<br />
+	{$testemunhosPages}
+	<ul class='topic_buttons'>
+		<if test="newTestemunhoButtonBottom:|:$this->memberData['sostestemunhos_postar_testemunhos']">
+<li><a href='{parse url="module=testemunhos&amp;section=post&amp;do=new&amp;cid={$cat['c_id']}" base="publicWithApp"}' title='{$this->lang->words['novo_testemunho']}' accesskey='n'>{parse replacement="topic_icon"} {$this->lang->words['novo_testemunho']}</a></li>
+		<else />
+			<li class='disabled'><span>{$this->lang->words['novo_testemunho']}</span></li>
+		</if>
+
+	</ul>
+</div>
+<br />
+
+		<if test="showActive:|:$this->settings['testemunhos_showonlineusers']">
+<div class='statistics clear clearfix'>
+			<div id='active_users' class='stats_list'>
+				<h2 class="statistics_head">
+					{$stats['TOTAL']} {$this->lang->words['active_users_text']} <span>{$this->lang->words['active_users']}</span><br />
+					
+				</h2>
+<span class='statistics_brief desc'>{$stats['MEMBERS']} {$this->lang->words['members']}, {$stats['GUESTS']} {$this->lang->words['guests']}, {$stats['ANON']} {$this->lang->words['anon_users']}</span>
+				<if test="activeNames:|:count($stats['NAMES'])">
+					<p>
+<br />
+						<span class='name'>{parse expression="implode( ",</span> <span class='name'>", $stats['NAMES'] )"}</span>					
+					</p>
+				</if>
+			</div></div>
+		</if>
+	</div>
+<br />
+
+</if>]]></template_content>
+      <template_name>listPendingTestemunhosWrapper</template_name>
+      <template_data><![CDATA[$testemunhos=array(),$filters=array(),$testemunhosPages='',$stats=array(), $cat]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[{parse js_module="testemunhos"}
+	  <div class='topic_controls'>
+	<if test="$this->settings['testemunhos_announcment'] == 2 OR $this->settings['testemunhos_announcment'] == 5">
+		<div class="{$this->settings['testemunhos_tipoanuncio']}">
+			{$this->settings['testemunhos_anuncio']}
+		</div>
+		<br />
+	</if>
+	{$testemunhosPages} 
+	<div class='topic_controls'>
+	<ul class='topic_buttons'>
+		<if test="newTestemunhoButton:|:$this->memberData['sostestemunhos_postar_testemunhos']">
+			<li><a href='{parse url="module=testemunhos&amp;section=post&amp;cid={$cat['c_id']}&amp;do=new" base="publicWithApp"}' title='{$this->lang->words['novo_testemunho']}' accesskey='n'>{parse replacement="topic_icon"} {$this->lang->words['novo_testemunho']}</a></li>
+		<else />
+			<li class='disabled'><span>{$this->lang->words['novo_testemunho']}</span></li>
+		</if>
+
+	</ul>
+</div>
+<br />
+	
+		<h2 class='maintitle'>
+			{$this->lang->words['testemunhos']}<if test="testimonials:|:$testemunhos"><span class='desc right' style='margin-left: 5px;'><a href='{parse url="module=testemunhos&amp;section=markasread&amp;marktype=all&amp;authKey={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunhos_mark_all_as_read']}'>({$this->lang->words['testemunhos_mark_all_as_read']})</a></span></if>
+		</h2>
+<div class='category_block block_wrap'>
+<div class='ipsBox'><table class='ipb_table topic_list' id='forum_table'>
+
+
+		<!-- TESTEMUNHOS -->
+		<if test="is_array($testemunhos) AND count($testemunhos)">
+			{parse striping="testemunhosTable" classes="row1,row2"}
+
+			<foreach loop="testemunhos:$testemunhos as $tid => $data">
+				<tr class='{parse striping="testemunhosTable"} <if test="$data['t_approved']== 0">moderated</if>'>
+					<td class='col_f_icon short altrow'>{parse replacement="{$data['folder_img']}"}</td>
+					<td>
+	
+
+
+
+					<if test="$data['t_pinned'] == 1">
+						<span class='ipsBadge ipsBadge_green'>{$this->lang->words['testemunho_destaque']}</span>&nbsp;&nbsp;
+					</if>
+						
+{$data['go_new_post']} <a href='{parse url="showtestimonial={$data['t_id']}" seotitle="{$data['t_title_seo']}" template="testimonials" base="publicWithApp"}'>{$data['t_title']}</a>
+<br />
+<span class='desc lighter blend_links'>Started by: {IPSMember::makeProfileLink( $this->registry->getClass('testemunhosLibrary')->makeNameFormatted( $data['members_display_name'], $data['member_group_id'] ), $data['t_member_id'], $data['members_seo_name'])} {parse template="user_popup" group="global" params="$data['t_member_id'], $data['members_seo_name']"}, {$data['t_date']}</span>
+
+					</td>
+
+
+
+
+
+
+			<td>
+					<if test="$this->memberData['sostestemunhos_aprovar'] == 1 || $this->memberData['sostestemunhos_remover_testemunho'] == 1 || $this->memberData['sostestemunhos_fechar'] == 1 || $this->memberData['sostestemunhos_destacar'] == 1">
+						<ul class='topic_moderation right rounded' style='padding-top: 10px;'>
+							<if test="$this->memberData['sostestemunhos_aprovar'] == 1">
+								<if test="$data['t_approved']">
+									<li class='t_approved'><a href='{parse url="module=testemunhos&amp;section=moderate&amp;st={$this->request['st']}&amp;do=unapprove&amp;ID={$data['t_id']}&amp;cid={$data['t_cat']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_desaprovar']}'><img src='{$this->settings['img_url']}/eye2.png' alt='{$this->lang->words['testemunho_desaprovar']}' title='{$this->lang->words['testemunho_desaprovar']}' /></a></li>
+								<else />
+									<li class='t_unapproved'><a href='{parse url="module=testemunhos&amp;section=moderate&amp;st={$this->request['st']}&amp;do=approve&amp;ID={$data['t_id']}&amp;cid={$data['t_cat']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_aprovar']}'><img src='{$this->settings['img_url']}/eye1.png' alt='{$this->lang->words['testemunho_aprovar']}' title='{$this->lang->words['testemunho_aprovar']}' /></a></li>
+								</if>
+							</if>
+							<if test="$this->memberData['sostestemunhos_remover_testemunho'] == 1">
+								<li class='delete'><a href='{parse url="module=testemunhos&amp;section=moderate&amp;st={$this->request['st']}&amp;do=delete&amp;ID={$data['t_id']}&amp;cid={$data['t_cat']}&l=i&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}'><img src='{$this->settings['img_url']}/delete.png' alt='{$this->lang->words['testemunho_deletar']}' title='{$this->lang->words['testemunho_deletar']}' /></a></li>
+							</if>
+							<if test="$this->memberData['sostestemunhos_destacar'] == 1">
+								<if test="$data['t_pinned'] == 0">
+									<li class='t_pinned'><a href='{parse url="module=testemunhos&amp;section=moderate&amp;st={$this->request['st']}&amp;do=pin&amp;ID={$data['t_id']}&amp;cid={$data['t_cat']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_pin']}'><img src='{$this->settings['img_url']}/award.png' alt='{$this->lang->words['testemunho_pin']}' title='{$this->lang->words['testemunho_pin']}' /></a></li>
+								<else />
+									<li class='t_unapproved'><a href='{parse url="module=testemunhos&amp;section=moderate&amp;st={$this->request['st']}&amp;do=unpin&amp;ID={$data['t_id']}&amp;cid={$data['t_cat']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_unpin']}'><img src='{$this->settings['img_url']}/award_delete.png' alt='{$this->lang->words['testemunho_unpin']}' title='{$this->lang->words['testemunho_unpin']}' /></a></li>
+								</if>
+							</if>
+							<if test="$this->memberData['sostestemunhos_fechar'] == 1">
+								<if test="$data['t_open'] == 0">
+									<li class='t_closed'><a href='{parse url="module=testemunhos&amp;section=moderate&amp;st={$this->request['st']}&amp;do=open&amp;ID={$data['t_id']}&amp;cid={$data['t_cat']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_abrir']}'><img src='{$this->settings['img_url']}/lock_open.png' alt='{$this->lang->words['testemunho_abrir']}' title='{$this->lang->words['testemunho_abrir']}' /></a></li>
+								<else />
+									<li class='t_unapproved'><a href='{parse url="module=testemunhos&amp;section=moderate&amp;st={$this->request['st']}&amp;do=close&amp;ID={$data['t_id']}&amp;cid={$data['t_cat']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_fechar']}'><img src='{$this->settings['img_url']}/lock.png' alt='{$this->lang->words['testemunho_fechar']}' title='{$this->lang->words['testemunho_fechar']}' /></a></li>
+								</if>
+							</if>
+						</ul>
+					</if>
+			</td>
+
+
+					<td class='col_c_stats ipsType_small'>
+
+
+
+						<if test="$data['t_comments'] >= 2">
+							{$data['t_comments']} {$this->lang->words['comentarios']}
+						<else />
+							{$data['t_comments']} {$this->lang->words['comentarios']}
+						</if>
+<br />
+{$data['t_views']} {$this->lang->words['views']}
+					</td>
+
+
+				
+	
+
+	
+
+
+					
+					<td class='col_c_post' align='left'>
+
+<if test="$data['t_id'] && $data['t_comments'] > 0">
+				<a href='{parse url="showuser={$data['last_author_id']}" seotitle="{$data['members_seo_name']}" template="showuser" base="public"}' title='{$this->lang->words['view_profile']}' class='ipsUserPhotoLink'>
+			
+			<img src='{$data['pp_mini_photo']}' alt="{parse expression="sprintf($this->lang->words['users_photo'],$data['members_display_name'])"}" class='ipsUserPhoto ipsUserPhoto_mini left'/>
+			
+				</a>
+						<ul class='last_post ipsType_small'>	
+												
+<li>
+							<li><a href='{parse url="app=testimonials&amp;showtestimonial={$data['t_id']}&amp;view=getnewpost" base="public" template="showtestimonial" seotitle="{$data['t_title_seo']}"}' title='{$this->lang->words['view_last_post']}'>{parse replacement="f_lastpost"}</a> <a href='{parse url="app=testimonials&amp;showtestimonial={$data['t_id']}&amp;view=getnewpost" base="public" template="showtestimonial" seotitle="{$data['t_title_seo']}"}' title='{$this->lang->words['view_last_post']}'>{$data['t_last_comment']}</a></li>
+							<li>
+
+{$this->lang->words['lastc_tes']} {$this->lang->words['por']}: {$data['last_author']}
+</b>
+
+</li>
+
+						</ul>
+<else />
+<ul class='last_post ipsType_small'>
+<li class='desc lighter'>
+<em>{$this->lang->words['no_com']}</em>
+</li>
+</if>
+
+					</td>
+				</tr>
+			</foreach>
+		<else />
+			<tr> 
+				<td colspan='5' class='no_messages'>{$this->lang->words['no_testemunhos']}</td>
+			</tr>
+		</if>
+		<!-- FIM TESTEMUNHOS -->
+	</table></div>
+	<br />
+		<div id='forum_filter' class='filter_bar rounded'>
+			<span id='show_filters' class='clickable' style='display: none'>{$this->lang->words['opcoes_filtrar']}</span>
+			<form id='filter_form' action="{parse url="app=testimonials&module=testemunhos&section=list&showcat={$cat['c_id']}&changefilters=1" base="publicWithApp"}" method="post">
+			<fieldset>
+				<label for='sort_type'>{$this->lang->words['testemunhos_filter_sortby']}:</label> {$filters['sort_type']}
+				<label for='sort_order'>{$this->lang->words['testemunhos_filter_sortorder']}:</label> {$filters['sort_order']}
+				<label for='max_results'>{$this->lang->words['testemunhos_filter_results']}:</label> {$filters['max_results']}
+				<input type='checkbox' value='1' name='remember' class='input_check' id='remember_filter' /> <label for='remember_filter'>{$this->lang->words['testemunhos_filter_remember']}</label>
+				<input type="submit" value="{$this->lang->words['testemunhos_filter_do']}" class="input_submit alt" />
+			</fieldset>
+			</form>
+			<script type='text/javascript'>
+				if( $('filter_form' ) ){
+					$('filter_form').hide();
+					$('show_filters').show();
+				}
+			</script>
+		</div>
+</div>
+
+
+
+<div class='topic_controls'>
+<br />
+	{$testemunhosPages}
+	<ul class='topic_buttons'>
+		<if test="newTestemunhoButtonBottom:|:$this->memberData['sostestemunhos_postar_testemunhos']">
+<li><a href='{parse url="module=testemunhos&amp;section=post&amp;do=new&amp;cid={$cat['c_id']}" base="publicWithApp"}' title='{$this->lang->words['novo_testemunho']}' accesskey='n'>{parse replacement="topic_icon"} {$this->lang->words['novo_testemunho']}</a></li>
+		<else />
+			<li class='disabled'><span>{$this->lang->words['novo_testemunho']}</span></li>
+		</if>
+
+	</ul>
+</div>
+<br />
+
+		<if test="showActive:|:$this->settings['testemunhos_showonlineusers']">
+<div class='statistics clear clearfix'>
+			<div id='active_users' class='stats_list'>
+				<h2 class="statistics_head">
+					{$stats['TOTAL']} {$this->lang->words['active_users_text']} <span>{$this->lang->words['active_users']}</span><br />
+					
+				</h2>
+<span class='statistics_brief desc'>{$stats['MEMBERS']} {$this->lang->words['members']}, {$stats['GUESTS']} {$this->lang->words['guests']}, {$stats['ANON']} {$this->lang->words['anon_users']}</span>
+				<if test="activeNames:|:count($stats['NAMES'])">
+					<p>
+<br />
+						<span class='name'>{parse expression="implode( ",</span> <span class='name'>", $stats['NAMES'] )"}</span>					
+					</p>
+				</if>
+			</div></div>
+		</if>
+	</div>
+<br />
+
+</if>]]></template_content>
+      <template_name>listTestemunhosWrapper</template_name>
+      <template_data><![CDATA[$testemunhos=array(),$filters=array(),$testemunhosPages='',$stats=array(), $cat, $count]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[<div class='general_box clearfix'>
+	<h3><img src='{$this->settings['img_url']}/book_open.png' alt='{$this->lang->words['icon']}' /> {$lang}</h3>
+	<ul class='hfeed block_list'>
+<if test="hasportalentries:|:is_array($data) AND count($data)">
+{parse striping="testemunhos_block" classes="row1,row2 altrow"}
+<foreach loop="portalentry:$data as $row">
+		<li class='hentry {parse striping="testemunhos_block"}'>
+			<a href='{parse url="app=testimonials&amp;showtestimonial={$row['t_id']}" base="public"}' title='{$row['t_title']}'>{parse expression="IPSText::truncate( $row['t_title'], 40 )"}</a> {$this->lang->words['portal_by']} <address class="author vcard"><a class="url fn" href="{parse url="showuser={$row['t_member_id']}" base="public" template="showuser" seotitle="{$row['members_seo_name']}"}" title='{$this->lang->words['view_profile']}'>{$row['members_display_name']}</a>{parse template="user_popup" group="global" params="$row['t_member_id'], $row['members_seo_name']"}</address>
+			<if test="showViews:|:$show_stat"><span class="right">({$row['t_views']} {$this->lang->words['views']})</span></if>
+			<br /><span class='date'><abbr class="published" title="{parse expression="date( 'c', $row['a_date'] )"}">{parse date="$row['t_date']" format="long"}</abbr></span>
+		</li>
+</foreach>
+</if>
+	</ul>
+</div>
+<br />]]></template_content>
+      <template_name>portalBlock</template_name>
+      <template_data><![CDATA[$lang='', $data=array(), $show_stat='']]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[{parse js_module="testemunhos"}
+<if test="errormessage:|:count( $errors )">
+<br />
+<p class='message error'>
+	{parse expression="implode( "<br />", $errors )"}
+</p>
+<br />
+</if>
+</if>
+<if test="$this->settings['testemunhos_announcment'] == 4 OR $this->settings['testemunhos_announcment'] == 5">
+	<div class="{$this->settings['testemunhos_tipoanuncio']}">
+		{$this->settings['testemunhos_anuncio']}
+	</div>
+	<br />
+</if>
+
+
+
+{parse striping="post_stripe" classes="row1,row2"}
+<h1 class='ipsType_pagetitle'><if test="$this->request['preview']"><else />{$title}</if></h1>
+<br />
+<!--FORUM RULES-->
+<form id='postingform' action='{$this->settings['base_url']}' method='post' enctype='multipart/form-data'>
+	<div class='ipsBox ipsForm_vertical ipsLayout ipsPostForm clearfix'>
+	    <div class='ipsBox_container'>
+		<div class='ipsBox_container ipsLayout_content'>
+			<ul class='ipsForm ipsForm_vertical ipsPad'>
+				
+			<li class='ipsField ipsField_primary'>
+				<label for='topic_title'><b>{$this->lang->words['testemunho_post_add_titulo']}</b></label>
+				<input name='titulo' id='titulo' class='input_text' type='text' size='50' value='{$data['name']}' tabindex="0" />
+			</li>				
+
+
+				<li class='ipsField ipsField_editor'>					
+					{$data['editor']}
+				</li>	
+
+<li class='ipsField ipsField_editor'>
+
+		</li>	
+		
+			</ul>
+			
+		</div>
+
+	</div>	
+	<fieldset class='submit'>
+		<input type='hidden' name='app' value='testimonials' />
+		<input type='hidden' name='module' value='testemunhos' />
+		<input type='hidden' name='section' value='post' />
+		<input type='hidden' name='do' value='save' />
+		<input type='hidden' name='type' value='{$data['type']}' />
+		<input type='hidden' name='testemunho' value='{$data['t_id']}' />
+                <input type='hidden' name='cid' value='{$cats['c_id']}' />
+		<input type="hidden" name="auth_key" value="{$data['auth_key']}" />
+		<input type="hidden" name="post_key" value="{$data['post_key']}" />
+		<input type="submit" name="dosubmit" value="{$data['button']}" tabindex="0" class="input_submit" accesskey="s"  />
+		
+		{$this->lang->words['or']} 
+		<a href='{parse url="app=testimonials" base="public"}' title='{$this->lang->words['cancel']}' class='cancel'>{$this->lang->words['cancel']}</a>
+	</fieldset>
+	</form>
+</div>]]></template_content>
+      <template_name>postForm</template_name>
+      <template_data>$data=array(), $cats</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[<if test="postpreview:|:$content AND trim($content) != '<br />' AND trim($content) != '<br>'">
+<h2 class='maintitle'>{$this->lang->words['post_preview']}</h2>
+<div class='post_wrap' id='post_preview'>
+	<div id="article_preview" class='row2'>
+		<div class='post entry-content'>{$content}</div>
+	</div>
+</div>
+<br />
+{parse template="include_lightbox" group="global" params=""}
+</if>]]></template_content>
+      <template_name>preview</template_name>
+      <template_data>$content</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="general_box" style="padding-top: 5px; padding-bottom: 5px; border: 0px;"><if test="singleColumnTitle:|:$title">
+                <if test="singleColumnUrl:|:$url">
+                        <h4><a href="$url" title="{$this->lang->words['profile_read_testemunho']}"><span style="font-weight: normal; font-size: 14px;">$title</span></a></h4>
+                <else />
+                        <h4>$title</h4>
+                </if>
+        </if>
+        <p style="margin: 0px; padding: 0px; font-size: 0.8em;">{$this->lang->words['posted']} {$row['_date_array']['mday']} {$row['_date_array']['smonth']} {$row['_date_array']['year']}</p></td>
+  </tr>
+  <tr>
+    <td style="border-bottom: 1px solid #d5dde5; padding: 20px; margin: 0px; background-image: none;">
+                {$row['post']}
+</td>
+  </tr>
+</table>]]></template_content>
+      <template_name>tabTestemunhosSingleColumn</template_name>
+      <template_data><![CDATA[$row=array(), $read_more_link='', $url='', $title='']]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[{parse js_module="testemunhos"}
+<if test="errormessage:|:count( $errors )">
+<br />
+<p class='message error'>
+	{parse expression="implode( "<br />", $errors )"}
+</p>
+<br />
+</if>
+</if>
+<if test="$this->settings['testemunhos_announcment'] == 4 OR $this->settings['testemunhos_announcment'] == 5">
+	<div class="{$this->settings['testemunhos_tipoanuncio']}">
+		{$this->settings['testemunhos_anuncio']}
+	</div>
+	<br />
+</if>
+
+
+{parse striping="post_stripe" classes="row1,row2"}
+<h1 class='ipsType_pagetitle'>{$this->lang->words['comment']}</h1>
+<br />
+<!--FORUM RULES-->
+<form id='postingform' action='{$this->settings['base_url']}' method='post' enctype='multipart/form-data'>
+	<div class='ipsBox ipsForm_vertical ipsLayout ipsPostForm clearfix'>
+	    <div class='ipsBox_container'>
+
+		<div class='ipsBox_container ipsLayout_content'>
+			<ul class='ipsForm ipsForm_vertical ipsPad'>
+								
+				<li class='ipsField ipsField_editor'>					
+					{$data['editor']}
+				</li>				
+			</ul>
+			
+		</div>
+
+	</div>	
+	<fieldset class='submit'>
+		<input type='hidden' name='app' value='testimonials' />
+		<input type='hidden' name='module' value='testemunhos' />
+		<input type='hidden' name='section' value='comment' />
+		<input type='hidden' name='do' value='doComment' />
+		<input type='hidden' name='testemunho' value='{$data['testemunho_id']}' />
+		<input type='hidden' name='comment_id' value='{$data['comment_id']}' />
+		<input type='hidden' name='type' value='{$data['type']}' />
+		<input type="hidden" name="auth_key" value="{$data['auth_key']}" />
+		<input type="hidden" name="post_key" value="{$data['post_key']}" />
+		<input type="submit" name="dosubmit" value="{$this->lang->words['add_comment']}" tabindex="0" class="input_submit" accesskey="s"  />
+		<input type="submit" class="input_submit alt" tabindex="0" value="{$this->lang->words['comment_post_add_preview']}" name="preview"/>
+		{$this->lang->words['or']} 
+		<a href='{parse url="app=testimonials&amp;showtestimonial={$this->request['testemunho']}" base="public"}' title='{$this->lang->words['cancel']}' class='cancel'>{$this->lang->words['cancel']}</a>
+	</fieldset>
+	</form>
+</div>]]></template_content>
+      <template_name>testemunhoCommentForm</template_name>
+      <template_data>$data</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[<div class='result_info'>
+	<span class='icon'>
+		{parse replacement="{$result[ 'statusIcon' ]}"}
+	</span>
+	<h3><a href='{parse url="app=testimonials&amp;showtestimonial={$result[ 't_id' ]}" base="public"}'>{$result[ 't_title' ]}</a></h3>
+</div>
+<div class='result_details desc'>
+	<ul>
+		<li>{parse date="$result[ 't_date' ]" format="short"}</li>
+		<li>{$this->lang->words[ 'search_by' ]} <a href='{parse url="showuser={$result[ 't_member_id' ]}" template="showuser" seotitle="{$result[ 'members_seo_name' ]}" base="public"}'>{$result[ 'members_display_name' ]}</a>{parse template="user_popup" group="global" params="$result[ 't_member_id' ]"}</li>
+	</ul>
+</div>]]></template_content>
+      <template_name>testemunhosSearchResult</template_name>
+      <template_data>$result=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[{parse js_module="testemunhos"}
+
+<if test="statsToShow:|:count( $tables )">
+<table>
+	<tr>
+<foreach loop="tables:$tables as $table">
+<if test="hasNewRow:|:$table['new_row']">
+	</tr>
+	<tr>
+</if>
+<if test="addSpace:|:$table['add_space']">
+		<td class="col_tut_spacer"><!--no content--></td>
+</if>
+<if test="isWideColspan:|:$table['wide']">
+		<td colspan="3">
+<else />
+		<td class="col_f_topic">
+</if>
+{parse striping="statTable" classes="row1,row2"}
+			<br />
+				<h3 class='maintitle'>{$table['data']['title']}</h3>
+<div class='ipsBox'>
+<div class='category_block block_wrap clear'>
+				<table class='ipb_table'>
+<if test="hasRows:|:count( $table['rows'] )">
+					<tr class='header'>
+						<th scope='col' class="col_m_replies short">{$this->lang->words['rank']}</th>
+<if test="isWideHeaders:|:$table['wide']">
+						<th scope='col' class="col_tut_title">{$this->lang->words['title']}</th>
+						<th scope='col' class="col_tut_columns short">{$this->lang->words['autor']}</th>
+						<th scope='col' class="col_m_to short">{$table['data']['stat']}</th>
+<else />
+						<th scope='col' class="col_tut_wide">{$this->lang->words['author']}</th>
+						<th scope='col' class="col_c_post short">{$table['data']['stat']}</th>
+</if>
+					</tr>
+<foreach loop="tableRows:$table['rows'] as $row">
+					<tr class='{parse striping="statTable"}'>
+						<td class='altrow short' width='5%'>{$row['rank']}</td>
+<if test="isWideColumns:|:$table['wide']">
+						<td width='60%'><a href="{parse url="showtestimonial={$row['t_id']}" base="publicWithApp" seotitle="{$row['t_title_seo']}"}" title='{$this->lang->words['view_article']}'>{$row['t_title']}</a></td>
+						<td width='20%' class="altrow short">
+<if test="hasAuthorWide:|:$row['t_member_id']">
+							<a href='{parse url="showuser={$row['t_member_id']}" base="public" template="showuser" seotitle="{$row['t_member_name_seo']}"}' title='{$this->lang->words['view_profile']}'><if test="formatNames:|:$this->settings['testemunhos_colorusernames']">{parse expression="IPSMember::makeNameFormatted( $row['t_member_name'], $row['member_group_id'] )"}<else />{$row['t_member_name']}</if></a>{parse template="user_popup" group="global" params="$row['t_member_id'],$row['t_member_name_seo']"}
+<else />
+							{$this->settings['guest_name_pre']}{$this->lang->words['global_guestname']}{$this->settings['guest_name_suf']}
+</if>
+</td>
+						<td class='short' width='15%'><if test="statDate:|:$row['stat_type'] == 'date'">{parse date="$row['stat']" format="short"}<else /><if test="statInt:|:$row['stat_type'] == 'int'">{parse format_number="$row['stat']"}<else /><a href="{parse url="app=testimonials&amp;module=ajax&amp;section=who&amp;do=who&amp;t={$row['t_id']}" base="public"}" onclick="return ipb.testemunhos.retrieveWhoPosted( {$row['t_id']} );">{parse format_number="$row['stat']"}</a></if></if></td>
+<else />
+						<td>
+<if test="hasAuthorNarrow:|:$row['t_member_id']">
+							<a href='{parse url="showuser={$row['author_id']}" base="public" template="showuser" seotitle="{$row['author_name_seo']}"}' title='{$this->lang->words['view_profile']}'><if test="formatNamesNarrow:|:$this->settings['testemunhos_colorusernames']">{parse expression="IPSMember::makeNameFormatted( $row['author_name'], $row['author_mgroup'] )"}<else />{$row['author_name']}</if></a>{parse template="user_popup" group="global" params="$row['author_id'],$row['author_name_seo']"}
+<else />
+							{$this->settings['guest_name_pre']}{$this->lang->words['global_guestname']}{$this->settings['guest_name_suf']}
+</if>
+</td>
+						<td class='altrow short'><if test="statDateNarrow:|:$row['stat_type'] == 'date'">{parse date="$row['stat']" format="short"}<else /><if test="statIntNarrow:|:$row['stat_type'] == 'int'">{parse format_number="$row['stat']"}<else />{parse format_number="$row['stat'], 2"}</if></if></td>
+</if>
+					</tr>
+</foreach>
+<else />
+
+					<tr><td>{$table['data']['none']}</td></tr>
+</if>
+				</table>
+			</div></div></div>
+		</td>
+</foreach>
+	</tr>
+</table>
+<else />
+
+{$this->lang->words['error_no_results']}
+</if>
+
+<br /><br /><br />]]></template_content>
+      <template_name>testemunhosStats</template_name>
+      <template_data>$tables</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[{parse js_module="testemunhos"}
+
+{parse js_module="rating"}
+
+<script type='text/javascript'>
+ipb.lang['delete_comment_confirm'] = "{$this->lang->words['delete_comment_confirm']}";
+</script>
+	  <div class='topic hfeed'>
+	<if test="$this->settings['testemunhos_announcment'] == 3 OR $this->settings['testemunhos_announcment'] == 5">
+		<div class="{$this->settings['testemunhos_tipoanuncio']}">
+			{$this->settings['testemunhos_anuncio']}
+		</div>
+		<br />
+	</if>
+
+
+
+<if test="linkAvatarOpen:|:!empty($author['member_id']) && $this->memberData['g_mem_info']">
+<a href='{parse url="showuser={$author['member_id']}" seotitle="{$author['members_seo_name']}" template="showuser" base="public"}' class='ipsUserPhotoLink'>
+</if>
+	<img src='{$author['pp_small_photo']}' class='ipsUserPhoto ipsUserPhoto_medium left' />
+<if test="linkAvatarclose:|:!empty($author['member_id']) && $this->memberData['g_mem_info']">
+</a>
+</if>
+<div itemscope itemtype="http://schema.org/Article" class='ipsBox_withphoto'>
+	
+		<span itemprop="aggregateRating" style='margin-left: -10px;' itemscope itemtype="http://schema.org/AggregateRating" class='rating ipsType_smaller'>
+
+			<if test="$t['allow_rate']">
+				<strong>{$this->lang->words['js_rate_me']}</strong>&nbsp;&nbsp;
+			</if>
+			<if test="$t['allow_rate']">
+				<a href='{parse url="app=testimonials&amp;module=extras&amp;section=rating&amp;t={$t['t_id']}&amp;rating=1&amp;secure_key={$this->member->form_hash}" base="public"}' id='topic_rate_1' title='{$this->lang->words['top_js_1star']}'>
+			</if>
+			<if test="rate1:|:$t['t_rating'] >= 1">
+				{parse replacement="rate_on"}
+			<else />
+				{parse replacement="rate_off"}
+			</if>
+			<if test="$t['allow_rate']">
+				</a><a href='{parse url="app=testimonials&amp;module=extras&amp;section=rating&amp;t={$t['t_id']}&amp;rating=2&amp;secure_key={$this->member->form_hash}" base="public"}' id='topic_rate_2' title='{$this->lang->words['top_js_2star']}'>
+			</if>
+			<if test="rate2:|:$t['t_rating'] >= 2">
+				{parse replacement="rate_on"}
+			<else />
+				{parse replacement="rate_off"}
+			</if>
+			<if test="$t['allow_rate']">
+				</a><a href='{parse url="app=testimonials&amp;module=extras&amp;section=rating&amp;t={$t['t_id']}&amp;rating=3&amp;secure_key={$this->member->form_hash}" base="public"}' id='topic_rate_3' title='{$this->lang->words['top_js_3star']}'>
+			</if>
+			<if test="rate3:|:$t['t_rating'] >= 3">
+				{parse replacement="rate_on"}
+			<else />
+				{parse replacement="rate_off"}
+			</if>
+			<if test="$t['allow_rate']">
+				</a><a href='{parse url="app=testimonials&amp;module=extras&amp;section=rating&amp;t={$t['t_id']}&amp;rating=4&amp;secure_key={$this->member->form_hash}" base="public"}' id='topic_rate_4' title='{$this->lang->words['top_js_4star']}'>
+			</if>
+			<if test="rate4:|:$t['t_rating'] >= 4">
+				{parse replacement="rate_on"}
+			<else />
+				{parse replacement="rate_off"}
+			</if>
+			<if test="$t['allow_rate']">
+				</a><a href='{parse url="app=testimonials&amp;module=extras&amp;section=rating&amp;t={$t['t_id']}&amp;rating=5&amp;secure_key={$this->member->form_hash}" base="public"}' id='topic_rate_5' title='{$this->lang->words['top_js_5star']}'>
+			</if>
+			<if test="rate5:|:$t['t_rating'] >= 5">
+				{parse replacement="rate_on"}
+			<else />
+				{parse replacement="rate_off"}
+			</if>
+			<if test="$t['allow_rate']">
+				</a>
+			</if>
+			<span id='rating_text'>
+				<if test="hasRates:|:$t['t_rating_hits'] > 0">
+					<span itemprop="ratingCount" id='rating_hits'>{$t['t_rating_hits']}</span> <span>{$this->lang->words['tes_s_votes']}</span>
+					<meta itemprop="ratingValue" content="{parse expression="floor($t['t_rating'])"}" />
+				</if>
+			</span>
+			<if test="$t['allow_rate']">
+				<script type='text/javascript'>
+				
+					rating = new ipb.rating( 'rate', { 
+										
+url: ipb.vars['base_url'] + 'app=testimonials&module=ajax&section=view&do=rating&id={$t['t_id']}" base="public"}&md5check=' + ipb.vars['secure_hash'],
+
+										cur_rating: {$t['t_rating']},
+										rated: <if test="jsHasRates:|:$t['rating_value'] != -1">1<else />0</if>,
+										allow_rate: {$t['allow_rate']},
+										multi_rate: 1,
+										show_rate_text: true
+									  } );
+				
+				</script>
+			</if>
+		</span>
+
+	
+	<h1 itemprop="name" class='ipsType_pagetitle'>{$t['t_title']}</h1>
+	<div class='desc lighter blend_links'>
+		 {$this->lang->words['started_by']} <span itemprop="creator">{parse template="userHoverCard" group="global" params="$author"}</span>, <span itemprop="dateCreated">{parse date="$t['t_date']" format="SHORT"}</span>
+	</div>
+</div>
+
+
+<div class="topic_controls clearfix">
+
+	<ul class='topic_buttons'>
+		<if test="newTestemunhoButton:|:$this->memberData['sostestemunhos_postar_testemunhos']">
+			<li><a href='{parse url="module=testemunhos&amp;section=post&amp;cid={$t['t_cat']}&amp;do=new" base="publicWithApp"}' title='{$this->lang->words['novo_testemunho']}' accesskey='n'>{parse replacement="topic_icon"} {$this->lang->words['novo_testemunho']}</a></li>
+		<else />
+			<li class='disabled'><span>{$this->lang->words['novo_testemunho']}</span></li>
+		</if>
+		<if test="canCommentup:|:$this->memberData['sostestemunhos_postar_comentarios'] AND $t['t_approved'] AND $t['t_open']">
+			<li><a href='{parse url="module=testemunhos&amp;section=comment&amp;testemunho={$t['t_id']}&amp;do=new" base="publicWithApp"}' title='{$this->lang->words['add_comment']}' accesskey='r'>{parse replacement="reply_icon"} {$this->lang->words['add_comment']}</a></li>
+		<else />
+			<li class='disabled'><span>{$this->lang->words['add_comment']}</span></li>
+		</if>
+
+<li><a href='{parse url="showlist={$t['t_cat']}" seotitle="{$cat['c_name_seo']}" template="testimonials" base="publicWithApp"}'>{$this->lang->words['testemunhos_lista']}</a></li>
+	</ul>
+</div>
+	<h2 class='maintitle'>
+		<span class='main_topic_title'>
+<if test="$t['t_comments'] == 1">
+			<span class='ipsType_small'>{$t['t_comments']} {$this->lang->words['testemunhos_com']}</span>
+</if>
+<if test="$t['t_comments'] > 1">
+			<span class='ipsType_small'>{$t['t_comments']} {$this->lang->words['testemunhos_coms']}</span>
+
+</if>
+<if test="!$t['t_comments']">
+<span class='ipsType_small'> {$this->lang->words['testemunhos_no_coms']}</span>
+</if>
+
+		</span>
+	
+	</h2>
+<div class='ipsBox'>
+<div class='post_block hentry clearfix<if test="reputation:|:$this->settings['reputation_enabled']"> with_rep</if><if test="isModerated:|:!$t['t_approved']"> moderated</if>'>
+	<div class='post_wrap'>
+<if test="postMid:|:$author['member_id']">
+		<h3>
+<if test="postOnline:|:$author['_online']">{parse replacement="user_online"}<else />{parse replacement="user_offline"}</if>
+			<span class="author vcard"><a class="url fn" href='{parse url="showuser={$author['member_id']}" base="public" template="showuser" seotitle="{$author['members_seo_name']}"}'>{$author['members_display_name']}</a>{parse template="user_popup" group="global" params="$author['member_id'], $author['members_seo_name']"}</span>
+<else />
+		<h3 class='guest'>
+{$this->settings['guest_name_pre']}{$this->lang->words['global_guestname']}{$this->settings['guest_name_suf']}
+</if>
+		</h3>
+		<div class='author_info'>
+			{parse template="userInfoPane" group="global" params="$author, $t['t_member_id'], array()"}
+		</div>
+
+
+		<div class='post_body'>
+			<p class='posted_info'>
+				<abbr class="published" title="{parse expression="date( 'c', $t['t_date'] )"}">{parse date="$t['t_date']" format="long"}</abbr>
+			</p>
+			<div class="post entry-content">
+				<if test="$t['t_approved'] == 0">
+					<div class="message">
+						{$this->lang->words['aviso_desaprovado']}
+					</div>
+					<br />
+				</if>
+				{$t['t_content']}
+				<br />
+				<if test="postEdit:|:$t['t_append_edit']">
+					<p class='edit'>					
+						{$this->lang->words['editedby']} {$t['t_append_edit_author']},  {$this->lang->words['editedin']} {parse date="$t['t_append_edit_time']" format="short"}
+					</p>
+				</if>	
+				
+
+				<if test="$t['signature']">
+					{$t['signature']}
+				</if>
+
+{parse template="repButtons" group="global_other" params="$author, array_merge( array( 'primaryId' => $t['t_id'], 'domLikeStripId' => 'like_post_' . $t['t_id'], 'domCountId' => 'rep_post_' . $t['t_id'], 'app' => 'testimonials', 'type' => 't_id', 'likeFormatted' => $t['like']['formatted'] ), $t )"}
+
+			</div>
+		</div>
+				
+
+		<ul class='post_controls clearfix' >
+			<if test="canReportPost:|:($this->settings['disable_reportpost'] != 1) && ( $this->memberData['member_id'] )">
+				<li class='report'>
+					<a href='{parse url="app=core&amp;module=reports&amp;rcom=testimonials&amp;id={$t['t_id']}" base="public"}'> {$this->lang->words['report']}</a>
+				</li>
+				<if test="postIsReported:|:$this->memberData['_cache']['report_temp']['tut_marker']['article'][ $art['a_id'] ]['gfx'] > 0">
+					<li class='report'>
+						<a href="{$this->settings['base_url']}app=core&amp;module=reports&amp;section=reports&amp;do=show_report&amp;rid={$this->memberData['_cache']['report_temp']['tut_marker']['article'][$art['a_id']]['info']['id']}" id='post-report-{$art['a_id']}' class='ipbmenu'> <span id="rstat-{$this->memberData['_cache']['report_temp']['tut_marker']['article'][ $art['a_id'] ]['info']['id']}"><img src="{$this->settings['img_url']}/reports/post_alert_{$this->memberData['_cache']['report_temp']['tut_marker']['article'][$art['a_id']]['gfx']}.png" alt="{$this->lang->words['icon']}" /></span> </a>
+					</li>
+				</if>
+			</if>
+			<if test="canEditComment:|:$_canEdit">
+				<li class='post_edit' id='edit_post_{$data['cid']}'>
+					<a class='edit_post' href='{parse url="module=testemunhos&amp;section=post&amp;do=edit&amp;id={$t['t_id']}" base="publicWithApp"}' title='{$this->lang->words['editar']}'> {$this->lang->words['editar']}</a>
+				</li>
+			</if>
+			<if test="$this->memberData['sostestemunhos_fechar']">
+				<li>
+					<if test="$t['t_open'] == 0">
+						<a href='{parse url="module=testemunhos&amp;section=moderate&amp;do=opent&amp;ID={$t['t_id']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_abrir']}'> {$this->lang->words['abrir']}</a>
+					<else />
+						<a href='{parse url="module=testemunhos&amp;section=moderate&amp;do=closet&amp;ID={$t['t_id']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_fechar']}'> {$this->lang->words['fechar']}</a>
+					</if>
+				</li>
+			</if>
+			<if test="$this->memberData['sostestemunhos_destacar']">
+				<li>
+					<if test="$t['t_pinned'] == 0">
+						<a href='{parse url="module=testemunhos&amp;section=moderate&amp;do=pint&amp;ID={$t['t_id']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_pin']}'> {$this->lang->words['destacar']}</a>
+					<else />
+						<a href='{parse url="module=testemunhos&amp;section=moderate&amp;do=unpint&amp;ID={$t['t_id']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['nodestacar']}'> {$this->lang->words['nodestacar']}</a>
+					</if>
+				</li>
+			</if>
+			<if test="$this->memberData['sostestemunhos_remover_testemunho']">
+				<li>
+					<a class='delete_testemunho' href='{parse url="module=testemunhos&amp;section=moderate&amp;do=delete&amp;ID={$t['t_id']}&amp;cid={$t['t_cat']}&amp;l=t&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['testemunho_deletar']}'> {$this->lang->words['excluir']}</a>
+				</li>
+			</if>
+			<if test="$this->memberData['sostestemunhos_aprovar']">
+				<li>
+					<if test="$t['t_approved']">
+						<a href='{parse url="module=testemunhos&amp;section=moderate&amp;do=tunapprove&amp;ID={$t['t_id']}&amp;cid={$t['t_cat']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['desaprovar']}'> {$this->lang->words['desaprovar']}</a>
+					<else />
+						<a href='{parse url="module=testemunhos&amp;section=moderate&amp;do=tapprove&amp;ID={$t['t_id']}&amp;cid={$t['t_cat']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['aprovar']}'> {$this->lang->words['aprovar']}</a>
+					</if>
+				</li>
+			</if>
+		</ul>
+	</div>
+</div></div>
+
+<div class="topic_controls clear ipsPad_top_bottom_half">
+<div class="ipsPad_top_slimmer right">
+<a href='{parse url="module=testemunhos&amp;section=view&amp;showtestimonial={$t['t_id']}&amp;cid={$t['t_cat']}&amp;do=prev" base="publicWithApp"}'>&larr; {$this->lang->words['view_previous']}</a> - <strong><a href='{parse url="app=testimonials&module=testemunhos&section=list&cid={$t['t_cat']}" base="publicWithApp"}' title='{$this->lang->words['testemunhos']}'>{$this->lang->words['testemunhos']}</a></strong> - <a href='{parse url="module=testemunhos&amp;section=view&amp;showtestimonial={$t['t_id']}&amp;cid={$t['t_cat']}&amp;do=next" base="publicWithApp"}'>{$this->lang->words['view_next']} &rarr;</a></li>
+</div></div>
+
+<div class='topic hfeed'>
+	<ul class='topic_buttons'>
+		<if test="newTestemunhoButton:|:$this->memberData['sostestemunhos_postar_testemunhos']">
+			<li><a href='{parse url="module=testemunhos&amp;section=post&amp;cid={$t['t_cat']}&amp;do=new" base="publicWithApp"}' title='{$this->lang->words['novo_testemunho']}' accesskey='n'>{parse replacement="topic_icon"} {$this->lang->words['novo_testemunho']}</a></li>
+		<else />
+			<li class='disabled'><span>{$this->lang->words['novo_testemunho']}</span></li>
+		</if>
+		<if test="canCommentdown:|:$this->memberData['sostestemunhos_postar_comentarios'] AND $t['t_approved'] AND $t['t_open']">
+			<li><a href='{parse url="module=testemunhos&amp;section=comment&amp;testemunho={$t['t_id']}&amp;do=new" base="publicWithApp"}' title='{$this->lang->words['add_comment']}' accesskey='r'>{parse replacement="reply_icon"} {$this->lang->words['add_comment']}</a></li>
+		<else />
+			<li class='disabled'><span>{$this->lang->words['add_comment']}</span></li>
+		</if>
+
+<li><a href='{parse url="showlist={$t['t_cat']}" seotitle="{$cat['c_name_seo']}" template="testimonials" base="publicWithApp"}'>{$this->lang->words['testemunhos_lista']}</a></li>
+	</ul>
+</div>
+
+			<script type='text/javascript'>
+			
+				rating = new ipb.rating( 'tutorial_rate_', { 
+									url: '{parse url="app=tutorials&module=ajax&section=rating&id={$art['a_id']}&xml=1" base="public"}&md5check=' + ipb.vars['secure_hash'],
+									cur_rating: {$art['_rate_int']},
+									rated: <if test="jsHasRates:|:$art['_rating_value'] != -1">1<else />0</if>,
+									allow_rate: {$art['_allow_rate']},
+									multi_rate: 1,
+									show_rate_text: true
+								  } );
+				fave = new ipb.favorite( { 
+									url: '{parse url="app=tutorials&module=ajax&section=favorites&id={$art['a_id']}&xml=1" base="public"}&md5check=' + ipb.vars['secure_hash']
+								  } );
+			
+			</script>
+{$com_pages}
+</div>
+<br class="clear" />
+<div class='comments'>
+<h2 class='maintitle'>{$this->lang->words['comments']}</h2>
+<div class='ipsBox'>
+ <if test="havecomments:|:!count($comments)">
+ <p class='no_messages'>{$this->lang->words['comments_none']}</p>
+ </div></div><br />
+	<else />
+<div id="comment_innerwrap" class="comment_wrap clearfix">
+<div class='topic hfeed'>
+<foreach loop="testemunhosComments:$comments as $data">
+			<div class='post_block hentry clear' id='cid_{$data['cid']}'>
+				<a id="comment{$data['cid']}"></a>
+				<if test="commentignored:|:$data['_ignored'] == 1">
+					<div class='post_ignore'>
+						{$this->lang->words['ignored_comments_row']} <a href='{parse url="showuser={$data['mid']}" base="public" template="showuser" seotitle="{$data['members_seo_name']}"}'>{$data['members_display_name']}</a> {parse template="user_popup" group="global" params="$data['mid'],$data['members_seo_name']"}. <a href='#' title='{$this->lang->words['view_comment']}' id='unhide_post_{$data['cid']}'>{$this->lang->words['view_it_anyways']}</a>
+					</div>
+				</if>
+				<div class='post_wrap'>
+					<if test="commentmid:|:$data['member_id']">
+						<h3>
+					<else />
+						<h3 class='guest'>
+					</if>
+						<span class='post_id'><a href='{parse url="app=testimonials&amp;module=testemunhos&amp;section=findpost&amp;id={$data['cid']}" base="public"}' rel='bookmark' title='{$this->lang->words['link_to_comment']}'>#{$data['post_count']}</a></span>
+						<if test="commentonline:|:$data['member_id']">
+							<if test="commentisonline:|:$data['_online']">
+								{parse replacement="user_online"}
+							<else />
+								{parse replacement="user_offline"}
+							</if> &nbsp;
+								<span class="author vcard"><a class="url fn" href='{parse url="showuser={$data['member_id']}" base="public" template="showuser" seotitle="{$data['members_seo_name']}"}'>{$data['members_display_name']}</a>{parse template="user_popup" group="global" params="$data['member_id'], $data['members_seo_name']"}</span>
+						<else />
+							{$this->settings['guest_name_pre']}{$this->lang->words['global_guestname']}{$this->settings['guest_name_suf']}
+						</if>
+					</h3>
+				<div class='author_info'>
+					{parse template="userInfoPane" group="global" params="$data, $data['cid'], array()"}
+				</div>
+				<div class='post_body'>
+					<p class='posted_info'>
+						{$this->lang->words['posted']} <abbr class="published" title="{parse expression="date( 'c', $data['date'] )"}">{parse date="$data['date']" format="long"}</abbr>
+					</p>
+					<div class='post entry-content'>
+						{$data['comment']}
+						<br />
+
+						<if test="postEdit:|:$data['append_edit']">
+							<p class='edit'>
+								{$this->lang->words['editedby']} {$data['append_edit_author']}, {$this->lang->words['editedin']} {parse date="$data['append_edit_time']" format="short"}
+							</p>
+						</if>
+						{$data['sig']}
+					</div>
+				</div>
+				<ul class='post_controls clearfix'>
+<if test="canReportComment:|:$this->memberData['member_id']">
+					<li class='report'>
+						<a href='{parse url="app=core&amp;module=reports&amp;rcom=testimonials&amp;id={$t['t_id']}&amp;comment={$data['cid']}" base="public"}' title='{$this->lang->words['report']}'>{parse replacement="report_post_icon"} {$this->lang->words['report']}</a>
+					</li>
+</if>
+<if test="commentmq:|:isset( $data['_mq_selected'] ) && $data['_mq_selected']">
+					<li class='multiq_comment selected multiquote' id='multiq_{$data['cid']}'>
+<else />
+					<li class='multiq_comment multiquote' id='multiq_{$data['cid']}'>
+</if>
+						<a href="" title="{$this->lang->words['multiquote_comment']}">{parse replacement="mq_post_icon"} {$this->lang->words['multi_quote']}</a>
+					</li>
+					<li>
+						<a href="{parse url="module=testemunhos&amp;section=comment&amp;do=addForm&amp;testemunho={$t['t_id']}&amp;qpid={$data['cid']}" base="publicWithApp"}" title="{$this->lang->words['reply']}">{parse replacement="reply_post_icon"} {$this->lang->words['reply']}</a>
+					</li>
+<if test="canEditComment:|:$data['member_id'] == $this->memberData['member_id']">
+					<li class='post_edit' id='edit_post_{$data['cid']}'>
+						<a class='edit_post' href='{parse url="module=testemunhos&amp;section=comment&amp;do=editComment&amp;testemunho={$t['t_id']}&amp;comment={$data['cid']}" base="publicWithApp"}' title='{$this->lang->words['editar']}'>{parse replacement="edit_post_icon"} {$this->lang->words['editar']}</a>
+					</li>
+</if>
+<if test="canModerateComment:|:$this->memberData['member_id']">
+<if test="canDeleteComment:|:( $this->memberData['sostestemunhos_remover_comentario'] && $data['mid'] == $this->memberData['member_id'] ) || $this->memberData['sostestemunhos_remover_comentario']">
+					<li class='post_del' id='del_post_{$data['cid']}'>
+						<a class='delete_comment' href='{parse url="module=testemunhos&amp;section=moderate&amp;do=deletecomment&amp;ID={$t['t_id']}&amp;CID={$data['cid']}&amp;auth_key={$this->member->form_hash}" base="publicWithApp"}' title='{$this->lang->words['excluir']}'>{parse replacement="delete_post_icon"} {$this->lang->words['excluir']}</a>
+					</li>
+</if>
+</if>
+				</ul>
+			</div>
+		</div>
+<if test="commentinitignored:|:$data['_ignored']">
+<script type='text/javascript'>
+	ipb.tutorials.setPostHidden( {$data['cid']} );
+</script>
+</if>
+		</foreach>
+</div>
+</div></div>
+<div class="topic_controls clear ipsPad_top_bottom_half">
+<div class="ipsPad_top_slimmer right">
+<a href='{parse url="module=testemunhos&amp;section=view&amp;showtestimonial={$t['t_id']}&amp;cid={$t['t_cat']}&amp;do=prev" base="publicWithApp"}'>&larr; {$this->lang->words['view_previous']}</a> - <strong><a href='{parse url="app=testimonials&module=testemunhos&section=list&cid={$t['t_cat']}" base="publicWithApp"}' title='{$this->lang->words['testemunhos']}'>{$this->lang->words['testemunhos']}</a></strong> - <a href='{parse url="module=testemunhos&amp;section=view&amp;showtestimonial={$t['t_id']}&amp;cid={$t['t_cat']}&amp;do=next" base="publicWithApp"}'>{$this->lang->words['view_next']} &rarr;</a></li>
+</div></div>
+{$com_pages}
+<div class="topic_controls">
+	<ul class='topic_buttons'>
+		<if test="newTestemunhoButton:|:$this->memberData['sostestemunhos_postar_testemunhos']">
+			<li><a href='{parse url="module=testemunhos&amp;section=post&amp;cid={$t['t_cat']}&amp;do=new" base="publicWithApp"}' title='{$this->lang->words['novo_testemunho']}' accesskey='n'>{parse replacement="topic_icon"} {$this->lang->words['novo_testemunho']}</a></li>
+		<else />
+			<li class='disabled'><span>{$this->lang->words['novo_testemunho']}</span></li>
+		</if>
+		<if test="canCommentdown:|:$this->memberData['sostestemunhos_postar_comentarios'] AND $t['t_approved'] AND $t['t_open']">
+			<li><a href='{parse url="module=testemunhos&amp;section=comment&amp;testemunho={$t['t_id']}&amp;do=new" base="publicWithApp"}' title='{$this->lang->words['add_comment']}' accesskey='r'>{parse replacement="reply_icon"} {$this->lang->words['add_comment']}</a></li>
+		<else />
+			<li class='disabled'><span>{$this->lang->words['add_comment']}</span></li>
+		</if>
+<li><a href='{parse url="showlist={$t['t_cat']}" seotitle="{$cat['c_name_seo']}" template="testimonials" base="publicWithApp"}'>{$this->lang->words['testemunhos_lista']}</a></li>
+	</ul>
+</div>
+</div>
+	</if>
+
+<if test="canAddComments:|:$this->memberData['sostestemunhos_postar_comentarios'] and $t['t_open'] == 1">
+{parse js_module="editor"}
+<script type='text/javascript'>
+	{parse template="editorJS" group="editors" params=""}
+</script>
+
+<br />
+<div class='ipsBox'>
+ <div class='ipsBox_container ipsPad' id='fast_reply'>
+
+	
+		<h1 class='ipsType_subtitle'>{$this->lang->words['topic_add_reply']}Comment on this testimonial</h1>
+		<if test="isLockedFR:|:$topic['state'] == 'closed'"><span class='error'>{$this->lang->words['locked_reply_fr']}</span><br /></if>
+		<br />
+		<if test="isMember:|:$this->memberData['member_id']">
+			<a href="{parse url="showuser={$this->memberData['member_id']}" seotitle="{$this->memberData['members_seo_name']}" template="showuser" base="public"}" title='{$this->lang->words['your_profile']}' class='ipsUserPhotoLink left'><img src='{$this->memberData['pp_small_photo']}' alt="{parse expression="sprintf($this->lang->words['users_photo'],$this->memberData['members_display_name'])"}" class='ipsUserPhoto ipsUserPhoto_medium' /></a>
+		<else />
+			<div class='left'>{IPSMember::buildNoPhoto(0, 'small' )}</div>
+		</if>
+<div class='ipsBox_withphoto clearfix'>
+		<form action="{parse url="" base="publicWithApp"}" method="post">
+			
+
+{parse editor="Post" options="array( 'type' => 'full', 'minimize' => 1, 'height' => 180, 'autoSaveKey' => 'reply-' . $t[t_id], 'warnInfo' => 'fastReply', 'modAll' => $t['_fastReplyModAll'] )"}
+		
+				<input type='hidden' name='testemunho' value='{$t['t_id']}' />
+				<input type="hidden" name="auth_key" value="{$this->member->form_hash}" />
+				<input type="hidden" name="fast_reply_used" value="1" />
+				<input type="hidden" name="app" value="testimonials" />
+				<input type="hidden" name="module" value="testemunhos" />
+				<input type="hidden" name="section" value="comment" />
+				<input type="hidden" name="do" value="doComment" />
+<fieldset class='right' id='fast_reply_controls'>
+<br />
+				<input type='submit' name="submit" class='input_submit' value='{$this->lang->words['add_comment']}' tabindex='0' id='submit_post' accesskey='s' />
+			</fieldset>
+		</form>
+	</div>
+</div></div>
+<script type="text/javascript">
+
+	if( $('comment_textarea') ){
+		$('comment_textarea').addClassName('unloaded_editor').setStyle('height: 100px');
+		$('comment_textarea').value = "{$this->lang->words['editor_unloaded_atm']}";
+	}
+	
+	if( $('comment_toolbar_1') ){
+		$('comment_toolbar_1').hide();
+	}
+	if( $('comment_toolbar_2') ){
+		$('comment_toolbar_2').hide();
+	}
+	
+	var removeTip = function(e){
+		if( $('comment_textarea').hasClassName('unloaded_editor') ){
+			$('comment_textarea').value='';
+		}
+	};
+	
+	$('full_compose').observe( 'click', removeTip );
+	$('submit_post').observe( 'click', removeTip );
+	
+	in_use = 0;
+	ipb.editor_values.set( 'emoticons', \$H({ {parse expression="IPSLib::fetchEmoticonsAsJson()"} }) );
+	ipb.vars['emoticon_url'] = "{$this->settings['emoticons_url']}";
+	
+	$('comment_textarea').observe( 'focus', function(e){
+		if( !in_use )
+		{
+			if( $('comment_toolbar_1') ){
+				$('comment_toolbar_1').show();
+			}
+			if( $('comment_toolbar_2') ){
+				$('comment_toolbar_2').show();
+			}
+			
+			$('comment_textarea').removeClassName('unloaded_editor').value = '';
+			
+			ipb.editors[ 'comment' ] = new ipb.editor( 'comment', USE_RTE );
+			$( ipb.editors['comment'] ).resize_to( 250 );
+			
+			try {
+				ipb.editors[ 'comment' ].editor_window.focus();
+			} catch(err) { }
+			in_use = 1;
+		}
+	});
+
+</script>
+</if>]]></template_content>
+      <template_name>testemunhoView</template_name>
+      <template_data>$t, $author, $comments=array(), $com_pages, $_canEdit, $cat</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_testimonials</template_group>
+      <template_content><![CDATA[<if test="$this->settings['testemunhos_announcment'] == 1 OR $this->settings['testemunhos_announcment'] == 5">
+		<div class="{$this->settings['testemunhos_tipoanuncio']}">
+			{$this->settings['testemunhos_anuncio']}
+		</div>
+		<br />
+	</if>	
+	  
+	  <div class='topic_controls'>
+	<ul class='topic_buttons'>
+		<li><a href='{parse url="module=testemunhos&amp;section=stats" base="publicWithApp"}' title='{$this->lang->words['adv_stats']}' accesskey='n'> {$this->lang->words['adv_stats_page']}</a></li>
+
+	</ul>
+</div>
+<br />
+
+<h2 class='maintitle'>
+			{$this->settings['testemunhos_systitle']}
+		</h2>
+<div class='ipsBox table_wrap'>
+<div class='ipsBox_container'>
+<table class='ipb_table' summary="'">
+
+
+<foreach loop="testimonialCats:$cats as $cats">
+<php>
+		$last = $this->DB->buildAndFetch( array(  'select'    => '*',
+								 					 'from'      => 'testemunhos',
+								 					 'where'     => 't_cat='.$cats['c_id']) );
+
+$lastU = IPSMember::buildDisplayData( $last['t_member_id']  );
+$lastU['last_author']	    = $this->registry->getClass('testemunhosLibrary')->makeNameFormatted( $lastU['members_display_name'], $lastU['member_group_id'] );
+</php>
+
+			<php>
+			$lastReply = $this->caches['testemunhos']['last_author_id'] ? IPSMember::makeProfileLink( $this->registry->getClass('testemunhosLibrary')->makeNameFormatted( $this->caches['testemunhos']['last_author_name'], $this->caches['testemunhos']['last_author_group'] ), $this->caches['testemunhos']['last_author_id'], $this->caches['testemunhos']['last_author_seoname']) : "--";
+			</php>
+
+<tr>
+
+<td class='col_c_icon'>														<img src='{$this->settings['img_url']}/f_icon_read.png' />
+													</if>
+
+												</td>
+
+<td class='col_c_forum'>
+
+<a href='{parse url="showlist={$cats['c_id']}" seotitle="{$cats['c_name_seo']}" template="testimonials" base="publicWithApp"}'>{$cats['c_name']}</a>
+
+<p class='desc'>{$cats['c_desc']}</p>
+</td>
+<php>$testis 	= $this->DB->buildAndFetch( array( 'select'   => 'count(*) as total', 'from'  => 'testemunhos', 'where' => 't_cat='.$cats['c_id'] ) );</php>
+<td class='col_c_stats ipsType_small'>
+{$testis['total']} {$this->lang->words['testi']}
+<br />
+{$cats['c_views']} {$this->lang->words['views']}
+</td>
+
+					<td class='col_c_post' align='left'>
+
+
+<if test="$last['t_id']">			
+				<a href='{parse url="showuser={$lastU['member_id']}" seotitle="{$lastU['members_seo_name']}" template="showuser" base="public"}' title='{$this->lang->words['view_profile']}' class='ipsUserPhotoLink'>
+			
+			<img src='{$lastU['pp_small_photo']}' alt="{parse expression="sprintf($this->lang->words['users_photo'],$lastU['members_display_name'])"}" class='ipsUserPhoto ipsUserPhoto_mini left'/>
+			
+				</a>
+
+<ul class='last_post ipsType_small'>		
+
+{$this->lang->words['new_test']} {$this->lang->words['por']}: {IPSMember::makeProfileLink( $this->registry->getClass('testemunhosLibrary')->makeNameFormatted( $lastU['last_author'], $lastU['member_group_id'] ), $lastU['member_id'], $lastU['members_seo_name'])} {parse template="user_popup" group="global" params="$lastU['member_id'], $lastU['members_seo_name']"}
+										
+<li>
+							<li> <a href='{parse url="module=testemunhos&amp;section=view&amp;showtestimonial={$last['t_id']}" base="publicWithApp"}' title='' accesskey='n'>{$last['t_title']}</a></li>
+							<li>
+</ul>
+<else />
+<ul class='last_post ipsType_small'>
+<li class='desc lighter'>
+<em>{$this->lang->words['no_tes']}</em>
+</li>
+</ul>
+</if>
+
+</td>
+</tr>
+</foreach>
+
+</table>
+	</div></div>
+<br />
+<div class='topic_controls'>	
+<ul class='topic_buttons'>
+		<li><a href='{parse url="module=testemunhos&amp;section=stats" base="publicWithApp"}' title='{$this->lang->words['adv_stats']}' accesskey='n'> {$this->lang->words['adv_stats_page']}</a></li>
+	</ul>
+</div>
+<br />
+
+<if test="showStatistics:|:$this->settings['testemunhos_showonlineusers'] || $this->settings['testemunhos_showstats']">
+	
+		<if test="showTotals:|:$this->settings['testemunhos_showstats']">
+			<php>
+			$lastReply = $this->caches['testemunhos']['last_author_id'] ? IPSMember::makeProfileLink( $this->registry->getClass('testemunhosLibrary')->makeNameFormatted( $this->caches['testemunhos']['last_author_name'], $this->caches['testemunhos']['last_author_group'] ), $this->caches['testemunhos']['last_author_id'], $this->caches['testemunhos']['last_author_seoname']) : "--";
+			</php>
+	<div id='board_stats'>		
+		<ul class='ipsType_small ipsList_inline'>
+			<li class='clear'>
+				<span class='value'>{parse expression="$this->lang->formatNumber($count['total'])"}</span>
+				{$this->lang->words['total_testemunhos_cats']}
+			</li>
+			<li class='clear'>
+				<span class='value'>{parse expression="$this->lang->formatNumber($this->caches['testemunhos']['approved'])"}</span>
+				{$this->lang->words['total_testemunhos']}
+			</li>
+			<li class='clear'>
+				<span class='value'>{parse expression="$this->lang->formatNumber($this->caches['testemunhos']['comments'])"}</span>
+				{$this->lang->words['total_comentarios']}
+			</li>
+			<li class='clear'>
+				<span class='value'>{parse expression="$this->lang->formatNumber($this->caches['testemunhos']['views'])"}</span>
+				{$this->lang->words['total_views']}
+			</li>
+			<li class='clear'>
+<if test="testimonials:|:$this->caches['testemunhos']['approved']">			
+				{$this->lang->words['last_info']}: $lastReply{parse template="user_popup" group="global" params="$this->caches['testemunhos']['last_author_id'], $this->caches['testemunhos']['last_author_seoname']"}
+</if>
+			</li>
+		</ul>
+	</div>
+		</if>
+
+
+		<if test="showActive:|:$this->settings['testemunhos_showonlineusers']">
+<div id='board_statistics' class='statistics general_box clearfix'>
+			<div id='active_users' class='stats_list'>
+				<h2 class="statistics_head">
+					{$stats['TOTAL']} {$this->lang->words['active_users_text']} <span>{$this->lang->words['active_users']}</span><br />
+				
+				</h2>
+<span class='statistics_brief desc'>{$stats['MEMBERS']} {$this->lang->words['members']}, {$stats['GUESTS']} {$this->lang->words['guests']}, {$stats['ANON']} {$this->lang->words['anon_users']}</span>
+				<if test="activeNames:|:count($stats['NAMES'])">
+					<p>
+<br />
+						<span class='name'>{parse expression="implode( ",</span> <span class='name'>", $stats['NAMES'] )"}</span>					
+					</p>
+				</if>
+			</div>
+		</if>
+	</div>
+</if>]]></template_content>
+      <template_name>testimonialCats</template_name>
+      <template_data>$cats, $count, $stats=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

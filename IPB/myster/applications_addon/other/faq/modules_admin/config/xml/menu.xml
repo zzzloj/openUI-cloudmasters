@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Configuration</title>
+			<subitems>
+                <subitem>
+					<subitemtitle>Configuration</subitemtitle>
+					<subsection></subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+            </subitems>
+        </item>
+        <item>
+			<title>Permissions</title>
+			<subitems>
+                <subitem>
+					<subitemtitle>Permissions</subitemtitle>
+					<subsection>permissions</subsection>
+					<subitemurl>do=view</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+            </subitems>
+        </item>
+	</tabitems>
+</menu>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Документация</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Документация</subitemtitle>
+					<subitemlang>help_documentation</subitemlang>
+					<subsection>quickhelp</subsection>
+					<subitemurl>do=redirect&amp;id=docs</subitemurl>
+					<subisredirect>1</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

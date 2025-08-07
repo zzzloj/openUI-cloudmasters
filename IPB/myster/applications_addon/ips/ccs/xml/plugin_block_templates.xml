@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blockexport>
+  <blocktemplate>
+    <template>
+      <tpb_name>block__custom</tpb_name>
+      <tpb_params><![CDATA[$title="",$content=""]]></tpb_params>
+      <tpb_content><![CDATA[<div class='general_box'>
+	<h3>{$title}</h3>
+	<div>
+		{$content}
+	</div>
+</div>
+<br />]]></tpb_content>
+    </template>
+    <template>
+      <tpb_name>feed__generic</tpb_name>
+      <tpb_params><![CDATA[$title="",$records=array()]]></tpb_params>
+      <tpb_content><![CDATA[<div class='general_box'>
+	<h3>{$title}</h3>
+	<ul class='hfeed'>
+		<if test="is_array( $records ) && count( $records )">
+		{parse striping="feed_striping" classes="row1,row2 altrow"}
+		<foreach loop="$records as $r">
+		<li class='hentry {parse striping="feed_striping"}'><a href='{$r['url']}' rel='bookmark' title='{$r['title']}'>{$r['title']}</a>
+			<br /><span class='date'><abbr class="published" title="{parse expression="date( 'c', $r['date'] )"}">{parse date="$r['date']" format="short"}</abbr></span>
+			<span class='desctext'>{IPSText::truncate( strip_tags($r['content']), 32 )}</span>
+		</li>
+		</foreach>
+		</if>
+	</ul>
+</div>
+<br />]]></tpb_content>
+    </template>
+    <template>
+      <tpb_name>block__online_users</tpb_name>
+      <tpb_params><![CDATA[$title="",$active=array()]]></tpb_params>
+      <tpb_content><![CDATA[<div class='general_box' id='portal_active_users'>
+	<h3><a href="{parse url="app=members&amp;module=online&amp;section=online" base="public"}">{$active['TOTAL']} {$this->lang->words['active_users_text']} <span>{$this->lang->words['active_users']}</span></a></h3>
+	<div class='ipsPad'>
+		<span class='desc'>{$active['GUESTS']} {$this->lang->words['guests']}, {$active['ANON']} {$this->lang->words['anon_users']}</span><br class='clear' />
+		<p>
+			<span class='name'>{parse expression="implode( ",</span> <span class='name'>", $active['NAMES'] )"}</span>
+		</p>
+	</div>
+</div>
+<br />]]></tpb_content>
+    </template>
+    <template>
+      <tpb_name>block__currently_viewing</tpb_name>
+      <tpb_params><![CDATA[$title="",$active=array()]]></tpb_params>
+      <tpb_content><![CDATA[	<div id='board_statistics' class='statistics clearfix'>
+		<h4 class='statistics_head'>{parse expression="sprintf( $this->lang->words['ccs_active_users'], $active['stats']['total'], $this->settings['au_cutoff'] )"}</h4>
+		<p class='statistics_brief'>{parse expression="sprintf( $this->lang->words['active_users_detail'], $active['stats']['members'], $active['stats']['guests'], $active['stats']['anon'] )"}</p>
+		
+		<if test="hasactiveusers:|:is_array( $active['names'] ) AND count( $active['names'] )">
+			<br />
+			<p>
+				<span class='name'>{parse expression="implode( ",</span> <span class='name'>", $active['names'] )"}</span>
+			</p>
+		</if>
+	</div>]]></tpb_content>
+    </template>
+    <template>
+      <tpb_name>block__online_friends</tpb_name>
+      <tpb_params><![CDATA[$title="",$friends=array()]]></tpb_params>
+      <tpb_content><![CDATA[<div class='general_box' id='portal_active_users'>
+	<h3>{$this->lang->words['online_friends']}</h3>
+	<if test="is_array($friends) AND count($friends)">
+		<ol id='top_posters'>
+			<foreach loop="$friends as $r">
+				<li>
+					<a href='{parse url="showuser={$r['member_id']}" template="showuser" seotitle="{$r['members_seo_name']}" base="public"}' title='{$this->lang->words['view_profile']}' class='ipsUserPhotoLink'><img src='{$r['pp_thumb_photo']}' alt='{$this->lang->words['photo']}' class='ipsUserPhoto ipsUserPhoto_medium' /></a><br />
+					<span class='name'><a href='{parse url="showuser={$r['member_id']}" template="showuser" seotitle="{$r['members_seo_name']}" base="public"}' title='{$this->lang->words['view_profile']}'>{$r['members_display_name_short']}</a></span>
+				</li>
+			</foreach>
+		</ol>
+		<br class='clear' />
+	<else />
+		<div>{$this->lang->words['no_online_friends']}</div>
+	</if>
+</div>
+<br />]]></tpb_content>
+    </template>
+    <template>
+      <tpb_name>block__tag_cloud</tpb_name>
+      <tpb_params><![CDATA[$title="",$output=""]]></tpb_params>
+      <tpb_content><![CDATA[<div class='general_box'>
+    <h3>{$title}</h3>
+	<div>{$output}</div>
+</div>
+<br />]]></tpb_content>
+    </template>
+    <template>
+      <tpb_name>block__mini_calendar</tpb_name>
+      <tpb_params><![CDATA[$content=""]]></tpb_params>
+      <tpb_content><![CDATA[<div class='general_box'>
+{$content}
+</div>
+<br />]]></tpb_content>
+    </template>
+    <template>
+      <tpb_name>block__nexus_donations</tpb_name>
+      <tpb_params><![CDATA[$title="",$output=""]]></tpb_params>
+      <tpb_content><![CDATA[<div class='general_box'>
+{$output}
+</div>
+<br />]]></tpb_content>
+    </template>
+    <template>
+      <tpb_name>block__site_poll</tpb_name>
+      <tpb_params><![CDATA[$title,$content="",$tid=0]]></tpb_params>
+      <tpb_content><![CDATA[{parse js_module="topic"}
+<div class='general_box'>
+	<h3><a href='{parse url="showtopic={$tid}" base="public"}'>{$this->lang->words['poll_title']}</a></h3>
+	{$content}
+</div>
+<br />]]></tpb_content>
+    </template>
+    <template>
+      <tpb_name>block__welcome_block</tpb_name>
+      <tpb_params><![CDATA[$title='',$data=array()]]></tpb_params>
+      <tpb_content><![CDATA[<div class='general_box'>
+	<h3>{$this->lang->words['welcome_back_pre']}<if test="welcomeTitle:|:$this->memberData['member_id']">{$this->memberData['members_display_name']}<else />{$this->lang->words['global_guestname']}</if></h3>
+	<if test="welcomeLoggedin:|:$this->memberData['member_id']">
+		<div id='welcome-block'>
+			<div class='welcome-picture'>
+				<img src='{$this->memberData['pp_small_photo']}' alt="{parse expression="sprintf($this->lang->words['users_photo'],$this->memberData['members_display_name'])"}" class='ipsUserPhoto ipsUserPhoto_medium' />
+			</div>
+			<div class='welcome-info'>
+				<dl>
+					<dt><strong>Name</strong></dt>
+					<dd><a href='{parse url="showuser={$this->memberData['member_id']}" base="public" template="showuser" seotitle="{$this->memberData['members_seo_name']}"}'>{$this->memberData['members_display_name']}</a></dd>
+					<dt><strong>Group</strong></dt>
+					<dd>{$data['group']}</dd>
+					<dt><strong>Email</strong></dt>
+					<dd>{$this->memberData['email']}</dd>
+					<dt><strong>Joined</strong></dt>
+					<dd>{parse date="$this->memberData['joined']" format="joined"}</dd>
+					<dt><strong>Total Posts</strong></dt>
+					<dd>{parse format_number="$data['posts']"}</dd>
+					<dt><strong>Total Topics</strong></dt>
+					<dd>{parse format_number="$data['topics']"}</dd>
+					<if test="$this->settings['reputation_enabled']">
+						<dt><strong>Reputation</strong></dt>
+						<dd>
+						<if test="$this->memberData['pp_reputation_points'] > 0">
+							<div class='reputation positive'>
+						</if>
+						<if test="$this->memberData['pp_reputation_points'] < 0">
+							<div class='reputation negative'>
+						</if>
+						<if test="$this->memberData['pp_reputation_points'] == 0">
+							<div class='reputation zero'>
+						</if>
+							<span class='number'>{$this->memberData['pp_reputation_points']}</span>
+							<if test="$this->memberData['author_reputation'] && $this->memberData['author_reputation']['text']">
+								<span class='title'>{$this->memberData['author_reputation']['text']}</span>
+							</if>
+							<if test="$this->memberData['author_reputation'] && $this->memberData['author_reputation']['image']">
+								<span class='image'><img src='{$this->memberData['author_reputation']['image']}' alt='Reputation icon' /></span>
+							</if>
+						</div>
+						</dd>
+					</if>
+					<dt><strong>Avg. Daily Posts</strong></dt>
+					<dd>{$data['avg_posts']}</dd>
+				</dl>
+			</div>
+			<div class='welcome-info'>
+				<dl>
+					<dt><strong>New Topics</strong></dt>
+					<dd><a href='{parse url="app=core&module=search&do=new_posts&search_filter_app[forums]=1" base="public"}'>{$data['new_topics']}</a></dd>
+					<dt><strong>New Posts</strong></dt>
+					<dd><a href='{parse url="app=core&module=search&do=new_posts&search_filter_app[forums]=1" base="public"}'>{$data['new_posts']}</a></dd>
+					<dt><strong>New Conversations</strong></dt>
+					<dd><a href='{parse url="app=members&module=messaging&section=view&do=showFolder&folderID=new" base="public"}'>{$this->memberData['msg_count_new']}</a></dd>
+					<dt><strong>New Friend Requests</strong></dt>
+					<dd><a href='{parse url="app=members&section=friends&module=profile&do=list&tab=pending" base="public"}'>{$data['new_friends']}</a></dd>
+					<dt><strong>Comments Pending Approval</strong></dt>
+					<dd><a href='{parse url="showuser={$this->memberData['member_id']}#comment_wrap" base="public" template="showuser" seotitle="{$this->memberData['members_seo_name']}"}'>{$data['new_comments']}</a></dd>
+				</dl>
+			</div>
+		</div>
+		<div class='clear'></div>
+	<else />
+		<div style='vertical-align: middle;' class='ipsPad'>
+			<form action='{parse url="app=core&amp;module=global&amp;section=login&amp;do=process&amp;auth_key={$this->member->form_hash}" base="public"}' method='post'>
+				<input type='hidden' name='auth_key' value='{$this->member->form_hash}' />
+				<input type='hidden' name='referer' value='http://{parse expression="str_replace( '//', '/', $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] )"}' />
+				<input type="text" class='input_text' size="20" name="ips_username" id='welcome-username' onfocus="clearField('welcome-username');" value="{$this->lang->words['enter_name']}" />
+				<input type='password' class='input_text' size='20' name='ips_password' id='welcome-password' onfocus="clearField('welcome-password');" value='{$this->lang->words['enter_name']}' />
+				<input type='submit' class='input_submit' value='{$this->lang->words['sign_in_button']}' />
+			</form>
+		</div>
+		<div class='ipsPad'>
+			<a href='{parse url="app=core&amp;module=global&amp;section=login" base="public"}'>{$this->lang->words['welcome_login_link']}</a> {$this->lang->words['or']} <a href='{parse url="app=core&amp;module=global&amp;section=register" base="public"}'>{$this->lang->words['welcome_register_link']}</a>
+		</div>
+	</if>
+</div>
+<br />
+<script type='text/javascript'>
+function clearField( id )
+{
+	if( $(id).value == '{$this->lang->words['enter_name']}' )
+	{
+		$(id).value = '';
+	}
+}
+</script>
+<style type='text/css'>
+#welcome-block {
+	width: 100%;
+	overflow: none;
+}
+
+.welcome-picture {
+	float: left;
+	padding: 18px;
+	margin: 0px;
+}
+
+.welcome-info {
+	float: left;
+	width: 40%;
+	border-left: 1px solid #e4ebf2;
+	padding-left: 20px;
+}
+
+#welcome-block dt {
+	float: left;
+	clear: left;
+	width: 40%;
+}
+
+#welcome-block dd {
+	float: left;
+}
+</style>]]></tpb_content>
+    </template>
+    <template>
+      <tpb_name>block__status_updates</tpb_name>
+      <tpb_params><![CDATA[$title="",$output='']]></tpb_params>
+      <tpb_content><![CDATA[<script type="text/javascript" src='{$this->settings['cache_dir']}lang_cache/{$this->lang->lang_id}/ipb.lang.js' charset='{$this->settings['gb_char_set']}'></script>
+{$output}
+<br />]]></tpb_content>
+    </template>
+    <template>
+      <tpb_name>feed__database_categories</tpb_name>
+      <tpb_params><![CDATA[$title="",$records=array()]]></tpb_params>
+      <tpb_content><![CDATA[<div class='general_box'>
+	<h3>{$title}</h3>
+	<ul class='hfeed'>
+		<if test="is_array( $records ) && count( $records )">
+		{parse striping="feed_striping" classes="row1,row2 altrow"}
+		<foreach loop="$records as $r">
+			<li class='hentry {parse striping="feed_striping"}' style='padding: 4px 4px 4px {parse expression="$r['level']*20"}px;'>
+				&bull; <a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $r['category']['category_database_id'], $r['category']['category_id'] )}'>{$r['category']['category_name']}</a>
+			</li>
+		</foreach>
+		</if>
+	</ul>
+</div>
+<br />]]></tpb_content>
+    </template>
+  </blocktemplate>
+</blockexport>

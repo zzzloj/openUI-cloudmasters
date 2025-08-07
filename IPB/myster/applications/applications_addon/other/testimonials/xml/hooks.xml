@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<hooks>
+	<hook>
+		<file>test_banmember.xml</file>
+		<enabled>1</enabled>
+	</hook>
+	<hook>
+		<file>test_banmember_comments.xml</file>
+		<enabled>1</enabled>
+	</hook>
+	<hook>
+		<file>test_testemunhosrecentes.xml</file>
+		<enabled>1</enabled>
+	</hook>
+	<hook>
+		<file>test_testimonialspending.xml</file>
+		<enabled>1</enabled>
+	</hook>
+</hooks>

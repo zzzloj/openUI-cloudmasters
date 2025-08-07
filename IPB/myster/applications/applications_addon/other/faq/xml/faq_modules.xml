@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduleexport>
+  <modulegroup>
+    <module>
+      <sys_module_title>FAQ</sys_module_title>
+      <sys_module_application>faq</sys_module_application>
+      <sys_module_key>faq</sys_module_key>
+      <sys_module_description/>
+      <sys_module_version>2.0</sys_module_version>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_position>53</sys_module_position>
+      <sys_module_admin>0</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Management</sys_module_title>
+      <sys_module_application>faq</sys_module_application>
+      <sys_module_key>manage</sys_module_key>
+      <sys_module_description/>
+      <sys_module_version>1.0</sys_module_version>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_position>54</sys_module_position>
+      <sys_module_admin>0</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Configuration</sys_module_title>
+      <sys_module_application>faq</sys_module_application>
+      <sys_module_key>config</sys_module_key>
+      <sys_module_description/>
+      <sys_module_version>1.0</sys_module_version>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_position>1</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Questions</sys_module_title>
+      <sys_module_application>faq</sys_module_application>
+      <sys_module_key>questions</sys_module_key>
+      <sys_module_description>Manage FAQ Questions</sys_module_description>
+      <sys_module_version>1.0</sys_module_version>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_position>2</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Collections</sys_module_title>
+      <sys_module_application>faq</sys_module_application>
+      <sys_module_key>collections</sys_module_key>
+      <sys_module_description>Manage FAQ Collections</sys_module_description>
+      <sys_module_version>1.0</sys_module_version>
+      <sys_module_protected>0</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_position>3</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+  </modulegroup>
+</moduleexport>

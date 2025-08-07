@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>account_actions</word_key>
+      <word_default>Account actions</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>all_types</word_key>
+      <word_default>All types</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>ascending_order</word_key>
+      <word_default>Ascending (A-Z)</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>change_dn</word_key>
+      <word_default>Change Display Name</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>change_email</word_key>
+      <word_default>Change Email Address</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>changed_email</word_key>
+      <word_default><![CDATA[Email changed from '%s' to '%s']]></word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>changed_password</word_key>
+      <word_default>Password changed</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>change_pw</word_key>
+      <word_default>Change Password</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>changed_username</word_key>
+      <word_default><![CDATA[Display Name changed to '%s']]></word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>create_topic</word_key>
+      <word_default>New Topic</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>delete_statusupdate</word_key>
+      <word_default>Deleted a status update</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>delete_su</word_key>
+      <word_default>Delete Status Update</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>delete_su_reply</word_key>
+      <word_default>Delete Status Update Reply</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>descending_order</word_key>
+      <word_default>Descending (Z-A)</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>do_login</word_key>
+      <word_default>Signed in on the board</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>do_logout</word_key>
+      <word_default>Signed out of the board</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>filter_direction</word_key>
+      <word_default>Sort direction</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>filter_sort</word_key>
+      <word_default>Sort by</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>follow_forum</word_key>
+      <word_default>Follow Forum</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>follow_topic</word_key>
+      <word_default>Follow Topic</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>follow_topicforum</word_key>
+      <word_default>Follow Topic / Forum</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>followed_forum</word_key>
+      <word_default>Followed a forum: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>followed_topic</word_key>
+      <word_default>Followed a topic: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>forum_actions</word_key>
+      <word_default>Forum Actions</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>liked_post</word_key>
+      <word_default>Liked a %s on topic %s</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>like_system</word_key>
+      <word_default>Like System</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>logfilter_all</word_key>
+      <word_default>Show All</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>new_friend</word_key>
+      <word_default>New friend</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>new_friend_desc</word_key>
+      <word_default><![CDATA[Added <a href='%s'><strong>%s</strong></a> as a friend]]></word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>new_pm</word_key>
+      <word_default>New Private Message</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>new_statusupdate</word_key>
+      <word_default><![CDATA[Posted a new <a href='%s'>status update</a> ]]></word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>new_statusupdate_reply</word_key>
+      <word_default><![CDATA[Made a reply to a <a href='%s'>status update</a>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>new_reply</word_key>
+      <word_default>Posted a reply on topic %s</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>new_su</word_key>
+      <word_default>New Status Update</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>new_topic</word_key>
+      <word_default>Created a topic called %s on forum %s</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>profile_actions</word_key>
+      <word_default>Profile Actions</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>profile_updated</word_key>
+      <word_default>Profile updated</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>profile_visited</word_key>
+      <word_default>Profile visited: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>removed_friend</word_key>
+      <word_default>Deleted friend</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>removed_friend_desc</word_key>
+      <word_default><![CDATA[Deleted <a href='%s'>%s</a> as a friend]]></word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>replied_pm</word_key>
+      <word_default>Replied to a Private Message between %s and %s</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>reply_pm</word_key>
+      <word_default>Private Message Reply</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>reply_su</word_key>
+      <word_default>Reply Status Update</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>reply_topic</word_key>
+      <word_default>New Reply</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>reputation_point</word_key>
+      <word_default>Gave a %s reputation point to a %s on topic %s</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>reputation_system</word_key>
+      <word_default>Reputation Point</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>save</word_key>
+      <word_default>Save</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>sent_pm</word_key>
+      <word_default>Sent a Private Message to %s</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>show_log_type</word_key>
+      <word_default>Show log type</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>sign_in</word_key>
+      <word_default>Sign In</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>sign_out</word_key>
+      <word_default>Sign Out</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>sort_by_date</word_key>
+      <word_default>Date</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>sort_by_app</word_key>
+      <word_default>Action</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>sort_submit</word_key>
+      <word_default>Update filter</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>tm_post</word_key>
+      <word_default>post</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>topic_viewed</word_key>
+      <word_default>Viewed a topic: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>tracking_logs_from</word_key>
+      <word_default>Viewing Tracking Logs from</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>tracking_member</word_key>
+      <word_default>This member is being tracked now!</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>track_change_settings</word_key>
+      <word_default>Change track settings</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>track_memberid</word_key>
+      <word_default>Member ID:</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>track_members</word_key>
+      <word_default>Track Members</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>track_nologs</word_key>
+      <word_default><![CDATA[There are no entries for this Member's log]]></word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>track_stop_tracking</word_key>
+      <word_default>Stop tracking this member</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>track_this_member</word_key>
+      <word_default>Track this member</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>track_view_logs</word_key>
+      <word_default>View track logs</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>unliked_post</word_key>
+      <word_default>Unliked a %s post on topic %s</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>untracked_member</word_key>
+      <word_default>This member is not being tracked anymore</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>view_profile</word_key>
+      <word_default>View Profile</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>view_topic</word_key>
+      <word_default>View Topic</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>public_trackmembers</word_pack>
+      <word_key>viewing_tracking_logs</word_key>
+      <word_default>Viewing Tracking Logs</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

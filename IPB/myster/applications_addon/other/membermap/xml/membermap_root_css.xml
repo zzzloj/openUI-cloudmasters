@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<css>
+  <cssfile>
+    <css_set_id>0</css_set_id>
+    <css_updated>1320438205</css_updated>
+    <css_group>membermap</css_group>
+    <css_content>
+ 
+ #memberMapCanvasWrapper
+ {
+	 height: 800px;
+ }
+ 
+ #memberMapCanvas
+ {
+	 width: 100%;
+	 height: 100%;
+ }
+ 
+ #pinPointMap
+ {
+	 height: 250px;
+ }
+
+body.facebook
+{
+	font: 13px helvetica,arial,sans-serif;
+	margin: 0px;
+	max-width: 520px !important;
+	position: relative;
+}
+
+body.facebook #memberMapCanvasWrapper
+{
+	position: relative;
+	clear: both;
+	height: 450px !important;
+	font-size: 12px;
+}
+
+body.facebook .popupWrapper
+{
+	width: 450px;
+	background-color: #3B5998;
+	padding: 12px;
+	border: 1px solid #133783;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.52);
+}
+
+body.facebook .popupInner
+{
+	width: 426px;
+	background-color: #FFFFFF;
+}
+
+body.facebook ul
+{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+body.facebook ul.topic_buttons
+{
+	z-index: 999;
+	position: absolute;
+	left: 70px;
+	top: 6px;
+}
+
+body.facebook .topic_buttons li, body.facebook .input_submit
+{
+	margin: 4px;
+	display: inline-block;
+	background-color: #3B5998;
+	border: 1px solid #133783;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.52);
+}
+
+body.facebook .topic_buttons li a, body.facebook .input_submit
+{
+	display: inline-block;
+	padding: 3px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+body.facebook fieldset
+{
+	border: 0px;
+	margin: 0px;
+}
+
+body.facebook h3
+{
+	margin: 2px;
+	margin-bottom: 10px;
+}
+
+body.facebook .submit
+{
+	text-align: center;
+	background-color: #D1DDEA;
+}
+
+body.facebook .cancel
+{
+    color: #AD2930;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+body.facebook #updateMapList a
+{
+	color: #133783;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+body.facebook #updateMapList a:hover
+{
+	color: #3B5998;
+}
+
+body.facebook input, body.facebook select {
+    font: 13px helvetica,arial,sans-serif;
+}
+
+body.facebook p.message
+{
+    background-color: #F3F3F3;
+    border: 1px solid #D4D4D4;
+    clear: both;
+	padding: 6px;
+    color: #515151;
+    margin: 0 0 6px;
+}
+
+body.facebook .left
+{
+	float: left;
+}
+
+body.facebook .ipsUserPhoto
+{
+	max-width: 75px;
+	margin-right: 3px;
+}
+
+p.markerCount
+{
+	margin: 2px;
+}</css_content>
+    <css_position>1</css_position>
+    <css_app>membermap</css_app>
+    <css_app_hide>1</css_app_hide>
+    <css_attributes><![CDATA[title="Main" media="screen"]]></css_attributes>
+    <css_modules/>
+    <css_removed>0</css_removed>
+    <css_master_key>root</css_master_key>
+  </cssfile>
+</css>

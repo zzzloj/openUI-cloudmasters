@@ -1,0 +1,875 @@
+/**
+ * IP.Content 2.0 Styles
+*/
+
+/* ++++++++++++++++++++++++ */
+/* Article manager 			*/
+
+.article_box {
+	border: 1px solid #e2e2e2;
+	padding: 10px;
+}
+
+.short {
+	text-align: center;
+}
+
+.published, .draft {
+	font-size: 11px;
+	text-transform: uppercase;
+}
+
+.published {
+	color: #2b804f;
+}
+
+.draft {
+	color: #7c2a51;
+}
+
+.filter_box {
+	border: 1px solid #cccccc;
+	margin-bottom: 10px;
+	font-size: 12px;
+	color: #606060;
+}
+
+	.filter_box > div {
+		padding: 10px;
+		border: 1px solid #fbfbfb;
+	}
+	
+	.filter_box input[type='text'] {
+		border: 1px solid #a2a2a2;
+		padding: 3px;
+	}
+	
+		.filter_box input[type='text'].inactive {
+			color: #c6c6c6;
+		}
+	
+	.filter_box input[type='submit'] {
+		background: #a7a7a7;
+		border: 1px solid #6a6a6a;
+		padding: 4px 8px;
+		color: #fff;
+		font-size: 11px;
+		cursor: pointer;
+	}
+		
+		.filter_box input[type='submit']:hover {
+			background: #6a6a6a;
+		}
+		
+	.filter_box label {
+		font-size: 11px;
+	}
+	
+	.filter_box label, .filter_box input {
+		vertical-align: middle;
+	}
+		
+/*#main_content table.sortable tr:hover td {
+	background: #e1e7ed;
+}
+
+#main_content table.sortable tr th.sort {
+	cursor: pointer;
+}
+
+	#main_content table.sortable tr th.sort:hover {
+		background-color: #a9bbce;
+	}
+
+	#main_content table.sortable tr th.sort.sorting:hover {
+		background-color: #478662;
+	}
+
+#main_content table.sortable tr th.sort .sort_order {
+	display: block;
+	margin-right: -5px;
+	padding-right: 15px;
+}
+
+#main_content table.sortable tr th.sort.sorting {
+	color: #fff;
+	text-shadow: #1b4b2f 0 -1px 0px;
+}*/
+
+.article_expander h4 {
+	cursor: pointer;
+	font-weight: normal;
+	padding: 0 0 0 20px;
+}
+
+	li.article_expander h4 {
+		font-weight: bold;
+	}
+
+#change_author_display {
+
+}
+
+.triggerdesc {
+	padding-left: 20px;
+	padding-bottom: 4px;
+}
+	
+.date_field {
+	white-space: nowrap;
+}
+
+	.date_field input {
+		padding: 2px 16px 2px 2px;
+		color: #595959;
+	}
+
+	.date_button {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		text-indent: -2000em;
+		left: -24px;
+		margin-right: -24px;
+		width: 18px;
+		height: 18px;
+		white-space: nowrap;
+	}
+	
+.article_expander_pane > div {
+	padding: 10px 0 10px 20px;
+}
+
+.action_link_hover .action_link {
+	display: none;
+}
+
+	.action_link_hover:hover .action_link {
+		display: inline;
+	}
+	
+.action_link {
+	color: #1963b4;
+	font-size: 11px;
+}
+
+/*
+ * @link http://community.invisionpower.com/tracker/issue-35893-pages-content-area-really-needs-to-not-be-able-to-overlay-the-tag-box/
+ */
+textarea#content,
+textarea#tpb_content,
+textarea#template_content,
+textarea#custom_template,
+textarea#custom_content {
+	resize: none;
+}
+
+
+
+/**
+ *	These are styles for the CCS
+ */
+
+.filemanager li.record {
+	clear: both;
+	padding: 10px;
+	overflow: hidden;
+}
+
+.filemanager .info {
+	float: right;
+	vertical-align: top;
+	font-size: 10px;
+	color: gray;
+	margin-right: 100px;
+}
+
+.filemanager .manage {
+	float: right;
+	width: 40px;
+	padding-left: 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.filemanager .draghandle {
+	float: left;
+	vertical-align: middle;
+}
+
+.filemanager input {
+	padding: 0px;
+	vertical-align: middle;
+}
+
+.filemanager .no-records {
+	text-align: center;
+	padding: 10px;
+}
+
+.category-manage {
+	float: right;
+	width: 40px;
+	padding-left: 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.page-template-form label {
+	width: 30%;
+}
+
+.view-page {
+	font-size: 10px;
+	color: gray;
+	vertical-align: middle;
+	padding-bottom: 3px;
+}
+
+.block {
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	min-width: 50px;
+	max-width: 200px;
+	padding: 5px;
+	text-align: center;
+}
+
+	.block.feed {
+		background-color: #d57272;
+	}
+
+	.block.custom {
+		background-color: #67c267;
+	}
+
+	.block.plugin {
+		background-color: #6d6dca;
+	}
+
+
+.droppable-hover {
+	background-color: #efefef;
+}
+
+.multitext{
+	width: 99%;
+	line-height: 150%;
+	font-family: "monaco", "courier new", monospace;
+	font-size: 11px;
+}
+
+.multitext.normal{
+	width: auto;
+}
+
+.normal-label {
+	width: auto !important;
+	float: none !important;
+	font-weight: normal !important;
+}
+
+.form_table td {
+	vertical-align: top;
+}
+
+.topic_prefix {
+	background-color: #daede2;
+	color: #528f6c;
+	font-size: 0.8em;
+	font-weight: bold;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	padding: 2px 4px;	
+	float: left;
+	display: block;
+}
+
+
+iframe.blockPreview {
+	border: 0px;
+	width: 595px;
+	min-width: 595px;
+	max-width: 595px;
+	height: 400px;
+	min-height: 400px;
+	max-height: 400px;
+	overflow: hidden;
+}
+
+/**
+ * Template and database tag help windows/panes
+ */
+ #close-tags-link {
+ 	font-size: 16px;
+ 	margin-right: 10px;
+ 	display: inline-block;
+ 	cursor: pointer;
+ }
+
+.template-buttons {
+	margin-top: 8px;
+}
+
+.template-buttons a {
+	text-decoration: none;
+	padding: 4px;
+	background-color: #243F5C;
+	color: #fff;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.template-buttons a:hover {
+	text-decoration: none !important;
+}
+
+.templateTags {
+	/*width: 96%;*/
+	background: #fff;
+	border: 1px solid #b4c3d5;
+	padding: 0px;
+	
+	margin-left: 12px;
+}
+
+#templateTags_inner {
+	height: 420px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.tag_pane {
+	min-height: 200px;
+}
+
+	.tag_pane.loading {
+		background: url( ../../../../../skin_cp/images/loading_big.gif ) no-repeat center center;
+	}
+
+.templateTags .tag_row.database_link, .templateTags .tag_row.media_folder {
+	cursor: pointer;
+	padding: 8px 6px;
+}
+
+	.templateTags .tag_row.database_link h5, .templateTags .tag_row.media_folder h5 {
+		font-size: 16px;
+		font-weight: normal;
+	}
+
+	.templateTags .tag_row.goto_db, .templateTags .media_folder {
+		background-image: url( ../../../../../skin_cp/images/rarrow.png );
+		background-repeat: no-repeat;
+		background-position: 97% center;
+	}
+
+	.templateTags .tag_row.go_back {
+		background-image: url( ../../../../../skin_cp/images/larrow.png );
+		background-repeat: no-repeat;
+		background-position: 8px center;
+		padding: 8px 6px 8px 26px;
+	}
+
+.templateTags h4 {
+	color: #fff;
+	background: #23456B;
+	font-size: 15px;
+	padding: 6px 2px 6px 6px;
+}
+
+/*.templateTags .tag_pane div {
+	clear: both;
+	margin-left: 12px;
+	padding: 3px;
+	font-size: 11px;
+	color: #878787;
+}*/
+
+.templateTags .child-description, .templateTags h4 div {
+	border: none;
+}
+
+.templateTags .template-tag {
+	font-size: 11px;
+	font-family: "Monaco", "Andale Mono", "Courier New", monospace;
+	color: #5d5d5d;
+	/*border: 1px solid #eadca0;
+	background-color: #F5EED1;*
+	color: #000;
+	padding: 5px;
+	margin-right: 12px;
+	margin-bottom: 8px;*/
+}
+
+.templateTags .tag_row {
+	line-height: 1.4;
+	padding: 4px 4px 4px 22px;
+	font-size: 14px;
+	border-bottom: 1px solid #e3e3e3;
+	vertical-align: middle;
+	overflow-x: hidden;
+}
+
+	.templateTags .tag_row li.tag_row {
+		margin-left: -12px;
+		border-left: 2px solid #c2c2c2;
+	}
+
+	.templateTags .tag_row h5 {
+		font-size: 14px;
+		color: #000;
+		font-weight: bold;
+	}
+
+	.templateTags .tag_row:hover {
+		background-color: #f7f9fb;
+	}
+
+	.templateTags .tag_row .ipsControlStrip {
+		margin-top: 4px;
+	}
+
+	.templateTags .tag_row.expandable {
+		position: relative;
+	}
+
+		.templateTags .tag_row.expandable .tag_toggle {
+			display: block;
+			position: absolute;
+			left: 6px;
+			top: 8px;
+			text-indent: -2000em;
+			width: 16px;
+			height: 16px;
+		}
+
+		.templateTags .tag_row.expandable.closed .tag_toggle {
+			background: url( ../../../../../skin_cp/images/folder_closed.png ) no-repeat;
+		}
+
+		.templateTags .tag_row.expandable.open .tag_toggle {
+			background: url( ../../../../../skin_cp/images/folder_open.png ) no-repeat;
+		}
+
+	.templateTags .tag_row .tag_help {
+		font-size: 12px;
+		margin: 4px 0;
+		white-space: pre-line;
+
+	}
+
+	.templateTags .tag_row .code_sample {
+		margin-top: 10px;
+	}
+
+	.templateTags .tag_row pre {
+		border: 1px solid #cecece;
+		padding: 2px;
+		background: whiteSmoke;
+		line-height: 16px;
+		font-size: 11px;
+		font-family: 'Monaco', 'Andale Mono', 'Courier New', monospace;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+	}
+
+.templateTags .media_item, .templateTags .media_folder {
+	padding-left: 4px;
+}
+	
+	.templateTags .media_folder {
+		cursor: pointer;
+	}
+
+	.templateTags .media_item ul {
+		margin-top: 0px !important;
+	}
+
+.templateTags li label {
+	font-weight: bold;
+	font-size: 14px;
+	/*width: 98%;*/
+	margin-top: 4px;
+	margin-bottom: 4px;
+	color: #000;
+	padding-right: 0px;
+}
+
+.templateTags li label u {
+	font-style: italic;
+	font-weight: normal;
+}
+
+/* @link http://community.invisionpower.com/tracker/issue-37048-editing-a-block-in-ie9/ */
+td.sidebarContainer {
+	white-space: nowrap;
+}
+
+
+#content-label {
+	width: 98%;
+}
+
+	#content-label.noSidebar {
+		width: 100%;
+	}
+
+.withSidebar {
+	width: 70% !important;
+}
+
+.templateTags-container {
+	width: 30%;
+	margin-bottom: 8px;
+	float: right;
+	z-index: 999999;
+	overflow-x: hidden;
+}
+
+.templateTagRows li {
+	width: 100%;
+	border-bottom: 1px solid #eadca0;
+}
+
+.templateTagRows li .template-tag {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+li.template-tag-cat {
+	font-size: 14px;
+	line-height: 1.6;
+	padding: 4px;
+	background-color: #DEE7F1;
+	color: #454545;
+}
+
+.templateTags-container.closed {
+	width: 1%;
+	background: #DEE7F1;
+	border: 1px solid #b4c3d5;
+	height: 490px;
+	max-height: 490px;
+	cursor: pointer;
+}
+
+	.templateTags-container.closed .templateTags {
+		display: none;
+	}
+		
+.databaseTags {
+	width: auto;
+	padding: 5px;
+}
+
+.databaseTags.templateTags li.template-tag-cat {
+	width: auto;
+}
+
+.databaseTags li {
+	width: 98%;
+	font-size: 14px;
+	border-bottom: 1px solid #efefef;
+	vertical-align: middle;
+}
+
+.databaseTags .template-tag-cat
+{
+	font-size: 24px;
+}
+
+.databaseTags div {
+	clear: both;
+	padding-left: 15px;
+}
+
+.databaseTags .template-tag-cat div {
+	font-weight: normal;
+	font-size: 12px;
+	font-style: italic;
+}
+
+.databaseTags li label {
+	font-weight: bold;
+	font-style: italic;
+	font-size: 16px;
+	width: 60%;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.databaseTags li:last-child {
+	border-bottom: 0px;
+}
+
+.databaseTags.templateTags div {
+	font-size: 13px;
+}
+
+#tag_tabbar {
+	padding: 5px 5px 0 5px;
+	height: 28px;
+	border-bottom: 4px solid #fff;
+}
+
+	#tag_tabbar li {
+		font-size: 12px;
+	}
+
+.q-c-link {
+	padding-top: 10px;
+	font-style: italic;
+	text-align: right;
+	font-size: 11px;
+}
+
+#validator_custom {
+	padding: 5px;
+	position: relative;
+	margin-bottom: 1px;
+}
+
+#db_languages {
+	display: block;
+	position: relative;
+}
+
+#validator_custom strong, strong.antilabel {
+	width: 200px;
+	display: inline-block;
+}
+
+#pages_bottom {
+	margin-top: 8px;
+}
+
+#template_content_tbl {
+	padding: 0px;
+	margin: 0px;
+}
+
+#main_content .acp-box table.mceLayout td {
+	padding: 2px;
+}
+
+.acp-box div.widget-code {
+	margin: 8px;
+}
+
+.acp-box.block-widget-code {
+	height: 250px !important;
+	line-height: 1.6;
+}
+
+.control_row {
+	border-bottom: 1px solid #e4ebf2;
+}
+
+.control_row._red {
+	border-bottom: 1px solid #6f3642;
+}
+
+	.control_row .desc {
+		font-size: 11px;
+	}
+	
+	.control_row .comment_content {
+		margin-top: 5px;
+	}
+
+.cache_help {
+	line-height: 1.4;
+}
+
+/*.section_closed {
+	background: #d6e4f1 url( ../../../../../skin_cp/images/folder_closed.png ) no-repeat 10px 12px !important;
+	padding-left: 22px !important;
+	cursor: pointer;
+	border-bottom: 1px solid #fff;
+}
+
+.section_open {
+	background: #dae2e9 url( images/folder_open.png ) no-repeat 10px 12px;
+}*/
+
+.field_subfield_wrap {
+	display: inline-block;
+}
+
+.field_subfield {
+	margin-top: 4px;
+}
+
+a.help_blurb {
+	font-size: 11px;
+	margin-left: 20px;
+}
+
+#help_blurb_text {
+	margin-bottom: 20px;
+}
+
+#page_title {
+	margin-top: 4px;
+}
+
+/********************************/
+/* BLOCK TEMPLATES 				*/
+/********************************/
+
+.block_template_item, .block_template_add {
+	background: #f7f7f7;
+	-webkit-border-radius: 5px;
+	padding: 10px;
+	margin: 10px 0;
+	position: relative;
+	width: 150px;
+	height: 135px;
+}
+	
+	.block_template_item:hover, .block_template_add:hover {
+		background: #eaeaea;
+	}
+
+	.block_template_item img, .block_template_add img {
+		width: 150px;
+		height: 100px;
+		margin-bottom: 5px;
+	}
+
+	.block_template_item img {
+		background: #fff;
+		-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+	}
+
+	.block_template_item h5 {
+		color: #292929;
+		font-size: 14px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: inline-block;
+		max-width: 128px;
+	}
+
+	.block_template_add h5 {
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+	}
+
+	.block_template_item h5 a, .block_template_add h5 a {
+		color: #5b5b5b;
+	}
+
+/*--------------------------------*/
+
+.block_template_manager {
+	background: #E1E7ED;
+	padding: 7px;
+}
+
+.block_template_manager > ul > li {
+	float: left;
+	margin-left: 10px;
+}
+
+	.block_template_manager > ul {
+		background: #fff;
+		padding: 10px;
+		border: 1px solid #DAE2E9;
+	}
+
+#pane_template_gallery {
+	height: 400px;
+	position: relative;
+}
+
+#template_gallery_wrap {
+	width: 370px;
+	padding: 10px;
+	background: #fff;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	overflow: auto;
+}
+	
+	#template_gallery_wrap li {
+		width: 150px;
+		height: 125px;
+		background: #f7f7f7;
+		-webkit-border-radius: 5px;
+		float: left;
+		text-align: center;		
+	}
+
+	#template_gallery_wrap li:nth-child(odd){
+		margin-right: 10px;
+	}
+
+	#template_gallery_wrap h5 {
+		padding: 2px 8px;
+		font-size: 13px;
+	}
+
+	#template_gallery_wrap li.selected {
+		background: #e1e7f1;
+	}
+
+		#template_gallery_wrap li.selected h5 {
+			background: rgb(64,93,127);
+			background: -moz-linear-gradient(top, rgba(64,93,127,1) 0%, rgba(49,62,81,1) 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(64,93,127,1)), color-stop(100%,rgba(49,62,81,1)));
+			color: #fff;
+			-webkit-border-radius: 10px;
+		}
+
+#template_gallery_preview {
+	background: #242424 url( ../../../../../skin_cp/images/black-Linen.png );
+	-webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.8) inset;
+	color: #fff;
+	position: absolute;
+	left: 390px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+}
+
+	#template_gallery_preview iframe {
+		width: 80%;
+		min-width: 400px;
+		height: 80%;
+		background: #fff;
+		margin-top: 20px;
+		border: 0;
+		-webkit-box-shadow: 0px 3px 25px rgba(0,0,0,0.7);
+	}
+
+.btemplate_dd select {
+	width: 160px;
+}
+
+#template_switcher {
+	text-align: center;
+	background: #B1C2D4;
+	padding: 5px;
+}
+	
+	#template_switcher ul {
+		display: inline-block;
+	}
+
+	#template_switcher a {
+		font-size: 13px;
+		height: 32px;
+		line-height: 32px;
+	}

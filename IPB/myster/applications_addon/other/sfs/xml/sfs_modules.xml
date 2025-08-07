@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduleexport>
+  <modulegroup>
+    <module>
+      <sys_module_title>SFS Stats</sys_module_title>
+      <sys_module_application>sfs</sys_module_application>
+      <sys_module_key>stats</sys_module_key>
+      <sys_module_description>View Stats of blocked registrations</sys_module_description>
+      <sys_module_version>1.0.0</sys_module_version>
+      <sys_module_protected>1</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_position>1</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>SFS Management</sys_module_title>
+      <sys_module_application>sfs</sys_module_application>
+      <sys_module_key>settings</sys_module_key>
+      <sys_module_description><![CDATA[Whitelist any IP&#39;s or Email&#39;s to not be checked in the SFS DB]]></sys_module_description>
+      <sys_module_version>1.0.0</sys_module_version>
+      <sys_module_protected>1</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_position>2</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Report Members</sys_module_title>
+      <sys_module_application>sfs</sys_module_application>
+      <sys_module_key>members</sys_module_key>
+      <sys_module_description>Report members to SFS from the ACP</sys_module_description>
+      <sys_module_version>1.0.0</sys_module_version>
+      <sys_module_protected>1</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_position>3</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+    <module>
+      <sys_module_title>Tools</sys_module_title>
+      <sys_module_application>sfs</sys_module_application>
+      <sys_module_key>tools</sys_module_key>
+      <sys_module_description>Tools for SFS App</sys_module_description>
+      <sys_module_version>1.0.0</sys_module_version>
+      <sys_module_protected>1</sys_module_protected>
+      <sys_module_visible>1</sys_module_visible>
+      <sys_module_position>31</sys_module_position>
+      <sys_module_admin>1</sys_module_admin>
+    </module>
+  </modulegroup>
+</moduleexport>

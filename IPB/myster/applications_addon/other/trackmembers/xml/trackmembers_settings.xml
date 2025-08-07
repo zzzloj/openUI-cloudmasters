@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>trackmembers</conf_title_keyword>
+      <conf_title_title>Track Members</conf_title_title>
+      <conf_title_desc>Settings for this application</conf_title_desc>
+      <conf_title_tab>Apps</conf_title_tab>
+      <conf_title_app>trackmembers</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>System online?</conf_title>
+      <conf_description>If enabled, users can be tracked.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>trackmembers_onoff</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>trackmembers</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Flood control</conf_title>
+      <conf_description>This will prevent the same log entry from being added it if occurs within the set amount of minutes.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>trackmembers_floodControl</conf_key>
+      <conf_default>5</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>trackmembers</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Can Track Users</conf_title>
+      <conf_description>Users from selected groups can set users to be warned</conf_description>
+      <conf_type>multi</conf_type>
+      <conf_key>trackmembers_cantrackgroups</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1 )
+{
+	if ( is_array( $_POST['trackmembers_cantrackgroups'] ) )
+	{
+		$_POST['trackmembers_cantrackgroups'] = implode( ",", $_POST['trackmembers_cantrackgroups'] );
+	}
+	else
+	{
+		$_POST['trackmembers_cantrackgroups'] = "";
+	}
+	
+	$key = 'trackmembers_cantrackgroups';
+}
+if ( $show == 1 )
+{
+	$key = 'trackmembers_cantrackgroups[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>trackmembers</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Track User Groups</conf_title>
+      <conf_description>Users from selected groups can be tracked if wished.</conf_description>
+      <conf_type>multi</conf_type>
+      <conf_key>trackmembers_groups</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1 )
+{
+	if ( is_array( $_POST['trackmembers_groups'] ) )
+	{
+		$_POST['trackmembers_groups'] = implode( ",", $_POST['trackmembers_groups'] );
+	}
+	else
+	{
+		$_POST['trackmembers_groups'] = "";
+	}
+	
+	$key = 'trackmembers_groups';
+}
+if ( $show == 1 )
+{
+	$key = 'trackmembers_groups[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>trackmembers</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<export>
+  <group>
+    <row>
+      <task_id>16</task_id>
+      <task_title>Daily Tracker Clean Out</task_title>
+      <task_file>tracker_dailycleanout.php</task_file>
+      <task_next_run>1236308400</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>3</task_hour>
+      <task_minute>0</task_minute>
+      <task_cronkey>cd7109a81998ea6428d8e6c572b07dfb</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Prunes issue subscriptions</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>tracker_dailycleanout</task_key>
+      <task_safemode>1</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>tracker</task_application>
+    </row>
+    <row>
+      <task_id>17</task_id>
+      <task_title><![CDATA[Weekly Issue &amp; Project Digest]]></task_title>
+      <task_file>tracker_weeklydigest.php</task_file>
+      <task_next_run>1236277260</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>4</task_hour>
+      <task_minute>-1</task_minute>
+      <task_cronkey>50ea21a236749d9e7f3d97bfc6aa9fc1</task_cronkey>
+      <task_log>1</task_log>
+      <task_description>Emails out weekly issue and project digest emails</task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>tracker_weeklydigest</task_key>
+      <task_safemode>1</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>tracker</task_application>
+    </row>
+    <row>
+      <task_id>18</task_id>
+      <task_title><![CDATA[Daily Issue &amp; Project Digest]]></task_title>
+      <task_file>tracker_dailydigest.php</task_file>
+      <task_next_run>1236298200</task_next_run>
+      <task_week_day>-1</task_week_day>
+      <task_month_day>-1</task_month_day>
+      <task_hour>0</task_hour>
+      <task_minute>10</task_minute>
+      <task_cronkey>912dde309487b765059a48cdabc2aec6</task_cronkey>
+      <task_log>1</task_log>
+      <task_description><![CDATA[Emails out daily issue &amp; project digest emails]]></task_description>
+      <task_enabled>1</task_enabled>
+      <task_key>tracker_dailydigest</task_key>
+      <task_safemode>1</task_safemode>
+      <task_locked>0</task_locked>
+      <task_application>tracker</task_application>
+    </row>
+  </group>
+</export>

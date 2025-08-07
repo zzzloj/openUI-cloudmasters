@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>Menus</grouptitle>
+		<items>
+			<item>
+				<key>promenu_add_menu</key>
+				<string>Can add menus?</string>
+			</item>
+			<item>
+				<key>promenu_edit_menu</key>
+				<string>Can edit menus?</string>
+			</item>
+			<item>
+				<key>promenu_delete_menu</key>
+				<string>Can delete menus?</string>
+			</item>
+			<item>
+				<key>promenu_clone_menu</key>
+				<string>Can clone menus?</string>
+			</item>
+			<item>
+				<key>promenu_refresh_cache</key>
+				<string>Can refresh cache?</string>
+			</item>
+		</items>
+	</group>
+	<group>
+		<grouptitle>Groups</grouptitle>
+		<items>
+			<item>
+				<key>promenu_add_group</key>
+				<string>Can add groups?</string>
+			</item>
+			<item>
+				<key>promenu_edit_group</key>
+				<string>Can edit groups?</string>
+			</item>
+			<item>
+				<key>promenu_export_group</key>
+				<string>Can export groups as hooks?</string>
+			</item>
+			<item>
+				<key>promenu_delete_group</key>
+				<string>Can delete groups?</string>
+			</item>
+			<item>
+				<key>promenu_import_group</key>
+				<string>Can import apps into groups?</string>
+			</item>
+		</items>
+	</group>
+</permissions>

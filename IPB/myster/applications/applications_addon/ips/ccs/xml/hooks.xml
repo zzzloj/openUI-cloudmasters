@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hooks>
+	<hook>
+		<file>promote_to_article.xml</file>
+		<enabled>1</enabled>
+	</hook>
+	<hook>
+		<file>update_comment_count.xml</file>
+		<enabled>1</enabled>
+	</hook>
+	<hook>
+		<file>ccs_menu_bar.xml</file>
+		<enabled>1</enabled>
+	</hook>
+</hooks>

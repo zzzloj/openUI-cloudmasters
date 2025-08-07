@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Add Category</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Add Category</subitemtitle>
+					<subsection>cats</subsection>
+					<subitemurl>do=add</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>        
+		<item>
+			<title>Manage Categories</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Categories</subitemtitle>
+					<subsection>cats</subsection>
+					<subitemurl>do=manage</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

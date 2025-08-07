@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<information>
+  <data>
+    <name>Testimonials System</name>
+    <public_name>Testimonials</public_name>
+    <hide_tab>0</hide_tab>
+    <author>-RAW-</author>
+    <description>Full application to handle feedback/testimonials on your board</description>
+    <disabledatinstall>0</disabledatinstall>
+    <global_caches/>
+    <website/>
+    <update_check/>
+    <templategroups>
+        <template match="exact">skin_testimonials</template>
+    </templategroups>
+  </data>
+</information>

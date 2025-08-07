@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>Form Permissions</grouptitle>
+		<items>
+			<item>
+				<key>view_forms</key>
+				<string>Can view forms and fields?</string>
+			</item>	        
+			<item>
+				<key>manage_forms</key>
+				<string>Can add and edit forms?</string>
+			</item>
+			<item>
+				<key>delete_forms</key>
+				<string>Can delete forms?</string>
+			</item>	            	
+			<item>
+				<key>manage_fields</key>
+				<string>Can add and edit fields?</string>
+			</item>	
+			<item>
+				<key>delete_fields</key>
+				<string>Can delete fields?</string>
+			</item>	            							
+		</items>
+	</group>
+</permissions>

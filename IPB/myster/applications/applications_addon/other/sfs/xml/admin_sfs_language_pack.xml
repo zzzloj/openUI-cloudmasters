@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_userName</word_key>
+      <word_default>Username</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Jul</word_key>
+      <word_default>July</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Aug</word_key>
+      <word_default>August</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_May</word_key>
+      <word_default>May</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Jun</word_key>
+      <word_default>June</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Mar</word_key>
+      <word_default>March</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Apr</word_key>
+      <word_default>April</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_regBlkIn</word_key>
+      <word_default>registrations blocked in</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_acpStDes</word_key>
+      <word_default>Number of years to keep graphs of blocked registrations.</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_acpStSet</word_key>
+      <word_default>Stop Forum Spam Graph Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_acpStExp</word_key>
+      <word_default>0 to keep indefinitely</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_whiteRem</word_key>
+      <word_default>Whitelist Entry Removed</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_whiteAdd</word_key>
+      <word_default>Whitelist Entry Added</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_remWhite</word_key>
+      <word_default>Remove</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_noWhite</word_key>
+      <word_default>No items whitelisted</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Remove</word_key>
+      <word_default>Remove</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Whitelisted</word_key>
+      <word_default>Whitelisted</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_dateEntered</word_key>
+      <word_default>Date Entered</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>add_wlWhat</word_key>
+      <word_default>Email or IP to whitelist</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_addEntry</word_key>
+      <word_default>Add Entry</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>add_wlEntry</word_key>
+      <word_default>Add Whitelist Entry</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_blockReg</word_key>
+      <word_default>Blocked Registrations</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_times</word_key>
+      <word_default>Times blocked</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_seenSfs</word_key>
+      <word_default>Seen in SFS</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_blockBy</word_key>
+      <word_default>Blocked by</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_score</word_key>
+      <word_default>SFS Score</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_last</word_key>
+      <word_default>SFS Last Seen</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Block</word_key>
+      <word_default>Block Info</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Options</word_key>
+      <word_default>Options</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_view</word_key>
+      <word_default>View SFS Entries</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_noBlock</word_key>
+      <word_default>No blocked registrations</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_reTra</word_key>
+      <word_default>Remove From Tracker</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_wlEntry</word_key>
+      <word_default>Whitelist This Entry</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_bloRem</word_key>
+      <word_default>Tracked Block Removed</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_reportSFS</word_key>
+      <word_default>Report to Stop Forum Spam</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_wlMove</word_key>
+      <word_default>Blocked entry moved to whitelist</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_sfs</word_key>
+      <word_default>Stop Forum Spam</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_findMem</word_key>
+      <word_default>Find Member</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_doFind</word_key>
+      <word_default>Type the name of the member you want to report to SFS</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_noIP</word_key>
+      <word_default>You must provide an IP to submit to Stop Forum Spam</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Evidence</word_key>
+      <word_default>Evidence</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_emAdr</word_key>
+      <word_default>Member E-mail Address</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_ipAdr</word_key>
+      <word_default>Member IP Address</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_noEm</word_key>
+      <word_default>You must provide an email to submit to Stop Forum Spam</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_both</word_key>
+      <word_default>Both</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_ReportMem</word_key>
+      <word_default>Report Member</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_memSubRed</word_key>
+      <word_default>Member submitted to Stop Forum Spam</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_ipNumTimes</word_key>
+      <word_default>Deny registration if IP is found in the SFS DB more than X number of times</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_ipDaysAgo</word_key>
+      <word_default>Deny registration if IP was submitted to SFS DB less than X number of days ago</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_ip</word_key>
+      <word_default>IP</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_em</word_key>
+      <word_default>Email</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_noApi</word_key>
+      <word_default>You have to have an API key from Stop Forum Spam and have it saved in the settings in order to submit spammers to Stop Forum Spam </word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_checkType</word_key>
+      <word_default>Type of checks used?</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_evDes</word_key>
+      <word_default>Although not currently required by SFS, providing evidence helps maintain the integrity of the SFS DB.</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_emAtAll</word_key>
+      <word_default>Deny registration if email appears in SFS DB at all</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_ipConfidence</word_key>
+      <word_default>Deny registration if SFS IP confidence is greater than X</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_ipAtAll</word_key>
+      <word_default>Deny registration if IP appears in SFS DB at all</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_upSettings</word_key>
+      <word_default>Update SFS Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_repSFS</word_key>
+      <word_default>Report Member to Stop Forum Spam</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_emNumTimes</word_key>
+      <word_default>Deny registration if email is found in the SFS DB more than X number of times </word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_emDaysAgo</word_key>
+      <word_default>Deny registration if email was submitted to SFS DB less than X number of days ago</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_emConfidence</word_key>
+      <word_default>Deny registration if SFS email confidence is greater than X</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_errDes</word_key>
+      <word_default>Error message to show when registration is blocked.</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_addBan</word_key>
+      <word_default>Add blocked registrations to your ban filter</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_banDays</word_key>
+      <word_default>Amount of days to keep IP or Emails in ban filter before removing them</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_banDaysDes</word_key>
+      <word_default>Set the amount of days to keep the IP or email in your ban filters. Use 0 for indefinitely.</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_apiWarn</word_key>
+      <word_default>You can set your SFS API key here. You must have this key when submitting any spammers to SFS from the ACP. Be aware that SFS only wants spammers reported and that it is not intended for trolls or to carry out a vendetta. Users found abusing the system will be banned from the SFS API.</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_sfsAPI</word_key>
+      <word_default>Stop Forum Spam API Key</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_zeroDis</word_key>
+      <word_default>0 to disable</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_chkAll</word_key>
+      <word_default>Check All</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_remMem</word_key>
+      <word_default>Delete this member?</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_setRed</word_key>
+      <word_default>Stop Forum Spam Settings Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_remMemDes</word_key>
+      <word_default>Checking this box will remove the member. This action cannot be undone. </word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_remSel</word_key>
+      <word_default>Remove Selected</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_unChkAll</word_key>
+      <word_default>Un-check All</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_emailTo</word_key>
+      <word_default>Email address to send blocked registration reports to?</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_emailWarn</word_key>
+      <word_default>Both email settings must have a value set in order for email reports to work.</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_emailSub</word_key>
+      <word_default>Enter a subject line for the email reports</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_statTextDes</word_key>
+      <word_default>Text to display with number of blocked accounts on board index</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_statsTitle</word_key>
+      <word_default>Blocked Registrations</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_boardSet</word_key>
+      <word_default>Stop Forum Spam Board Stat Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_emSet</word_key>
+      <word_default>Stop Forum Spam Email Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_repSet</word_key>
+      <word_default>Stop Forum Spam Report Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_banSet</word_key>
+      <word_default>Stop Forum Spam Ban Filter Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_statsDes</word_key>
+      <word_default>Amount of spammers blocked</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_lookSet</word_key>
+      <word_default>Stop Forum Spam Lookup Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Feb</word_key>
+      <word_default>February</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Jan</word_key>
+      <word_default>January</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Oct</word_key>
+      <word_default>October</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Nov</word_key>
+      <word_default>November</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Sep</word_key>
+      <word_default>September</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Dec</word_key>
+      <word_default>December</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_userEmail</word_key>
+      <word_default>Email</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_ipAddr</word_key>
+      <word_default>IP Address</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_noRem</word_key>
+      <word_default>No items were selected for removal.</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_lth</word_key>
+      <word_default>The SFS data for this user was updated less than an hour ago.</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_ls</word_key>
+      <word_default>The SFS data for this user was retrieved</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_ago</word_key>
+      <word_default>hours ago.</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_emAddr</word_key>
+      <word_default>Email Address</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_sfsView</word_key>
+      <word_default>View at SFS</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_unNotEx</word_key>
+      <word_default>This username does not appear in the Stop Forum Spam DB.</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_ipNotEx</word_key>
+      <word_default>This IP address does not appear in the Stop Forum Spam DB.</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_emNotEx</word_key>
+      <word_default>This email address does not appear in the Stop Forum Spam DB.</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_forUpdate</word_key>
+      <word_default>Refresh Cached SFS Data</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_dateBlock</word_key>
+      <word_default>Date Blocked</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_ipHis</word_key>
+      <word_default>IP History</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_sfsLastUp</word_key>
+      <word_default>Last update from SFS</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_sfsUpRed</word_key>
+      <word_default>SFS Cache Refreshed</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_htbbOk</word_key>
+      <word_default>HTML and BBCode Allowed</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_empBL</word_key>
+      <word_default>Empty Blocked Registrations Table</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_blRemWarn</word_key>
+      <word_default>This tool will delete EVERY blocked registration from the blocked registrations page. This process is not reversible!</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_empBut</word_key>
+      <word_default>Empty Blocked Registrations</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_blRed</word_key>
+      <word_default>All blocked registrations removed</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_numQ</word_key>
+      <word_default>Number of queries to SFS from your IP over the last 24 hours.</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_Q</word_key>
+      <word_default>Stop Forum Spam Queries</word_default>
+    </lang>
+    <lang>
+      <word_app>sfs</word_app>
+      <word_pack>admin_sfs</word_pack>
+      <word_key>sfs_QDesc</word_key>
+      <word_default>Keep in mind if you are on a server that shares its IP with other sites that are also querying Stop Forum Spam that could limit the number of queries you can make a day.  This number represents all queries made from your server.</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blockexport>
+  <portalblock>
+    <block>
+      <title>Top Posters</title>
+      <align>1</align>        
+      <block_code><![CDATA[<?php
+
+if ( ! $this->registry->isClassLoaded( 'portalBlocks' ) )
+{
+	$classToLoad =  IPSLib::loadLibrary( IPSLib::getAppDir( 'portal' ) . "/sources/blocks.php", 'portalBlockGateway' );
+	$this->registry->setClass( 'portalBlocks', new $classToLoad( ipsRegistry::instance() ) );
+}
+
+print $this->registry->getClass('portalBlocks')->show_top_posters();
+
+?>]]></block_code>
+    </block>  
+    <block>
+      <title>Newest Members</title>
+      <align>1</align>        
+      <block_code><![CDATA[<?php
+
+if ( ! $this->registry->isClassLoaded( 'portalBlocks' ) )
+{
+	$classToLoad =  IPSLib::loadLibrary( IPSLib::getAppDir( 'portal' ) . "/sources/blocks.php", 'portalBlockGateway' );
+	$this->registry->setClass( 'portalBlocks', new $classToLoad( ipsRegistry::instance() ) );
+}
+
+print $this->registry->getClass('portalBlocks')->show_newest_members();
+
+?>]]></block_code>
+    </block> 
+    <block>
+      <title>Newest Posts</title>
+      <align>1</align>        
+      <block_code><![CDATA[<?php
+
+if ( ! $this->registry->isClassLoaded( 'portalBlocks' ) )
+{
+	$classToLoad =  IPSLib::loadLibrary( IPSLib::getAppDir( 'portal' ) . "/sources/blocks.php", 'portalBlockGateway' );
+	$this->registry->setClass( 'portalBlocks', new $classToLoad( ipsRegistry::instance() ) );
+}
+
+print $this->registry->getClass('portalBlocks')->show_newest_posts();
+
+?>]]></block_code>
+    </block>       
+     <block>
+      <title>Board Stats</title>
+      <align>5</align>        
+      <block_code><![CDATA[<?php
+
+if ( ! $this->registry->isClassLoaded( 'portalBlocks' ) )
+{
+	$classToLoad =  IPSLib::loadLibrary( IPSLib::getAppDir( 'portal' ) . "/sources/blocks.php", 'portalBlockGateway' );
+	$this->registry->setClass( 'portalBlocks', new $classToLoad( ipsRegistry::instance() ) );
+}
+
+print $this->registry->getClass('portalBlocks')->show_board_stats();
+
+?>]]></block_code>
+    </block>                      
+  </portalblock>
+</blockexport>

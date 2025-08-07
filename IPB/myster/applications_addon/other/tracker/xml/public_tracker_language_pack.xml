@@ -1,0 +1,3655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_email</word_pack>
+      <word_key>subject__digest_issue_weekly</word_key>
+      <word_default>Your weekly new replies digest</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_email</word_pack>
+      <word_key>digest_issue_weekly</word_key>
+      <word_default><![CDATA[<#MNAME#>,
+
+This is your weekly digest of replies in issue "<#TITLE#>"!
+
+======================================================================
+
+
+<#CONTENT#>
+
+
+======================================================================
+
+The bug can be found here:
+<#BOARD_ADDRESS#>?app=tracker&showissue=<#ISSUE_ID#>
+
+Unsubscribing:
+--------------
+
+You can unsubscribe at any time by logging into your control panel and clicking on the "View Issues" link.
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_email</word_pack>
+      <word_key>subject__digest_issue_daily</word_key>
+      <word_default>Your daily new issue replies digest</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_email</word_pack>
+      <word_key>digest_issue_daily</word_key>
+      <word_default><![CDATA[<#MNAME#>,
+
+This is the digest of replies in issue "<#TITLE#>" for today.
+
+======================================================================
+
+
+<#CONTENT#>
+
+
+======================================================================
+
+The issue can be found here:
+<#BOARD_ADDRESS#>?app=tracker&showissue=<#ISSUE_ID#>
+
+Unsubscribing:
+--------------
+
+You can unsubscribe at any time by logging into your control panel and clicking on the "View Issues" link.
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_email</word_pack>
+      <word_key>subject__digest_project_daily</word_key>
+      <word_default>Your daily new issues digest</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_email</word_pack>
+      <word_key>subject__subs_with_post</word_key>
+      <word_default>Issue Subscription Reply Notification</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_email</word_pack>
+      <word_key>subs_with_post</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+<#POSTER#> has just posted a reply to an issue that you subscribed to, titled "<#TITLE#>".
+
+======================================================================
+<#POST#>
+======================================================================
+
+The issue can be found here:
+<#BOARD_ADDRESS#>?app=tracker&showissue=<#ISSUE_ID#>
+
+
+If you have configured in your control panel to recieve immediate issue reply notifications, you may receive an
+email for each reply made to this issue.  Otherwise, only one email is sent per board visit for each subscribed issue. 
+This is to limit the amount of mail that is sent to your inbox.
+
+Unsubscribing:
+--------------
+
+You can unsubscribe at any time by logging into your control panel and clicking on the "View Subscriptions" link.
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_email</word_pack>
+      <word_key>subject__subs_no_post</word_key>
+      <word_default>Issue Subscription Reply Notification</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_email</word_pack>
+      <word_key>subs_no_post</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+<#POSTER#> has just posted a reply to an issue that you subscribed to, titled "<#TITLE#>".
+
+The issue can be found here:
+<#BOARD_ADDRESS#>?app=tracker&showissue=<#ISSUE_ID#>
+
+There may be more replies to this issue, but only one email is sent per board visit for each subscribed issue. This is
+to limit the amount of mail that is sent to your inbox.
+
+Unsubscribing:
+--------------
+
+You can unsubscribe at any time by logging into your control panel and clicking on the "View Subscriptions" link.
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_email</word_pack>
+      <word_key>digest_project_weekly</word_key>
+      <word_default><![CDATA[<#MNAME#>,
+
+This is the digest of this weeks issues in project <#PNAME#>.
+
+======================================================================
+
+
+<#CONTENT#>
+
+
+======================================================================
+
+The issue can be found here:
+<#BOARD_ADDRESS#>?app=tracker&showproject=<#PROJECT_ID#>
+
+Unsubscribing:
+--------------
+
+You can unsubscribe at any time by logging into your control panel and clicking on the "View Projects" link.
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_email</word_pack>
+      <word_key>subject__digest_project_weekly</word_key>
+      <word_default>Your weekly new issues digest</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_email</word_pack>
+      <word_key>subject__new_project_report</word_key>
+      <word_default><![CDATA[[<#PROJECT#>] New Issue Notification]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_email</word_pack>
+      <word_key>new_project_report</word_key>
+      <word_default><![CDATA[Hello <#NAME#>,
+
+<#POSTER#> has just posted a new issue entitled "<#TITLE#>" in project "<#PROJECT#>".
+
+======================================================================
+<#POST#>
+======================================================================
+
+The issue can be found here:
+<#BOARD_ADDRESS#>?app=tracker&showissue=<#ISSUE_ID#>
+
+Please note that if you wish to get email notification of any replies to this issue, you will have to click on the
+"Track this issue" link shown on the issue page, or by visiting the link below:
+<#BOARD_ADDRESS#>?app=tracker&req=ucp&CODE=start_subs&pid=<#PROJECT_ID#>&iid=<#ISSUE_ID#>
+
+
+Unsubscribing:
+--------------
+
+You can unsubscribe at any time by logging into your control panel and clicking on the "View Subscriptions" link.
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_email</word_pack>
+      <word_key>digest_project_daily</word_key>
+      <word_default><![CDATA[<#MNAME#>,
+
+This is your daily new issues digest for the project <#PNAME#>.
+
+======================================================================
+
+
+<#CONTENT#>
+
+
+======================================================================
+
+The issue can be found here:
+<#BOARD_ADDRESS#>?app=tracker&showproject=<#PROJECT_ID#>
+
+Unsubscribing:
+--------------
+
+You can unsubscribe at any time by logging into your control panel and clicking on the "View Projects" link.
+]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_type_issue</word_key>
+      <word_default>Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_locked_issue</word_key>
+      <word_default>locked issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_opened_issue</word_key>
+      <word_default>opened issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_moved_issue</word_key>
+      <word_default>moved issue from</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>unset_fave_words</word_key>
+      <word_default>You will no longer receive notifications when a new reply is posted</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>unset_fave_title</word_key>
+      <word_default>Stop Tracking Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>like_totalcount_track_issue</word_key>
+      <word_default>%d members(s) track this issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>like_ucfirst_track_issue</word_key>
+      <word_default>Track Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>like_ucfirst_untrack_issue</word_key>
+      <word_default>Stop Tracking Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_like_type</word_key>
+      <word_default><![CDATA[this issue's replies]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_public_make</word_key>
+      <word_default>Make this issue public</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_public</word_key>
+      <word_default>Public Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_private_make</word_key>
+      <word_default>Make this issue private</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_cant_reply</word_key>
+      <word_default>You cannot reply to this issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_private</word_key>
+      <word_default>Private Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_watch_issue_stop</word_key>
+      <word_default>Stop Watching Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_watch_issue_start</word_key>
+      <word_default>Track Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_view_timeline</word_key>
+      <word_default>Issue Timeline</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_locked</word_key>
+      <word_default>This issue is locked</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_icon</word_key>
+      <word_default>Post Icon</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_ignore_view</word_key>
+      <word_default>View post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_ip</word_key>
+      <word_default>Find information about this IP</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>MOVE_ISSUE</word_key>
+      <word_default>Move this issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>DELETE_ISSUE</word_key>
+      <word_default>Delete this issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>EDIT_ISSUE</word_key>
+      <word_default>Edit Issue Title</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>MERGE_ISSUE</word_key>
+      <word_default>Merge Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_return_to_listing</word_key>
+      <word_default>Return to Issue Listing</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>OPEN_ISSUE</word_key>
+      <word_default>Open this issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>CLOSE_ISSUE</word_key>
+      <word_default>Close this issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_topic_stats</word_key>
+      <word_default><![CDATA[<#POSTS#> replies since <#START#>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_edited_by</word_key>
+      <word_default><![CDATA[This post was edited by <b>%s</b>: %s]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_outline_posts_topic</word_key>
+      <word_default>Posts in this issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_topic_display_switch</word_key>
+      <word_default>Switch to:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_dd_display_modes</word_key>
+      <word_default>Display Modes</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_av_title</word_key>
+      <word_default>Download this issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_track_topic</word_key>
+      <word_default>Track this issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_topic_options</word_key>
+      <word_default>Options</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_js_no_empty_post</word_key>
+      <word_default>You cannot submit an empty post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_js_error_no_permission</word_key>
+      <word_default>Sorry, you do not have permission to edit that post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_cp_js_delete</word_key>
+      <word_default>Are you sure you wish to delete these posts?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_ft_title</word_key>
+      <word_default>Subscribe to this project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_print</word_key>
+      <word_default>Print this issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_forward</word_key>
+      <word_default>Email this issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_topic_display</word_key>
+      <word_default>Display Mode</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_start_new_topic</word_key>
+      <word_default>Start a new issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_search_topic</word_key>
+      <word_default>Search Topic</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_t_new</word_key>
+      <word_default>Next Newest</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_t_old</word_key>
+      <word_default>Next Oldest</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_tt_link</word_key>
+      <word_default>Show the link to this post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_posted_on</word_key>
+      <word_default>Post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_rating_prefix</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_qr_add_sig</word_key>
+      <word_default>Enable Signature</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_qr_add_smilie</word_key>
+      <word_default>Enable Smilies</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_qr_closeit</word_key>
+      <word_default>Close Fast Reply</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_qr_more_opts</word_key>
+      <word_default>More Options</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_reply_add_a</word_key>
+      <word_default>Add a Reply</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_qr_submit</word_key>
+      <word_default>Add Reply</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_qr_add_email</word_key>
+      <word_default>Enable email notification of replies</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_mq</word_key>
+      <word_default>MultiQuote</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_approve</word_key>
+      <word_default>Approve</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_unapprove</word_key>
+      <word_default>Unapprove</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_tt_reply_to_post</word_key>
+      <word_default>Reply directly to this post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_go_new_post</word_key>
+      <word_default>Go to first unread post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_qr_title</word_key>
+      <word_default>Fast Reply</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_mq_title</word_key>
+      <word_default>Quote this post with Multi-Quote</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_guest</word_key>
+      <word_default>Guest</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_info_version</word_key>
+      <word_default>Version</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_type_suggestion</word_key>
+      <word_default>Suggestion</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_info_fixed_in</word_key>
+      <word_default>Fixed in</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_info_product</word_key>
+      <word_default>Product</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_info_title</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_info_id</word_key>
+      <word_default>Report ID</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_posted</word_key>
+      <word_default>Posted</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_move_item</word_key>
+      <word_default>Move:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_item_id</word_key>
+      <word_default>Report ID #</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_delete_item</word_key>
+      <word_default>Delete Report</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_report_post</word_key>
+      <word_default>Report</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_update_to</word_key>
+      <word_default>Move to: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_confirm_del</word_key>
+      <word_default>Confirm deletion</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_no_action</word_key>
+      <word_default>OK - no action taken</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_update_comment</word_key>
+      <word_default>Comment: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_unlock</word_key>
+      <word_default>Unlock Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_tom_replies</word_key>
+      <word_default>Replies</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_tom_linear</word_key>
+      <word_default>Linear+</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_tom_outline</word_key>
+      <word_default>Outline</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_tom_standard</word_key>
+      <word_default>Standard</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_reason_for_edit</word_key>
+      <word_default>Reason for edit</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_reply_to_post</word_key>
+      <word_default>Reply directly to this post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_reply_short</word_key>
+      <word_default>Reply</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_search_issue</word_key>
+      <word_default>Search Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_to_post_alt</word_key>
+      <word_default>post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_outline_posts_issue</word_key>
+      <word_default>Posts in this issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_options</word_key>
+      <word_default>Options</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_moving</word_key>
+      <word_default>Moving to: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_lock</word_key>
+      <word_default>Lock Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_enter_keywords</word_key>
+      <word_default>Enter Keywords</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_edit_quick_desc</word_key>
+      <word_default>Edit this post in place with basic options</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_edit_full_desc</word_key>
+      <word_default>Full edit screen with all options</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_edit_quick_title</word_key>
+      <word_default>Quick Edit</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_priv</word_key>
+      <word_default>Issue: Private</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_priv_tog</word_key>
+      <word_default>Issue: Private (Click to toggle)</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_not_priv</word_key>
+      <word_default>Issue: Visible</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_edit_full_title</word_key>
+      <word_default>Full Edit</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_display_switch</word_key>
+      <word_default>Switch to:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_display</word_key>
+      <word_default>Display Mode</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_delete</word_key>
+      <word_default>Delete Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_fixed_in</word_key>
+      <word_default>Fixed in</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_enablesig</word_key>
+      <word_default><![CDATA[<B>Enable</b> signature?]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_enableemo</word_key>
+      <word_default><![CDATA[<B>Enable</b> emoticons?]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_return_to_issue_listing</word_key>
+      <word_default>Return to Issue Listing</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_delete_post</word_key>
+      <word_default>Delete</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_edit_post</word_key>
+      <word_default>Edit</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_assign_version</word_key>
+      <word_default>Version</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_assign_fixed</word_key>
+      <word_default>Fixed in</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_prompt</word_key>
+      <word_default><![CDATA[Manually copy the direct link to this post below to store the link in your computer's clipboard]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_ignored_user</word_key>
+      <word_default>This post is hidden because you have chosen to ignore posts by</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_ignored_user_view</word_key>
+      <word_default>View it anyway?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_people</word_key>
+      <word_default>people</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_person</word_key>
+      <word_default>person</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_cant_reproduce</word_key>
+      <word_default>%d %s cannot reproduce this</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_can_reproduce</word_key>
+      <word_default>%d %s can reproduce this</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_priv_tag</word_key>
+      <word_default>Private</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>issues_none_newer</word_key>
+      <word_default>There are no newer issues in this project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_like_dont</word_key>
+      <word_default><![CDATA[I don't like this idea.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_delete_entry</word_key>
+      <word_default>Delete this entry</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_like_do</word_key>
+      <word_default>I like this idea!</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_locked_tag</word_key>
+      <word_default>Locked</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_not_priv_tog</word_key>
+      <word_default>Issue: Visible (Click to toggle)</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_yes</word_key>
+      <word_default>Yes</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_no</word_key>
+      <word_default>No</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_confirms</word_key>
+      <word_default>Issue Confirmations</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_return</word_key>
+      <word_default>Return to Issue Listing</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_type</word_key>
+      <word_default>Issue Type</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_information</word_key>
+      <word_default>Issue Information</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_id</word_key>
+      <word_default>Issue ID</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_issue</word_pack>
+      <word_key>bt_issue_on</word_key>
+      <word_default>on</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_privacy</word_pack>
+      <word_key>bt_global_privacy_dd_all</word_key>
+      <word_default>-- ALL VISIBILITIES --</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_privacy</word_pack>
+      <word_key>bt_privacy_made_issue</word_key>
+      <word_default>made issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_privacy</word_pack>
+      <word_key>bt_global_privacy_dd_1</word_key>
+      <word_default>Private</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_privacy</word_pack>
+      <word_key>bt_global_privacy_dd_0</word_key>
+      <word_default>Public</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_privacy</word_pack>
+      <word_key>bt_global_privacy_1</word_key>
+      <word_default>Private</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_privacy</word_pack>
+      <word_key>bt_global_privacy_0</word_key>
+      <word_default>Public</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_privacy</word_pack>
+      <word_key>bt_timeline_changed_priv</word_key>
+      <word_default>Issue Visibility Changed</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_privacy</word_pack>
+      <word_key>bt_project_breadcrumb_privacy</word_key>
+      <word_default>Visibility: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_privacy</word_pack>
+      <word_key>bt_post_assign_privacy</word_key>
+      <word_default>Visibility</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_privacy</word_pack>
+      <word_key>bt_post_update_privacy</word_key>
+      <word_default>Updating visibility to: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_privacy</word_pack>
+      <word_key>bt_issue_info_privacy</word_key>
+      <word_default>Issue Visibility</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_privacy</word_pack>
+      <word_key>bt_issue_assign_privacy</word_key>
+      <word_default>Issue Visibility:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_global_severity_dd_all</word_key>
+      <word_default>-- ALL SEVERITIES --</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_issue_assign_severity</word_key>
+      <word_default>Severity:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_global_severity_dd_5</word_key>
+      <word_default>Critical</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_global_severity_dd_4</word_key>
+      <word_default>High</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_global_severity_dd_2</word_key>
+      <word_default>Fair</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_global_severity_dd_3</word_key>
+      <word_default>Medium</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_global_severity_dd_1</word_key>
+      <word_default>Low</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_global_severity_dd_0</word_key>
+      <word_default>None</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_global_severity_5</word_key>
+      <word_default>Critical</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_global_severity_4</word_key>
+      <word_default>High</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_global_severity_3</word_key>
+      <word_default>Medium</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_global_severity_2</word_key>
+      <word_default>Fair</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_global_severity_0</word_key>
+      <word_default>None Assigned</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_global_severity_1</word_key>
+      <word_default>Low</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_issue_info_severity</word_key>
+      <word_default>Severity</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_post_update_severity</word_key>
+      <word_default>Updating severity to: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_timeline_changed_sev</word_key>
+      <word_default>Severity Changed</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_severity</word_pack>
+      <word_key>bt_post_assign_severity</word_key>
+      <word_default>Assign Severity</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_status</word_pack>
+      <word_key>bt_sts_err_no_perm</word_key>
+      <word_default>You do not have permission to post in this status</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_status</word_pack>
+      <word_key>bt_sts_err_locked_sts</word_key>
+      <word_default>You cannot post into a locked status</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_status</word_pack>
+      <word_key>bt_project_status_header</word_key>
+      <word_default>Status</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_status</word_pack>
+      <word_key>bt_timeline_changed_stat</word_key>
+      <word_default>Status Changed</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_status</word_pack>
+      <word_key>bt_global_status_dd_all</word_key>
+      <word_default>-- ALL REPORTS --</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_status</word_pack>
+      <word_key>bt_projects_reports</word_key>
+      <word_default>Reports</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_status</word_pack>
+      <word_key>bt_sts_err_no_sts</word_key>
+      <word_default>Status not found</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_status</word_pack>
+      <word_key>bt_project_info_status</word_key>
+      <word_default>Status:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_status</word_pack>
+      <word_key>bt_post_assign_status</word_key>
+      <word_default>Assign Status</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_status</word_pack>
+      <word_key>bt_issue_info_status</word_key>
+      <word_default>Status</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_status</word_pack>
+      <word_key>bt_post_update_status</word_key>
+      <word_default>Updating status to: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_status</word_pack>
+      <word_key>bt_issue_assign_status</word_key>
+      <word_default>Status:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_versions</word_pack>
+      <word_key>bt_ver_fixed_in</word_key>
+      <word_default>fixed-in version</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_versions</word_pack>
+      <word_key>bt_ver_err_no_perm</word_key>
+      <word_default>You do not have permission to post issues under this version</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_versions</word_pack>
+      <word_key>bt_post_update_version</word_key>
+      <word_default>Updating version to: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_versions</word_pack>
+      <word_key>bt_post_update_fixed_version</word_key>
+      <word_default>Issue fixed in: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_versions</word_pack>
+      <word_key>bt_ver_err_no_ver</word_key>
+      <word_default>Version not found</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_versions</word_pack>
+      <word_key>bt_all_versions</word_key>
+      <word_default>-- ALL VERSIONS --</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_versions</word_pack>
+      <word_key>bt_ver_err_fixed_no</word_key>
+      <word_default>Fixed version not specified</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_versions</word_pack>
+      <word_key>bt_post_no_version</word_key>
+      <word_default>No Version Assigned</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_versions</word_pack>
+      <word_key>bt_post_info_ver_fix</word_key>
+      <word_default>Fixed in</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_versions</word_pack>
+      <word_key>bt_post_assign_ver_fix</word_key>
+      <word_default>Fixed in:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_versions</word_pack>
+      <word_key>bt_post_assign_version</word_key>
+      <word_default>Version:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_module_versions</word_pack>
+      <word_key>bt_post_info_version</word_key>
+      <word_default>Version</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>profile_read_issue</word_key>
+      <word_default>View Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>latest_issues_title</word_key>
+      <word_default>Latest Bugs</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>last_issue_in</word_key>
+      <word_default>in</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>err_no_issues_to_show</word_key>
+      <word_default>There are no issues to display.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>last_issue_at</word_key>
+      <word_default>at</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_issue</word_key>
+      <word_default>Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_sugg</word_key>
+      <word_default>Suggestion</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_issue_type</word_key>
+      <word_default>Issue Type</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>attach_hits</word_key>
+      <word_default>Number of downloads</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_po_options</word_key>
+      <word_default>Post Options</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_reason_for_edit</word_key>
+      <word_default>Reason for edit</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_append_edit</word_key>
+      <word_default><![CDATA[<strong>Add</strong> the 'Edit by' line in this post?]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__removing</word_key>
+      <word_default>Removing Attachment...</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__confirm</word_key>
+      <word_default>Proceed with attachment removal?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__isremoved</word_key>
+      <word_default>Attachment Removed</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__upload_fail3</word_key>
+      <word_default>Upload failed. Please ask the administrator to ensure the uploads directory is available</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__insert</word_key>
+      <word_default>Insert attachment into text editor</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__delete</word_key>
+      <word_default>Delete attachment</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__ready</word_key>
+      <word_default>Attachment system ready</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__upload_fail5</word_key>
+      <word_default>You did not select a file to upload</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__upload_fail4</word_key>
+      <word_default>Upload failed. Please ask the administrator to ensure the uploads directory is writeable</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__upload_fail2</word_key>
+      <word_default>Upload failed. You are not permitted to upload this type of file</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__upload_fail1</word_key>
+      <word_default>Upload failed. The file was larger than the available space</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__upload_success</word_key>
+      <word_default><![CDATA[Upload successful and is available from the 'Manage Current Attachments' menu]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__upload_fail</word_key>
+      <word_default>Upload failed. Please ask the administrator to check the settings and permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__uploading</word_key>
+      <word_default>Uploading File...</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__init</word_key>
+      <word_default>Initializing Attachments...</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_manage_current</word_key>
+      <word_default>Manage Current Attachments</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_js__no_items</word_key>
+      <word_default>There are no items currently</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_edit_title</word_key>
+      <word_default>Edit Report</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_edit_button</word_key>
+      <word_default>Edit</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_preview</word_key>
+      <word_default>Post Preview</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_preview_button</word_key>
+      <word_default>Preview Post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_review_topic</word_key>
+      <word_default>Review the complete issue (launches new window)</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_attach_header</word_key>
+      <word_default>Attachments</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_assign_product</word_key>
+      <word_default>Assign to Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_title</word_key>
+      <word_default>Issue Title</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_top_reply</word_key>
+      <word_default>Post a reply in:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_update_field_end</word_key>
+      <word_default> to: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_submit_new</word_key>
+      <word_default>Post New Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_submit_reply</word_key>
+      <word_default>Add Reply</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_top_new</word_key>
+      <word_default>Posting a new issue in</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_update_to</word_key>
+      <word_default>Move to: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_update_field_start</word_key>
+      <word_default>Updating </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_issue_info</word_key>
+      <word_default>Issue Information</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_add_info</word_key>
+      <word_default>Additional Information</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_issue_summ</word_key>
+      <word_default>Issue Summary (Most Recent Posts)</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_opts</word_key>
+      <word_default>Options</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_user_info</word_key>
+      <word_default>User Information</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_content</word_key>
+      <word_default>Post Content</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_edit_opts</word_key>
+      <word_default>Edit Options</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_enable_track</word_key>
+      <word_default><![CDATA[<strong>Track</strong> this issue?]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_post_errors_found</word_key>
+      <word_default>Errors found</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_post</word_pack>
+      <word_key>bt_issue_tags</word_key>
+      <word_default>Issue Tags</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_profile</word_pack>
+      <word_key>pp_tab_issues</word_key>
+      <word_default>Issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_profile</word_pack>
+      <word_key>err_no_issues_to_show</word_key>
+      <word_default>There are no issues to display</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_profile</word_pack>
+      <word_key>tab_issues_posted</word_key>
+      <word_default><![CDATA[Issues I've Posted]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_profile</word_pack>
+      <word_key>err_tab_message</word_key>
+      <word_default>Message</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_all_custom</word_key>
+      <word_default>%s: All</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>unset_fave_words</word_key>
+      <word_default>You will no longer receive notifications when a new issue is posted</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>unset_button</word_key>
+      <word_default>Stop Watching</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>unset_fave_title</word_key>
+      <word_default>Stop Tracking Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>sort_start</word_key>
+      <word_default>Start Date</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>sort_replies</word_key>
+      <word_default>Most Replies</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>sort_recent</word_key>
+      <word_default>Recently Updated</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>sort_custom</word_key>
+      <word_default>Custom</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>search_options</word_key>
+      <word_default>(More Search Options)</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>pm_locked</word_key>
+      <word_default>Closed Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>like_ucfirst_untrack_project</word_key>
+      <word_default>Stop Tracking Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>like_ucfirst_track_project</word_key>
+      <word_default>Track Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_watch_project_stop</word_key>
+      <word_default>Stop Watching Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>like_totalcount_track_project</word_key>
+      <word_default>%d members(s) track this project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_watch_project_start</word_key>
+      <word_default>Watch Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_start_issue_cant</word_key>
+      <word_default>Cannot start a new Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_unlike</word_key>
+      <word_default>Unlike and stop notifications</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_rss_alt</word_key>
+      <word_default>Subscribe to this project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_start_issue</word_key>
+      <word_default>Start New Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_ver_save</word_key>
+      <word_default>Save Versions</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_ver_staff</word_key>
+      <word_default>Staff-Only</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_view</word_key>
+      <word_default>View:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_view_new_issues</word_key>
+      <word_default>View New Issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_watch</word_key>
+      <word_default>Watch Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_ver_none</word_key>
+      <word_default><![CDATA[There are no versions for this project, click 'Add Version' to create one now.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_ver_nva</word_key>
+      <word_default>No Version Assigned</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_ver_open</word_key>
+      <word_default>Open</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_ver_remove</word_key>
+      <word_default>Remove</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_ver_remove_1</word_key>
+      <word_default>Before this version can be deleted, we need to know where you would like to send all existing issues to. Please select a new version to send issues to below.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_ver_remove_2</word_key>
+      <word_default><![CDATA[Please note that the version will <strong>NOT</strong> be deleted until you click 'Save Project' on the main form, clicking 'Remove' simply marks it for deletion for later.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_ver_new_ver</word_key>
+      <word_default>New Version</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_ver_locked</word_key>
+      <word_default>Locked</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_ver_cancel</word_key>
+      <word_default>Cancel</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_ver_add</word_key>
+      <word_default>Add Version</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_version</word_key>
+      <word_default>Version</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_versions</word_key>
+      <word_default>Versions</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_version_type</word_key>
+      <word_default>Version Type</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_version_default</word_key>
+      <word_default>Default</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_unwatch</word_key>
+      <word_default>Stop Watching Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_subprojects</word_key>
+      <word_default>Subprojects</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_title</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_started</word_key>
+      <word_default>Started by</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_stats</word_key>
+      <word_default>Stats</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_sort_by_replies</word_key>
+      <word_default>Order: Replies</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_sort_by_severity</word_key>
+      <word_default>Order: Severity</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_sort_by_start</word_key>
+      <word_default>Order: Issue Started</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_sort_submit</word_key>
+      <word_default>Go</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_sort_by_last_poster</word_key>
+      <word_default>Order: Last Poster</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_sort_by_poster</word_key>
+      <word_default>Order: Topic Starter</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_sort_by_issue</word_key>
+      <word_default>Order: Issue Title</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_sort_by_date</word_key>
+      <word_default>Order: Last Post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_single_page</word_key>
+      <word_default><![CDATA[&nbsp;]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_sort_by_attach</word_key>
+      <word_default>Order: Attachments</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_show_today</word_key>
+      <word_default>From: Today</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_show_year</word_key>
+      <word_default>From: 365 days</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_show_all</word_key>
+      <word_default>Show All</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_show_90_days</word_key>
+      <word_default>From: 90 days</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_show_60_days</word_key>
+      <word_default>From: 60 days</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_show_7_days</word_key>
+      <word_default>From: 7 days</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_show_5_days</word_key>
+      <word_default>From: 5 days</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_see_all</word_key>
+      <word_default><![CDATA[See all issues you've reported]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_show_10_days</word_key>
+      <word_default>From: 10 days</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_show_15_days</word_key>
+      <word_default>From: 15 days</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_show_20_days</word_key>
+      <word_default>From: 20 days</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_show_25_days</word_key>
+      <word_default>From: 25 days</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_show_30_days</word_key>
+      <word_default>From: 30 days</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_rss_category</word_key>
+      <word_default><![CDATA[RSS Syndication of this project's category]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_rss_channel</word_key>
+      <word_default>Issue Reports From </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_search_item</word_key>
+      <word_default>Search reports</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_rss</word_key>
+      <word_default>RSS Syndication of this project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_posts</word_key>
+      <word_default>posts</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_project</word_key>
+      <word_default>Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_remember_options</word_key>
+      <word_default>Remember these options</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_replies</word_key>
+      <word_default>replies</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_none</word_key>
+      <word_default>There are no reports to display</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_options</word_key>
+      <word_default>Project Options</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_like_type</word_key>
+      <word_default>new issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_listing</word_key>
+      <word_default>Issue Listing</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_multipage_alt</word_key>
+      <word_default>multipage jump</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_name</word_key>
+      <word_default>Tracker:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_item_list3</word_key>
+      <word_default> in project    </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_last_post_by</word_key>
+      <word_default>Last post by:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_legend</word_key>
+      <word_default>Project Legend</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_last_five</word_key>
+      <word_default>Recent Activity in Your Reported Issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_last_post</word_key>
+      <word_default>Last Post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_last_action</word_key>
+      <word_default>Last Action</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_item_list1</word_key>
+      <word_default>Generate report list for issues fixed in </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_item_list2</word_key>
+      <word_default> to (highest) </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_ft_title</word_key>
+      <word_default>Subscribe to this project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_issue_title</word_key>
+      <word_default>Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_issues</word_key>
+      <word_default>issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_enter_keywords</word_key>
+      <word_default>Enter search keywords....</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_fixed_version</word_key>
+      <word_default>Fixed In</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_edit</word_key>
+      <word_default>Edit</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_descending_order</word_key>
+      <word_default>Z-A</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_by</word_key>
+      <word_default>By:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_ascending_order</word_key>
+      <word_default>A-Z</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_my_issues</word_key>
+      <word_default>My Issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_page_go_to</word_key>
+      <word_default>Go to page</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_project_all</word_key>
+      <word_default>All Projects</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_mark_as_read</word_key>
+      <word_default>Mark this project as read</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_like</word_key>
+      <word_default>Like and receive notifications on updates</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_issue_started_on</word_key>
+      <word_default>Issue started on</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_issue_hot</word_key>
+      <word_default>Hot</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_issue_attach</word_key>
+      <word_default>Attachments</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_issuefilter_open</word_key>
+      <word_default>Issues: Open</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_issuefilter_locked</word_key>
+      <word_default>Issues: Locked</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_issuefilter_istarted</word_key>
+      <word_default>Issues: I Started</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_issuefilter_hot</word_key>
+      <word_default>Issues: Hot</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_issuefilter_ireplied</word_key>
+      <word_default>Issues: I Replied</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_cf_dd_all_post</word_key>
+      <word_default> --</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_issuefilter_all</word_key>
+      <word_default>Issues: All</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bt_cf_dd_all_pre</word_key>
+      <word_default>-- ALL </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_project</word_pack>
+      <word_key>bad_filter</word_key>
+      <word_default>Unable to continue because you specified an invalid filter value</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_search</word_pack>
+      <word_key>s_search_posts</word_key>
+      <word_default>Posts only</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_search</word_pack>
+      <word_key>s_tracker_display</word_key>
+      <word_default><![CDATA[<strong>Display</strong> results]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_search</word_pack>
+      <word_key>s_tracker_asposts</word_key>
+      <word_default>As posts</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_search</word_pack>
+      <word_key>s_tracker_asissues</word_key>
+      <word_default>As an issue list</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_search</word_pack>
+      <word_key>tracker_sort_title</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_search</word_pack>
+      <word_key>tracker_sort_posts</word_key>
+      <word_default>Posts</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_search</word_pack>
+      <word_key>s_project</word_key>
+      <word_default>Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_search</word_pack>
+      <word_key>s_issue</word_key>
+      <word_default>Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_search</word_pack>
+      <word_key>followed_type__issues</word_key>
+      <word_default>Issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_search</word_pack>
+      <word_key>s_search_issues_posts</word_key>
+      <word_default><![CDATA[Issue titles & posts]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_search</word_pack>
+      <word_key>followed_type__projects</word_key>
+      <word_default>Projects</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_search</word_pack>
+      <word_key>s_find_project</word_key>
+      <word_default><![CDATA[Find in <strong>project</strong>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_search</word_pack>
+      <word_key>s_tracker_content</word_key>
+      <word_default><![CDATA[<strong>Search</strong> in]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_search</word_pack>
+      <word_key>bt_search_message</word_key>
+      <word_default><![CDATA[These additional filters can be used to find <strong>reported issues</strong>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_fixed_in_ver</word_key>
+      <word_default>fixed in version</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_added_reply</word_key>
+      <word_default>added a reply</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_added_att</word_key>
+      <word_default>added an attachment</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_created_issue</word_key>
+      <word_default>created issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_issue</word_key>
+      <word_default>issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_to</word_key>
+      <word_default>to</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_changed</word_key>
+      <word_default>changed</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_issue_started</word_key>
+      <word_default>Issue Started</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_changed_reop</word_key>
+      <word_default>Issue Reopened</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_changed_clos</word_key>
+      <word_default>Issue Locked</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_changed_att</word_key>
+      <word_default>Attachment Added</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_changed_cf</word_key>
+      <word_default>Custom Field Changed</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_expand</word_key>
+      <word_default>Expand</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_entries</word_key>
+      <word_default>entries</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_changed_reply</word_key>
+      <word_default>Reply Added</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_changed_ver</word_key>
+      <word_default>Version Changed</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_return</word_key>
+      <word_default>Return to issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_collapse</word_key>
+      <word_default>Collapse</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_timeline</word_pack>
+      <word_key>bt_timeline_viewing</word_key>
+      <word_default>Viewing Timeline for:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>notify__new_issues</word_key>
+      <word_default>Notify me when a new issue is posted in a project I am watching</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>notify__issue_reply</word_key>
+      <word_default>Notify me of new replies to issues I am watching</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>new_issues</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+<#OWNER#> has just posted a new issue in a project you are watching.
+
+======================================================================
+Project: <#PROJECT#>
+Issue Title: <#ISSUE#>
+
+<#ISSUE_CONTENT#>
+======================================================================
+
+
+You can turn off project notifications by visiting <#URL#>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>subject__new_issues</word_key>
+      <word_default><![CDATA[<a href='%s'>%s</a> has posted a new <a href='%s'>issue</a> in a project you watch]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>issue_reply</word_key>
+      <word_default><![CDATA[<#NAME#>
+
+<#OWNER#> has just replied to an issue you are currently watching.
+
+======================================================================
+Issue Title: <#ISSUE#>
+
+<#ISSUE_CONTENT#>
+======================================================================
+
+You can turn off issue notifications by visiting <#URL#>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>subject__issue_reply</word_key>
+      <word_default><![CDATA[<a href='%s'>%s</a> has replied to an <a href='%s'>issue</a> you are watching]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_goto_next_unread_issue</word_key>
+      <word_default><![CDATA[Next Unread Issue &rarr;]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_go_back_to</word_key>
+      <word_default>Back to %s</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_results_found</word_key>
+      <word_default>Results Found:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_no_old</word_key>
+      <word_default>We could not find any older issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_no_new</word_key>
+      <word_default>We could not find any newer issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_no_issue</word_key>
+      <word_default>We could not find the issue you were trying to find</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_all_releases</word_key>
+      <word_default>All Releases</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_issues_fixed_in</word_key>
+      <word_default>Issues Fixed in</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_no_fixed_issues</word_key>
+      <word_default>No fixed issues were found for the criteria you searched</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_portal_profile_read_issue</word_key>
+      <word_default>View Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_stats_posts</word_key>
+      <word_default>Total Posts</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_portal_latest_issues_title</word_key>
+      <word_default>Latest Issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_portal_last_issue_in</word_key>
+      <word_default>in</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_portal_last_bug_at</word_key>
+      <word_default>at</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_portal_err_no_issues_to_show</word_key>
+      <word_default>There are no bugs to display.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_stats_issues</word_key>
+      <word_default>Issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_stats_public_members</word_key>
+      <word_default>members</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_stats_projects</word_key>
+      <word_default>Projects</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_stats_sub_title</word_key>
+      <word_default>Statistics</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_stats_title</word_key>
+      <word_default>Tracker Statistics</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_stats_anon_members</word_key>
+      <word_default>Anonymous Members</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_active_users</word_key>
+      <word_default>%d user(s) are viewing Tracker (in the past %d minutes)</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_stats_guests</word_key>
+      <word_default>guests</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_active_users_project</word_key>
+      <word_default>%s user(s) are browsing this project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_active_users_title_topic</word_key>
+      <word_default>%s user(s) are reading this issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_location_overview</word_key>
+      <word_default>Reading main Tracker index</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_location_project</word_key>
+      <word_default>Reading index for Project called: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_location_topic</word_key>
+      <word_default>Reading issue in Tracker called: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_error_offline_msg</word_key>
+      <word_default>Users are currently seeing this message:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_error_offline</word_key>
+      <word_default>Tracker is currently offline.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_overview_project_leader</word_key>
+      <word_default>This project is led by</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_js_error_no_permission</word_key>
+      <word_default>Sorry, you do not have permission to edit that post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_js_no_empty_post</word_key>
+      <word_default>You cannot submit an empty post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_view_none</word_key>
+      <word_default>There are no projects to display</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>ip_private</word_key>
+      <word_default>Private</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_page_title</word_key>
+      <word_default>Tracker - </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_page_name</word_key>
+      <word_default>Tracker</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_overview_name</word_key>
+      <word_default>Tracker</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_overview_project</word_key>
+      <word_default>Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_overview_item</word_key>
+      <word_default>Issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_js_delete</word_key>
+      <word_default>Are you sure you wish to delete these posts?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_js_action_canceled</word_key>
+      <word_default>Action canceled!</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_global_no_version</word_key>
+      <word_default>No Version Assigned</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_global_go</word_key>
+      <word_default>Go</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_global_none</word_key>
+      <word_default>None</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_global_version_dd_all</word_key>
+      <word_default>-- ALL VERSIONS --</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_view_unread_post</word_key>
+      <word_default>Go to unread post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_view_sub_projects</word_key>
+      <word_default>Sub-projects: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_ucp_membugs_header</word_key>
+      <word_default><![CDATA[Issues You've Reported]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_view_last_post</word_key>
+      <word_default>Go to latest post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_project_moderator_options</word_key>
+      <word_default>Moderator Options</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_project_mod_prune</word_key>
+      <word_default>Prune / Mass Move</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_total_topics</word_key>
+      <word_default>Total issues in this project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_total_match</word_key>
+      <word_default>Total issues to (re)move</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_type</word_key>
+      <word_default>Matches the issue status</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_title</word_key>
+      <word_default>Prune Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_text</word_key>
+      <word_default><![CDATA[You may remove issues or move issues to another project based on your criteria. To move issues, choose a destination project from the drop down menu. To simply remove the issue, choose 'PRUNE ONLY' from the projects drop down menu.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_sub2</word_key>
+      <word_default>Prune this project!</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_sub1</word_key>
+      <word_default>Check Form Submission</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_result_del</word_key>
+      <word_default>Number of issues deleted: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_result_move</word_key>
+      <word_default>Number of issues moved: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_results</word_key>
+      <word_default>Result</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_replies</word_key>
+      <word_default><![CDATA[Have less than <em>n</em> posts]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_member</word_key>
+      <word_default>Were started by member</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_help</word_key>
+      <word_default>Prune Help</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_dorem</word_key>
+      <word_default>Remove the issues!</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_domove</word_key>
+      <word_default>Move the issue!</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_days2</word_key>
+      <word_default><![CDATA[Have no posts over <em>n</em> days]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_pages</word_key>
+      <word_default>Page: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_per_go</word_key>
+      <word_default><![CDATA[Process <em>n</em> issues per cycle]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune</word_key>
+      <word_default>Manage Issues in project: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_days</word_key>
+      <word_default>Prune Issues Which...</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_prune_action2</word_key>
+      <word_default>Prune or move to</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_error_no_mem</word_key>
+      <word_default>We could not locate a member by that name, please try again</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_ignore_open</word_key>
+      <word_default>Is not a locked issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_optional</word_key>
+      <word_default>All these settings are optional</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_close</word_key>
+      <word_default>Close this window</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_check_text</word_key>
+      <word_default>Prune Confirm</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_action</word_key>
+      <word_default>Prune Action</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_batch_done</word_key>
+      <word_default>%s issues processed so far. %s to go...</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_check_result</word_key>
+      <word_default>Form Check Results</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_mod_ac_prune</word_key>
+      <word_default><![CDATA[PRUNE ONLY, DON'T MOVE]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>in</word_key>
+      <word_default>In</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>by</word_key>
+      <word_default>By</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_or</word_key>
+      <word_default>or</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_stats_member_name</word_key>
+      <word_default>Member Name</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_stats_last_click</word_key>
+      <word_default>Last Click</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_stats_show_by</word_key>
+      <word_default>Show by:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_global_project_dd_all</word_key>
+      <word_default>-- ALL PROJECTS --</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_project_mark_read</word_key>
+      <word_default>Mark Project as Read?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_project_no_new</word_key>
+      <word_default>No New Posts</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_project_new</word_key>
+      <word_default>New Posts</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_overview_mark_read</word_key>
+      <word_default>(Mark Tracker as Read)</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_overview</word_key>
+      <word_default>Project Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_protected</word_key>
+      <word_default>Protected</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>context_search_issue</word_key>
+      <word_default>This issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_badge_private</word_key>
+      <word_default>Private</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>context_search_project</word_key>
+      <word_default>This project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_changed_from</word_key>
+      <word_default>Changed from:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_tracker</word_pack>
+      <word_key>bt_changed_to</word_key>
+      <word_default>changed %s to:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_with_selected</word_key>
+      <word_default>with selected</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_ucp_watched_projects</word_key>
+      <word_default>Watched Projects</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_ucp_reply_since</word_key>
+      <word_default>issue(s) have new replies since your last visit</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_ucp_user_attach</word_key>
+      <word_default>User Attachments</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_sub_added</word_key>
+      <word_default>Your subscription has been added</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_sub_removed</word_key>
+      <word_default>Your subscription has been removed</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_title</word_key>
+      <word_default>Manage Watched Issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_today</word_key>
+      <word_default>Last day</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_weekly_desc</word_key>
+      <word_default>This option will send out a weekly digest showing all new replies for the week</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_view</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_weekly</word_key>
+      <word_default>Weekly Email Digest</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_start</word_key>
+      <word_default>Subscribed on</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_submit</word_key>
+      <word_default>Proceed</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_replies</word_key>
+      <word_default>Replies</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_project</word_key>
+      <word_default>Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_none_title</word_key>
+      <word_default>No Email Notification</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_none_desc</word_key>
+      <word_default>This option will not send out any email notification, but will retain the issue in your subscriptions panel.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_none</word_key>
+      <word_default>There are no subscriptions to show, try selecting a less restrictive date range</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_left</word_key>
+      <word_default>Days Left</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_last_post</word_key>
+      <word_default>Last Post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_issue</word_key>
+      <word_default>Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_immediate_desc</word_key>
+      <word_default>This option will send out a notification immediately after a reply has been made, regardless of your activity.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_delayed_desc</word_key>
+      <word_default><![CDATA[This option will send out a notification if a reply has been made and you're not active on the board.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_header</word_key>
+      <word_default>Current Subscriptions</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_immediate</word_key>
+      <word_default>Immediate Email Notification</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_exp_text</word_key>
+      <word_default><![CDATA[Please choose your notification method.<br />You will receive a notification when a new reply is made to a issue you are subscribed to.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_delete</word_key>
+      <word_default>Unsubscribe</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_deleted</word_key>
+      <word_default>The subscription has been deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_c_project</word_key>
+      <word_default>Project Subscription:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_c_title</word_key>
+      <word_default>Subscription Information</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_c_type</word_key>
+      <word_default>Type</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_daily</word_key>
+      <word_default>Daily Email Digest</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_daily_desc</word_key>
+      <word_default>This option will send out a daily digest showing all new replies for the day</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_day</word_key>
+      <word_default>Last %s days</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_delayed</word_key>
+      <word_default>Delayed Emailed Notification</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_by</word_key>
+      <word_default>By:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_c_issue</word_key>
+      <word_default>Issue Subscription:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_c_change</word_key>
+      <word_default>Change to:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_cancel</word_key>
+      <word_default>Cancel</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs_all</word_key>
+      <word_default>the beginning</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subsf_weekly_desc</word_key>
+      <word_default>This option will send out a weekly digest showing all new issues and all updated issues for the week</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subsf_none_desc</word_key>
+      <word_default>This option will not send out any email notification but will retain the project in your subscriptions panel.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subsf_immediate</word_key>
+      <word_default>Immediate Email Notification</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subsf_immediate_desc</word_key>
+      <word_default>This option will send out a notification immediately after a new issue has been made, regardless of your activity.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subsf_weekly</word_key>
+      <word_default>Weekly Email Digest</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subsf_none_title</word_key>
+      <word_default>No Email Notification</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subsf_delayed</word_key>
+      <word_default>Delayed Emailed Notification</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subsf_delayed_desc</word_key>
+      <word_default><![CDATA[This option will send out a notification if a new issue has been posted and you're not active on the board.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subsf_exp_text</word_key>
+      <word_default><![CDATA[Please choose your notification method.<br />You will receive a notification when a new issue is posted in a project you are subscribed to.  Digests will also include updated issues.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_no_auto_prune</word_key>
+      <word_default>Subscription auto pruning is switched off at present</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_project_subs_header</word_key>
+      <word_default>Manage Watched Projects</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subsf_daily_desc</word_key>
+      <word_default>This option will send out a daily digest showing all new issues and all updated issues for the day</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subsf_daily</word_key>
+      <word_default>Daily Email Digest</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_show_issues_from</word_key>
+      <word_default>Show issues from:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_subs</word_key>
+      <word_default>Issue Tracker</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_project_subs_none</word_key>
+      <word_default>You are not subscribed to any projects at present</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_new_window</word_key>
+      <word_default>New Window</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_in</word_key>
+      <word_default>In:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_f_none</word_key>
+      <word_default>--</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_ft_posts</word_key>
+      <word_default>Replies</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_ft_project</word_key>
+      <word_default>Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_ft_newpost</word_key>
+      <word_default>Start New Issue</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_for</word_key>
+      <word_default>for</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_ft_issues</word_key>
+      <word_default>Issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_ft_last_post</word_key>
+      <word_default>Last Post</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_by</word_key>
+      <word_default>By:</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>tracker_auto_prune</word_key>
+      <word_default>Note: Subscriptions are pruned if there is no reply to the issue after %s days</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>public_ucp</word_pack>
+      <word_key>issue_title</word_key>
+      <word_default>Issue title</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

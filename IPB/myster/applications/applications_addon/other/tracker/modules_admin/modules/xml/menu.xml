@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Manage Modules</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Modules</subitemtitle>
+					<subsection>modules</subsection>
+					<subitemurl>do=overview</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		
+		<item>
+			<title>Manage Global Fields</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Global Fields</subitemtitle>
+					<subsection>fields</subsection>
+					<subitemurl>do=overview</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

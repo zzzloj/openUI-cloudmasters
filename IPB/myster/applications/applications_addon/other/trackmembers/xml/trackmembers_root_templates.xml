@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="trackmembers" templategroups="a:1:{s:17:&quot;skin_trackmembers&quot;;s:5:&quot;exact&quot;;}">
+  <templategroup group="skin_trackmembers">
+    <template>
+      <template_group>skin_trackmembers</template_group>
+      <template_content><![CDATA[<div class='general_box clearfix'>
+	<h3>{$this->lang->words['track_members']}</h3>
+	<ul class='ipsPad'>	
+		<if test="$member['member_tracked'] == 0">
+			<li><a href='{parse url="app=trackmembers&amp;module=core&amp;section=trackmembers&amp;do=track&amp;mid={$member['member_id']}" seotitle="{$member['members_seo_name']}" template="false" base="public"}'><img src="{$this->settings['public_dir']}style_extra/trackmembers/track.png"> {$this->lang->words['track_this_member']}</a></li>
+		<else />
+			<li><a href='{parse url="app=trackmembers&amp;module=core&amp;section=trackmembers&amp;mid={$member['member_id']}" seotitle="{$member['members_seo_name']}" template="false" base="public"}'><img src="{$this->settings['public_dir']}style_extra/trackmembers/logs.png"> {$this->lang->words['track_view_logs']}</a></li>
+			<li><a id='showSetupPopup' href='#'><img src="{$this->settings['public_dir']}style_extra/trackmembers/settings.png"> {$this->lang->words['track_change_settings']}</a></li>
+			<li><a href='{parse url="app=trackmembers&amp;module=core&amp;section=trackmembers&amp;do=untrack&amp;mid={$member['member_id']}" seotitle="{$member['members_seo_name']}" template="false" base="public"}'><img src="{$this->settings['public_dir']}style_extra/trackmembers/stoptrack.png"> {$this->lang->words['track_stop_tracking']}</a></li>											
+		</if>
+	</ul>
+</div>
+<script type='text/javascript'>
+	var trackmemberpopup = null;
+	$( 'showSetupPopup' ).observe( 'click', function( e )
+	{
+		var _url = ipb.vars['base_url'] + 'app=trackmembers&module=ajax&section=setup&mid={$member['member_id']}&secure_key=' + ipb.vars['secure_hash'];
+		
+		trackmemberpopup = new ipb.Popup( 'trackMemberSetup', 
+		{ 
+			type: 'modal',
+			ajaxURL: _url,
+			hideAtStart: false,
+			w: '600px',
+			h: 640 
+		});
+	});
+</script>]]></template_content>
+      <template_name>showProfileStuff</template_name>
+      <template_data>$member</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_trackmembers</template_group>
+      <template_content><![CDATA[<h3>Tracking setup for '{$memberData['members_display_name']}'</h3>
+<div class='fixed_inner ipsBox'>
+	<if test="isLargeTouch:|:$this->registry->output->isLargeTouchDevice()">
+		<div class='message' style='margin-bottom: 5px;'>{$this->lang->words['scroll_tip']}</div>
+	</if>
+	<php>//debug( $formElements );</php>
+	<div class='ipsBox_container general_box'>
+		<form action="{parse url="app=trackmembers&module=ajax&section=setup&mid={$memberData['member_id']}&do=save" base="public"}" method='post' id='trackMembersSetupForm'>
+			<foreach loop="$formElements as $title => $data">
+				<fieldset class="row1">
+					<h4 class='bar'>{$this->lang->words[ $title ]}</h4>
+					<ul class='ipsPad'>
+						<foreach loop="$data as $key => $lang">
+							<li class='field checkbox'>
+								<input class='input_check' type='checkbox' name='{$key}' id='{$key}' value='1' <if test="$formData[ $key ]">checked='checked'</if> <label for="{$key}">{$this->lang->words[ $lang ]}</label>
+							</li>
+						</foreach>
+					</ul>
+				</fieldset>
+			</foreach>
+			<fieldset class='submit clear'>
+				<input type='hidden' name='secure_key' value='{$this->member->form_hash}' />
+				<input type='submit' value='{$this->lang->words['save']}' class='input_submit' accesskey='s' /> {$this->lang->words['or']} <span class='cancel'>{$this->lang->words['cancel']}</span>
+			</fieldset>
+		</form>
+	</div>
+</div>
+<script type='text/javascript'>
+	$( 'trackMembersSetupForm' ).observe( 'submit', function( e )
+	{
+		$( 'trackMembersSetupForm' ).request(
+		{
+			onSuccess: function(t)
+			{
+				ipb.global.showInlineNotification( 'Tracking settings successfully saved...' );
+			}
+		});
+		Event.stop( e );
+		trackmemberpopup.hide();
+		
+	});
+</script>]]></template_content>
+      <template_name>showSetupPopup</template_name>
+      <template_data>$memberData, $formElements, $formData</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_trackmembers</template_group>
+      <template_content><![CDATA[<style>
+.track_member{margin-top: 10px;}
+</style>
+<div class='ipsBox clear vcard' id='profile_background'>
+	<div class='ipsLayoutclearfix'>
+		<!--<div class='ipsVerticalTabbed_tabs ipsLayout_left' id='profile_tabs'>
+			<p class='short photo_holder'>
+				<img class="ipsUserPhoto" id='profile_photo' src='{$member['pp_main_photo']}' alt="{parse expression="sprintf($this->lang->words['users_photo'],$member['members_display_name'])"}"  />
+			</p>
+			<if test="$member['show_warn']">
+				<div class='warn_panel clear ipsType_small'>
+					<strong><a href='{parse url="app=members&amp;module=profile&amp;section=warnings&amp;member={$member['member_id']}&amp;from_app=members" base="public"}' id='warn_link_xxx_{$member['member_id']}' title='{$this->lang->words['warn_view_history']}'>{parse expression="sprintf( $this->lang->words['warn_status'], $member['warn_level'] )"}</a></strong>
+				</div>
+			</if>
+		</div>-->
+		<div class='ipsBox_container' id='profile_content'>
+			<div class='ipsPad'>
+				<div id='profile_content_main'>
+					<if test="hasVariable:|:$this->settings['member_topic_avatar_max']">	
+						<img itemprop="image" src='{$member['pp_main_photo']}' class='ipsUserPhoto ipsUserPhoto_variable' style='float: left; position: relative; max-width: 120px;' />
+					<else />
+						<img itemprop="image" src='{$member['pp_thumb_photo']}' class='ipsUserPhoto ipsUserPhoto_large' style='float: left; position: relative; max-width: 120px;' />
+					</if>
+					<div id='user_info_cell' style='padding-left: 10px;'>
+						<h1 class='ipsType_pagetitle'>
+							<span class='fn nickname'>{$member['members_display_name']}</span>
+						</h1>
+						{$this->lang->words['m_member_since']} {parse date="$member['joined']" format="DATE"}<br />
+						<if test="hasWarns:|:!empty( $warns )">
+							<foreach loop="warnsLoop:array( 'ban', 'suspend', 'rpa', 'mq' ) as $k">
+								<if test="warnIsSet:|:isset( $warns[ $k ] )">
+									<span class='ipsBadge ipsBadge_red<if test="warnClickable:|:$warns[ $k ]"> clickable</if>' <if test="warnPopup:|:$warns[ $k ]">onclick='warningPopup( this, {$warns[ $k ]} )'</if>>{$this->lang->words[ 'warnings_profile_badge_' . $k ]}</span>
+								</if>
+							</foreach>
+						</if>
+						<if test="$member['_online']">
+							<span class='ipsBadge ipsBadge_green reset_cursor' data-tooltip="{parse expression="strip_tags($member['online_extra'])"}">{$this->lang->words['online_online']}</span>
+						<else />
+							<span class='ipsBadge ipsBadge_lightgrey reset_cursor'>{$this->lang->words['online_offline']}</span>
+						</if>
+						<span class='desc lighter'>{$this->lang->words['m_last_active']} {$member['_last_active']}</span> 
+					</div>
+                    <if test="userStatus:|:$status['status_id']">
+                    <div id='user_status_cell'>
+                        <div id='user_latest_status'>
+                            <div>
+                                {parse expression="IPSText::truncate( strip_tags( $status['status_content'] ), 180 )"}
+                                <span class='ipsType_smaller desc lighter blend_links'><a href='{parse url="app=members&amp;module=profile&amp;section=status&amp;type=single&amp;status_id={$status['status_id']}" seotitle="true" template="members_status_single" base="public"}'>{$this->lang->words['ps_updated']} {parse date="$status['status_date']" format="manual{%d %b}" relative="true"} &middot; {parse expression="intval($status['status_replies'])"} {$this->lang->words['ps_comments']}</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    </if>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class='ipsBox_container track_member' id='logs'>
+			<div class='ipsPad'>
+				<div class='ipsFilterbar maintitle'>				
+					<ul class='ipsList_inline ipsType_small'>
+						<li <if test="$this->request['sort_key'] == 'date' and $this->request['sort_by'] == 'Z-A'">class='active'</if>><a href='{parse url="app=trackmembers&module=core&section=trackmembers&mid={$member['member_id']}&amp;sort_key=date&amp;sort_by=Z-A" base="public"}' rel='nofollow'>Date</a></li>
+						<li <if test="$this->request['sort_key'] == 'app' and $this->request['sort_by'] == 'A-Z'">class='active'</if>><a href='{parse url="app=trackmembers&module=core&section=trackmembers&mid={$member['member_id']}&amp;sort_key=app&amp;sort_by=A-Z" base="public"}' rel='nofollow'>Action</a></li>
+						<li><a href='#log_filter_menucontent' id='log_filter'>Custom <img src="{$this->settings['img_url']}/useropts_arrow.png" /></a></li>
+					</ul>
+				</div>
+				<div id='log_filter_menucontent' class='ipbmenu_content ipsPad' style='display: none'>
+					<form id='filter_form' action="{parse url="app=trackmembers&module=core&section=trackmembers&mid={$member['member_id']}&amp;changefilters=1" base="public"}" method="post">
+						<strong>{$this->lang->words['show_log_type']}</strong><br />
+						<select name="logfilter" id='log_filter' class='input_select'>{$footer_filter['topic_filter']}</select>
+						<br /><br />
+						
+						<strong>{$this->lang->words['filter_sort']}</strong><br />
+						<select name="sort_key" id='sort_by' class='input_select'>{$footer_filter['sort_by']}</select>
+						<br /><br />
+						
+						<strong>{$this->lang->words['filter_direction']}</strong><br />
+						<select name="sort_order" id='direction' class='input_select'>{$footer_filter['sort_order']}</select>
+						<br /><br />
+						
+						<input type="submit" value="{$this->lang->words['sort_submit']}" class="input_submit" />
+					</form>
+				</div>
+				<script type='text/javascript'>
+					new ipb.Menu( $('log_filter'), $('log_filter_menucontent'), { stopClose: true } );
+				</script>
+				<table class='ipb_table'>
+					<tr class='header'>
+						<th scope='col' style='width: 25%'>Date</th>
+						<th scope='col' style='width: 55%'>Description</th>
+						<th scope='col' style='width: 20%'>Action</th>
+					</tr>
+					<if test="logs:|:is_array( $logs ) AND count( $logs )">
+						{parse striping="logs" classes="row1,row2 altrow"}
+						<foreach loop="logs:$logs as $mid => $r">
+							<tr class='{parse striping="logs"}'>
+								<td>{parse date="$r['date']" format="SHORT"}</td>
+								<td>{$r['description']}</td>
+								<td align='center'>{$r['app']}</td>
+							</tr>
+						</foreach>
+					<else />
+						<tr>
+							<td colspan="6"><em>{$this->lang->words['track_nologs']}</em></td>
+						</tr>
+					</if>
+				</table>
+			</div>
+			<div class='topic_controls clear ipsPad'>
+				{$pages}
+			</div>
+		</div>
+	</div>
+</div>]]></template_content>
+      <template_name>trackMemberLogs</template_name>
+      <template_data>$logs, $member, $status, $pages, $footer_filter</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

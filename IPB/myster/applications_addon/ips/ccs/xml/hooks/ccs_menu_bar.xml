@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name>IP.Content Menu Bar</hook_name>
+      <hook_desc>Manages the primary navigation menu bar for IP.Content</hook_desc>
+      <hook_author>Invision Power Services, Inc.</hook_author>
+      <hook_email>support@invisionpower.com</hook_email>
+      <hook_website>http://invisionpower.com</hook_website>
+      <hook_update_check/>
+      <hook_requirements><![CDATA[a:3:{s:21:"required_applications";a:0:{}s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+      <hook_version_human>1.0.0</hook_version_human>
+      <hook_version_long>10000</hook_version_long>
+      <hook_extra_data/>
+      <hook_key>ccs_menu_bar</hook_key>
+      <hook_global_caches>ccs_menu</hook_global_caches>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>contentMenuBar.php</hook_file_real>
+      <hook_type>skinHooks</hook_type>
+      <hook_classname>contentMenuBar</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:11:"skin_global";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[
+class contentMenuBar extends skin_global(~id~)
+{
+//===========================================================================
+// <ips:global_board_header:desc::trigger:>
+//===========================================================================
+function globalTemplate( $html, $documentHeadItems, $css, $jsModules, $metaTags, array $header_items, $items=array(), $footer_items=array(), $stats=array()) {
+
+	$classToLoad	= IPSLib::loadLibrary( IPSLib::getAppDir('ccs') . '/sources/hooks.php', 'ccsHooks', 'ccs' );
+	$ccsHooks		= new $classToLoad( $this->registry );
+	
+	$header_items['primary_navigation_menu']	= $ccsHooks->menuBar( $header_items['applications'] );
+	
+	return parent::globalTemplate( $html, $documentHeadItems, $css, $jsModules, $metaTags, $header_items, $items, $footer_items, $stats );
+}
+}]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings/>
+  <hookextras_language/>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates/>
+  <hookextras_css/>
+  <hookextras_replacements/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

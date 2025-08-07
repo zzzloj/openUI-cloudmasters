@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>ggt_photoshop</conf_title_keyword>
+      <conf_title_title><![CDATA[ [GGT_31] Photoshop v1.0.2]]></conf_title_title>
+      <conf_title_desc>This modification will allow users to create, edit and save images directly from your website.</conf_title_desc>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>photoshop</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Excluded Groups</conf_title>
+      <conf_description>Select the group(s) that will not be able to see the application.</conf_description>
+      <conf_group>50</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>ggt_photoshop_xgroups</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+    if ( is_array($_POST['ggt_photoshop_xgroups']) )
+    {
+        $_POST['ggt_photoshop_xgroups'] = implode(",",$_POST['ggt_photoshop_xgroups']);
+    }
+    else
+    {
+        $_POST['ggt_photoshop_xgroups'] = "";
+    }
+    
+    $key = 'ggt_photoshop_xgroups';
+}
+if ( $show == 1 )
+{
+    $key = 'ggt_photoshop_xgroups[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group>Permissions</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ggt_photoshop</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

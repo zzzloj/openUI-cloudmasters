@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<permissions>
+	<group>
+		<grouptitle>Sorteios</grouptitle>
+		<grouplang>sorteios</grouplang>
+		<items>
+			<item>
+				<key>manage_settings</key>
+				<string>Pode editar as configurações do aplicativo?</string>
+			</item>
+			<item>
+				<key>manage_raffles</key>
+				<string>Pode criar/editar sorteios?</string>
+			</item>
+			<item>
+				<key>manage_winners</key>
+				<string>Pode sortear vencedores?</string>
+			</item>
+		</items>
+	</group>	
+</permissions>

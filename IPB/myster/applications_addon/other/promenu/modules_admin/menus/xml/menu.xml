@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<menu>
+		<tabitems>
+			<item>
+				<title>Header Group</title>
+				<subitems>
+					<subitem>
+						<subitemtitle>Header Group</subitemtitle>
+						<subsection>menus</subsection>
+						<subitemurl>key=header</subitemurl>
+					</subitem>
+				</subitems>
+			</item>
+			<item>
+				<title>Primary Group</title>
+				<subitems>
+					<subitem>
+						<subitemtitle>Primary Group</subitemtitle>
+						<subsection>menus</subsection>
+						<subitemurl>key=primary</subitemurl>
+					</subitem>
+				</subitems>
+			</item>
+			<item>
+				<title>Footer Group</title>
+				<subitems>
+					<subitem>
+						<subitemtitle>Footer Group</subitemtitle>
+						<subsection>menus</subsection>
+						<subitemurl>key=footer</subitemurl>
+					</subitem>
+				</subitems>
+			</item>
+			<item>
+				<title>Site Group</title>
+				<subitems>
+					<subitem>
+						<subitemtitle>Site Group</subitemtitle>
+						<subsection>menus</subsection>
+						<subitemurl>key=site</subitemurl>
+					</subitem>
+				</subitems>
+			</item>
+			<item>
+				<title>Mobile Group</title>
+				<subitems>
+					<subitem>
+						<subitemtitle>Mobile Group</subitemtitle>
+						<subsection>menus</subsection>
+						<subitemurl>key=mobile</subitemurl>
+					</subitem>
+				</subitems>
+			</item>
+	</tabitems>
+</menu>

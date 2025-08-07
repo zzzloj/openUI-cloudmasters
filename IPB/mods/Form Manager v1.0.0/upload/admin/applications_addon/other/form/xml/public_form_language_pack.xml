@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_external</word_pack>
+      <word_key>where_main</word_key>
+      <word_default>Viewing Form Manager</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_external</word_pack>
+      <word_key>where_form</word_key>
+      <word_default>Viewing Form:</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_external</word_pack>
+      <word_key>editor_form_forms</word_key>
+      <word_default>Form Manager</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_external</word_pack>
+      <word_key>submitted</word_key>
+      <word_default>Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_external</word_pack>
+      <word_key>by</word_key>
+      <word_default>By</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>form_confirm_message</word_key>
+      <word_default>Thank you, your form submission has been submitted.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>confirm_email_message</word_key>
+      <word_default>Thank you, your form submission has been received.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>confirm_email_subject</word_key>
+      <word_default>Form submission received</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>field_required</word_key>
+      <word_default><![CDATA[Please go back and fill in the <strong><#EXTRA#></strong> field.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>submit_wait_error</word_key>
+      <word_default><![CDATA[Please wait <strong><#EXTRA#></strong> minutes before submitting again.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>captcha_error</word_key>
+      <word_default>Please go back and check the captcha was entered correctly.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>log_deleted</word_key>
+      <word_default>Log has been deleted.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>no_checked_boxes</word_key>
+      <word_default>Please go back and check a checkbox.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>forms_submitted</word_key>
+      <word_default>Form Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>secure_key_error</word_key>
+      <word_default>Problem with authorization key, please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>log_reply_sent</word_key>
+      <word_default>Log reply has been sent.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>email_format_issue</word_key>
+      <word_default>Please go back and check the format of all email addresses.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>log_reply</word_key>
+      <word_default>Log Reply</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>required_fields</word_key>
+      <word_default>Please go back and fill in all fields that are marked required.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>no_moderate_logs_perms</word_key>
+      <word_default>You do not have permission to moderate logs.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>log</word_key>
+      <word_default>Log</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>no_fields_for_form</word_key>
+      <word_default>There are no fields added to this form.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>form_logs</word_key>
+      <word_default>Form Logs</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>no_forms_display</word_key>
+      <word_default>There are currently no forms to display.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>no_form_selected</word_key>
+      <word_default>No form has been selected.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>no_view_forms_perms</word_key>
+      <word_default>No permission to view this form.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>no_form_id_match</word_key>
+      <word_default>No forms match the id provided.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>no_log_id_match</word_key>
+      <word_default>No logs match the id provided.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>title</word_key>
+      <word_default>Forms</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>form_submitted</word_key>
+      <word_default>Form Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>latest_log</word_key>
+      <word_default>Latest Log</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>form_name</word_key>
+      <word_default>Form Name</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>view_form</word_key>
+      <word_default>View Form</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>last_log_by</word_key>
+      <word_default>Last log by</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>by</word_key>
+      <word_default>By</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>no_logs_display</word_key>
+      <word_default>No logs to display.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>sending</word_key>
+      <word_default>Sending</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>required_fields_warning</word_key>
+      <word_default>Required fields</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>submit_form</word_key>
+      <word_default>Submit Form</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>select_subject</word_key>
+      <word_default>Select Subject</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>proceed</word_key>
+      <word_default>Proceed</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>go_to_log</word_key>
+      <word_default>Go to Log</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>reply</word_key>
+      <word_default>Reply</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>print</word_key>
+      <word_default>Print</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>log_date</word_key>
+      <word_default>Log Date</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>member_name</word_key>
+      <word_default>Member Name</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>custom</word_key>
+      <word_default>Custom</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>sort_by</word_key>
+      <word_default>Sort By</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>ip_address</word_key>
+      <word_default>IP Address</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>sort_order</word_key>
+      <word_default>Sort Order</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>descending</word_key>
+      <word_default>Descending (Z-A)</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>ascending</word_key>
+      <word_default>Ascending (A-Z)</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>results_per_page</word_key>
+      <word_default>Results Per Page</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>submit</word_key>
+      <word_default>Submit</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>submitter</word_key>
+      <word_default>Submitter</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>in</word_key>
+      <word_default>In</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>delete</word_key>
+      <word_default>Delete</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>sender_email</word_key>
+      <word_default>Sender Email</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>receiver_email</word_key>
+      <word_default>Receiver Email</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>subject</word_key>
+      <word_default>Subject</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>reply_message</word_key>
+      <word_default>Reply Message</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>send_reply</word_key>
+      <word_default>Send Reply</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>view_logs</word_key>
+      <word_default>View Logs</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>my_forms</word_key>
+      <word_default>My Forms</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>dropdown</word_key>
+      <word_default>Dropdown</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>view_log</word_key>
+      <word_default>View Log</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>log_submitter</word_key>
+      <word_default>Log Submitter</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>view_other_member_logs</word_key>
+      <word_default>View other logs by this member</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>log_details</word_key>
+      <word_default>Log Details</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>submitted</word_key>
+      <word_default>Submitted</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>member_ip</word_key>
+      <word_default>Member IP</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>form</word_key>
+      <word_default>Form</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>log_custom_fields</word_key>
+      <word_default>Log Custom Fields</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>field</word_key>
+      <word_default>Field</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>value</word_key>
+      <word_default>Value</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>public_form</word_pack>
+      <word_key>please_confirm</word_key>
+      <word_default>Please confirm this action?</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_title_title>Global Settings</conf_title_title>
+      <conf_title_desc/>
+      <conf_title_tab>ProMenu</conf_title_tab>
+      <conf_title_app>promenu</conf_title_app>
+      <conf_title_noshow>1</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>jQuery UI CSS</conf_title>
+      <conf_description>Link to use for jQuery UI css.(can get different css from jquery ui cdn, http://jqueryui.com/download/ or you can leave this blank, and load your jquery UI css thru IPB template system.)</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>promenu_jquery_ui_css</conf_key>
+      <conf_default>http://code.jquery.com/ui/1.9.2/themes/redmond/jquery-ui.css</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>jQuery Remote Load</conf_title>
+      <conf_description>load jQuery remotely. (will also load jQuery UI remotely, where it is used).</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>promenu_menus_remote_jquery</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Disable News &amp; Version Check]]></conf_title>
+      <conf_description><![CDATA[if you don't want the "menus" section to display news or check for new versions, select yes here. this is good if you server has crappy dns lookup servers, or for whatever reason provisionists.com might be down.]]></conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>promenu_checks_api</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Content Block Injection</conf_title>
+      <conf_description>Enabling the content block injection, will give access to the default css and js for content blocks. </conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>promenu_disable_content_css</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Disable &quot;tablet&quot; pop up]]></conf_title>
+      <conf_description><![CDATA[Disable the pop up that appears for touch devices, this will use whatever "behavoir" setting you have listed in the group settings.]]></conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>promenu_disable_tab_pop</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Remove Primary Menu</conf_title>
+      <conf_description>If this is enabled, will completely remove the Primary Menu.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>promenu_menus_kill_primary</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Check Validity</conf_title>
+      <conf_description>used in those rare occassions where all groups are disabled or hidden on skins.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>promenu_check_validity</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Text Copyright</conf_title>
+      <conf_description>Instead of having the image copyright, you can instead use a text based one.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>promenu_text_cp</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>First Name</conf_title>
+      <conf_description>Enter first name used when purchased.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>pro_cop_first</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group>Copyright Removal</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Last Name</conf_title>
+      <conf_description>Enter last name used when purchased.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>pro_cop_last</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Serial Key</conf_title>
+      <conf_description>enter serial key give after purchase.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>pro_cop_rem_key</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Sync Categories</conf_title>
+      <conf_description>If set to yes, this setting will determine if categories linked to database will automatically get added or removed to the menu item associated with them.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>promenu_sync_cats</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group>Syncing</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Sync Forums</conf_title>
+      <conf_description>If set to yes, this setting will determine if forums linked to a menu item with forums attached enable will automatically get added or removed to the menu item associated with them.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>promenu_sync_forums</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Sync Applications</conf_title>
+      <conf_description><![CDATA[If this is set to yes, promenu will automically determine if apps that are being removed or installed or permissions changed, need to be added or removed from promenu (this only applies to promenu's primary group).]]></conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>promenu_sync_apps</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>File Cache</conf_title>
+      <conf_description/>
+      <conf_type>yes_no</conf_type>
+      <conf_key>promenu_use_file_cache</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group>Caching</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>promenu_menus_settings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>promenu_menus_settings_hidden</conf_title_keyword>
+      <conf_title_title><![CDATA[Hidden for good reason&#33;]]></conf_title_title>
+      <conf_title_desc/>
+      <conf_title_tab>ProMenu</conf_title_tab>
+      <conf_title_app>promenu</conf_title_app>
+      <conf_title_noshow>1</conf_title_noshow>
+    </setting>
+  </settinggroup>
+</settingexport>

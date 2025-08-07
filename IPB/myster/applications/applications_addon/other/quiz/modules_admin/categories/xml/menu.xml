@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Категории</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Все категории</subitemtitle>
+					<subsection>categories</subsection>
+					<subitemurl>do=categories</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>         
+			</subitems>
+		</item>
+		<item>
+			<title>Добавить категорию</title>
+			<subitems>
+ 				<subitem>
+					<subitemtitle>Добавить категорию</subitemtitle>
+					<subsection>categories</subsection>
+					<subitemurl>do=add</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>               
+			</subitems>
+		</item>        
+ 
+	</tabitems>
+</menu>

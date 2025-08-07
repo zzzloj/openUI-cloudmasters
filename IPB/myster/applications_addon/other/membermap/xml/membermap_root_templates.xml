@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="membermap" templategroups="a:1:{s:14:&quot;skin_membermap&quot;;s:8:&quot;contains&quot;;}">
+  <templategroup group="skin_membermap">
+    <template>
+      <template_group>skin_membermap</template_group>
+      <template_content><![CDATA[<php>
+  $title = IPSLib::getAppTitle('membermap');
+</php>
+<!DOCTYPE html>
+	<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset={$this->settings['gb_char_set']}" />
+		<title>{$title}</title>
+		<script type='text/javascript'>
+		//<!#^#|CDATA|
+			jsDebug			= {parse expression="intval($this->settings['_jsDebug'])"}; /* Must come before JS includes */
+			USE_RTE			= <if test="userte:|:$this->memberData['members_editor_choice'] == 'rte'">1<else />0</if>;
+			DISABLE_AJAX	= parseInt({$this->settings['disable_text_ajax']}); /* Disables ajax requests where text is sent to the DB; helpful for charset issues */
+			inACP			= false;
+			var isRTL		= false;
+			var rtlIe		= '';
+			var rtlFull		= '';
+			ipb = {};
+			ipb.vars = {};
+		//|#^#]>
+		</script>
+		{parse template="includeJS" group="global" params="array()"}
+		<script type='text/javascript' src='{$this->settings['board_url']}/public/js/ips.membermap.js'></script>
+		<script type='text/javascript'>ipb.membermap.facebook = true; ipb.membermap.baseUrl = '{$this->settings['base_url']}';</script>
+		<script type='text/javascript' src='http://maps.google.com/maps?file=api&amp;v=2&amp;key={$this->settings['membermapGoogleApiKey']}'></script>
+		<link rel="stylesheet" type="text/css" title="Main" media="screen" href="{$this->settings['css_base_url']}style_css/{$this->registry->getClass('output')->skin['_csscacheid']}/membermap.css" />
+	</head>
+<body class='facebook'>
+		<!--[if IE]>
+<style type='text/css'>.ieHide{ display:none; }</style>
+<![endif]-->
+<if test="$this->settings['membermapCluster'] == 1">
+<script type="text/javascript" src="{$this->settings['board_url']}/public/js/3rd_party/markerclusterer/src/markerclusterer.js"></script>
+</if>
+<if test="!empty($message)">
+<p class='message'>
+{$message}
+</p>
+</if>
+<div id='memberMapCanvasWrapper' class='ipsBox'>
+	<ul class='topic_buttons'>
+    	<if test="$this->memberData['member_id'] > 0">
+          <if test="$exists">
+              <if test="$canEdit">
+                  <li><a id='memberMapUpdate' href='#' title='{$this->lang->words['buttonUpdateLocation']}'>{$this->lang->words['buttonUpdateLocation']}</a></li>
+              </if>
+          <else />
+              <if test="$canAdd">
+                  <li><a id='memberMapAdd' href='#' title='{$this->lang->words['buttonAddLocation']}'>{$this->lang->words['buttonAddLocation']}</a></li>
+              </if>
+          </if>
+        </if>
+	</ul>
+			<div id='memberMapCanvas' class='ipsBox_container'></div>
+<p class='markerCount'><em>$markerCount {$this->lang->words['users']} $cMarkerCount {$this->lang->words['cMarkersShownCount']}</em></p>
+<script type='text/javascript'>
+var addForm = new Template("<form id='addMapLocation' action='{$this->settings['base_url']}app=membermap&module=ajax&section=ajax&secure_key={$this->member->form_hash}' method='post'><input type='hidden' value='add' name='action' /><fieldset class='row1'><h3>{$this->lang->words['formAddTitle']}</h3><ul><li class='field'><label for='location'>{$this->lang->words['formLocationLabel']}</label> <input type='text' size='25' name='do' id='location' class='input_text' value='' /></li></ul></fieldset><ul id='addMapList' style='display:none;margin:10px;'><li></li></ul><fieldset class='submit'><input type='submit' accesskey='s' value='{$this->lang->words['formSaveButton']}' id='addMapLocationSubmit' class='input_submit'> or <a tabindex='0' title='{$this->lang->words['formCancelButton']}' class='cancel' href='#'>{$this->lang->words['formCancelButton']}</a></fieldset></form>");
+var updateForm = new Template("<form id='updateMapLocation' action='{$this->settings['base_url']}app=membermap&module=ajax&section=ajax&secure_key={$this->member->form_hash}' method='post'><input type='hidden' value='update' name='action' /><fieldset class='row1'><h3>{$this->lang->words['formUpdateTitle']}</h3><ul><li class='field'><label for='location'>{$this->lang->words['formLocationLabel']}</label> <input type='text' size='25' name='do' id='location' class='input_text' value='' /></li></ul></fieldset><ul id='updateMapList' style='display:none;margin:10px;'><li></li></ul><fieldset class='submit'><input type='submit' accesskey='s' value='{$this->lang->words['formSaveButton']}' id='updateMapLocationSubmit' class='input_submit'> or <a tabindex='0' title='{$this->lang->words['formCancelButton']}' class='cancel' href='#'>{$this->lang->words['formCancelButton']}</a></fieldset></form>");
+</script>
+</div><script type="text/javascript">
+	var bounds = new GLatLngBounds();
+	var map = new GMap2(document.getElementById("memberMapCanvas"));
+document.observe("dom:loaded", function()
+{
+	map.addControl(new GLargeMapControl3D());
+	map.addControl(new GMapTypeControl());
+<if test="$this->settings['membermapScrollZoom'] == 1">
+	map.enableScrollWheelZoom();
+</if>
+	map.setCenter(new GLatLng(0,0), 2);
+<php>
+$count = count($markers);
+$memberMarkers = array();
+$mrkrs = array();
+if($count > 0)
+{
+	foreach ($markers as $marker)
+	{
+		$md5 = md5($marker['lat'].$marker['lon']);
+		$this->mrkrs[$md5][] = $marker;
+		$memberMarkers[] = $marker['memberId'];
+	}
+}
+	$memberProfile = IPSMember::load($memberMarkers, 'profile_portal');
+</php>
+<if test="$this->request['do'] == 'ips'">
+{$htmlContent}
+</if>
+	var markers = [];
+<if test="count($this->mrkrs) > 0">
+<foreach loop="$this->mrkrs as $marker">
+	var point = new GLatLng({$marker[0]['lat']},{$marker[0]['lon']});
+	bounds.extend(point);
+	<if test="$marker[0]['self'] == 1">
+	var marker = ipb.membermap.createMarker(point,""<foreach loop="$marker as $mk">+"{parse template="mapInfoBox" group="skin_membermap" params="$mk['memberData']"}"</foreach>, {icon:ipb.membermap.homeIcon});
+	<else />
+	var marker = ipb.membermap.createMarker(point,""<foreach loop="$marker as $mk">+"{parse template="mapInfoBox" group="skin_membermap" params="$mk['memberData']"}"</foreach>);
+	</if>
+	<if test="$this->settings['membermapCluster'] == 1">
+	markers.push(marker);
+	<else />
+	map.addOverlay(marker);
+	</if>
+</foreach>
+	map.setCenter(bounds.getCenter(), map.getBoundsZoomLevel(bounds));
+	var markerCluster = new MarkerClusterer(map, markers);
+</if>
+});
+</script>
+{$cMarkers}
+</body>
+</html>]]></template_content>
+      <template_name>mapFacebookTemplate</template_name>
+      <template_data><![CDATA[$canAdd, $canEdit, $exists, $markerCount, $cMarkerCount, $markers, $cMarkers='', $message='']]></template_data>
+      <template_updated>1361916520</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_membermap</template_group>
+      <template_content><![CDATA[<if test="count($markers) > 0">
+<script type="text/javascript">
+  var {$pinType}Icon = new GIcon(G_DEFAULT_ICON);
+  {$pinType}Icon.image = "http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld={$pinType}|{$pinColour}";
+  {$pinType}Icon.iconSize = new GSize(20, 33);
+  {$pinType}Icon.iconAnchor = new GPoint(10, 33);
+  <foreach loop="$markers as $marker">
+	var point = new GLatLng({$marker['lat']},{$marker['lon']});
+	bounds.extend(point);
+	var marker = ipb.membermap.createMarker(point,"<p><strong>{$marker['title']}</strong></p><p>{$marker['description']}</p>", {icon:{$pinType}Icon});
+	map.addOverlay(marker);
+  </foreach>
+	map.setCenter(bounds.getCenter(), map.getBoundsZoomLevel(bounds));
+</script>
+</if>]]></template_content>
+      <template_name>mapGoogleCustomMarkers</template_name>
+      <template_data>$pinType, $pinColour, $markers</template_data>
+      <template_updated>1361916520</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_membermap</template_group>
+      <template_content><![CDATA[<!--[if IE]>
+<style type='text/css'>.ieHide{ display:none; }</style>
+<![endif]-->
+<if test="$this->settings['membermapCluster'] == 1">
+<script type="text/javascript" src="{$this->settings['board_url']}/public/js/3rd_party/markerclusterer/src/markerclusterer.js"></script>
+</if>
+<script type="text/javascript">
+	ipb.membermap.facebook = false;
+	var bounds = new GLatLngBounds();
+	var map = new GMap2(document.getElementById("memberMapCanvas"));
+document.observe("dom:loaded", function()
+{
+	map.addControl(new GLargeMapControl3D());
+	map.addControl(new GMapTypeControl());
+<if test="$this->settings['membermapScrollZoom'] == 1">
+	map.enableScrollWheelZoom();
+</if>
+	map.setCenter(new GLatLng(0,0), 2);
+<php>
+if($this->request['do'] == 'ips')
+{
+	$htmlContent = base64_decode('dmFyIHBvaW50ID0gbmV3IEdMYXRMbmcoMzcuMzcxNzM5LC03OS4yNTM4NDIpOwp2YXIgZGVmSWNvbiA9IG5ldyBHSWNvbihHX0RFRkFVTFRfSUNPTik7CmRlZkljb24uaW1hZ2UgPSAiaHR0cDovL3d3dy5zaWx2ZXN0ZXJ3ZWJkZXNpZ25zLmNvbS9tZW1iZXJtYXAvZGVmYXVsdE1hcmtlci5wbmciOwpkZWZJY29uLmljb25TaXplID0gbmV3IEdTaXplKDIwLCAzMyk7CmRlZkljb24uaWNvbkFuY2hvciA9IG5ldyBHUG9pbnQoMTAsIDMzKTsJCQkKdmFyIG1hcmtlciA9IGNyZWF0ZU1hcmtlcihwb2ludCwgIjxkaXYgY2xhc3M9J2xlZnQgZGVmJz48aW1nIHNyYz0naHR0cDovL3d3dy5zaWx2ZXN0ZXJ3ZWJkZXNpZ25zLmNvbS9tZW1iZXJtYXAvZGVmYXVsdC5qcGcnIGFsdD0nQ2hhcmxlcyBXYXJuZXInIC8+PC9kaXY+PGRpdiBjbGFzcz0nbGVmdCB0ZXh0Jz48aDM+PGEgaHJlZj0naHR0cDovL2NvbW11bml0eS5pbnZpc2lvbnBvd2VyLmNvbS91c2VyLzQ5LWNoYXJsZXMvJz5DaGFybGVzIFdhcm5lcjwvYT48L2gzPjxwPjxlbT5JbnZpc2lvbiBQb3dlciBTZXJ2aWNlcywgSW5jLiAtIFByZXNpZGVudDwvZW0+PC9wPjwvZGl2PjxiciBjbGVhcj0nYWxsJy8+Iiwge2ljb246ZGVmSWNvbn0pOwptYXAuYWRkT3ZlcmxheShtYXJrZXIpOwpib3VuZHMuZXh0ZW5kKHBvaW50KTs=');
+}
+$count = count($markers);
+$memberMarkers = array();
+$mrkrs = array();
+if($count > 0)
+{
+	foreach ($markers as $marker)
+	{
+		$md5 = md5($marker['lat'].$marker['lon']);
+		$this->mrkrs[$md5][] = $marker;
+		$memberMarkers[] = $marker['memberId'];
+	}
+}
+	$memberProfile = IPSMember::load($memberMarkers, 'profile_portal');
+</php>
+<if test="$this->request['do'] == 'ips'">
+{$htmlContent}
+</if>
+	var markers = [];
+<if test="count($this->mrkrs) > 0">
+<foreach loop="$this->mrkrs as $marker">
+	<php>
+		$friend = IPSMember::checkFriendStatus( $marker[0]['memberId'] );
+	</php>
+	var point = new GLatLng({$marker[0]['lat']},{$marker[0]['lon']});
+	bounds.extend(point);
+	<if test="$marker[0]['self'] == 1">
+	var marker = ipb.membermap.createMarker(point,""<foreach loop="$marker as $mk">+"{parse template="mapInfoBox" group="skin_membermap" params="$mk['memberData']"}"</foreach>, {icon:ipb.membermap.homeIcon});
+	<else />
+		<if test="$friend">
+	var marker = ipb.membermap.createMarker(point,""<foreach loop="$marker as $mk">+"{parse template="mapInfoBox" group="skin_membermap" params="$mk['memberData']"}"</foreach>, {icon:ipb.membermap.friendIcon});
+		<else />
+	var marker = ipb.membermap.createMarker(point,""<foreach loop="$marker as $mk">+"{parse template="mapInfoBox" group="skin_membermap" params="$mk['memberData']"}"</foreach>);
+		</if>
+	</if>
+	<if test="$this->settings['membermapCluster'] == 1">
+	markers.push(marker);
+	<else />
+	map.addOverlay(marker);
+	</if>
+</foreach>
+	map.setCenter(bounds.getCenter(), map.getBoundsZoomLevel(bounds));
+	var markerCluster = new MarkerClusterer(map, markers);
+</if>
+});
+</script>]]></template_content>
+      <template_name>mapGoogleJavascript</template_name>
+      <template_data>$markers</template_data>
+      <template_updated>1361916520</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_membermap</template_group>
+      <template_content><![CDATA[<php>
+$avatar = IPSMember::buildProfilePhoto($memberData, 'small');
+$memberData['prefix'] = str_replace('"', "'", $memberData['prefix']);
+</php><div class='left def'>{$avatar}</div><div class='left text'><h3><a href='{parse url="showuser={$memberData['member_id']}" template="showuser" seotitle="{$memberData['members_seo_name']}" base="public"}' title='{$this->lang->words['view_profile']}'>{$memberData['members_display_name']}</a><span class='ieHide'>{parse template="user_popup" group="global" params="$memberData['member_id'], $memberData['members_seo_name']"}</span></h3><p>{$memberData['prefix']}{$memberData['g_title']}{$memberData['suffix']}</p><if test="($this->memberData['member_id'] && $member['member_id'] == $this->memberData['member_id']) || $this->memberData['g_is_supmod'] == 1"><p class='remMarker'><a href='{parse url="module=membermap&amp;action=removeMarker&amp;do={$memberData['member_id']}" base="publicWithApp" template="removeMarker" seotitle="false"}' title='{$this->lang->words['modRemoveMarker']}'>{parse replacement="rep_down"} {$this->lang->words['modRemoveMarker']}</a></p></if></div><br clear='all'/>]]></template_content>
+      <template_name>mapInfoBox</template_name>
+      <template_data>$memberData</template_data>
+      <template_updated>1361916520</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_membermap</template_group>
+      <template_content><![CDATA[<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>
+<script type='text/javascript' src='{$this->settings['board_url']}/public/js/ips.membermap.js'></script>
+<div class='general_box ipsPad'>
+	<div id='pinPointMap' style='height: 250px;'></div>
+</div>
+<script type='text/javascript'>
+Event.observe(window, 'load', function(){ipb.membermap.addPinPointMapMarker({$marker['lat']}, {$marker['lon']});});
+</script>]]></template_content>
+      <template_name>mapProfile</template_name>
+      <template_data>$marker</template_data>
+      <template_updated>1361916520</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_membermap</template_group>
+      <template_content><![CDATA[<p class='message'>
+{$message}</p><br class='clear'/>]]></template_content>
+      <template_name>mapStatus</template_name>
+      <template_data>$message</template_data>
+      <template_updated>1361916520</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_membermap</template_group>
+      <template_content><![CDATA[<php>
+  $title = IPSLib::getAppTitle('membermap');
+  $friendCount = count($this->memberData['_cache']['friends']);
+</php>
+	<ul class='topic_buttons'>
+    	<if test="$this->memberData['member_id'] > 0">
+          <if test="$exists">
+              <if test="$canEdit">
+                  <li><a id='memberMapUpdate' href='#' title='{$this->lang->words['buttonUpdateLocation']}'>{$this->lang->words['buttonUpdateLocation']}</a></li>
+              </if>
+              <if test="$canDelete">
+                  <li class='closed'><a id='memberMapDelete' href='#' title='{$this->lang->words['buttonDeleteLocation']}'>{$this->lang->words['buttonDeleteLocation']}</a></li>
+              </if>
+          <else />
+              <if test="$canAdd">
+                  <li><a id='memberMapAdd' href='#' title='{$this->lang->words['buttonAddLocation']}'>{$this->lang->words['buttonAddLocation']}</a></li>
+              </if>
+          </if>
+          <if test="$friendCount > 0">
+            <if test="$this->request['do'] != 'friends'">
+                <li><a id='memberMapFriends' href='{parse url="module=membermap&amp;do=friends" base="publicWithApp" template="friends" seotitle="false"}' title='{$this->lang->words['buttonFriends']}'>{$this->lang->words['buttonFriends']}</a></li>
+            <else />
+                <li><a id='memberMapShowAll' href='{parse url="app=membermap" base="public" template="membermap" seotitle="false"}' title='{$this->lang->words['buttonShowAll']}'>{$this->lang->words['buttonShowAll']}</a></li>
+            </if>
+          </if>
+        </if>
+	</ul>
+<h1 class="ipsType_pagetitle left">{$title}<if test="$this->request['do'] == 'friends'"> - {$this->lang->words['yourFriends']}</if></h1>
+		<div id='memberMapCanvasWrapper' class='ipsBox clear'>
+			<div id='memberMapCanvas' class='ipsBox_container'></div>
+
+<script type='text/javascript'>
+var addForm = new Template("<form id='addMapLocation' action='{$this->settings['base_url']}app=membermap&module=ajax&section=ajax&secure_key={$this->member->form_hash}' method='post'><input type='hidden' value='add' name='action' /><fieldset class='row1'><h3>{$this->lang->words['formAddTitle']}</h3><ul><li class='field'><label for='location'>{$this->lang->words['formLocationLabel']}</label><input type='text' size='50' name='do' id='location' class='input_text' value='' /></li></ul></fieldset><ul id='addMapList' style='display:none;margin:10px;'><li></li></ul><fieldset class='submit'><input type='submit' accesskey='s' value='{$this->lang->words['formSaveButton']}' id='addMapLocationSubmit' class='input_submit'> or <a tabindex='0' title='{$this->lang->words['formCancelButton']}' class='cancel' href='#'>{$this->lang->words['formCancelButton']}</a></fieldset></form>");
+
+var deleteForm = new Template("<form id='deleteMapLocation' method='post' action='{parse url="app=membermap" base="public" template="membermap" seotitle="false"}'><input type='hidden' value='delete' name='action' /><fieldset class='row1'><h3>{$this->lang->words['formDeleteTitle']}</h3><p class='message'>{$this->lang->words['formDeleteText']}</p></fieldset><fieldset class='submit'><input type='submit' tabindex='0' accesskey='s' value='{$this->lang->words['formDeleteButton']}' class='input_submit'> or <a tabindex='0' title='{$this->lang->words['formCancelButton']}' class='cancel' href='#'>{$this->lang->words['formCancelButton']}</a></fieldset></form>");
+
+var updateForm = new Template("<form id='updateMapLocation' action='{$this->settings['base_url']}app=membermap&module=ajax&section=ajax&secure_key={$this->member->form_hash}' method='post'><input type='hidden' value='update' name='action' /><fieldset class='row1'><h3>{$this->lang->words['formUpdateTitle']}</h3><ul><li class='field'><label for='location'>{$this->lang->words['formLocationLabel']}</label><input type='text' size='50' name='do' id='location' class='input_text' value='' /></li></ul></fieldset><ul id='updateMapList' style='display:none;margin:10px;'><li></li></ul><fieldset class='submit'><input type='submit' accesskey='s' value='{$this->lang->words['formSaveButton']}' id='updateMapLocationSubmit' class='input_submit'> or <a tabindex='0' title='{$this->lang->words['formCancelButton']}' class='cancel' href='#'>{$this->lang->words['formCancelButton']}</a></fieldset></form>");
+
+</script>
+</div><p class='markerCount'><em>$markerCount {$this->lang->words['users']} $cMarkerCount {$this->lang->words['cMarkersShownCount']}</em></p>]]></template_content>
+      <template_name>mapTemplate</template_name>
+      <template_data>$canAdd, $canEdit, $canDelete, $exists, $markerCount, $cMarkerCount</template_data>
+      <template_updated>1361916520</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

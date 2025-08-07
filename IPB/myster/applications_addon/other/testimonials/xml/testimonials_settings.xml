@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_title_title>(RC34) Testimonials System</conf_title_title>
+      <conf_title_desc>Settings for this application.</conf_title_desc>
+      <conf_title_tab>(RawCodes)</conf_title_tab>
+      <conf_title_app>testimonials</conf_title_app>
+      <conf_title_noshow>1</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>System Online?</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>testemunhos_systemon</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>General Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Offline Groups</conf_title>
+      <conf_description><![CDATA[Select allowed groups to use Testimonials System even when it's offline]]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>testemunhos_gruposoffline</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['testemunhos_gruposoffline']) )
+	{
+		$_POST['testemunhos_gruposoffline'] = implode(",",$_POST['testemunhos_gruposoffline']);
+	}
+	else
+	{
+		$_POST['testemunhos_gruposoffline'] = "";
+	}
+	
+	$key = 'testemunhos_gruposoffline';
+}
+if ( $show == 1 )
+{
+	$key = 'testemunhos_gruposoffline[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>System Title</conf_title>
+      <conf_description>The title for your system.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>testemunhos_systitle</conf_key>
+      <conf_default>Testimonial System</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Testimonials per page</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>testemunhos_testemunhospp</conf_key>
+      <conf_default>10</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group>View Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Comments per page</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>testemunhos_comentariospp</conf_key>
+      <conf_default>10</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Number of records on Advanced Statistics</conf_title>
+      <conf_description>TOP X Testimonials that will be shown on Advanced Statistcs</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>testemunhos_top</conf_key>
+      <conf_default>10</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Hot Testimonial</conf_title>
+      <conf_description><![CDATA[Number of comments needed to make a 'hot testimonial']]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>testemunhos_hot</conf_key>
+      <conf_default>15</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Default Order of Testimonials and Comments</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>testemunhos_order</conf_key>
+      <conf_default>desc</conf_default>
+      <conf_extra>asc=Ascending (Older first)
+desc=Descending (Newer first)</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Group color on user links</conf_title>
+      <conf_description>If you choose YES, every user link will be formatted according to their group</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>testemunhos_colorusernames</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Moderate new testimonials?</conf_title>
+      <conf_description><![CDATA[If you choose YES, a user with 'CAN APPROVE/UNAPPROVE TESTIMONIALS' must approve it before it's available to users]]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>testemunhos_moderatenew</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group>Posting Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Testimonial Title Max Length</conf_title>
+      <conf_description><![CDATA[Maximum length, in <strong>characters</strong>, for Testimonial Title]]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>testemunhos_maxsizetitle</conf_key>
+      <conf_default>150</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Testimonials and Comments content Max Length</conf_title>
+      <conf_description><![CDATA[Maximum length, in <strong>Kb</strong>, for Testimonials and Comments content]]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>testemunhos_maxsizecontent</conf_key>
+      <conf_default>100</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow the use of emoticons in content?</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>testemunhos_emoticons</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow the use of BBCodes in content?</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>testemunhos_bbcode</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow the use of HTML in content?</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>testemunhos_html</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Show Statistics on index of Testimonials System?</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>testemunhos_showstats</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group>Statistics</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Show Online Users on Testimonials System?</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>testemunhos_showonlineusers</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>17</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable RSS?</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>testemunhos_rss_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>18</conf_position>
+      <conf_start_group>RSS Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>RSS Title</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>testemunhos_rss_title</conf_key>
+      <conf_default>Last Testimonials</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>19</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Number of itens to export</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>testemunhos_rss_items</conf_key>
+      <conf_default>10</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>20</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Create a topic?</conf_title>
+      <conf_description>Do you want to create a topic when a new testimonial has been posted?</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>testemunhos_topic</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>21</conf_position>
+      <conf_start_group>Automatic Topic</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Topic Author</conf_title>
+      <conf_description>User ID that will be the topic author</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>testemunhos_topicauthor</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>22</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Forum</conf_title>
+      <conf_description>If you chose YES on previous setting, choose in which you want to create the topic. Be sure to select a valid forum</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>testemunhos_topicforum</conf_key>
+      <conf_default/>
+      <conf_extra>#show_forums#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['testemunhos_topicforum']) )
+	{
+		$_POST['testemunhos_topicforum'] = implode(",",$_POST['testemunhos_topicforum']);
+	}
+	else
+	{
+		$_POST['testemunhos_topicforum'] = "";
+	}
+	
+	$key = 'testemunhos_topicforum';
+}
+if ( $show == 1 )
+{
+	$key = 'testemunhos_topicforum[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>23</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Topic State</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>testemunhos_topicstate</conf_key>
+      <conf_default>desc</conf_default>
+      <conf_extra>open=Open
+closed=Closed</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>24</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Topic Title</conf_title>
+      <conf_description><![CDATA[Default title for the topic.<br />
+	  You can use:<br /><strong>{author}</strong> = Testimonial author]]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>testemunhos_topictitle</conf_key>
+      <conf_default>New Testimonial, by {author}!</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>25</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Topic Template</conf_title>
+      <conf_description><![CDATA[Default content for the topic.<br />
+	  You can use:<br /><strong>{titulo}</strong> = Testimonial title<br /><strong>{url}</strong> = Testimonial URL<br /><strong>{autor}</strong> = Testimonial author]]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>testemunhos_topictemplate</conf_key>
+      <conf_default><![CDATA[Hi!<br /><br />{author} just posted a new testimonial.<br /><br />Read: [url={url}]{title}[/url].]]></conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>26</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Show Announcement?</conf_title>
+      <conf_description><![CDATA[If you want to show an announcement, choose in which pages to show or choose the option "<strong>NO ANNOUNCEMENT</strong>" to disable it]]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>testemunhos_announcment</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra>0=NO ANNOUNCEMENT
+1=Testimonials List
+2=Testimonial View
+3=Posting a Testimonial
+4=All Pages</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>27</conf_position>
+      <conf_start_group>Announcments</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Type</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>testemunhos_tipoanuncio</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra>message error=Message Error
+message=Message
+general_box=General Box</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>28</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Announcement Text</conf_title>
+      <conf_description>Enter the announcement text that will be shown in pages you selected above.</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>testemunhos_anuncio</conf_key>
+      <conf_default>Announcement!</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>29</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Send PMs?</conf_title>
+      <conf_description>Do you want to send a PM to the testimonial author when a testimonial is approved/unapproved?</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>testemunhos_sendpm</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>30</conf_position>
+      <conf_start_group>PM Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Type PM Author</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>testemunhos_autormps_tipo</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra>1=Specific Author
+2=Moderator</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>31</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>PM Author</conf_title>
+      <conf_description><![CDATA[If you choose "Specific Author" on the previous setting, enter the User ID that will be the PM Author]]></conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>testemunhos_autormps</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>32</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow Reply to PM?</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>testemunhos_reply</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>33</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>PM Approval Title</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>testemunhos_mpaprovacao_titulo</conf_key>
+      <conf_default>Testimonial approved!</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>34</conf_position>
+      <conf_start_group>Testimonial PM Approval</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>PM Approval Text</conf_title>
+      <conf_description>You can use {nome} to show the name of who posted the testimonial and {testemunho} to show a link to the testimonial</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>testemunhos_mpaprovacao</conf_key>
+      <conf_default><![CDATA[Hi {name}!<br /><br />Your testimonial has been approved: {testimonial}<br /><br />Thank you!<br /><br />This is an automatic message. No need to reply.]]></conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>35</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>PM Unapproval Title</conf_title>
+      <conf_description/>
+      <conf_group>38</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>testemunhos_mpdesaprovacao_titulo</conf_key>
+      <conf_default>Testimonial rejected!</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>36</conf_position>
+      <conf_start_group>Testimonial PM Unapproval</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>PM Unapproval Text</conf_title>
+      <conf_description>You can use {nome} to show the name of who posted the testimonial and {testemunho} to show a link to the testimonial</conf_description>
+      <conf_group>38</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>testemunhos_mpdesaprovacao</conf_key>
+      <conf_default><![CDATA[Hi {name}!<br /><br />Your testimonial has been rejected: {testimonial}<br /><br />Thank you!<br /><br />This is an automatic message. No need to reply.]]></conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>37</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>testimonials</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

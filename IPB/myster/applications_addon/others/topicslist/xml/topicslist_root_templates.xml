@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="topicslist" templategroups="a:1:{s:9:&quot;skin_list&quot;;s:8:&quot;contains&quot;;}">
+  <templategroup group="skin_list">
+    <template>
+      <template_group>skin_list</template_group>
+      <template_content><![CDATA[<table class="ipb_table" cellspacing="1">
+	<tr class='header'>
+		<th style='width: 30%;'>{$this->lang->words['tl_cltitle']}</th>
+		<th class="authorth" align="center">{$this->lang->words['tl_clauthor']}</th>
+			<if test="$this->request['f'] == ''">
+				<th style='width: 20%;' align="left">{$this->lang->words['tl_clforum']}</th>
+			</if>
+		<if test="$this->request['l'] != 'all'">
+			<th style='width: 20%;'>
+				<if test="$temp_sort != 'alpha'">{$char}</if>
+			</th>
+		</if>
+	</tr>
+	
+	<foreach loop="home-list:$topics as $tid">
+		<tr>
+			<td class="row2">
+				<a href='{parse url="showtopic={$tid['tid']}" template="showtopic" seotitle="{$tid['tseo']}" base="public"}' title='go to topic#'>{$tid['title']}</a> 
+					<if test="$this->settings['tl_tracker'] && $tid['watched']">
+						<img src="{$this->settings['img_url']}/transmit_blue.png">
+					</if>
+				
+					<if test="isall:|:strtolower( $this->request['l'] ) != 'all'">
+						<if test="$temp_sort != 'rate'">
+							<span class='mini_rate' >
+								<foreach loop="ratings:array(1,2,3,4,5) as $int">
+									<if test="ratinggood:|:$tid['rate'] >= $int">
+										{parse replacement="mini_rate_on"}
+									<else />
+										{parse replacement="mini_rate_off"}
+									</if>
+								</foreach>
+							</span>
+						</if>
+					</if>
+					<br>
+					
+				<div style='margin-left: 15px;'>
+					<span class='description' >{$tid['description']}</span>
+				</div>
+			</td>
+	
+			<td class="row2" >
+				<a href="{parse url="showuser={$tid['mid']}" template="showuser" seotitle="{$tid['mid_seo']}" base="public"}">{$tid['starter']}</a>
+			</td>
+			
+				<if test="isalltopics:|:strtolower( $this->request['l'] ) != 'all'">
+					<if test="$this->request['f'] == '' ">
+						<td class="row2">
+							<span style='font-weight: bold; '>
+								<a href='{parse url="showforum={$tid['fid']}" template="showforum" seotitle="{$tid['fseo']}" base="public"}' title=''>{$tid['forum']}</a>
+							</span>
+						</td>
+					</if>
+					
+					<if test="istheresort:|:$temp_sort != '' ">
+						<td class="row2">
+							<if test="$temp_sort == 'comments'">{$tid['tposts']} {$this->lang->words['tl_comm']}</if>
+							<if test="$temp_sort == 'update'">{parse date="$tid['lpost']" format="SHORT"}</if>
+							<if test="$temp_sort == 'rate'">
+						
+						<span class='mini_rate' >
+							<foreach loop="ratings:array(1,2,3,4,5) as $int">
+								<if test="ratinggood:|:$tid['rate'] >= $int">
+									{parse replacement="mini_rate_on"}
+								<else />
+									{parse replacement="mini_rate_off"}
+								</if>
+							</foreach>
+						</span>
+					</if>
+			
+					<if test="$temp_sort == 'visits'">{$tid['tviews']} {$this->lang->words['tl_clvisits']}</if>
+		
+					<if test="$temp_sort == 'latests'">{parse date="$tid['date']" format="SHORT"} </if>
+					
+					</td>
+					</if>
+				</if>		
+				
+		</tr>
+				
+	</foreach>
+</table>
+</div>
+</tr>	
+</table>
+</div>
+	<p style="text-align: right; font-size: 9px; text-shadow: 0px 3px 5px #000;">
+		<br />Powered by Topics Wall 1.6
+		<br />Developed by devRegan. All rights reserved.
+	</p>
+	</div>]]></template_content>
+      <template_name>classic</template_name>
+      <template_data>$topics, $char, $temp_sort</template_data>
+      <template_updated>1313255357</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_list</template_group>
+      <template_content><![CDATA[<table >
+		<tr class='header'>
+			<th class="detimg" ></th>
+			<th style='width: 35%;'></th>
+			<th class="detimg" ></th>
+			<th style='width: 35%;'></th>
+		</tr>
+		
+		<foreach loop="home-list:$topics as $tid">
+		
+			<if test="isnothing:|:$tid['title'] == ''">
+			
+					<td class="row2 detprevimg" ></td>
+					<td class="row2" ></td>
+				
+			<else />
+			
+				<if test="isnew:|: $tid['number'] == 1">
+					<tr>
+				</if>
+				
+				<td class="row2 detprevimg"  >
+					<a href='{parse url="showtopic={$tid['tid']}" template="showtopic" seotitle="{$tid['tseo']}" base="public"}' title='{$this->lang->words['tl_gotot']}'><img src="{$tid['cover']}" class="det_img" ></a>
+				</td>
+				<td class="row2" >
+					<div class="dettinfos" >
+						<ul>
+							<li class="infoelement">
+								<a href='{parse url="showtopic={$tid['tid']}" template="showtopic" seotitle="{$tid['tseo']}" base="public"}' title='{$this->lang->words['tl_gotot']}'>{$tid['title']} </a> 
+								
+									<if test="$this->settings['tl_tracker'] && $tid['watched']">
+										<img src="{$this->settings['img_url']}/transmit_blue.png">
+									</if>
+									
+								<span class='mini_rate' >
+									<foreach loop="ratings:array(1,2,3,4,5) as $int">
+										<if test="ratinggood:|:$tid['rate'] >= $int">
+											{parse replacement="mini_rate_on"}
+										<else />
+											{parse replacement="mini_rate_off"}
+										</if>
+									</foreach>
+								</span>
+							</li>
+							
+							<li class="infoelement">{$tid['description']} 
+								<if test="iscomments:|:$this->request['sort'] == 'comments'">{$tid['tposts']} {$this->lang->words['tl_comm']}</if>
+								<if test="isvisits:|:$this->request['sort'] == 'visits'"> {$tid['tviews']} {$this->lang->words['tl_viewed']}</if>
+							</li>			
+							
+							<li class="infoelement">
+								<if test="$this->request['sort'] == 'update'">{parse date="$tid['lpost']" format="SHORT"}<else />{parse date="$tid['date']" format="SHORT"} </if>
+								<if test="f:|:$this->request['f'] ==''">
+									<span class="infoelement">{$this->lang->words['tl_onf']}</span> 
+									<a href='{parse url="showforum={$tid['fid']}" template="showforum" seotitle="{$tid['fseo']}" base="public"}' title=''>{$tid['forum']}</a>
+								</if>
+							</li>
+							
+							<li class="infoelement">{$this->lang->words['tl_author']}: <a href="{parse url="showuser={$tid['mid']}" template="showuser" seotitle="{$tid['mid_seo']}" base="public"}">{$tid['starter']}</a>
+							</li>
+							<br/>
+							
+							<if test="isempty:|:$tid['post'] != ''">
+								<li class="infoelement" >
+									<div >
+										<span>{$tid['post']}...</span>
+									</div>
+								</li>
+							</if>
+							
+						</ul>
+					</div>
+				</td>
+				
+				<if test="isend:|:$tid['number'] == 2">
+					</tr>
+				</if>
+				
+			</if>
+			
+		</foreach>
+	</table>
+</div>
+</tr>	
+</table>
+</div>
+</div>
+	<p style="text-align: right; font-size: 9px; text-shadow: 0px 3px 5px #000;">
+		<br />Powered by Topics Wall 1.6
+		<br />Developed by devRegan. All rights reserved.
+	</p>]]></template_content>
+      <template_name>detailed</template_name>
+      <template_data>$topics</template_data>
+      <template_updated>1313255357</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_list</template_group>
+      <template_content><![CDATA[<table class="ipb_table" cellspacing="1">
+	<tr class='header'>
+		<th ></th>
+		<th></th>
+	</tr>
+		
+		<foreach loop="$topics as $topic">
+			<tr>
+				<td class="row2" style="vertical-align: top; width: 60px;">
+					<a href="{parse url="showuser={$topic['mid']}" template="showuser" seotitle="{$topic['mid_seo']}" base="public"}">{$topic['avatar']}</a>
+				</td>
+				
+				<td class="row2">
+					<div class="insideinfos">
+						<h6 class="fbttitle">
+							<img src="{$this->settings['img_url']}/user.png" alt="" /> 
+								<a href="{parse url="showuser={$topic['mid']}" template="showuser" seotitle="{$topic['mid_seo']}" base="public"}">{$topic['starter']}</a>
+						</h6>
+						
+						<div style='display:block;'>
+							<div>
+								<table>
+									<tr>
+										<td  class="fbtdprev" style="border-bottom: none;">								
+											<a href='{parse url="showtopic={$topic['tid']}" template="showtopic" seotitle="{$topic['tseo']}" base="public"}' title='{$this->lang->words['tl_gotot']}'>
+												<p style="text-align: center;"><img src='{$topic['cover']}' class="fb_previmg" ></p>
+											</a>
+										</td>
+										<td style="border-bottom: none; vertical-align: top; padding: 5px;">
+											<div class="titleinfo" >
+												<p>
+													<img src="{$this->settings['img_url']}/bullet.png" alt="" />
+													<a href='{parse url="showtopic={$topic['tid']}" template="showtopic" seotitle="{$topic['tseo']}" base="public"}' title='{$this->lang->words['tl_gotot']}'>{$topic['title']}</a>
+													<if test="$this->settings['tl_tracker'] && $topic['watched']">
+														<img src="{$this->settings['img_url']}/transmit_blue.png">
+													</if>
+												</p>
+												<p>{$topic['description']}</p><br>
+												<if test="$topic['post'] != ''">
+													<p style="width: 300px;">{$topic['post']}...</p>
+												</if>
+												
+												<if test="$this->request['f'] == ''">
+													<p>
+														<strong>{$this->lang->words['tl_onf']}:</strong> <a href='{parse url="showforum={$topic['fid']}" template="showforum" seotitle="{$topic['fseo']}" base="public"}' title=''>{$topic['forum']}</a>
+													</p>
+												</if>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>							
+							
+							<span class="iconinfo">
+								<img src="{$this->settings['img_url']}/time.png" alt="" />
+								<if test="$this->request['sort'] == 'update'">
+									{parse date="$topic['lpost']" format="SHORT"}
+								<else />
+									{parse date="$topic['date']" format="SHORT"}
+								</if>
+							</span>
+							<span class="iconinfo"> 
+								<img src="{$this->settings['img_url']}/comments.png" alt="" /> {$topic['tposts']} {$this->lang->words['tl_comm']} 
+							</span>
+							<span class="iconinfo"> 
+								<img src="{$this->settings['img_url']}/visits.png" alt="" />  {$topic['tviews']} {$this->lang->words['tl_viewed']} 
+							</span>				
+							<span class='mini_rate' >
+								<foreach loop="ratings:array(1,2,3,4,5) as $int">
+									<if test="ratinggood:|:$topic['rate'] >= $int">
+										{parse replacement="mini_rate_on"}
+									<else />
+										{parse replacement="mini_rate_off"}
+									</if>
+								</foreach>
+							</span>
+						</div>
+					</div>
+					{$topic['test']}
+				</td>				
+			</tr>
+			
+		</foreach>
+		
+</table>
+</div>
+</div>
+	<p style="text-align: right; font-size: 9px; text-shadow: 0px 3px 5px #000;">
+		<br />Powered by Topics Wall 1.6
+		<br />Developed by devRegan. All rights reserved.
+	</p>
+</div>]]></template_content>
+      <template_name>fb_style</template_name>
+      <template_data>$topics</template_data>
+      <template_updated>1313255357</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_list</template_group>
+      <template_content><![CDATA[<div class='category_block block_wrap' />
+	<table class='ipb_table topic_list' "{$this->lang->words['tl_choosef']}"' id='forum_table' style="width: 75%; margin: auto;">
+				<caption class='maintitle'>
+					<span class='main_forum_title'>{$this->lang->words['tl_choosef']}</span>
+				</caption>
+				<tr class='header'>					
+					<th scope='col' style='width: 40%;' >{$this->lang->words['tl_lforum']}</th>
+					<if test="isdesc:|:$desc == 1"><th scope='col' style='width: 40%;' >{$this->lang->words['tl_fdesc']}</th></if>
+					<th scope='col' style='width:30%;  text-align: center;' >{$this->lang->words['tl_ntopics']}</th>
+				</tr>	
+ 
+				<!-- Lets Go With The Cycle! -->
+				<foreach loop="showlist:$forums as $fid">
+				
+				<if test="iscat:|:$fid['iscat'] == 1">
+					<tr class='header'>	
+							<td >{$fid['idcat']}{$fid['name']}</td>
+							<if test="descdesc:|:$desc == 1"><td ><span>{$fid['desc']}</span></td></if>
+							<td ></td>
+							
+					</tr>
+				<else />
+					<tr>		
+							<td class='row2'  ><a href="{parse url="app=topicslist&amp;module=list&amp;section=view&amp;f={$fid['id']}" base="public" "}" class='topic_title'>{$fid['name']}</a></td>
+							<if test="descdesc:|:$desc == 1"><td class='row2' ><span>{$fid['desc']}</span></td></if>
+							<td class='row2' style='text-align: center;' ><span >&nbsp;{$fid['ntopics']}</span></td>
+							
+					</tr>
+				</if>
+				
+		</foreach>
+	</table>
+</div>
+<p style='text-align: right; font-size: 9px;">Powered by Topics Wall 1.6. Developed and Designed by Devian</p>]]></template_content>
+      <template_name>forums</template_name>
+      <template_data>$forums, $desc, $u</template_data>
+      <template_updated>1313255357</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_list</template_group>
+      <template_content><![CDATA[<head>
+	
+    <style type="text/css">
+.bx-next {
+	position:absolute;
+	top:40%;
+	right:-50px;
+	z-index:999;
+	width: 30px;
+	height: 30px;
+	text-indent: -999999px;
+	background: url({style_images_url}/gray_next.png) no-repeat 0 -30px;
+}
+.bx-prev {
+	position:absolute;
+	top:40%;
+	left:-50px;
+	z-index:999;
+	width: 30px;
+	height: 30px;
+	text-indent: -999999px;
+	background: url({style_images_url}/gray_prev.png) no-repeat 0 -30px;
+}
+.bx-pager a {
+	margin-right: 5px;
+	color: #fff;
+	padding: 3px 8px 3px 6px;
+	font-size: 12px;
+	zoom:1;
+	background: url({style_images_url}/gray_pager.png) no-repeat 0 -20px;
+}
+.bx-next:hover,
+.bx-prev:hover {
+	background-position: 0 0;
+}
+
+.bx-pager .pager-active,
+.bx-pager a:hover {
+	background-position: 0 0;
+}
+.bx-pager {
+	text-align:center;
+	padding-top: 7px;
+	font-size:12px;
+	color:#666;
+}
+/*auto controls*/
+.bx-auto {
+	text-align: center;
+	padding-top: 15px;
+}
+.bx-auto a {
+	color: #666;
+	font-size: 12px;
+}
+#carousel {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+	
+}
+.image_div {
+	float: left; 
+	width: {$dimensions['div_width']}px; 
+	height: {$dimensions['div_height']}px; 
+	margin-left: 5px; 
+	background: #d9dde8; 
+	border: 2px solid #eef3f9; 
+}
+.img_desc {
+	margin-top: 4px; 
+	color: #3e3d45
+}
+</style>
+<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  jQuery.noConflict( );
+ </script>
+  <script type="text/javascript" src="{$this->settings['public_dir']}js/3rd_party/jquery.bxSlider.min.js"></script>
+<script type="text/javascript">
+jQuery(function(){
+  jQuery('#slider1').bxSlider({
+    auto: true,
+    speed: 2000,
+	pager: true,
+	autoHover: true,
+	pause: 5000
+  });
+});	
+</script>
+  </head>
+	<if test="$this->settings['tl_indextopics']">
+		<div class='row2' style="line-height: 30px;">
+		<p style="padding-left: 15px;">{$sort['lang']} &nbsp; &nbsp; <a href="{$this->settings['base_url']}app=topicslist">{$this->lang->words['go_to_fullapp']}</a></p>
+		</div>
+	
+		<div id="carousel" style="width: {$dimensions['table']}px; margin: auto;">
+			<div id="slider1" >
+				<foreach loop="$topics as $t">
+					<if test="$t['n'] == 1">
+						<div style="text-align: center; margin-top: 15px; ">
+					</if>
+				
+
+					<div class="image_div">
+						<a href='{parse url="showtopic={$t['id']}" template="showtopic" seotitle="{$t['tseo']}" base="public"}' >
+							<img src="{$t['img']}" style="width: {$dimensions['w']}px; height: {$dimensions['h']}px; padding-top: 2px; padding-left: 1px;"  />
+						</a>
+						<br /><p class="img_desc"><strong>{$t['title']}</strong></p>
+					</div>
+						
+					<if test="$t['n'] == $this->settings['tl_indextperpage']">
+						</div>
+					</if>
+				</foreach>
+			</div>
+		</div>
+	<if test="$walk_around"></div></if>
+	</if>
+	
+	<if test="$this->settings['__showletters']">
+		<div class='row2' style="line-height: 40px; margin-top: 5px; margin-bottom: 15px;">
+			<p style='text-align: center; word-spacing: 5px; font-size: 20px;'>
+				<foreach loop="$letters as $let">
+					<a href='{parse url="app=topicslist&amp;module=list&amp;section=view&amp;f={$this->request['f']}&amp;l={$let['title']}" base="publicWithApp"}' > {$let['index']}</a>
+				</foreach>
+			</p>
+		</div>
+	</if>]]></template_content>
+      <template_name>indexAndTopics</template_name>
+      <template_data>$topics, $letters, $sort, $dimensions, $walk_around</template_data>
+      <template_updated>1313255357</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_list</template_group>
+      <template_content><![CDATA[<style type="text/css">
+	.detimg{
+	
+		width: {$dimensions['th']}px;
+	}
+	
+	.detprevimg{
+	width: {$dimensions['th']}px;
+	text-align: center;
+	}
+	
+	.det_img{
+	
+		<if test="$this->settings['tl_resizemode'] == 'f1'">max-</if>height: {$dimensions['det_hei']}px; 
+		<if test="$this->settings['tl_resizemode'] == 'f1'">max-</if>width:  {$dimensions['det_wid']}px; 
+		display: block; 
+		margin: auto;	
+	}
+	
+	.fbtdprev{
+	
+		width: {$dimensions['td']}px;
+		}
+	
+	.fb_previmg{
+	
+		<if test="$this->settings['tl_resizemode'] == 'f1'">max-</if>width: {$dimensions['prev_wid']}px; 
+		<if test="$this->settings['tl_resizemode'] == 'f1'">max-</if>height: {$dimensions['prev_hei']}px; 
+		float: left; 
+		display: block; 
+	}
+</style>
+	<!-- Start Side Bar! -->
+<h1 class='ipsType_pagetitle'>{$this->lang->words['tl_home']}</h1>
+<div class="ipsBox">
+	<div class="ipsVerticalTabbed ipsLayout ipsLayout_withleft ipsLayout_smallleft clearfix">
+		<div class="ipsVerticalTabbed_tabs ipsLayout_left" id="modcp_tabs">
+			<ul class="clear">
+			
+				<li id="change_mod" class="tab_toggle" >
+					<a href='{parse url="app=core&module=usercp&tab=topicslist&area=viewmode" base="public"}' title='{$this->lang->words['tl_changedesc']}'>{$this->lang->words['tl_changeit']}</a>
+				</li>
+				
+				<li id="view_forums" class="tab_toggle">
+					<a href='{parse url="module=list&amp;section=forums" base="publicWithApp"}' title='{$this->lang->words['tl_viewforums']}' accesskey='s'>{$this->lang->words['tl_viewforums']}</a>
+				</li>
+				
+			</ul>
+			
+			<ul class='clear'>
+					<li class="tab_toggle" style="padding-top: 10px; padding-bottom: 10px;" >
+						&nbsp;{$this->lang->words['generals']}
+					</li>
+						
+					<li id="apphome" class='tab_toggle'>
+						<a href='{parse url="app=topicslist" base="public"}' title='{$this->lang->words['gotoapp']}' accesskey='s'>{$this->lang->words['gotoapp']}</a>
+					</li>
+					
+					<if test="$this->request['l']">
+						<li id="forum_home" class='tab_toggle'>
+							<a href='{parse url="module=list&amp;section=view&amp;f={$this->request['f']}" base="publicWithApp"}' title='{$this->lang->words['f_home']}' accesskey='s'>{$this->lang->words['f_home']}</a>
+						</li>
+					</if>
+					
+					<li id="alpha_sort" class='<if test="$title == $this->lang->words['tl_alphasort']">active </if>tab_toggle'>
+						<a href='{parse url="sort=alpha<if test="$this->request['f']">&amp;module=list&amp;section=view&amp;f={$this->request['f']}</if><if test="$this->request['l']">&amp;l={$this->request['l']}</if>" base="publicWithApp"}' title='{$this->lang->words['tl_alphasort']}' accesskey='s'>{$this->lang->words['tl_alphasort']}</a>
+					</li>
+					
+					<li id="alpha_sort" class='<if test="$title == $this->lang->words['tl_latests'] || $title == $this->lang->words['tl_latestlt']">active </if>tab_toggle'>
+						<a href='{parse url="sort=latests<if test="$this->request['f']">&amp;module=list&amp;section=view&amp;f={$this->request['f']}</if><if test="$this->request['l']">&amp;l={$this->request['l']}</if>" base="publicWithApp"}' title='{$this->lang->words['tl_latests']}' accesskey='s'>{$this->lang->words['tl_latests']}</a>
+					</li>
+					
+					<li id="commented_now" class='<if test="$title == $this->lang->words['tl_rcomment']">active </if>tab_toggle'>
+						<a href='{parse url="sort=update<if test="$this->request['f']">&amp;module=list&amp;section=view&amp;f={$this->request['f']}</if><if test="$this->request['l']">&amp;l={$this->request['l']}</if>" base="publicWithApp"}' title='{$this->lang->words['tl_rcomment']}' accesskey='s'>{$this->lang->words['tl_rcomment']}</a>
+					</li>
+					
+					<li id="rated" class='<if test="$title == $this->lang->words['tl_rate'] || $title == $this->lang->words['tl_ratelt']">active </if>tab_toggle'>
+						<a href='{parse url="sort=rate<if test="$this->request['f']">&amp;module=list&amp;section=view&amp;f={$this->request['f']}</if><if test="$this->request['l']">&amp;l={$this->request['l']}</if>" base="publicWithApp"}' title='{$this->lang->words['tl_rate']}' accesskey='s'>{$this->lang->words['tl_rate']}</a>
+					</li>
+					
+					<li id="views" class='<if test="$title == $this->lang->words['tl_views'] || $title == $this->lang->words['tl_viewslt']">active </if>tab_toggle'>
+						<a href='{parse url="sort=visits<if test="$this->request['f']">&amp;module=list&amp;section=view&amp;f={$this->request['f']}</if><if test="$this->request['l']">&amp;l={$this->request['l']}</if>" base="publicWithApp"}' title='{$this->lang->words['tl_views']}' accesskey='s'>{$this->lang->words['tl_views']}</a>
+					</li>
+					
+					<li id="commented" class='<if test="$title == $this->lang->words['tl_comments'] || $title == $this->lang->words['tl_commentslt']">active </if>tab_toggle'>
+						<a href='{parse url="sort=comments<if test="$this->request['f']">&amp;module=list&amp;section=view&amp;f={$this->request['f']}</if><if test="$this->request['l']">&amp;l={$this->request['l']}</if>" base="publicWithApp"}' title='{$this->lang->words['tl_comments']}' accesskey='s'>{$this->lang->words['tl_comments']}</a>
+					</li>
+							
+			</ul>
+		</div>
+		
+		<div class="ipsVerticalTabbed_content ipsLayout_content ipsBox_container" id="modcp_content" style="min-height: 400px; ">
+		
+			<if test="$this->request['f'] || $this->request['l']">
+				
+				<a href="#ancored" id="index_button" class="ipsButton_secondary" style="margin-top: 10px; margin-left: 10px" onclick=" $('index_button').fade( {duration: 0.5} );  $('index_table').appear({ delay: 0.4 }); ">{$this->lang->words['show_index']}</a>
+				
+				<div id="index_table" style="display: none; padding-left: 10px; padding-top: 10px; text-align: center; font-size: 15px;">
+					<foreach loop="$l as $t">
+							<a href='{parse url="module=list&amp;section=view&amp;f={$this->request['f']}&amp;l={$t['title']}" base="publicWithApp"}' title='{$t['lang']}' >{$t['index']}&nbsp;&nbsp;</a> 
+						</foreach>
+				</div>
+				
+			</if>
+			<div class="ipsPad">
+				<h2 class='maintitle'>{$title}</h2>]]></template_content>
+      <template_name>sideBar</template_name>
+      <template_data>$title, $l, $cltl, $mode, $lmode, $dimensions</template_data>
+      <template_updated>1313255357</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_list</template_group>
+      <template_content><![CDATA[{$this->settings['js_main_url']}
+<h2 class='ipsType_subtitle ipsSettings_pagetitle'>{$this->lang->words['tl_changemode']}</h2>
+<div class='ipsSettings'>
+	<if test="canchange:|:$this->settings['tl_userdecide']">
+		<fieldset class='ipsSettings_section'>
+			<div>
+				<ul>
+			<li class='field checkbox'>
+				<input type='radio' class='input_check' id='fb' name='mode' value='fb' <if test="$a == 'fb'">checked='checked'</if> > <label for='fb' />{$this->lang->words['tl_fb']}<label><br />
+				<span class='desc'>{$this->lang->words['tl_fb_desc']}</span>
+			</li>
+			<li class='field checkbox'>
+				<input type='radio' class='input_check' id='detailed' name='mode' value='detailed' <if test="$a == 'detailed'">checked='checked'</if>/> <label for='detailed' />{$this->lang->words['tl_detailed']}</label><br />
+				<span class='desc'>{$this->lang->words['tl_detailed_desc']}</span>
+			</li>
+			<li class='field checkbox'>
+				<input class='input_check' type="radio" id='classic' name="mode" value="classic" <if test="$a == 'classic'">checked='checked'</if>/> <label for='classic' />{$this->lang->words['tl_classic']}</label>
+				<span class='desc'>{$this->lang->words['tl_classic_desc']}</span>
+				</li>
+				</ul>
+			</div>
+		</fieldset>
+	<else />
+		<fieldset class='ipsSettings_section'>
+			<div>
+				<ul>
+					<li>
+						<p>{$this->lang->words['tl_nochange']} {$m} </p>
+					</li>
+				</ul>
+			</div>
+		</fieldset>
+	</if>
+</div>]]></template_content>
+      <template_name>userMenu</template_name>
+      <template_data>$a, $m</template_data>
+      <template_updated>1313255357</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

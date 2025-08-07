@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>tracker_global</conf_title_keyword>
+      <conf_title_title>Global Settings</conf_title_title>
+      <conf_title_desc>Global settings for Tracker</conf_title_desc>
+      <conf_title_tab>Tracker</conf_title_tab>
+      <conf_title_app>tracker</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Tracker System Enabled</conf_title>
+      <conf_description>Set this to No if you need to disable the Tracker module</conf_description>
+      <conf_group>57</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tracker_is_online</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_global</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Offline Message</conf_title>
+      <conf_description>The message that will be displayed to users when system is offline.</conf_description>
+      <conf_group>57</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>tracker_offline_message</conf_key>
+      <conf_default>The Tracker system is currently offline</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_global</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Profile Tab Enabled</conf_title>
+      <conf_description>Do you wish to enable the Tracker profile tab?</conf_description>
+      <conf_group>57</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tracker_profile_tab</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_global</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>tracker_issues</conf_title_keyword>
+      <conf_title_title>Issue Settings</conf_title_title>
+      <conf_title_desc>Settings related to Issues</conf_title_desc>
+      <conf_title_tab>Tracker</conf_title_tab>
+      <conf_title_app>tracker</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Number of posts to show per page in the Issue view</conf_title>
+      <conf_description/>
+      <conf_group>58</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tracker_comments_perpage</conf_key>
+      <conf_default>20</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>41</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_issues</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Order posts within an issue by</conf_title>
+      <conf_description/>
+      <conf_group>58</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>tracker_post_order_column</conf_key>
+      <conf_default>post_date</conf_default>
+      <conf_extra>pid=Post ID&#13;
+post_date=Post Date</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>43</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_issues</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Order posts within an issue by</conf_title>
+      <conf_description/>
+      <conf_group>58</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>tracker_post_order_sort</conf_key>
+      <conf_default>asc</conf_default>
+      <conf_extra>asc=Ascending (0-9)&#13;
+desc=Descending (9-0)</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>44</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_issues</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>tracker_post</conf_title_keyword>
+      <conf_title_title>Post Settings</conf_title_title>
+      <conf_title_desc>Settings related to Posting</conf_title_desc>
+      <conf_title_tab>Tracker</conf_title_tab>
+      <conf_title_app>tracker</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Issue Title Max Length</conf_title>
+      <conf_description>Maximum issue title length allowed.</conf_description>
+      <conf_group>59</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tracker_title_max_len</conf_key>
+      <conf_default>150</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>60</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_post</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Max. size of post (in kilobytes [kb])]]></conf_title>
+      <conf_description/>
+      <conf_group>59</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tracker_max_post_length</conf_key>
+      <conf_default>100</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>61</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_post</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Disable Issue Summary</conf_title>
+      <conf_description>Do you wish to disable the issue summary from displaying at the bottom of the post reply page?</conf_description>
+      <conf_group>59</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tracker_disable_summary</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>62</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_post</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>tracker_projects</conf_title_keyword>
+      <conf_title_title>Project Settings</conf_title_title>
+      <conf_title_desc>Settings related to Projects</conf_title_desc>
+      <conf_title_tab>Tracker</conf_title_tab>
+      <conf_title_app>tracker</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Use AJAX Interface</conf_title>
+      <conf_description>If enabled, pagination and filtering will be done inline instead of through the page reloading.</conf_description>
+      <conf_group>60</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tracker_ajax_interface</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_projects</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Number of issues to show per page in the Product view</conf_title>
+      <conf_description/>
+      <conf_group>60</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tracker_bugs_perpage</conf_key>
+      <conf_default>20</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>20</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_projects</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Display &#39;Project led by&#39; line]]></conf_title>
+      <conf_description/>
+      <conf_group>60</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tracker_proj_led_display</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra>0=1: None&#13;
+1=2: Display only moderator groups</conf_extra>
+      <conf_evalphp><![CDATA[if( $value > 1 ) $value = 1;]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>21</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_projects</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Display Sub-Project links</conf_title>
+      <conf_description>If enabled, will add links to any sub-projects under the project titles.</conf_description>
+      <conf_group>60</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tracker_showsubprojects</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>22</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_projects</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Display &#39;Last Post&#39; Information]]></conf_title>
+      <conf_description/>
+      <conf_group>60</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tracker_show_last_post</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>23</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_projects</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Number of posts needed to make a &#39;hot issue&#39;]]></conf_title>
+      <conf_description/>
+      <conf_group>60</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tracker_hot_issue</conf_key>
+      <conf_default>15</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>24</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_projects</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Mark issues a user has posted in when displaying a project</conf_title>
+      <conf_description/>
+      <conf_group>60</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tracker_show_user_posted</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>25</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_projects</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>tracker_stats</conf_title_keyword>
+      <conf_title_title>Statistic Settings</conf_title_title>
+      <conf_title_desc>Settings related to Statistics and Active Users</conf_title_desc>
+      <conf_title_tab>Tracker</conf_title_tab>
+      <conf_title_app>tracker</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Show Active Users / Tracker Totals</conf_title>
+      <conf_description/>
+      <conf_group>61</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tracker_show_active</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>81</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_stats</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Remove &#39;Users browsing this project&#39; feature]]></conf_title>
+      <conf_description/>
+      <conf_group>61</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tracker_au_project_index</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>82</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_stats</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Remove &#39;Users browsing this issue&#39; feature]]></conf_title>
+      <conf_description/>
+      <conf_group>61</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tracker_au_topic</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>83</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_stats</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Cut off for active user display [in minutes]]]></conf_title>
+      <conf_description/>
+      <conf_group>61</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tracker_au_cutoff</conf_key>
+      <conf_default>15</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>84</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tracker_stats</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

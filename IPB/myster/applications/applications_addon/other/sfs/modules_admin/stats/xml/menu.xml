@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>SFS Stats</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>SFS Stats</subitemtitle>
+					<subsection>statistics</subsection>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

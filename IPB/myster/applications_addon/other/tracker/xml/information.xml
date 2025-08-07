@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+	<data>
+		<name>Tracker</name>
+		<public_name>Tracker</public_name>
+		<author>IPBTracker.com Project Developers</author>
+		<description>Project Management system for your IP.Board</description>
+		<templategroups>
+			<template match="exact">skin_tracker</template>
+			<template match="exact">skin_tracker_global</template>
+			<template match="exact">skin_tracker_issue</template>
+			<template match="exact">skin_tracker_like</template>
+			<template match="exact">skin_tracker_post</template>
+			<template match="exact">skin_tracker_projects</template>
+			<template match="exact">skin_tracker_profile</template>
+			<template match="exact">skin_tracker_search</template>
+			<template match="exact">skin_tracker_ucp</template>
+			<template match="exact">skin_tracker_view</template>
+			<template match="exact">skin_tracker_timeline</template>
+		</templategroups>
+		<website>http://ipbtracker.com</website>
+		<update_check>http://ipbtracker.com/page/updates.html?</update_check>
+	</data>
+</information>

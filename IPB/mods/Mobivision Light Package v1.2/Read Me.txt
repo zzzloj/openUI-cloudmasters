@@ -1,0 +1,131 @@
+Mobivision Mobile Skin ----------
+
+
+Installation ----------
+
+Import Skin Files from (.zip) file in 
+
+Admin CP > Look & Feel > Import / Export
+
+
+Features ---------------
+
+1. Index Page with Logged in / Guest mode.
+
+    Website Name on Upper Left Corner
+    Drop Down menu for User's Option
+    Cool Navigation Bar
+    New Forum Icons
+    Board Stats on Footer (Total Thread / Total Posts / Total Members)
+    Who is Online ? Feature
+
+	
+2. User Options by clicking  Select Menu from Right Upper side
+
+    User's Option Menu from Dropdown selection
+    Profile Page
+    Search Option
+    Members Page
+    Recent Topics
+    Mark Read All Forum
+    Admin CP option
+
+	
+3. Navbar with Notification + Message (PM) + Moderation Report Counts
+
+    New Navigation Bar with White icons
+    Home Icon
+    Notification Icon (with Counts)
+    Message / PM icon (with Counts)
+    Shoutbox / Chat Icon
+    Report Center Icon (with Counts)
+
+	
+4. Latest Notification (Red BG) in Notification List
+
+    Notification Page
+    Avatar of Notification Sender
+    Red marker for Unread Notification
+    Mark All Read Button on bottom
+
+
+5. Profile page
+
+    Photo Editor / Uploader
+    Removed Useless options
+    Information of User
+    Group / Active Post /Title / Joined Date / Last Active
+
+	
+6. Thread List View
+
+    New Thread Sorting Option
+    Green Marker for Unread Threads
+    Red Marker for Locked Threads
+    Topic Icons (New /Read/ Unread/ Locked)
+    Moderation Menu (with Pin/ Lock/ Move / Delete) Options.
+    Last Poster's Profile Photo in left of thread list
+
+	
+7: Post View
+
+    Author's Profile Photo in left
+    Formatted (Colored Usernames)
+    Date of Posted message
+    User's Online / Offline Status in right
+    Moderation Option (Quote / Report / Edit / IP information) in Drop Down menu
+    Like / Unlike Post feature with Nice Buttons
+    User's Name who liked the Post in right bottom of post
+    Quick Reply Box
+
+8. Best Answer
+
+    Best Answered Post with Green marker
+    Formatted username and date of Best Answered user
+
+
+9. Topic Moderation Options :
+
+    Edit Post Option
+    Quote Post Option
+    Delete Post Option
+    Report Post Option
+    Mark Solved / Unsolved Option
+    Show IP of User Option
+
+	
+10. Report Center Page
+
+    Reported Item listning
+    Report Moderation Tool
+
+	
+11. IP Moderation Page
+
+    Resolve IP Address
+    Find Members from IP Adress
+    Members Listning with Usergroup and IP Adress
+
+	
+12. AJAX Shoutbox
+
+    Ajax Shoutbox with Editor
+    Who is online in shoutbox
+    Total Shouts in shoutbox
+   
+13. Attachment Options (AJAX)
+
+    Image / Music / Documents Uploading Feature
+    Attachment Add to Post Option
+    Attachment Delete Option
+    Multiple Attachment at one time.
+    Upload with your mobile
+
+	
+	
+Thanks for Purchasing Mobivision Skin 
+
+Regards by 
+Alex
+
+(www.ignitedforum.com)

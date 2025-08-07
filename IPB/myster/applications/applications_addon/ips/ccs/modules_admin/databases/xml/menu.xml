@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Databases</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Databases</subitemtitle>
+					<subitemlang>ccs_databases</subitemlang>
+					<subsection>databases</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

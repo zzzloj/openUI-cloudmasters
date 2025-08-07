@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<information>
+  <data>
+    <name>(DP33) Global Sidebars</name>
+    <public_name/>
+    <hide_tab>1</hide_tab>
+    <author>DawPi</author>
+    <description>Display different sidebars for various sections on the board.</description>
+    <disabledatinstall>0</disabledatinstall>
+    <global_caches>gs_adverts,gs_sidebars</global_caches>
+    <website>http://ipslink.pl</website>
+    <update_check>http://www.ipslink.pl/checkHook.php?appKey=gsidebars</update_check>
+    <templategroups>
+        <template match="exact">skin_gsidebars</template>
+    </templategroups>
+  </data>
+</information>

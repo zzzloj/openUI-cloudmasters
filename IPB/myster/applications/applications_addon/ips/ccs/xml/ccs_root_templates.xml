@@ -1,0 +1,1644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="ccs" templategroups="a:1:{s:8:&quot;skin_ccs&quot;;s:8:&quot;contains&quot;;}">
+  <templategroup group="skin_ccs_global">
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<br /><br />
+<div class='pagination'>
+	<ul class='ipsList_inline back left'>
+		<if test="showFirst:|:$curPage AND $curPage != 1">
+			<li class='first'><a href='{$baseUrl}pg=1' title='{$this->lang->words['tpl_gotofirst']}' rel='start'>{$this->lang->words['_laquo']} {$this->lang->words['ps_first']}</a></li>
+		</if>
+		<if test="showPrevious:|:$curPage > 1">
+			<li class='prev'><a href="{$baseUrl}pg={parse expression="intval( $curPage - 1 )"}" title="{$this->lang->words['tpl_prev']}" rel='prev'>{$this->lang->words['_larr']}</a></li>
+		</if>
+	</ul>
+	
+	<ul class='ipsList_inline left pages'>
+		<li class='pagejump'>
+			{parse expression="sprintf( $this->lang->words['tpl_pages'], $curPage, $totalPages )"}
+		</li>
+	
+		<php>
+		$_links	= '';
+		
+		for( $i=1; $i <= $totalPages; $i++ )
+		{
+			$_links	.= ( $curPage AND $i == $curPage ) ? "<li class='page active'>{$i}</li>" : "<li class='page'><a href='{$baseUrl}pg={$i}'>{$i}</a></li>";
+		}
+		</php>
+		{$_links}
+	</ul>
+	
+	<ul class='ipsList_inline forward left'>
+		<if test="showNext:|:$curPage < $totalPages">
+			<li class='next'><a href="{$baseUrl}pg={parse expression="intval( $curPage + 1 )"}" title="{$this->lang->words['tpl_next']}" rel='next'>{$this->lang->words['_rarr']}</a></li>
+		</if>
+		<if test="showLast:|:$curPage AND $curPage != $totalPages">
+			<li class='last'><a href='{$baseUrl}pg={$totalPages}' title='{$this->lang->words['tpl_gotolast']}' rel='last'>{$this->lang->words['ps_last']} {$this->lang->words['_raquo']}</a></li>
+		</if>
+	</ul>
+</div>
+<br /><br />]]></template_content>
+      <template_name>articlePages</template_name>
+      <template_data>$totalPages, $curPage, $baseUrl</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<if test="acpCss:|:IN_ACP">
+	<style type='text/css'>		
+.swfupload {
+	position: absolute;
+	z-index: 1;
+}
+	
+#attachments { }
+	#attachments li {
+		background-color: #e4ebf2;
+		border: 1px solid #d5dde5;
+		padding: 6px 20px 6px 42px;
+		margin-bottom: 10px;
+		position: relative;
+	}
+	
+		#attachments li p.info {
+			color: #69727b;
+			font-size: 0.8em;
+			width: 300px;
+		}
+	
+		#attachments li .links, #attachments li.error .links, #attachments.traditional .progress_bar {
+			display: none;
+		}
+			
+			#attachments li.complete .links {
+				font-size: 0.9em;
+				margin-right: 15px;
+				right: 0px;
+				top: 12px;
+				display: block;
+				position: absolute;
+			}
+			
+		#attachments li .progress_bar {
+			margin-right: 15px;
+			width: 200px;
+			right: 0px;
+			top: 15px;
+			position: absolute;
+		}
+	
+		#attachments li.complete, #attachments li.in_progress, #attachments li.error {
+			background-repeat: no-repeat;
+			background-position: 12px 12px;
+		}
+	
+		#attachments li.in_progress {
+			background-image: url({$this->settings['public_dir']}style_images/master/loading.gif);
+		}
+	
+		#attachments li.error {
+			background-image: url({$this->settings['public_dir']}style_images/master/exclamation.png);
+			background-color: #e8caca;
+			border: 1px solid #ddafaf;
+		}
+		
+			#attachments li.error .info {
+				color: #8f2d2d;
+			}
+	
+		#attachments li.complete {
+			background-image: url({$this->settings['public_dir']}style_images/master/accept.png);
+		}
+		
+		#attachments li .thumb_img {
+			left: 6px;
+			top: 6px;
+			width: 30px;
+			height: 30px;
+			overflow: hidden;
+			position: absolute;
+		}
+.attach_controls {
+	background: url( {$this->settings['public_dir']}style_images/master/icon_attach.png ) no-repeat 3px;
+	padding-left: 35px;
+	min-height: 82px;
+}
+	.attach_controls .ipsType_subtitle { margin-bottom: 5px; }
+	.attach_controls iframe { display: block; margin-bottom: 5px; }
+	
+.attach_button { font-weight: bold;  }
+#help_msg {	margin-top: 8px; }
+#attach_wrap {
+	background: #eef3f8;
+	padding: 6px;
+	margin-top: 8px;
+}
+	#attach_wrap h4 {
+		font-size: 1em;
+		font-weight: bold;
+	}
+	
+	#attach_wrap li {
+		margin: 5px 6px;
+		float: left;
+	}
+		
+		#attach_wrap .desc.info {
+			margin-left: 24px;
+		}
+		
+.ipsButton_secondary {
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+	color: #7c7c7c;
+	padding: 0 10px;
+	background: #f6f6f6;
+	background: -moz-linear-gradient(top, #f6f6f6 0%, #e5e5e5 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f6f6), color-stop(100%,#e5e5e5)); /* webkit */
+	border: 1px solid #dbdbdb;
+	-moz-box-shadow: 0px 1px 0px rgba(255,255,255,1) inset, 0px 1px 0px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0px 1px 0px rgba(255,255,255,1) inset, 0px 1px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 1px 0px rgba(255,255,255,1) inset, 0px 1px 0px rgba(0,0,0,0.3);
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #616161;
+	display: inline-block;
+	white-space: nowrap;
+}
+	.ipsButton_secondary:hover {
+		color: #4c4c4c;
+		border-color: #9a9a9a;
+	}
+	</style>
+	
+	<script type='text/javascript' src='{$this->settings['board_url']}/cache/lang_cache/{$this->lang->lang_id}/ipb.lang.js'></script>
+	<script type='text/javascript'>
+		var backup = ipb.vars['base_url'];
+		ipb.vars['base_url']	= ipb.vars['front_url'];
+		ipb.vars['upload_url']	= "{$this->settings['upload_url']}";
+	</script>
+	<if test="fixUrl:|:$backup = $this->settings['base_url']">
+		<if test="newBaseUrl:|:$this->settings['base_url'] = $this->settings['board_url'] . '/index.php?'"></if>
+	</if>
+</if>
+<if test="setLang:|:$this->lang->words['attach_button'] = $this->lang->words['ccsattach_button']"></if>
+<fieldset class='attachments'>
+	{parse template="uploadForm" group="post" params="$data['post_key'], 'ccs', $data['stats'], 0"}
+</fieldset>
+<if test="restoreUrlBackup:|:IN_ACP">
+	<if test="baseUrlBackup:|:$this->settings['base_url'] = $backup"></if>
+</if>]]></template_content>
+      <template_name>attachments</template_name>
+      <template_data>$data=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $database['database_id'], 0, $record )}'>{$record[ $database['database_field_title'] ]}</a>]]></template_content>
+      <template_name>auto_crosslink_html</template_name>
+      <template_data>$database, $record</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<style type='text/css'>
+del, .diffred {
+	background-color: #FF6666;
+	color: black;
+	font-weight: normal;
+	text-decoration: line-through;
+}
+ins, .diffgreen {
+	background-color: #5EFB6E;
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+}
+</style>
+<div class='category_block block_wrap'>
+	<h3 class='maintitle'>{parse expression="sprintf( $this->lang->words['comparing_revisions_for'], $record['title'] )"}</h3>
+	<div class="ipsBox table_wrap">
+		<div class="ipsBox_container">
+			{parse striping="striping" classes="row1,row2"}
+			<div class='post_wrap' id='post_preview'>
+				<table class='ipb_table'>
+				<if test="hasFields:|:count($fields)">
+					<foreach loop="fieldsLoop:$fields as $field">
+						<tr class='{parse striping="striping"}'>
+							<td style='width: 20%; font-weight: bold; text-align: right;'>{$field['field_name']}</td>
+							<td>{$differences[ $field['field_id'] ]}</td>
+						</tr>
+					</foreach>
+				</if>
+				</table>
+			</div>
+		</div>
+		<div style='padding:4px;margin:4px;'>
+			<span class='diffred'>{$this->lang->words['rev_removedhtml']}</span> &middot; <span class='diffgreen'>{$this->lang->words['rev_addedhtml']}</span>
+		</div>
+	</div>
+</div>]]></template_content>
+      <template_name>compareRevisions</template_name>
+      <template_data>$database, $fields, $record, $differences</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<h1 class='ipsType_pagetitle'>{$this->lang->words['delete_record_confirm']}: {$record[ $database['database_field_title'] ]}</h1>
+<br />
+<form action='{$database['base_link']}do=delete&amp;record={$record['primary_id_field']}' method='post'>
+	<input type='hidden' name='confirm' value='1' />
+	<input type='hidden' name='return' value='{$this->request['return']}' />
+	<input type="hidden" name="secure_key" value="{$this->member->form_hash}" />
+	<div class='ipsBox'>
+		<div class='ipsBox_container ipsPad ipsType_textblock'>
+			{$this->lang->words['delete_record_info']}
+		</div>
+		<fieldset class='submit'>
+			<input type="submit" class='input_submit' value="{$this->lang->words['confirm_button']}" /> {$this->lang->words['or']} <a href='{$database['base_link']}record={$record['primary_id_field']}' title='{$this->lang->words['cancel']}' class='cancel'>{$this->lang->words['cancel']}</a>
+		</fieldset>
+	</div>
+</form>]]></template_content>
+      <template_name>confirmDeleteRecord</template_name>
+      <template_data>$database=array(), $record=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<php>
+	if( $this->request['database'] AND $this->request['category'] )
+	{
+		$category	= $this->registry->ccsFunctions->getCategoriesClass( $this->caches['ccs_databases'][ $this->request['database'] ] )->getCategory( $this->request['category'] );
+	}
+</php>
+<if test="isDatabase:|:$this->request['database']">
+	<if test="isCategory:|:$this->request['category']">
+		<li class='special'><label for='s_ccs_cat' title='{$this->lang->words['context_search_category']}'><input type='radio' name='search_app' value="ccs:database:{$this->request['database']}-{$this->request['category']}" class='input_radio' id='s_ccs_cat' checked='checked' /> <strong>{$this->lang->words['context_search_category']}</strong></label></li>
+		<li class='special'><label for='s_ccs_db' title='{$this->lang->words['context_search_database']}'><input type='radio' name='search_app' value="ccs:database:{$this->request['database']}" class='input_radio' id='s_ccs_cat' /> <strong>{$this->lang->words['context_search_database']}</strong></label></li>
+	<else />
+		<li class='special'><label for='s_ccs_db' title='{$this->lang->words['context_search_database']}'><input type='radio' name='search_app' value="ccs:database:{$this->request['database']}" class='input_radio' id='s_ccs_cat' checked='checked' /> <strong>{$this->lang->words['context_search_database']}</strong></label></li>
+	</if>
+<else />
+	<if test="setAppSearch:|:ipsRegistry::$appSearch = TRUE"></if>
+</if>]]></template_content>
+      <template_name>contextSearch</template_name>
+      <template_data/>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<div class='result_info'>
+	<h3><a href='{$r['url']}'>{$r['content_title']}</a></h3>
+	<if test="showGenericContent:|:!$resultAsTitle AND $r['content']">
+	<p>
+		{$r['content']}
+	</p>
+	</if>
+</div>
+<if test="showCommentDetails:|:$r['updated'] OR $r['member_id']">
+	<div class='result_details desc'>
+		<ul>
+			<if test="commentUpdated:|:$r['updated']">
+				<li>{parse date="$r['updated']" format="short"}</li>
+			</if>
+			<li>{$this->lang->words['search_by']} {parse template="userHoverCard" group="global" params="$r"}</li>
+		</ul>
+	</div>
+</if>]]></template_content>
+      <template_name>databaseCommentSearchResult</template_name>
+      <template_data>$r, $resultAsTitle=false</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<if test="navigationCss:|:count($navigation)">
+	<style type='text/css'>
+		#ccs_breadcrumb {
+			color: #878787;
+			font-size: 0.9em;
+			padding: 0px 15px 12px 8px;
+			margin-top: -10px;
+			clear: both;
+		}
+		
+			#ccs_breadcrumb li {
+				padding-right: 7px;
+				float: left;
+			}
+			
+				#ccs_breadcrumb li.first {
+					background: transparent url({$this->settings['img_url']}/to_post_no_children.gif) no-repeat;
+					padding-left: 25px;
+				}
+		
+			#ccs_breadcrumb a {
+				color: #393939;
+				text-decoration: none;
+			}
+	</style>
+	<div class='ccs_nav'>
+		<ul id='ccs_breadcrumb' class='left'>
+			<php>$this->did_first = 0;</php>
+			<foreach loop="navigation:$navigation as $data">
+				<li<if test="notdonefirstapp:|:!$this->did_first"> class='first'</if>><if test="didfirstappnow:|:$this->did_first"><span class='nav_sep'>&gt;</span></if> <if test="navigationlink:|:$data[1]"><a href='{$data[1]}' title='{$this->lang->words['nav_return_to']} {$data[0]}'></if>{$data[0]}<if test="closenavigationlink:|:$data[1]"></a></if></li>
+				<if test="forsuredidfirstnav:|:$this->did_first=1"></if>
+			</foreach>
+		</ul>
+	</div>
+	<br class='clear' />
+</if>]]></template_content>
+      <template_name>databaseNavigation</template_name>
+      <template_data>$navigation=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<div class='_recordRow'>
+<div class='result_info'>
+	<if test="tagDetails:|:isset($r['tags']) AND $r['tags']">
+		<div class='right'><img src='{$this->settings['img_url']}/icon_tag.png' /> <span class='desc lighter blend_links'>{$r['tags']['formatted']['truncatedWithLinks']}</span></div>
+	</if>
+	<h3>
+		<if test="tagPrefix:|:!empty($r['tags']['formatted']['prefix'])">
+			{$r['tags']['formatted']['prefix']}
+		</if>
+		<a href='{$r['url']}'>{$r['content_title']}</a>
+	</h3>
+	<if test="showGenericContent:|:!$resultAsTitle AND $r['content']">
+		<p>
+			{$r['content']}
+		</p>
+	</if>
+	<if test="isFollowedStuff:|:count($r['_followData'])">
+		{parse template="followData" group="search" params="$r['_followData']"}
+	</if>
+</div>
+<if test="recordResult:|:$r['updated'] OR $r['member_id'] OR count($r['_followData'])">
+	<div class='result_details desc'>
+		<if test="isFollowedStuff:|:count($r['_followData'])">
+			<div class='right'>
+				<a href='#' class='ipsButton_secondary no_width ipbmenu' id='change_{$r['primary_id_field']}'>{$this->lang->words['followed_changeopts']}</a>
+				<input class='input_check checkall toggle_notify_on' type="checkbox" name="likes[]" value="{$r['_followData']['like_app']}-{$r['_followData']['like_area']}-{$r['_followData']['like_rel_id']}" />
+				<div class='ipbmenu_content' id='change_{$r['primary_id_field']}_menucontent' style='display: none; width: 400px; padding: 5px;'>
+					<select name='modaction_row' class='input_select' id='form_change_{$r['primary_id_field']}'>
+						<option value=''>{$this->lang->words['like_mod__chose']}</option>
+						<option value='delete'>{$this->lang->words['like_mod__delete']}</option>
+						<option value='change-donotify'>{$this->lang->words['like_mod__change_donotify']}</option>
+						<option value='change-donotnotify'>{$this->lang->words['like_mod__change_nonotify']}</option>
+						<option value='change-immediate'>{$this->lang->words['like_mod__change_immediate']}</option>
+						<option value='change-offline'>{$this->lang->words['like_mod__change_offline']}</option>
+						<if test="forumsDigests:|:$this->request['search_app'] == 'forums'">
+							<option value='change-daily'>{$this->lang->words['like_mod__change_daily']}</option>
+							<option value='change-weekly'>{$this->lang->words['like_mod__change_weekly']}</option>
+						</if>
+						<option value='change-anon'>{$this->lang->words['like_mod__change_anon']}</option>
+						<option value='change-noanon'>{$this->lang->words['like_mod__change_noanon']}</option>
+					</select>
+						
+					<input type="submit" class="input_submit submit_modaction_row" value="{$this->lang->words['update_selected']}" />
+				</div>
+			</div>
+		</if>
+		<ul>
+			<if test="recordUpdated:|:$r['updated']">
+				<li>{parse date="$r['updated']" format="short"}</li>
+			</if>
+			<li>{$this->lang->words['search_by']} {parse template="userHoverCard" group="global" params="$r"}</li>
+		</ul>
+	</div>
+</if>
+</div>]]></template_content>
+      <template_name>databaseSearchResult</template_name>
+      <template_data>$r, $resultAsTitle=false</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[{parse js_module="like"}
+<div class='__like right' data-app="{$data['app']}" data-area="{$data['area']}" data-relid="{$relId}" data-isfave="{$data['iLike']}">
+	{parse template="likeSummaryContents" group="ccs_global" params="$data, $relId, $opts"}
+</div>
+<script type="text/javascript">
+	var FAVE_TEMPLATE = new Template( "<h3>{parse expression="sprintf( $this->lang->words['unset_fave_title'], $this->lang->words['like_ucfirst_un' . $data['vernacular'] ])"}</h3><div class='ipsPad'><span class='desc'>{parse expression="sprintf( $this->lang->words['unset_fave_words'], $this->lang->words['like_un' . $data['vernacular'] ])"}</span><br /><p class='ipsForm_center'><input type='button' value='{parse expression="sprintf( $this->lang->words['unset_button'], $this->lang->words['like_ucfirst_un' . $data['vernacular'] ])"}' class='input_submit _funset' /></p></div>");
+</script>]]></template_content>
+      <template_name>likeSummary</template_name>
+      <template_data>$data, $relId, $opts</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<span class='ipsButton_extra right <if test="likeClickable:|:$data['totalCount']">_fmore clickable</if>' title='{parse expression="sprintf( $this->lang->words['like_totalcount_' . $data['vernacular'] ], $data['totalCount'] )"}' data-tooltip="{parse expression="sprintf( $this->lang->words['like_totalcount_' . $data['vernacular'] ], $data['totalCount'] )"}"><img src='{$this->settings['img_url']}/icon_users.png' /> <strong>{$data['totalCount']}</strong></span>
+<if test="likeOnlyMembers:|:$this->memberData['member_id']">
+	<a href='#' title="<if test="iLike:|:$data['iLike']">{parse expression="sprintf( $this->lang->words['fave_tt_on'], $this->lang->words['like_ucfirst_un' . $data['vernacular'] ])"}<else />{parse expression="sprintf( $this->lang->words['fave_tt_off'], $this->lang->words['like_ucfirst_' . $data['vernacular'] ])"}</if>" class='ftoggle ipsButton_secondary'><if test="iLikeInfo:|:$data['iLike']">{parse expression="sprintf( $this->lang->words['unset_fave_button'], $this->lang->words['like_ucfirst_un' . $data['vernacular'] ])"}<else />{parse expression="sprintf( $this->lang->words['set_fave_button'], $this->lang->words['like_ucfirst_' . $data['vernacular'] ])"}</if></a>
+</if>]]></template_content>
+      <template_name>likeSummaryContents</template_name>
+      <template_data>$data, $relId, $opts=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<div class='category_block block_wrap'>
+	<h3 class='maintitle'>{parse expression="sprintf( $this->lang->words['all_saved_revisions'], $record['title'] )"}</h3>
+	<div class="ipsBox table_wrap">
+		<div class="ipsBox_container">
+			<table class='ipb_table' summary="{$this->lang->words['revisions_navigation']}">
+				<tr class='header'>
+					<th scope='col' style="width: 40%">{$this->lang->words['revision_th_date']}</th>
+					<th scope='col' style="width: 45%">{$this->lang->words['revision_th_member']}</th>
+					<th scope='col' class="short">&nbsp;</th>
+				</tr>
+				<if test="hasRevisions:|:is_array( $revisions ) AND count( $revisions )">
+					{parse striping="revisions" classes="row1,row2"}
+					<foreach loop="revisions:$revisions as $revision">
+						<tr class="{parse striping="revisions"}">
+							<td>
+								{parse date="$revision['revision_date']" format="LONG"}
+							</td>
+							<td>
+								{parse template="userHoverCard" group="global" params="$revision"}
+							</td>
+							<td class='short'>
+								<ul class='ipsList_inline ipsList_nowrap'>
+									<li>
+										<a href="{$record['url']}do=editRevision&amp;revision={$revision['revision_id']}" class='ipsButton_secondary'>{$this->lang->words['revision_link_edit']}</a>
+									</li>
+									<li>
+										<a href="{$record['url']}do=deleteRevision&amp;revision={$revision['revision_id']}&amp;secure_key={$this->member->form_hash}" class='ipsButton_secondary' onclick='if( !confirm("{$this->lang->words['delete_rev_sure']}") ){ return false; }'>{$this->lang->words['revision_link_delete']}</a>
+									</li>
+									<li>
+										<a href="{$record['url']}do=restoreRevision&amp;revision={$revision['revision_id']}&amp;secure_key={$this->member->form_hash}" class='ipsButton_secondary' onclick='if( !confirm("{$this->lang->words['restore_rev_sure']}") ){ return false; }'>{$this->lang->words['revision_link_restore']}</a>
+									</li>
+									<li>
+										<a href="{$record['url']}do=compareRevision&amp;revision={$revision['revision_id']}" class='ipsButton_secondary'>{$this->lang->words['revision_link_compare']}</a>
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</foreach>
+				<else />
+					<tr>
+						<td class='no_messages' colspan="3">{$this->lang->words['no_revisions_found']}</td>
+					</tr>
+				</if>
+			</table>
+		</div>
+	</div>
+</div>]]></template_content>
+      <template_name>manageRevisions</template_name>
+      <template_data>$database, $fields, $record, $revisions</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<div class='category_block block_wrap'>
+	{parse template="subTabLoop" group="modcp" params=""}
+	<table class='ipb_table topic_list'>
+		<tr>
+			<th colspan='5' class='bar altbar ipsFilterbar'>
+				<ul class='ipsList_inline ipsList_reset'>
+					<foreach loop="databases:$availableDatabases as $dbId">
+						<li<if test="isActive:|:$dbId == $database['database_id']"> class="active"</if>>
+							<a href='<if test="urlType:|:$type == 'deleted'">{parse url="app=core&amp;module=modcp&amp;fromapp=ccs&amp;tab=deletedrecords&amp;database={$dbId}" base="public"}<else />{parse url="app=core&amp;module=modcp&amp;fromapp=ccs&amp;tab=unapprovedrecords&amp;database={$dbId}" base="public"}</if>'>{$this->caches['ccs_databases'][ $dbId ]['database_name']}</a>
+						</li>
+					</foreach>
+				</ul>
+			</th>
+		</tr>
+		<if test="hasRecords:|:count($results)">
+			<foreach loop="pendingrecords:$results as $data">
+				<tr class='<if test="isUnread:|:!$data['_isRead']"> unread</if>' id='row_{$data['primary_id_field']}'>
+					<td class='col_f_icon short altrow'>
+						<if test="isUnreadIcon:|:!$data['_isRead']">
+							<a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $database['database_id'], 0, $data['primary_id_field'] )}'>
+								<if test="isAuthor:|:$this->memberData['member_id'] && $this->memberData['member_id'] == $data['member_id']">
+									{parse replacement="t_unread_dot"}
+								<else />
+									{parse replacement="t_unread"}
+								</if>
+							</a>
+						</if>
+					</td>
+					<td class='col_f_topic'>
+						<div class='right'>
+							<foreach loop="ratingLoop:array(1,2,3,4,5) as $_rating">
+								<if test="recordrating:|:$data['rating_real'] >= $_rating">{parse replacement="mini_rate_on"}<else />{parse replacement="mini_rate_off"}</if>
+							</foreach>
+						</div>
+						<a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $database['database_id'], 0, $data['primary_id_field'] )}'>{$data['_title']}</a>
+						<div class='desc'>{$data['desc']}</div>
+					</td>
+					<td class='col_f_views'>
+						<ul>
+							<li>{parse format_number="$data['record_comments']"} {$this->lang->words['modcp_record_comments']}</li>
+							<li class='views desc'>{parse format_number="$data['record_views']"} {$this->lang->words['modcp_record_views']}</li>
+						</ul>
+					</td>
+					<td class='col_f_post'>
+						<if test="submitterIsMemberStart:|:$data['member_id']"><a href='{parse url="showuser={$data['member_id']}" seotitle="{$data['members_seo_name']}" template="showuser" base="public"}' class='ipsUserPhotoLink'></if>
+							<img src='{$data['pp_small_photo']}' class='ipsUserPhoto ipsUserPhoto_mini left' />
+						<if test="submitterIsMemberEnd:|:$data['member_id']"></a></if>
+						<ul class='last_post ipsType_small'>
+							<li><if test="catuserid:|:$data['member_id']">{parse template="userHoverCard" group="global" params="$data"}<else />{$this->lang->words['global_guestname']}</if></li>
+							<li>{parse date="$data['record_saved']" format="long"}</li>
+							<if test="modpanelhiddenupdated:|:$data['record_updated'] > $data['record_saved']">
+								<li>{$this->lang->words['modcp_record_updated']} {parse date="$data['record_updated']" format="long"}</li>
+							</if>
+						</ul>
+					</td>
+					<td>
+						<ul class='ipsList_inline right'>
+							<li>
+								<a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $database['database_id'], 0, $data['primary_id_field'] )}?do=approve&amp;secure_key={$this->member->form_hash}&amp;return=modcp:{$type}' class='ipsButton_secondary ipsType_smaller'><if test="approveType:|:$type == 'deleted'">{$this->lang->words['restore_topic']}<else />{$this->lang->words['modcp_approvelink']}</if></a>
+							</li>
+							<li>
+								<a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $database['database_id'], 0, $data['primary_id_field'] )}?do=delete&amp;secure_key={$this->member->form_hash}&amp;return=modcp:{$type}' class='ipsButton_secondary ipsType_smaller important'><if test="deleteType:|:$type == 'deleted'">{$this->lang->words['perm_delete_topic']}<else />{$this->lang->words['modcp_deletelink']}</if></a>
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</foreach>
+		<else />
+			<tr>
+				<td colspan='5' class='no_messages'><if test="messageType:|:$type == 'deleted'">{$this->lang->words['no_deleted_records']}<else />{$this->lang->words['no_unapproved_records']}</if></td>
+			</tr>
+		</if>
+	</table>
+</div>]]></template_content>
+      <template_name>modcpRecords</template_name>
+      <template_data><![CDATA[$results, $database, $availableDatabases, $type='unapproved']]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<div class='result_info'>
+	<h3><a href='{$r['url']}'>{$r['content_title']}</a></h3>
+</div>
+<if test="showDetails:|:$r['updated'] OR $r['member_id']">
+	<div class='result_details desc'>
+		<ul>
+			<if test="updatedDate:|:$r['updated']">
+				<li>{parse date="$r['updated']" format="short"}</li>
+			</if>
+		</ul>
+	</div>
+</if>]]></template_content>
+      <template_name>pageSearchResult</template_name>
+      <template_data>$r, $resultAsTitle=false</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<php>$this->menuDrawn	= array();$this->tabIsActive	= false;</php>
+	<if test="hasApps:|:is_array($applications) AND count($applications)">
+		<foreach loop="$applications as $data">
+			<if test="hasMenusBefore:|:count($menus[0])">
+				<foreach loop="menusBeforeAppsLoop:$menus[0] as $menuItem">
+					<php>
+						if( substr( $menuItem['menu_position'], 0, strlen($data['app_dir']) ) == $data['app_dir'] AND ( !$menuItem['menu_permissions'] OR !IPSMember::isInGroup( $this->memberData, explode( ',', $menuItem['menu_permissions'] ) ) ) )
+						{
+							$tabIsActive	= false;
+						
+							if( urldecode( $this->registry->ccsFunctions->returnVisitedUrlWithoutDatabase() ) == IPSText::UNhtmlspecialchars( $menuItem['menu_url'] ) OR urldecode( $this->registry->ccsFunctions->returnVisitedUrl() ) == IPSText::UNhtmlspecialchars( $menuItem['menu_url'] ) )
+							{
+								$tabIsActive	= true;
+							}
+							
+							if( $menuItem['menu_submenu'] )
+							{
+								foreach( $menus[ $menuItem['menu_id'] ] as $submenuItem )
+								{
+									if( urldecode( $this->registry->ccsFunctions->returnVisitedUrlWithoutDatabase() ) == IPSText::UNhtmlspecialchars( $submenuItem['menu_url'] ) OR urldecode( $this->registry->ccsFunctions->returnVisitedUrl() ) == IPSText::UNhtmlspecialchars( $submenuItem['menu_url'] ) )
+									{
+										$tabIsActive	= true;
+									}
+									else if( strpos( urldecode( $this->registry->ccsFunctions->returnVisitedUrlWithoutDatabase() ), IPSText::UNhtmlspecialchars( $submenuItem['menu_url'] ) ) === 0 )
+									{
+										$tabIsActive	= true;
+									}
+								}
+							}
+							
+							if( $tabIsActive )
+							{
+								$this->tabIsActive	= true;
+							}
+						}
+					</php>
+					<if test="menusBeforeApps:|:substr( $menuItem['menu_position'], 0, strlen($data['app_dir']) ) == $data['app_dir'] AND ( !$menuItem['menu_permissions'] OR !IPSMember::isInGroup( $this->memberData, explode( ',', $menuItem['menu_permissions'] ) ) )">
+						<php>if( substr( $menuItem['menu_position'], 0, strlen($data['app_dir']) ) == $data['app_dir'] ){ $this->menuDrawn[] = $menuItem['menu_id']; }</php>
+						<li id='nav_menu_{$menuItem['menu_id']}' class="left <if test="skipMoreMenu:|:$menuItem['menu_submenu']">skip_moremenu</if> <if test="tabIsActive:|:$tabIsActive">active</if>">
+							<a id='nav_menu_{$menuItem['menu_id']}_trigger' href='{$menuItem['menu_url']}' title='{$menuItem['menu_description']}' {$menuItem['menu_attributes']}>{$menuItem['menu_title']} <if test="hasSubmenuInd:|:$menuItem['menu_submenu']"><span class='dropdownIndicator'></span></if></a>
+							<if test="isSubmenu:|:$menuItem['menu_submenu']">
+								<div id='nav_menu_{$menuItem['menu_id']}_menucontent' class='submenu_container clearfix boxShadow' style='display: none'>
+									<div class="left">
+										<ul class="submenu_links">
+											<foreach loop="thisSubmenu:$menus[ $menuItem['menu_id'] ] as $submenuItem">
+												<if test="submenupermissions:|:!$submenuItem['menu_permissions'] OR ( $submenuItem['menu_permissions'] AND !IPSMember::isInGroup( $this->memberData, explode( ',', $submenuItem['menu_permissions'] ) ) )">
+													<li class='submenu_li'><a href='{$submenuItem['menu_url']}' title='{$submenuItem['menu_description']}' {$submenuItem['menu_attributes']}>{$submenuItem['menu_title']}</a></li>
+												</if>
+											</foreach>
+										</ul>
+									</div>
+								</div>
+								<script type='text/javascript'>
+									document.observe("dom:loaded", function(){
+										//$('content').insert( $('nav_menu_{$menuItem['menu_id']}_menucontent').remove() );
+										
+										new ipb.Menu( $('nav_menu_{$menuItem['menu_id']}_trigger'), $('nav_menu_{$menuItem['menu_id']}_menucontent'), { eventType: <if test="clickOrMouse:|:$menuItem['menu_submenu'] == 1">'mouseover'<else />'click'</if>, closeOnMouseout: <if test="clickOrMouse:|:$menuItem['menu_submenu'] == 1">'nav_menu_{$menuItem['menu_id']}'<else />false</if> } );
+									});
+								</script>
+							</if>
+							<if test="fixActiveTabBefore:|:$tabIsActive">
+								<script type='text/javascript'>
+									document.observe("dom:loaded", function(){
+										$$('#community_app_menu li').each( function(elem){
+											if( $(elem).hasClassName('active') && $(elem).id != 'nav_menu_{$menuItem['menu_id']}' )
+											{
+												$(elem).removeClassName('active');
+											}
+										});
+									});
+								</script>
+							</if>
+						</li>
+					</if>
+				</foreach>
+			</if>
+			<if test="appShow:|:$data['app_show']">
+				<li id='nav_app_{$data['app_dir']}' class="left <if test="appIsActive:|:$data['app_active'] AND !$this->tabIsActive">active</if>"><a href='{parse url="{$data['app_link']}" seotitle="{$data['app_seotitle']}" template="{$data['app_template']}" base="{$data['app_base']}"}' title='<if test="appHasDescription:|:$this->caches['app_cache'][ $data['app_dir'] ]['app_tab_description']">{$this->caches['app_cache'][ $data['app_dir'] ]['app_tab_description']}<else />{parse expression="sprintf( $this->lang->words['go_to_prefix'], IPSLib::getAppTitle($data['app_dir']) )"}</if>' {$this->caches['app_cache'][ $data['app_dir'] ]['app_tab_attributes']}>{IPSLib::getAppTitle($data['app_dir'])}</a></li>
+			</if>
+		</foreach>
+	</if>
+	<if test="hasMenusAfter:|:count($menus[0])">
+		<foreach loop="menusAfterAppsLoop:$menus[0] as $menuItem">
+			<php>
+				if( !in_array( $menuItem['menu_id'], $this->menuDrawn ) AND ( !$menuItem['menu_permissions'] OR !IPSMember::isInGroup( $this->memberData, explode( ',', $menuItem['menu_permissions'] ) ) ) )
+				{
+					$tabIsActive	= false;
+				
+					if( urldecode( $this->registry->ccsFunctions->returnVisitedUrlWithoutDatabase() ) == IPSText::UNhtmlspecialchars( $menuItem['menu_url'] ) OR urldecode( $this->registry->ccsFunctions->returnVisitedUrl() ) == IPSText::UNhtmlspecialchars( $menuItem['menu_url'] ) )
+					{
+						$tabIsActive	= true;
+					}
+					
+					if( $menuItem['menu_submenu'] )
+					{
+						foreach( $menus[ $menuItem['menu_id'] ] as $submenuItem )
+						{
+							if( urldecode( $this->registry->ccsFunctions->returnVisitedUrlWithoutDatabase() ) == IPSText::UNhtmlspecialchars( $submenuItem['menu_url'] ) OR urldecode( $this->registry->ccsFunctions->returnVisitedUrl() ) == IPSText::UNhtmlspecialchars( $submenuItem['menu_url'] ) )
+							{
+								$tabIsActive	= true;
+							}
+							else if( strpos( urldecode( $this->registry->ccsFunctions->returnVisitedUrlWithoutDatabase() ), IPSText::UNhtmlspecialchars( $submenuItem['menu_url'] ) ) === 0 )
+							{
+								$tabIsActive	= true;
+							}
+						}
+					}
+					
+					if( $tabIsActive )
+					{
+						$this->tabIsActive	= true;
+					}
+				}
+			</php>
+			<if test="menusAfterApps:|:!in_array( $menuItem['menu_id'], $this->menuDrawn ) AND ( !$menuItem['menu_permissions'] OR !IPSMember::isInGroup( $this->memberData, explode( ',', $menuItem['menu_permissions'] ) ) )">
+				<li id='nav_menu_{$menuItem['menu_id']}' class="left <if test="skipMoreMenu2:|:$menuItem['menu_submenu']">skip_moremenu</if> <if test="tabIsActiveAfter:|:$tabIsActive">active</if>">
+					<a id='nav_menu_{$menuItem['menu_id']}_trigger' href='{$menuItem['menu_url']}' title='{$menuItem['menu_description']}' {$menuItem['menu_attributes']}>{$menuItem['menu_title']} <if test="hasSubmenuAfterInd:|:$menuItem['menu_submenu']"><span class='dropdownIndicator'></span></if></a>
+					<if test="isSubmenu:|:$menuItem['menu_submenu']">
+						<div id='nav_menu_{$menuItem['menu_id']}_menucontent' class='submenu_container clearfix boxShadow' style='display: none'>
+							<div class="left">
+								<ul class="submenu_links">
+									<foreach loop="thisAfterSubmenu:$menus[ $menuItem['menu_id'] ] as $submenuItem">
+										<if test="submenupermissions2:|:!$submenuItem['menu_permissions'] OR ( $submenuItem['menu_permissions'] AND !IPSMember::isInGroup( $this->memberData, explode( ',', $submenuItem['menu_permissions'] ) ) )">
+											<li class='submenu_li'><a href='{$submenuItem['menu_url']}' title='{$submenuItem['menu_description']}' {$submenuItem['menu_attributes']}>{$submenuItem['menu_title']}</a></li>
+										</if>
+									</foreach>
+								</ul>
+							</div>
+						</div>
+						<script type='text/javascript'>
+							document.observe("dom:loaded", function(){
+								//$('content').insert( $('nav_menu_{$menuItem['menu_id']}_menucontent').remove() );
+								
+								new ipb.Menu( $('nav_menu_{$menuItem['menu_id']}_trigger'), $('nav_menu_{$menuItem['menu_id']}_menucontent'), { eventType: <if test="clickOrMouseAfter:|:$menuItem['menu_submenu'] == 1">'mouseover'<else />'click'</if>, closeOnMouseout: <if test="clickOrMouse:|:$menuItem['menu_submenu'] == 1">'nav_menu_{$menuItem['menu_id']}'<else />false</if> } );
+							});
+						</script>
+					</if>
+					<if test="fixActiveTabAfter:|:$tabIsActive">
+						<script type='text/javascript'>
+							document.observe("dom:loaded", function(){
+								$$('#community_app_menu li').each( function(elem){
+									if( $(elem).hasClassName('active') && $(elem).id != 'nav_menu_{$menuItem['menu_id']}' )
+									{
+										$(elem).removeClassName('active');
+									}
+								});
+							});
+						</script>
+					</if>
+				</li>
+			</if>
+		</foreach>
+	</if>]]></template_content>
+      <template_name>primary_navigation</template_name>
+      <template_data>$menus=array(), $applications=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<div id='primary_nav' class='clearfix'>
+	<div class='main_width'>
+		<ul class='ipsList_inline' id='community_app_menu'>
+			<if test="showQuickNav:|:! ( ! $this->memberData['member_id'] && $this->settings['force_login'] ) && !($this->settings['board_offline'] && !$this->memberData['g_access_offline']) && $this->memberData['g_view_board']">
+				<li class='right'>
+					<a href="{parse url="app=core&amp;module=global&amp;section=navigation&amp;inapp={parse expression="IPS_APP_COMPONENT"}" base="public"}" rel="quickNavigation" accesskey='9' id='quickNavLaunch' title='{$this->lang->words['launch_quicknav']}'><span>&nbsp;</span></a>
+				</li>
+			</if>
+			<li id='nav_explore' class='right'>
+				<a href='{parse url="app=core&amp;module=search&amp;do=viewNewContent&amp;search_app=<if test="viewnewcontentapp:|:$this->registry->getCurrentApplication() != 'core' AND IPSLib::appIsSearchable( $this->registry->getCurrentApplication() )">{$this->registry->getCurrentApplication()}<else />forums</if>" base="public"}' accesskey='2'>{$this->lang->words['view_new_posts']}</a>
+			</li>
+			<if test="showhomeurl:|:$this->settings['home_url'] AND $this->settings['home_name']">
+				<li id='nav_home' class='left'><a href='{$this->settings['home_url']}' title='{$this->lang->words['homepage_title']}' rel="home">{$this->settings['home_name']}</a></li>
+			</if>
+			{$applications_html}
+			<li id='nav_other_apps' style='display: none'>
+				<a href='#' class='ipbmenu' id='more_apps'>{$this->lang->words['more_apps']} <img src='{$this->settings['img_url']}/useropts_arrow.png' /></a>
+			</li>
+		</ul>
+	</div>
+	<script type='text/javascript'>
+		if( $('primary_nav') ){	ipb.global.activateMainMenu(); }
+	</script>
+</div>
+<div id='content'><h1 class='ipsType_pagetitle' style='text-align:center;'>{$this->lang->words['menu_hook_preview']}</h1></div>
+<script type='text/javascript'>
+	ipb.delegate.register("a", function(e){ Event.stop(e); return false; });
+</script>]]></template_content>
+      <template_name>primary_navigation_preview</template_name>
+      <template_data>$applications_html</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<h1 class='ipsType_pagetitle'>{$this->lang->words['promote_post_to_article']}</h1>
+<br />
+<if test="errormessage:|:$error_message">
+	<p class='message error'>
+		{$error_message}
+	</p>
+	<br />
+</if>
+<if test="isPreview:|:$preview">
+	<p class='message'>{$this->lang->words['attach_preview']}</p><br />
+	<h2 class='maintitle'>{$this->lang->words['record_preview_title']}</h2>
+	{parse striping="preview" classes="row1,row2"}
+	<div class='post_wrap' id='post_preview'>
+		<table class='ipb_table'>
+			<foreach loop="fieldsppreview:$fields as $field">
+				<tr class='{parse striping="preview"}'>
+					<td style='width: 20%; font-weight: bold; text-align: right;'>{$field['field_name']}:</td>
+					<td>{$fieldsClass->getFieldValuePreview( $field, $post )}</td>
+				</tr>
+			</foreach>
+		</table>
+	</div>
+	<br />
+</if>
+<form action='{parse url="app=ccs&amp;module=articles&amp;section=promote&amp;do=doPromote" base="public"}' method='post' id='postingform' enctype='multipart/form-data'>
+	<input type="hidden" name="post" value="{$post['pid']}" />
+	<input type="hidden" name="post_key" value="{$post['post_key']}" />
+	<input type="hidden" name="secure_key" value="{$this->member->form_hash}" />
+	<div class='ipsBox post_block'>
+		<div class='ipsBox_container ipsPad'>
+			<ul class='ipsForm ipsForm_horizontal'>
+				<li class='ipsField <if test="moveorcopyCss:|:$permissions['copy'] AND $permissions['move']">ipsField_select</if>'>
+					<label class='ipsField_title'>{$this->lang->words['promote__method']} <span class='ipsForm_required'>*</span></label>
+					<div class='ipsField_content'>
+						<if test="moveorcopy:|:$permissions['copy'] AND $permissions['move']">
+							<select name='promote_method'>
+								<option value='copy'>{$this->lang->words['promote_copy_t']}</option>
+								<option value='move'>{$this->lang->words['promote_move_t']}</option>
+							</select>
+						<else />
+							<if test="onlycopy:|:$permissions['copy']">
+								<if test="leavelinkcp:|:$this->settings['ccs_promote_link']">
+									{$this->lang->words['promote__copyonly']}
+								<else />
+									{$this->lang->words['promote__copyonly_nl']}
+								</if>
+							<else />
+								<if test="leavelinkmv:|:$this->settings['ccs_promote_link']">
+									{$this->lang->words['promote__moveonly']}
+								<else />
+									{$this->lang->words['promote__moveonly_nl']}
+								</if>
+							</if>
+						</if>
+					</div>
+				</li>
+				<if test="leavelink:|:$this->settings['ccs_promote_link'] AND $this->settings['ccs_promote_nolink']">
+					<li class='ipsField ipsField_checkbox'>
+						<input type='checkbox' class='checkbox' name='promote_no_link' value='1' />
+						<p class='ipsField_content'>
+							{$this->lang->words['promote_no_leave_link']}
+						<p>
+					</li>
+				</if>
+				<if test="promoteassociation:|:$this->settings['ccs_promote_associate']">
+					<li class='ipsField ipsField_checkbox'>
+						<if test="associatetype:|:$this->settings['ccs_promote_associate']==2">
+							{$this->lang->words['promote_associate_auto']}
+						<else />
+							<input type='checkbox' class='checkbox' name='promote_associate' value='1' />
+							<p class='ipsField_content'>
+								{$this->lang->words['promote_associate']}
+							</p>
+						</if>
+					</li>
+				</if>
+				<if test="haspcategories:|:$categories">
+					<li class='ipsField ipsField_select'>
+						<label class='ipsField_title'>{$this->lang->words['promote__cats']} <span class='ipsForm_required'>*</span></label>
+						<div class='ipsField_content'>
+							<select name='category_id' id='category_id'>
+								{$categories}
+							</select>
+						</div>
+					</li>
+				</if>
+				
+				<if test="hasTags:|:$post['_tagBox']">
+					<li class='ipsField'>
+						<label class='ipsField_title'>{$this->lang->words['sform_tags']}</label>
+						<div class='ipsField_content'>
+							{$post['_tagBox']}
+						</div>
+					</li>
+				</if>
+				
+				<foreach loop="fields:$fields as $field">
+					<li class='ipsField'>
+						<label class='ipsField_title'>{$field['field_name']}<if test="isRequired:|:$field['field_required']"> <span class='ipsForm_required'>*</span></if></label>
+						<p class='ipsField_content'>
+							{$fieldsClass->getPublicField( $field, $post['field_'.$field['field_id']] )}
+						</p>
+					</li>
+				</foreach>
+			</ul>
+			<if test="canDoExtras:|:$database['moderate_extras']">
+				<h3 id='ccs_extra_opts' class='clickable'><img src='{$this->settings['img_url']}/bullet.png' id='opts_bullet' /> {$this->lang->words['ccs_extra_opts_ttl']}</h3>
+				<div class='ipsPad'>
+					<ul id='extra_opts_container' class='ipsForm ipsForm_horizontal' style='display:none;'>
+						<li class='ipsField'>
+							<label class='ipsField_title'>{$this->lang->words['record_form_staticfurl']}</label>
+							<div class='ipsField_content'>
+								<input type='text' class='input_text' name='record_static_furl' id='record_static_furl' value='' size='50' />
+								<div class='desc'>{$this->lang->words['record_form_staticfurl_desc']}</div>
+							</div>
+						</li>
+						<li class='ipsField'>
+							<label class='ipsField_title'>{$this->lang->words['record_form_metakeywords']}</label>
+							<div class='ipsField_content'>
+								<textarea wrap='soft' class='input_text' cols='50' rows='5' name='record_meta_keywords' id='record_meta_keywords'></textarea>
+							</div>
+						</li>
+						<li class='ipsField'>
+							<label class='ipsField_title'>{$this->lang->words['record_form_metadescription']}</label>
+							<div class='ipsField_content'>
+								<textarea wrap='soft' class='input_text' cols='50' rows='5' name='record_meta_description' id='record_meta_description'></textarea>
+							</div>
+						</li>
+						<li class='ipsField'>
+							<label class='ipsField_title'>{$this->lang->words['record_form_author']}</label>
+							<div class='ipsField_content'>
+								<input type='text' class='input_text' name='record_authorname' id='record_authorname' size='50 value='' />
+								<div class='desc'>{$this->lang->words['promote_form_author_desc']}</div>
+							</div>
+						</li>
+						<if test="articlesForTemplate:|:$database['database_is_articles']">
+							<li class='ipsField ipsField_select'>
+								<label class='ipsField_title'>{$this->lang->words['record_article_template']}</label>
+								<div class='ipsField_content'>
+									<select name='article_template' id='article_template'>
+										<option value='0'>{$this->lang->words['article_template_default']}</option>
+										{$this->registry->ccsFunctions->returnArticleTemplates()}
+									</select>
+								</div>
+							</li>
+						</if>
+					</ul>
+				</div>
+			</if>
+		</div>
+		{parse template="socialSharePostStrip" group="global_other"}
+		<fieldset class='submit'>
+			<input type="submit" name="dosubmit" value=" {$this->lang->words['save_button_record']} " class="input_submit" accesskey="s"  />
+			<input type="submit" name="preview" value=" {$this->lang->words['preview_button_record']} " class="input_submit" accesskey="p"  />
+			{$this->lang->words['or']} 
+			<a href='{parse url="showtopic={$post['topic_id']}" base="public" seotitle="{$post['title_seo']}" template="showtopic"}' title='{$this->lang->words['cancel']}' class='cancel'>{$this->lang->words['cancel']}</a>
+		</fieldset>
+	</div>
+</form>
+<if test="extrasTypeAhead:|:$database['moderate_extras']">
+<script type='text/javascript'>
+	var typeaheadurl = ipb.vars['base_url'] + 'app=core&module=ajax&section=findnames&do=get-member-names&secure_key=' + ipb.vars['secure_hash'] + '&name=';
+	
+	if( $('record_authorname') )
+	{
+		var autocomplete = new ipb.Autocomplete( $('record_authorname'), { multibox: false, url: typeaheadurl, templates: { wrap: ipb.templates['autocomplete_wrap'], item: ipb.templates['autocomplete_item'] } } );
+	}
+	if( $('ccs_extra_opts') )
+	{
+		$('ccs_extra_opts').observe( 'click', function(e){
+			if( $('extra_opts_container').visible() )
+			{
+				new Effect.BlindUp( $("extra_opts_container"), { duration: 0.3, afterFinish: function(){ $('opts_bullet').src = '{$this->settings['img_url']}/bullet.png'; } } );
+			}
+			else
+			{
+				new Effect.BlindDown( $("extra_opts_container"), { duration: 0.3, afterFinish: function(){ $('opts_bullet').src = '{$this->settings['img_url']}/bullet_arrow_down.png'; } } );
+			}
+		});
+	}
+</script>
+</if>
+<if test="disablelightbox:|:!$this->settings['disable_lightbox']">
+{parse template="include_lightbox" group="global" params=""}
+</if>
+{parse template="include_highlighter" group="global" params="1"}]]></template_content>
+      <template_name>promoteForm</template_name>
+      <template_data><![CDATA[$post, $categories, $database, $fields, $fieldsClass, $permissions, $preview=false, $error_message='']]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<br />
+<br />
+[url={$url}]{$this->lang->words['post_promoted_to_article']}[/url]]]></template_content>
+      <template_name>promoteLinkAppend</template_name>
+      <template_data>$post, $record, $url</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[[url={$url}]{$this->lang->words['post_promoted_to_article_mv']}[/url]]]></template_content>
+      <template_name>promoteLinkReplace</template_name>
+      <template_data>$post, $record, $url</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<li class='report'>
+		<a href='{parse url="app=ccs&amp;module=articles&amp;section=promote&amp;post={$pid}" base="public"}' title='{$this->lang->words['promote_to_article']}'>{$this->lang->words['promote_to_article']}</a>
+	</li>]]></template_content>
+      <template_name>promoteToArticle</template_name>
+      <template_data>$pid</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<h1 class='ipsType_pagetitle'><if test="revisionTitle:|:$revision">{$this->lang->words['editing_revision']}<else /><if test="editTitle:|:$type=='edit'">{$this->lang->words['edit_record_title']} {$fieldsClass->getFieldValue( $fields[ str_replace( 'field_', '', $database['database_field_title'] ) ], $record, 255 )}<else />{$this->lang->words['add_record_title']}</if></if></h1>
+<br />
+<if test="errormessage:|:$error_message">
+	<p class='message error'>
+		{$error_message}
+	</p>
+	<br />
+</if>
+<if test="submitPreview:|:$preview">
+	<p class='message'>{$this->lang->words['attach_preview']}</p><br />
+	<h2 class='maintitle'>{$this->lang->words['record_preview_title']}</h2>
+	{parse striping="preview" classes="row1,row2"}
+	<div class='post_wrap' id='post_preview'>
+		<table class='ipb_table'>
+			<foreach loop="fieldsPreview:$fields as $field">
+				<tr class='{parse striping="preview"}'>
+					<td style='width: 20%; font-weight: bold; text-align: right;'>{$field['field_name']}:</td>
+					<td>{$fieldsClass->getFieldValuePreview( $field, $record )}</td>
+				</tr>
+			</foreach>
+		</table>
+	</div>
+	<br />
+</if>
+<form action='{$database['base_link']}do=<if test="isRevision:|:$revision">doEditRevision<else /><if test="isEdit:|:$type=='edit'">save_edit<else />save</if></if>' method='post' id='postingform' enctype='multipart/form-data'>
+	<input type='hidden' name='record' value='{$record['primary_id_field']}' />
+	<input type='hidden' name='post_key' value='{$record['post_key']}' />
+	<input type="hidden" name="secure_key" value="{$this->member->form_hash}" />
+	<div class='ipsBox post_block'>
+		<div class='ipsBox_container ipsPad'>
+			<ul class='ipsForm ipsForm_horizontal'>
+				<if test="hasCategories:|:$categories">
+					<li class='ipsField ipsField_select'>
+						<label class='ipsField_title'>{$this->lang->words['record_form_cat']} <span class='ipsForm_required'>*</span></label>
+						<div class='ipsField_content'>
+							<select name='category_id' id='category_id'>
+								{$categories}
+							</select>
+						</div>
+					</li>
+				</if>
+				<if test="hasTopic:|:$record['record_topicid']">
+					<li class='ipsField'>
+						<label class='ipsField_title'>{$this->lang->words['update_topic_too']}</label>
+						<div class='ipsField_content'>
+							<input type='checkbox' name='update_topic' value='1' checked='checked' />
+							<div class='desc'>{$this->lang->words['update_topic_too_desc']}</div>
+						</div>
+					</li>
+				</if>
+				<if test="hasTags:|:$record['_tagBox']">
+					<li class='ipsField'>
+						<label class='ipsField_title'>{$this->lang->words['sform_tags']}</label>
+						<div class='ipsField_content'>
+							{$record['_tagBox']}
+						</div>
+					</li>
+				</if>
+				<foreach loop="fields:$fields as $field">
+					<li class='ipsField'>
+						<label class='ipsField_title'>{$field['field_name']}<if test="fieldRequired:|:$field['field_required']"> <span class='ipsForm_required'>*</span></if></label>
+						<div class='ipsField_content'>
+							{$fieldsClass->getPublicField( $field, $record['field_'.$field['field_id']] )}
+							<if test="fieldDescription:|:$field['field_description']"><br /><span class='desc'>{$field['field_description']}</span></if>
+						</div>
+					</li>
+				</foreach>
+			</ul>
+			<if test="canDoExtras:|:$database['moderate_extras'] OR ( !$revision AND ( $database['moderate_lock'] OR $database['moderate_pin'] OR $database['moderate_delete'] ) )">
+				<h3 id='ccs_extra_opts' class='clickable'><img src='{$this->settings['img_url']}/bullet.png' id='opts_bullet' /> {$this->lang->words['ccs_extra_opts_ttl']}</h3>
+				<div class='ipsPad'>
+					<ul id='extra_opts_container' class='ipsForm ipsForm_horizontal' style='display:none;'>
+						<if test="canDoExtrasForm:|:$database['moderate_extras']">
+							<li class='ipsField'>
+								<label class='ipsField_title'>{$this->lang->words['record_form_staticfurl']}</label>
+								<div class='ipsField_content'>
+									<input type='text' class='input_text' name='record_static_furl' id='record_static_furl' value='{$record['record_static_furl']}' size='50' />
+									<div class='desc'>{$this->lang->words['record_form_staticfurl_desc']}</div>
+								</div>
+							</li>
+							<li class='ipsField'>
+								<label class='ipsField_title'>{$this->lang->words['record_form_metakeywords']}</label>
+								<div class='ipsField_content'>
+									<textarea wrap='soft' class='input_text' cols='50' rows='5' name='record_meta_keywords' id='record_meta_keywords'>{$record['record_meta_keywords']}</textarea>
+								</div>
+							</li>
+							<li class='ipsField'>
+								<label class='ipsField_title'>{$this->lang->words['record_form_metadescription']}</label>
+								<div class='ipsField_content'>
+									<textarea wrap='soft' class='input_text' cols='50' rows='5' name='record_meta_description' id='record_meta_description'>{$record['record_meta_description']}</textarea>
+								</div>
+							</li>
+							<li class='ipsField'>
+								<label class='ipsField_title'>{$this->lang->words['record_form_author']}</label>
+								<div class='ipsField_content'>
+									<input type='text' class='input_text' name='record_authorname' id='record_authorname' size='50' value='{$record['members_display_name']}' />
+									<div class='desc'>{$this->lang->words['record_form_author_desc']}</div>
+								</div>
+							</li>
+							<if test="articlesForTemplate:|:$database['database_is_articles']">
+								<li class='ipsField ipsField_select'>
+									<label class='ipsField_title'>{$this->lang->words['record_article_template']}</label>
+									<div class='ipsField_content'>
+										<select name='article_template' id='article_template'>
+											<option value='0'>{$this->lang->words['article_template_default']}</option>
+											{$this->registry->ccsFunctions->returnArticleTemplates( $record['record_template'] )}
+										</select>
+									</div>
+								</li>
+							</if>
+						</if>
+						<if test="canModerate:|:!$revision AND ( $database['moderate_lock'] OR $database['moderate_pin'] OR $database['moderate_delete'] )">
+							<li class='ipsField'>
+								<label class='ipsField_title'>{$this->lang->words['mod_actions_on_submit']}</label>
+								<div class='ipsField_content'>
+									<if test="canhide:|:$database['moderate_delete']">
+										<input type='checkbox' class='checkbox' name='hide_on_submit' value='1'<if test="isEditHide:|:$type=='edit' AND $record['record_approved'] == -1"> checked='checked'</if> /> {$this->lang->words['hide_on_submit']}<br />
+									</if>
+									<if test="canhide:|:$database['moderate_pin']">
+										<input type='checkbox' class='checkbox' name='pin_on_submit' value='1'<if test="isEditPin:|:$type=='edit' AND $record['record_pinned']"> checked='checked'</if> /> {$this->lang->words['pin_on_submit']}<br />
+									</if>
+									<if test="canhide:|:$database['moderate_lock']">
+										<input type='checkbox' class='checkbox' name='lock_on_submit' value='1'<if test="isEditLock:|:$type=='edit' AND $record['record_locked']"> checked='checked'</if> /> {$this->lang->words['lock_on_submit']}<br />
+									</if>
+								</div>
+							</li>
+						</if>
+					</ul>
+				</div>
+			</if>
+		</div>
+		<if test="isAddSocial:|:$type == 'add'">
+			{parse template="socialSharePostStrip" group="global_other"}
+		</if>
+		<fieldset class='submit'>
+			<input type="submit" name="dosubmit" value=" {$this->lang->words['save_button_record']} " class="input_submit" accesskey="s" tabindex='59'  />
+			<input type="submit" name="preview" value=" {$this->lang->words['preview_button_record']} " class="input_submit" accesskey="p" tabindex='60'  />
+			{$this->lang->words['or']} 
+			<a href='{$database['base_link']}' title='{$this->lang->words['cancel']}' class='cancel'>{$this->lang->words['cancel']}</a>
+		</fieldset>
+	</div>
+</form>
+<if test="extrasTypeAhead:|:$database['moderate_extras']">
+<script type='text/javascript'>
+	var lookup = false;
+	if( $('ccs_extra_opts') )
+	{
+		$('ccs_extra_opts').observe( 'click', function(e){
+			if( $('extra_opts_container').visible() )
+			{
+				new Effect.BlindUp( $("extra_opts_container"), { duration: 0.3, afterFinish: function(){ $('opts_bullet').src = '{$this->settings['img_url']}/bullet.png'; } } );
+			}
+			else
+			{
+				new Effect.BlindDown( $("extra_opts_container"), { duration: 0.3, afterFinish: function(){ 
+					$('opts_bullet').src = '{$this->settings['img_url']}/bullet_arrow_down.png'; 
+					if( !lookup )
+					{
+						var typeaheadurl = ipb.vars['base_url'] + 'app=core&module=ajax&section=findnames&do=get-member-names&secure_key=' + ipb.vars['secure_hash'] + '&name=';
+						
+						if( $('record_authorname') )
+						{
+							var autocomplete = new ipb.Autocomplete( $('record_authorname'), { multibox: false, url: typeaheadurl, templates: { wrap: ipb.templates['autocomplete_wrap'], item: ipb.templates['autocomplete_item'] } } );
+						}
+						lookup = true;
+					}
+				} } );
+			}
+		});
+	}
+</script>
+</if>
+<if test="disablelightbox:|:!$this->settings['disable_lightbox']">
+{parse template="include_lightbox" group="global" params=""}
+</if>
+{parse template="include_highlighter" group="global" params="1"}]]></template_content>
+      <template_name>recordForm</template_name>
+      <template_data><![CDATA[$type, $database, $fields, $fieldsClass, $record=array(), $categories='', $error_message='', $preview=false, $revision=false]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<input class='input_submit' type="button" id="field_{$field['field_id']}_button" value='{$this->lang->words['sm_button_add']}' /> &nbsp;
+<input class='input_submit alt' type="button" id="field_{$field['field_id']}_reset" value='{$this->lang->words['sm_button_clear']}' /> 
+<textarea name='field_{$field['field_id']}' id='field_{$field['field_id']}' style='display:none;'>{$default}</textarea>
+<div id='field_{$field['field_id']}_preview' style='margin-top: 10px;'>
+	{$display}
+</div>
+<script type='text/javascript'>
+var defaultField{$field['field_id']}Value	= "{$this->lang->words['no_sm_field_selected']}";
+$('field_{$field['field_id']}_button').observe( 'click', function(e){
+	Event.stop(e);
+	
+	if ( ! Object.isUndefined(mediaField.popup ) )
+	{
+		mediaField.popup.kill();
+	}
+	var url = ipb.vars['base_url'] + "app=core&module=ajax&section=media&secure_key=" + ipb.vars['secure_hash'];
+	new Ajax.Request(	url.replace(/&amp;/g, '&'),
+						{
+							method:		'get',
+							evalJSON:	'force',
+							onSuccess:	function(t)
+							{
+								mediaField.popup	= new ipb.Popup( 'my_media_inline_{$field['field_id']}', {	type: 'pane',
+																										initial: t.responseJSON['html'].replace( /CKEDITOR\.plugins\.ipsmedia/g, "mediaField" ),
+																										hideAtStart: false,
+																										hideClose: true,
+																										defer: false,
+																										modal: true,
+																										w: '800px',
+																										h: '410'
+																									 } );
+							}
+						});
+	
+	return false;
+});
+$('field_{$field['field_id']}_reset').observe( 'click', function(e){
+	Event.stop(e);
+	
+	$('field_{$field['field_id']}').update( '' );
+	$('field_{$field['field_id']}_preview').update( defaultField{$field['field_id']}Value );
+	
+	return false;
+});
+
+mediaField = {
+	ajaxPagination: function( element, url )
+	{
+		new Ajax.Request(	url.replace(/&amp;/g, '&'),
+							{
+								method: 'get',
+								evalJSON: 'force',
+								hideLoader: true,
+								onSuccess: function(t)
+								{
+									$(element).update( t.responseText.replace( /CKEDITOR\.plugins\.ipsmedia/g, "mediaField" ).replace( /ipb\.global\.ajaxPagination/, "mediaField.ajaxPagination" ) );
+								}
+							});
+		return false;
+	},
+	init: function()
+	{
+		
+	},
+	
+	loadTab: function( app, plugin )
+	{
+		$$("#mymedia_tabs li").each( function(elem) {
+			$(elem).removeClassName('active');
+		});
+		$(app + '_' + plugin).addClassName('active');
+		$('mymedia_toolbar').show();
+		
+		$('sharedmedia_search_app').value		= app;
+		$('sharedmedia_search_plugin').value	= plugin;
+		
+		var searchstring	= $('sharedmedia_search').value;
+		
+		if( searchstring == ipb.vars['sm_init_value'] )
+		{
+			searchstring	= '';
+		}
+		var url				= ipb.vars['base_url'] + "app=core&module=ajax&section=media&do=loadtab&tabapp=" + app + "&tabplugin=" + plugin;
+		new Ajax.Request(	url.replace(/&amp;/g, '&'),
+							{
+								method:		'post',
+								parameters: {
+									md5check: 	ipb.vars['secure_hash'],
+									search:		searchstring
+								},
+								onSuccess:	function(t)
+								{
+									$('mymedia_content').update( t.responseText.replace( /CKEDITOR\.plugins\.ipsmedia/g, "mediaField" ).replace( /ipb\.global\.ajaxPagination/, "mediaField.ajaxPagination" ) );
+								}
+							});
+		return false;
+	},
+	
+	insert: function( insertCode )
+	{
+		if( \$F('field_{$field['field_id']}') )
+		{
+			$('field_{$field['field_id']}').update( \$F('field_{$field['field_id']}') + ' ' + '[sharedmedia=' + insertCode + ']' );
+		}
+		else
+		{
+			$('field_{$field['field_id']}').update( '[sharedmedia=' + insertCode + ']' )
+		}
+		
+		$('mymedia_inserted').show().fade({duration: 0.3, delay: 2});
+		
+		new Ajax.Request(	ipb.vars['base_url'] + "app=ccs&module=ajax&section=media&do=preview".replace(/&amp;/g, '&'),
+							{
+								method:		'post',
+								parameters: {
+									md5check: 	ipb.vars['secure_hash'],
+									value:		\$F('field_{$field['field_id']}')
+								},
+								onSuccess:	function(t)
+								{
+									$('field_{$field['field_id']}_preview').update( t.responseText );
+								}
+							});
+							
+		return false;
+	},
+	
+	search: function()
+	{
+		var searchstring	= $('sharedmedia_search').value;
+		
+		var url				= ipb.vars['base_url'] + "app=core&module=ajax&section=media&do=loadtab&tabapp=" + $('sharedmedia_search_app').value + "&tabplugin=" + $('sharedmedia_search_plugin').value;
+		new Ajax.Request(	url.replace(/&amp;/g, '&'),
+							{
+								method:		'post',
+								parameters: {
+									md5check: 	ipb.vars['secure_hash'],
+									search:		searchstring
+								},
+								onSuccess:	function(t)
+								{
+									$('mymedia_content').update( t.responseText.replace( /CKEDITOR\.plugins\.ipsmedia/g, "mediaField" ).replace( /ipb\.global\.ajaxPagination/, "mediaField.ajaxPagination" ) );
+								}
+							});
+		return false;
+	},
+	
+	searchinit: function()
+	{
+		$('sharedmedia_submit').observe( 'click', function(e) {
+			Event.stop(e);
+			
+			mediaField.search();
+			
+			return false;
+		});
+		$('sharedmedia_reset').observe( 'click', function(e) {
+			Event.stop(e);
+			
+			$('sharedmedia_search').value	= '';
+			mediaField.search();
+			
+			$('sharedmedia_search').addClassName('inactive').value	= ipb.vars['sm_init_value'];
+			
+			return false;
+		});
+		
+		$('sharedmedia_search').observe( 'focus', function(e) {
+			if( $('sharedmedia_search').value == ipb.vars['sm_init_value'] )
+			{
+				$('sharedmedia_search').removeClassName('inactive').value	= '';
+			}
+		});
+	}
+}
+mediaField.init();
+</script>]]></template_content>
+      <template_name>sharedMediaField</template_name>
+      <template_data>$field, $default, $display</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<div id='attach_wrap'>
+	<h4>{$title}</h4>
+	<ul>
+		<foreach loop="attach:$data as $file">
+			<li class='<if test="attachType:|:$type == 'attach'">attachment</if>'>
+				{$file}
+			</li>
+		</foreach>
+	</ul>
+</div>]]></template_content>
+      <template_name>show_attachment_title</template_name>
+      <template_data><![CDATA[$title="",$data="",$type=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<a href="{parse url="app=core&amp;module=attach&amp;section=attach&amp;attach_id={$data['attach_id']}" base="public"}" title="{$this->lang->words['attach_dl']}"><img src="{$this->settings['public_dir']}<if test="hasmime:|:$data['mime_image']">{$data['mime_image']}<else />style_extra/mime_types/unknown.gif</if>" alt="{$this->lang->words['attached_file']}" /></a>
+&nbsp;<a href="{parse url="app=core&amp;module=attach&amp;section=attach&amp;attach_id={$data['attach_id']}" base="public"}" title="{$this->lang->words['attach_dl']}"><strong>{$data['attach_file']}</strong></a> &nbsp;&nbsp;<span class='desc'><strong>{$data['file_size']}</strong></span>
+&nbsp;&nbsp;<span class="desc lighter">{$data['attach_hits']} {$this->lang->words['attach_hits']}</span>
+<br />]]></template_content>
+      <template_name>Show_attachments</template_name>
+      <template_data>$data=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<a class='resized_img' rel='lightbox[{$data['attach_rel_id']}]' id='ipb-attach-url-{$data['_attach_id']}' href="{$this->settings['upload_url']}/{$data['o_location']}" title="{$data['location']} - {$this->lang->words['attach_size']} {$data['file_size']}, {$this->lang->words['attach_ahits']} {$data['attach_hits']}"><img src="{$this->settings['upload_url']}/{$data['o_location']}" class='bbc_img linked-image' alt="{$this->lang->words['pic_attach']}: {$data['location']}" /></a>
+{parse expression="$this->registry->output->addMetaTag( 'og:image', "{$this->settings['upload_url']}/{$data['o_location']}", false )"}]]></template_content>
+      <template_name>Show_attachments_img</template_name>
+      <template_data><![CDATA[$data=array(), $parse_og=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<a class='resized_img' rel='lightbox[{$data['attach_rel_id']}]' id='ipb-attach-url-{$data['_attach_id']}' href="{$this->settings['upload_url']}/{$data['a_location']}" title="{$data['location']} - {$this->lang->words['attach_size']} {$data['file_size']}, {$this->lang->words['attach_ahits']} {$data['attach_hits']}"><img src="{$this->settings['upload_url']}/{$data['t_location']}" id='ipb-attach-img-{$data['_attach_id']}' style='width:{$data['t_width']};height:{$data['t_height']}' class='attach' width="{$data['t_width']}" height="{$data['t_height']}" alt="{$this->lang->words['pic_attach']}: {$data['location']}" /></a>
+{parse expression="$this->registry->output->addMetaTag( 'og:image', "{$this->settings['upload_url']}/{$data['t_location']}", false )"}]]></template_content>
+      <template_name>Show_attachments_img_thumb</template_name>
+      <template_data><![CDATA[$data=array(), $parse_og=""]]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<div class='ipsPad'>
+	<ul class='ipsList_inline'>
+		<foreach loop="eachTag:$tags['tags'] as $id => $data">
+			<li><span class="{$data['className']}">{$data['tagWithUrl']}</span></li>
+		</foreach>
+	</ul>
+</div>]]></template_content>
+      <template_name>tagCloudPlugin</template_name>
+      <template_data>$tags</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<br />
+<br />
+[url={$url}]{$this->lang->words['click_for_article']}[/url]]]></template_content>
+      <template_name>topicCommentsLink</template_name>
+      <template_data>$record, $url</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<div class='message'>{parse expression="sprintf( $this->lang->words['modcp_comment_info'], $this->registry->output->buildSEOUrl( 'app=core&amp;module=modcp&amp;fromapp=forums&amp;tab=' . ( $type == 'unnapproved' ? 'unapprovedposts' : 'deletedposts' ), 'public' ) )"}</div>
+<br />
+{parse template="subTabLoop" group="modcp" params=""}
+<div class='clearfix'>
+	<if test="hasComments:|:is_array( $comments ) AND count( $comments )">
+		<div id='ips_Posts2'>
+			<foreach loop="post_data:$comments as $comment">
+				<div class='post_block hentry clear no_sidebar'>
+					<div class='post_wrap'>
+						<if test="postMid:|:$comment['member_id']">
+						<h3 class='row2'>
+						<else />
+						<h3 class='guest row2'>
+						</if>
+							<img src='{$comment['pp_small_photo']}' class='ipsUserPhoto ipsUserPhoto_tiny' />&nbsp;
+							<if test="postMember:|:$comment['member_id']">
+								<span class="author vcard">{parse template="userHoverCard" group="global" params="$comment"}</span>
+							<else />
+								{$comment['comment_author']}
+							</if>
+						</h3>
+						
+						<div class='post_body'>
+							<ul class='ipsList_inline modcp_post_controls'>
+								<if test="postLinkType:|:$type == 'deleted'">
+									<li class='post_edit'>
+										<a href='{parse url="app=ccs&amp;module=pages&amp;section=comments&amp;do=unhide&amp;comment_id={$comment['comment_id']}&amp;database={$comment['_databaseId']}&amp;record={$comment['comment_record_id']}&amp;modcp=ccsdeletedcomments&amp;auth_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['modcp_comment_unhide_title']}' class='ipsButton_secondary ipsType_smaller'>{$this->lang->words['restore_post']}</a>
+									</li>
+									<li class='post_del'>
+										<a href='{parse url="app=ccs&amp;module=pages&amp;section=comments&amp;do=delete&amp;comment_id={$comment['comment_id']}&amp;database={$comment['_databaseId']}&amp;record={$comment['comment_record_id']}&amp;modcp=ccsdeletedcomments&amp;auth_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['modcp_comment_delete_title']}' class='delete_post ipsButton_secondary important ipsType_smaller'>{$this->lang->words['perm_delete_post']}</a>
+									</li>
+								<else />
+									<li class='post_edit'>
+										<a href='{parse url="app=ccs&module=pages&section=comments&do=showEdit&comment_id={$comment['comment_id']}&database={$comment['_databaseId']}&record={$comment['comment_record_id']}&modcp=ccscomments" base="public"}' title='{$this->lang->words['modcp_comment_edit_title']}' class='ipsButton_secondary ipsType_smaller' id='edit_post_{$comment['comment_id']}'>{$this->lang->words['post_edit']}</a>
+									</li>
+									<li>
+										<a href='{parse url="app=ccs&amp;module=pages&amp;section=comments&amp;do=approve&amp;comment_id={$comment['comment_id']}&amp;database={$comment['_databaseId']}&amp;record={$comment['comment_record_id']}&amp;modcp=ccscomments&amp;auth_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['modcp_comment_approve_title']}' class='ipsButton_secondary ipsType_smaller'>{$this->lang->words['post_approve']}</span></a>
+									</li>
+									<li class='post_del'>
+										<a href='{parse url="app=ccs&amp;module=pages&amp;section=comments&amp;do=delete&amp;comment_id={$comment['comment_id']}&amp;database={$comment['_databaseId']}&amp;record={$comment['comment_record_id']}&amp;modcp=ccscomments&amp;auth_key={$this->member->form_hash}" base="public"}' title='{$this->lang->words['modcp_comment_delete_title']}' class='delete_post ipsButton_secondary important ipsType_smaller'>{$this->lang->words['post_delete']}</a>
+									</li>
+								</if>
+								<li class='desc'>
+									<strong>{$this->lang->words['posted']}:</strong> <a rel='bookmark' class='desc lighter ipsType_smaller' href='{parse url="app=ccs&amp;module=pages&amp;section=comments&amp;do=findComment&amp;comment_id={$comment['comment_id']}&amp;record={$comment['comment_record_id']}&amp;database={$comment['_databaseId']}" base="public"}' title='{$this->lang->words['comment_permalink']}'>{parse date="$comment['comment_date']" format="short"}</a>
+								</li>
+								<li class='desc'>
+									<strong>{$this->lang->words['modcp_in_record']}</strong> <a class='desc lighter ipsType_smaller' href='{$comment['_url']}'>{$comment['_title']}</a>
+								</li>
+								<li class='desc'>
+									<strong>{$this->lang->words['modcp_in_database']}</strong> <a class='desc lighter ipsType_smaller' href='{$comment['_databaseUrl']}'>{$comment['_databaseName']}</a>
+								</li>
+							</ul>
+							<div class='post entry-content'>
+								{$comment['comment_post']}
+							</div>
+							<br /><br />
+							<if test="deleteTypeInfo:|:$type == 'deleted'">
+								<ul class='ipsList_inline modcp_post_controls'>
+									<li class='desc'>
+										<strong>{$this->lang->words['modcp_deleted_by']}</strong> <span class="author vcard">{parse template="userHoverCard" group="global" params="$comment['_deleteData']"}</span>
+									</li>
+									<li class='desc'>
+										<strong>{$this->lang->words['modcp_deleted_on']}</strong> {parse date="$comment['_deleteData']['sdl_obj_date']" format="short"}
+									</li>
+									<li class='desc'>
+										<strong>{$this->lang->words['modcp_deleted_because']}</strong> {$comment['_deleteData']['sdl_obj_reason']}
+									</li>
+								</ul>
+							</if>
+						</div>
+					</div>
+				</div>
+			</foreach>
+		</div>
+	<else />
+		<div class='no_messages'>
+			<if test="messageTypeC:|:$type == 'deleted'">{$this->lang->words['modcp_nocomments_deleted']}<else />{$this->lang->words['modcp_nocomments_approval']}</if>
+		</div>
+	</if>
+</div>]]></template_content>
+      <template_name>unapprovedComments</template_name>
+      <template_data><![CDATA[$comments, $type='unnapproved']]></template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_ccs_global</template_group>
+      <template_content><![CDATA[<script type='text/javascript'>
+function handleStateChange()
+{
+	switch( document.readyState )
+	{
+		case 'complete':
+			var newHeight	= document.body.clientHeight;
+			var newWidth	= document.body.clientWidth;
+			parent.postMessage( 'sizing?:'+newHeight+':'+newWidth+':'+'{$this->request['k']}', '*');
+			for( var q=0,linkCount=document.links.length; q < linkCount; q++ )
+			{
+				document.links[q].target	= '_top';
+			}
+		break;
+		
+		default:
+			if( window.opera )
+			{
+				window.setTimeout('handleStateChange();', 1000);
+			}
+			else
+			{
+				window.setTimeout('handleStateChange();', 100);
+			}
+		break;
+	}
+}
+handleStateChange();
+</script>]]></template_content>
+      <template_name>widgetJavascript</template_name>
+      <template_data/>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

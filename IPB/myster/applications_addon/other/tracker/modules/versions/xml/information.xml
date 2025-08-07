@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+	<data>
+		<title>Versions</title>
+		<directory>versions</directory>
+		<description>Versions allow you to categorise different reports into different project versions.</description>
+		<author>IPBTracker.com Project Developers</author>
+		<human_version>2.1.0</human_version>
+		<long_version>20100</long_version>
+	</data>
+</information>

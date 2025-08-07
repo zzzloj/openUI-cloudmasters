@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<information>
+  <data>
+    <name>Track Members</name>
+    <public_name>Track Members</public_name>
+    <hide_tab>1</hide_tab>
+    <author>Adriano Faria</author>
+    <description>Track Members</description>
+    <disabledatinstall>0</disabledatinstall>
+    <global_caches/>
+    <website/>
+    <update_check/>
+    <templategroups>
+        <template match="exact">skin_trackmembers</template>
+    </templategroups>
+  </data>
+</information>

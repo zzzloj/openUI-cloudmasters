@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Overview</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Overview</subitemtitle>
+					<subsection>overview</subsection>
+					<subitemurl>do=overview</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Settings</subitemtitle>
+					<subsection>overview</subsection>
+					<subitemurl>do=settings</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Manage Tracked Members</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Tracked Members</subitemtitle>
+					<subsection>overview</subsection>
+					<subitemurl>do=manage</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

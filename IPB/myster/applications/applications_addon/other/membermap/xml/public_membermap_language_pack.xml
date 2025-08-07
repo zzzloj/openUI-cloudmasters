@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>membermap_spy_add_parsed</word_key>
+      <word_default>Added Location</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>membermap_spy_add</word_key>
+      <word_default>New Location</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>membermap_spy_update</word_key>
+      <word_default>Updated Location</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>users</word_key>
+      <word_default>Users,</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>cMarkersShownCount</word_key>
+      <word_default>Custom Markers Shown</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>guestsCannotAdd</word_key>
+      <word_default>Guests cannot add or alter a map marker, please sign up for an account</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>formUpdateTitle</word_key>
+      <word_default>Update Your Location</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>formDeleteButton</word_key>
+      <word_default>Delete</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>formAddTitle</word_key>
+      <word_default>Add Your Location</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>formLocationLabel</word_key>
+      <word_default>Your Location:</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>formDeleteTitle</word_key>
+      <word_default>Delete Your Location</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>formDeleteText</word_key>
+      <word_default>Are you sure you want to delete your Map Location?</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>formCancelButton</word_key>
+      <word_default>Cancel</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>formSaveButton</word_key>
+      <word_default>Save</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>buttonFriends</word_key>
+      <word_default>Show Friends</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>noJavascript</word_key>
+      <word_default>You need to have Javascript enabled to use this application.</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>buttonShowAll</word_key>
+      <word_default>Show All</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>buttonDeleteLocation</word_key>
+      <word_default>Delete Your Location</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>buttonUpdateLocation</word_key>
+      <word_default>Update Your Location</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>buttonAddLocation</word_key>
+      <word_default>Add Your Location</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>modRemoveMarker</word_key>
+      <word_default>Remove</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>noPermissionView</word_key>
+      <word_default>You do not have permission to view the member map</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>noApiKey</word_key>
+      <word_default>The API Key for your map service is empty. Please correct this in your ACP.</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>yourFriends</word_key>
+      <word_default>You and Your Friends</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>noPermissionUpdate</word_key>
+      <word_default>You do not have permission to update your location</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>problemUpdating</word_key>
+      <word_default>There was a problem updating your location.</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>noUpdateExists</word_key>
+      <word_default>You cannot update a location, that is not yet on the  map!</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>locationUpdated</word_key>
+      <word_default>Your location has been updated.</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>noPermissionAdd</word_key>
+      <word_default>You do not have permission to add your location.</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>problemAddingLocation</word_key>
+      <word_default>There was a problem adding your location.</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>locationDeleted</word_key>
+      <word_default>The location has been deleted.</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>noPermissionDelete</word_key>
+      <word_default>You do not have permission to remove this marker.</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>locationAlreadyAdded</word_key>
+      <word_default>You have already added your location to the map.</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>locationAdded</word_key>
+      <word_default>Your location has been added to the map.</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_map</word_pack>
+      <word_key>membermap_viewing_app</word_key>
+      <word_default>Viewing the Member Map</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_notifications</word_pack>
+      <word_key>membermap_notification_add</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+<#OWNER#> has just added their location to the member map.
+
+======================================================================
+You can turn off this notification by visiting <#URL#>
+]]></word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_notifications</word_pack>
+      <word_key>membermap_notification_update</word_key>
+      <word_default><![CDATA[<#NAME#>,
+
+<#OWNER#> has just updated their location on the member map.
+
+======================================================================
+You can turn off this notification by visiting <#URL#>
+]]></word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_notifications</word_pack>
+      <word_key>subject__membermap_notification_add</word_key>
+      <word_default><![CDATA[<a href='%s'>%s</a> added their location to the <a href='%s'>member map</a>]]></word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_notifications</word_pack>
+      <word_key>notify__membermap_update_location</word_key>
+      <word_default>Notify me when my friends update their location</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_notifications</word_pack>
+      <word_key>subject__membermap_notification_update</word_key>
+      <word_default><![CDATA[<a href='%s'>%s</a> updated their location on the <a href='%s'>member map</a>]]></word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+    <lang>
+      <word_app>membermap</word_app>
+      <word_pack>public_notifications</word_pack>
+      <word_key>notify__membermap_add_location</word_key>
+      <word_default>Notify me when my friends add their location</word_default>
+      <word_custom/>
+      <word_default_version>31007</word_default_version>
+      <word_custom_version/>
+      <word_js>0</word_js>
+    </lang>
+  </languagegroup>
+</languageexport>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+	<data>
+		<name>[GGT_31] Photoshop</name>
+		<public_name>Photoshop</public_name>
+		<hide_tab>0</hide_tab>
+		<author>Gorbo_MK</author>
+		<description>This application will allow members to use photoshop online.</description>
+		<templategroups>
+			<template match="exact">skin_photoshop</template>
+		</templategroups>
+	</data>
+</information>

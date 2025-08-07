@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+	<data>
+		<title>Severity</title>
+		<directory>severity</directory>
+		<description>Severities allow reports in your Tracker system to be assigned a level of importance ranging from 1 (not very important), up until 5 (critical).</description>
+		<author>IPBTracker.com Project Developers</author>
+		<human_version>2.1.0</human_version>
+		<long_version>20100</long_version>
+	</data>
+</information>

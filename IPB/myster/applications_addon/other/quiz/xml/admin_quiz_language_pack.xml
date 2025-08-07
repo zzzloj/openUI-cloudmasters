@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_lang</word_pack>
+      <word_key>quiz_acp_answers_notice</word_key>
+      <word_default>Вы можете задать только один правильный ответ на каждый вопрос</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_catform_catname</word_key>
+      <word_default>Имя категории</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_catform_edit</word_key>
+      <word_default>Изменить</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_answer_deleted</word_key>
+      <word_default>Ответ удалён.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_answer_updated</word_key>
+      <word_default>Ответ обновлён.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_categories</word_key>
+      <word_default>Категории</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_category</word_key>
+      <word_default>Категория</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_category_added</word_key>
+      <word_default>Категория добавлена.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_category_deleted</word_key>
+      <word_default>Категория удалена.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_category_updated</word_key>
+      <word_default>Категория обновлена.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_catform_catimg</word_key>
+      <word_default>Изображение категории (Загрузить)</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_timelimit</word_key>
+      <word_default>Ограничение времени викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_extra_opts</word_key>
+      <word_default>Дополнительные опции</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_grouppromo_score</word_key>
+      <word_default>Promote User on Score of:</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_grouppromo</word_key>
+      <word_default>Продвигать пользователя в:</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_exportquiz</word_key>
+      <word_default>Экспорт викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_exportquiz_desc</word_key>
+      <word_default>Пожалуйста, выберите викторины для экспора. URL вашего форума будет добавлен в описание викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_importasuser_desc</word_key>
+      <word_default>Оставьте пустым, чтобы использовать автора, указанного в XML</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_uploadquiz_remote</word_key>
+      <word_default><![CDATA[<em>ИЛИ</em> введите URL XML викторины]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_uploadquiz_remote_desc</word_key>
+      <word_default>XML должны быть общедоступными</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_importasuser</word_key>
+      <word_default>Импорт как пользователя</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_uploadquiz_desc</word_key>
+      <word_default><![CDATA[The file must end with either '.xml' or '.xml.gz']]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_export</word_key>
+      <word_default>Экспорт</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_importexport</word_key>
+      <word_default>Импорт / Экспорт</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_uploadquiz</word_key>
+      <word_default>Загрузить XML викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_import</word_key>
+      <word_default>Импорт</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_errors</word_key>
+      <word_default>Ошибка:</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_editquiz</word_key>
+      <word_default>Изменить викторину</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_viewall</word_key>
+      <word_default>Просмотр всех</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_uploaderr_2</word_key>
+      <word_default>Неверный тип загружаемого файла</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_uploaderr_3</word_key>
+      <word_default>Загружаемый файл слишком большой</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_uploaderr_5</word_key>
+      <word_default>Попытка взлома?</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_uploaderr_4</word_key>
+      <word_default>Загрузка не удалась - свяжитесь с администрацией</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_submit</word_key>
+      <word_default>Отправить</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_uploaderr_1</word_key>
+      <word_default>Вы не выбрали файл для загрузки</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quiz_deleted</word_key>
+      <word_default>Викторина удалена.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quiz_updated</word_key>
+      <word_default>Викторина обновлена.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quizsubmitmanageqs</word_key>
+      <word_default><![CDATA[Добавить викторину и перейти к вопросам]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quiztitle</word_key>
+      <word_default>Заголовок викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quizz</word_key>
+      <word_default>Викторина</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quizzes</word_key>
+      <word_default>Викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quiz_added</word_key>
+      <word_default>Викторина добавлена.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quizcat</word_key>
+      <word_default>Категория</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quizchngcat</word_key>
+      <word_default>Изменить категорию</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quizdesc</word_key>
+      <word_default>Описание викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quizmanager</word_key>
+      <word_default>Менеджер викторин</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quizname</word_key>
+      <word_default>Название викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quizoverview</word_key>
+      <word_default>Обзор</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quizauthor</word_key>
+      <word_default>Автор викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_question_updated</word_key>
+      <word_default>Вопрос обновлён.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_quiz</word_key>
+      <word_default><![CDATA[Викторина --> ]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_question_added</word_key>
+      <word_default>Вопрос добавлен.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_question_deleted</word_key>
+      <word_default>Вопрос удалён.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_questiontitle</word_key>
+      <word_default>Название вопроса</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_question</word_key>
+      <word_default>Вопрос</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_questions</word_key>
+      <word_default>Вопросы</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_questionsfor</word_key>
+      <word_default>Вопросы для</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_catform_editcat</word_key>
+      <word_default>Изменить категорию</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_noquizzes</word_key>
+      <word_default>Викторины отсутствуют.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_error_noquestion</word_key>
+      <word_default><![CDATA[Вопрос не существует]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_error_noquiz</word_key>
+      <word_default><![CDATA[Викторина не существует]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_nocats</word_key>
+      <word_default>Категории отсутствуют</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_answertitle</word_key>
+      <word_default>Название ответа</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_answer_added</word_key>
+      <word_default>Ответ добавлен.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_answer_correct</word_key>
+      <word_default>Ответ отмечен как правильный!</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_answer_correctalready</word_key>
+      <word_default>Ответ уже правильный!</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_error_nocatimg</word_key>
+      <word_default>Изображение категори не загружено.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_editquestion</word_key>
+      <word_default>Изменить вопрос</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_error_noanswer</word_key>
+      <word_default><![CDATA[Ответ не существует]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_error_nocat</word_key>
+      <word_default><![CDATA[Категория не существует]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_edit</word_key>
+      <word_default>Изменить</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_editanswer</word_key>
+      <word_default>Изменить ответ</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_correctanswer</word_key>
+      <word_default>Правильный ответ?</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_delete</word_key>
+      <word_default>Удалить</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_continuetoanswers</word_key>
+      <word_default>Перейти к ответам</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_catmanager</word_key>
+      <word_default>Менеджер категорий</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_catimg_notice</word_key>
+      <word_default><![CDATA[<b>Внимание:</b> Вы <b>должны</b> загрузить изображение категории.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_catform_edit_imgnote</word_key>
+      <word_default>Загрузка изображения удалит текущее изображение.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_catform_title</word_key>
+      <word_default>Добавить категорию</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_catform_catimgnote</word_key>
+      <word_default>Обратите внимание, мы рекомендуем разрешение 50x50 пикселов.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_answers_notice</word_key>
+      <word_default>Вы можете задать только один правильный ответ на каждый вопрос</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_answersfor</word_key>
+      <word_default>Ответы для</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_answer</word_key>
+      <word_default>Ответ</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_answers</word_key>
+      <word_default>Ответы</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_allquizzes</word_key>
+      <word_default>Все викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_allcategories</word_key>
+      <word_default>Все категории</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_addquiz</word_key>
+      <word_default>Добавить викторину</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_allanswers</word_key>
+      <word_default>Все ответы</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_addquestionfor</word_key>
+      <word_default>Добавить вопрос для</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_addquestion</word_key>
+      <word_default>Добавить вопрос</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_addcat</word_key>
+      <word_default>Добавить категорию</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>admin_quiz</word_pack>
+      <word_key>quiz_acp_addanswer</word_key>
+      <word_default>Добавить ответ</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

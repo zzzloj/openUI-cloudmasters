@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Basic</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Basic</subitemtitle>
+					<subitemlang>ccs_settings</subitemlang>
+					<subsection>settings</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Advanced</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Advanced</subitemtitle>
+					<subitemlang>ccs_advanced</subitemlang>
+					<subsection>settings</subsection>
+					<subitemurl>do=advanced</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Navigation Menu</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Navigation Menu</subitemtitle>
+					<subitemlang>ccs_navmenu</subitemlang>
+					<subsection>menu</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

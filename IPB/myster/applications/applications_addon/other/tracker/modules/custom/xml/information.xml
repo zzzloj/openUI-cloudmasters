@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+	<data>
+		<title>Custom Fields</title>
+		<directory>custom</directory>
+		<description>This module will allow you to create custom fields for Tracker.</description>
+		<author>IPBTracker.com Project Developers</author>
+		<human_version>2.1.0</human_version>
+		<long_version>20100</long_version>
+	</data>
+</information>

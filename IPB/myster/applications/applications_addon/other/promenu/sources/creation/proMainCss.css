@@ -1,0 +1,109 @@
+
+#{menu_id} {
+	top: 0;
+	width: 100%;
+	text-align: left;
+	font-size: 13px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	margin-bottom:10px;
+	padding:5px 5px 0px 5px;	
+}
+
+#{menu_id} .main_widths{
+	margin: 0 auto;
+	width: 87% !important;
+	min-width: 960px;
+}
+#{menu_id}_app_menu > li {
+	margin: 0px 3px 0 0;
+}
+
+#{menu_id}_app_menu > li > a, #{menu_id}_app_menu li > div > ul > li > a, #{menu_id}_app_menu .mega td.col > a, #{menu_id}_app_menu .mega div.col > a {
+	color: #FFF;
+	white-space: nowrap !important;
+	display: block !important;
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#{menu_id}_app_menu .mega {
+	padding: 10px;
+}
+
+#{menu_id}_app_menu > li > a, #{menu_id}_app_menu li > div > ul > li > a {
+	padding: 6px 15px 8px;
+}
+
+/** active styling **/
+#{menu_id}_app_menu .active > a , #{menu_id} .active:hover > a{
+	background-color: #FFF !important;
+	color: #000 !important;
+	text-shadow: none;
+}
+
+/** hover styling **/
+#{menu_id}_app_menu  li:hover > a, #{menu_id}_app_menu li > ul > li > a:hover, #{menu_id}_app_menu li.click_active > a {
+	background-color: #FFF !important;
+	color: #000 !important;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	text-shadow: none;
+}
+
+/** standard background coloring for menus, blocks, etc **/
+#{menu_id}, #{menu_id}_app_menu  li > div > ul > li > a, #{menu_id}_app_menu .blocks, #{menu_id}_app_menu .mega {
+	background-color: #2c5687 !important;
+}
+
+#{menu_id}_app_menu li {
+	cursor: pointer;
+	position: relative;
+	top: 0;
+}
+
+#{menu_id}_app_menu .custom_icon {
+	display: inline-block;
+	position: relative;
+}
+
+#{menu_id}_app_menu .custom_icon, #{menu_id}_app_menu li > div > ul > li > a {
+	min-width: 150px;
+}
+
+#{menu_id}_app_menu .downarrow {
+	background-image: url({style_images_url}/promenu/arrows/generic/down_arrow.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: right center !important;
+	background-origin: content-box !important;
+}
+
+#{menu_id}_app_menu .otherarrow {
+	background-image: url({style_images_url}/promenu/arrows/generic/other_arrow.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: right center !important;
+	background-origin: content-box !important;
+}
+
+#{menu_id}_app_menu li.active > .otherarrow, #{menu_id}_app_menu li:hover > a.otherarrow, #{menu_id}_app_menu li.click_active .otherarrow {
+	background-image: url({style_images_url}/promenu/arrows/generic/other_arrow_active.png) !important;
+}
+
+#{menu_id}_app_menu li.active > .downarrow, #{menu_id}_app_menu li:hover .downarrow, #{menu_id}_app_menu li.click_active .downarrow {
+	background-image: url({style_images_url}/promenu/arrows/generic/down_arrow_active.png) !important;
+}
+
+#{menu_id}_app_menu .mega .col {
+	min-width: 150px;
+}
+
+#{menu_id}_app_menu a.mainParent {
+	text-decoration: underline;
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#{menu_id}_app_menu .blocks {
+	color:#FFF;
+}

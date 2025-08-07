@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>Module Management</grouptitle>
+		<items>
+			<item>
+				<key>tracker_fields_manage</key>
+				<string>Can manage fields?</string>
+			</item>
+			<item>
+				<key>tracker_fields_delete</key>
+				<string>Can delete fields?</string>
+			</item>
+		</items>
+	</group>
+</permissions>

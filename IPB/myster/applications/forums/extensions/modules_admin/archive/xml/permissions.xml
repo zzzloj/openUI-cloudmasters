@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>Архивирование</grouptitle>
+		<grouplang>forums_archive</grouplang>
+		<items>
+			<item>
+				<key>archive_overview</key>
+				<string>Может просматривать обзорную страницу архивации?</string>
+			</item>
+			<item>
+				<key>archive_rules</key>
+				<string>Может управлять правилами архивации?</string>
+			</item>
+		</items>
+	</group>
+</permissions>

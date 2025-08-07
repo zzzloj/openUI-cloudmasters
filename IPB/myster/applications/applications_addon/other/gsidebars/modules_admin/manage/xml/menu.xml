@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Manage Sidebars</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Sidebars</subitemtitle>
+					<subitemlang>manage_sidebars</subitemlang>						
+					<subsection>manage</subsection>
+					<subitemurl>do=view</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>							
+			</subitems>		
+		</item>	
+		<item>
+			<title>Nexus Integration Settings</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Nexus Integration Settings</subitemtitle>
+					<subsection>nexusSettings</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+			<condition><![CDATA[
+					$cache = ipsRegistry::cache()->getCache('app_cache');
+                    return ( $cache['nexus'] && IPSLib::appIsInstalled( 'nexus' ) && is_file( IPSLib::getAppDir( 'gsidebars' ) . '/sources/classes/libraryNexus.php' ) ) ? 1 : 0;
+				]]></condition>
+		</item>        				
+	</tabitems>
+</menu>

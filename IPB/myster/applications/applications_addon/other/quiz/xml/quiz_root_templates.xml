@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="quiz" templategroups="a:1:{s:9:&quot;skin_quiz&quot;;s:5:&quot;exact&quot;;}">
+  <templategroup group="skin_quiz">
+    <template>
+      <template_group>skin_quiz</template_group>
+      <template_content><![CDATA[<if test="$this->settings['quiz_enable_help']">
+	    	<div class="message">
+				<p>{$this->lang->words['quiz_helptxt_managequestions']}</p>
+			</div>
+			<div class="clearfix clear"><br /></div>
+    	</if>
+    	
+<ul class="right">
+		<li class="right ipsButton_secondary"><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=view&amp;id={$question['quiz_id']}" base="public" seotitle="{$question['quiz_seotitle']}" template="quizquiz"}">{$this->lang->words['quiz_back_to_quiz']} "{$question['quiz_name']}"</a></li>
+	</ul>
+	<div class="clear clearfix"><br /></div>
+<h3 class="maintitle">{$this->lang->words['quiz_manage_answers']} for "{$question['question_name']}"</h3>
+<div class='ipsLayout'>
+		<form method="POST" action="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=addAnswers&amp;qid={$question['question_id']}" base="public"}">
+   		 	<div class='ipsLayout_content'>
+				    <!-- <div class='ipsSteps clearfix' id='steps_bar'>
+				      <ul>
+				        <li id='step_1' class='ipsSteps_done'>
+				          <strong class='ipsSteps_title'>Add Quiz</strong>
+				          <span class='ipsSteps_desc'>&nbsp;</span>
+				          <span class='ipsSteps_arrow'>&nbsp;</span>
+				        </li>
+				        <li id='step_2' class='ipsSteps_done'>
+				          <strong class='ipsSteps_title'>Add Question for</strong>
+				          <span class='ipsSteps_desc'>{$question['quiz_name']}</span>
+				          <span class='ipsSteps_arrow'>&nbsp;</span>
+				        </li>
+				        <li id='step_3' class='ipsSteps_active'>
+				          <strong class='ipsSteps_title'>Add Answers for</strong>
+				          <span class='ipsSteps_desc'>{$question['question_name']}</span>
+				          <span class='ipsSteps_arrow'>&nbsp;</span>
+				        </li>
+				      </ul>
+			    	</div> -->
+    			<div class='ipsBox'>
+    				<div class='ipsBox_container ipsPad'>
+      					<ul class='ipsForm ipsForm_vertical ipsPad'>
+        					<li class='ipsField ipsField_primary'>
+          						<label class='ipsField_title'>{$this->lang->words['quiz_add_answer']} <span class='ipsForm_required'>*</span></label>
+          						<div class='ipsField_content'>
+		      						<input id="question_name" required class="input_text" type="text" size="65" maxlength="{$this->settings['quiz_max_qna_length']}" name="question_name" tabindex="0">
+          							<input id="quiz_id" class="input_text" type="hidden" size="65" maxlength="{$this->settings['quiz_max_qna_length']}" name="quiz_id" tabindex="0" value="0">
+          							<input id="question_parent_id" class="input_text" type="hidden" size="65" maxlength="{$this->settings['quiz_max_qna_length']}" name="question_parent_id" tabindex="0" value="{$question['question_id']}">
+          						</div>
+          					</li>
+          				</ul>
+          			</div>
+    				<fieldset class='submit'>
+      					<input type='submit' class='input_submit' value='{$this->lang->words['quiz_submit_n_reload']}' />
+      					<li class="ipsButton_secondary right"><a href="{parse url="app=quiz&module=quiz&section=quiz&do=addQuestions&qid={$question['quiz_id']}" base="public"}">{$this->lang->words['quiz_back_to_questions']}</a></li>
+    				</fieldset>
+    			</div>
+    			<div class="clear clearfix"><br /></div>
+    			<if test="$this->settings['quiz_enable_help']">
+	    			<div class="message">
+						<p>{$this->lang->words['quiz_helptxt_addanswer']}</p>
+					</div>
+    			</if>
+    			<div class="clear clearfix"><br /></div>
+    			<h3 class="maintitle">{$this->lang->words['quiz_manage_answers']}</h3>
+					<div class='ipsBox'>
+    					<div class='ipsBox_container ipsPad'>
+    						<table class="ipb_table">
+    						<tr>
+	    						<th>Answer Title</th>
+	    						<th>Correct Answer?</th>
+	    						<th>&nbsp;</th>
+    						</tr>
+    						<if test="$questions">
+									<foreach loop="$questions as $question">
+										<tr>
+											<td><if test="$question['question_is_correct'] == 1"><span style="font-weight:bold;color:green;"></if>{$question['question_name']}<if test="$question['question_is_correct'] == 1"></span></if></td>
+											<td><a href="{parse url="app=quiz&module=quiz&section=quiz&do=togglestate&id={$question['question_id']}" base="public"}"><if test="$question['question_is_correct'] == 1"><img src="{$this->settings['board_url']}/public/style_images/master/tick.png" /><else /><img src="{$this->settings['board_url']}/public/style_images/master/cross.png" /></if></td>
+											<td>
+												<ul class="right">
+	          											<!-- <li class="ipsButton_secondary">
+	          												<a href="">Edit</a>
+							          					</li> -->
+							          					<li class="ipsButton_secondary">
+							          						<a href="{parse url="app=quiz&module=quiz&section=quiz&do=deleteanswer&id={$question['question_id']}" base="public"}" onclick="return confirm(&quot;Are you sure you want to delete this answer?&quot;)">{$this->lang->words['quiz_delete']}</a>
+							          					</li>
+	          									</ul>
+          									</td>
+										</tr>
+									</foreach>
+							</if>
+    						</table>
+    					</div>
+    				</div>
+    		</div>
+    		</form>
+    	</div>]]></template_content>
+      <template_name>addAnswer</template_name>
+      <template_data>$question, $questions</template_data>
+      <template_updated>1351032422</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_quiz</template_group>
+      <template_content><![CDATA[<if test="$this->request['do'] != 'manage'">
+	<if test="$this->settings['quiz_enable_help']">
+		<div class="message">
+			<p>{$this->lang->words['quiz_helptxt_addquestions']}</p>
+		</div>
+		<div class="clearfix clear"><br /></div>
+	</if>
+</if>
+<h3 class="<if test="$this->request['do'] == 'manage'">bar<else />maintitle</if>">{$this->lang->words['quiz_add_question']}</h3>
+<div class='ipsLayout'>
+		<form method="POST" action="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=addQuestions&amp;qid={$quiz['quiz_id']}" base="public"}">
+		<!--<div class='ipsSteps clearfix' id='steps_bar'>
+			<ul>
+				<li id='step_1' class='ipsSteps_done'>
+					<strong class='ipsSteps_title'>Add Quiz</strong>
+				    <span class='ipsSteps_desc'>&nbsp;</span>
+				    <span class='ipsSteps_arrow'>&nbsp;</span>
+				</li>
+				<li id='step_2' class='ipsSteps_active'>
+				    <strong class='ipsSteps_title'>Add Question for</strong>
+				    <span class='ipsSteps_desc'>{$quiz['quiz_name']}</span>
+				    <span class='ipsSteps_arrow'>&nbsp;</span>
+				</li>
+				<li id='step_3' class='ipsSteps_done'>
+					<strong class='ipsSteps_title'>Add Answers</strong>
+				    <span class='ipsSteps_desc'>&nbsp;</span>
+				    <span class='ipsSteps_arrow'>&nbsp;</span>
+				</li>
+			</ul>
+		</div> -->
+   		 	<div class='ipsLayout_content'>
+    			<div class='ipsBox'>
+    				<div class='ipsBox_container ipsPad'>
+      					<ul class='ipsForm ipsForm_vertical ipsPad'>
+        					<li class='ipsField ipsField_primary'>
+          						<label class='ipsField_title'>{$this->lang->words['quiz_add_question']} <span class='ipsForm_required'>*</span></label>
+          						<div class='ipsField_content'>
+		      						<input id="question_name" required class="input_text" type="text" size="65" maxlength="{$this->settings['quiz_max_qna_length']}" name="question_name" tabindex="0">
+          							<input id="quiz_id" class="input_text" type="hidden" size="65" maxlength="{$this->settings['quiz_max_qna_length']}" name="quiz_id" tabindex="0" value="{$quiz['quiz_id']}">
+		      						
+		      					</div>
+          					</li>
+        					
+          					<!-- <li class='ipsField ipsField_select'>
+          					<label class='ipsField_title'>{$this->lang->words['quiz_category']}</label><br />
+          						<div class='ipsField_content'>
+          						<select disabled>
+          							<option name="" id="" value="" disabled>{$quiz['category_name']}</option>
+          						</select>
+		      					</div>	
+          					</li> -->
+          				</ul>
+          			</div>
+          			
+    				<fieldset class='submit'>
+      					<input type='submit' class='input_submit' value='{$this->lang->words['quiz_submit_goto_answers']}' />
+    				</fieldset>
+    			</div>
+    			<h3 class="bar">{$this->lang->words['quiz_manage_q_n_a']}</h3>
+					<div class='ipsBox'>
+    					<div class='ipsBox_container ipsPad'>
+    						<table class="ipb_table">
+    						<if test="$questions">
+	    						<foreach loop="$questions as $q">
+	    							<tr>
+	    								<td><b>{$q['question_name']}</b></td> <td><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=addAnswers&amp;qid={$q['question_id']}" base="public"}" class="ipsButton_secondary">{$this->lang->words['quiz_manage_answers']}</a></td>
+	    							</tr>
+	    						</foreach>
+	    					<else />
+	    						<if test="$this->memberData['g_is_supmod'] == 1">
+									{$this->lang->words['quiz_no_questions_add_one']}
+								</if>
+	    					</if>
+    						</table>
+    					</div>
+    				</div>
+    		</div>
+    	</div>]]></template_content>
+      <template_name>addQuestion</template_name>
+      <template_data>$quiz, $questions</template_data>
+      <template_updated>1351032422</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_quiz</template_group>
+      <template_content><![CDATA[<if test="$this->settings['quiz_enable_help']">
+	<div class="message">
+		<p>{$this->lang->words['quiz_helptxt_addquiz']}</p>
+	</div>
+</if>
+<div class="clear clearfix"><br /></div>
+<div class='ipsLayout'>
+		<form method="POST" action="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=addQuiz" base="public"}">
+   		 	<div class='ipsLayout_content'>
+    			<div class='ipsBox'>
+    				<div class='ipsBox_container ipsPad'>
+      					<ul class='ipsForm ipsForm_vertical ipsPad'>
+        					<li class='ipsField ipsField_primary'>
+          						<label class='ipsField_title'>{$this->lang->words['quiz_add_form_title']} <span class='ipsForm_required'>*</span></label>
+          						<div class='ipsField_content'>
+		      						<input id="quiz_name" class="input_text" type="text" size="65" maxlength="{$this->settings['quiz_max_qna_length']}" name="quiz_name" tabindex="0">
+          						</div>
+          					</li>
+          					
+          					<li class='ipsField ipsField_select'>
+          					<label class='ipsField_title'>{$this->lang->words['quiz_category']}</label>
+	          					<div class='ipsField_content'>
+	           						<select name="quiz_category_id">
+	           						<if test="$categories">
+	            						<foreach loop="$categories as $cat">
+	                						<option name="{$cat['category_seotitle']}" value="{$cat['category_id']}">{$cat['category_name']}</option>
+	           		 					</foreach>
+	           		 				</if>
+	            					</select>
+	         					</div>
+        					</li>
+        					
+          					<li class='ipsField'>
+          						{$editor}
+          					</li>
+          				</ul>
+          			</div>
+    				<fieldset class='submit'>
+      					<input type='submit' class='input_submit' value='{$this->lang->words['quiz_submit_and_manage']}' />
+    				</fieldset>
+    			</div>
+    		</div>
+    	</div>]]></template_content>
+      <template_name>addQuiz</template_name>
+      <template_data>$editor, $categories</template_data>
+      <template_updated>1351032422</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_quiz</template_group>
+      <template_content><![CDATA[<!-- <h3 class="maintitle">{$this->lang->words['quiz_welcome']}</h3>
+		<div class="ipsBox">
+			<div class='ipsBox_container ipsPad'> -->
+			<if test="$this->settings['quiz_enable_welcome_panel'] == 1">
+				<table class="ipb_table">
+					<tbody>
+					<tr>
+						<td></td>
+						<td><h1 class="ipsType_pagetitle left">Welcome Back, {$this->memberData['members_display_name']}!</h1></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td width="150">
+							<a href='{parse url="showuser={$this->memberData['member_id']}" seotitle="{$this->memberData['members_seo_name']}" template="showuser" base="public"}' class='ipsUserPhotoLink'>
+	  							<img  src='{$this->memberData['pp_small_photo']}'  class='ipsUserPhoto ipsUserPhoto_large left' />
+	  						</a>
+  						</td>
+  						
+  						<div class="">
+  						<td>
+  						<h3 class="bar">Quiz Stats</h3>
+  							<div class="ipsBox">
+								<div class='ipsBox_container ipsPad'>
+									<table class="ipb_table">
+			   							<tr>
+			  								<td><b>{$this->lang->words['quiz_total_quizzes']}:</b></td>
+			  								<td></td>
+			  							</tr>
+			  							<tr>
+			  								<td><b>{$this->lang->words['quiz_best_category']}:</b></td>
+			  								<td></td>
+			  							</tr>
+			  							<tr>
+			  								<td><b>{$this->lang->words['quiz_best_quiz']}:</b></td>
+			  								<td></td>
+			  							</tr>
+			  							<tr>
+			  								<td><b>{$this->lang->words['quiz_top_quizzee']}:</b></td>
+			  								<td></td>
+			  							</tr>
+		  							</table>
+  								</div>
+  							</div>
+  						</td>
+  						</div>
+  						
+  						<div class="">
+  						<td>
+  						<h3 class="bar">Today's Quiz</h3>
+  							<div class="ipsBox">
+								<div class='ipsBox_container ipsPad'>
+		   							<ul class="ipsList">
+		  								<li>Test</li>
+		  								<li>Test</li>
+		  								<li>Test</li>
+		  								<li>Test</li>
+		  							</ul>
+  								</div>
+  							</div>
+  						</td>
+  						</div>
+  					</tr>
+  					</tbody>
+  				</table>
+  			</if>
+  	<if test="$this->memberData['member_id'] && $this->memberData['g_quiz_can_add_quiz'] == 1">
+			<ul class="topic_buttons">
+				<li><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=addQuiz" base="public"}">{$this->lang->words['quiz_add_quiz']}</a></li>
+			</ul>
+	</if>
+  			<div class="clear clearfix"></div>
+			<!-- </div>
+		</div> -->
+	<div class="rightbox">
+	<h3 class="maintitle">{$this->lang->words['quiz_recent_quizzes']}</h3>
+		<div class="ipsBox">
+			<div class='ipsBox_container ipsPad'>
+				<table class='ipb_table'>
+					<if test="$quizzes">
+						<tr>
+							<th width="50"></th>
+							<th>{$this->lang->words['quiz_name']}</th>
+							<th>{$this->lang->words['quiz_author']}</th>
+						</tr>
+						<foreach loop="$quizzes as $quiz">
+						<if test="$quiz['quiz_approved'] == 0">
+							<if test="$this->memberData['g_is_supmod'] == 1">
+								<tr class="moderated">
+									<td width="50"><img src="{$quiz['category_image']}" style="width:50px !important; height: 50px !important;" /></td>
+									<td><strong class="larger_text"><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=view&amp;id={$quiz['quiz_id']}" base="public" seotitle="{$quiz['quiz_seotitle']}" template="quizquiz"}">{$quiz['quiz_name']}</a></strong></td>
+									<td>{parse template="userHoverCard" group="global" params="$quiz"}</td>
+								</tr>
+							</if>
+						<else />
+							<tr>
+								<td width="50"><img src="{$quiz['category_image']}" style="width:50px !important; height: 50px !important;" /></td>
+								<td><strong class="larger_text"><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=view&amp;id={$quiz['quiz_id']}" base="public" seotitle="{$quiz['quiz_seotitle']}" template="quizquiz"}">{$quiz['quiz_name']}</a></strong> <if test="$quiz['taken'] == 1"><span class="ipsBadge ipsBadge_green">{$this->lang->words['quiz_taken']}</span></if> </td>
+								<td>{parse template="userHoverCard" group="global" params="$quiz"}</td>
+							</tr>
+						</if>
+						</foreach>
+					<else />
+						<div class='no_messages'>{$this->lang->words['quiz_no_recent']}</div>
+					</if>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<div class="leftbox">
+	<h3 class="maintitle">{$this->lang->words['quiz_all_categories']}</h3>
+		<div class="ipsBox">
+			<div class='ipsBox_container ipsPad'>
+				<table class='ipb_table'>
+					<if test="$categories">
+						<tr style="float:left !important;">
+							<th width="50"></th>
+							<th>{$this->lang->words['quiz_category_name']}</th>
+						</tr>
+						<tr class="clearfix">
+							<td></td>
+							<td></td>
+						</tr>
+						<php>$i = 0;</php>
+						<foreach loop="$categories as $cat">
+						<php>	
+							$class = null;
+							if ($i++ % 2 == 0) {
+								$class = 'goleft';
+							} else {
+								$class = 'goright';
+							}
+						</php>
+							<tr class="{$class}">
+								<td width="50"><img src="{$cat['category_image']}" style="width:50px !important; height: 50px !important;" /></td>
+								<td><strong class="larger_text"><a href="{parse url="app=quiz&amp;module=categories&amp;section=categories&amp;do=view&amp;id={$cat['category_id']}" base="public" seotitle="{$cat['category_seotitle']}" template="quizcat"}">{$cat['category_name']}</a> <small>({$cat['count']})</small></strong></td>
+							</tr>
+							<if test="$class == 'goright'">
+								<tr class="clearfix">
+									<td></td>
+									<td></td>
+								</tr>
+							</if>
+						</foreach>
+					<else />
+						<div class='no_messages'>{$this->lang->words['quiz_no_categories']}</div>
+					</if>
+				</table>
+			</div>
+		</div>
+	</div>
+		
+	<div class="rightbox">
+	<h3 class="maintitle">{$this->lang->words['quiz_popular_quizzes']}</h3>
+		<div class="ipsBox">
+			<div class='ipsBox_container ipsPad'>
+				<table class='ipb_table'>
+					<if test="$pquizzes">
+						<tr>
+							<th width="50"></th>
+							<th>{$this->lang->words['quiz_name']}</th>
+							<th>{$this->lang->words['quiz_author']}</th>
+						</tr>
+						<foreach loop="$pquizzes as $quiz">
+							<tr>
+								<td width="50"><img src="{$quiz['category_image']}" style="width:50px !important; height: 50px !important;" /></td>
+								<td><strong class="larger_text"><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=view&amp;id={$quiz['quiz_id']}" base="public" seotitle="{$quiz['quiz_seotitle']}" template="quizquiz"}">{$quiz['quiz_name']}</a></strong></td>
+								<td>{parse template="userHoverCard" group="global" params="$quiz"}</td>
+							</tr>
+						</foreach>
+					<else />
+						<div class='no_messages'>{$this->lang->words['quiz_no_recent']}</div>
+					</if>
+				</table>
+			</div>
+		</div>
+	</div>
+<div class="clearfix clear"></div>
+<div id='board_statistics' class='statistics clearfix'>
+	<h4 class='statistics_head'>{parse expression="sprintf( $this->lang->words['quiz_active_users_text'], $activeUsers['stats']['total'], $this->settings['au_cutoff'] )"}</h4>
+	<p class='statistics_brief'>{parse expression="sprintf( $this->lang->words['active_users_detail'], $activeUsers['stats']['members'], $activeUsers['stats']['guests'], $activeUsers['stats']['anon'] )"}</p>
+	
+	<if test="hasactiveusers:|:is_array( $activeUsers['names'] ) AND count( $activeUsers['names'] )">
+		<br />
+		<p>
+			<span class='name'>{parse expression="implode( ",</span> <span class='name'>", $activeUsers['names'] )"}</span>
+		</p>
+	</if>
+</div>]]></template_content>
+      <template_name>allCategories</template_name>
+      <template_data>$categories, $quizzes, $pquizzes, $activeUsers</template_data>
+      <template_updated>1351032422</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_quiz</template_group>
+      <template_content><![CDATA[<if test="$quiz['quiz_approved'] == 0">
+			<div class="message error warning">
+				<p>{$this->lang->words['quiz_no_questions_in_quiz']}</p>
+			</div>
+			<div class="clear clearfix"><br /></div>
+		</if>
+		
+    	<if test="$this->settings['quiz_enable_help']">
+	    	<div class="message">
+				<p>{$this->lang->words['quiz_helptxt_managequiz']}</p>
+			</div>
+			<div class="clearfix clear"><br /></div>
+    	</if>
+		
+		<h3 class='maintitle'>{$quiz['quiz_name']}</h3>
+		<div class='ipsLayout'>
+			<div class='ipsLayout_content'>
+				<div class='ipsBox'>
+    				<div class='ipsBox_container ipsPad'>
+    					<table class="ipb_table">
+    						<tr class="header">
+    							<th width="40%">{$this->lang->words['quiz_info']}</th>
+    							<th width="40%">{$this->lang->words['quiz_qna']}</th>
+    							<th width="20%">{$this->lang->words['quiz_manage_quiz']}</th>
+    						</tr>
+    						<tr class="row1">
+    							<td valign="top">
+    								<dl style="padding:5px; margin:5px;">
+    									<dt><b>Quiz Title:</b></dt> 
+    									<dd style="margin-left:15px;padding:2px;">{$quiz['quiz_name']}</dd>
+    									
+    									<dt><b>Quiz Information:</b></dt> 
+    									<dd style="margin-left:15px;padding:2px;">{$quiz['quiz']}</dd>
+    									
+    									<dt><b>Quiz Author:</b></dt> 
+    									<dd style="margin-left:15px;padding:2px;">{parse template="userHoverCard" group="global" params="$quiz"}</dd>
+    									
+    									<dt><b>Quiz Creation Date:</b></dt> 
+    									<dd style="margin-left:15px;padding:2px;">{parse date="$quiz['quiz_timestamp']" format="long" relative="false"}</dd>
+    								</dl>
+    							</td>
+    							<td valign="top">
+									<if test="$questions">
+											<ul>
+												<foreach loop="$questions as $question">
+												<b>{$question['question_name']}</b>
+													<if test="$question['answers']">
+														<foreach loop="$question['answers'] as $answer">
+															<li style="margin-left:15px;"><if test="$answer['question_is_correct'] == 1"><span style="font-weight:bold;color:green;"></if>{$answer['question_name']}<if test="$answer['question_is_correct'] == 1"></span></if></li>
+														</foreach>
+													<else />
+														<li><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=addAnswers&amp;qid={$question['question_id']}" base="public"}" class="ipsButton_secondary right">{$this->lang->words['quiz_add_answer']}</a></li>
+													</if>
+													
+												</foreach>
+											</ul>
+									<else />
+										<if test="$this->memberData['g_is_supmod'] == 1">
+											{$this->lang->words['quiz_no_questions_add_one']}
+										</if>
+									</if>
+    							</td>
+    							<td valign="top">
+    								<ul>
+		    							<!-- <li><a href="#" class="ipsButton_secondary">{$this->lang->words['quiz_manage_quiz']}</a></li><br /> -->
+		    							<li><a href="javascript:void()" id="manage_questions" class="ipsButton_secondary">{$this->lang->words['quiz_manage_q_n_a']}</a></li><br />
+		    							<if test="$this->settings['quiz_post_new_topic'] == 1">
+		    								<if test="$quiz['quiz_support_topic'] != 0">
+		    									<li><a href="{parse url="showtopic={$quiz['quiz_support_topic']}" base="public" template="showtopic" seotitle="{$quiz['quiz_seotitle']}"}" id="support" class="ipsButton_secondary">{$this->lang->words['quiz_support_topic']}</a></li><br />
+		    								</if>
+		    							</if>
+		    							<if test="$quiz['quiz_public'] == 0 && $questions">
+											<li><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=publish&amp;qid={$quiz['quiz_id']}" base="public"}" class="ipsButton_secondary">{$this->lang->words['quiz_publish_quiz']}</a></li><br />
+											<br />
+											<div class="clearfix"></div>
+											<p class="error message warning">{$this->lang->words['quiz_publish_warning']}</p>
+		    							</if>
+		    						</ul>
+		    					</td>
+    						</tr>
+    					</table>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    	
+		<div id='manageQuestions' style='display: none; line-height: 1.5;'>
+			{parse template="addQuestion" group="quiz" params="$quiz, $questions"}
+		</div>
+		<div id='manageAnswers' style='display: none; line-height: 1.5;'>
+			{parse template="addAnswer" group="quiz" params="$quiz, $questions"}
+		</div>
+			<script>
+				$('manage_questions').observe( 'click', function(e) {
+	        		new ipb.Popup( 'manageQuestions', { 
+	        			type: 'pane',
+	                    initial: $('manageQuestions').innerHTML,
+	                    hideAtStart: false,
+	                    w: '800px',
+	                    h: '600px',
+						}
+					);
+	       			Event.stop(e);
+	        		return false;
+	  			});
+	  			
+				$('manage_answers').observe( 'click', function(e) {
+	        		new ipb.Popup( 'manageAnswers', { 
+	        			type: 'pane',
+	                    initial: $('manageAnswers').innerHTML,
+	                    hideAtStart: false,
+	                    w: '800px',
+	                    h: '600px',
+						}
+					);
+	       			Event.stop(e);
+	        		return false;
+	  			});
+		</script>]]></template_content>
+      <template_name>manageQuiz</template_name>
+      <template_data>$quiz, $questions</template_data>
+      <template_updated>1351032422</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_quiz</template_group>
+      <template_content><![CDATA[<h3 class="maintitle">{$this->lang->words['quiz_nojs']}</h3>
+					<div class='ipsBox'>
+						<div class='ipsBox_container ipsPad'>
+							{$this->lang->words['quiz_nojs_msg']}
+						</div>
+					</div>]]></template_content>
+      <template_name>noJS</template_name>
+      <template_data/>
+      <template_updated>1351032422</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_quiz</template_group>
+      <template_content><![CDATA[<if test="$this->memberData['member_id'] && $this->memberData['g_quiz_can_add_quiz'] == 1">
+			<ul class="topic_buttons">
+				<li><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=addQuiz" base="public"}">{$this->lang->words['quiz_add_quiz']}</a></li>
+			</ul>
+	</if>
+	<h1 class="ipsType_pagetitle">{$category['category_name']}</h1>
+	<div class="clear"></div>
+	<div class='maintitle ipsFilterbar'>
+		<ul class='ipsList_inline  ipsType_smaller'>
+	    	<li <if test="$this->request['filter'] == 'all'">class='active'</if>><a href='{parse url="app=quiz&amp;module=categories&amp;section=categories&amp;do=view&amp;id={$category['category_id']}&amp;filter=all" base="public" seotitle="{$category['category_seotitle']}" template="quizcat"}'>{$this->lang->words['quiz_filter_all']}</a></li>
+	    	<li <if test="$this->request['filter'] == 'untaken'">class='active'</if>><a href='{parse url="app=quiz&amp;module=categories&amp;section=categories&amp;do=view&amp;id={$category['category_id']}&amp;filter=untaken" base="public" seotitle="{$category['category_seotitle']}" template="quizcat"}'>{$this->lang->words['quiz_filter_available']}</a></li>
+	    	<li <if test="$this->request['filter'] == 'taken'">class='active'</if>><a href='{parse url="app=quiz&amp;module=categories&amp;section=categories&amp;do=view&amp;id={$category['category_id']}&amp;filter=taken" base="public" seotitle="{$category['category_seotitle']}" template="quizcat"}'>{$this->lang->words['quiz_filter_completed']}</a></li>
+	    	<li <if test="$this->request['filter'] == 'mine'">class='active'</if>><a href='{parse url="app=quiz&amp;module=categories&amp;section=categories&amp;do=view&amp;id={$category['category_id']}&amp;filter=mine" base="public" seotitle="{$category['category_seotitle']}" template="quizcat"}'>{$this->lang->words['quiz_filter_mine']}</a></li>
+	    	<li class="right"><img src="{$category['category_image']}" style="width:50px !important; height: 50px !important;" class="right" /></li>
+		</ul>
+	</div>
+		<table class='ipb_table'>
+			<if test="$quizzes">
+					<tr>
+						<th width="100">{$this->lang->words['quiz_name']}</th>
+						<th width="50">{$this->lang->words['quiz_author']}</th>
+						<th width="150"></th>
+					</tr>
+				<foreach loop="$quizzes as $quiz">
+				<if test="$quiz['quiz_approved'] == 0">
+				<if test="$this->memberData['g_is_supmod'] == 1">
+					<tr class="moderated">
+						<td><strong class="larger_text"><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=view&amp;id={$quiz['quiz_id']}" base="public" seotitle="{$quiz['quiz_seotitle']}" template="quizquiz"}">{$quiz['quiz_name']}</a></strong></td>
+						<td>{parse template="userHoverCard" group="global" params="$quiz"}</td>
+						<td>{parse date="$quiz['quiz_timestamp']" format="long" relative="false"}</td>
+						
+					</tr>
+				</if>
+				<else />
+					<tr>
+						<td><strong class="larger_text"><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=view&amp;id={$quiz['quiz_id']}" base="public" seotitle="{$quiz['quiz_seotitle']}" template="quizquiz"}">{$quiz['quiz_name']}</a></strong></td>
+						<td>{parse template="userHoverCard" group="global" params="$quiz"}</td>
+						<td>{parse date="$quiz['quiz_timestamp']" format="long" relative="false"}</td>
+						
+					</tr>
+				</if>
+				</foreach>
+			<else />
+				<div class='no_messages'>{$this->lang->words['quiz_no_quizzes']}</div>
+			</if>
+		</table>
+<div class="clearfix clear"></div>
+<div id='board_statistics' class='statistics clearfix'>
+	<h4 class='statistics_head'>{parse expression="sprintf( $this->lang->words['quiz_active_users_cat_text'], $activeUsers['stats']['total'], $this->settings['au_cutoff'] )"}</h4>
+	<p class='statistics_brief'>{parse expression="sprintf( $this->lang->words['active_users_detail'], $activeUsers['stats']['members'], $activeUsers['stats']['guests'], $activeUsers['stats']['anon'] )"}</p>
+	
+	<if test="hasactiveusers:|:is_array( $activeUsers['names'] ) AND count( $activeUsers['names'] )">
+		<br />
+		<p>
+			<span class='name'>{parse expression="implode( ",</span> <span class='name'>", $activeUsers['names'] )"}</span>
+		</p>
+	</if>
+</div>]]></template_content>
+      <template_name>showCategory</template_name>
+      <template_data>$category, $quizzes, $activeUsers</template_data>
+      <template_updated>1351032422</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_quiz</template_group>
+      <template_content><![CDATA[<ul class="topic_buttons">
+	<if test="$this->memberData['g_is_supmod'] == 1 || $this->memberData['member_id'] == $quiz['member_id']">
+		<if test="$quiz['quiz_public'] == 0">
+			<li><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=manage&amp;qid={$quiz['quiz_id']}" base="public"}">{$this->lang->words['quiz_manage_quiz']}</a></li>
+		</if>	
+	</if>
+	<if test="$quiz['quiz_public'] == 0 && $questions && $this->settings['quiz_can_publish_own_quiz'] == 1 && $this->memberData['member_id'] == $quiz['quiz_starter_id'] || $this->memberData['g_is_supmod'] == 1 && $quiz['quiz_public'] == 0">
+		<li><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=publish&amp;qid={$quiz['quiz_id']}" base="public"}">{$this->lang->words['quiz_publish_quiz']}</a></li>
+	</if>
+
+	<if test="$this->memberData['member_id'] && $this->memberData['g_quiz_can_take_quiz'] == 1">
+		<if test="$this->settings['quiz_takequiz_more_than_once'] == 0">
+			<if test="$quiz['memberHasTakenQuiz'] == 0">
+				<li><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=takequiz&amp;id={$quiz['quiz_id']}" seotitle="{$quiz['quiz_seotitle']}" template="quiztakequiz" base="public"}">{$this->lang->words['quiz_take_quiz']}</a></li>
+			<else />
+				<li class="non_button"><a>{$this->lang->words['quiz_already_taken']}</a></li>
+			</if>
+		<else />
+				<li><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=takequiz&amp;id={$quiz['quiz_id']}" seotitle="{$quiz['quiz_seotitle']}" template="quiztakequiz" base="public"}">{$this->lang->words['quiz_take_quiz']}</a></li>
+		</if>
+	</if>
+	<if test="$quiz['memberHasTakenQuiz'] == 1">
+			<li><a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=viewresults&amp;key={$quiz['key']['key']}&amp;id={$quiz['quiz_id']}"}">{$this->lang->words['quiz_view_results']}</a></li>
+	</if>
+	<if test="!$this->memberData['member_id']">
+		<li class="disabled"><a href="{parse url="app=core&module=global&section=login"}">{$this->lang->words['quiz_sign_up_to_add_quiz']}</a></li>
+	</if>
+</ul>
+
+	<if test="$quiz['quiz_public'] == '0'">
+		<if test="$this->settings['quiz_enable_help']">
+			<div class="clearfix clear"></div>
+			<div class="message">
+				<p>{$this->lang->words['quiz_helptxt_publish']}</p>
+			</div>
+		</if>
+	</if>
+	
+	<if test="$quiz['quiz_approved'] == 0 && $this->memberData['g_is_supmod'] == 1">
+		<if test="!$questions">
+		<div class="clear"></div>
+			<div class="error message warning">{$this->lang->words['quiz_no_questions_in_quiz']}</div>
+			
+		</if>
+	</if>
+	<div class="clear"></div>
+	<div class="quizrightbox <if test="$quiz['quiz_approved'] == 0">moderated</if>">
+		<h3 class="maintitle">{$quiz['quiz_name']}</h3>
+		<div class="general_box">
+		<h3 class="row2">{parse template="userHoverCard" group="global" params="$quiz"}  <span class="right">{IPSLib::shareLinks( $quiz['quiz_name'], array( 'skip' => array( 'blogthis', 'facebook' ) ) )}</span> </h3>
+		<div class="ipsBox_container">
+			<div class='ipsPad'>
+				<div style="display:inline-block;float:right;width:15%">
+				<a href='{parse url="showuser={$quiz['member_id']}" seotitle="{$quiz['members_seo_name']}" template="showuser" base="public"}' class='ipsUserPhotoLink'>
+	  				<img src='{$quiz['avatar']['pp_small_photo']}' class='ipsUserPhoto ipsUserPhoto_large right' /><div class="clear clearfix"><br /></div>
+	  				<div class="right"><if test="$this->settings['quiz_post_new_topic'] == 1"><if test="$quiz['quiz_support_topic'] != 0"><a href="{parse url="showtopic={$quiz['quiz_support_topic']}" base="public" template="showtopic" seotitle="{$quiz['quiz_seotitle']}"}" id="support" class="ipsButton_secondary">{$this->lang->words['quiz_support_topic']}</a><br /></if></if></div>
+	  			</a>
+	  			</div>
+	  			<div style="float:left; width:85%">
+				<p class="ipsPad_double">{$quiz['quiz']}</p>
+				
+				<if test="$quiz['avatar']['signature']">
+					<div class="signature" data-memberid="{$quiz['member_id']}">
+						<p>{$quiz['avatar']['signature']}</p>
+					</div>
+				</if>
+				</div>
+				<div class="clearfix clear"></div>
+			</div>
+			
+		</div>
+		</div>
+		<if test="canShare:|:$this->settings['sl_enable']">
+			{IPSLib::shareLinks( $quiz['quiz_name'], array( 'skip' => array( 'print', 'download', 'twitter', 'digg', 'reddit', 'blogthis', 'delicious', 'email', 'googleplusone', 'stumble', 'google' ) ) )}
+			<div class="clearfix clear"><br /></div>
+		</if>
+		<h3 class="maintitle">{$this->lang->words['quiz_quiztakers']}</h3>
+		<div class="ipsBox">
+			<div class='ipsBox_container ipsPad'>
+			<table class="ipb_table">
+			<if test="$takers">
+				<tr>
+					<th width="5%"></th>
+					<th width="45%">{$this->lang->words['quiz_username']}</th>
+					<th width="30%">{$this->lang->words['quiz_score']}</th>
+					<th width="20%">{$this->lang->words['quiz_date']}</th>
+				</tr>
+				<foreach loop="$takers as $t">
+				
+					<tr>
+						<td>
+							<a href='{parse url="showuser={$t['member_id']}" seotitle="{$t['members_seo_name']}" template="showuser" base="public"}' class='ipsUserPhotoLink'>
+		  						<img src='{$t['avatar']['pp_small_photo']}' class='ipsUserPhoto ipsUserPhoto_tiny' />
+		  					</a>
+	  					</td>
+	  					<td>
+	  						{parse template="userHoverCard" group="global" params="$t"}
+	  					</td>
+	  					<td>
+	  						<b>{$t['score']}%</b>
+	  					</td>
+	  					<td>
+	  						{parse date="$t['date']" format="long"}
+	  					</td>
+					</tr>
+					
+				</foreach>
+	
+			<else />
+				{$this->lang->words['quiz_no_answers_take_quiz']}
+				<if test="$this->memberData['member_id']">
+					<if test="$this->memberData['g_quiz_can_take_quiz'] == 1">
+						<a class="ipsButton_secondary right" href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=takequiz&amp;id={$quiz['quiz_id']}" seotitle="{$quiz['quiz_seotitle']}" template="quiztakequiz" base="public"}">{$this->lang->words['quiz_take_quiz']}</a>
+					<else />
+						<a class="ipsButton_secondary right">{$this->lang->words['quiz_cannot_take_quizzes']}</a>
+					</if>
+				</if>
+			</if> 
+			</table>
+			</div>
+		</div>
+	</div>
+	
+<if test="$this->settings['quiz_questions_on_showquiz'] == '1'">	
+	<div class="quizleftbox <if test="$quiz['quiz_approved'] == 0">moderated</if>">
+		<h3 class="maintitle">{$this->lang->words['quiz_take_quiz']}</h3>
+		<div class="general_box alt poll" id="quiz_{$quiz['quiz_id']}">
+		<form action="{$this->settings['base_url']}app=quiz&amp;module=quiz&amp;section=quiz&amp;do=vote&amp;id={$quiz['quiz_id']}" method="post">
+			<h3 class="<if test="$quiz['quiz_approved'] == 0">moderated</if>">{$quiz['quiz_name']}</h3>
+				<div class="poll_question">
+				<if test="$questions">
+					
+						<ol>
+							<foreach loop="$questions as $question">
+							<h4 class="rounded">{$question['question_name']}</h4>
+								<foreach loop="$question['answers'] as $answer">
+									<li><input type="radio" name="answer_{$answer['question_id']}" id="answer_{$answer['question_id']}" class="input_radio" value="{$answer['question_id']}"> <label for="answer_{$answer['question_id']}">{$answer['question_name']}</label></li>
+								</foreach>
+							</foreach>
+						</ol>
+				<else />
+					<if test="$this->memberData['g_is_supmod'] == 1">
+						{$this->lang->words['quiz_no_questions_add_one']}
+					</if>
+				</if>
+				</div>
+				<fieldset class="submit">
+					<legend>{$this->lang->words['quiz_vote']}</legend>
+					<input class="input_submit" type="submit" name="submit" value="Vote!" title="Add your vote to this poll">			
+				</fieldset>
+			</form>
+		</div>
+	</div>
+<else />
+	<div class="quizleftbox <if test="$quiz['quiz_approved'] == 0">moderated</if>">
+		<h3 class="maintitle">{$this->lang->words['quiz_questions_in_quiz']}</h3>
+		<div class="general_box alt poll" id="quiz_{$quiz['quiz_id']}">
+			<h3 class="<if test="$quiz['quiz_approved'] == 0">moderated</if>">{$quiz['quiz_name']}</h3>
+				<div class="poll_question">
+				<if test="$questions">
+					<ol>
+					<foreach loop="$questions as $question">
+						<li><h4 class="rounded">{$question['question_name']}</h4><li>
+					</foreach>
+					</ol>
+				<else />
+					<if test="$this->memberData['g_is_supmod'] == 1">
+						{$this->lang->words['quiz_no_questions_add_one']}
+					</if>
+				</if>
+				<if test="$this->memberData['member_id'] && $this->memberData['g_quiz_can_take_quiz'] == 1">
+					<if test="$this->settings['quiz_takequiz_more_than_once'] == 0">
+						<if test="$quiz['memberHasTakenQuiz'] == 0">
+							<a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=takequiz&amp;id={$quiz['quiz_id']}" seotitle="{$quiz['quiz_seotitle']}" template="quiztakequiz" base="public"}" class="ipsButton_secondary">{$this->lang->words['quiz_take_quiz']}</a>
+						<else />
+							<a class="ipsButton_secondary">{$this->lang->words['quiz_already_taken']}</a>
+						</if>
+					<else />
+							<a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=takequiz&amp;id={$quiz['quiz_id']}" seotitle="{$quiz['quiz_seotitle']}" template="quiztakequiz" base="public"}" class="ipsButton_secondary">{$this->lang->words['quiz_take_quiz']}</a>
+					</if>
+				</if>
+				</div>
+		</div>
+	</div>
+</if>]]></template_content>
+      <template_name>showQuiz</template_name>
+      <template_data>$quiz, $questions, $takers</template_data>
+      <template_updated>1351032422</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_quiz</template_group>
+      <template_content><![CDATA[<if test="$this->memberData['member_id'] == $results['0']['answer_user_id']">
+	<div class="message error">
+	{$this->lang->words['quiz_helptxt_yourresults']}
+	</div>
+</if>
+
+<div class="leftbox">
+		<h3 class="maintitle">{$this->lang->words['quiz_you_scored']} <if test="$results">{$percentage}<else />0</if>%! <span class="right">(<a href="{$this->settings['base_url']}{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=viewresults&amp;key={$key}&amp;id={$this->request['id']}"}" onclick="prompt('Copy this to your clipboard to share','{$this->settings['base_url']}{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=viewresults&amp;key={$key}&amp;id={$this->request['id']}"}')">{$this->lang->words['quiz_permalink']}</a>)</span></h3>
+		<table class='ipb_table'>
+			<tr class="header">
+				<th width="45%">{$this->lang->words['quiz_question']}</th>
+				<th>{$this->lang->words['quiz_you_answered']}</th>
+				<if test="$this->settings['quiz_takequiz_more_than_once'] == '0'">
+					<if test="$this->memberData['member_id'] == $results['0']['answer_user_id']">
+						<th>{$this->lang->words['quiz_correct_answer']}</th>
+					</if>
+				</if>
+				<th>{$this->lang->words['quiz_correct']}</th>
+			</tr>
+			<if test="$results">
+				<foreach loop="$results as $r">
+					<tr class="row2">
+						<td width="45%">{$r['answer_name']}</td> 
+						<td>{$r['you_answered']}</td>
+						<if test="$this->settings['quiz_takequiz_more_than_once'] == '0'">
+							<if test="$this->memberData['member_id'] == $r['answer_user_id']">
+								<td>{$r['correct_answer_name']}</td>
+							</if>
+						</if>
+						<td><if test="$r['is_correct_answer'] == 1"><span style="color:green;font-weight:bold;">Yes</span><else /><span style="color:red;font-weight:bold;">No</span></if></td>
+					</tr>
+				</foreach>
+			<else />
+				<td></td>
+				<if test="$this->memberData['member_id'] == $r['answer_user_id']">
+				<td></td>
+				</if>
+				<td>{$this->lang->words['quiz_no_results']}</td>
+				<td></td>
+			</if>
+		</table>
+	</div>
+	<div class="rightbox">
+		<h3 class="maintitle">{$this->lang->words['quiz_leaders']}</h3>
+		<table class='ipb_table'>
+			<tr class="header">
+				<th></th>
+				<th width="45%">{$this->lang->words['quiz_username']}</th>
+				<th>{$this->lang->words['quiz_score']}</th>
+				<th>{$this->lang->words['quiz_date']}</th>
+			</tr>
+			<if test="$leaders">
+			<foreach loop="$leaders as $t">
+				<tr class="row2">
+						<td>
+							<a href='{parse url="showuser={$t['member_id']}" seotitle="{$t['members_seo_name']}" template="showuser" base="public"}' class='ipsUserPhotoLink'>
+		  						<img src='{$t['avatar']['pp_small_photo']}' class='ipsUserPhoto ipsUserPhoto_tiny' />
+		  					</a>
+	  					</td>
+	  					<td>
+	  						{parse template="userHoverCard" group="global" params="$t"}
+	  					</td>
+	  					<td>
+	  						<b>{$t['score']}%</b>
+	  					</td>
+	  					<td>
+	  						{parse date="$t['date']" format="long"}
+	  					</td>
+					</tr>
+			</foreach>
+			<else />
+			{$this->lang->words['quiz_no_leaders']}
+			</if>
+		</table>
+	</div>
+	<php>
+		$quiz = $this->registry->quizzes->findById($results['0']['quiz_id']);
+	</php>
+	<ul class="topic_buttons">
+		<li>
+			<a href="{parse url="app=quiz" seotitle="app=quiz" template="app=quiz" base="public"}">{$this->lang->words['quiz_return_to_index']}</a>
+		</li>
+		<if test="$results">
+			<li>
+				<a href="{parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=view&amp;id={$quiz['quiz_id']}" seotitle="{$quiz['quiz_seotitle']}" template="quizquiz" base="public"}">{$this->lang->words['quiz_back_to']} {$quiz['quiz_name']}</a>
+			</li>
+		</if>
+<if test="$this->settings['quiz_post_new_topic'] == 1">
+	<if test="$quiz['quiz_support_topic'] != 0">
+		<if test="$results">
+			<li>
+				<a href="{parse url="showtopic={$quiz['quiz_support_topic']}" seotitle="{$quiz['quiz_seotitle']}" template="showtopic" base="public"}">{$this->lang->words['quiz_support_topic']}</a>
+			</li>
+		</if>
+	</if>
+</if>
+	</ul>]]></template_content>
+      <template_name>showResults</template_name>
+      <template_data>$results, $percentage, $key, $leaders</template_data>
+      <template_updated>1351032422</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_quiz</template_group>
+      <template_content><![CDATA[<if test="$this->memberData['member_id'] && $this->memberData['g_quiz_can_take_quiz'] == 1">
+							<if test="$quiz['quiz_timelimit'] != '0' && $this->settings['quiz_enable_timers'] == '1'">
+								<noscript>
+									<meta http-equiv="refresh" content="0;url={parse url="app=quiz&amp;module=quiz&amp;section=quiz&amp;do=nojs" base="public"}" />
+								</noscript>
+								<script>
+									function modal() {
+									    // javascript code to launch modal and fade out content when time is reached
+									    popup = new ipb.Popup('quiztimeout', {
+											type: 'pane',
+											modal: true,
+											modalOpacity: 0.9,
+											hideClose: true,
+											w: '450px',
+											h: '350px',
+											initial: $('quiztimeout').innerHTML,
+											hideAtStart: true,
+											close: 'a[rel="close"]'
+										});
+										// submit the form when the timer is reached
+										//document.takequiz.submit();
+									}
+									
+									function submitform() {
+										document.takequiz.submit();
+									}
+							
+									
+									// make the timeout load onload
+									window.onload = function(delay) {
+									                    setTimeout(modal, {$quiz['quiz_timelimit']}000); 
+									                };
+									                
+									                
+									// here's the actual timer.
+									// thank you to Marcher Technologies (http://marchertech.com) for IPBifying my horrific JS.
+									// we did try to have H:M (00:60 seconds), but it just proved not good.
+									    ipb.vars['quiz_time'] = {$quiz['quiz_timelimit']}; 
+									    ipb.lang['quiz_secs'] = 'seconds'; 
+										 ipb.vars['quiz_timer'] = function(){ 
+										                    if (ipb.vars['quiz_time'] <= 0) { 
+										          					clearInterval(ipb.vars['quiz_timer']); 
+										                           	popup.show(); // fire the modal if seconds are less than 1
+											                       	Event.stop(e);
+											                       	return false;
+										                    } else { 
+										                            document.getElementById('secs').innerHTML = --ipb.vars['quiz_time']+' '+ ipb.lang['quiz_secs']; 
+										                    } 
+										            }; 
+										document.observe("dom:loaded", function() 
+										{ 
+										setInterval( 
+										            ipb.vars['quiz_timer'], 1000 
+										    ); 
+										}); 
+								</script>
+								
+							</if>	
+							<if test="$questions">
+									<h3 class="maintitle">{$quiz['quiz_name']} <if test="$quiz['quiz_timelimit'] != '0' && $this->settings['quiz_enable_timers'] == '1'"><span class="quiz_timer right">You have  <span id="secs">{$quiz['quiz_timelimit']} seconds</span> to complete this quiz</span></if></h3>
+										<div class="ipsBox">
+											<form id="takequiz" name="takequiz" action="{$this->settings['base_url']}app=quiz&amp;module=quiz&amp;section=quiz&amp;do=takequiz&amp;id={$quiz['quiz_id']}" method="post">
+											<input name="quiz_id" id="quiz_id" type="hidden" value="{$quiz['quiz_id']}" />
+												<foreach loop="$questions as $question">
+													<h3 class="bar question_name">{$question['question_name']} <!-- (ID: {$question['question_id']}) --></h4>
+													<div class='ipsBox_container ipsPad'>
+														<foreach loop="$question['answers'] as $answer">
+																<input type="radio" required name="question_{$answer['question_parent_id']}" id="answer_{$answer['question_id']}" class="input_radio" value="{$answer['question_id']}"> <label for="answer_{$answer['question_id']}">{$answer['question_name']} <!-- <small>(ID: {$answer['question_id']})</small> --></label><br />
+														</foreach>
+													</div>
+													<div class="clearfix clear"><br /></div>
+												</foreach>
+											<div id='quiztimeout' style='display: none; line-height: 1.5;'>
+												<h3 class="bar">{$this->lang->words['quiz_timer']}</h3>
+												<div class='ipsBox'>
+													<div class='ipsBox_container ipsPad'>
+														<p><span style="font-weight:bold;font-size:13pt;">{$this->lang->words['quiz_timer_timeout']}</span></p>
+														{$this->lang->words['quiz_timer_timeoutmsg']}
+														<div class="clear"></div>
+													</div><div class="clear"></div>
+													<fieldset class="submit">
+														<a class="ipsButton" href="#" onclick="submitform();">Continue</a>						
+													</fieldset>		
+												</div>
+											</div>					
+											<fieldset class="submit">
+												<input type="submit" class="input_submit" value="Submit">
+											</fieldset>
+											</form>
+										</div>
+									<else />
+										<div class="message error warning">
+											<p>{$this->lang->words['quiz_no_questions_addone_']}</p>
+										</div>
+										<div class="clearfix clear"><br /></div>
+										<if test="$quiz['member_id'] == $this->memberData['member_id'] || $this->memberData['g_is_supmod'] == 1">
+											{parse template="manageQuiz" group="quiz" params="$quiz, $questions"}				
+										</if>
+									</if>
+					</if>]]></template_content>
+      <template_name>takeQuiz</template_name>
+      <template_data>$quiz, $questions</template_data>
+      <template_updated>1351032422</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

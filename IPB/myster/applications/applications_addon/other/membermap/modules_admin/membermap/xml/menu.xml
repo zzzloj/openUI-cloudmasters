@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+    <tabitems>
+		<item>
+			<title>Member Map</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Permissions</subitemtitle>
+					<subsection>permissions</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Custom Markers</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Custom Markers</subitemtitle>
+					<subsection>cmarkers</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>	
+			</subitems>
+		</item>
+    </tabitems>
+</menu>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>Manage Global Sidebars Settings</grouptitle>
+		<items>
+			<item>
+				<key>manage_settings</key>
+				<string>Can view/save settings?</string>
+			</item>	
+		</items>
+	</group>
+</permissions>

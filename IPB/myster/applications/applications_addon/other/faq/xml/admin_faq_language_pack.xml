@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>no_questions</word_key>
+      <word_default>No questions have been created yet.</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>no_faqs_yet</word_key>
+      <word_default>No questions have been created yet.</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>no_collection_questions</word_key>
+      <word_default>This collection does not have any questions.</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>no_collections</word_key>
+      <word_default>No collections have been created yet.</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>name</word_key>
+      <word_default>Name</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>manage_questions</word_key>
+      <word_default>Manage Questions</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>filter_unused</word_key>
+      <word_default>Show Unused Questions</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>manage_collections</word_key>
+      <word_default>Manage Collections</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>filter_message</word_key>
+      <word_default><![CDATA[Your results are currently being filtered. Click &quot;Show All Questions&quot; to remove all selected filters.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>filter_by_collection</word_key>
+      <word_default>Filter by Collection</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>faq_collection_block_desc</word_key>
+      <word_default>Displays all questions in an FAQ Collection</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>faq_collection_block</word_key>
+      <word_default>FAQ Collection</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>edit_question</word_key>
+      <word_default>Edit Question</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>faq</word_key>
+      <word_default>Frequently Asked Questions</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>edit_collection</word_key>
+      <word_default>Edit Collection</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>description</word_key>
+      <word_default>Description</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>collection_key_desc</word_key>
+      <word_default><![CDATA[A unique key for the collection, will be used to display a collection within any page on the site.<br />Keys cannot contain any spaces.<br />]]></word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>collection_key</word_key>
+      <word_default>Key</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>collection_heading_desc</word_key>
+      <word_default><![CDATA[The heading that will be displayed at the top of the Collection Block.<br />If this property is blank, the Collection Name will be used.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>collection_heading</word_key>
+      <word_default>Heading</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>collections</word_key>
+      <word_default>Collections</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>answer</word_key>
+      <word_default>Answer</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>add_question</word_key>
+      <word_default>Add Question</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>add_collection</word_key>
+      <word_default>Add Collection</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>actions</word_key>
+      <word_default>Actions</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>plugin__faq_desc1</word_key>
+      <word_default>Select the FAQ Collection that will be displayed</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>plugin__faq_label1</word_key>
+      <word_default>Collection</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>question</word_key>
+      <word_default>Question</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>questions</word_key>
+      <word_default>Questions</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>show_all</word_key>
+      <word_default>Show All Questions</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>step_1</word_key>
+      <word_default>1. Properties</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>step_1_desc</word_key>
+      <word_default>Define the collection</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>step_2</word_key>
+      <word_default>2. Questions</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>step_2_desc</word_key>
+      <word_default>Add questions to the collection</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>source__HSC</word_key>
+      <word_default>Custom FAQ Questions</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>source__IPB</word_key>
+      <word_default>IPB Help Files</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>approved</word_key>
+      <word_default>Approved</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>width</word_key>
+      <word_default>Popup Width</word_default>
+    </lang>
+    <lang>
+      <word_app>faq</word_app>
+      <word_pack>admin_faq</word_pack>
+      <word_key>width_desc</word_key>
+      <word_default><![CDATA[Enter the width of the popup window in pixels (default is 600).<br />Use &quot;auto&quot; to auto-size the window. Useful for questions that contain embedded media.]]></word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

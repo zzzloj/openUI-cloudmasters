@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Manage</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Settings</subitemtitle>
+					<subsection>manage</subsection>
+					<subitemurl>do=settings</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>	
+		<item>
+			<title>Manage</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Contact Converter</subitemtitle>
+					<subsection>manage</subsection>
+					<subitemurl>do=converter</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>        
+	</tabitems>
+</menu>

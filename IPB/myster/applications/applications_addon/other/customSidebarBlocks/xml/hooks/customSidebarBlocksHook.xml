@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name><![CDATA[(e34) Пользовательские блоки]]></hook_name>
+      <hook_desc><![CDATA[С помощью данного компонента вы можете создать неограниченое кол-во боковых блоков с нужным содержанием]]></hook_desc>
+      <hook_author>emoney/перевод IpbZona.ru</hook_author>
+      <hook_email>emoney33@gmail.com</hook_email>
+      <hook_website>http://emoneycodes.com</hook_website>
+      <hook_update_check>http://www.invisionmodding.com/mod_updates/updatecheck.php?mod=e_csb</hook_update_check>
+      <hook_requirements><![CDATA[a:4:{s:20:"hook_ipb_version_min";i:0;s:20:"hook_ipb_version_max";i:0;s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+      <hook_version_human>2.1.1</hook_version_human>
+      <hook_version_long>201</hook_version_long>
+      <hook_extra_data><![CDATA[a:2:{s:7:"display";a:2:{s:9:"templates";s:36:"From skin_boards: customSidebarBlock";s:8:"settings";s:49:"Setting groups: (e&#036;30) Custom Sidebar Blocks";}s:8:"database";a:0:{}}]]></hook_extra_data>
+      <hook_key>customSidebarBlocksHook</hook_key>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>customSidebarBlocks.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>customSidebarBlocksHook</hook_classname>
+      <hook_data><![CDATA[a:7:{s:12:"dataLocation";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_boards";s:12:"skinFunction";s:18:"boardIndexTemplate";s:4:"type";s:7:"foreach";s:2:"id";s:11:"side_blocks";s:8:"position";s:9:"outer.pre";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class customSidebarBlocksHook
+{
+    public $registry;
+    
+    public function __construct()
+    {
+        $this->registry     =  ipsRegistry::instance();
+        $this->DB           =  $this->registry->DB();
+        $this->settings     =& $this->registry->fetchSettings();
+        $this->request      =& $this->registry->fetchRequest();
+        $this->lang         =  $this->registry->getClass('class_localization');
+        $this->member       =  $this->registry->member();
+        $this->memberData     =& $this->registry->member()->fetchMemberData();
+        $this->cache        =  $this->registry->cache();
+        $this->caches       =& $this->registry->cache()->fetchCaches(); 
+ 
+        IPSText::getTextClass('bbcode')->parse_html			= 1;
+		IPSText::getTextClass('bbcode')->parse_nl2br		= 1;
+		IPSText::getTextClass('bbcode')->parse_smilies  	= 1;
+		IPSText::getTextClass('bbcode')->parse_bbcode		= 1;
+		IPSText::getTextClass('bbcode')->parsing_section	= 'global';
+    }
+    
+	public function getOutput()
+	{
+		$blocks = "";
+		if ( $this->settings['e_CSB_on'] )
+		{
+			#grab blocks from cache
+			if ( !is_array( $this->caches['custom_sidebar_blocks'] ) )
+			{
+				$this->cache->rebuildCache('custom_sidebar_blocks','customSidebarBlocks');
+			}
+
+			foreach ( $this->caches['custom_sidebar_blocks'] AS $block )
+			{
+				if ( $block['csb_hide_block'] )
+				{
+					continue;		
+				}			
+				if ( !$block['csb_on'] )
+				{
+					continue;		
+				}			
+				if ( $block['csb_use_perms'] && !$this->registry->permissions->check( 'view', $block ) )
+				{
+					continue;		
+				}
+
+				#format content
+				#eval PHP (added in 1.5.2+)
+				if (!$block['csb_raw'])
+				{
+					$block['csb_content'] = (!$block['csb_php']) ? IPSText::getTextClass('bbcode')->preDisplayParse( $block['csb_content'] ) : eval($block['csb_content']);				
+				}
+
+				#add block
+				$blocks .= $this->registry->getClass('output')->getTemplate('boards')->customSidebarBlock( $block );
+			}
+
+			#output!
+			return $blocks;
+		}
+	}
+}?>]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>customSidebarBlocksPortal.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>customSidebarBlocksPortal</hook_classname>
+      <hook_data><![CDATA[a:7:{s:12:"dataLocation";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_portal";s:12:"skinFunction";s:16:"skeletonTemplate";s:4:"type";s:2:"if";s:2:"id";s:15:"disablelightbox";s:8:"position";s:10:"post.endif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class customSidebarBlocksPortal
+{
+    public $registry;
+    
+    public function __construct()
+    {
+        $this->registry     =  ipsRegistry::instance();
+        $this->DB           =  $this->registry->DB();
+        $this->settings     =& $this->registry->fetchSettings();
+        $this->request      =& $this->registry->fetchRequest();
+        $this->lang         =  $this->registry->getClass('class_localization');
+        $this->member       =  $this->registry->member();
+        $this->memberData     =& $this->registry->member()->fetchMemberData();
+        $this->cache        =  $this->registry->cache();
+        $this->caches       =& $this->registry->cache()->fetchCaches(); 
+ 
+        IPSText::getTextClass('bbcode')->parse_html			= 1;
+		IPSText::getTextClass('bbcode')->parse_nl2br		= 1;
+		IPSText::getTextClass('bbcode')->parse_smilies  	= 1;
+		IPSText::getTextClass('bbcode')->parse_bbcode		= 1;
+		IPSText::getTextClass('bbcode')->parsing_section	= 'global';
+    }
+    
+	public function getOutput()
+	{
+		return <<<HTML
+
+HTML;
+	}
+	
+	public function replaceOutput($output, $key)
+	{
+		$blocks = "";
+
+		if ( $this->settings['e_CSB_on'] && $this->settings['e_CSB_on_portal'] )
+		{
+			#grab blocks from cache
+			if ( !is_array( $this->caches['custom_sidebar_blocks'] ) )
+			{
+				$this->cache->rebuildCache('custom_sidebar_blocks','customSidebarBlocks');
+			}
+
+			foreach ( $this->caches['custom_sidebar_blocks'] AS $block )
+			{
+				if ( !$block['csb_on'] )
+				{
+					continue;		
+				}			
+				if ( $block['csb_use_perms'] && !$this->registry->permissions->check( 'view', $block ) )
+				{
+					continue;		
+				}
+
+				#format content
+				#eval PHP (added in 1.5.2+)
+				if (!$block['csb_raw'])
+				{
+					$block['csb_content'] = (!$block['csb_php']) ? IPSText::getTextClass('bbcode')->preDisplayParse( $block['csb_content'] ) : eval($block['csb_content']);				
+				}
+
+				#add block
+				$blocks .= $this->registry->getClass('output')->getTemplate('boards')->customSidebarBlock( $block );
+			}
+
+			#show below or above default portal blocks?
+			if ( $this->settings['e_CSB_portal_top'] )
+			{
+				$tag 	= "<div class='ipsLayout_right'>";
+				$output = str_replace( $tag, $tag . $blocks, $output ); //			
+			}
+			else
+			{
+				$tag = "<div class='ipsSideBlock'>";
+				$posOfLastTag = strrpos($output, $tag);
+				$output = substr_replace($output, $blocks . $tag, $posOfLastTag, strlen($tag));		
+			}
+
+		}
+
+		#output!
+		return $output;		
+	}	
+}?>]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>customSidebarBlocksSingle.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>customSidebarBlocksHookSingle</hook_classname>
+      <hook_data><![CDATA[a:7:{s:12:"dataLocation";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_boards";s:12:"skinFunction";s:18:"boardIndexTemplate";s:4:"type";s:7:"foreach";s:2:"id";s:11:"side_blocks";s:8:"position";s:9:"outer.pre";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class customSidebarBlocksHookSingle
+{
+    public $registry;
+    
+    public function __construct()
+    {
+        $this->registry     =  ipsRegistry::instance();
+        $this->DB           =  $this->registry->DB();
+        $this->settings     =& $this->registry->fetchSettings();
+        $this->request      =& $this->registry->fetchRequest();
+        $this->lang         =  $this->registry->getClass('class_localization');
+        $this->member       =  $this->registry->member();
+        $this->memberData     =& $this->registry->member()->fetchMemberData();
+        $this->cache        =  $this->registry->cache();
+        $this->caches       =& $this->registry->cache()->fetchCaches(); 
+ 
+        IPSText::getTextClass('bbcode')->parse_html			= 1;
+		IPSText::getTextClass('bbcode')->parse_nl2br		= 1;
+		IPSText::getTextClass('bbcode')->parse_smilies  	= 1;
+		IPSText::getTextClass('bbcode')->parse_bbcode		= 1;
+		IPSText::getTextClass('bbcode')->parsing_section	= 'global';
+    }
+    
+	public function getOutput()
+	{
+		$blocks = "";
+		if ( $this->settings['e_CSB_on'] )
+		{
+			#grab blocks from cache
+			if ( !is_array( $this->caches['custom_sidebar_blocks'] ) )
+			{
+				$this->cache->rebuildCache('custom_sidebar_blocks','customSidebarBlocks');
+			}
+
+			foreach ( $this->caches['custom_sidebar_blocks'] AS $block )
+			{
+				if ( $block['csb_id'] != 9999)
+				{
+					continue;		
+				}			
+				if ( !$block['csb_on'] )
+				{
+					continue;		
+				}			
+				if ( $block['csb_use_perms'] && !$this->registry->permissions->check( 'view', $block ) )
+				{
+					continue;		
+				}
+
+				#format content
+				#eval PHP (added in 1.5.2+)
+				if (!$block['csb_raw'])
+				{
+					$block['csb_content'] = (!$block['csb_php']) ? IPSText::getTextClass('bbcode')->preDisplayParse( $block['csb_content'] ) : eval($block['csb_content']);				
+				}
+
+				#add block
+				$blocks .= $this->registry->getClass('output')->getTemplate('boards')->customSidebarBlock( $block );
+			}
+
+			#output!
+			return $blocks;
+		}
+	}
+}?>]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_language/>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates>
+    <templates>
+      <template_group>skin_boards</template_group>
+      <template_content><![CDATA[<if test="$data['csb_use_box']">
+<div class='ipsSideBlock clearfix'>
+	<h3 <if test="$data['csb_no_collapse']">class='csbNoCollapse'</if>><if test="$data['csb_image']"><img src='{$this->settings['img_url']}/{$data['csb_image']}' alt='{$this->lang->words['icon']}' /></if> {$data['csb_title']}</h3>
+	<div class='_sbcollapsable'>
+		{$data['csb_content']}
+	</div>
+</div>
+<else />
+	<div class='_sbcollapsable' style='padding: 10px;'>
+		{$data['csb_content']}
+	</div>
+</if>]]> </template_content>
+      <template_name>customSidebarBlock</template_name>
+      <template_data> <![CDATA[$data='']]></template_data>
+      <template_updated>1278782055</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+	  <template_master_key>root</template_master_key>
+    </templates>
+  </hookextras_templates>
+  <hookextras_css>
+    <css>
+      <css_updated>1321204080</css_updated>
+      <css_group>customSidebarBlocks</css_group>
+      <css_content>/****************************************/
+/* (e32) Custom Sidebar Blocks CSS File	*/
+/****************************************/
+
+.ipsSideBlock h3.csbNoCollapse:hover .mod_links { opacity: 0.0; }
+.ipsSideBlock h3.csbNoCollapse a { display: none; }</css_content>
+      <css_position>13</css_position>
+      <css_added_to>0</css_added_to>
+      <css_app>core</css_app>
+      <css_app_hide>0</css_app_hide>
+      <css_attributes><![CDATA[title="Main" media="screen,print"]]></css_attributes>
+      <css_modules></css_modules>
+      <css_removed>0</css_removed>
+      <css_master_key>root</css_master_key>
+    </css>
+  </hookextras_css>   
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

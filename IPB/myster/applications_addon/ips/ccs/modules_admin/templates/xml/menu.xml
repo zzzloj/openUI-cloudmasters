@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Block Templates</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Block Templates</subitemtitle>
+					<subitemlang>ccs_btemplates</subitemlang>
+					<subsection>blocks</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Templates</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Page Templates</subitemtitle>
+					<subitemlang>ccs_ptemplates</subitemlang>
+					<subsection>pages</subsection>
+					<subitemurl>type=page</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Database Templates</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Database Templates</subitemtitle>
+					<subitemlang>ccs_dtemplates</subitemlang>
+					<subsection>pages</subsection>
+					<subitemurl>type=database</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Article Templates</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Article Templates</subitemtitle>
+					<subitemlang>ccs_atemplates</subitemlang>
+					<subsection>pages</subsection>
+					<subitemurl>type=article</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

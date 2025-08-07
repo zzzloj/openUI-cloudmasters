@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>disable_on_forums_desc</word_key>
+      <word_default>In which forums you want to hide this sidebar?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>disable_on_forums</word_key>
+      <word_default>Disabled in Forums</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>cant_add_advert_to_standard_sidebar</word_key>
+      <word_default><![CDATA[You can't add any advert to the standard sidebar. Sorry!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>enable_on_desc</word_key>
+      <word_default>Where you want to display standard sidebar?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>enable_on</word_key>
+      <word_default>Enabled On</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_standard_view_sidebar</word_key>
+      <word_default>Add Standard Sidebar</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_groups_desc</word_key>
+      <word_default><![CDATA[Select groups which won't be able to see this sidebar on board.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_groups</word_key>
+      <word_default>Excluded Groups</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>disable_on_desc</word_key>
+      <word_default>Where you want to disable global sidebar?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>disable_on</word_key>
+      <word_default>Disable on Pages</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>not_selected</word_key>
+      <word_default>--Not Selected--</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>is_advanced_advert</word_key>
+      <word_default>Advanced Advert?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>select_adv_advert_desc</word_key>
+      <word_default>Please select one of advanced adverts.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>select_adv_advert</word_key>
+      <word_default>Select Advanced Advert</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_adv_advert_desc</word_key>
+      <word_default>Do you want to use one of exists advanced adverts?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_adv_advert</word_key>
+      <word_default>Use Advanced Advert?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>and_add_first_add</word_key>
+      <word_default><![CDATA[ & Add Advert]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_advertt</word_key>
+      <word_default>Add Advert...</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>php_parse_problem</word_key>
+      <word_default>There was a problem during the PHP parsing. Please check it.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>a_php_mode_desc</word_key>
+      <word_default><![CDATA[Do you want to parse PHP code inside the advert?<br /><span style='font-size:11px;'>Do NOT use: '&lt;?php' and '?&gt;'. Make sure the code is valid otherwise an error will be displayed.</span>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>a_php_mode</word_key>
+      <word_default>PHP Mode</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>logsuccessalldeleted_adverts</word_key>
+      <word_default>Global adverts were removed successfully.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>logsuccessdeleted_advert</word_key>
+      <word_default>Global advert was removed successfully.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>messageallsuccessdeleted_adverts</word_key>
+      <word_default>All adverts were removed successfully.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>messagesuccessremoved_advert</word_key>
+      <word_default><![CDATA[Advert <strong>%s</strong> was removed successfully.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>sidebars_overview</word_key>
+      <word_default>Sidebars Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>success_sidebars_cache_updated</word_key>
+      <word_default>Sidebars cache was updated successfully.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>removeall</word_key>
+      <word_default>Remove All</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>update_sidebars_cache</word_key>
+      <word_default>Update Sidebars Cache</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_sidebar_select</word_key>
+      <word_default>Add Sidebar</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>sidebars_list</word_key>
+      <word_default>Sidebars List</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>toggle_sidebar</word_key>
+      <word_default>Toggle Status</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>editt</word_key>
+      <word_default>Edit...</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>removee</word_key>
+      <word_default>Remove...</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>no_sidebars</word_key>
+      <word_default>Sidebars Not Found</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>no_ads</word_key>
+      <word_default>Adverts Not Found</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_board_index_sidebar</word_key>
+      <word_default>Add Board Index Sidebar</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_topic_view_sidebar</word_key>
+      <word_default>Add Topic View Sidebar</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_forum_view_sidebar</word_key>
+      <word_default>Add Forum View Sidebar</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_all_pages_sidebar</word_key>
+      <word_default>Add Global Sidebar</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_name</word_key>
+      <word_default>Sidebar Name</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_type</word_key>
+      <word_default>Type</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_enabled</word_key>
+      <word_default>Enabled?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_count</word_key>
+      <word_default>Items</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_count_adv</word_key>
+      <word_default>Adv Items</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>errornoid</word_key>
+      <word_default>Wrong or missed ID. Please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>messagesuccesstoggled</word_key>
+      <word_default>Selected status was toggled successfully.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_sidebar</word_key>
+      <word_default>Add Sidebar</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>edit_sidebar</word_key>
+      <word_default>Edit this Sidebar</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>adding_sidebar</word_key>
+      <word_default>Adding Sidebar</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>editing_sidebar</word_key>
+      <word_default>Editing Sidebar</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>errornoitems</word_key>
+      <word_default><![CDATA[Can't find this item. Please try again.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>error_cant_have_two_sidebars</word_key>
+      <word_default><![CDATA[You can't have two sidebars in the same location (type).]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_name_desc</word_key>
+      <word_default>Enter the short descriptive sidebar name.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_enabled_desc</word_key>
+      <word_default>Do you want to show this sidebar (and all assigned adverts)?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>sidebar_type__all</word_key>
+      <word_default>Global View</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>sidebar_type__index</word_key>
+      <word_default>Index View</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>sidebar_type__forum</word_key>
+      <word_default>Forum View</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>sidebar_type__topic</word_key>
+      <word_default>Topic View</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>sidebar_type__standard</word_key>
+      <word_default>Standard Sidebar</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>oror</word_key>
+      <word_default><![CDATA[<strong>...or...</strong>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>error_no_sidebar_title</word_key>
+      <word_default><![CDATA[You've missed sidebar title. Please try again.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>cancel_operation</word_key>
+      <word_default>Cancel Operation</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>manage_adverts_for_this_sidebar</word_key>
+      <word_default>Manage Adverts in this Sidebar</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>redirectedit_sidebar</word_key>
+      <word_default>Sidebar was edited successfully!</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>redirectadd_sidebar</word_key>
+      <word_default>Sidebar was added successfully!</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>messagesuccessremoved_sidebar</word_key>
+      <word_default><![CDATA[Sidebar <strong>%s</strong> was removed successfully.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>logsuccessdeleted_sidebar</word_key>
+      <word_default><![CDATA[Removed custom sidebar: <strong>%s</strong>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>messageallsuccessdeleted_sidebars</word_key>
+      <word_default>All sidebars were removed successfully!</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>logsuccessalldeleted_sidebars</word_key>
+      <word_default>Removed all custom sidebars.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>error_cant_add_advert_no_any_sidebar</word_key>
+      <word_default><![CDATA[Can't find any sidebar, so you can't add advert. Please add sidebar before continue.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>adverts_list</word_key>
+      <word_default>Adverts List from Sidebar</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>adverts_overview</word_key>
+      <word_default>Adverts Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>edit_advert</word_key>
+      <word_default>Edit Advert</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>toggle_advert_enabled</word_key>
+      <word_default>Toggle Enabled Status for this Advert</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>edit_advertt</word_key>
+      <word_default>Edit...</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>remove_advertt</word_key>
+      <word_default>Remove...</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>update_adverts_cache</word_key>
+      <word_default>Update Adverts Cache</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_new_advert</word_key>
+      <word_default>Add New Advert</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>removeall_ads_from_this_sidebar</word_key>
+      <word_default>Remove All Adverts from this Sidebar</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_advert</word_key>
+      <word_default>Add Advert</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>adding_advert</word_key>
+      <word_default>Adding Advert</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>editing_advert</word_key>
+      <word_default>Editing Advert</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>a_enabled_desc</word_key>
+      <word_default>Do you want to enable this advert?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>a_name_desc</word_key>
+      <word_default>Enter short and descriptive advert name</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>a_name</word_key>
+      <word_default>Advert Name</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>content_settings</word_key>
+      <word_default>Content Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>main_informations</word_key>
+      <word_default>Main Informations</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>a_content</word_key>
+      <word_default>Content</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>a_raw_mode</word_key>
+      <word_default>Raw Mode</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>a_raw_mode_desc</word_key>
+      <word_default>This mode is required for any javascript adverts - like google adsense etc. OR for parsing blocks from the IP.Content.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>error_no_advert_title</word_key>
+      <word_default>Missed advert title. Please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>error_no_advert_content</word_key>
+      <word_default>Missed advert content. Please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>toggle_advert_enabled_mode</word_key>
+      <word_default>Toogle Enabled Status</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>toggle_raw_advert_mode</word_key>
+      <word_default>Toggle Raw Mode Status</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>toggle_php_mode</word_key>
+      <word_default>Toggle PHP Mode Status</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>redirectadd_advert</word_key>
+      <word_default>Advert was added successfully!</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>successtoggled_advert_status</word_key>
+      <word_default>Selected Status was Toggled Successfully!</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>redirectedit_advert</word_key>
+      <word_default>Advert was edited successfully!</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>success_adverts_cache_updated</word_key>
+      <word_default>Adverts cache was updated successfully.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_custom_sidebar_title</word_key>
+      <word_default>Custom Sidebars</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_custom_sidebar</word_key>
+      <word_default>Add To App: </word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>sidebar_type__custom</word_key>
+      <word_default>App: </word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_default_sidebar_title</word_key>
+      <word_default>Default Sidebars</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key/>
+      <word_default/>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_wrapper</word_key>
+      <word_default>Show in Wrapper?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_wrapper_desc</word_key>
+      <word_default>Do you want to show this sidebar with the h3 header and the formatted block or show in raw mode (without any wrapper)?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>toggle_sidebar_wrapper</word_key>
+      <word_default>Toogle Wrapper Mode</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>message_success_toggled_wrapper</word_key>
+      <word_default>Wrapper Status was Toggled Successfully!</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_wrapper_separate</word_key>
+      <word_default>-OR- Display Separatelly</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_wrapper_separate_desc</word_key>
+      <word_default>Enable this if you want to display each position in this sidebar with own header and wrapper.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_wrapper_separate_th</word_key>
+      <word_default>Separate Items</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>toggle_sidebar_wrapper2</word_key>
+      <word_default>Toggle Separate Wrapper Mode</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>message_success_toggled_wrapper2</word_key>
+      <word_default>Separate Wrapper Status was Toggled Successfully! </word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_random</word_key>
+      <word_default>Random</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_random_desc</word_key>
+      <word_default>Do you want to display positions in this sidebar in random order?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>toggle_random</word_key>
+      <word_default>Toggle Random Mode</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>message_success_toggled_random</word_key>
+      <word_default>Random Status was Toggled Successfully!</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>message_success_toggled_pinned</word_key>
+      <word_default>Toggle Pinned Status was Changed Successfully!</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>toggle_pinned_mode</word_key>
+      <word_default>Toggle Pinned Status</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>a_pinned</word_key>
+      <word_default>Pinned</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_limit_at_once_desc</word_key>
+      <word_default><![CDATA[Do you want to limit the number of ads shown in this sidebar at one time? Enter <strong>0</strong> or leave blank to show all positions.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_limit_at_once</word_key>
+      <word_default>Limit Ads</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>edit_this_advert</word_key>
+      <word_default>Edit this Advert</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>existsAdvert_desc</word_key>
+      <word_default>From this list you can choose exists advert to use in this position.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>existsAdvert</word_key>
+      <word_default>Exists Adverts</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>use_exists_advert</word_key>
+      <word_default>Use Exists Advert?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>advert_is_duplicated</word_key>
+      <word_default>This advert is duplicate of other ad. Please click on this icon and edit main advert instead if you want to change the advert content.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_nexus_advert</word_key>
+      <word_default>Use Nexus Advert?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>add_nexus_advert_desc</word_key>
+      <word_default>Do you want to use one of exists nexus adverts?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>select_nexus_advert</word_key>
+      <word_default>Select Nexus Advert</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>select_nexus_advert_desc</word_key>
+      <word_default>Please select one of nexus adverts.</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>is_nexus_advert</word_key>
+      <word_default>Nexus Advert?</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_gsidebars</word_pack>
+      <word_key>s_count_nexus</word_key>
+      <word_default>Nexus Adv</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__manage_settings</word_key>
+      <word_default>Manage Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>gsidebars</word_app>
+      <word_pack>admin_menulang</word_pack>
+      <word_key>menu__manage_sidebars</word_key>
+      <word_default>Manage Sidebars</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

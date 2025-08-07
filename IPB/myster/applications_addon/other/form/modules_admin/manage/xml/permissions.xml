@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>Form Manage Permissions</grouptitle>
+		<items>
+			<item>
+				<key>access_converter</key>
+				<string>Can access the contact system converter?</string>
+			</item>	        
+			<item>
+				<key>manage_settings</key>
+				<string>Can view and manage form settings?</string>
+			</item>										
+		</items>
+	</group>
+</permissions>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Manage Logs</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Logs</subitemtitle>
+					<subsection>tools</subsection>
+					<subitemurl>do=logs</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>        
+		<item>
+			<title>Manage Members</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Manage Members</subitemtitle>
+					<subsection>tools</subsection>
+					<subitemurl>do=members</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Convert Topics</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Convert Topics</subitemtitle>
+					<subsection>tools</subsection>
+					<subitemurl>do=convert</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

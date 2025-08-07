@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="trackmembers" templategroups="a:1:{s:17:&quot;skin_trackmembers&quot;;s:5:&quot;exact&quot;;}">
+  <templategroup group="skin_trackmembers">
+    <template>
+      <template_group>skin_trackmembers</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>showProfileStuff</template_name>
+      <template_data>$member</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_trackmembers</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>showSetupPopup</template_name>
+      <template_data>$memberData, $formElements, $formData</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_trackmembers</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>trackMemberLogs</template_name>
+      <template_data>$logs, $member, $status, $pages, $footer_filter</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

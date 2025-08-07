@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name><![CDATA[[HSC] Последние сообщения (Перевод Envy)]]></hook_name>
+      <hook_desc>Хук показывет последние сообщения в блоке на главной.</hook_desc>
+      <hook_author>Esther Eisner</hook_author>
+      <hook_email>esther@headstandconsulting.com</hook_email>
+      <hook_website>http://www.headstandconsulting.com</hook_website>
+      <hook_update_check/>
+      <hook_requirements><![CDATA[a:3:{s:21:"required_applications";a:1:{s:6:"forums";a:3:{s:8:"app_name";s:6:"Forums";s:11:"min_version";i:32000;s:11:"max_version";i:0;}}s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+      <hook_version_human>2.1</hook_version_human>
+      <hook_version_long>2100</hook_version_long>
+      <hook_extra_data><![CDATA[a:5:{s:7:"display";a:3:{s:8:"settings";s:213:"Setting groups: [HSC] Recent Posts (Sidebar Block)<br />Settings: Display Last Post Info?, Display Topic Start Info?, Display Topic Viewing Info?, Forums, Groups, Number of Topics, Post Content, Post Content Limit";s:8:"language";s:82:"From forums_public_boards: forum, last_reply, recentposts_title, started_by, views";s:9:"templates";s:29:"From skin_boards: recentPosts";}s:13:"settingGroups";a:1:{i:0;s:23:"hsc_recentposts_sidebar";}s:8:"settings";a:10:{i:0;s:14:"hsc_rp_exclude";i:1;s:13:"hsc_rp_forums";i:2;s:13:"hsc_rp_groups";i:3;s:11:"hsc_rp_last";i:4;s:12:"hsc_rp_limit";i:5;s:11:"hsc_rp_post";i:6;s:16:"hsc_rp_postlimit";i:7;s:16:"hsc_rp_showforum";i:8;s:12:"hsc_rp_start";i:9;s:12:"hsc_rp_views";}s:8:"language";a:1:{s:20:"forums_public_boards";a:5:{i:0;s:5:"forum";i:1;s:5:"views";i:2;s:10:"started_by";i:3;s:17:"recentposts_title";i:4;s:10:"last_reply";}}s:9:"templates";a:1:{s:11:"skin_boards";a:1:{s:11:"recentPosts";s:11:"recentPosts";}}}]]></hook_extra_data>
+      <hook_key>hsc_recentposts_sidebar</hook_key>
+      <hook_global_caches/>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>boardIndexRecentPosts.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>boardIndexRecentPosts</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_boards";s:12:"skinFunction";s:18:"boardIndexTemplate";s:4:"type";s:7:"foreach";s:2:"id";s:11:"side_blocks";s:8:"position";s:9:"outer.pre";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+/*
++--------------------------------------------------------------------------
+|   [HSC] Recent Posts (Sidebar Block) 1.0.0.0
+|   =============================================
+|   by Esther Eisner
+|   Copyright 2011 HeadStand Consulting
+|   esther@headstandconsulting.com
++--------------------------------------------------------------------------
+*/
+
+if ( ! defined( 'IN_IPB' ) )
+{
+	print "<h1>Incorrect access</h1>You cannot access this file directly. If you have recently upgraded, make sure you upgraded 'admin.php'.";
+	exit();
+}
+
+class boardIndexRecentPosts
+{
+    protected $version;
+    protected $parser;
+    
+    public function __construct()
+    {
+        $this->registry = ipsRegistry::instance();
+        $this->DB = $this->registry->DB();
+        $this->settings =& $this->registry->fetchSettings();
+        $this->memberData =& $this->registry->member()->fetchMemberData();
+        
+        $this->version = IPSLib::fetchVersionNumber();
+        if($this->version['long'] >= 34000)
+        {
+            require_once(IPS_ROOT_PATH . 'sources/classes/text/parser.php');
+            $this->parser = new classes_text_parser();
+            
+            $this->parser->set(array('parseArea' => 'topics',
+                            'memberData' => $this->memberData,
+                            'parseBBCode' => 1,
+                            'parseHtml' => 0,
+                            'parseEmoticons' => true));
+        }
+    }
+    
+    public function getOutput()
+    {
+        if($this->settings['hsc_rp_groups'] && !IPSMember::isInGroup($this->memberData, explode(",", $this->settings['hsc_rp_groups'])))
+        {
+            return;
+        }
+            
+        $topics = $this->_getTopics();
+        if(!is_array($topics) || !count($topics))
+            return '';            
+        
+        foreach($topics as $id => $t)
+        {
+            if($this->settings['hsc_rp_post']!='N')
+            {
+                if($this->version['long'] < 34000)
+                {
+                    $topics[$id]['post'] = $this->_formatPost($t['post']);
+                }
+                else
+                {
+                    $topics[$id]['post'] = $this->_formatPost34($t['post']);
+                }
+            }
+        }
+        
+        return $this->registry->output->getTemplate('boards')->recentPosts($topics);
+    }
+    
+    private function _getTopics()
+    {
+        $forumIds = $this->_loadForumIds();
+        if(!is_array($forumIds) || !count($forumIds))
+            return '';
+            
+        // figure out the list of fields we need to retrieve
+        $select = 't.tid, t.forum_id, t.title, t.title_seo';
+        if($this->settings['hsc_rp_start'])
+        {
+            $select .= ', t.starter_name, t.starter_id, t.seo_first_name, t.start_date';
+            $joins[] = array('select' => 'sm.member_group_id as starter_group_id', 
+                                         'from' => array('members' => 'sm'), 
+                                         'where' => 't.starter_id=sm.member_id', 
+                                         'type' => 'left');
+        }
+            
+        if($this->settings['hsc_rp_views'])
+            $select .= ', t.views, t.posts';
+        if($this->settings['hsc_rp_last'])
+        {
+            $select .= ', t.last_poster_name, t.last_poster_id, t.seo_last_name, t.last_post';
+            $joins[] = array('select' => 'lm.member_group_id as last_group_id', 
+                                         'from' => array('members' => 'lm'), 
+                                         'where' => 't.last_poster_id=lm.member_id', 
+                                         'type' => 'left');
+        }
+        
+        // basic query    
+        $query = array('select' => $select,
+                        'from' => array('topics' => 't'),
+                        'where' => "t.state='open' and t.approved=1 and t.forum_id in (".implode(",",$forumIds).")",
+                        'order' => 't.last_post desc',
+                        'limit' => array(0,$this->settings['hsc_rp_limit']));
+                        
+        if(is_array($joins) && count($joins))
+            $query['add_join'] = $joins;
+        
+        // are we showing forum info? Add the forum query
+        if($this->settings['hsc_rp_showforum'])
+        {                
+            $query['add_join'][] = array('select' => 'f.name as forum_name, f.name_seo as forum_name_seo', 
+                                        'from' => array('forums' => 'f'), 
+                                        'where' => 't.forum_id=f.id', 
+                                        'type' => 'left');
+        }
+                        
+        // are we showing the first post? Join to the posts table
+        if ($this->settings['hsc_rp_post'] == 'F')
+        {
+            $query['add_join'][] = array('select' => 'p.pid, p.post',
+                                        'from' => array('posts' => 'p'),
+                                        'where' => 't.topic_firstpost=p.pid',
+                                        'type' => 'left');
+        }
+        
+        // Go for it
+        $this->DB->build($query);
+        $tQuery = $this->DB->execute();
+        while($t = $this->DB->fetch($tQuery))
+        {
+            // Showing the last post? Get the last post info for each topic
+            if($this->settings['hsc_rp_post']=='L')
+            {
+                $post = $this->DB->buildAndFetch(array('select' => 'pid,post', 'from' => 'posts', 'where' => 'queued=0 and pdelete_time=0 and topic_id='.$t['tid'],
+                                'order' => 'post_date desc', 'limit' => array(0,1)));
+                $t = array_merge($t,$post);
+            }
+            
+            $topics[] = $t;
+        }
+            
+        return $topics;
+    }
+    
+    private function _formatPost($post)
+    {
+        // Strip out line breaks or the regex does not work
+        $post = preg_replace('/[\n\r]/i','',$post);
+        
+        // Strip out quotes
+        $post = preg_replace('/\[quote(.*?)\[\/quote\]/i','',$post);
+        
+        // Strip out emoticon images
+        $post = preg_replace('/<img(.*?)\/>/i','',$post);
+        
+        // Strip out other images
+        $post = preg_replace('/\[img(.*?)\[\/img\]/i','',$post);
+        
+        // parse for display
+        $post = $this->_parseBBCode($post);
+        
+        // strip out all HTML
+        $post = strip_tags($post);
+        
+        // Cut post?
+        if($this->settings['hsc_rp_postlimit'] && strlen($post) > $this->settings['hsc_rp_postlimit'])
+        {
+            $post = IPSText::truncate($post, $this->settings['hsc_rp_postlimit']);
+            if(substr($post, strlen($post) - 3) != '...')
+            {
+                $post .= '...';
+            }
+        }
+        
+        return $post;
+    }
+    
+    private function _formatPost34($post)
+    {
+        // strip attachments
+        $post = IPSText::stripAttachTag($post);
+        
+        // parse for display
+        $post = $this->parser->display($post);
+        
+        // Strip out line breaks or the regex does not work
+        $post = preg_replace('/[\n\r]/i','',$post);
+        
+        // Strip out quotes
+        $post = preg_replace('/<blockquote(.+?)<\/blockquote>/i', '', $post);
+        
+        // Strip out images
+        $post = preg_replace('/<img(.*?)\/>/i','',$post);
+        
+        // Strip all HTML tags
+        $post = strip_tags($post);
+        
+        // Cut post?
+        if($this->settings['hsc_rp_postlimit'] && strlen($post) > $this->settings['hsc_rp_postlimit'])
+        {
+            $post = IPSText::truncate($post, $this->settings['hsc_rp_postlimit']);
+            if(substr($post, strlen($post) - 3) != '...')
+            {
+                $post .= '...';
+            }
+        }
+        
+        return $post;
+    }
+    
+    private function _parseBBCode($post)
+    {
+        IPSText::stripAttachTag($post);
+        
+        IPSText::getTextClass( 'bbcode' )->parse_smilies			= 1;
+        IPSText::getTextClass( 'bbcode' )->parse_html				= 1;
+		IPSText::getTextClass( 'bbcode' )->parse_nl2br				= 1;
+		IPSText::getTextClass( 'bbcode' )->parse_bbcode				= 1;
+		IPSText::getTextClass( 'bbcode' )->parsing_section			= 'topics';
+		IPSText::getTextClass( 'bbcode' )->parsing_mgroup			= $this->memberdata['member_group_id'];
+		IPSText::getTextClass( 'bbcode' )->parsing_mgroup_others	= $this->memberData['mgroup_others'];
+		        
+		return IPSText::getTextClass('bbcode')->preDisplayParse( $post );
+    }
+    
+    private function _loadForumIds()
+    {
+        $forums = $this->registry->getClass('class_forums')->fetchSearchableForumIds();
+        
+        if(!$this->settings['hsc_rp_forums'])
+            return $forums;
+        
+        if($this->settings['hsc_rp_exclude'])
+        {
+            return array_diff($forums, explode(",",$this->settings['hsc_rp_forums']));
+        }
+        else
+        {
+            return array_intersect($forums, explode(",",$this->settings['hsc_rp_forums']));
+        }
+    }
+}]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_title><![CDATA[[HSC] Последние сообщения (Перевод Envy)]]></conf_title_title>
+      <conf_title_desc>Retrieves latest active discussions and displays them on the Board Index.</conf_title_desc>
+      <conf_title_noshow>0</conf_title_noshow>
+      <conf_title_keyword>hsc_recentposts_sidebar</conf_title_keyword>
+      <conf_title_app>forums</conf_title_app>
+      <conf_title_tab>HeadStand</conf_title_tab>
+    </setting>
+    <setting>
+      <conf_id>781</conf_id>
+      <conf_title><![CDATA[Использовать форум "исключение"]]></conf_title>
+      <conf_description><![CDATA[Если включено, то из выбранных форумов выше темы браться НЕ будут.]]></conf_description>
+      <conf_group>70</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>hsc_rp_exclude</conf_key>
+      <conf_value/>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>hsc_recentposts_sidebar</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>782</conf_id>
+      <conf_title>Форумы:</conf_title>
+      <conf_description><![CDATA[Выберите форумы, из которых будут показываться топики<br>Используйте CTRL/SHIFT, для выбора нескольких форумов.]]></conf_description>
+      <conf_group>70</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>hsc_rp_forums</conf_key>
+      <conf_value/>
+      <conf_default/>
+      <conf_extra>#show_forums#</conf_extra>
+      <conf_evalphp><![CDATA[$key = 'hsc_rp_forums';
+if($save==1)
+{
+   $_POST[$key] = is_array($_POST[$key]) ? implode(",",$_POST[$key]) : '';
+}
+if($show==1)
+$key .= '[]';]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>hsc_recentposts_sidebar</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>783</conf_id>
+      <conf_title>Группы</conf_title>
+      <conf_description><![CDATA[Группы, которые увидят блок.<br>По умолчанию все видят блок.]]></conf_description>
+      <conf_group>70</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>hsc_rp_groups</conf_key>
+      <conf_value/>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[$key = 'hsc_rp_groups';
+if($save==1)
+{
+  $_POST[$key] = is_array($_POST[$key]) ? implode(",",$_POST[$key]) : "";
+}
+if($show==1)
+{
+  $key .= '[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>hsc_recentposts_sidebar</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>784</conf_id>
+      <conf_title>Показать инфо о последних сообщениях?</conf_title>
+      <conf_description>Показать/скрыть информацию о последнем сообщении в теме.</conf_description>
+      <conf_group>70</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>hsc_rp_last</conf_key>
+      <conf_value/>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>hsc_recentposts_sidebar</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>785</conf_id>
+      <conf_title>Количество отображаемых топиков:</conf_title>
+      <conf_description>Укажите сколько топиков показывать в блоке.</conf_description>
+      <conf_group>70</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>hsc_rp_limit</conf_key>
+      <conf_value/>
+      <conf_default>5</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>hsc_recentposts_sidebar</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>786</conf_id>
+      <conf_title>Контент сообщения</conf_title>
+      <conf_description>Показать/скрыть контент первого или последнего сообщения.</conf_description>
+      <conf_group>70</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>hsc_rp_post</conf_key>
+      <conf_value/>
+      <conf_default>F</conf_default>
+      <conf_extra>N=None&#13;
+F=First Post&#13;
+L=Last Post</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>hsc_recentposts_sidebar</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>787</conf_id>
+      <conf_title>Макс. кол-во символов в посте</conf_title>
+      <conf_description><![CDATA[Максимальное кол-во символов, которое может отображатся в блоке.<br>Выберите 0 для отключения.]]></conf_description>
+      <conf_group>70</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>hsc_rp_postlimit</conf_key>
+      <conf_value/>
+      <conf_default>250</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>hsc_recentposts_sidebar</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>788</conf_id>
+      <conf_title>Показывать информацию о форуме?</conf_title>
+      <conf_description>Показать/скрыть название форума</conf_description>
+      <conf_group>70</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>hsc_rp_showforum</conf_key>
+      <conf_value/>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>hsc_recentposts_sidebar</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>789</conf_id>
+      <conf_title>Показать инфо о топик стартере?</conf_title>
+      <conf_description>Показать/скрыть информацию о топик стартере.</conf_description>
+      <conf_group>70</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>hsc_rp_start</conf_key>
+      <conf_value/>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>hsc_recentposts_sidebar</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>790</conf_id>
+      <conf_title>Показать кол-во просмотров и сообщений в топике?</conf_title>
+      <conf_description>Показать/скрыть кол-во просмотров и сообщений в топике.</conf_description>
+      <conf_group>70</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>hsc_rp_views</conf_key>
+      <conf_value/>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>hsc_recentposts_sidebar</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </hookextras_settings>
+  <hookextras_language>
+    <language>
+      <word_app>forums</word_app>
+      <word_pack>public_boards</word_pack>
+      <word_key>forum</word_key>
+      <word_default>Раздел:</word_default>
+    </language>
+    <language>
+      <word_app>forums</word_app>
+      <word_pack>public_boards</word_pack>
+      <word_key>views</word_key>
+      <word_default>Просмотры:</word_default>
+    </language>
+    <language>
+      <word_app>forums</word_app>
+      <word_pack>public_boards</word_pack>
+      <word_key>started_by</word_key>
+      <word_default>Создал:</word_default>
+    </language>
+    <language>
+      <word_app>forums</word_app>
+      <word_pack>public_boards</word_pack>
+      <word_key>recentposts_title</word_key>
+      <word_default>Последние сообщения</word_default>
+    </language>
+    <language>
+      <word_app>forums</word_app>
+      <word_pack>public_boards</word_pack>
+      <word_key>last_reply</word_key>
+      <word_default>Последний ответ:</word_default>
+    </language>
+  </hookextras_language>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates>
+    <templates>
+      <template_group>skin_boards</template_group>
+      <template_content><![CDATA[<if test="hasRecentPosts:|:is_array($recentPosts) && count($recentPosts)">
+  <div class='ipsSideBlock'>
+	<h3>{$this->lang->words['recentposts_title']}</h3>
+    <ul class='ipsList'> 
+      <foreach loop="posts:$recentPosts as $post">
+        <li class='ipsPad_half' style='word-break: break-word;'>
+          <a href='{parse url="showtopic={$post['tid']}&amp;view=getnewpost" base="public" seotitle="{$post['title_seo']}" template="showtopicunread"}'><b>{$post['title']}</b></a>&nbsp;<a href='{parse url="showtopic={$post['tid']}&amp;view=getlastpost" base="public" template="showtopic" seotitle="{$post['title_seo']}"}' title='{$this->lang->words['view_last_post']}'>{parse replacement="f_lastpost"}</a>
+          <br/> 
+          <if test="forum:|:$this->settings['hsc_rp_showforum']">
+            {$this->lang->words['forum']}: <a href='{parse url="showforum={$post['forum_id']}" base="public" seotitle="{$post['forum_name_seo']}" template="showforum"}'>{$post['forum_name']}</a>
+            <br/>
+          </if> 
+          <if test="starterInfo:|:$this->settings['hsc_rp_start']">
+            {$this->lang->words['started_by']}: {IPSMember::makeProfileLink($post['starter_name'], $post['starter_id'], $post['seo_first_name'])}&nbsp;<span class='date'>({parse date="$post['start_date']" format="SHORT"})</span> 
+            <br/> 
+          </if> 
+          <if test="firstPost:|:$this->settings['hsc_rp_post'] == 'F'"> 
+            {$post['post']} 
+            <br/> 
+          </if> 
+          <if test="views:|:$this->settings['hsc_rp_views']"> 
+            <span class='desc lighter'>{$this->lang->words['views']} {parse format_number="$post['views']"} &nbsp; {$this->lang->words['replies']}: {parse format_number="$post['posts']"}</span> 
+            <br/> 
+          </if> 
+          <if test="lastPostInfo:|:$this->settings['hsc_rp_last']"> 
+            {$this->lang->words['last_reply']}: {IPSMember::makeProfileLink($post['last_poster_name'], $post['last_poster_id'], $post['seo_last_name'])}&nbsp;<span class='date'>({parse date="$post['last_post']" format="SHORT"})</span> 
+            <br/> 
+          </if> 
+          <if test="lastPost:|:$this->settings['hsc_rp_post'] == 'L' && $post['post']">
+            {$post['post']} 
+          </if> 
+        </li> 
+      </foreach>
+    </ul>
+  </div>
+  <br />
+</if>]]></template_content>
+      <template_name>recentPosts</template_name>
+      <template_data>$recentPosts</template_data>
+      <template_updated>1329167552</template_updated>
+      <template_removable>0</template_removable>
+      <template_added_to>0</template_added_to>
+      <template_user_added>1</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </templates>
+  </hookextras_templates>
+  <hookextras_css/>
+  <hookextras_replacements/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<information>
+  <data>
+    <name>Content</name>
+    <public_name>Pages</public_name>
+    <hide_tab>0</hide_tab>
+    <author>Invision Power Services, Inc.</author>
+    <description>Create pages for your website</description>
+    <disabledatinstall>0</disabledatinstall>
+    <ipskey>390af627d2d81fd343666e95fb782299</ipskey>
+    <global_caches/>
+    <website>http://www.invisionpower.com/apps/content/</website>
+    <update_check>https://www.invisionpower.com/clients/resource_updates.php?resource=content</update_check>
+    <templategroups>
+        <template match="contains">skin_ccs</template>
+    </templategroups>
+  </data>
+</information>

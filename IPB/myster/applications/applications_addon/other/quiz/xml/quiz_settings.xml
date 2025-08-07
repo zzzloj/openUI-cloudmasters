@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>quiz</conf_title_keyword>
+      <conf_title_title>Настройки викторины</conf_title_title>
+      <conf_title_desc>Настройки для системы</conf_title_desc>
+      <conf_title_tab>Quiz</conf_title_tab>
+      <conf_title_app>quiz</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Система викторины включена?</conf_title>
+      <conf_description/>
+      <conf_group>33</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>quiz_online</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Основыне настройки системы викторины</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>quiz</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Оффлайн сообщение</conf_title>
+      <conf_description/>
+      <conf_group>33</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>quiz_offline_message</conf_key>
+      <conf_default>В настоящее время система недоступна, повторите попытку позже!</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>quiz</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Доступ к оффлайн системе</conf_title>
+      <conf_description/>
+      <conf_group>33</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>quiz_offline_groups</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['quiz_offline_groups']) )
+	{
+		$_POST['quiz_offline_groups'] = implode(",",$_POST['quiz_offline_groups']);
+	}
+	else
+	{
+		$_POST['quiz_offline_groups'] = "";
+	}
+	
+	$key = 'quiz_offline_groups';
+}
+if ( $show == 1 )
+{
+    $key='quiz_offline_groups[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>quiz</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Создавать темы?</conf_title>
+      <conf_description>Создавать новые темы при создании викторин?</conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>quiz_post_new_topic</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group>Создание тем</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>quiz</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Создавать в форуме</conf_title>
+      <conf_description><![CDATA[Выберите форум для создания тем с викторинами.<br /><b>Опция будет работать, если включена настройка выше</b>]]></conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>quiz_post_to_forum_id</conf_key>
+      <conf_default/>
+      <conf_extra>#show_forums#</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>quiz</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить пользователям создавать викторины?</conf_title>
+      <conf_description><![CDATA[Do you wish to allow users to publish their own quizzes?<br />
+<b>Если эта настройка выключена, вы должны вручную создавать каждую викторину</b>]]></conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>quiz_can_publish_own_quiz</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group>Разное</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>quiz</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить пользователям перепроходить викторины?</conf_title>
+      <conf_description><![CDATA[Если эта настройка выключена, пользователь сможет проходить викторины <b>один раз</b>.]]></conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>quiz_takequiz_more_than_once</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>quiz</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Максимальная длина вопросов и ответов]]></conf_title>
+      <conf_description>Максимальная длина (символов) вопросов и ответов</conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>quiz_max_qna_length</conf_key>
+      <conf_default>200</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>quiz</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Включить сообщения с помощью?</conf_title>
+      <conf_description>Включить вспомогающие сообщения компонента?</conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>quiz_enable_help</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>quiz</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Включить продвижение пользователей по группам?</conf_title>
+      <conf_description>Включить оценки, основанные на продвижении пользователей в группы?</conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>quiz_enable_group_promo</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>quiz</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Включить таймер?</conf_title>
+      <conf_description/>
+      <conf_group>33</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>quiz_enable_timers</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>quiz</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

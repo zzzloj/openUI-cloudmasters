@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<information>
+	<data>
+		<name>Topics Wall</name>
+		<public_name>Topics Wall</public_name>
+		<author>devRegan</author>
+		<description>Creates a 'wall' in your board where user can see topics sorted in a elegant way.</description>
+		<templategroups>
+			<template match="exact">skin_list</template>
+			<template match="contains">skin_list</template>
+		</templategroups>
+		<hide_tab>0</hide_tab>
+	</data>
+</information>

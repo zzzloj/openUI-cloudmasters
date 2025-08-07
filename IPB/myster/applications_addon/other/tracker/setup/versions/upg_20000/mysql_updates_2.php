@@ -1,0 +1,37 @@
+<?php
+
+$SQL[] = "ALTER TABLE tracker_moderators MODIFY COLUMN moderate_pid int(10) NOT NULL DEFAULT '0' AFTER moderate_id;";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_pid project_id int(10) NOT NULL DEFAULT '0';";
+$SQL[] = "ALTER TABLE tracker_moderators ADD template_id int(10) NOT NULL DEFAULT '0'  AFTER project_id;";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_type type varchar(10) NOT NULL;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD mode varchar(10) NOT NULL AFTER type;";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_mg_id mg_id int(10) NOT NULL;";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_can_edit_posts can_edit_posts tinyint(1) NOT NULL DEFAULT '0';";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_can_edit_titles can_edit_titles tinyint(1) NOT NULL DEFAULT '0';";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_can_del_posts can_del_posts tinyint(1) NOT NULL DEFAULT '0';";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_can_del_issues can_del_issues tinyint(1) NOT NULL DEFAULT '0';";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_can_lock can_lock tinyint(1) NOT NULL DEFAULT '0';";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_can_unlock can_unlock tinyint(1) NOT NULL DEFAULT '0';";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_can_move can_move tinyint(1) NOT NULL DEFAULT '0';";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_can_manage can_manage tinyint(1) NOT NULL DEFAULT '0';";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_can_merge can_merge tinyint(1) NOT NULL DEFAULT '0';";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_can_massmoveprune can_massmoveprune tinyint(1) NOT NULL DEFAULT '0';";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_is_super is_super tinyint(1) NOT NULL DEFAULT '0';";
+$SQL[] = "ALTER TABLE tracker_moderators CHANGE moderate_name name varchar(50) NOT NULL DEFAULT '';";
+$SQL[] = "ALTER TABLE tracker_moderators ADD versions_field_version_show tinyint(1) NOT NULL DEFAULT '0'  AFTER name;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD versions_field_version_submit tinyint(1) NOT NULL DEFAULT '0'  AFTER versions_field_version_show;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD versions_field_version_update tinyint(1) NOT NULL DEFAULT '0'  AFTER versions_field_version_submit;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD versions_field_version_developer tinyint(1) NOT NULL DEFAULT '0'  AFTER versions_field_version_update;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD versions_field_version_alter tinyint(1) NOT NULL DEFAULT '0'  AFTER versions_field_version_developer;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD versions_field_fixed_in_show tinyint(1) NOT NULL DEFAULT '0'  AFTER versions_field_version_alter;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD versions_field_fixed_in_submit tinyint(1) NOT NULL DEFAULT '0'  AFTER versions_field_fixed_in_show;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD versions_field_fixed_in_update tinyint(1) NOT NULL DEFAULT '0'  AFTER versions_field_fixed_in_submit;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD versions_field_fixed_in_developer tinyint(1) NOT NULL DEFAULT '0'  AFTER versions_field_fixed_in_update;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD versions_field_fixed_in_report tinyint(1) NOT NULL DEFAULT '0'  AFTER versions_field_fixed_in_developer;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD status_field_status_show tinyint(1) NOT NULL DEFAULT '0'  AFTER versions_field_fixed_in_report;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD status_field_status_submit tinyint(1) NOT NULL DEFAULT '0'  AFTER status_field_status_show;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD status_field_status_update tinyint(1) NOT NULL DEFAULT '0'  AFTER status_field_status_submit;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD status_field_status_allowall tinyint(1) NOT NULL DEFAULT '0'  AFTER status_field_status_update;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD severity_field_severity_show tinyint(1) NOT NULL DEFAULT '0'  AFTER status_field_status_allowall;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD severity_field_severity_submit tinyint(1) NOT NULL DEFAULT '0'  AFTER severity_field_severity_show;";
+$SQL[] = "ALTER TABLE tracker_moderators ADD severity_field_severity_update tinyint(1) NOT NULL DEFAULT '0'  AFTER severity_field_severity_submit;";

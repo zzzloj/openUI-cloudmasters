@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blockexport>
+  <portalblock>
+    <block>
+      <title>Latest Topics Main</title>
+      <align>2</align>     
+      <block_code><![CDATA[<?php
+
+if ( ! $this->registry->isClassLoaded( 'portalBlocks' ) )
+{
+	$classToLoad =  IPSLib::loadLibrary( IPSLib::getAppDir( 'portal' ) . "/sources/blocks.php", 'portalBlockGateway' );
+	$this->registry->setClass( 'portalBlocks', new $classToLoad( ipsRegistry::instance() ) );
+}
+
+print $this->registry->getClass('portalBlocks')->latest_topics_main();
+
+?>]]></block_code>
+    </block>
+    <block>
+      <title>Latest Topics Sidebar</title>
+      <align>3</align>      
+      <block_code><![CDATA[<?php
+
+if ( ! $this->registry->isClassLoaded( 'portalBlocks' ) )
+{
+	$classToLoad =  IPSLib::loadLibrary( IPSLib::getAppDir( 'portal' ) . "/sources/blocks.php", 'portalBlockGateway' );
+	$this->registry->setClass( 'portalBlocks', new $classToLoad( ipsRegistry::instance() ) );
+}
+
+print $this->registry->getClass('portalBlocks')->latest_topics_sidebar();
+
+?>]]></block_code>
+    </block>  
+    <block>
+      <title>Navigation Links</title>
+      <align>3</align>      
+      <block_code><![CDATA[<?php
+
+if ( ! $this->registry->isClassLoaded( 'portalBlocks' ) )
+{
+	$classToLoad =  IPSLib::loadLibrary( IPSLib::getAppDir( 'portal' ) . "/sources/blocks.php", 'portalBlockGateway' );
+	$this->registry->setClass( 'portalBlocks', new $classToLoad( ipsRegistry::instance() ) );
+}
+
+print $this->registry->getClass('portalBlocks')->portal_sitenav();
+
+?>]]></block_code>
+    </block> 
+    <block>
+      <title>Portal Poll</title>
+      <align>3</align>       
+      <block_code><![CDATA[<?php
+
+if ( ! $this->registry->isClassLoaded( 'portalBlocks' ) )
+{
+	$classToLoad =  IPSLib::loadLibrary( IPSLib::getAppDir( 'portal' ) . "/sources/blocks.php", 'portalBlockGateway' );
+	$this->registry->setClass( 'portalBlocks', new $classToLoad( ipsRegistry::instance() ) );
+}
+
+print $this->registry->getClass('portalBlocks')->portal_show_poll();
+
+?>]]></block_code>
+    </block>
+    <block>
+      <title>Online Users</title>
+      <align>3</align>        
+      <block_code><![CDATA[<?php
+
+if ( ! $this->registry->isClassLoaded( 'portalBlocks' ) )
+{
+	$classToLoad =  IPSLib::loadLibrary( IPSLib::getAppDir( 'portal' ) . "/sources/blocks.php", 'portalBlockGateway' );
+	$this->registry->setClass( 'portalBlocks', new $classToLoad( ipsRegistry::instance() ) );
+}
+
+print $this->registry->getClass('portalBlocks')->online_users_show();
+
+?>]]></block_code>
+    </block>  
+    <block>
+      <title>Top Posters</title>
+      <align>1</align>        
+      <block_code><![CDATA[<?php
+
+if ( ! $this->registry->isClassLoaded( 'portalBlocks' ) )
+{
+	$classToLoad =  IPSLib::loadLibrary( IPSLib::getAppDir( 'portal' ) . "/sources/blocks.php", 'portalBlockGateway' );
+	$this->registry->setClass( 'portalBlocks', new $classToLoad( ipsRegistry::instance() ) );
+}
+
+print $this->registry->getClass('portalBlocks')->show_top_posters();
+
+?>]]></block_code>
+    </block>  
+    <block>
+      <title>Newest Members</title>
+      <align>1</align>        
+      <block_code><![CDATA[<?php
+
+if ( ! $this->registry->isClassLoaded( 'portalBlocks' ) )
+{
+	$classToLoad =  IPSLib::loadLibrary( IPSLib::getAppDir( 'portal' ) . "/sources/blocks.php", 'portalBlockGateway' );
+	$this->registry->setClass( 'portalBlocks', new $classToLoad( ipsRegistry::instance() ) );
+}
+
+print $this->registry->getClass('portalBlocks')->show_newest_members();
+
+?>]]></block_code>
+    </block> 
+    <block>
+      <title>Newest Posts</title>
+      <align>1</align>        
+      <block_code><![CDATA[<?php
+
+if ( ! $this->registry->isClassLoaded( 'portalBlocks' ) )
+{
+	$classToLoad =  IPSLib::loadLibrary( IPSLib::getAppDir( 'portal' ) . "/sources/blocks.php", 'portalBlockGateway' );
+	$this->registry->setClass( 'portalBlocks', new $classToLoad( ipsRegistry::instance() ) );
+}
+
+print $this->registry->getClass('portalBlocks')->show_newest_posts();
+
+?>]]></block_code>
+    </block>       
+     <block>
+      <title>Board Stats</title>
+      <align>5</align>        
+      <block_code><![CDATA[<?php
+
+if ( ! $this->registry->isClassLoaded( 'portalBlocks' ) )
+{
+	$classToLoad =  IPSLib::loadLibrary( IPSLib::getAppDir( 'portal' ) . "/sources/blocks.php", 'portalBlockGateway' );
+	$this->registry->setClass( 'portalBlocks', new $classToLoad( ipsRegistry::instance() ) );
+}
+
+print $this->registry->getClass('portalBlocks')->show_board_stats();
+
+?>]]></block_code>
+    </block>  
+    <block>
+      <title>Пример блока (PHP)</title>
+      <align>3</align> 
+      <show_block>1</show_block> 
+      <template>1</template>       
+      <block_code><![CDATA[<?php
+
+print "This is an example block <strong>".IPSMember::makeProfileLink( $this->memberData['members_display_name'], $this->memberData['member_id'], $this->memberData['members_seo_name'] )."</strong>, for <strong>{$this->settings['board_name']}</strong>.<br /><br />";
+
+print "PHP and most IPB code will work in <a href='".$this->registry->getClass('output')->buildSEOUrl( "app=portal", 'public', 'false', 'app=portal' )."'>here</a>.";
+
+?>]]></block_code>
+    </block> 
+    <block>
+      <title>Пример блока (HTML)</title>
+      <align>3</align>
+      <show_block>1</show_block>    
+      <block_code><![CDATA[<div class='ipsSideBlock clearfix'>
+    <h3>Пример блока (HTML)</h3>
+    This is an example html block without the use of the sidebar block template.<br /><br />
+
+   HTML and IPB css will work in here.
+</div>]]></block_code>
+    </block>                         
+  </portalblock>
+</blockexport>

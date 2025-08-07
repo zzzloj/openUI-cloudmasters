@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="topicslist" templategroups="a:1:{s:9:&quot;skin_list&quot;;s:8:&quot;contains&quot;;}">
+  <templategroup group="skin_list">
+    <template>
+      <template_group>skin_list</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>classic</template_name>
+      <template_data>$topics, $char, $temp_sort</template_data>
+      <template_updated>1306830442</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_list</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>detailed</template_name>
+      <template_data>$topics</template_data>
+      <template_updated>1306830442</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_list</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>fb_style</template_name>
+      <template_data>$topics</template_data>
+      <template_updated>1306830442</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_list</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>forums</template_name>
+      <template_data>$forums, $desc, $u</template_data>
+      <template_updated>1306830442</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_list</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>indexAndTopics</template_name>
+      <template_data>$topics, $letters, $sort, $dimensions, $u</template_data>
+      <template_updated>1306830442</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_list</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>sideBar</template_name>
+      <template_data>$title, $l, $cltl, $mode, $lmode, $dimensions</template_data>
+      <template_updated>1306830442</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_list</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>userMenu</template_name>
+      <template_data>$a, $m</template_data>
+      <template_updated>1306830442</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

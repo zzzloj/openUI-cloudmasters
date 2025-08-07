@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<information>
+  <data>
+    <name>Downloads</name>
+    <public_name>Downloads</public_name>
+    <hide_tab>0</hide_tab>
+    <author>Invision Power Services, Inc.</author>
+    <description/>
+    <disabledatinstall>0</disabledatinstall>
+    <ipskey>03e8e5a057ad5081d05c75b6a086f99e</ipskey>
+    <global_caches/>
+    <website>http://www.invisionpower.com/apps/downloads/</website>
+    <update_check>https://www.invisionpower.com/clients/resource_updates.php?resource=downloads</update_check>
+    <templategroups>
+        <template match="contains">skin_downloads</template>
+    </templategroups>
+  </data>
+</information>

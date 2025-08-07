@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>Category Management</grouptitle>
+		<grouplang>category_managet</grouplang>
+		<items>
+			<item>
+				<key>category_manage</key>
+				<string>Can add and edit categories?</string>
+			</item>
+			<item>
+				<key>category_delete</key>
+				<string>Can delete categories?</string>
+			</item>
+			<item>
+				<key>category_empty</key>
+				<string>Can empty categories?</string>
+			</item>
+			<item>
+				<key>category_moderators</key>
+				<string>Can manage moderators?</string>
+			</item>
+		</items>
+	</group>
+</permissions>

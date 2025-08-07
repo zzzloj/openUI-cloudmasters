@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name>Member Map Profile Map</hook_name>
+      <hook_desc>Adds a map to users profiles</hook_desc>
+      <hook_author>Stuart Silvester</hook_author>
+      <hook_email>Stuart@Silvesterwebdesigns.com</hook_email>
+      <hook_website/>
+      <hook_update_check/>
+      <hook_requirements><![CDATA[a:3:{s:21:"required_applications";a:2:{s:9:"membermap";a:3:{s:8:"app_name";s:19:"IP.Board Member Map";s:11:"min_version";i:10000;s:11:"max_version";i:0;}s:4:"core";a:3:{s:8:"app_name";s:6:"System";s:11:"min_version";i:32003;s:11:"max_version";i:0;}}s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+      <hook_version_human>1.0.7</hook_version_human>
+      <hook_version_long>10700</hook_version_long>
+      <hook_extra_data/>
+      <hook_key>mmap_profile</hook_key>
+      <hook_global_caches/>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>memberMapProfile.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>memberMapProfile</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:12:"skin_profile";s:12:"skinFunction";s:13:"profileModern";s:4:"type";s:2:"if";s:2:"id";s:13:"checkModTools";s:8:"position";s:10:"post.endif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+/**
+ * Profile Hook
+ *
+ * @copyright   Copyright (C) 2013, Stuart Silvester
+ * @author      Stuart Silvester
+ * @package     Member Map
+ * @version     1.0.8
+ */
+
+class memberMapProfile
+{
+	function __construct()
+	{
+		$this->registry =	ipsRegistry::instance();
+		$this->settings  =&	$this->registry->fetchSettings();
+
+		$classToLoad = IPSLib::loadLibrary( IPSLib::getAppDir( 'membermap' ) . "/sources/classes/mapLib.php", 'mapLib', 'membermap' );
+		$this->mapLib = new $classToLoad( $this->registry );
+	}
+
+	public function getOutput()
+	{
+		$perm = $this->mapLib->getPermissions();
+
+        if ( ! $this->registry->permissions->check( 'view', $perm ) )
+        {
+			return '';
+		}
+
+		$member = $this->registry->output->getTemplate('profile')->functionData['profileModern'][0]['member'];
+
+		$marker = $this->mapLib->getSingleMarker($member['member_id']);
+
+		if($marker)
+		{
+			return $this->registry->getClass('output')->getTemplate('membermap')->mapProfile( $marker );
+		}
+		return '';
+	}
+}
+?>]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings/>
+  <hookextras_language/>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates/>
+  <hookextras_css/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

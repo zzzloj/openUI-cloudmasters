@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="bbcodeTables" templategroups="a:1:{s:17:&quot;skin_bbcodeTables&quot;;s:5:&quot;exact&quot;;}">
+  <templategroup group="skin_bbcodeTables">
+    <template>
+      <template_group>skin_bbcodeTables</template_group>
+      <template_content><![CDATA[<if test="$data['type'] == 'th' OR $data['type'] == 'te'">
+<td style="{$data['style']}" align="{$data['pos']}">
+{$data['title']}
+</td>
+<else />
+<if test="$data['sira'] % 2">
+<td style="{$data['style']}" align="{$data['pos']}">
+<else />
+<td style="{$data['rstyle']}" align="{$data['pos']}">
+</if>
+{$data['title']}
+</td>
+</if>]]></template_content>
+      <template_name>bbcode_cell</template_name>
+      <template_data>$data</template_data>
+      <template_updated>1342866842</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bbcodeTables</template_group>
+      <template_content><![CDATA[<if test="$data['type'] == 'th'">
+<td style="{$data['style']}" align="{$data['pos']}">
+{$data['title']}
+</td>
+</if>
+<if test="$data['type'] == 'td'">
+<td style="{$data['style']}" align="{$data['pos']}">
+{$data['title']}
+</td>
+</if>
+<!-- Upper Left Corner -->
+<if test="$data['type'] == 'te'">
+<td style="{$data['style']}" align="{$data['pos']}">
+{$data['title']}
+</td>
+</if>]]></template_content>
+      <template_name>bbcode_cell_custom</template_name>
+      <template_data>$data</template_data>
+      <template_updated>1342866842</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bbcodeTables</template_group>
+      <template_content><![CDATA[<script type='text/javascript' src='{$this->settings['js_base_url']}js/bbcodeTables.js'></script>
+<php>
+$table_size = $data['columns'] * 100;
+$col = $data['columns'];
+</php>
+<form id="editform">
+<table border="0">
+<tr>
+<td align="right">{$this->lang->words['form_table_title']}</td>
+<td><input class='input_text' type="text" id="table_title" name="table_title" size="28" value="{$data['title']}"></td>
+</tr>
+<tr>
+<td align="right">{$this->lang->words['form_table_desc']}</td>
+<td><input class='input_text' type="text" id="table_desc" name="table_desc" size="40" value="{$data['description']}"></td>
+</tr>
+<tr>
+<td align="right">{$this->lang->words['form_table_width']}</td>
+<td><input class='input_text' type="text" id="table_width" name="table_width" size="10" value="{$data['table_width']}">{$this->lang->words['form_table_rwidth']}{$table_size}px</td>
+</tr>
+<tr>
+<td align="right">{$this->lang->words['form_table_tdpos']}</td>
+<td>{$data['pos_select']}</td>
+</tr>
+<tr>
+<td align="right">{$this->lang->words['form_table_tdhpos']}</td>
+<td>{$data['headerpos_select']}</td>
+</tr>
+</table>
+<center>
+<TABLE id="dataTable" border="0" style="margin-bottom:10px;margin-top:9px; border: 1px solid #CCCCCC;padding: 5px; width:{$data['table_width']}" cellpadding="1" cellspacing="1" bgcolor="#EBF0F3">
+   <TR>
+      {$data['rowsBit']}
+   </TR>
+</TABLE>
+<INPUT type='button' value="{$this->lang->words['form_table_addrow']}" class='ipsButton_secondary' onclick="editAddRows(this.form,{$data['id']},{$col})" />
+<INPUT type='button' id="deleteRowButtonPost" name="deleteRowButtonPost" value="{$this->lang->words['form_table_deleterow']}" class='ipsButton_secondary' onclick="editDeleteRows(this.form,{$data['id']},{$col})" />
+<INPUT type='button' value="{$this->lang->words['form_table_save']}" class='ipsButton_secondary' onclick="editSavePostBBCode(this.form,{$data['id']},'{$data['listmode']}')" />
+</center>
+</form>]]></template_content>
+      <template_name>bbcode_editform</template_name>
+      <template_data>$data</template_data>
+      <template_updated>1342866842</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bbcodeTables</template_group>
+      <template_content><![CDATA[<script type='text/javascript' src='{$this->settings['js_base_url']}js/bbcodeTables.js'></script>
+<php>
+if($set['title']== '')
+$set['title'] = "Table Title";
+if($set['description'] == '')
+$set['description'] = "Table Description";
+</php>
+{$this->lang->words['form_table_add']}
+<form id="myform">
+<table border="0">
+<tr>
+<td align="right">{$this->lang->words['form_table_title']}</td>
+<td><input class='input_text' type="text" id="table_title" name="table_title" size="28" value="{$set['title']}"></td>
+</tr>
+<tr>
+<td align="right">{$this->lang->words['form_table_desc']}</td>
+<td><input class='input_text' type="text" id="table_desc" name="table_desc" size="40" value="{$set['description']}"></td>
+</tr>
+<tr>
+<td align="right">{$this->lang->words['form_table_width']}</td>
+<td><input class="input_text" type="text" id="table_width" name="table_width" size="4" value="{$set['table_width']}">{$this->lang->words['form_table_rwidth']}{$set['table_size']}</td>
+</tr>
+<tr>
+<td align="right">{$this->lang->words['form_table_tdpos']}</td>
+<td>{$set['pos_select']}</td>
+</tr>
+</table>
+<center>
+<TABLE id="dataTable" border="0" style="margin-bottom:10px;margin-top:9px; border: 1px solid #CCCCCC;padding: 5px; width:{$set['table_width']}" cellpadding="1" cellspacing="1" bgcolor="#EBF0F3">
+   <TR>
+      {$set['rowsBit']}
+   </TR>
+</TABLE>
+<INPUT type="button" class="ipsButton_secondary" value="{$this->lang->words['form_table_addrow']}" onclick="addRow(this.form,'{$set['id']}','{$set['cols']}')" />
+<INPUT type="button" id="deleteRowButton" name="deleteRowButton" class='ipsButton_secondary' value="{$this->lang->words['form_table_deleterow']}" onclick="deleteRow(this.form,'{$set['id']}')"  />
+<INPUT type="button" class='ipsButton_secondary' value="{$this->lang->words['form_table_save']}" onclick="finalTable(this.form,'{$set['id']}','{$set['cols']}')" />
+</center>
+</form>]]></template_content>
+      <template_name>bbcode_form</template_name>
+      <template_data>$set</template_data>
+      <template_updated>1342866842</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bbcodeTables</template_group>
+      <template_content><![CDATA[<if test="$set['m'] == 'edit'">
+<td>
+<input class='input_text' type="text" value="{$data}" id="{$set['id']}" name="{$set['id']}" size="10" style="border: none">
+<else />
+<td bgcolor="{$this->settings['bbcodeTables_thbgcolor']}" align="{$tableData['table_cell_vpos']}" style="border-bottom: 1px solid #F7F7F7;border-left: 1px solid #F7F7F7; padding:3px;margin-bottom: 1px">
+{$this->settings['bbcodeTables_thfontcolor']}
+{$data['title']}
+</td>
+</if>
+</td>]]></template_content>
+      <template_name>bbcode_header</template_name>
+      <template_data>$data</template_data>
+      <template_updated>1342866842</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bbcodeTables</template_group>
+      <template_content><![CDATA[<script type='text/javascript' src='{$this->settings['js_base_url']}js/bbcodeTables.js'></script>
+<php>
+global $bbcode_key;
+if(empty($bbcode_key)){
+$bbcode_key = md5(microtime());
+}
+</php>
+<li class='ipsField' id='bbcodediv_on' name='bbcodediv_on' style='display: none'>
+<div class='no_messages row1'>
+<div id='bbcodediv'></div>
+</div>
+</li>
+<li class='ipsField'>
+<center>
+<div class='no_messages row1'>
+{$this->lang->words['table_columns']}
+<select name="table_columns" id="table_columns" size="1">
+<option value="1">1</option>
+<option value="2" selected="selected">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>&nbsp;
+{$this->lang->words['table_headerpos']}
+<select name="table_headerpos" id="table_headerpos" size="1">
+<option value="Top" selected="selected">Top</option>
+<option value="Left">Left</option>
+<option value="Both">Both</option>
+</select>&nbsp;
+<input type="button" class="input_submit alt" value="{$this->lang->words['table_add']}" onclick="createTables('{$bbcode_key}')">&nbsp;
+<input type="button" class="input_submit alt" value="{$this->lang->words['table_current']}" onclick="postBBCodeList('{$this->request['p']}')">&nbsp;
+<input type="button" class="input_submit alt" value="This Session" onclick="thisSession()" id="sessionButton" name="sessionButton">&nbsp;
+</div>
+</center>
+</li>
+<li><div id="postBBCodeListDiv" name="postBBCodeListDiv"></div></li>
+<li><div id="sessionBBCodeListDiv" name="sessionBBCodeListDiv"></div></li>]]></template_content>
+      <template_name>bbcode_main</template_name>
+      <template_data/>
+      <template_updated>1342866842</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bbcodeTables</template_group>
+      <template_content><![CDATA[
+<script type='text/javascript' src='{$this->settings['js_base_url']}js/bbcodeTables.js'></script>
+<div class='no_messages row1'>
+<b>{$set['info']}</b>
+<center>
+{$data}
+</center>
+</div>]]></template_content>
+      <template_name>bbcode_results</template_name>
+      <template_data>$data,$set</template_data>
+      <template_updated>1342866842</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bbcodeTables</template_group>
+      <template_content><![CDATA[<if test="$set['status'] == 'edit'">
+<td style="{$data['style']}">
+<input class='input_text' type="text" value="{$data['title']}" id="input{$data['id']}" name="input{$data['id']}" size="10">
+</td>
+</if>
+<if test="$set['status'] == 'postBBCodeList'">
+<li style="padding:5px">
+{$data['title']}
+<a href="#" class='ipsButton_secondary' onClick="addToPost({$data['id']})" style="margin-left:10px">{$this->lang->words['form_table_addtopost']}</a>
+<a href="#" class='ipsButton_secondary' onClick="editBBCode('{$data['id']}','post')" style="margin-left:5px">{$this->lang->words['form_table_edit']}</a>
+<a href="#" class='ipsButton_secondary' onClick="deletePostBBCode('{$data['id']}','post')" style="margin-left:5px">{$this->lang->words['form_table_delete']}</a>
+</li>
+</if>
+<if test="$set['status'] == 'sessionBBCodeList'">
+<li style="padding:5px">
+{$data['title']}
+<a href="#" class='ipsButton_secondary' onClick="addToPost({$data['id']})" style="margin-left:10px">{$this->lang->words['form_table_addtopost']}</a>
+<a href="#" class='ipsButton_secondary' onClick="editBBCode('{$data['id']}','session')" style="margin-left:5px">{$this->lang->words['form_table_edit']}</a>
+<a href="#" class='ipsButton_secondary' onClick="deletePostBBCode('{$data['id']}','session')" style="margin-left:5px">{$this->lang->words['form_table_delete']}</a>
+</li>
+</if>]]></template_content>
+      <template_name>bbcode_rows</template_name>
+      <template_data>$data,$set</template_data>
+      <template_updated>1342866842</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bbcodeTables</template_group>
+      <template_content><![CDATA[<php>
+$columns = $tabledata['columns'];
+$table_size = ($columns + 1) * 70;
+$table_size = $table_size."px";
+</php>
+<div itemprop="commentText" class="post entry-content" style="width:{$tabledata['table_width']}">
+<p class="citation">{$tabledata['title']} </p>
+<div class="blockquote">
+<div class="quote">
+   <TABLE id="dataTable">
+        {$tabledata['rowsBit']}
+    </TABLE>
+</div>
+</div>
+<br>
+</div>]]></template_content>
+      <template_name>bbcode_table</template_name>
+      <template_data>$tabledata</template_data>
+      <template_updated>1342866842</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_bbcodeTables</template_group>
+      <template_content><![CDATA[<table style="{$tabledata['style']}" {$tabledata['html']}>
+{$tabledata['rowsBit']}
+</table>
+<!-- ZAFER BAHADIR -->]]></template_content>
+      <template_name>bbcode_table_custom</template_name>
+      <template_data>$tabledata</template_data>
+      <template_updated>1342866842</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

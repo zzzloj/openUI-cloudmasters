@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+<!-- ERROR -->
+
+<!-- PUBLIC Main-->
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>table_columns</word_key>
+      <word_default><![CDATA[<b>Table Columns: </b>]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>table_headerpos</word_key>
+      <word_default><![CDATA[<b>Header Position: </b>]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>table_add</word_key>
+      <word_default><![CDATA[Add Table]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>table_current</word_key>
+      <word_default><![CDATA[Existing Tables]]></word_default>
+    </lang>
+<!-- PUBLIC Form / editform-->
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_add</word_key>
+      <word_default><![CDATA[<b>ADD TABLE</b>]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_title</word_key>
+      <word_default><![CDATA[<b>Table Title: </b>]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_desc</word_key>
+      <word_default><![CDATA[<b>Short Description: </b>]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_width</word_key>
+      <word_default><![CDATA[<b>Table With: </b>]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_rwidth</word_key>
+      <word_default><![CDATA[<i> Recommended Width: </i>]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_tdpos</word_key>
+      <word_default><![CDATA[<b>Location of the cell content: </b>]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_tdhpos</word_key>
+      <word_default><![CDATA[<b>Header position: </b>]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_addrow</word_key>
+      <word_default><![CDATA[Add Row]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_deleterow</word_key>
+      <word_default><![CDATA[Delete Row]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_save</word_key>
+      <word_default><![CDATA[Save Table]]></word_default>
+    </lang>
+
+<!-- Library -->
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_bbcodethispost</word_key>
+      <word_default><![CDATA[BBCodeTables in This Post]]></word_default>
+    </lang>
+
+<!-- rows -->
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_edittable</word_key>
+      <word_default><![CDATA[EDIT TABLE]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_addtopost</word_key>
+      <word_default><![CDATA[Add To Post]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_edit</word_key>
+      <word_default><![CDATA[Edit Table]]></word_default>
+    </lang>
+
+    <lang>
+      <word_app>bbcodeTables</word_app>
+      <word_pack>public_bbcodeTables</word_pack>
+      <word_key>form_table_delete</word_key>
+      <word_default><![CDATA[Delete Table]]></word_default>
+    </lang>
+
+  </languagegroup>
+</languageexport>

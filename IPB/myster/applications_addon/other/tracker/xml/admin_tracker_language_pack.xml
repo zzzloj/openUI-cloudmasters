@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_editfield</word_key>
+      <word_default>Edit custom field </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_addfield</word_key>
+      <word_default>Create New Custom Fields</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_managefield</word_key>
+      <word_default>Manage Custom Fields</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_updated</word_key>
+      <word_default>Your custom field has been successfully updated</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_fieldtitle</word_key>
+      <word_default>Custom Field Title</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_numissues</word_key>
+      <word_default>Issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_nofields</word_key>
+      <word_default>You have no custom fields created.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_created</word_key>
+      <word_default>Your custom field has been successfully created</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_btn_addfield</word_key>
+      <word_default>Create a Custom Field</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_overview_desc</word_key>
+      <word_default>This section will allow you to manage your custom fields.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_custom</word_key>
+      <word_default>Custom Fields</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_err_incomplete</word_key>
+      <word_default>Please complete all the fields on the form.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_options</word_key>
+      <word_default>Options</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_err_id</word_key>
+      <word_default>A valid custom field id was not recieved, please return and try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_custom</word_pack>
+      <word_key>cf_apptitle</word_key>
+      <word_default>Tracker</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>gperm_uploadperpost_desc</word_key>
+      <word_default>Enter 0 to disable a per post limit.  This number must be less than the total amount.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>gperm_uploadperpost</word_key>
+      <word_default>Maximum upload size for attachments per post (in KB)?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>gperm_offline</word_key>
+      <word_default>Can view OFFLINE Tracker</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>gperm_uploadsize</word_key>
+      <word_default>Total upload size for attachments (in KB)?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_groups</word_pack>
+      <word_key>gperm_uploadsize_desc</word_key>
+      <word_default>Enter -1 to disable uploads or enter 0 to disable the limit.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>can_move</word_key>
+      <word_default><![CDATA[[b]Can[/b] move issues]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>can_unlock</word_key>
+      <word_default><![CDATA[[b]Can[/b] unlock issues]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>can_merge</word_key>
+      <word_default><![CDATA[[b]Can[/b] merge issues]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>can_massmoveprune</word_key>
+      <word_default><![CDATA[[b]Can[/b] mass move/prune issues]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>gt_permissions</word_key>
+      <word_default>Permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_id</word_key>
+      <word_default>ID</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_customization_title</word_key>
+      <word_default>Profile Customization</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>can_del_issues</word_key>
+      <word_default><![CDATA[[b]Can[/b] delete issues]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>can_del_posts</word_key>
+      <word_default><![CDATA[[b]Can[/b] delete posts]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>can_edit_posts</word_key>
+      <word_default><![CDATA[[b]Can[/b] edit others posts]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>can_edit_titles</word_key>
+      <word_default><![CDATA[[b]Can[/b] edit others issue titles]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>can_lock</word_key>
+      <word_default><![CDATA[[b]Can[/b] lock issues]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>gt_reps</word_key>
+      <word_default>Reputation</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>gt_search</word_key>
+      <word_default>Search</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>gt_pms</word_key>
+      <word_default>Personal Messages</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>gt_uploads</word_key>
+      <word_default>Uploading</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>gt_access_permissions</word_key>
+      <word_default>Access Permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>gt_display_name</word_key>
+      <word_default>Display Name</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>gt_access_control</word_key>
+      <word_default>Access Control</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>gt_promotion</word_key>
+      <word_default>Group Promotion</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>gt_details</word_key>
+      <word_default>Group Details</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_deleting</word_key>
+      <word_default>Deleting a Moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_when</word_key>
+      <word_default>when</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>gt_sigs</word_key>
+      <word_default>Signatures</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_unlimited</word_key>
+      <word_default><![CDATA[<em>unlimited</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_title_error</word_key>
+      <word_default>You must enter a group title.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_oneperm</word_key>
+      <word_default>You must choose at least one permission set for this group. Please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_disabled</word_key>
+      <word_default><![CDATA[<em>disabled</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_cannotobt</word_key>
+      <word_default><![CDATA[<em>cannot obtain</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_dontprom</word_key>
+      <word_default><![CDATA[Don't Promote]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_globalsett</word_key>
+      <word_default>Group Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_globalperm</word_key>
+      <word_default>Global</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_editg</word_key>
+      <word_default>Edit Group</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_deleteg</word_key>
+      <word_default>Delete Group</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_cannotdel</word_key>
+      <word_default><![CDATA[<em>Cannot Delete</em>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_usergroupman</word_key>
+      <word_default>Manage Moderators</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_msup</word_key>
+      <word_default>Is Super Moderator (can moderate everywhere)?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_f_projects_desc</word_key>
+      <word_default><![CDATA[Use 'Ctrl' and/or 'Shift' to select the combination of projects required.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_deletebutton</word_key>
+      <word_default>Delete Group</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_removeconf</word_key>
+      <word_default>Removal Confirmation: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_f_projects</word_key>
+      <word_default>Projects they Moderate</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_f_issupmod_desc</word_key>
+      <word_default><![CDATA[Super Moderators can moderate <strong>all projects</strong>.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_f_issupmod</word_key>
+      <word_default>Is this a Super Moderator?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_f_can_unlock</word_key>
+      <word_default>Can unlock issues?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_f_can_move</word_key>
+      <word_default>Can move issues?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_f_can_merge</word_key>
+      <word_default>Can split/merge issues?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_f_can_massmoveprune</word_key>
+      <word_default><![CDATA[Can use 'Mass Move/Prune'?]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_f_can_lock</word_key>
+      <word_default>Can lock issues?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_f_can_edit_titles</word_key>
+      <word_default>Can edit others issue title?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_f_can_edit_posts</word_key>
+      <word_default>Can edit others posts?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_f_can_del_posts</word_key>
+      <word_default>Can delete posts?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_f_can_del_issues</word_key>
+      <word_default>Can delete issues?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_whichmod</word_key>
+      <word_default>We could not determine which moderator you were attempting to edit or delete. Please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_title</word_key>
+      <word_default>Manage Moderators</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_viewbutton</word_key>
+      <word_default>View ...</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_removedlog</word_key>
+      <word_default>Removed Moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_permissions</word_key>
+      <word_default>Permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_removed</word_key>
+      <word_default>Moderator Removed!</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_nav</word_key>
+      <word_default>Manage Moderators</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_modname</word_key>
+      <word_default>Member Name / Group Title</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_issupermod</word_key>
+      <word_default>Is Super Mod</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_fieldtab</word_key>
+      <word_default>Field: </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_fieldhead</word_key>
+      <word_default>Field Permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_editing</word_key>
+      <word_default>Editing Moderator </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_compedit</word_key>
+      <word_default>Complete Edit</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_editedlog</word_key>
+      <word_default>Edited Moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_edited</word_key>
+      <word_default>Moderator Edited!</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_addmod</word_key>
+      <word_default>Add Moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_adding</word_key>
+      <word_default>Adding New Moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_addedlog</word_key>
+      <word_default>Added Moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_moderators</word_pack>
+      <word_key>m_added</word_key>
+      <word_default>Moderator Added!</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_custom</word_pack>
+      <word_key>custom_field_custom_submit</word_key>
+      <word_default><![CDATA[[b]Can[/b] submit an issue's custom fields]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_custom</word_pack>
+      <word_key>custom_field_custom_update</word_key>
+      <word_default><![CDATA[[b]Can[/b] update an issue's custom fields]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_custom</word_pack>
+      <word_key>custom_field_dropdown_default</word_key>
+      <word_default/>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_custom</word_pack>
+      <word_key>custom_field_custom_show</word_key>
+      <word_default><![CDATA[[b]Can[/b] see an issue's custom fields]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_custom</word_pack>
+      <word_key>custom_field_custom_allowall</word_key>
+      <word_default><![CDATA[[b]Can[/b] access all available custom fields]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_custom</word_pack>
+      <word_key>custom_can_update_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the custom field on the reply screens.<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_custom</word_pack>
+      <word_key>custom_can_update</word_key>
+      <word_default>Can update custom?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_custom</word_pack>
+      <word_key>custom_can_submit_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the custom field on the 'New Issue' post screen.<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_custom</word_pack>
+      <word_key>custom_can_submit</word_key>
+      <word_default>Can submit custom?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_custom</word_pack>
+      <word_key>custom_can_see_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the custom fields in the project(s).<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_custom</word_pack>
+      <word_key>custom_can_see</word_key>
+      <word_default>Can see custom?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_custom</word_pack>
+      <word_key>custom_can_access_all_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will give access to all enabled custom fields in the project(s).<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_custom</word_pack>
+      <word_key>custom_can_access_all</word_key>
+      <word_default>Can access all available custom fields?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_privacy</word_pack>
+      <word_key>privacy_can_see</word_key>
+      <word_default>Can see private issues?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_privacy</word_pack>
+      <word_key>privacy_can_see_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the private issues in the project(s).<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_privacy</word_pack>
+      <word_key>privacy_can_submit</word_key>
+      <word_default>Can submit private issues?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_privacy</word_pack>
+      <word_key>privacy_can_submit_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the private issues option on the 'New Issue' post screen.<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_privacy</word_pack>
+      <word_key>privacy_field_privacy_show</word_key>
+      <word_default><![CDATA[[b]Can[/b] see private issues]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_privacy</word_pack>
+      <word_key>privacy_field_privacy_submit</word_key>
+      <word_default><![CDATA[[b]Can[/b] submit private issues]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_privacy</word_pack>
+      <word_key>privacy_field_privacy_update</word_key>
+      <word_default><![CDATA[[b]Can[/b] update private issue status]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_privacy</word_pack>
+      <word_key>privacy_can_update_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the private issues option on the reply screens.<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_privacy</word_pack>
+      <word_key>privacy_can_update</word_key>
+      <word_default>Can update private issue status?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_severity</word_pack>
+      <word_key>severity_field_severity_submit</word_key>
+      <word_default><![CDATA[[b]Can[/b] submit severity]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_severity</word_pack>
+      <word_key>severity_field_severity_update</word_key>
+      <word_default><![CDATA[[b]Can[/b] update severity]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_severity</word_pack>
+      <word_key>severity_field_severity_show</word_key>
+      <word_default><![CDATA[[b]Can[/b] see severity]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_severity</word_pack>
+      <word_key>severity_can_see</word_key>
+      <word_default>Can see severity?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_severity</word_pack>
+      <word_key>severity_can_see_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the severities in the project(s).<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_severity</word_pack>
+      <word_key>severity_can_submit</word_key>
+      <word_default>Can submit severity?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_severity</word_pack>
+      <word_key>severity_can_update</word_key>
+      <word_default>Can update severity?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_severity</word_pack>
+      <word_key>severity_can_submit_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the severity dropdown on the 'New Issue' post screen.<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_severity</word_pack>
+      <word_key>severity_can_update_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the severity dropdown on the reply screens.<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_status</word_pack>
+      <word_key>status_field_status_update</word_key>
+      <word_default><![CDATA[[b]Can[/b] update an issues status]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_status</word_pack>
+      <word_key>status_field_status_submit</word_key>
+      <word_default><![CDATA[[b]Can[/b] submit an issues status]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_status</word_pack>
+      <word_key>status_can_access_all_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will give access to all enabled statuses in the project(s).<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_status</word_pack>
+      <word_key>status_can_see</word_key>
+      <word_default>Can see status?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_status</word_pack>
+      <word_key>status_can_see_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the statuses in the project(s).<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_status</word_pack>
+      <word_key>status_field_status_allowall</word_key>
+      <word_default><![CDATA[[b]Can[/b] access all available statuses]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_status</word_pack>
+      <word_key>status_field_status_show</word_key>
+      <word_default><![CDATA[[b]Can[/b] see an issues status]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_status</word_pack>
+      <word_key>status_can_update</word_key>
+      <word_default>Can update status?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_status</word_pack>
+      <word_key>status_can_update_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the status dropdown on the reply screens.<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_status</word_pack>
+      <word_key>status_can_submit_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the status dropdown on the 'New Issue' post screen.<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_status</word_pack>
+      <word_key>status_can_submit</word_key>
+      <word_default>Can submit status?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_status</word_pack>
+      <word_key>status_can_access_all</word_key>
+      <word_default>Can access all available statuses?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>versions_field_fixed_in_developer</word_key>
+      <word_default><![CDATA[[b]Is[/b] a developer]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>versions_field_fixed_in_update</word_key>
+      <word_default><![CDATA[[b]Can[/b] update the fixed-in version]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>versions_field_fixed_in_submit</word_key>
+      <word_default><![CDATA[[b]Can[/b] submit a fixed-in version]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>versions_field_fixed_in_show</word_key>
+      <word_default><![CDATA[[b]Can[/b] see fixed-in version]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>versions_field_version_developer</word_key>
+      <word_default><![CDATA[[b]Is[/b] a developer]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>versions_field_version_alter</word_key>
+      <word_default><![CDATA[[b]Can[/b] alter versions]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>versions_field_version_update</word_key>
+      <word_default><![CDATA[[b]Can[/b] update version]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>versions_field_version_submit</word_key>
+      <word_default><![CDATA[[b]Can[/b] submit version]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>versions_field_version_show</word_key>
+      <word_default><![CDATA[[b]Can[/b] see version]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>fixed_is_developer_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will give access to developer-only fixed-in versions in the project(s).<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>fixed_can_update_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the fixed in version dropdown on the reply screens.<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>fixed_is_developer</word_key>
+      <word_default>Is a Developer?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>fixed_can_update</word_key>
+      <word_default>Can update the fixed in version?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>fixed_can_submit_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the fixed in version dropdown on the 'New Issue' post screen.<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>fixed_can_submit</word_key>
+      <word_default>Can submit a fixed in version?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>fixed_can_see_reports_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the 'Generate Fixed In Report' area in the project(s).<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>fixed_can_see_reports</word_key>
+      <word_default><![CDATA[Can generate 'Fixed In' reports?]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>fixed_can_see</word_key>
+      <word_default>Can see fixed in version?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>version_can_alter_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will give access to the front-end sections that allow editing of versions without the need of accessing the Admin CP.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>fixed_can_see_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the fixed in version(s) in the project(s).<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>version_can_alter</word_key>
+      <word_default>Can alter versions?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>version_is_developer</word_key>
+      <word_default>Is a Developer?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>version_is_developer_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will give access to developer-only versions in the project(s).<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>version_can_update_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the version dropdown on the reply screens.<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>version_can_update</word_key>
+      <word_default>Can update version?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>version_can_submit_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the version dropdown on the 'New Issue' post screen.<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>version_can_see</word_key>
+      <word_default>Can see version?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>version_can_see_desc</word_key>
+      <word_default><![CDATA[If 'Yes', will show the version(s) in the project(s).<br>If 'No', permission will come from the project.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>version_can_submit</word_key>
+      <word_default>Can submit version?</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_module_versions</word_pack>
+      <word_key>versions_field_fixed_in_report</word_key>
+      <word_default><![CDATA[[b]Can[/b] generate 'Fixed In' reports]]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_manageproject</word_key>
+      <word_default>Manage Projects</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_apptitle</word_key>
+      <word_default>Tracker</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_addproject</word_key>
+      <word_default>Create New Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_updated</word_key>
+      <word_default>Your project has been successfully updated</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_editproject</word_key>
+      <word_default>Edit Project </word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_created</word_key>
+      <word_default>Your project has been successfully created</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_numissues</word_key>
+      <word_default>Issues</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_noprojects</word_key>
+      <word_default>You have no projects created.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_overview_desc</word_key>
+      <word_default>This section will allow you to manage your projects.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_projects</word_key>
+      <word_default>Projects</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_btn_addproject</word_key>
+      <word_default>Create a Project</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_projecttitle</word_key>
+      <word_default>Project Title</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_err_member</word_key>
+      <word_default>We could not find a member named %s</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_err_noparent</word_key>
+      <word_default><![CDATA[This project cannot be select as the 'Project Parent']]></word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_err_incomplete</word_key>
+      <word_default>Please complete all the fields on the form.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_err_id</word_key>
+      <word_default>A valid project id was not recieved, please return and try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>tracker</word_app>
+      <word_pack>admin_projects</word_pack>
+      <word_key>p_options</word_key>
+      <word_default>Options</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

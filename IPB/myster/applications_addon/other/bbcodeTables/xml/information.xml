@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<information>
+  <data>
+    <name>Custom BBCode Tables</name>
+    <public_name>BBCode Tables</public_name>
+    <hide_tab>1</hide_tab>
+    <author>IPBAccess</author>
+    <description>The use of custom tables in bbcode</description>
+    <disabledatinstall>0</disabledatinstall>
+    <global_caches></global_caches>
+    <website>http://www.ipbaccess.com</website>
+    <update_check />
+    <templategroups>
+        <template match="exact">skin_bbcodeTables</template>
+    </templategroups>
+  </data>
+</information>

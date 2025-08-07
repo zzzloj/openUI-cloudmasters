@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name>Promenu: Other</hook_name>
+      <hook_desc>various other hooks, mainly action overloaders.</hook_desc>
+      <hook_author>Michael S. Edwards</hook_author>
+      <hook_email>admin@codingjungle.com</hook_email>
+      <hook_website>codingjungle.com</hook_website>
+      <hook_update_check/>
+      <hook_requirements><![CDATA[a:3:{s:21:"required_applications";a:0:{}s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+      <hook_version_human>1.0.6</hook_version_human>
+      <hook_version_long>10006</hook_version_long>
+      <hook_extra_data><![CDATA[a:2:{s:7:"display";N;s:8:"database";a:0:{}}]]></hook_extra_data>
+      <hook_key>pro_promenu_hooks_other</hook_key>
+      <hook_global_caches/>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>promenuRemoval.php</hook_file_real>
+      <hook_type>skinHooks</hook_type>
+      <hook_classname>promenuRemoval</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:11:"skin_global";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[class promenuRemoval extends (~extends~)
+{
+	public function globalTemplate( $html, $documentHeadItems, $css, $jsModules, $metaTags, array $header_items, $items=array(), $footer_items=array(), $stats=array() )
+	{
+		if( !IPSLib::appIsInstalled('promenu') ){
+			return parent::globalTemplate( $html, $documentHeadItems, $css, $jsModules, $metaTags, $header_items, $items, $footer_items, $stats );
+		}
+		else{
+			if (!$this->registry->isClassLoaded('app_class_promenu')) {
+				$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/app_class_promenu.php', 'app_class_promenu', 'promenu');
+				$this -> registry -> setClass('app_class_promenu', new $classToLoad($this -> registry));
+			}
+			
+			$cleansed = $this->registry->promenuHooks->RemovalTool(  $header_items, $footer_items, $documentHeadItems, $css, $this->request['app'] );
+			
+			$jsModules['promenu'] = 0;
+
+			$output = parent::globalTemplate( $html, $cleansed['document'], $cleansed['css'], $jsModules, $metaTags, $cleansed['menu'], $items, $cleansed['footer_items'], $stats );
+			
+			if($cleansed['header_enabled']){
+				$output = str_replace("<body id='ipboard_body'>","<body id='ipboard_body'><div class='head_line'></div>",$output);
+			}		
+			
+			if($this->request['app'] !== "ccs" && IPSLib::appIsInstalled('ccs') && $this->settings['promenu_disable_content_css'] && $skin !== "mobile"){
+				if (!$this->registry->isClassLoaded('app_class_promenu')) {
+					$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('ccs') . '/sources/functions.php', 'ccsFunctions', 'ccs');
+					$this -> registry -> setClass('ccsFunctions', new $classToLoad($this -> registry));
+				}				
+				$output = $this->registry->ccsFunctions->injectBlockFramework($output);
+			}
+			else{
+				$output = $output;
+			}
+			return $output;
+		}
+	}	
+}]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>promenuFM.php</hook_file_real>
+      <hook_type>commandHooks</hook_type>
+      <hook_classname>promenuFM</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:26:"admin_forums_forums_forums";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class promenuFM extends (~extends~) {
+	/**
+	 * List the forums
+	 *
+	 * @return	@e void		Outputs to screen
+	 */	
+	public function showForums()
+	{
+				
+		$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/sources/classes/proPerms.php', 'proPerms', 'promenu');
+		$perms = new $classToLoad($this -> registry);
+		
+		$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/sources/profunctions.php', 'profunctions', 'promenu');
+		$profunctions = new $classToLoad($this -> registry);	
+		
+		if($this->request['do'] === "doedit")
+		{
+			$c = $this->DB->buildAndFetch( array( 'select' => '*', 'from' => 'forums', 'where' => 'id='.intval($_GET['f'])) );
+
+			$this->DB->build( array( 'select' => '*', 'from' => 'promenuplus_menus', 'where' => 'promenu_menus_forums_id='.intval($_GET['f']) ) );
+			
+			$q = $this -> DB -> execute();
+			
+			while ($fs = $this -> DB -> fetch($q)) {
+				if(count($fs) && is_array($fs)){
+					$langer = $this->caches['lang_data'];
+		
+					foreach($langer as $ks => $cs){
+						$lang[$cs['lang_id']] = $c['name'];
+						if($c['description']){
+							$langdes[$cs['lang_id']] = $c['description'];
+						}
+					}
+					
+					$a['promenu_menus_name'] 				= serialize($lang);
+					$a['promenu_menus_parent_id']			= $fs['promenu_menus_parent_id'];
+					if($cs['description']){
+						$a['promenu_menus_desc'] 			= serialize($langdes);
+					}
+					$a['promenu_menus_group'] 				= $fs['promenu_menus_group'];
+					$a['promenu_menus_link_type'] 			= "man";
+					$a['promenu_menus_url'] 				= 'showforum='.$c['id'];
+					$a['promenu_menus_forums_parent_id'] 	= $c['parent_id'];
+					
+					if($c['parent_id'] >= 0){
+						$cd = $this->DB->buildAndFetch( array( 'select' => '*', 'from' => 'promenuplus_menus', 'where' => 'promenu_menus_forums_id='.$c['parent_id']." AND promenu_menus_group='".$fs['promenu_menus_group']."'" ) );
+						$a['promenu_menus_parent_id'] 		= $cd['promenu_menus_id'];
+						$a['promenu_menus_order']			= $c['position'];
+						
+					}
+					
+					$a['promenu_menus_forums_seo'] 			= $c['name_seo'];
+					
+					$this->DB->update("promenuplus_menus", $a, "promenu_menus_id=".$fs['promenu_menus_id']);
+				}
+			}
+			$profunctions->kerching();		
+			
+		}
+		else if($this->request['do'] === 'donew'){
+			
+			if($this->request['parent_id'] >= 1)
+			{
+				$this->DB->build( array( 'select' => '*', 'from' => 'promenuplus_menus', 'where' => 'promenu_menus_forums_id='.$this->request['parent_id'] ) );
+				
+				$q = $this -> DB -> execute();
+				
+				while ($b = $this -> DB -> fetch($q)) {
+					$forums[] = $b;
+				}
+			}
+			else{
+				$this->DB->build( array( 'select' => '*', 'from' => 'promenuplus_menus', 'where' => 'promenu_menus_forums_attatch=1' ) );
+				
+				$q = $this -> DB -> execute();
+				
+				while ($b = $this -> DB -> fetch($q)) {
+					$forums[] = $b;
+				}
+			}
+			if(count($forums) && is_array($forums)){
+				$c = $this->DB->buildAndFetch( array( 'select' => '*', 'from' => 'forums', 'order' =>'id desc' ) );
+	
+				foreach($forums as $f => $fs)
+				{
+					$langer = $this->caches['lang_data'];
+		
+					foreach($langer as $ks => $cs){
+						$lang[$cs['lang_id']] = $c['name'];
+						if($c['description']){
+							$langdes[$cs['lang_id']] = $c['description'];
+						}
+					}
+					
+					$a['promenu_menus_name'] 				= serialize($lang);
+					
+					$a['promenu_menus_parent_id']			= $fs['promenu_menus_id'];
+					
+					if($cs['description']){
+						$a['promenu_menus_desc'] 			= serialize($langdes);
+					}
+					
+					$a['promenu_menus_group'] 				= $fs['promenu_menus_group'];
+					
+					$a['promenu_menus_link_type'] 			= "man";
+					
+					if(count($this->request['perms']['forumview']) && is_array($this->request['perms']['forumview'])){
+					foreach($this->request['perms']['forumview'] as $pp => $pc){
+						$p['menuview'][$pp] = $pc;
+					}
+					}
+					else{
+						$p['menuview'] = '';
+					}
+	
+					$a['promenu_menus_view'] 				= $profunctions->perm2group($profunctions->perm2groupArray($this->request['perms']['forumview']));
+					
+					$a['promenu_menus_forums_parent_id'] 	= $this->request['parent_id'];
+					
+					$a['promenu_menus_forums_seo'] 			= IPSText::makeSeoTitle($this->request['name']);
+		
+					$a['promenu_menus_has_sub'] = 0;
+					
+					$a['promenu_menus_is_open'] = 0;
+		
+					$a['promenu_menus_url'] 				= 'showforum='.$c['id'];
+					
+					$a['promenu_menus_order']				= $c['position']+1;
+					
+					$a['promenu_menus_forums_id'] 			= $c['id'];
+		
+					$this->DB->update("promenuplus_menus",array("promenu_menus_has_sub" => 1), "promenu_menus_id=".$fs['promenu_menus_id']);
+									
+					$this->DB->insert("promenuplus_menus", $a);
+					
+					$ids = $this->DB->getInsertId();
+	
+					$perms->savePermissionsMatrix($ids, $p);
+				}	
+				$profunctions->kerching();		
+			}
+		}
+		return parent::showForums();
+	}
+	
+	/**
+	 * Delete a forum
+	 *
+	 * @return	@e void		Outputs to screen
+	 */	
+	public function doDelete()
+	{
+		$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/sources/profunctions.php', 'profunctions', 'promenu');
+				
+		$profunctions = new $classToLoad($this -> registry);	
+				//-----------------------------------------
+		// Auth check...
+		//-----------------------------------------
+		
+		$this->registry->adminFunctions->checkSecurityKey();
+		
+		//-----------------------------------------
+		// Continue
+		//-----------------------------------------
+		
+		$this->request['f']             = intval( $this->request['f'] );
+		$this->request['new_parent_id'] = intval( $this->request['new_parent_id'] );
+		
+		$this->DB->build( array( 'select' => '*', 'from' => 'promenuplus_menus', 'where' => 'promenu_menus_forums_id='.$this->request['f'] ) );
+			
+		$q = $this -> DB -> execute();
+			
+		while ($b = $this -> DB -> fetch($q)) {
+			$forums[] = $b;
+		}		
+		
+		if(count($forums) && is_array($forums))
+		{
+			foreach($forums as $f => $fs)
+			{
+				$this->DB->delete("promenuplus_menus","promenu_menus_id=".$fs['promenu_menus_id']);
+				if($this->request['new_parent_id'] >= 1){
+					$c = $this->DB->buildAndFetch( array( 'select' => '*', 'from' => 'promenuplus_menus','where' => 'promenu_menus_forums_id='.$this->request['new_parent_id'] ) );
+				}
+				else{
+					$c['promenu_menus_id'] = 0;
+				}
+				
+				$this->DB->update("promenuplus_menus",array("promenu_menus_parent_id" => $c['promenu_menus_id'], 'promenu_menus_forums_parent_id' => $this->request['new_parent_id']), 'promenu_menus_parent_id='.$fs['promenu_menus_id'] );
+				
+				$d = $this->DB->buildAndFetch(array('select' => 'COUNT(*) as count', 'from' => 'promenuplus_menus', 'where' => 'promenu_menus_parent_id='.$fs['promenu_menus_parent_id'] ));
+
+				if ($d['count'] <= 0) {
+					$this->DB->update('promenuplus_menus', array('promenu_menus_has_sub' => 0), 'promenu_menus_id='.$fs['promenu_menus_parent_id']);
+				}				
+
+			}
+		}
+		
+		$profunctions->kerching();	
+		
+		return parent::doDelete();
+	}
+
+	/**
+	 * Save the permissions
+	 *
+	 * @return	@e void		Outputs to screen
+	 */	
+	public function permDoEdit()
+	{
+		$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/sources/profunctions.php', 'profunctions', 'promenu');
+				
+		$profunctions = new $classToLoad( $this->registry );	
+		/* INI */
+		$perms = array();
+		
+		$this->request['f'] = intval( $this->request['f'] );		
+		
+		/* Security Check */
+		$this->registry->adminFunctions->checkSecurityKey();
+		
+		$this->DB->build( array( 'select' => '*', 'from' => 'promenuplus_menus', 'where' => 'promenu_menus_forums_id='.$this->request['f'] ) );
+			
+		$q = $this -> DB -> execute();
+			
+		while ($b = $this -> DB -> fetch($q)) {
+			$forums[] = $b;
+		}
+		
+		if( count( $this->request['perms']['forumview'] ) && is_array( $this->request['perms']['forumview'] ) ){
+			foreach($this->request['perms']['forumview'] as $pp => $pc){
+				$p['menuview'][$pp] = $pc;
+			}
+		}
+		else{
+			$p['menuview'] = array();
+		}
+		
+		$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/sources/classes/proPerms.php', 'proPerms', 'promenu');
+							
+		$perms = new $classToLoad($this -> registry);				
+		
+		if( count($forums) && is_array($forums) )
+		{
+			foreach($forums as $k => $c){		
+				$perms->savePermissionsMatrix($c['promenu_menus_id'], $p);
+				$a['promenu_menus_view'] 				= $profunctions->perm2group( $profunctions->perm2groupArray( $this->request['perms']['forumview'] ) );
+				$this->DB->update("promenuplus_menus", $a, "promenu_menus_id=".$c['promenu_menus_id']);
+			}
+		}
+		
+		$profunctions->kerching();
+		
+		return parent::permDoEdit();
+	}	
+}]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>promenuEnableApp.php</hook_file_real>
+      <hook_type>commandHooks</hook_type>
+      <hook_classname>promenuEnableApp</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:36:"admin_core_applications_applications";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class promenuEnableApp extends (~extends~) {
+		
+	public function applicationToggle()
+	{
+		$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir("promenu") . "/sources/profunctions.php", 'profunctions', 'promenu');
+		$profun = new $classToLoad($this -> registry);
+		
+		$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/sources/classes/proPerms.php', 'proPerms', 'promenu');
+		$perms = new $classToLoad($this -> registry);	
+		
+		$app = $this->DB->buildAndFetch( array( 'select' => '*', 'from' => 'core_applications', 'where' => 'app_id=' . intval( $this->request['app_id'] ) ) );
+
+		if(!$app['app_enabled'] || $app['app_hide_tab'])
+		{
+			$a['promenu_menus_override'] = 1;
+			$this->DB->update("promenuplus_menus", $a, 'promenu_menus_app_link="'.$app['app_directory'].'"' );
+		}
+		else{
+			$a['promenu_menus_override'] = 0;
+			$this->DB->update("promenuplus_menus", $a, 'promenu_menus_app_link="'.$app['app_directory'].'"' );
+		}
+		
+		$this->DB->build( array( 	'select' => '*', 
+									'from' => 'promenuplus_menus', 
+									'where' => 'promenu_menus_app_link="'.$app['app_directory'].'"' ) );
+		$q = $this -> DB -> execute();
+			
+		if($app['app_enabled'] && !$app['app_hide_tab']){
+			$save['perms'] = $profun->group2perm($app['app_tab_groups']);
+		}
+			
+		while ($b = $this -> DB -> fetch($q)) {
+			$perms->savePermissionsMatrix($b['promenu_menus_id'], $save['perms']);
+		}
+
+		$profun->kerching(); 
+		
+		parent::applicationToggle();
+
+	}
+	
+	/**
+	 * Save an application
+	 *
+	 * @param	string		Type [add|edit]
+	 * @return	@e void		[Outputs to screen]
+	 */
+	public function applicationSave( $type = 'add' )
+	{
+		$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir("promenu") . "/sources/profunctions.php", 'profunctions', 'promenu');
+		$profun = new $classToLoad($this -> registry);
+		
+		$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/sources/classes/proPerms.php', 'proPerms', 'promenu');
+		$perms = new $classToLoad($this -> registry);	
+		
+		$app = $this->DB->buildAndFetch( array( 'select' => '*', 'from' => 'core_applications', 'where' => 'app_id=' . intval( $this->request['app_id'] ) ) );
+		
+		$a['promenu_menus_override'] = $this->request['app_hide_tab'];
+		
+		if(count($this->request['app_tab_groups']) && is_array($this->request['app_tab_groups']))
+		{
+			$a['promenu_menus_view'] = implode(",", $this->request['app_tab_groups']);
+		}
+		
+		$this->DB->update("promenuplus_menus", $a, 'promenu_menus_app_link="'.$app['app_directory'].'"' );
+
+		$this->DB->build( array( 	'select' => '*', 
+									'from' => 'promenuplus_menus', 
+									'where' => 'promenu_menus_app_link="'.$app['app_directory'].'"' ) );
+		$q = $this -> DB -> execute();
+
+		if($this->request['app_enabled'] && !$this->request['app_hide_tab']){
+			$save['perms'] = $profun->group2perm($this->request['app_tab_groups']);
+		}
+
+		while ($b = $this -> DB -> fetch($q)) {
+			$perms->savePermissionsMatrix($b['promenu_menus_id'], $save['perms']);
+		}
+		
+		$profun->kerching();
+		
+		parent::applicationSave($type);
+	}
+}
+]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings/>
+  <hookextras_language/>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates/>
+  <hookextras_css/>
+  <hookextras_replacements/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

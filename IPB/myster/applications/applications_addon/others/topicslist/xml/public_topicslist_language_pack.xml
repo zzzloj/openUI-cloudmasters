@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_gotowall</word_pack>
+      <word_key>gotowall</word_key>
+      <word_default>Go to Wall</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_gotowall</word_pack>
+      <word_key>goto_noperms</word_key>
+      <word_default>You cannot access Topics Wall</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_rcomment</word_key>
+      <word_default>Recently commented</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_specials</word_key>
+      <word_default>Specials</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_strangel</word_key>
+      <word_default>Sorry, topics matching that letter may be unapproved or pinned and the admin has disabled their view. Or just there are no topics starting with that letter.</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_ratelt</word_key>
+      <word_default>Most rated topics</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_rate</word_key>
+      <word_default>Highest Rate</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_ratels</word_key>
+      <word_default>View most rated topics starting with </word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_passprot</word_key>
+      <word_default><![CDATA[This is a password protected forum. <br>Please insert the password before viewing this forum's wall: ]]></word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_ntopics</word_key>
+      <word_default>Topics</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_onf</word_key>
+      <word_default>In</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_not</word_key>
+      <word_default><![CDATA[The Admin has enabled the wall in this forum, but there are no topics here! Why don't you create some? ;)]]></word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_nosortall</word_key>
+      <word_default>Sorry, sorting is not enabled when viewing all topics.</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_nosect_ucp</word_key>
+      <word_default>Sorry, we could not determine wich section you would like to access.</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_noperms</word_key>
+      <word_default>Sorry, you have no permissions to access this application.</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_nopermf</word_key>
+      <word_default>Sorry, you have no permissions to view this forum.</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_nolistf</word_key>
+      <word_default>Sorry, Topics Wall is not enabled in this forum or you just entered an invalid forum id.</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_nochange</word_key>
+      <word_default><![CDATA[Sorry, the board administrator has disabled this function. <br> The default viewing mode is ]]></word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_noall</word_key>
+      <word_default>Sorry, this feature has been disabled in this forum.</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>show_index</word_key>
+      <word_default>Index</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>f_home</word_key>
+      <word_default><![CDATA[Forum's Home]]></word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>forum_name</word_key>
+      <word_default>Forum</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_lforum</word_key>
+      <word_default>Forum</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_latests</word_key>
+      <word_default>Latests</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_latestlt</word_key>
+      <word_default>Latest topics</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_latestls</word_key>
+      <word_default>View latest topics starting with </word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_inhome</word_key>
+      <word_default><![CDATA[Is viewing 'Topics Wall' Home]]></word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_infos_i</word_key>
+      <word_default><![CDATA[Hi %s, <br>Here is a 'wall' of topics created by our members.<br>Click on the links below to sort topics as you like.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_infos</word_key>
+      <word_default>Welcome</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_home</word_key>
+      <word_default>Topics Wall</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_gotot</word_key>
+      <word_default>Go to topic</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_fdesc</word_key>
+      <word_default>Forum Description</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_fb_desc</word_key>
+      <word_default><![CDATA[Pretty similar to facebook's wall. Two columns with author's avatar and topic's infos.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_fb</word_key>
+      <word_default>Facebook Style Mode</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_detailed_desc</word_key>
+      <word_default><![CDATA[It's just the same as viewing a catalog. Every row has two topics, with preview image, topic title and description and many others informations.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_detailed</word_key>
+      <word_default>Detailed Mode</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_commentslt</word_key>
+      <word_default>Most commented topics</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_commentsls</word_key>
+      <word_default>View most commented topics starting with </word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_comments</word_key>
+      <word_default>Most Commented</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_comm</word_key>
+      <word_default>Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_tab</word_key>
+      <word_default>Topics Wall</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>go_to_fullapp</word_key>
+      <word_default>Go to Application</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_cltitle</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_clvisits</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_clstart</word_key>
+      <word_default>Start Date</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_clrcomment</word_key>
+      <word_default>Last Post</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_clrate</word_key>
+      <word_default>Rate</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_clforum</word_key>
+      <word_default>Forum</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_cldesc</word_key>
+      <word_default>Description</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_clauthor</word_key>
+      <word_default>Author</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_clcomments</word_key>
+      <word_default>Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_classic</word_key>
+      <word_default>Classic Mode</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_classic_desc</word_key>
+      <word_default>A list of topics with no preview image. Cleaner but faster.</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_choosef</word_key>
+      <word_default>Select forum</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_changemodetitle</word_key>
+      <word_default>Change Default Viewing Mode</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_changemode</word_key>
+      <word_default>Change your default viewing mode</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_author</word_key>
+      <word_default>Author</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_changeit</word_key>
+      <word_default>Change View Mode</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>gotoapp</word_key>
+      <word_default>Home</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_alphasort</word_key>
+      <word_default>Alphabetical Order</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>specifics</word_key>
+      <word_default>Specific Filters</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_alphalt</word_key>
+      <word_default>Topics starting with </word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>generals</word_key>
+      <word_default>General Filters</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_strangesort</word_key>
+      <word_default>Sorry, we could not determine your request. You may have entered an invalid sorting id.</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_tall</word_key>
+      <word_default>All</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_thisf</word_key>
+      <word_default>in this forum</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_viewall</word_key>
+      <word_default>View all topics in this forum</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_viewalpha</word_key>
+      <word_default>View Alphabetically ordered</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_viewed</word_key>
+      <word_default>views</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_viewforums</word_key>
+      <word_default>View Forums List</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_viewingall</word_key>
+      <word_default>All topics in this forum</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_viewingf</word_key>
+      <word_default>Viewing Forums List</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_viewinglist</word_key>
+      <word_default>Viewing wall</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_viewingspecials</word_key>
+      <word_default>Topics starting with special characters</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_viewl</word_key>
+      <word_default>View topics starting with </word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_views</word_key>
+      <word_default>Most Viewed</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_viewsls</word_key>
+      <word_default>View most viewed topics starting with </word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_viewslt</word_key>
+      <word_default>Most viewed topics</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_viewsp</word_key>
+      <word_default>View topics starting with special characters</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_whereinf</word_key>
+      <word_default>Viewing list of forums in Topics Wall</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_whereinhome</word_key>
+      <word_default>Viewing Home of Topics Wall</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_wherewall</word_key>
+      <word_default>Viewing Wall in</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_yourmodeoff</word_key>
+      <word_default>Viewing mode: </word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_home</word_pack>
+      <word_key>tl_yourmodeon</word_key>
+      <word_default>Your default viewing mode is </word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>tl_index_specials</word_key>
+      <word_default>Specials</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>tl_index_rate</word_key>
+      <word_default>Our highest rated topics in this forum</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>tl_index_latests</word_key>
+      <word_default>Our latest topics in this forum</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>tl_index_lastpost</word_key>
+      <word_default>Our recently commented topics in this forum</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>tl_index_index</word_key>
+      <word_default>Topics Wall Index</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>tl_index_comments</word_key>
+      <word_default>Our most commented topics in this forum</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>tl_index_all</word_key>
+      <word_default>All</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>our_topics</word_key>
+      <word_default>Our Topics 1.0</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>ot_index_views</word_key>
+      <word_default>Our most viewed topics</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>ot_index_rate</word_key>
+      <word_default>Our highest rated topics</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>ot_index_latests</word_key>
+      <word_default>Our latest topics</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>ot_index_lastpost</word_key>
+      <word_default>Our recently commented topics</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>ot_index_comments</word_key>
+      <word_default>Our most commented topics</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>tl_index_title</word_key>
+      <word_default>Topics Wall</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>tl_index_views</word_key>
+      <word_default>Our most viewed topics in this forum</word_default>
+    </lang>
+    <lang>
+      <word_app>topicslist</word_app>
+      <word_pack>public_index</word_pack>
+      <word_key>go_to_fullapp</word_key>
+      <word_default>Go to Application</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

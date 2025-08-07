@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_title_title>Portal</conf_title_title>
+      <conf_title_desc>Настройки компонента Portal.</conf_title_desc>
+      <conf_title_tab>Hooks</conf_title_tab>
+      <conf_title_app>portal</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Ширина левых блоков:</conf_title>
+      <conf_description>Установите ширину левых блоков.</conf_description>
+      <conf_type>dropdown</conf_type>
+      <conf_key>portal_left_style</conf_key>
+      <conf_default>largeleft</conf_default>
+      <conf_extra>smallleft=Очень маленькая&#13;
+left=Маленькая&#13;
+largeleft=Средняя&#13;
+bigleft=Большая&#13;
+hugeleft=Очень большая</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Настройки отображения Портала</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Ширина правых блоков:</conf_title>
+      <conf_description>Установите ширину правых блоков.</conf_description>
+      <conf_type>dropdown</conf_type>
+      <conf_key>portal_right_style</conf_key>
+      <conf_default>largeright</conf_default>
+      <conf_extra>smallright=Очень маленькая&#13;
+right=Маленькая&#13;
+largeright=Средняя&#13;
+bigright=Большая&#13;
+hugeright=Очень большая</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Запретить делиться ссылками?</conf_title>
+      <conf_description>Включив эту функцию вы отключите возможность делиться новостями через соц. сети и т.д.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>portal_hide_share</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Скрывать столбцы, если нету блоков?</conf_title>
+      <conf_description>Включите, если вы хотите, чтобы автоматически скрыть столбец, если в нём нету блоков.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>portal_hide_column</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Заголовок страницы Портала:</conf_title>
+      <conf_description><![CDATA[Укажите текст, который будет использоваться в мета-теге "portal_title". Если оставить поле пустым, будет использоваться фраза из языкового пакета.]]></conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>portal_index_title</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group>Настройки СЕО</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Описание:</conf_title>
+      <conf_description>Укажите мета-описания которое вы хотели бы использовать на портале.</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>portal_index_md</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Ключевые слова:</conf_title>
+      <conf_description>Укажите мета ключевые слова которые вы хотели бы использовать на портале.</conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>portal_index_mk</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Показывать Navigation Links?</conf_title>
+      <conf_description/>
+      <conf_type>yes_no</conf_type>
+      <conf_key>portal_show_nav</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group>Стандартные блоки Портала</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Содержимое блока Navigation Links:</conf_title>
+      <conf_description><![CDATA[В одной строчке должна быть одна ссылка<br />http://www.apple.com [Apple's Website]]]></conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>portal_nav</conf_key>
+      <conf_default><![CDATA[{board_url} [Форум]
+{board_url}app=forums&module=extras&section=stats [Самые активные сегодня]
+{board_url}app=forums&module=extras&section=stats&do=leaders [Администрация]]]></conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if ( $show == 1)
+{
+    $value = preg_replace( "/&(middot|quot|copy|amp)/", "&&#092;&#092;&#092;&#092;&#092;&#092;&#092;&#092;&#092;&#092;&#092;&#092;&#092;&#092;&#092;&#092;1", $value );
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Тем в боковом блоке:</conf_title>
+      <conf_description><![CDATA[Напишите число новых тем для отображения в блоке Latest Topics.]]></conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>latest_topics_sidebar</conf_key>
+      <conf_default>5</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Введите ссылку на тему с опросом:</conf_title>
+      <conf_description>Оставьте пустым это поле если не хотите добавлять опрос.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>portal_poll_url</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Показывать тем:</conf_title>
+      <conf_description>Напишите число новых тем для отображения в центральном главном блоке.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>latest_topics_main</conf_key>
+      <conf_default>3</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group>Настройки блока Latest Topics Main Block</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>В верху темы:</conf_title>
+      <conf_description>Укажите нужный порядок сортировки.</conf_description>
+      <conf_type>dropdown</conf_type>
+      <conf_key>portal_topics_order_by</conf_key>
+      <conf_default>last_post</conf_default>
+      <conf_extra>start_date=Которые недавно созданы&#13;
+last_post=В которых появились новые ответы</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Скрыть закреплённые темы?</conf_title>
+      <conf_description>Если тема закреплена в каком-нибудь форуме, то на Портале она отображаться не будет.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>portal_exclude_pinned</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>17</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Добавить нумерацию страниц?</conf_title>
+      <conf_description>Включите, если хотите добавить нумерацию страниц в последних темах центрального главного блока.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>portal_topics_pagination</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>18</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Обрезать название темы, если сивмолов больше чем:</conf_title>
+      <conf_description>Напишите количество символов, после которого не показывать название тем на Портале.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>portal_topic_title_truncate</conf_key>
+      <conf_default>60</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>19</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>    
+    <setting>
+      <conf_title>Обрезать тему, если сивмолов больше чем:</conf_title>
+      <conf_description>Напишите количество символов, после которого не показывать содержимое из первого сообщения тем на Портале. Если включено, будет удалено любое форматирование. Введите " 0 " или оставьте пустым, чтобы отключить.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>portal_topic_truncate</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>19</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Форумы:</conf_title>
+      <conf_description>Выберите форумы, последние темы из которых выводить в центральный главный блок.</conf_description>
+      <conf_type>multi</conf_type>
+      <conf_key>portal_latest_topics_forums</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[require_once( IPSLib::getAppDir( 'forums' ) .'/sources/classes/forums/class_forums.php' );/*noLibHook*/
+$classToLoad = IPSLib::loadLibrary( IPSLib::getAppDir( 'forums' ) .'/sources/classes/forums/admin_forum_functions.php', 'admin_forum_functions', 'forums' );
+						
+$aff = new $classToLoad( $this->registry );
+$aff->forumsInit();
+$dropdown = $aff->adForumsForumList(1);
+
+array_unshift( $dropdown, array( 0, "-- Select all forums --" ) );
+
+if ( $save == 1)
+{
+	if ( is_array($_POST['portal_latest_topics_forums']) )
+	{
+		$_POST['portal_latest_topics_forums'] = implode(",",$_POST['portal_latest_topics_forums']);
+	}
+	else
+	{
+		$_POST['portal_latest_topics_forums'] = "";
+	}
+	
+	$key = 'portal_latest_topics_forums';
+}
+if ( $show == 1 )
+{
+$key = 'portal_latest_topics_forums[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>20</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Число пользователей:</conf_title>
+      <conf_description>Напишите количество пользователей, которое отображать в блоке Top Posters.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>portal_top_posters_number</conf_key>
+      <conf_default>5</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>21</conf_position>
+      <conf_start_group>Настройки блока Top Posters</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Исключить группы:</conf_title>
+      <conf_description>Выберите группы, которые не нужно показывать в блоке Top Posters. Используйте клавишу "Ctrl" для выбора нескольких групп.</conf_description>
+      <conf_type>multi</conf_type>
+      <conf_key>portal_top_posters_exclude</conf_key>
+      <conf_default>5,1</conf_default>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+if ( is_array($_POST['portal_top_posters_exclude']) )
+{
+$_POST['portal_top_posters_exclude'] = implode(",",$_POST['portal_top_posters_exclude']);
+}
+else
+{
+$_POST['portal_top_posters_exclude'] = "";
+}
+	
+$key = 'portal_top_posters_exclude';
+}
+if ( $show == 1 )
+{
+  $key = 'portal_top_posters_exclude[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>22</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Число пользователей:</conf_title>
+      <conf_description>Напишите количество пользователей, которое отображать в блоке Newest Members</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>portal_newest_members_number</conf_key>
+      <conf_default>5</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>23</conf_position>
+      <conf_start_group>Настройки блока Newest Members</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Исключить группы:</conf_title>
+      <conf_description>Выберите группы, которые не нужно показывать в блоке Newest Members. Используйте клавишу "Ctrl" для выбора нескольких групп.</conf_description>
+      <conf_type>multi</conf_type>
+      <conf_key>portal_newest_members_exclude</conf_key>
+      <conf_default>5,1</conf_default>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+if ( is_array($_POST['portal_newest_members_exclude']) )
+{
+$_POST['portal_newest_members_exclude'] = implode(",",$_POST['portal_newest_members_exclude']);
+}
+else
+{
+$_POST['portal_newest_members_exclude'] = "";
+}
+	
+$key = 'portal_newest_members_exclude';
+}
+if ( $show == 1 )
+{
+  $key = 'portal_newest_members_exclude[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>24</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Число сообщений:</conf_title>
+      <conf_description>Напишите количество новых сообщений выводимых в блоке Newest Posts.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>portal_NewPostsNumber</conf_key>
+      <conf_default>5</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>25</conf_position>
+      <conf_start_group>Настройки блока Newest Posts</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Какое количество символов показывать?</conf_title>
+      <conf_description>Укажите количество символов до которого сокращать сообщения в блоке Newest Posts.  Введите "0" для отображения полных сообщений.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>portal_NewPostsChars</conf_key>
+      <conf_default>100</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>26</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Форумы:</conf_title>
+      <conf_description>Укажите форумы из которых выводить новые сообщения в блок Newest Posts. Используйте клавишу "Ctrl" для выбора нескольких форумов.</conf_description>
+      <conf_type>multi</conf_type>
+      <conf_key>portal_newest_posts_forums</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[require_once( IPSLib::getAppDir( 'forums' ) .'/sources/classes/forums/class_forums.php' );/*noLibHook*/
+$classToLoad = IPSLib::loadLibrary( IPSLib::getAppDir( 'forums' ) .'/sources/classes/forums/admin_forum_functions.php', 'admin_forum_functions', 'forums' );
+						
+$aff = new $classToLoad( $this->registry );
+$aff->forumsInit();
+$dropdown = $aff->adForumsForumList(1);
+
+array_unshift( $dropdown, array( 0, "-- Select all forums --" ) );
+
+if ( $save == 1)
+{
+	if ( is_array($_POST['portal_newest_posts_forums']) )
+	{
+		$_POST['portal_newest_posts_forums'] = implode(",",$_POST['portal_newest_posts_forums']);
+	}
+	else
+	{
+		$_POST['portal_newest_posts_forums'] = "";
+	}
+	
+	$key = 'portal_newest_posts_forums';
+}
+if ( $show == 1 )
+{
+$key = 'portal_newest_posts_forums[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>27</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>portal</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

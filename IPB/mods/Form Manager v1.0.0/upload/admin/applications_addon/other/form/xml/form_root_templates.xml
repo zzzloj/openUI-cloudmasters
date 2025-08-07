@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="form" templategroups="a:1:{s:9:&quot;skin_form&quot;;s:5:&quot;match&quot;;}">
+  <templategroup group="skin_form">
+    <template>
+      <template_group>skin_form</template_group>
+      <template_content><![CDATA[<h1 class="ipsType_pagetitle">{$this->lang->words['view_log']} #{$log['log_id']}</h1><br />
+<div class='ipsBox clear'>
+	<div class='ipsBox_container ipsPad'>
+		<div class='ipsLayout ipsLayout_withright ipsLayout_bigright clearfix'>
+			<div class='ipsLayout_right'>
+
+				<h3 class='bar'>{$this->lang->words['log_submitter']}</h3>
+				<div class='ipsPad clearfix ipsSideBlock' id='submitter_info'>
+					
+					<if test="hasPhoto:|:$log['pp_main_photo']">
+						<a href='{parse url="showuser={$log['member_id']}" template="showuser" seotitle="{$log['members_seo_name']}" base="public"}' class='ipsUserPhotoLink left'>
+							{IPSMember::buildProfilePhoto($log, 'small' )}
+						</a>
+					<else />
+						<div class='left'>{IPSMember::buildNoPhoto(0, 'small' )}</div>
+					</if>
+					
+					
+					<span class='ipsType_subtitle ipsPad'>
+						<if test="guestsubmitter:|:$log['member_id'] == 0 OR !$log['members_display_name']">{$this->lang->words['global_guestname']}<else />{IPSMember::makeProfileLink($log['members_display_name'], $log['member_id'], $log['members_seo_name'])}</if>												
+					</span>
+
+                                        <if test="showMembersLogs:|:$log['member_id']">
+						<br /><a class='ipsPad' href='{parse url="app=core&amp;module=search&amp;do=user_activity&amp;search_app=form&amp;mid={$log['member_id']}" base="public"}'>{$this->lang->words['view_other_member_logs']}</a>
+                                        </if>					
+				</div>
+
+				<h3 class='bar'>{$this->lang->words['log_details']}</h3>
+				<div class='ipsPad ipsSideBlock'>
+					<ul class='ipsList_data'>
+						<li>
+							<strong class='title'>{$this->lang->words['submitted']}:</strong>
+							{parse date="$log['log_date']" format="short"}
+						</li>
+						<li>
+							<strong class='title'>{$this->lang->words['member_ip']}:</strong>
+							{$log['ip_address']}
+						</li>
+                                         </ul>
+                                </div>
+
+                        </div>
+
+			<div class='ipsLayout_content'>
+                             <h1 class='ipsType_pagetitle'>{$this->lang->words['form']}: {$form['form_name']} </h1><br />
+
+				<div class='ipsType_textblock ipsPad_half'>
+					{$log['message']}
+
+                                        <if test="displayAttachments:|:$log['attachmentHtml']">
+                                              <br class='clear' />{$log['attachmentHtml']}
+                                        </if>
+
+                                        <if test="is_array($logFields) AND count($logFields)">
+                                             <br class='clear' />
+                                             <h3 class='bar'>{$this->lang->words['log_custom_fields']}</h3>
+                                             <table class='ipb_table'>
+                                                  <tr class='header'>
+                                                       <th>{$this->lang->words['field']}</th>
+                                                       <th>{$this->lang->words['value']}</th>
+                                                  </tr>
+                                             <foreach loop="$logFields as $key => $field">
+                                                  <tr>
+                                                       <td>{$field['name']}</td>
+                                                       <td>{$field['value']}</td>
+                                                  </tr>
+                                             </foreach>
+                                             </table>
+                                        </if>
+
+				</div>
+
+					<br /><br />
+					<ul class='post_controls'>
+<if test="can_moderate:|:$this->memberData['g_fs_moderate_logs']">
+						<li><a href='{parse url="app=form&amp;module=moderate&amp;section=moderate&amp;do=reply_log&amp;id={$log['log_id']}" base="public"}' class="ipsButton_secondary">{$this->lang->words['reply']}</a></li>
+						<li class='post_del'><a href='{parse url="app=form&amp;module=moderate&amp;section=moderate&amp;do=delete_log&amp;id={$log['log_id']}&amp;secure_key={$this->member->form_hash}" base="public"}' onclick='javascript:return confirm("{$this->lang->words['please_confirm']}");'>{$this->lang->words['delete']}</a></li>
+</if>
+						<li><a href='{parse url="app=form&amp;do=view_log&amp;id={$log['log_id']}&amp;forcePrint=1&amp;_k={$this->member->form_hash}" base="public"}' target='_blank'>{$this->lang->words['print']}</a></li>
+                                        </ul>
+                        </div>
+
+                 </div>
+        </div>
+</div>]]></template_content>
+      <template_name>viewLog</template_name>
+      <template_data>$log, $form, $logFields</template_data>
+      <template_updated>1343349297</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_form</template_group>
+      <template_content><![CDATA[<if test="hasPhoto:|:$log['pp_main_photo']">
+	<a href='{parse url="showuser={$log['member_id']}" template="showuser" seotitle="{$log['members_seo_name']}" base="public"}' class='ipsUserPhotoLink left'>
+		{IPSMember::buildProfilePhoto($log, 'small' )}
+	</a>
+<else />
+	<div class='left'>{IPSMember::buildNoPhoto(0, 'small' )}</div>
+</if>
+
+	<div class='preview_col'>
+		<p class='preview_info'>
+			<strong><if test="guestsubmitter:|:$log['member_id'] == 0 OR !$log['members_display_name']">{$this->lang->words['global_guestname']}<else />{IPSMember::makeProfileLink($log['members_display_name'], $log['member_id'], $log['members_seo_name'])}</if>	</strong>
+		</p>
+		{$log['message']}
+	</div>
+
+<br class='clear' />
+<br class='clear' />
+<a href='{parse url="do=view_log&amp;id={$log['log_id']}" base="publicWithApp"}' class='ipsButton'>{$this->lang->words['go_to_log']}</a>
+	&nbsp;&nbsp;<span class='desc'>
+<if test="can_reply:|:$this->memberData['g_fs_moderate_logs']">
+		<a href='{parse url="app=form&amp;module=moderate&amp;section=moderate&amp;do=reply_log&amp;id={$log['log_id']}" base="public"}'>{$this->lang->words['reply']}</a> &nbsp;&middot;&nbsp;
+</if>
+                <a href='{parse url="app=form&amp;do=view_log&amp;id={$log['log_id']}&amp;forcePrint=1&amp;_k={$this->member->form_hash}" base="public"}' target='_blank'>{$this->lang->words['print']}</a>
+	</span>]]></template_content>
+      <template_name>logPreview</template_name>
+      <template_data>$log, $form</template_data>
+      <template_updated>1343348224</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_form</template_group>
+      <template_content><![CDATA[<h1 class="ipsType_pagetitle">{$this->lang->words['log_reply']}</h1><br />
+<h2 class='maintitle'>{$this->lang->words['log_reply']}</h2>
+<form id='postingform' action="{parse url="app=form" base="public"}" method='post' enctype='multipart/form-data'>
+<input type='hidden' name='module' value='moderate' />
+<input type='hidden' name='section' value='moderate' />
+<input type='hidden' name='do' value='reply_send' />
+<input type='hidden' name='id' value='{$log['log_id']}' />
+<input type='hidden' name='auth_key' value='{$this->member->form_hash}' />
+
+	<div class='ipsBox'>
+		<div class='ipsBox_container'>			
+			<div class='ipsForm ipsPad'>
+				<ul class='ipsForm_horizontal ipsPad'>
+					<li class='ipsField clear'>
+						<div class='ipsField_content ipsForm_required ipsType_smaller'>* {$this->lang->words['required_fields_warning']}</div>
+					</li>
+
+					<li class='ipsField clear'>
+						<label for='sender_email' class='ipsField_title'>{$this->lang->words['sender_email']} <span class='ipsForm_required ipsType_smaller'>*</span></label>
+						<div class='ipsField_content'><input type='text' id='sender_email' name='sender_email' class='input_text' value='{$senderEmail}' size='35' /></div>
+					</li>
+
+					<li class='ipsField clear'>
+						<label for='receiver_email' class='ipsField_title'>{$this->lang->words['receiver_email']} <span class='ipsForm_required ipsType_smaller'>*</span></label>
+						<div class='ipsField_content'><input type='text' id='receiver_email' name='receiver_email' class='input_text' value='{$log['member_email']}' size='35' /></div>
+					</li>
+
+					<li class='ipsField clear'>
+						<label for='receiver_email' class='ipsField_title'>{$this->lang->words['subject']} <span class='ipsForm_required ipsType_smaller'>*</span></label>
+						<div class='ipsField_content'><input type='text' id='subject' name='subject' class='input_text' value='Re: {$form['email_settings']['subject']}' size='35' /></div>
+					</li>
+
+					<li class='ipsField clear'>
+						<label for='message' class='ipsField_title'>{$this->lang->words['reply_message']} <span class='ipsForm_required ipsType_smaller'>*</span></label>
+						<div class='ipsField_content'>{$editor}</div>
+					</li>
+                          </div>
+                </div>
+
+</div>
+	<p class='submit'>
+		<input type="submit" name="dosubmit" value="{$this->lang->words['send_reply']}" class="input_submit" accesskey="s" />
+	</p>
+</form>]]></template_content>
+      <template_name>replyForm</template_name>
+      <template_data>$log, $form, $senderEmail, $editor</template_data>
+      <template_updated>1343348847</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_form</template_group>
+      <template_content><![CDATA[<h1 class="ipsType_pagetitle">{$this->lang->words['title']}</h1><br />
+
+<h2 class='maintitle'>{$this->lang->words['title']}</h2>
+<form id='postingform' action="{parse url="app=form" base="public"}" method='post'>
+<input type='hidden' name='module' value='display' />
+<input type='hidden' name='section' value='index' />
+<input type='hidden' name='do' value='view_form' />
+
+	<div class='ipsBox'>
+
+		<div class='ipsBox_container'>
+			
+			<div class='ipsForm ipsPad'>
+				<ul class='ipsForm_horizontal ipsPad'>
+					<li class='ipsField clear'>
+						<label for='{$field['field_name']}' class='ipsField_title'>{$this->lang->words['select_subject']}</label>
+						<div class='ipsField_content'><select id='form_id' name='id' class='input_select'>
+        <option value='0'>-- {$this->lang->words['select_subject']} --</option>
+	<foreach loop="forms:$formList as $form">
+		<option value='{$form['form_id']}'>{$form['form_name']}</option>
+	</foreach>
+        </select></div>
+					</li>
+                                 </ul>
+</div>
+</div>
+</div>
+
+	<p class='submit'>
+		<input type="submit" name="dosubmit" value="{$this->lang->words['proceed']}" class="input_submit" accesskey="s" />
+	</p>
+</form>]]></template_content>
+      <template_name>legacySubjectSelect</template_name>
+      <template_data>$formList</template_data>
+      <template_updated>1343348153</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_form</template_group>
+      <template_content><![CDATA[<h1 class="ipsType_pagetitle">{$this->lang->words['form_logs']}</h1><br />
+<if test="pagesTop:|:$pages"><div class='topic_controls'>{$pages}</div></if>
+<div class='category_block block_wrap clear'>
+
+	<div class='ipsFilterbar maintitle'>
+		<if test="is_mod:|:$this->memberData['g_fs_moderate_logs']">
+			<span class='right'>
+				<input type='checkbox' id='maincheckbox' onclick='check_boxes()' />
+				&nbsp;
+			</span>
+		</if>
+		<ul class='ipsList_inline ipsType_small'>
+			<li <if test="sort_log_date:|:$this->request['sort_by'] == 'log_date' and $this->request['sort_order'] == 'desc'">class='active'</if>><a href='{parse url="app=form&amp;do=view_logs&amp;st={$this->request['st']}&amp;sort_by=log_date&amp;sort_order=desc" base="public" seotitle="app=form" template="app=form"}' rel='nofollow'>{$this->lang->words['log_date']}</a></li>
+			<li <if test="sort_member_name:|:$this->request['sort_by'] == 'member_name' and $this->request['sort_order'] == 'desc'">class='active'</if>><a href='{parse url="app=form&amp;do=view_logs&amp;st={$this->request['st']}&amp;sort_by=member_name&amp;sort_order=desc" base="public" seotitle="app=form" template="app=form"}' rel='nofollow'>{$this->lang->words['member_name']}</a></li>
+			<li <if test="$this->request['sort_order'] == 'asc' or !in_array( $this->request['sort_by'], array( 'log_date', 'member_name' ) )">class='active'</if>><a href='#log_filter_menucontent' id='log_filter'>{$this->lang->words['custom']}</a></li>
+		</ul>
+	</div>
+	<div id='log_filter_menucontent' class='ipbmenu_content ipsPad' style='display: none'>
+		<form id='filter_form' action="{parse url="app=form&amp;do=view_logs&amp;st={$this->request['st']}" base="public" seotitle="app=form" template="app=form"}" method="post">
+		
+			<strong>{$this->lang->words['sort_by']}</strong><br />
+			<select name="sort_by" id='sort_by' class='input_select'><option value="log_date" <if test="sort_by_log_date:|:$this->request['sort_by'] == 'log_date'">selected="selected"</if>>{$this->lang->words['log_date']}</option>
+<option value="member_name" <if test="sort_by_member_name:|:$this->request['sort_by'] == 'member_name'">selected="selected"</if>>{$this->lang->words['member_name']}</option>
+<option value="ip_address" <if test="sort_by_ip_address:|:$this->request['sort_by'] == 'ip_address'">selected="selected"</if>>{$this->lang->words['ip_address']}</option></select>
+			<br /><br />
+		
+			<strong>{$this->lang->words['sort_order']}</strong><br />
+			<select name="sort_order" id='sort_order' class='input_select'><option value="desc" <if test="sort_order_desc:|:$this->request['sort_order'] == 'desc' OR $this->request['sort_order'] == 'desc'">selected="selected"</if>>{$this->lang->words['descending']}</option>
+<option value="asc" <if test="sort_order_asc:|:$this->request['sort_order'] == 'asc' OR $this->request['sort_order'] == 'asc'">selected="selected"</if>>{$this->lang->words['ascending']}</option></select>
+			<br /><br />
+
+			<strong>{$this->lang->words['results_per_page']}</strong><br />
+			<select name="per_page" id='per_page' class='input_select'><foreach loop="explode(",", "10,20,25,50,100" ) as $value">
+<option value="{$value}" <if test="per_page_selected:|:$value == $this->request['per_page']">selected="selected"</if>>{$value}</option>
+</foreach></select>
+			<br /><br />
+			
+			<input type="submit" value="{$this->lang->words['submit']}" class="input_submit" />
+		</form>
+	</div>
+	<script type='text/javascript'>
+		new ipb.Menu( $('log_filter'), $('log_filter_menucontent'), { stopClose: true } );
+	</script>
+
+<form action="{parse url="app=form" base="public"}" name='moderate_form' method='post'>
+<input type='hidden' name='module' value='moderate' />
+<input type='hidden' name='section' value='moderate' />
+<input type='hidden' name='do' value='logs_multimod' />
+<input type='hidden' name='auth_key' value='{$this->member->form_hash}' />
+
+<div class='ipsBox'>
+<div class='ipsBox_container'>
+
+<table class="ipb_table">
+<tr class='header hide'> 
+<th scope='col' class='col_f_icon'>&nbsp;</th>
+<th scope='col' class='col_f_forum'>{$this->lang->words['log']}</th>
+<th scope='col' class='col_c_post'>{$this->lang->words['submitter']}</th>
+<if test="is_mod:|:$this->memberData['g_qs_m_manage']">
+<th scope='col' class='col_f_mod short'>&nbsp;</th>
+</if>
+</tr>
+
+<if test="is_array($logs) AND count($logs)">
+
+<foreach loop="$logs as $a => $r">
+
+<tr <if test="!$r['_isRead']">class='unread'</if> id='log_row_{$r['log_id']}'>
+	<td class='col_f_icon altrow short'>
+		{parse template="generateTopicIcon" group="global_other" params="$r['log_icon'], isset($r['_unreadUrl']) ? $r['_unreadUrl'] : ''"}
+	</td>
+<td class='col_c_forum'><a href="{parse url="app=form&amp;do=view_log&amp;id={$r['log_id']}" base="public"}"><if test="logPreviewLimit:|:$this->settings['fm_log_preview']">{IPSText::truncate( strip_tags( IPSText::getTextClass('bbcode')->stripAllTags( $r['message'] ), '<br />' ), intval( $this->settings['fm_log_preview'] ) )}<else />{$r['message']}</if></a></td>
+
+<td class='col_f_preview'>
+	<a href="{parse url="app=form&amp;do=view_log&amp;id={$r['log_id']}" base="public"}" id='showlog_{$r['log_id']}' class='expander closed show_log'>&nbsp;</a>
+</td>
+
+<td class='col_c_post'>
+{parse template="userSmallPhoto" group="global" params="array('member_id' => $r['member_id'], 'members_seo_name' => $r['members_seo_name'], 'pp_small_photo' => $r['pp_small_photo'], 'alt' => $this->lang->words['last_log_by'].' '.$r['members_display_name'] )"}
+
+<ul class="last_post ipsType_small">
+
+<li class='desc'>{$this->lang->words['by']}
+<if test="showLogAuthor:|:$r['member_id']">{parse template="userHoverCard" group="global" params="$r"}<else />{$r['member_name']}</if>
+</li>
+<li class='desc'>{$this->lang->words['in']} {$this->registry->getClass('formForms')->form_data_id[ $r['log_form_id'] ]['form_name']}</li>
+<li class="desc lighter blend_links">
+{parse date="$r['log_date']" format="long"}
+</li>
+
+</ul>
+</td>
+
+<if test="is_mod_row:|:$this->memberData['g_fs_moderate_logs']">
+<td class='col_f_mod short'>
+<a href='#' class='ipsModMenu' id='log_mod_{$r['log_id']}'>&nbsp;</a>
+<input type='hidden' name='{$r['log_id']}' /><input class="checkbox" type='checkbox' name='lid_{$r['log_id']}' id='lid_{$r['log_id']}' value='yes' />
+
+<ul id='log_mod_{$r['log_id']}_menucontent' class='ipbmenu_content' style='display: none'>
+	<li><a class='t_reply' href='{parse url="app=form&amp;module=moderate&amp;section=moderate&amp;do=reply_log&amp;id={$r['log_id']}" base="public"}' title='{$this->lang->words['reply']}'>{$this->lang->words['reply']}</a></li>
+	<li><a class='t_delete' href='{parse url="app=form&amp;module=moderate&amp;do=delete_log&amp;id={$r['log_id']}&amp;secure_key={$this->member->form_hash}" base="public"}' onclick='javascript:return confirm("{$this->lang->words['please_confirm']}");' title='{$this->lang->words['delete']}'>{$this->lang->words['delete']}</a></li>
+</ul>
+
+<script type='text/javascript'>
+	new ipb.Menu( $('log_mod_{$r['log_id']}'), $('log_mod_{$r['log_id']}_menucontent') );
+</script>
+
+</td>
+</if>
+</tr>
+<tr><td colspan='6' id='log_preview_{$r['log_id']}' style='display:none;'></td></tr>
+
+</foreach>
+
+<else />
+<tr>
+<td colspan='6' class='no_messages'>{$this->lang->words['no_logs_display']}</td>
+</tr>
+</if>
+
+</table>
+</div>
+</div>
+</div>
+
+<if test="showModOptions:|:$this->memberData['g_fs_moderate_logs']">
+	<div class='ipsBox ipsPad clear clearfix' id='topic_mod'>
+		<div class='row2 ipsBox_container ipsPad moderation_bar with_action clearfix'>		
+	
+			<input type="hidden" name="st" value="{$this->request['st']}" />
+			<input type="hidden" name="auth_key" value="{$this->member->form_hash}" />
+			
+			<select name="action" id='action'>
+				<option value="delete">{$this->lang->words['delete']}</option>
+			</select>&nbsp;
+			<input type="submit" name="gobutton" value="{$this->lang->words['submit']}" class="input_submit alt" id='mod_submit' />
+	        </div>
+	</div>
+</if>
+
+</form>
+
+<if test="pagesBottom:|:$pages"><div class='topic_controls'>{$pages}</div></if>]]></template_content>
+      <template_name>logsOverview</template_name>
+      <template_data>$logs, $pages</template_data>
+      <template_updated>1343349340</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_form</template_group>
+      <template_content><![CDATA[<h1 class="ipsType_pagetitle">{$form['form_name']}</h1><br />
+<if test="formRules:|:$form['form_rules']">
+<div class='message'>{$form['form_rules']}</div><br />
+</if>
+
+<h2 class='maintitle'>{$this->lang->words['sending']} {$form['form_name']}</h2>
+<form id='postingform' action="{parse url="app=form" base="public"}" method='post' enctype='multipart/form-data'>
+<input type='hidden' name='module' value='post' />
+<input type='hidden' name='section' value='form' />
+<input type='hidden' name='do' value='submit_form' />
+<input type='hidden' name='id' value='{$form['form_id']}' />
+<input type='hidden' name='post_key' value='{$post_key}' />
+
+	<div class='ipsBox'>
+
+		<div class='ipsBox_container'>
+			
+			<div class='ipsForm ipsPad'>
+				<ul class='ipsForm_horizontal ipsPad'>
+					<li class='ipsField clear'>
+						<div class='ipsField_content ipsForm_required ipsType_smaller'>* {$this->lang->words['required_fields_warning']}</div>
+					</li>
+
+<if test="listFormFields:|:is_array( $fields ) AND count( $fields )">
+<foreach loop="fieldRow:$fields as $field">
+
+					<li class='ipsField clear'>
+						<label for='{$field['field_name']}' class='ipsField_title'>{$field['field_title']} <span class='ipsForm_required ipsType_smaller'>*</span></label>
+						<div class='ipsField_content'>{$field['field_data']}</div>
+					</li>
+
+
+</foreach>
+</if> 
+
+<if test="attachment_html:|:$attachmentUpload"><fieldset class='attachments'>{$attachmentUpload}</fieldset></if>
+<if test="captcha_html:|:$captchaHTML">{$captchaHTML}</if>
+
+                          </div>
+
+
+
+                </div>
+
+</div>
+	<p class='submit'>
+		<input type="submit" name="dosubmit" value="{$this->lang->words['submit_form']}" class="input_submit" accesskey="s" />
+	</p>
+</form>]]></template_content>
+      <template_name>formView</template_name>
+      <template_data>$post_key, $form, $fields, $captchaHTML, $attachmentUpload</template_data>
+      <template_updated>1343348071</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_form</template_group>
+      <template_content><![CDATA[<h1 class="ipsType_pagetitle">{$this->lang->words['title']}</h1><br />
+
+<div class='category_block block_wrap clear'>
+
+<div class='ipsBox table_wrap'>
+<div class='ipsBox_container'>
+<table class='ipb_table' summary="{$this->lang->words['title']}">
+<tr class='header hide'>
+<if test="view_log_header:|:$this->memberData['g_fs_view_logs']">
+<th scope='col' class='col_c_icon'>&nbsp;</th>
+</if>
+<th scope='col' class='col_c_forum'>{$this->lang->words['form_name']}</th>
+<if test="view_log_header2:|:$this->memberData['g_fs_view_logs']">
+     <th scope='col' class='col_c_post'>{$this->lang->words['latest_log']}</th>
+</if>
+</tr>
+
+<foreach loop="formRow:$forms as $r">
+<tr class='col_c_forum'>
+<if test="view_log_header1:|:$this->memberData['g_fs_view_logs']">
+	<td class='col_c_icon'>
+		<if test="has_unread:|:$r['_has_unread']">
+		<a href='{parse url="section=extras&amp;do=markread&amp;id={$r['form_id']}" base="publicWithApp"}'><img src='{$this->settings['img_url']}/f_icon.png' /></a>
+		<else />
+		<img src='{$this->settings['img_url']}/f_icon_read.png' />
+		</if>
+	</td>
+</if>
+	<td class='col_c_forum'>
+	<h4><a href='{parse url="do=view_form&amp;id={$r['form_id']}" seotitle="{$r['name_seo']}" template="form_view_form" base="publicWithApp"}' title='{$this->lang->words['view_form']} {$r['form_name']}'>{$r['form_name']}</a></h4>
+	<if test="has_description:|:$r['description']"><p class='desc'>{$r['description']}</p></if>
+</td>		
+
+<if test="view_log_row2:|:$this->memberData['g_fs_view_logs']">
+<td class='col_c_post'>
+<if test="showLastInfo:|:$r['info']['show_last_info']">
+
+{parse template="userSmallPhoto" group="global" params="array('member_id' => $r['info']['member_id'], 'members_seo_name' => $r['info']['members_seo_name'], 'pp_small_photo' => $r['pp_small_photo'], 'alt' => $this->lang->words['last_log_by'].' '.$r['info']['members_display_name'] )"}
+
+<ul class="last_post ipsType_small">
+
+<if test="formInfo:|:is_array( $r['info'] ) AND count( $r['info'] ) AND $r['info']['log_id']">
+
+<li class='desc'>{$this->lang->words['by']}
+<if test="showLastLogAuthor:|:$r['info']['member_id']">{parse template="userHoverCard" group="global" params="$r['info']"}<else />{$r['info']['member_name']}</if>
+</li>
+<li class="desc lighter blend_links">
+{parse date="$r['info']['date']" format="long"}
+</li>
+
+<else />
+<li class='desc lighter'><em>{$this->lang->words['no_logs_display']}</em></li>
+</if>
+
+</ul>
+
+</if>
+</td>
+</if>
+</tr>
+</foreach>
+</table>
+</div>
+</div>
+</div>]]></template_content>
+      <template_name>formListOverview</template_name>
+      <template_data>$forms</template_data>
+      <template_updated>1343347950</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_form</template_group>
+      <template_content><![CDATA[<h1 class="ipsType_pagetitle">{$this->lang->words['form_submitted']}</h1><br />
+<div class='ipsBox table_wrap'>
+<div class='ipsBox_container ipsPad'>
+{$message}
+</div>
+</div>]]></template_content>
+      <template_name>formConfirmPage</template_name>
+      <template_data>$message</template_data>
+      <template_updated>1343347763</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_form</template_group>
+      <template_content><![CDATA[<div class='topic_controls right'>
+<ul class='topic_buttons'>
+
+<if test="view_logs:|:$this->memberData['g_fs_view_logs']">
+	<li><a href='{parse url="app=form&amp;do=view_logs" base="public"}'>{$this->lang->words['view_logs']}</a></li>
+</if>
+<if test="formListButton:|:$this->settings['form_landing_page'] != 'form_required' && is_array($formList) AND count($formList)">
+     <li><a href='#forms' id='forms' class='ipbmenu'>{$this->lang->words['my_forms']} <img src='{$this->settings['img_url']}/opts_arrow.png' alt='{$this->lang->words['dropdown']}' class='arrow' /></a></li>
+</if>
+
+</ul>
+</div>
+
+<if test="formList:|:$this->settings['form_landing_page'] != 'form_required' && is_array($formList) AND count($formList)">
+<ul class="ipbmenu_content" id='forms_menucontent' style='display: none'>
+     <foreach loop="formRow:$formList as $key => $r">
+          <li>
+               <a href='{parse url="do=view_form&amp;id={$r['form_id']}" seotitle="{$r['name_seo']}" template="form_view_form" base="publicWithApp"}'>{$r['form_name']}</a>
+          </li>
+     </foreach>
+</ul>
+</if>]]></template_content>
+      <template_name>topMenu</template_name>
+      <template_data>$formList</template_data>
+      <template_updated>1343348933</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

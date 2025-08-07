@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_no_results</word_key>
+      <word_default>Нет результатов</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_back_to</word_key>
+      <word_default>Вернуться в</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_correct_answer</word_key>
+      <word_default>Правильный ответ</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_nojs</word_key>
+      <word_default>Javascript отключён</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_nojs_msg</word_key>
+      <word_default><![CDATA[<p style='margin:5px;'>К сожалению, в настоящее время Javascript в вашем браузере отключен, или вы используете браузер, который не поддерживает Javascript.</p> <p style='margin:5px;'>While we would like to offer this Timed Quiz in a format which is available to all, due to current limitations this is not possible.</p> <p style='margin:5px;'>In order to take this Timed Quiz, please enable Javascript in your browser.</p> <p style='margin:5px;'>If you feel you are seeing this message in error, please contact the administrator.</p> <p style='margin:5px;'>Thank you.</p>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_timer_timeoutmsg</word_key>
+      <word_default><![CDATA[<p style='margin:4px;'>  
+								<img src='{style_images_url}/quiz/clock.png' style='float:right;display:inline-block;margin:5px;padding:5px;width:60px;' /> 
+							Администратор установил лимит времени на прохождение викторины. К сожалению, вы превысили это ограничение.
+							</p>
+							<p>
+								Все вопросы, на которые вы ответили верно, были отправлены. Все вопросы, на которые вы ответили неправильно, будут отмечены как неправильные.
+							</p>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_timer</word_key>
+      <word_default>Время вышло!</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_timer_timeout</word_key>
+      <word_default>Ваше время истекло!</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_filter_available</word_key>
+      <word_default>Доступные викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_filter_completed</word_key>
+      <word_default>Пройденные викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_filter_mine</word_key>
+      <word_default>Мои викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_filter_all</word_key>
+      <word_default>Все викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_taken</word_key>
+      <word_default>Пройдена</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>notify__short__quiz__member_taken_quiz</word_key>
+      <word_default><![CDATA[%s оччков %s&#37; в викторине: %s]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_active_users_quiz_text</word_key>
+      <word_default>%s пользователей просматривают эту викторину (за последние %s минут)</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>notify__quiz__member_taken_quiz</word_key>
+      <word_default><![CDATA[Сообщать мне когда пользователь принял викторину]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_view_results</word_key>
+      <word_default>Ваши результаты</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_wol_quiz</word_key>
+      <word_default>Просмотр системы викторин</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_wol_viewing_quiz</word_key>
+      <word_default>Просмотр викторины:</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_active_users_cat_text</word_key>
+      <word_default>%s пользователей просматривают эту категорию (за последние %s минут)</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_active_users_text</word_key>
+      <word_default>%s пользователей онлайн (за последние %s минут)</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_sign_up_to_add_quiz</word_key>
+      <word_default>Войдите на форум для прохождения викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_helptxt_yourresults</word_key>
+      <word_default><![CDATA[<b>Внимание:</b> Если вы захотите поделиться своими результатами с другими пользователями, вы так же поделитесь правильными ответами с пользователями, которые ещё не проходили викторину.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_helptxt_publish</word_key>
+      <word_default><![CDATA[Вы почти у цели! Теперь, когда вы добавили вопросы и ответы в викторину, вам нужно опубликовать её, нажав на кнопку <b>Опубликовать викторину</b> сверху.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_helptxt_addquestions</word_key>
+      <word_default><![CDATA[На этой странице вы заполните <b>только<.b> <b><u>Заголовок вопроса</u></b>. На следующем этапе вы сможете добавить ответы к этому вопросу]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_helptxt_managequestions</word_key>
+      <word_default><![CDATA[Для того, чтобы добавить больше вопросов, нажмите на кнопку <a class='ipsButton_secondary'>Добавить вопрос</a> ниже]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_helptxt_managequiz</word_key>
+      <word_default><![CDATA[Для добавления вопроса нажмите на кнопку <a class='ipsButton_secondary'>Менеджер вопросов и ответов</a> ниже]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_helptxt_addquiz</word_key>
+      <word_default><![CDATA[На этой странице вы заполните <b>только</b> <b><u>Название викторины</u></b> и <b><u>описание</u></b> этой викторины. Для добавления вопросов и ответов к ним, нужно сначала пройти через этот шаг]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_helptxt_addanswer</word_key>
+      <word_default><![CDATA[Чтобы отметить ответ как правильный, нажмите на изображение <img src='{style_images_url}/cross.png' /> изображение изменится на <img src='{style_images_url}/tick.png' />]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_no_answers_added_yet</word_key>
+      <word_default>Нет ответов в этом вопросе в этой викторине. Пожалуйста, обратитесь к администратору для получения дополнительной информации.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>skin_quiz</word_key>
+      <word_default>Викторина (Глобальная)</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_help</word_key>
+      <word_default>Быстрая помощь</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_view_full_quiz</word_key>
+      <word_default>Нажмите для прохождения викторины!</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_vote</word_key>
+      <word_default>Ответить</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_welcome</word_key>
+      <word_default>Добро пожаловать в систему викторин!</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_you_answered</word_key>
+      <word_default>Вы ответили</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_you_scored</word_key>
+      <word_default>Вы набрали</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_total_quizzes</word_key>
+      <word_default>Всего викторин</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_username</word_key>
+      <word_default>Пользователь</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_taking_quiz</word_key>
+      <word_default>Играет в викторину: </word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_title</word_key>
+      <word_default>Викторина</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_top_quizzee</word_key>
+      <word_default>Лучшие игроки викторин</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_support_topic</word_key>
+      <word_default>Тема поддержки</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_take_quiz</word_key>
+      <word_default>Пройти викторину</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_submit_n_reload</word_key>
+      <word_default><![CDATA[Отправить и перезагрузить]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_submit_goto_questions</word_key>
+      <word_default>Переход к вопросам</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_submit</word_key>
+      <word_default>Отправить</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_submit_and_manage</word_key>
+      <word_default>Перейти к управлению викториной</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_submit_goto_answers</word_key>
+      <word_default>Приступить к ответу</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_recent_quizzes</word_key>
+      <word_default>Последние викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_results</word_key>
+      <word_default>Результаты</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_return_to_index</word_key>
+      <word_default>Вернуться на главную</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_score</word_key>
+      <word_default>Счёт</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_quiztakers</word_key>
+      <word_default>Пользователи, прошедшие эту викторину</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_question</word_key>
+      <word_default>Вопрос</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_questions</word_key>
+      <word_default>Вопросы</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_questions_in_quiz</word_key>
+      <word_default>Вопросы в этой викторине</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_question_added</word_key>
+      <word_default>Вопрос добавлен</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_question_no_content</word_key>
+      <word_default>Нет вопросов для отображения.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_qna</word_key>
+      <word_default><![CDATA[Вопросы и ответы]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_publish_quiz</word_key>
+      <word_default>Опубликовать викторину</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_publish_warning</word_key>
+      <word_default>В целях предотвращения недействительных результатов, как только викторина опубликовывается, она блокируется для редактирования. Пожалуйста, убедитесь в схожести вопрос и ответов перед публикацией викторины.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_published</word_key>
+      <word_default>Ваша викторина опубликована!</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_permalink</word_key>
+      <word_default>Постоянная ссылка</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_popular_quizzes</word_key>
+      <word_default>Популярные викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_open_for_questions</word_key>
+      <word_default>Викторина доступна для редактирования.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_no_categories_you_cannot</word_key>
+      <word_default>Вы не можете создать викторину без категории, пожалуйста, обратитесь к администратору!</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_no_recent</word_key>
+      <word_default>нет последних викторин</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_no_quizzes</word_key>
+      <word_default>В этой категории нет викторин!</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_no_leaders</word_key>
+      <word_default>Лидеров нет</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_no_questions_addone_</word_key>
+      <word_default>В этой викторине нет вопросов. Если вы являетесь автором викторины, вы должны добавить вопросы, используя форму ниже.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_no_questions_in_quiz</word_key>
+      <word_default>В этой викторине нет вопросов. Для опубликования этой викторины в ней должны быть вопросы и ответы.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_no_questions_add_one</word_key>
+      <word_default>Вы этой викторине нет вопросов.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_no_content</word_key>
+      <word_default>Нечего показывать!</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_no_categories</word_key>
+      <word_default><![CDATA[Категорий нет]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_name</word_key>
+      <word_default>Имя</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_no_answers_take_quiz</word_key>
+      <word_default>Никто ещё не проходил эту викторину.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_manage_answers</word_key>
+      <word_default>Менеджер ответов</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_manage_questions</word_key>
+      <word_default>Менеджер вопросов</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_manage_quiz</word_key>
+      <word_default>Управление викториной</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_manage_q_n_a</word_key>
+      <word_default><![CDATA[Менеджер вопросов и ответов]]></word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_marked_correct</word_key>
+      <word_default>Ответ помечен как правильный</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_errors</word_key>
+      <word_default>Quiz Error: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_info</word_key>
+      <word_default>Информация</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_leaders</word_key>
+      <word_default>Блок лидеров</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_locked_to_editting</word_key>
+      <word_default>Эта викторина была опубликована, теперь пользователи могут пройти викторину. Для предотвращения неправильных ответов - викторина заблокирована для редактирования. Свяжитесь с администратором для разблокировки викторины.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_delete</word_key>
+      <word_default>Удалить</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_description</word_key>
+      <word_default>Описание</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_edit</word_key>
+      <word_default>Изменить</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_date</word_key>
+      <word_default>Дата</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_correct</word_key>
+      <word_default>Правильный?</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_closed_for_questions</word_key>
+      <word_default>Викторина закрыта для редактирования.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_category</word_key>
+      <word_default>Категория</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_category_name</word_key>
+      <word_default>Название категории</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_cannot_view_quiz</word_key>
+      <word_default>У вас нет прав на просмотр системы викторин.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_cannot_take_quizzes</word_key>
+      <word_default>Вы не можете проходить викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_cannot_add_quizzes</word_key>
+      <word_default>У вас нет прав на добавление своих викторин.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_best_quiz</word_key>
+      <word_default>Популярные викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_best_category</word_key>
+      <word_default>Популярные категории</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_bad_empty_description</word_key>
+      <word_default>Введите описание.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_back_to_quiz</word_key>
+      <word_default>Вернуться к викторине: </word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_answers</word_key>
+      <word_default>Ответы</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_answers_submitted</word_key>
+      <word_default>Ответы добавлены.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_answer_deleted</word_key>
+      <word_default>Ответ удалён</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_approve_quiz</word_key>
+      <word_default>Утвердить викторину</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_author</word_key>
+      <word_default>Создатель викторины</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_back_to_questions</word_key>
+      <word_default>Добавить еще вопросы</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_already_taken</word_key>
+      <word_default>Вы уже прошли эту викторину.</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_addform_sideblock</word_key>
+      <word_default>Викторина - Другие параметры</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_add_answer</word_key>
+      <word_default>Добавить ответ</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_add_form_title</word_key>
+      <word_default>Заголовок</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_add_more_questions</word_key>
+      <word_default>Добавить вопросы в </word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_add_question</word_key>
+      <word_default>Добавить вопрос</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_add_quiz</word_key>
+      <word_default>Добавить викторину</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_all_categories</word_key>
+      <word_default>Все категории</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>quiz_added</word_key>
+      <word_default>Викторина добавлена</word_default>
+    </lang>
+    <lang>
+      <word_app>quiz</word_app>
+      <word_pack>public_lang</word_pack>
+      <word_key>bit_skin_quiz</word_key>
+      <word_default>Шаблоны викторины</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

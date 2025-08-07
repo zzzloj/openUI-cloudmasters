@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<versions>
+	<version>
+		<human>1.0.0 Alpha 1</human>
+		<long>10000</long>
+	</version>
+	<version>
+		<human>1.0.0 Alpha 2</human>
+		<long>10001</long>
+	</version>
+	<version>
+		<human>1.0.0 Alpha 3</human>
+		<long>10002</long>
+	</version>
+	<version>
+		<human>1.0.0 Alpha 4</human>
+		<long>10003</long>
+	</version>
+	<version>
+		<human>1.0.0 Alpha 5</human>
+		<long>10004</long>
+	</version>
+	<version>
+		<human>1.0.0 Alpha 6</human>
+		<long>10005</long>
+	</version>
+	<version>
+		<human>1.0.0 Alpha 7</human>
+		<long>10006</long>
+	</version>
+	<version>
+		<human>1.0.0 Alpha 8</human>
+		<long>10007</long>
+	</version>
+	<version>
+		<human>1.0.0 Beta 1</human>
+		<long>10008</long>
+	</version>
+	<version>
+		<human>1.0.0</human>
+		<long>10009</long>
+	</version>
+	<version>
+		<human>1.0.1</human>
+		<long>10010</long>
+	</version>
+	<version>
+		<human>1.0.2</human>
+		<long>10011</long>
+	</version>
+	<version>
+		<human>1.0.3a</human>
+		<long>10012</long>
+	</version>
+	<version>
+		<human>1.0.3</human>
+		<long>10013</long>
+	</version>
+	<version>
+		<human>1.1.0</human>
+		<long>11000</long>
+	</version>
+</versions>

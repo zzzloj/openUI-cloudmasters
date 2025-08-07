@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Album Manager</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Album Manager</subitemtitle>
+					<subitemlang>gallery_album_manager</subitemlang>
+					<subsection>manage</subsection>
+					<subitemurl>do=overview</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Album Defaults</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Album Defaults</subitemtitle>
+					<subitemlang>gallery_album_defautls</subitemlang>
+					<subsection>manage</subsection>
+					<subitemurl>do=defaults</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Add New Album</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Add New Album</subitemtitle>
+					<subitemlang>gallery_add_album</subitemlang>
+					<subsection>manage</subsection>
+					<subitemurl>do=add</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

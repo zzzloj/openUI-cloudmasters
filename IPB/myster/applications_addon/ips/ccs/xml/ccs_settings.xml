@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>ccs_advanced</conf_title_keyword>
+      <conf_title_title>IP.Content Advanced Settings</conf_title_title>
+      <conf_title_desc>Advanced settings for IP.Content</conf_title_desc>
+      <conf_title_tab>IPS Apps</conf_title_tab>
+      <conf_title_app>ccs</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>URL to index.php</conf_title>
+      <conf_description><![CDATA[Specify the URL to the index.php file you are using (do not include "index.php" in the value).  One URL per line.]]></conf_description>
+      <conf_type>textarea</conf_type>
+      <conf_key>ccs_root_url</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ccs_advanced</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Gateway filename</conf_title>
+      <conf_description>If you rename index.php to something else, change the filename here.  Be aware that this may require some server environment changes to utilize, depending on the filename you choose.</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>ccs_root_filename</conf_key>
+      <conf_default>index.php</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ccs_advanced</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Use .htaccess mod_rewrite</conf_title>
+      <conf_description><![CDATA[If yes, click the "Download .htaccess file" at the top of the screen to download the .htaccess file you will need to upload to the folder with index.php.]]></conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ccs_mod_rewrite</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ccs_advanced</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>ccs_articles</conf_title_keyword>
+      <conf_title_title>IP.Content Articles</conf_title_title>
+      <conf_title_desc>Settings for the articles section</conf_title_desc>
+      <conf_title_tab>IPS Apps</conf_title_tab>
+      <conf_title_app>ccs</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Enable &quot;Promote to Article&quot;]]></conf_title>
+      <conf_description><![CDATA[Do you wish to enable the "Promote to Article" button in the forums?]]></conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ccs_promote</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Promote to Article</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ccs_articles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Can copy post to article</conf_title>
+      <conf_description>Select the groups that can copy a post to an article</conf_description>
+      <conf_type>multi</conf_type>
+      <conf_key>ccs_promote_g_copy</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['ccs_promote_g_copy']) )
+	{
+		$_POST['ccs_promote_g_copy'] = implode(",",$_POST['ccs_promote_g_copy']);
+	}
+	else
+	{
+		$_POST['ccs_promote_g_copy'] = "";
+	}
+	
+	$key = 'ccs_promote_g_copy';
+}
+if ( $show == 1 )
+{
+    $key='ccs_promote_g_copy[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ccs_articles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Can move post to article</conf_title>
+      <conf_description><![CDATA[Select the groups that can move a post to an article.  <strong>This will effectively delete the post from the forums.</strong>]]></conf_description>
+      <conf_type>multi</conf_type>
+      <conf_key>ccs_promote_g_move</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['ccs_promote_g_move']) )
+	{
+		$_POST['ccs_promote_g_move'] = implode(",",$_POST['ccs_promote_g_move']);
+	}
+	else
+	{
+		$_POST['ccs_promote_g_move'] = "";
+	}
+	
+	$key = 'ccs_promote_g_move';
+}
+if ( $show == 1 )
+{
+    $key='ccs_promote_g_move[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ccs_articles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow promoter to associate article</conf_title>
+      <conf_description><![CDATA[This setting controls whether a post promoted to an article can use the original topic for the article's comments.]]></conf_description>
+      <conf_type>dropdown</conf_type>
+      <conf_key>ccs_promote_associate</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra>0=Do not associate&#13;
+1=Allow promoter to choose&#13;
+2=Automatically associate</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>comments,topics,associate,link</conf_keywords>
+      <conf_title_keyword>ccs_articles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Leave link to article</conf_title>
+      <conf_description>When a post is copied, a link to the article will be added to the beginning of the post.  When a post is moved, the post will be replaced with a link to the article.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ccs_promote_link</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ccs_articles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Allow promoter to override</conf_title>
+      <conf_description>If you elect to leave a link to the article, enabling this will allow the user promoting a post to elect not to leave a link</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ccs_promote_nolink</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ccs_articles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>ccs</conf_title_keyword>
+      <conf_title_title>IP.Content Settings</conf_title_title>
+      <conf_title_desc>Settings for the IP.Content System</conf_title_desc>
+      <conf_title_tab>IPS Apps</conf_title_tab>
+      <conf_title_app>ccs</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>System online</conf_title>
+      <conf_description>Should the pages be publicly accessible?</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ccs_online</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>System Online</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ccs, online, offline</conf_keywords>
+      <conf_title_keyword>ccs</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Offline message</conf_title>
+      <conf_description>Enter a message to show users when the system is offline.</conf_description>
+      <conf_type>editor</conf_type>
+      <conf_key>ccs_offline_message</conf_key>
+      <conf_default>We apologize for the downtime, but the system will be back online as soon as possible!</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>offline, message, ccs</conf_keywords>
+      <conf_title_keyword>ccs</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Offline access</conf_title>
+      <conf_description>Select which groups can access pages (where permitted) when the system is offline.</conf_description>
+      <conf_type>multi</conf_type>
+      <conf_key>ccs_offline_groups</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['ccs_offline_groups']) )
+	{
+		$_POST['ccs_offline_groups'] = implode(",",$_POST['ccs_offline_groups']);
+	}
+	else
+	{
+		$_POST['ccs_offline_groups'] = "";
+	}
+	
+	$key = 'ccs_offline_groups';
+}
+if ( $show == 1 )
+{
+    $key='ccs_offline_groups[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>offline, groups, access</conf_keywords>
+      <conf_title_keyword>ccs</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Default setting for &#39;Use IPB skin wrapper&#39;]]></conf_title>
+      <conf_description>You can control per-page if you want to use the IPB wrapper.  This setting specifies the default to use during the page add and edit process.</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ccs_use_ipb_wrapper</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group>Display Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ccs</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Show &#39;Pages&#39; navigation bar entry]]></conf_title>
+      <conf_description><![CDATA[When using IPB wrapper, do you wish to show the generic 'Pages' navigation bar link?]]></conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ccs_pages_navbar</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ccs</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Default home page</conf_title>
+      <conf_description>If no page is specified, which page should we try to load as the default?</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>ccs_default_page</conf_key>
+      <conf_default>index.html</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group>Default Pages</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>index, default, home</conf_keywords>
+      <conf_title_keyword>ccs</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Default 404 error page</conf_title>
+      <conf_description>What page should we show if we cannot find the requested page?</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>ccs_default_errorpage</conf_key>
+      <conf_default>404.html</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ccs</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Default error page</conf_title>
+      <conf_description>If left blank, standard IP.Board error page displayed</conf_description>
+      <conf_type>input</conf_type>
+      <conf_key>ccs_default_error</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ccs</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Template editing</conf_title>
+      <conf_description><![CDATA[Select the type of editor to use for template editing.  TinyMCE and CKEditor are WYSIWYG editors, while EditArea is a source-code editor.  Note that WYSIWYG editors <strong>do not</strong> work well for editing code.]]></conf_description>
+      <conf_type>dropdown</conf_type>
+      <conf_key>ccs_template_type</conf_key>
+      <conf_default>none</conf_default>
+      <conf_extra>none=None (Raw Textarea)&#13;
+tinymce=TinyMCE&#13;
+ckeditor=CKEditor&#13;
+editarea=EditArea</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group>Record Management</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>wysiwyg,editor,templates,templating,template</conf_keywords>
+      <conf_title_keyword>ccs</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Search default</conf_title>
+      <conf_description>What area do you want to search by default when using the global IP.Board search feature?</conf_description>
+      <conf_type>dropdown</conf_type>
+      <conf_key>ccs_default_search</conf_key>
+      <conf_default>pages</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( $show == 1 )
+{
+	$r['conf_extra']	= "pages=Pages";
+	
+	$this->DB->build( array( 'select' => 'd.database_id,d.database_name,d.database_forum_comments', 'from' => array( 'ccs_databases' => 'd' ), 'where' => 'd.database_search=1',
+		'add_join' => array( array( 'select' => 'i.perm_5', 'from' => array( 'permission_index' => 'i' ), 'where' => "app='ccs' AND perm_type='databases' AND perm_type_id=d.database_id", 'type' => 'left' ) ) ) );
+	$this->DB->execute();
+	
+	while( $get = $this->DB->fetch() )
+	{
+		$r['conf_extra']	.= "&#092;ndatabase_{$get['database_id']}={$get['database_name']}";
+		
+		if( trim( $get['perm_5'], ' ,' ) AND !$get['database_forum_comments'] )
+		{
+			$r['conf_extra']	.= "&#092;ndatabase_{$get['database_id']}_comments={$get['database_name']} Comments";
+		}
+	}
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group>Search Configuration</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ccs</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

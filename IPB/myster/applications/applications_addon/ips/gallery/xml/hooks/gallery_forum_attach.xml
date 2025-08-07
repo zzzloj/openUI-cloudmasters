@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name>Gallery: Show albums in board index</hook_name>
+      <hook_desc>Shows albums on the board index under forums</hook_desc>
+      <hook_author>Invision Power Services, Inc</hook_author>
+      <hook_email/>
+      <hook_website/>
+      <hook_update_check/>
+      <hook_requirements><![CDATA[a:3:{s:21:"required_applications";a:0:{}s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+      <hook_version_human>1.0.0</hook_version_human>
+      <hook_version_long>10000</hook_version_long>
+      <hook_extra_data><![CDATA[a:2:{s:7:"display";N;s:8:"database";a:0:{}}]]></hook_extra_data>
+      <hook_key>gallery_attach_forums</hook_key>
+      <hook_global_caches/>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>gallery_attach_forums.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>gallery_attach_forums</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_boards";s:12:"skinFunction";s:18:"boardIndexTemplate";s:4:"type";s:7:"foreach";s:2:"id";s:6:"forums";s:8:"position";s:10:"inner.post";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class gallery_attach_forums
+{
+	/**
+	 * Registry Object
+	 *
+	 * @var		object
+	 */
+	protected $registry;
+	
+	/**
+	 * Constructor
+	 *
+	 * @return	@e void
+	 */
+	public function __construct()
+	{
+		//-----------------------------------------
+		// Make shortcuts
+		//-----------------------------------------
+
+		$this->registry	= ipsRegistry::instance();
+	}
+
+	/**
+	 * Get the output to use at this hook location.  Empty since we're utilizing replaceOutput() instead.
+	 *
+	 * @return	@e void
+	 */
+	public function getOutput() { }
+
+	/**
+	 * Replace output
+	 *
+	 * @param	string		Output
+	 * @param	string		Hook key
+	 * @return	@e string
+	 */
+	public function replaceOutput( $output, $key )
+	{
+		//-----------------------------------------
+		// Get our cache and make sure we have something
+		//-----------------------------------------
+
+		$cache	= $this->registry->cache()->getCache('gallery_fattach');
+		
+		if ( ! count( $cache ) )
+		{
+			return $output;
+		}
+		
+		//-----------------------------------------
+		// Grab our gallery libraries
+		//-----------------------------------------
+
+		if ( !ipsRegistry::isClassLoaded('gallery') )
+		{
+			$classToLoad = IPSLib::loadLibrary( IPSLib::getAppDir('gallery') . '/sources/classes/gallery.php', 'ipsGallery', 'gallery' );
+			$this->registry->setClass( 'gallery', new $classToLoad( $this->registry ) );
+		}
+		
+		//-----------------------------------------
+		// And our language file
+		//-----------------------------------------
+
+		$this->registry->class_localization->loadLanguageFile( array( 'public_gallery' ), 'gallery' );
+
+		//-----------------------------------------
+		// Need to get some category data?
+		//-----------------------------------------
+
+		$_categories	= array();
+		$_members		= array();
+		$_images		= array();
+
+		foreach( $cache as $id => $data )
+		{
+			foreach( $data as $type => $containerIds )
+			{
+				if( $type == 'categories' )
+				{
+					foreach( $containerIds as $containerId )
+					{
+						$_categories[ $containerId ]	= $this->registry->gallery->helper('categories')->fetchCategory( $containerId );
+
+						$_categories[ $containerId ]['thumb']			= $this->registry->gallery->helper('image')->makeImageLink( array(), array( 'type' => 'thumb', 'coverImg' => true ) );
+						$_categories[ $containerId ]['_coverImage']		= $_categories[ $containerId ]['category_cover_img_id'] ? $_categories[ $containerId ]['category_cover_img_id'] : $_categories[ $containerId ]['category_last_img_id'];
+						$_categories[ $containerId ]['_latestImage']	= $_categories[ $containerId ]['category_last_img_id'];
+
+						//-----------------------------------------
+						// Store image IDs
+						//-----------------------------------------
+
+						$_images[ $_categories[ $containerId ]['_coverImage'] ]		= $_categories[ $containerId ]['_coverImage'];
+						$_images[ $_categories[ $containerId ]['_latestImage'] ]	= $_categories[ $containerId ]['_latestImage'];
+					}
+				}
+			}
+		}
+
+		//-----------------------------------------
+		// Load up category images
+		//-----------------------------------------
+
+		if( count($_images) )
+		{
+			$_categoryImages	= $this->registry->gallery->helper('image')->fetchImages( $this->memberData['member_id'], array( 'imageIds' => $_images, 'parseImageOwner' => true ) );
+
+			if( count($_categoryImages) )
+			{
+				foreach( $_categories as $_k => $_categoryRow )
+				{
+					$_categories[ $_k ]['_coverImage']	= $_categoryRow['_coverImage'] ? $_categoryImages[ $_categoryRow['_coverImage'] ] : array();
+					$_categories[ $_k ]['_latestImage']	= $_categoryRow['_latestImage'] ? $_categoryImages[ $_categoryRow['_latestImage'] ] : array();
+
+					$_categories[ $_k ]['thumb']		= $this->registry->gallery->helper('image')->makeImageLink( $_categories[ $_k ]['_coverImage'], array( 'type' => 'thumb', 'coverImg' => true, 'link-container-type' => 'category' ) );
+					$_categories[ $_k ]['_latestThumb']	= $this->registry->gallery->helper('image')->makeImageLink( $_categories[ $_k ]['_latestImage'], array( 'type' => 'thumb', 'link-type' => 'page' ) );
+				}
+			}
+		}
+
+		//-----------------------------------------
+		// Loop over the forums
+		//-----------------------------------------
+
+		if( is_array($this->registry->output->getTemplate('boards')->functionData['boardIndexTemplate'][0]['cat_data']) AND count($this->registry->output->getTemplate('boards')->functionData['boardIndexTemplate'][0]['cat_data']) )
+		{
+			$tag	= '<!--hook.' . $key . '-->';
+			$last	= 0;
+		
+			foreach( $this->registry->output->getTemplate('boards')->functionData['boardIndexTemplate'][0]['cat_data'] as $cid => $cdata )
+			{
+				foreach( $cdata['forum_data'] as $id => $data )
+				{
+					$pos	= strpos( $output, $tag, $last );
+					
+					if ( $pos )
+					{
+						$string = '';
+
+						//-----------------------------------------
+						// Does this forum have something attached?
+						//-----------------------------------------
+
+						if ( isset( $cache[ $id ] ) )
+						{
+							//-----------------------------------------
+							// Show albums
+							//-----------------------------------------
+
+							if( is_array($cache[ $id ]['albums']) AND count($cache[ $id ]['albums']) )
+							{
+								foreach( $cache[ $id ]['albums'] as $album_id )
+								{
+									$album		= $this->registry->gallery->helper('albums')->fetchAlbumsByFilters( array( 'album_id' => $album_id, 'parseAlbumOwner' => true ) );
+									$album		= array_pop( $album );
+									
+									if ( $album['album_id'] && $this->registry->gallery->helper('albums')->isViewable( $album ) )
+									{
+										$string	.= $this->registry->output->getTemplate('gallery_external')->boardIndexEntry( $album, 'album' );
+									}
+								}
+							}
+
+							//-----------------------------------------
+							// Show categories
+							//-----------------------------------------
+
+							if( is_array($cache[ $id ]['categories']) AND count($cache[ $id ]['categories']) )
+							{
+								foreach( $cache[ $id ]['categories'] as $category_id )
+								{
+									$category	= $_categories[ $category_id ];
+									
+									if ( $category['category_id'] && $this->registry->gallery->helper('categories')->isViewable( $category['category_id'] ) )
+									{
+										$category['_totalImages']		= intval( $category['category_count_imgs'] );
+										$category['_totalComments']		= intval( $category['category_count_comments'] );
+										
+										if ( $this->registry->gallery->helper('categories')->checkIsModerator( $category['category_id'] ) )
+										{
+											$category['_totalImages']		+= intval( $category['category_count_imgs_hidden'] );
+											$category['_totalComments']		+= intval( $category['category_count_comments_hidden'] );
+										}
+
+										if ( $category['_latestImage'] )
+										{
+											$category	= array_merge( $category['_latestImage'], $category );
+										}
+										
+										$string	.= $this->registry->output->getTemplate('gallery_external')->boardIndexEntry( $category, 'category' );
+									}
+								}
+							}
+							
+							$output	= substr_replace( $output, $string . $tag, $pos, strlen( $tag ) ); 
+						}
+						
+						$last	= $pos + strlen( $tag . $string );
+					}
+				}
+			}
+		}
+
+		//-----------------------------------------
+		// Finally, return the HTML
+		//-----------------------------------------
+
+		return $output;
+	}
+}]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings/>
+  <hookextras_language/>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates/>
+  <hookextras_css/>
+  <hookextras_replacements/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

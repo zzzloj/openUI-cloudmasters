@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>e_CSB</conf_title_keyword>
+      <conf_title_title>Пользовательские блоки</conf_title_title>
+      <conf_title_desc>Здесь содержатся настройки для приложения.</conf_title_desc>
+      <conf_title_tab>Forums</conf_title_tab>
+      <conf_title_app>customSidebarBlocks</conf_title_app>
+      <conf_title_noshow>1</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Включить систему</conf_title>
+      <conf_description>On/Off</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>e_CSB_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Общие конфигурации</conf_start_group>
+      <conf_end_group>1</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>Custom Sidebar Blocks</conf_keywords>
+      <conf_title_keyword>e_CSB</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Показать на портале?</conf_title>
+      <conf_description>Yes/No?</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>e_CSB_on_portal</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group>Портал</conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>Custom Sidebar Blocks</conf_keywords>
+      <conf_title_keyword>e_CSB</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	    <setting>
+      <conf_title>Размещение</conf_title>
+      <conf_description>Поместите пользовательские блоки ВЫШЕ блоков портала</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>e_CSB_portal_top</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group></conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>Custom Sidebar Blocks</conf_keywords>
+      <conf_title_keyword>e_CSB</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+	    <setting>
+      <conf_title>Размещение</conf_title>
+      <conf_description>Поместить пользовательские блоки ВЫШЕ блоков портала по умолчанию? (Выбор не будет размещать их ниже всех, кроме активных пользователей)</conf_description>
+      <conf_type>yes_no</conf_type>
+      <conf_key>e_CSB_portal_top</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group></conf_start_group>
+      <conf_end_group>0</conf_end_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>Custom Sidebar Blocks</conf_keywords>
+      <conf_title_keyword>e_CSB</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

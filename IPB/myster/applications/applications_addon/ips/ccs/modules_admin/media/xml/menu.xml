@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Media</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Media</subitemtitle>
+					<subitemlang>ccs_media</subitemlang>
+					<subsection>list</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

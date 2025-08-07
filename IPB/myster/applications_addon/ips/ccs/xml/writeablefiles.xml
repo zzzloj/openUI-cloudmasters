@@ -1,0 +1,10 @@
+<installdata>
+	<file>
+		<path>uploads/content_templates</path>
+		<dir>1</dir>
+	</file>
+	<file>
+		<path>public/ipc_blocks</path>
+		<dir>1</dir>
+	</file>
+</installdata>

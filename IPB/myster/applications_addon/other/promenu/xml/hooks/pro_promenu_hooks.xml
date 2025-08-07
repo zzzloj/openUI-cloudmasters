@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name>Promenu: Template Hooks</hook_name>
+      <hook_desc>hooks for promenu</hook_desc>
+      <hook_author>Michael S. Edwards</hook_author>
+      <hook_email>admin@codingjungle.com</hook_email>
+      <hook_website>codingjungle.com</hook_website>
+      <hook_update_check/>
+      <hook_requirements><![CDATA[a:3:{s:21:"required_applications";a:0:{}s:20:"hook_php_version_min";s:0:"";s:20:"hook_php_version_max";s:0:"";}]]></hook_requirements>
+      <hook_version_human>3.2.1</hook_version_human>
+      <hook_version_long>30201</hook_version_long>
+      <hook_extra_data><![CDATA[a:2:{s:7:"display";N;s:8:"database";a:0:{}}]]></hook_extra_data>
+      <hook_key>pro_promenu_hooks</hook_key>
+      <hook_global_caches>promenu_groups,promenu_menus</hook_global_caches>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>promenuFooter.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>promenuFooter</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_global";s:12:"skinFunction";s:14:"globalTemplate";s:4:"type";s:2:"if";s:2:"id";s:11:"hasFooterAd";s:8:"position";s:10:"post.endif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class promenuFooter {
+
+	public $registry;
+	
+	public function __construct() {
+		$this -> registry = ipsRegistry::instance();
+	}
+
+	public function getOutput() {
+		if( IPSLib::appIsInstalled('promenu') ){
+			if (!$this->registry->isClassLoaded('app_class_promenu')) {
+				$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/app_class_promenu.php', 'app_class_promenu', 'promenu');
+				$this -> registry -> setClass('app_class_promenu', new $classToLoad($this -> registry));
+			}
+			$cache 	= $this->registry->profunctions->GetCaches('footer');
+			if(!$cache['groups']['promenu_groups_make_super'])
+			{
+				$cache['menus'] 	= $this->registry->profunctions->ParseMenus( $cache['menus'], 0, $cache['groups']);
+			}			
+			if( count($cache['menus']) && is_array($cache['menus']) && $cache['groups']['promenu_groups_enabled'] && !in_array($this->registry->output->skin['set_id'],explode(",",$cache['groups']['promenu_groups_hide_skin'] ) ) && !$cache['groups']['promenu_groups_make_super'] ){
+				
+				$output .= <<<EOF
+				<div id="footer_menu" class="clear">
+					<div class="main_widths">
+EOF;
+				$output .= $this->registry->promenuHooks->menus( array( 'cache' => $cache, 'template' => 'proOther', 'ulID' => 'footer_menu', 'jsMenuEnabled' => FALSE) );
+				$output .= <<<EOF
+					</div>
+				</div>
+EOF;
+				return $output;
+			}			
+		}
+	}
+}]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>promenuSuper.php</hook_file_real>
+      <hook_type>skinHooks</hook_type>
+      <hook_classname>promenuSuper</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:11:"skin_global";s:9:"skinGroup";N;s:12:"skinFunction";N;s:4:"type";N;s:2:"id";N;s:8:"position";N;}]]></hook_data>
+      <hooks_source><![CDATA[class promenuSuper extends (~extends~)
+{
+	public function globalTemplate( $html, $documentHeadItems, $css, $jsModules, $metaTags, array $header_items, $items=array(), $footer_items=array(), $stats=array() )
+	{
+		if( !IPSLib::appIsInstalled('promenu') ){
+			return parent::globalTemplate( $html, $documentHeadItems, $css, $jsModules, $metaTags, $header_items, $items, $footer_items, $stats );
+		}
+		else{
+			if (!$this->registry->isClassLoaded('app_class_promenu')) {
+				$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/app_class_promenu.php', 'app_class_promenu', 'promenu');
+				$this -> registry -> setClass('app_class_promenu', new $classToLoad($this -> registry));
+			}
+			
+			$output = parent::globalTemplate( $html, $documentHeadItems, $css, $jsModules, $metaTags, $header_items, $items, $footer_items, $stats );
+			
+			if($this->registry->profunctions->proPlus === true){
+				$cache 	= $this->registry->proPlus->getSuper();
+				
+				$cache['menus'] 	= $this->registry->profunctions->ParseMenus( $cache['menus'], 0, $cache['groups']);			
+				
+				if( count($cache['menus']) && is_array($cache['menus']) && $cache['groups']['promenu_groups_enabled'] && !in_array($this->registry->output->skin['set_id'],explode(",",$cache['groups']['promenu_groups_hide_skin'] ) ) ){
+				
+				if($cache['groups']['promenu_groups_template'] === "proMain")
+				{
+					$name = "proMain_menu";
+					$name2 = "proMain_app_menu";
+				}
+				else{
+					$name = "proOther_menu";
+				}
+				
+				$outputs .= <<<EOF
+					<div id="{$name}">
+						<div class="main_widths">
+EOF;
+				$isJS = false;
+				$template = "proOther";
+				if($cache['groups']['promenu_groups_template'] === 'proMain')
+				{
+					$template = "proMain";
+					$isJS = true;
+					$outputs .=<<<EOF
+						<ul class="ipsList_inline" id="{$name2}">
+EOF;
+				}
+					$outputs .= $this->registry->promenuHooks->menus( array( 'cache' => $cache, 'template' => $template, 'ulID' => $name2, 'jsMenuEnabled' => $isJS) );
+				
+				if($cache['groups']['promenu_groups_template'] === 'proMain')
+				{
+					$outputs .=<<<EOF
+						</ul>
+EOF;
+				}				
+					$outputs .= <<<EOF
+						</div>
+					</div>
+					<div id="superMegaClickParent">
+						<div id="superMegaClick"><a href="#" id="superClickMega">{$this->lang->words['promenu_public_super_mega']}</a></div>
+					</div>
+					<div id='ipbwrapper'>
+EOF;
+
+					$output = str_replace("<div id='ipbwrapper'>",$outputs,$output);
+				}
+				
+			}
+			
+			return $output;			
+		}
+	}	
+}]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>promenuPrimary.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>promenuPrimary</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_global";s:12:"skinFunction";s:14:"globalTemplate";s:4:"type";s:2:"if";s:2:"id";s:11:"showhomeurl";s:8:"position";s:10:"post.endif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class promenuPrimary {
+	
+	public $registry;
+	
+	public function __construct() {
+		$this -> registry = ipsRegistry::instance();
+	}
+
+	public function getOutput() {
+		if( IPSLib::appIsInstalled('promenu') ){
+			if (!$this->registry->isClassLoaded('app_class_promenu')) {
+				$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/app_class_promenu.php', 'app_class_promenu', 'promenu');
+				$this -> registry -> setClass('app_class_promenu', new $classToLoad($this -> registry));
+			}
+			$cache 	= $this->registry->profunctions->GetCaches('primary');
+			if(!$cache['groups']['promenu_groups_make_super'])
+			{
+				$cache['menus'] 	= $this->registry->profunctions->ParseMenus( $cache['menus'], 0, $cache['groups']);
+			}
+			if( count($cache['menus']) && is_array($cache['menus']) && $cache['groups']['promenu_groups_enabled'] && !in_array($this->registry->output->skin['set_id'],explode(",",$cache['groups']['promenu_groups_hide_skin'] ) ) && !$cache['groups']['promenu_groups_make_super'] ){
+				if(!intval($this->registry->profunctions->CanItouch())){
+					$data = $this->registry->promenuHooks->menus( array( 'cache' => $cache, 'template' => 'proMain', 'ulID' => 'community_app_menu', 'jsMenuEnabled' => TRUE) );
+					return $data['html'];
+				}
+			}
+		}
+	}
+}]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>promenuJquery.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>promenuJquery</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_global";s:12:"skinFunction";s:14:"globalTemplate";s:4:"type";s:2:"if";s:2:"id";s:12:"isLargeTouch";s:8:"position";s:11:"pre.startif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class promenuJquery {
+	
+	public $registry;
+	
+	public function __construct() {
+		$this -> registry = ipsRegistry::instance();
+	}
+
+	public function getOutput() {
+		if( IPSLib::appIsInstalled('promenu') ){
+			if (!$this->registry->isClassLoaded('app_class_promenu')) {
+				$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/app_class_promenu.php', 'app_class_promenu', 'promenu');
+				$this -> registry -> setClass('app_class_promenu', new $classToLoad($this -> registry));
+			}
+			return $this->registry->promenuHooks->Jquery_load();
+		}
+	}
+}]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>promenuMobile.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>promenuMobile</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_global";s:12:"skinFunction";s:14:"globalTemplate";s:4:"type";s:2:"if";s:2:"id";s:11:"brandingBar";s:8:"position";s:10:"post.endif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class promenuMobile {
+
+	protected $registry;
+	protected $cache;
+	protected $caches;
+
+	public function __construct() {
+		$this->registry = ipsRegistry::instance();
+		$this->cache = $this->registry->cache();
+		$this->caches = & $this->registry->cache()->fetchCaches();
+	}
+
+	public function getOutput() {
+		
+		if (IPSLib::appIsInstalled('promenu')) {
+			if (!$this->registry->isClassLoaded('app_class_promenu')) {
+				$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/app_class_promenu.php', 'app_class_promenu', 'promenu');
+				$this->registry->setClass('app_class_promenu', new $classToLoad($this->registry));
+			}
+			
+			$cache = $this->registry->profunctions->GetCaches('mobile');
+			
+			$cache['menus'] = $this->registry->profunctions->ParseMenus($cache['menus'], 0, $cache['groups']);
+//$this->caches['skinsets'][$this->registry->output->skin['set_id']]['set_key'] = "mobile";
+			if (count($cache['menus']) && is_array($cache['menus']) && $cache['groups']['promenu_groups_enabled'] && $this->caches['skinsets'][$this->registry->output->skin['set_id']]['set_key'] === "mobile") {
+				$output .= $this->registry->output->getTemplate('promenu_plus')->proJS();
+
+				$output .= $this->registry->promenuHooks->buildHookData($cache['menus'],$cache['groups']);
+
+				return $output;
+			}
+		}
+	}
+
+}]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>promenuSite.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>promenuSite</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_global";s:12:"skinFunction";s:14:"globalTemplate";s:4:"type";s:2:"if";s:2:"id";s:21:"includeLightboxDoReal";s:8:"position";s:10:"post.endif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class promenuSite {
+
+	public $registry;
+	
+	public function __construct() {
+		$this -> registry = ipsRegistry::instance();
+	}
+
+	public function getOutput() {
+		if( IPSLib::appIsInstalled('promenu') ){
+			if (!$this->registry->isClassLoaded('app_class_promenu')) {
+				$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/app_class_promenu.php', 'app_class_promenu', 'promenu');
+				$this -> registry -> setClass('app_class_promenu', new $classToLoad($this -> registry));
+			}
+			$cache 	= $this->registry->profunctions->GetCaches('site');
+			if(!$cache['groups']['promenu_groups_make_super'])
+			{
+				$cache['menus'] 	= $this->registry->profunctions->ParseMenus( $cache['menus'], 0, $cache['groups']);
+			}
+			if( count($cache['menus']) && is_array($cache['menus']) && $cache['groups']['promenu_groups_enabled'] && !in_array($this->registry->output->skin['set_id'],explode(",",$cache['groups']['promenu_groups_hide_skin'] ) ) && !$cache['groups']['promenu_groups_make_super']){
+				
+				$output .= <<<EOF
+				<div class="site_line"></div>
+				<div id="site_menu">
+					<div class="main_widths">
+EOF;
+				$output .= $this->registry->promenuHooks->menus( array( 'cache' => $cache, 'template' => 'proOther', 'ulID' => 'site_menu', 'jsMenuEnabled' => FALSE) );
+			
+				$output .= <<<EOF
+					</div>
+				</div>
+				<script>
+					h = projQ("#site_menu").outerHeight();
+					if(projQ("#site_menu").css("position") == "fixed")
+					{
+						projQ(".site_line").css("height",h+"px");
+					}
+				</script>
+EOF;
+				return $output;
+			}			
+		}
+	}
+}]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>promenuHeader.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>promenuHeader</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_global";s:12:"skinFunction";s:14:"globalTemplate";s:4:"type";s:2:"if";s:2:"id";s:21:"includeLightboxDoReal";s:8:"position";s:10:"post.endif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class promenuHeader {
+	
+	public $registry;
+	
+	public function __construct() {
+		$this -> registry = ipsRegistry::instance();
+	}
+
+	public function getOutput() {
+		if( IPSLib::appIsInstalled('promenu') ){
+			if (!$this->registry->isClassLoaded('app_class_promenu')) {
+				$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/app_class_promenu.php', 'app_class_promenu', 'promenu');
+				$this -> registry -> setClass('app_class_promenu', new $classToLoad($this -> registry));
+			}
+			$cache 	= $this->registry->profunctions->GetCaches('header');
+			if(!$cache['groups']['promenu_groups_make_super'])
+			{
+				$cache['menus'] 	= $this->registry->profunctions->ParseMenus( $cache['menus'], 0, $cache['groups']);
+			}			
+			if( count($cache['menus']) && is_array($cache['menus']) && $cache['groups']['promenu_groups_enabled'] && !in_array($this->registry->output->skin['set_id'],explode(",",$cache['groups']['promenu_groups_hide_skin'] ) ) && !$cache['groups']['promenu_groups_make_super']){
+				$data = $this->registry->promenuHooks->menus( array( 'cache' => $cache, 'template' => 'proMain', 'ulID' => 'header_app_menu', 'jsMenuEnabled' => TRUE) );
+				$html .= <<<EOF
+				<div id="header_menu">
+					<div class="main_width">
+EOF;
+				if($cache['groups']['promenu_groups_is_vertical'])
+				{
+					$html .=<<<EOF
+						<ul class="ipsList_vertical" id="header_app_menu">
+EOF;
+				}
+				else{
+					$html .=<<<EOF
+						<ul class="ipsList_inline" id="header_app_menu">
+EOF;
+				}
+				$html .= $data['html'];
+				
+				$html .= <<<EOF
+						</ul>
+					</div>
+				</div>
+				{$data['rhtml']}
+EOF;
+				return $html;
+			}
+		}
+	}
+}]]></hooks_source>
+    </file>
+    <file>
+      <hook_file_real>promenuResponsivePrimary.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>promenuResponsivePrimary</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:11:"skin_global";s:12:"skinFunction";s:14:"globalTemplate";s:4:"type";s:2:"if";s:2:"id";s:21:"includeLightboxDoReal";s:8:"position";s:10:"post.endif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class promenuResponsivePrimary {
+	
+	public $registry;
+	
+	public function __construct() {
+		$this -> registry = ipsRegistry::instance();
+	}
+
+	public function getOutput() {
+		if( IPSLib::appIsInstalled('promenu') ){
+			if (!$this->registry->isClassLoaded('app_class_promenu')) {
+				$classToLoad = IPSLib::loadLibrary(IPSLib::getAppDir('promenu') . '/app_class_promenu.php', 'app_class_promenu', 'promenu');
+				$this -> registry -> setClass('app_class_promenu', new $classToLoad($this -> registry));
+			}
+			return $this->registry->promenuHooks->responsivePrimary();
+		}
+	}
+}]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings/>
+  <hookextras_language/>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates/>
+  <hookextras_css/>
+  <hookextras_replacements/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

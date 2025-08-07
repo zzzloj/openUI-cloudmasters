@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<css>
+  <cssfile>
+    <css_set_id>0</css_set_id>
+    <css_updated>1351032420</css_updated>
+    <css_group>quiz</css_group>
+    <css_content>.rightbox {
+	width:46%;
+	float:right;
+	margin:1%;
+	padding:1%;
+}
+
+.leftbox {
+	width:46%;
+	float:left;
+	margin:1%;
+	padding:1%;
+}
+
+.quizrightbox {
+	width:67%;
+	float:right;
+	margin:1%;
+	padding:1%;
+}
+
+.quizleftbox {
+	width:25%;
+	float:left;
+	margin:1%;
+	padding:1%;
+}
+
+.quizleftbox img {
+	
+	display:inline;
+	width:30%;
+}
+
+.question_name img {
+	float:right;
+	display:inline-block;
+	width:15%;
+	clear:both;
+}
+
+.goleft {
+	display:block;
+	float:left;
+	width:40%;
+	text-align:left;
+	/* margin-right:50px; */
+}
+
+.goleft a {
+	/** margin-right:100px; /** might cause issues hmm **/
+	/** margin-right:20px; /** might cause issues hmm **/
+	
+}
+
+.goright {
+	display:block;
+	float:right;
+	width:40%;
+	
+	/* margin-left:50px; */
+}</css_content>
+    <css_position>1</css_position>
+    <css_app>quiz</css_app>
+    <css_app_hide>1</css_app_hide>
+    <css_attributes><![CDATA[title="Main" media="screen"]]></css_attributes>
+    <css_modules/>
+    <css_removed>0</css_removed>
+    <css_master_key>root</css_master_key>
+  </cssfile>
+</css>

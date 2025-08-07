@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>tl_viewingmodes</conf_title_keyword>
+      <conf_title_title>Facebook Style and Detailed Mode</conf_title_title>
+      <conf_title_desc>Settings related to the Facebook Style and Detailed Modes</conf_title_desc>
+      <conf_title_tab>Topics Wall</conf_title_tab>
+      <conf_title_app>topicslist</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>BBcode to extract</conf_title>
+      <conf_description><![CDATA[Topics Wall will search the first occurence of this bbcode and put it in topic's infos when  Facebook Style Mode or Detailed Mode are set to On. Write only opening tags.<br>
+E.g: [QUOTE] will make Topics Wall pull what's inside the first occurence of [QUOTE] in the first post of the topic.It may also be a customized BBCode created by you.<br>
+Write <strong>/POST</strong> if you want to take the first 250 characters of the first post as topic's preview text.<br>Leave blank if you do not to insert any preview text.]]></conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tl_bbcode</conf_key>
+      <conf_default>/POST</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>BBcode topics list wall detailed</conf_keywords>
+      <conf_title_keyword>tl_viewingmodes</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Default &quot;No Img&quot; Image?]]></conf_title>
+      <conf_description><![CDATA[This file must be located in your image folder. Write only filename <br>
+E.g.: noimg.png]]></conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tl_noimg</conf_key>
+      <conf_default>noimg.gif</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( $save == 1 )
+{
+	if( $_POST['tl_noimg'] == '' )
+	{
+		$_POST['tl_noimg'] = "noimg.gif"; 
+	}
+	
+	$key = 'tl_noimg';
+}
+if( $save == 1 )
+{
+	$key = 'tl_noimg';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>tl_viewingmodes</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Detailed Mode: Maximum Size of Preview Images</conf_title>
+      <conf_description><![CDATA[WIDTH<strong>x</strong>HEIGHT]]></conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tl_maximgdet</conf_key>
+      <conf_default>120x150</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>topics wall max width images</conf_keywords>
+      <conf_title_keyword>tl_viewingmodes</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Facebook Style: Maximum Size of preview images</conf_title>
+      <conf_description><![CDATA[WIDTH<strong>x</strong>HEIGHT]]></conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tl_fbprevimg</conf_key>
+      <conf_default>100x120</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>topics wall facebook style maximum images</conf_keywords>
+      <conf_title_keyword>tl_viewingmodes</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Check availability of every external image in the first post</conf_title>
+      <conf_description><![CDATA[If there is more than one image in the first post, this function will check availability of <strong>external images</strong> until it finds the first valid image. If set to no, the very first image in the first post will be taken, no matter if it is a broken image or not. <br><strong>NOTE: we strongly recommend you to read faqs before enabling this function</strong>]]></conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tl_enallimgs</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>topics wall list check availability image</conf_keywords>
+      <conf_title_keyword>tl_viewingmodes</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Pull attached images</conf_title>
+      <conf_description><![CDATA[If set to yes, this function will check for any attached images, and put its <strong>thumbnail</strong> as preview image.]]></conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tl_pullattach</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>topics wall attached images</conf_keywords>
+      <conf_title_keyword>tl_viewingmodes</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Preview Images: Resizing Method</conf_title>
+      <conf_description><![CDATA[<strong>Flexible</strong>: Images will be resized but will maintain their original aspect ratio.<br><strong>Forced</strong>: Images will be forced to reach that size, no matter what their original aspect ratio is.]]></conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>tl_resizemode</conf_key>
+      <conf_default>f1</conf_default>
+      <conf_extra>f1 = Flexible&#13;
+f2 = Forced</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>Topics wall resizing method</conf_keywords>
+      <conf_title_keyword>tl_viewingmodes</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>topicslist_Home</conf_title_keyword>
+      <conf_title_title>Forums and Groups</conf_title_title>
+      <conf_title_desc>Manage forums enabled and usergroups that can access the application</conf_title_desc>
+      <conf_title_tab>Topics Wall</conf_title_tab>
+      <conf_title_app>topicslist</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Groups Enabled to access Topics Wall</conf_title>
+      <conf_description>Select groups that will have access to the application. Hold Shift for a multi-selection</conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>tl_genabled</conf_key>
+      <conf_default>,</conf_default>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['tl_genabled']) )
+	{
+		$_POST['tl_genabled'] = ','.implode(",",$_POST['tl_genabled']).',';
+	}
+	else
+	{
+		$_POST['tl_genabled'] = "";
+	}
+	
+	$key = 'tl_genabled';
+}
+if ( $show == 1 )
+{
+$key = 'tl_genabled[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>topics wall groups enabled</conf_keywords>
+      <conf_title_keyword>topicslist_Home</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Forums enabled</conf_title>
+      <conf_description>Select forums to use with Topics Wall. </conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>tl_fenabled</conf_key>
+      <conf_default/>
+      <conf_extra>#show_forums#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['tl_fenabled']) )
+	{
+		$_POST['tl_fenabled'] = ','.implode(",",$_POST['tl_fenabled']).',';
+	}
+	else
+	{
+		$_POST['tl_fenabled'] = "";
+	}
+	
+	$key = 'tl_fenabled';
+}
+if ( $show == 1 )
+{
+$key = 'tl_fenabled[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>forums enabled topics wall list</conf_keywords>
+      <conf_title_keyword>topicslist_Home</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Enable &#39;View all topics&#39; in these Forums]]></conf_title>
+      <conf_description><![CDATA[We <strong>STRONGLY RECOMMEND</strong> to keep this feature <strong>disabled</strong>, as it may be highly resources intensive.]]></conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>tl_fall</conf_key>
+      <conf_default/>
+      <conf_extra>#show_forums#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['tl_fall']) )
+	{
+		$_POST['tl_fall'] = ','.implode(",",$_POST['tl_fall']).',';
+	}
+	else
+	{
+		$_POST['tl_fall'] = "";
+	}
+	
+	$key = 'tl_fall';
+}
+if ( $show == 1 )
+{
+$key = 'tl_fall[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>all topics list wall </conf_keywords>
+      <conf_title_keyword>topicslist_Home</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>topicslist_general</conf_title_keyword>
+      <conf_title_title>General Settings</conf_title_title>
+      <conf_title_desc>General Settings about Topics Wall</conf_title_desc>
+      <conf_title_tab>Topics Wall</conf_title_tab>
+      <conf_title_app>topicslist</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Default Viewing Mode</conf_title>
+      <conf_description>This will be the default output when viewing a Wall.</conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>tl_detailed</conf_key>
+      <conf_default>detailed</conf_default>
+      <conf_extra>detailed = Detailed&#13;
+fb = Facebook Style&#13;
+classic = Classic</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>detailed view topics list wall </conf_keywords>
+      <conf_title_keyword>topicslist_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Default Sort:</conf_title>
+      <conf_description>This will be set as the default sort when viewing the Wall or the Home of the application</conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>tl_homesort</conf_key>
+      <conf_default>latests</conf_default>
+      <conf_extra>latests = Latests&#13;
+rate = Highest Rated&#13;
+comments = Most Commented&#13;
+visits = Most Viewed&#13;
+update = Recently Commented&#13;
+alpha = Alphabetical Order</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>Default sorting sort topics list wall</conf_keywords>
+      <conf_title_keyword>topicslist_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Let users decide their default viewing mode</conf_title>
+      <conf_description>If set to yes, users will be able to decide their default viewing mode through their ucp.</conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tl_userdecide</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>topics wall users decide mode</conf_keywords>
+      <conf_title_keyword>topicslist_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Pull pinned Topics</conf_title>
+      <conf_description><![CDATA[Select No if you don't want pinned topic to appear in wall.]]></conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tl_impt</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>pinned important topics list wall</conf_keywords>
+      <conf_title_keyword>topicslist_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Number of Topics to pull from Db</conf_title>
+      <conf_description><![CDATA[Insert only positive numbers. If incorrect value is inserted, the default number (30) will be set. This won't be applied when viewing letters.]]></conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tl_hometpull</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( (!is_numeric( $_POST['tl_hometpull'])) || ($_POST['tl_hometpull'] <= 0)  )
+	{
+		$_POST['tl_hometpull'] = 30;
+	}
+
+	$key = 'tl_hometpull';
+}
+if ( $show == 1 )
+{
+$key = 'tl_hometpull';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>number topics pull database topics list wall</conf_keywords>
+      <conf_title_keyword>topicslist_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Pulling description when viewing forums list?</conf_title>
+      <conf_description><![CDATA[Select No if you don't want descriptions to appear when choosing forum]]></conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tl_fdesc</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>topics list wall description forum</conf_keywords>
+      <conf_title_keyword>topicslist_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Make all forums treaten as category display as Category</conf_title>
+      <conf_description><![CDATA[If you have any forums on your board with the 'Treat forum as Category' option set to yes, this setting will make them appear as if they were real categories]]></conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tl_fascat</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>topics wall list forum as category display</conf_keywords>
+      <conf_title_keyword>topicslist_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Watched Topics</conf_title>
+      <conf_description>If set to yes, an image will appear next to topics watched by the user. Enabling this function will make the wall load a bit slower.</conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tl_tracker</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>topics wall watched topics </conf_keywords>
+      <conf_title_keyword>topicslist_general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>topicslist_button</conf_title_keyword>
+      <conf_title_title>Go To Wall Button</conf_title_title>
+      <conf_title_desc>Manage Go To Wall Button Hook</conf_title_desc>
+      <conf_title_tab>Topics Wall</conf_title_tab>
+      <conf_title_app>topicslist</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Show a disabled button if user has no access</conf_title>
+      <conf_description>If set to yes, users that cannot access Topics Wall will see a disabled button. Otherwise, nothing will appear.</conf_description>
+      <conf_group>34</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tl_button</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_button</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_title_title>Index and topics Hook: Preview Images</conf_title_title>
+      <conf_title_desc>Manage Index and Topics Hook</conf_title_desc>
+      <conf_title_tab>Topics Wall</conf_title_tab>
+      <conf_title_app>topicslist</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Showing letters?</conf_title>
+      <conf_description/>
+      <conf_group>33</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>__showletters</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Show Previews of topics</conf_title>
+      <conf_description><![CDATA[If set to yes, a 'gallery' of topics with preview images will be displayed.]]></conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tl_indextopics</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Default Sort</conf_title>
+      <conf_description>Ignore this setting if previous setting is set to off.</conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>tl_indexsort</conf_key>
+      <conf_default>update</conf_default>
+      <conf_extra>update = Recently Commented&#13;
+latests = Latests&#13;
+rate = Highest Rated&#13;
+comments = Most Commented&#13;
+visits = Most Viewed</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Preview Images: Maximum size</conf_title>
+      <conf_description><![CDATA[WIDTH<strong>x</strong>HEIGHT. We strongly recommend 175x195.<br> Note: for styling purposes, images will be forced to reach this size.]]></conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tl_indexprevimg</conf_key>
+      <conf_default>175x195</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Pull attached images</conf_title>
+      <conf_description/>
+      <conf_group>33</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tl_indexattimg</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Total number of topics to display</conf_title>
+      <conf_description>This is the total number of topics that will be pulled from the Db of the forum you are in.</conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tl_indextpull</conf_key>
+      <conf_default>18</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Number of topics to display in a single page</conf_title>
+      <conf_description><![CDATA[We suggest you to insert a submultiple number of the total number of topics to display.<br>E.g.: if you inserted 18 total topics, you can insert here 6, in order to avoid pages with blank spaces.<br /><strong>NOTE:</strong>In order to keep a pretty visual output, we recommend you to do many tests in order to fill the entire table with images, with no blank spaces. You may want to change images size too, to reach this purpose.]]></conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tl_indextperpage</conf_key>
+      <conf_default>6</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

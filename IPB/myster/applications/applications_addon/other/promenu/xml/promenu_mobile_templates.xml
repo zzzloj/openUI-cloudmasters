@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="promenu" templategroups="a:2:{s:17:&quot;skin_promenu_plus&quot;;s:5:&quot;exact&quot;;s:16:&quot;skin_promenuplus&quot;;s:5:&quot;loose&quot;;}">
+  <templategroup group="skin_promenu_plus">
+    <template>
+      <template_group>skin_promenu_plus</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>proJS</template_name>
+      <template_data>$data</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_promenu_plus</template_group>
+      <template_content><![CDATA[<li id="nav_{$c['promenu_menus_name']}"> 
+     <a {$c['promenu_menus_url']} {$c['promenu_menus_attr']['attr']}> 
+          <if test="$c['promenu_menus_icon_check']"> 
+               <span class="non_sprite pro_icon"> 
+                    <img src="{$c['promenu_menus_icon']}" width="{$c['promenu_menus_icon_w']}px" height="{$c['promenu_menus_icon_h']}px" style="vertical-align: bottom;"/> 
+               </span> 
+          <else /> 
+               <if test="$c['promenu_menus_icon']"> 
+                    <span class="sprites {$c['promenu_menus_icon_class']}_icon  pro_icon"></span> 
+               </if> 
+          </if>           
+          {$c['promenu_menus_name']} 
+     </a> 
+</li>]]></template_content>
+      <template_name>proMain</template_name>
+      <template_data>$c, $group=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_promenu_plus</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>proMega</template_name>
+      <template_data>$item,$menu,$i</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_promenu_plus</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>proOther</template_name>
+      <template_data>$data, $menu, $group=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_promenu_plus</template_group>
+      <template_content><![CDATA[<!--no data in this master skin-->]]></template_content>
+      <template_name>proSub</template_name>
+      <template_data>$pid, $menu</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>mobile</template_master_key>
+    </template>
+  </templategroup>
+</templates>

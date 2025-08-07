@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+	<field>
+		<title>Version</title>
+		<keyword>version</keyword>
+	</field>
+	<field>
+		<title>Fixed In</title>
+		<keyword>fixed_in</keyword>
+	</field>
+</fields>

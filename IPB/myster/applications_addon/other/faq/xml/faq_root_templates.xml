@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="faq" templategroups="a:1:{s:8:&quot;skin_faq&quot;;s:8:&quot;contains&quot;;}">
+  <templategroup group="skin_faq">
+    <template>
+      <template_group>skin_faq</template_group>
+      <template_content><![CDATA[{parse js_module="faq"}
+<div class='clearfix'>
+  <div class='left'>
+    <h1 class='ipsType_pagetitle'>{$collection['heading']}</h1>
+    <p class='ipsType_pagedesc'>{$collection['description']}</p>
+  </div>
+  <div class='right'>
+    <if test="canAdd:|:$this->memberData['faq']['add']">
+      <a href='{parse url="app=faq&amp;module=manage&amp;section=questions&amp;do=add&amp;collection={$collection['collection_id']}" base="public"}' class='ipsButton'>{$this->lang->words['add_question']}</a>
+    </if>
+    <if test="canManage:|:$this->memberData['faq']['moderate']">
+      <a href='{parse url="app=faq&amp;module=manage&amp;section=questions" base="public"}' class='ipsButton'>{$this->lang->words['manage_questions']}</a>
+    </if>
+  </div>
+</div>
+<br />
+<div class='maintitle'>{$collection['heading']}</div>
+<if test="hasQuestions:|:is_array($collection['questions']) && count($collection['questions'])">
+  <div class='ipsBox'>
+    <div class='ipsBox_container ipsPad'>
+      <ul class='ipsList'>
+        <foreach loop="questions:$collection['questions'] as $question">
+          <li class='ipsPad_half <if test="$question['source']=='HSC' && !$question['approved']">moderated</if>'>
+            <a href='#' class='__collection' id='collection_{$question['question_id']}'>{$question['question']}</a>
+          </li>
+        </foreach>
+      </ul>
+    </div>
+  </div>
+  <br />
+<else />
+  <div class='message unspecific'>{$this->lang->words['no_collection_questions']}</div>
+</if>
+<if test="hasQuestions2:|:is_array($collection['questions']) && count($collection['questions'])">
+  <foreach loop="questions2:$collection['questions'] as $question">
+    <div class='ipsBox <if test="$question['source']=='HSC' && !$question['approved']">moderated</if>' id='collection_{$question['question_id']}_content'>
+      <div class='ipsBox_container ipsPad'>
+        {$question['question']}
+        <div class='ipsPad_double desc'>
+          {$question['answer']}
+        </div>
+      </div>
+    </div>
+    <br />
+  </foreach>
+</if>]]></template_content>
+      <template_name>collectionPage</template_name>
+      <template_data>$collection</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key/>
+    </template>
+    <template>
+      <template_group>skin_faq</template_group>
+      <template_content><![CDATA[{parse js_module="faq"}
+<php>
+$this->registry->class_localization->loadLanguageFile(array('admin_faq'), 'faq');
+</php>
+<if test="hasQuestions:|:$this->caches['faq_collections'][$key]['questions']">
+  <div class='ipsSideBlock'>
+    <h3>{$this->caches['faq_collections'][$key]['heading']}</h3>
+    <ul class='ipsList'>
+      <foreach loop="questions:$this->caches['faq_collections'][$key]['questions'] as $question">
+        <li class='ipsPad_half'>
+          <a href='#' class='__faq' id='{$key}__question__{$question['id']}'>{$question['title']}</a>
+        </li>
+      </foreach>
+    </ul>
+  </div>
+  <br />
+</if>]]></template_content>
+      <template_name>showCollection</template_name>
+      <template_data>$key</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key/>
+    </template>
+    <template>
+      <template_group>skin_faq</template_group>
+      <template_content><![CDATA[{parse js_module="faq"}
+<div class='clearfix'>
+  <h1 class='ipsType_pagetitle left'>{$this->lang->words['faq']}</h1>
+  <div class='right'>
+    <if test="canAdd:|:$this->memberData['faq']['add']">
+      <a href='{parse url="app=faq&amp;module=manage&amp;section=questions&amp;do=add" base="public"}' class='ipsButton'>{$this->lang->words['add_question']}</a>
+    </if>
+    <if test="canManage:|:$this->memberData['faq']['moderate']">
+      <a href='{parse url="app=faq&amp;module=manage&amp;section=questions" base="public"}' class='ipsButton'>{$this->lang->words['manage_questions']}</a>
+    </if>
+  </div>
+</div>
+<br />
+<div class='maintitle'>{$this->lang->words['faq']}</div>
+<div class='ipsBox'>
+  <div class='ipsBox_container ipsPad'>
+    <if test="hasCollections:|:is_array($collections) && count($collections)">
+      <ul class='ipsList'>
+        <foreach loop="collections:$collections as $collection">
+          <li class='ipsPad_half'>
+            <a href='#' class='__collection' id='collection_{$collection['collection_id']}'>{$collection['heading']}</a>
+          </li>
+        </foreach>
+      </ul>
+    <else />
+      <div class='message unspecific'>{$this->lang->words['no_faqs_yet']}</div>
+    </if>
+  </div>
+</div>
+<br />
+<if test="hasCollections2:|:is_array($collections) && count($collections)">
+  <foreach loop="collections2:$collections as $collection">
+    <h2 class='ipsType_subtitle' id='collection_{$collection['collection_id']}_content'><a href='{parse url="faqcollection={$collection['collection_id']}" base="public" seotitle="{IPSText::makeSeoTitle($collection['heading'])}" template="faqcollection"}'>{$collection['heading']}</a></h2>
+    <div class='ipsBox'>
+      <if test="hasDescription:|:$collection['description']">
+        <div>{$collection['description']}</div>
+        <br />
+      </if>
+      <div class='ipsBox_container ipsPad'>        
+        <ul class='ipsList'>
+          <foreach loop="questions:$collection['questions'] as $question">
+            <li class='ipsPad_half <if test="$question['source']=='HSC' && !$question['approved']"> moderated</if>'>
+              <a href='#' class='__faq' id='{$collection['collection_key']}__question__{$question['key']}'>{$question['question']}</a>
+            </li>
+          </foreach>
+        </ul>
+      </div>
+    </div>
+    <br />
+  </foreach>
+</if>]]></template_content>
+      <template_name>showFullFAQ</template_name>
+      <template_data>$collections</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key/>
+    </template>
+    <template>
+      <template_group>skin_faq</template_group>
+      <template_content><![CDATA[<h3 class='ipsPad'><b>{$question['question']}</b></h3>
+<div class='ipsBox'>
+  <div class='ipsBox_container ipsPad'>
+    <span style='line-height:150%;'>{$question['answer']}</span>
+  </div>
+</div>]]></template_content>
+      <template_name>showQuestion</template_name>
+      <template_data>$question</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key/>
+    </template>
+  </templategroup>
+  <templategroup group="skin_faq_manage">
+    <template>
+      <template_group>skin_faq_manage</template_group>
+      <template_content><![CDATA[<div class='clearfix'>
+  <h1 class='ipsType_pagetitle left'>{$this->lang->words['manage_questions']}</h1>
+  <div class='right'>
+    <a href='{parse url="app=faq&amp;module=manage&amp;section=questions&amp;do=add" base="public"}' class='ipsButton'>{$this->lang->words['add_question']}</a>
+  </div>
+</div>
+<br />
+<div class='maintitle'>{$this->lang->words['questions']}</div>
+<div class='ipsBox'>
+  <div class='ipsBox_container ipsPad'>
+    <if test="hasQuestions:|:is_array($questions) && count($questions)">
+      <table class='ipb_table'>
+        <foreach loop="questions:$questions as $question">
+          <tr <if test="!$question['approved']">class='moderated'</if>>
+            <td>{$question['question']}</td>
+            <td>
+              <ul class='ipsList_inline right'>
+                <li><a href='{parse url="app=faq&amp;module=manage&amp;section=questions&amp;do=edit&amp;id={$question['question_id']}" base="public"}'>Edit</a></li>
+                <li><a href='{parse url="app=faq&amp;module=manage&amp;section=questions&amp;do=delete&amp;id={$question['question_id']}" base="public"}'>Delete</a></li>
+                <if test="isApproved:|:$question['approved']">
+                  <li><a href='{parse url="app=faq&amp;module=manage&amp;section=questions&amp;do=unapprove&amp;id={$question['question_id']}" base="public"}'>Unapprove</a></li>
+                <else />
+                  <li><a href='{parse url="app=faq&amp;module=manage&amp;section=questions&amp;do=approve&amp;id={$question['question_id']}" base="public"}'>Approve</a></li>
+                </if>
+              </ul>
+            </td>
+          </tr>
+        </foreach>
+      </table>
+    <else />
+      <div class='message unspecific'>{$this->lang->words['no_questions_yet']}</div>
+    </if>
+  </div>
+  <br />
+  {$pages}
+</div>]]></template_content>
+      <template_name>manageQuestions</template_name>
+      <template_data>$questions, $pages</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key/>
+    </template>
+    <template>
+      <template_group>skin_faq_manage</template_group>
+      <template_content><![CDATA[<h1 class='ipsType_pagetitle'><if test="$question['question_id']">{$this->lang->words['edit_question']}<else />{$this->lang->words['add_question']}</if></h1>
+<div class='ipsBox'>
+  <div class='ipsBox_container ipsPad'>
+    <form method='post' action='{parse url="app=faq&amp;module=manage&amp;section=questions&amp;do=save" base="public"}'>
+      <input type='hidden' name='id' value='{$question['question_id']}' />
+      <ul class='ipsForm ipsForm_horizontal'>
+        <li class='ipsField'>
+          <label class='ipsField_title'>{$this->lang->words['question']} <span class='ipsForm_required'>*</span></label>
+          <div class='ipsField_content'>
+            {$question['question']}
+            <br />
+            <span class='desc lighter'>{$this->lang->words['question_desc']}</span>
+          </div>
+        </li>
+        <li class='ipsField'>
+          <label class='ipsField_title'>{$this->lang->words['answer']} <span class='ipsForm_required'>*</span></label>
+          <div class='ipsField_content'>
+            {$question['answer']}
+            <br />
+            <span class='desc lighter'>{$this->lang->words['answer_desc']}</span>
+          </div>
+        </li>
+        <li class='ipsField'>
+          <label class='ipsField_title'>{$this->lang->words['width']}</label>
+          <div class='ipsField_content'>
+            <input type='text' name='width' id='width' class='input_text' size='5' value='{$question['width']}' />
+            <br />
+            <span class='desc lighter'>{$this->lang->words['width_desc']}</span>
+          </div>
+        </li>
+        <li class='ipsField ipsField_select'>
+          <label class='ipsField_title'>{$this->lang->words['collections']}</label>
+          <div class='ipsField_content'>
+            <select name='collections[]' id='collections[]' size='5'>
+              <foreach loop="$collections as $collection">
+                <option value='{$collection['collection_id']}' <if test="in_array($collection['collection_id'], $question['collections'])">SELECTED</if>>{$collection['name']}</option>
+              </foreach>
+            </select>
+          </div>
+        </li>
+      </ul>
+      <fieldset class='submit'>
+        <input type='submit' class='input_submit' value='Submit' />&nbsp;&nbsp;or&nbsp;&nbsp;
+        <a href='{parse url="app=faq" base="public" seotitle="faq" template="app=faq"}' class='cancel'>{$this->lang->words['cancel']}</a>
+      </fieldset>
+    </form>
+  </div>
+</div>]]></template_content>
+      <template_name>questionForm</template_name>
+      <template_data>$question, $collections=array()</template_data>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key/>
+    </template>
+  </templategroup>
+</templates>

@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hookexport>
+  <hookdata>
+    <config>
+      <hook_name>indexAndTopics</hook_name>
+      <hook_desc>Shows a table with index and detailed topics.</hook_desc>
+      <hook_author>devRegan</hook_author>
+      <hook_email>dean.warrior@gmail.com</hook_email>
+      <hook_website/>
+      <hook_update_check/>
+      <hook_requirements><![CDATA[a:3:{s:21:"required_applications";a:0:{}s:20:"hook_php_version_min";s:1:"0";s:20:"hook_php_version_max";s:1:"0";}]]></hook_requirements>
+      <hook_version_human>1.6.3</hook_version_human>
+      <hook_version_long>1632</hook_version_long>
+      <hook_extra_data><![CDATA[a:3:{s:7:"display";a:2:{s:8:"settings";s:32:"Setting groups: Index and topics";s:8:"language";s:180:"From topicslist_public_index: tl_index_all, tl_index_comments, tl_index_index, tl_index_lastpost, tl_index_latests, tl_index_rate, tl_index_specials, tl_index_title, tl_index_views";}s:13:"settingGroups";a:1:{i:0;s:16:"topicslist_index";}s:8:"settings";a:6:{i:0;s:14:"tl_indextopics";i:1;s:12:"tl_indexsort";i:2;s:15:"tl_indexprevimg";i:3;s:14:"tl_indexattimg";i:4;s:13:"tl_indextpull";i:5;s:16:"tl_indextperpage";}}]]></hook_extra_data>
+      <hook_key>indexandpreview</hook_key>
+      <hook_global_caches>settings</hook_global_caches>
+    </config>
+  </hookdata>
+  <hookfiles>
+    <file>
+      <hook_file_real>indexAndTopics.php</hook_file_real>
+      <hook_type>templateHooks</hook_type>
+      <hook_classname>indexAndTopics</hook_classname>
+      <hook_data><![CDATA[a:8:{s:12:"dataLocation";s:0:"";s:14:"libApplication";s:0:"";s:15:"classToOverload";s:0:"";s:9:"skinGroup";s:10:"skin_forum";s:12:"skinFunction";s:18:"forumIndexTemplate";s:4:"type";s:2:"if";s:2:"id";s:16:"hasannouncements";s:8:"position";s:11:"pre.startif";}]]></hook_data>
+      <hooks_source><![CDATA[<?php
+
+class indexAndTopics
+{
+	public $registry;
+	
+	public function __construct()
+	{
+		$this->registry    = ipsRegistry::instance();
+		$this->settings   =& $this->registry->fetchSettings();
+        $this->memberData = $this->registry->member()->fetchMemberData();
+        $this->lang       =  $this->registry->getClass('class_localization');
+		$this->request    =& $this->registry->fetchRequest();
+		$this->DB         =  $this->registry->DB();
+	}
+	
+	public function getOutput()
+	{
+
+		if( $this->appear( $this->request['f'], $this->memberData['member_group_id'] ) ){
+		
+			$this->lang->loadLanguageFile( array( 'public_index' ), 'topicslist' );
+			$letters = array();
+			
+			foreach( explode( ',' , $this->settings['tl_fall'] ) as $a )
+			{
+				if( $this->request['f'] == $a ) {
+					$all = TRUE;
+					break;
+					}
+			}
+				
+			$letters = $this->getL( $this->request['f'], $all );
+			
+			if( $this->settings['tl_indextopics'] ){
+				$sort = array();
+				$sort = $this->fetchSort( $this->settings['tl_indexsort'] );
+				$attach = $this->canViewAttach( $this->memberData['member_group_id'], $this->request['f'] );
+
+				
+				$topics =	$this->getT( $this->request['f'], $sort, $attach );
+
+			}
+				
+			$dimensions = array(	'w'	=>	'',
+												'h'	=>	'', 
+												's'		=>	'',
+												'table'	=> '',
+												'div_width'		=> '',
+												'div_height'		=>	'');
+												
+			sscanf( $this->settings['tl_indexprevimg'], "%dx%d", $dimensions['w'], $dimensions['h'] );
+
+			$dimensions['div_width']	= $dimensions['w']+10;
+			$dimensions['div_height'] = $dimensions['h'] + 30;
+			$dimensions['table'] = 70 + ($dimensions['div_width'] * $this->settings['tl_indextperpage']);
+			$dimensions['s']	= 	$dimensions['w'] -20;
+			
+			$IPBHTML = "";
+				
+			$this->registry->getClass('output')->addToDocumentHead( 'javascript', "{$this->settings['public_dir']}js/3rd_party/pluit-carousel.js" );
+
+			$count = count( $topics )%$this->settings['tl_indextperpage'];
+			$IPBHTML = $this->registry->output->getTemplate('list')->indexAndTopics( $topics, $letters, $sort, $dimensions, $count );
+			
+			return $IPBHTML;
+		}	
+	}
+		
+	public function canViewAttach( $m, $f )
+	{
+	
+		$ids = $this->DB->buildandFetch( array( 	'select' 	=> "perm_6",
+								'from'		=> 'permission_index',
+								'where'		=> "app = 'forums' AND perm_type = 'forum' AND perm_type_id = {$f}",
+								'order'		=> 'perm_type_id',
+								 ) );
+
+		$this->DB->execute();
+	
+		$success = FALSE;
+		
+		foreach( explode( ',', $ids['perm_6'] ) as $i ){
+		
+			if( $i == $m ){
+				$success = TRUE;
+				break;
+			}		
+		}
+		
+		return $success;
+	
+	}
+		
+	public function getL( $f, $all )
+	{
+		
+		
+		$classToLoad = IPSLib::loadLibrary( IPSLib::getAppDir( 'topicslist' ) .'/modules_public/list/view.php', 'public_topicslist_list_view' );
+						
+		$aff = new $classToLoad( $this->registry );	
+		
+		
+		$this->DB->build( array( 	'select' 	=> "DISTINCT LEFT(title, 1)",
+									'from'		=> array( 'topics' => 't' ),
+									'where'		=> "t.forum_id = {$f}" . ( ( !$this->settings['tl_impt'] ) ? ( " AND pinned = 0" ) : ( "" ) ),
+									'order'		=> 'title',
+								
+								 ) );
+
+		$this->DB->execute();
+		
+		
+		if ( $this->DB->getTotalRows() )
+		{
+			while ( $r = $this->DB->fetch() )
+			{
+				$rows[] = $r;
+
+			}
+			
+			foreach( $rows as $r )
+			{	
+					foreach( $r as $row ){
+					
+						#$row = $this->treatL( $row  );
+						$t = $aff->treatL(  $row );
+						
+						if( ctype_alnum( $row ) ){
+						$let[ $row ] = array(  	'title'		=> strtolower( $t ),
+												'index'		=> strtoupper( $t ),
+												);	
+									
+					}
+					
+					else $specials = TRUE;
+				}												
+			}
+			
+			if( $specials ){
+			
+				$let['specials'] = array(	'title'	=>	'specials',
+											'index'	=> $this->lang->words['tl_index_specials'],
+										
+									);
+			
+			}
+			
+			if( $all ) $let['all'] = array(	'title'	=>	'all',
+									'index'	=>	$this->lang->words['tl_index_all'],
+									
+									);
+	
+		}
+		
+		return $let;
+	
+		}
+	
+	public function fetchSort( $s )
+	{
+	
+	$var = array();
+	
+		switch( $s ){
+		
+		case 'update':
+			$var = array( 	'sort'	=>	'last_post DESC',
+							'lang'	=>	$this->lang->words['tl_index_lastpost'] );
+			break;
+		
+		case 'rate':
+			$var = array( 	'sort'	=>	'topic_rating_total/topic_rating_hits DESC',
+							'lang'	=>	$this->lang->words['tl_index_rate'] );
+			break;
+			
+		case 'latests':
+			$var = array( 	'sort'	=>	'start_date DESC',
+							'lang'	=>	$this->lang->words['tl_index_latests'] );
+			break;
+		
+		case 'visits':
+			$var = array( 	'sort'	=>	'views DESC',
+							'lang'	=>	$this->lang->words['tl_index_views'] );
+			break;
+		
+		case 'comments':
+			$var = array( 	'sort'	=>	'posts DESC',
+							'lang'	=>	$this->lang->words['tl_index_comments'] );
+			break;
+		
+		default:
+			$var = '';
+			break;
+		}
+		
+			return $var;
+	}
+	
+	public function getT( $f, $sort, $attach )
+	{
+	
+		$this->DB->build( array( 	'select' 	=> "tid, t.title, title_seo",
+								'from'		=> array( 'topics' => 't' ),
+								'order'  	=> $sort['sort'],
+								'where'		=> "t.forum_id = {$f} AND approved = 1" . (( !$this->settings['tl_impt'] ) ? ( " AND pinned = 0 " ) : ( "" ) ),
+								'limit'		=> array( intval( $this->settings['tl_indextpull'] ) ),
+								'add_join'	=> array( array(	'select'	=> 'p.post',
+															'from'	=> array( 'posts' => 'p' ),
+															'where'	=> 'p.topic_id = t.tid AND new_topic = 1',
+															'type' 	=> 'left',
+																),
+													array( 	'select'	=>	'a.attach_location',
+															'from'		=>	array( 'attachments' => 'a' ),
+															'where'		=>	'a.attach_is_image = 1 AND a.attach_post_key = p.post_key',
+															'limit'		=>	array( 0, 1 ),
+															)
+													 ) ) );	
+	
+		$this->DB->execute();
+
+		$rows = array();
+		
+		if ( $this->DB->getTotalRows() )
+		{
+			
+			while ( $r = $this->DB->fetch() )
+			{
+				$words[] = $r;
+
+			}
+			
+			$t = '';
+			$i = 1;
+			
+			foreach( $words as $row ) 
+			{		
+				$img = "";
+				$img = $this->getPrev( $row['post'], $row['attach_location'], $attach); 
+				
+				if( !$rows[ $row['tid'] ] )
+				{
+					$rows[ $row['tid'] ] = array(	'id'	=>	$row['tid'],
+																	'title'	=>	( ( strlen( $row['title'] ) > 20 ) ? ( substr( $row['title'], 0, 20 ) . "..." ) : ( $row['title'] ) ),
+																	'tseo'	=>	$row['title_seo'],
+																	'img'	=>	$img,
+																	'n'	=>	$i, );
+										
+					if( $i == $this->settings['tl_indextperpage'] ) $i = 1;
+					else ++$i;	
+				}
+			}		
+			
+		}
+			return $rows;
+		
+	}
+	
+	public function appear( $f, $g )
+	{
+	
+		$appear = FALSE;
+		
+		foreach( explode( ',' , $this->settings['tl_genabled'] ) as $g )
+		{
+			if( $g == $this->memberData['member_group_id'] ) {
+				$appear = TRUE;;
+				break;
+				}
+			}
+			
+		if( $appear ){
+		$appear = FALSE;
+		foreach( explode( ',' , $this->settings['tl_fenabled'] ) as $g )
+		{
+			if( $this->request['f'] == $g ) {
+				$appear =TRUE;
+				break;
+				}
+			}
+		}
+		
+		if( $appear ) {
+			$s = $this->DB->buildAndFetch( array( 	'select'	=>	'sub_can_post, topics',
+												'from'		=>	'forums',
+												'where'		=>	'id =' . $f, ) );
+		
+			if( !$s['sub_can_post'] Or !$s['topics'] ) $appear = FALSE;
+		
+			}
+			
+			return $appear;
+	}
+	
+	public function getPrev($post, $att_loc, $att )
+	{
+
+		if( $this->settings['tl_enallimgs'] )
+		{
+			$success = TRUE;
+			
+			preg_match_all('!(\[img\])http://[a-z0-9\_\%\-\.\/]+\.(?:jpe?g|png|gif)\[\/img\]!Ui', $post, $matches, PREG_PATTERN_ORDER );
+			
+			if( !count( $matches ) )	$success = FALSE;
+			
+			if( $success )
+			{
+				$found = FALSE;
+				
+				foreach( $matches[0] as $match )
+				{
+				
+					$to_subs = array(	'open'	=> '[/img]',
+												'	close' => '[img]');
+												
+					$t	=	@getimagesize( str_ireplace( $to_subs, '', $match) );
+					
+						if( is_array( $t ) )
+						{
+							$found = TRUE;
+							$img = str_ireplace( $to_subs, '', $match);
+							break;
+						
+						}
+				}
+			}
+		}
+		
+		else
+		{
+		
+			if( ( $this->settings['tl_indexattimg'] ) And $att_loc != '' And $att )
+			{
+				
+				$img = $this->settings['upload_url'] . "/" . $att_loc;			
+				$found = TRUE;
+				
+			}
+			
+			else
+			{
+				$found = FALSE;
+				
+				preg_match('!(\[img\])http://[a-z0-9\_\%\-\.\/]+\.(?:jpe?g|png|gif)\[\/img\]!Ui', $post , $matches );
+				
+				if( count( $matches ) > 0 ) 
+				{
+							
+					$to_subs = array(		'open'	=> '[/img]',
+														'closure' => '[img]');
+														
+					$matches[0] = str_ireplace( $to_subs, '', $matches[0]);
+				
+					$img = $matches[0];
+					
+					$found = TRUE;
+			
+				}
+			}
+		
+		}
+			
+		if( $found ) return $img;
+		else return "{$this->settings['img_url']}/{$this->settings['tl_noimg']}";
+
+	}
+
+}]]></hooks_source>
+    </file>
+  </hookfiles>
+  <hookextras_settings>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_title>Index and topics Hook: Preview Images</conf_title_title>
+      <conf_title_desc>Manage Index and Topics Hook</conf_title_desc>
+      <conf_title_noshow>0</conf_title_noshow>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_title_app>topicslist</conf_title_app>
+      <conf_title_tab>Topics Wall</conf_title_tab>
+    </setting>
+    <setting>
+      <conf_id>326</conf_id>
+      <conf_title>Pull attached images</conf_title>
+      <conf_description/>
+      <conf_group>33</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tl_indexattimg</conf_key>
+      <conf_value/>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>325</conf_id>
+      <conf_title>Preview Images: Maximum size</conf_title>
+      <conf_description><![CDATA[WIDTH<strong>x</strong>HEIGHT.<br> Note: for styling purposes, images will be forced to reach this size.]]></conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tl_indexprevimg</conf_key>
+      <conf_value/>
+      <conf_default>175x195</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>324</conf_id>
+      <conf_title>Default Sort</conf_title>
+      <conf_description>Ignore this setting if previous setting is set to off.</conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>tl_indexsort</conf_key>
+      <conf_value/>
+      <conf_default>update</conf_default>
+      <conf_extra>update = Recently Commented&#13;
+latests = Latests&#13;
+rate = Highest Rated&#13;
+comments = Most Commented&#13;
+visits = Most Viewed</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>323</conf_id>
+      <conf_title>Show Previews of topics</conf_title>
+      <conf_description><![CDATA[If set to yes, a 'gallery' of topics with preview images will be displayed.]]></conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tl_indextopics</conf_key>
+      <conf_value/>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>328</conf_id>
+      <conf_title>Number of topics to display in a single page</conf_title>
+      <conf_description><![CDATA[We suggest you to insert a submultiple number of the total number of topics to display.<br>E.g.: if you inserted 18 total topics, you can insert here 6, in order to avoid pages with blank spaces.<br /><strong>NOTE:</strong>In order to keep a pretty visual output, we recommend you to do many tests in order to fill the entire table with images, with no blank spaces. You may want to change images size too, to reach this purpose.]]></conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tl_indextperpage</conf_key>
+      <conf_value/>
+      <conf_default>5</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>327</conf_id>
+      <conf_title>Total number of topics to display</conf_title>
+      <conf_description>This is the total number of topics that will be pulled from the Db of the forum you are in.</conf_description>
+      <conf_group>33</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tl_indextpull</conf_key>
+      <conf_value/>
+      <conf_default>20</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_id>330</conf_id>
+      <conf_title>Showing letters?</conf_title>
+      <conf_description/>
+      <conf_group>33</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>__showletters</conf_key>
+      <conf_value/>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicslist_index</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </hookextras_settings>
+  <hookextras_language/>
+  <hookextras_modules/>
+  <hookextras_help/>
+  <hookextras_templates/>
+  <hookextras_css/>
+  <hookextras_tasks/>
+  <hookextras_database_create/>
+  <hookextras_database_alter/>
+  <hookextras_database_update/>
+  <hookextras_database_insert/>
+</hookexport>

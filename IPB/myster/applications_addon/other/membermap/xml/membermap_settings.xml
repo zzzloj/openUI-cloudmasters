@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>membermap</conf_title_keyword>
+      <conf_title_title>General Configuration</conf_title_title>
+      <conf_title_desc>Settings for your member map</conf_title_desc>
+      <conf_title_tab>Member Map</conf_title_tab>
+      <conf_title_app>membermap</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Google Maps API Key</conf_title>
+      <conf_description><![CDATA[API key required for Google Maps to operate. Get your key: <a href="http://code.google.com/apis/maps/signup.html" target="_blank">Google Maps API Signup</a>]]></conf_description>
+      <conf_group>55</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>membermapGoogleApiKey</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>0</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>google, map, membermap, bing</conf_keywords>
+      <conf_title_keyword>membermap</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Scoll Zooming</conf_title>
+      <conf_description>This setting allows users to use their mouse scroll wheel to zoom in and out on the map.</conf_description>
+      <conf_group>55</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>membermapScrollZoom</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>membermap</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable Marker Clustering</conf_title>
+      <conf_description>Enable to cluster member placed markers together, this will not cluster custom markers.</conf_description>
+      <conf_group>55</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>membermapCluster</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>membermap</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

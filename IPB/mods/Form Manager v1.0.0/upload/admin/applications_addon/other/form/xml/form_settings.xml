@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>form</conf_title_keyword>
+      <conf_title_title>Form Manager</conf_title_title>
+      <conf_title_desc>Settings for the Form Manager application.</conf_title_desc>
+      <conf_title_tab>DevFuse</conf_title_tab>
+      <conf_title_app>form</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Default landing page</conf_title>
+      <conf_description><![CDATA[What will be showed as the default landing page?<br />Form List will show a list of your forms. Form Required will produce an error unless the url to the form is entered. Or you can select a form to load.]]></conf_description>
+      <conf_group>56</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>form_landing_page</conf_key>
+      <conf_default>form_list</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[$dropdown = array( array( 'form_list', "Form List" ), array( 'form_required', "Form Required" ) );
+
+$this->DB->build( array( 'select' => '*', 'from' => 'form_forms', 'order' => 'position' ) );
+$this->DB->execute();
+while ( $row = $this->DB->fetch() )
+{
+	$dropdown[] = array( $row['form_id'], $row['form_name'] );
+}]]></conf_evalphp>
+      <conf_protected>0</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Form Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>form</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Enable legacy form</conf_title>
+      <conf_description>If enabled, will override above setting and show a dropdown with the forms renamed as subjects. This is designed to mimic the functionality that was present in the Contact System.</conf_description>
+      <conf_group>56</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>fm_legacy_form</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>form</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Send PM as system</conf_title>
+      <conf_description><![CDATA[Enabling will send personal messages without filling the senders inbox and won't allow the receiver to reply.]]></conf_description>
+      <conf_group>56</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>fm_system_pms</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>form</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Logs per page</conf_title>
+      <conf_description><![CDATA[Enter how many log results will be displayed per page. <strong>Default: 20</strong>]]></conf_description>
+      <conf_group>56</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fm_logs_per_page</conf_key>
+      <conf_default>20</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group>Log Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>form</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Log preview character limit</conf_title>
+      <conf_description><![CDATA[How many characters will be used when displaying a preview for the log message? <strong>Default: 200</strong> <i>(Enter zero to disable preview.)</i>]]></conf_description>
+      <conf_group>56</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fm_log_preview</conf_key>
+      <conf_default>200</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>form</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Logs default sort field</conf_title>
+      <conf_description>What field will be used to sort the log results by default?</conf_description>
+      <conf_group>56</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>fm_logs_default_sort_field</conf_key>
+      <conf_default>log_date</conf_default>
+      <conf_extra>log_date=Log Date&#13;
+log_form_id=Form&#13;
+member_name=Member Name</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>form</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Logs default sort order</conf_title>
+      <conf_description>What order will be used to sort the above field by default?</conf_description>
+      <conf_group>56</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>fm_logs_default_sort_order</conf_key>
+      <conf_default>desc</conf_default>
+      <conf_extra>desc=Descending (Z-A)&#13;
+asc=Ascending (A-Z)</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>form</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

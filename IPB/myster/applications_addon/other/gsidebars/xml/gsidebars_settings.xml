@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>dp3_gsidebars</conf_title_keyword>
+      <conf_title_title>(DP33) Global Sidebars</conf_title_title>
+      <conf_title_desc>Settings for global sidebars app.</conf_title_desc>
+      <conf_title_tab>(DP3X) Mods</conf_title_tab>
+      <conf_title_app>gsidebars</conf_title_app>
+      <conf_title_noshow>1</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Enable System?</conf_title>
+      <conf_description/>
+      <conf_group>32</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>dp3_gsidebars_enable</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Main Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>dp3_gsidebars</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Always Show Global Sidebar?</conf_title>
+      <conf_description>Do you want to display global sidebar always before customized section sidebar? If not, then global sidebar will be displayed only on the public board page.</conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>dp3_gsidebars_display_global</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>dp3_gsidebars</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Integrate with (DP32) Advanced Adverts?</conf_title>
+      <conf_description><![CDATA[Do you want to have ability to add predefined adverts to the sidebars?<!--INFO-->]]></conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>dp3_gsidebars_integrate</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( $show == 1 )
+{
+	$appsCache = ipsRegistry::cache()->getCache('app_cache');
+	if( ! $appsCache['advadverts'] || ! $appsCache['advadverts']['app_enabled'] )
+	{
+	$r['conf_description'] = str_replace( "<!--INFO-->", "<br /><br ><span style='font-size:13px;color:red;font-weight:bold;'>(DP32) Advanced Adverts isn't installed OR enabled!</span> <a href='http://community.invisionpower.com/files/file/2860-dp30-advanced-adverts/' style='font-size:13px;' target='_blank' title='Go to IPS Market Place and buy this application, before enable it.'>BUY IT</a>", $r['conf_description'] );
+	}
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>dp3_gsidebars</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Disable Default Sidebar</conf_title>
+      <conf_description>Do you want to disable completelly default sidebar? Othwerwise you can add two sidebars there - one above and below the default sidebar.</conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>dp3_gsidebars_disable_default_sidebar</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>dp3_gsidebars</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Side to Show</conf_title>
+      <conf_description>Where you want to display global sidebars?</conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>dp3_gs_side</conf_key>
+      <conf_default>right</conf_default>
+      <conf_extra>left=On Left&#13;
+right=On Right</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>dp3_gsidebars</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Sidebar Width</conf_title>
+      <conf_description>Select width for the sidebar.</conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>dp3_gs_sidebar_width</conf_key>
+      <conf_default>large</conf_default>
+      <conf_extra>tiny=Tiny (40px)&#13;
+small=Small (140px)&#13;
+large=Large (270px)&#13;
+big=Big (320px)&#13;
+huge=Huge (370px)</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>dp3_gsidebars</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>OR Enter Custom Width</conf_title>
+      <conf_description><![CDATA[Do you want to change width to the other value than from dropdown? Enter it here (in pixels).<br />Set <strong>0</strong> or leave blank to use the value from dropdown list.]]></conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>dp3_gsidebars_sidebar_custom_width</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>dp3_gsidebars</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Adverts Separator</conf_title>
+      <conf_description>Enter any content which you want put between the ads. It might be HTML pure code.</conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>dp3_gsidebars_sep</conf_key>
+      <conf_default><![CDATA[<br />]]></conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>dp3_gsidebars</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Disable on Skins</conf_title>
+      <conf_description><![CDATA[Select on which skins mod won't be active at all.]]></conf_description>
+      <conf_group>32</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>dp3_gs_disabled_skins</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[$key = 'dp3_gs_disabled_skins';
+
+if ( $save == 1 )
+{
+	if ( is_array( $_POST[ $key ] ) )
+	{
+		$_POST[ $key ] = implode(',', $_POST[ $key ] );
+	}
+	else
+	{
+		$_POST[ $key ] = '';
+	}
+}
+
+if ( $show == 1 )
+{
+	/* Excluded fields */
+
+    $fields		= $this->cache->getCache( 'skinsets' );
+	
+	foreach( $fields as $field )
+	{			
+		$dropdown[]	= array( $field['set_key'], $field['set_name'] );
+	}
+	
+	$key = 'dp3_gs_disabled_skins[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>dp3_gsidebars</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>dp3_gsn</conf_title_keyword>
+      <conf_title_title>(DP33) Global Sidebars - Nexus Integration</conf_title_title>
+      <conf_title_desc>Settings for Nexus Integration for Global Sidebars</conf_title_desc>
+      <conf_title_tab>(DP3X) Mods</conf_title_tab>
+      <conf_title_app>gsidebars</conf_title_app>
+      <conf_title_noshow>1</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Enable Integration?</conf_title>
+      <conf_description/>
+      <conf_group>71</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>dp3_gsn_enable</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Main Settings</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>dp3_gsn</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Nexus Ads Raw Format</conf_title>
+      <conf_description><![CDATA[Do you want to display ads from nexus raw mode? If yes, please enable this option. Otherwise it will be displayed as it's set in the nexus settings.]]></conf_description>
+      <conf_group>71</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>dp3_gsn_raw_format</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>dp3_gsn</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

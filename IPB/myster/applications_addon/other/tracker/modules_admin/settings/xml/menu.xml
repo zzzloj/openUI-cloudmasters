@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Global</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Global</subitemtitle>
+					<subsection>settings</subsection>
+					<subitemurl>do=global</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+
+		<item>
+			<title>Project View</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Project View</subitemtitle>
+					<subsection>settings</subsection>
+					<subitemurl>do=projects</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+
+		<item>
+			<title>Issue View</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Issue View</subitemtitle>
+					<subsection>settings</subsection>
+					<subitemurl>do=issues</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+
+		<item>
+			<title>Posting</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Posting</subitemtitle>
+					<subsection>settings</subsection>
+					<subitemurl>do=post</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+
+		<item>
+			<title>Statistics</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Statistics</subitemtitle>
+					<subsection>settings</subsection>
+					<subitemurl>do=stats</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

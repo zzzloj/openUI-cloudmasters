@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>block_show_changed</word_key>
+      <word_default>Отображение блока было изменено.</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>plugin_settings</word_key>
+      <word_default>Настройки плагина</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>portal_settings</word_key>
+      <word_default>Настройки Портала</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>hide_block</word_key>
+      <word_default>Скрыть блок</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>no_plugins_warning</word_key>
+      <word_default>Нету плагинов для добавления.</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>bottom_blocks</word_key>
+      <word_default>Нижние блоки</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>top_blocks</word_key>
+      <word_default>Верхние блоки</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>show_block</word_key>
+      <word_default>Показать блок</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>portal_pop_desc</word_key>
+      <word_default>Описание ключа</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>portal_pop_tags</word_key>
+      <word_default>Ключ для добавления:</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>portal_pop_name</word_key>
+      <word_default>Ключ</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>portal_main_key</word_key>
+      <word_default>Название плагина</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>main_title</word_key>
+      <word_default>Управление плагинами Портала</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>portal_main_title</word_key>
+      <word_default>Плагины</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>error_no_dir</word_key>
+      <word_default><![CDATA[Директории '{app_name}/extensions/portalPlugins' не существует. Создайте её и попробуйте ещё раз.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>view_template_tag</word_key>
+      <word_default>Просмотр ключа плагина</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>custom_blocks</word_key>
+      <word_default>Блоки</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>error_no_key</word_key>
+      <word_default>Нету существующих ключей для плагинов.</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>add_block</word_key>
+      <word_default>Добавить блок</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>no_blocks_match_id</word_key>
+      <word_default>Нету блоков совпадающих этому ID.</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>left_blocks</word_key>
+      <word_default>Левые блоки</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>edit_block</word_key>
+      <word_default>Изменить блок</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>main_blocks</word_key>
+      <word_default>Центральные блоки</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>right_blocks</word_key>
+      <word_default>Правые блоки</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>postform_badmd5</word_key>
+      <word_default>Ключ не соответствует </word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>all_fields_required</word_key>
+      <word_default>Заполните все поля!</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>block_added</word_key>
+      <word_default>Блок успешно добавлен.</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>block_template</word_key>
+      <word_default>Блок внутри блока</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>block_template_desc</word_key>
+      <word_default>Содежимое вашего блока будет в блоке.</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>block_deleted</word_key>
+      <word_default>Блок успешно удалён.</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>block_updated</word_key>
+      <word_default>Блок успешно обновлён.</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>block_position</word_key>
+      <word_default>Позиция блока:</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>block_title</word_key>
+      <word_default>Название блока:</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>delete_block</word_key>
+      <word_default>Удалить блок</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>block_code</word_key>
+      <word_default>Код блока или ключ плагина:</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>more</word_key>
+      <word_default>Больше</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>view_block</word_key>
+      <word_default>Просмотр блока</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>block_code_desc</word_key>
+      <word_default><![CDATA[Введите сюда полный html или php код блока. При использовании php, размещайте php код в <?php ?> тегах.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>no_custom_blocks</word_key>
+      <word_default>Нету блоков для отображения.</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>export_block</word_key>
+      <word_default>Экспортировать</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>admin_portal</word_pack>
+      <word_key>export_blocks</word_key>
+      <word_default>Экспортировать блоки</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

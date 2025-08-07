@@ -1,0 +1,2459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<demosite>
+  <ccs_blocks>
+    <block>
+        <block_id>1</block_id>
+        <block_active>1</block_active>
+        <block_name>IP.Content Media Folder</block_name>
+        <block_description><![CDATA[Inserts the URL to the folder where media is stored (/ccs_files/ by default)]]></block_description>
+        <block_key>ipcontent_files</block_key>
+        <block_type>custom</block_type>
+        <block_config><![CDATA[a:2:{s:4:"type";s:3:"php";s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content><![CDATA[include( DOC_IPS_ROOT_PATH . "media_path.php" );
+echo CCS_MEDIA_URL;]]></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>0</block_position>
+        <block_category>1</block_category>
+    </block>
+    <block>
+        <block_id>2</block_id>
+        <block_active>1</block_active>
+        <block_name>Articles Menu</block_name>
+        <block_description>Builds a category menu for the articles</block_description>
+        <block_key>articles_menu</block_key>
+        <block_type>feed</block_type>
+        <block_config><![CDATA[a:8:{s:4:"feed";s:8:"articles";s:7:"content";s:12:"1;categories";s:7:"filters";a:16:{s:13:"filter_status";s:6:"either";s:17:"filter_visibility";s:8:"approved";s:13:"filter_pinned";s:6:"either";s:14:"filter_starter";s:0:"";s:13:"filter_rating";i:0;s:15:"filter_category";i:0;s:11:"filter_ct_1";s:0:"";s:11:"filter_cv_1";s:0:"";s:11:"filter_ct_2";s:0:"";s:11:"filter_cv_2";s:0:"";s:11:"filter_ct_3";s:0:"";s:11:"filter_cv_3";s:0:"";s:11:"filter_ct_4";s:0:"";s:11:"filter_cv_4";s:0:"";s:11:"filter_ct_5";s:0:"";s:11:"filter_cv_5";s:0:"";}s:6:"sortby";N;s:9:"sortorder";s:4:"desc";s:8:"offset_a";i:0;s:8:"offset_b";i:0;s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>0</block_position>
+        <block_category>2</block_category>
+    </block>
+    <block>
+        <block_id>3</block_id>
+        <block_active>1</block_active>
+        <block_name>Recent Articles</block_name>
+        <block_description>Displays recent articles</block_description>
+        <block_key>recent_articles</block_key>
+        <block_type>feed</block_type>
+        <block_config><![CDATA[a:8:{s:4:"feed";s:8:"articles";s:7:"content";s:4:"1;db";s:7:"filters";a:16:{s:13:"filter_status";s:6:"either";s:17:"filter_visibility";s:8:"approved";s:13:"filter_pinned";s:6:"either";s:14:"filter_starter";s:0:"";s:13:"filter_rating";i:0;s:15:"filter_category";i:0;s:11:"filter_ct_1";s:0:"";s:11:"filter_cv_1";s:0:"";s:11:"filter_ct_2";s:0:"";s:11:"filter_cv_2";s:0:"";s:11:"filter_ct_3";s:0:"";s:11:"filter_cv_3";s:0:"";s:11:"filter_ct_4";s:0:"";s:11:"filter_cv_4";s:0:"";s:11:"filter_ct_5";s:0:"";s:11:"filter_cv_5";s:0:"";}s:6:"sortby";s:12:"record_saved";s:9:"sortorder";s:4:"desc";s:8:"offset_a";i:0;s:8:"offset_b";i:6;s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>0</block_position>
+        <block_category>2</block_category>
+    </block>
+    <block>
+        <block_id>4</block_id>
+        <block_active>1</block_active>
+        <block_name>Latest Video</block_name>
+        <block_description>Shows the latest video</block_description>
+        <block_key>latest_video</block_key>
+        <block_type>feed</block_type>
+        <block_config><![CDATA[a:8:{s:4:"feed";s:9:"databases";s:7:"content";s:4:"2;db";s:7:"filters";a:16:{s:13:"filter_status";s:6:"either";s:17:"filter_visibility";s:8:"approved";s:13:"filter_pinned";s:6:"either";s:14:"filter_starter";s:0:"";s:13:"filter_rating";i:0;s:15:"filter_category";i:0;s:11:"filter_ct_1";s:0:"";s:11:"filter_cv_1";s:0:"";s:11:"filter_ct_2";s:0:"";s:11:"filter_cv_2";s:0:"";s:11:"filter_ct_3";s:0:"";s:11:"filter_cv_3";s:0:"";s:11:"filter_ct_4";s:0:"";s:11:"filter_cv_4";s:0:"";s:11:"filter_ct_5";s:0:"";s:11:"filter_cv_5";s:0:"";}s:6:"sortby";s:12:"record_saved";s:9:"sortorder";s:4:"desc";s:8:"offset_a";i:0;s:8:"offset_b";i:1;s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>0</block_position>
+        <block_category>3</block_category>
+    </block>
+    <block>
+        <block_id>5</block_id>
+        <block_active>1</block_active>
+        <block_name>Category List</block_name>
+        <block_description>Pull feeds of data from your custom created databases</block_description>
+        <block_key>media_categories</block_key>
+        <block_type>feed</block_type>
+        <block_config><![CDATA[a:8:{s:4:"feed";s:9:"databases";s:7:"content";s:12:"2;categories";s:7:"filters";a:16:{s:13:"filter_status";s:6:"either";s:17:"filter_visibility";s:8:"approved";s:13:"filter_pinned";s:6:"either";s:14:"filter_starter";s:0:"";s:13:"filter_rating";i:0;s:15:"filter_category";i:0;s:11:"filter_ct_1";s:0:"";s:11:"filter_cv_1";s:0:"";s:11:"filter_ct_2";s:0:"";s:11:"filter_cv_2";s:0:"";s:11:"filter_ct_3";s:0:"";s:11:"filter_cv_3";s:0:"";s:11:"filter_ct_4";s:0:"";s:11:"filter_cv_4";s:0:"";s:11:"filter_ct_5";s:0:"";s:11:"filter_cv_5";s:0:"";}s:6:"sortby";N;s:9:"sortorder";s:4:"desc";s:8:"offset_a";i:0;s:8:"offset_b";i:0;s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>0</block_position>
+        <block_category>3</block_category>
+    </block>
+    <block>
+        <block_id>7</block_id>
+        <block_active>1</block_active>
+        <block_name>Recent Videos</block_name>
+        <block_description></block_description>
+        <block_key>recent_videos</block_key>
+        <block_type>feed</block_type>
+        <block_config><![CDATA[a:8:{s:4:"feed";s:9:"databases";s:7:"content";s:4:"2;db";s:7:"filters";a:16:{s:13:"filter_status";s:6:"either";s:17:"filter_visibility";s:8:"approved";s:13:"filter_pinned";s:6:"either";s:14:"filter_starter";s:0:"";s:13:"filter_rating";i:0;s:15:"filter_category";i:0;s:11:"filter_ct_1";s:0:"";s:11:"filter_cv_1";s:0:"";s:11:"filter_ct_2";s:0:"";s:11:"filter_cv_2";s:0:"";s:11:"filter_ct_3";s:0:"";s:11:"filter_cv_3";s:0:"";s:11:"filter_ct_4";s:0:"";s:11:"filter_cv_4";s:0:"";s:11:"filter_ct_5";s:0:"";s:11:"filter_cv_5";s:0:"";}s:6:"sortby";s:12:"record_saved";s:9:"sortorder";s:4:"desc";s:8:"offset_a";i:1;s:8:"offset_b";i:5;s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>0</block_position>
+        <block_category>3</block_category>
+    </block>
+    <block>
+        <block_id>8</block_id>
+        <block_active>1</block_active>
+        <block_name>Hot Videos</block_name>
+        <block_description>Pull feeds of data from your custom created databases</block_description>
+        <block_key>top_videos</block_key>
+        <block_type>feed</block_type>
+        <block_config><![CDATA[a:8:{s:4:"feed";s:9:"databases";s:7:"content";s:4:"2;db";s:7:"filters";a:16:{s:13:"filter_status";s:6:"either";s:17:"filter_visibility";s:8:"approved";s:13:"filter_pinned";s:6:"either";s:14:"filter_starter";s:0:"";s:13:"filter_rating";i:0;s:15:"filter_category";i:0;s:11:"filter_ct_1";s:0:"";s:11:"filter_cv_1";s:0:"";s:11:"filter_ct_2";s:0:"";s:11:"filter_cv_2";s:0:"";s:11:"filter_ct_3";s:0:"";s:11:"filter_cv_3";s:0:"";s:11:"filter_ct_4";s:0:"";s:11:"filter_cv_4";s:0:"";s:11:"filter_ct_5";s:0:"";s:11:"filter_cv_5";s:0:"";}s:6:"sortby";s:11:"rating_real";s:9:"sortorder";s:4:"desc";s:8:"offset_a";i:0;s:8:"offset_b";i:10;s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>0</block_position>
+        <block_category>3</block_category>
+    </block>
+    <block>
+        <block_id>9</block_id>
+        <block_active>1</block_active>
+        <block_name>Recent Comments</block_name>
+        <block_description>Displays recent article comments</block_description>
+        <block_key>recent_comments</block_key>
+        <block_type>feed</block_type>
+        <block_config><![CDATA[a:8:{s:4:"feed";s:8:"articles";s:7:"content";s:10:"1;comments";s:7:"filters";a:16:{s:13:"filter_status";s:6:"either";s:17:"filter_visibility";s:8:"approved";s:13:"filter_pinned";s:6:"either";s:14:"filter_starter";s:0:"";s:13:"filter_rating";i:0;s:15:"filter_category";i:0;s:11:"filter_ct_1";s:0:"";s:11:"filter_cv_1";s:0:"";s:11:"filter_ct_2";s:0:"";s:11:"filter_cv_2";s:0:"";s:11:"filter_ct_3";s:0:"";s:11:"filter_cv_3";s:0:"";s:11:"filter_ct_4";s:0:"";s:11:"filter_cv_4";s:0:"";s:11:"filter_ct_5";s:0:"";s:11:"filter_cv_5";s:0:"";}s:6:"sortby";s:12:"comment_date";s:9:"sortorder";s:4:"desc";s:8:"offset_a";i:0;s:8:"offset_b";i:6;s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>0</block_position>
+        <block_category>2</block_category>
+    </block>
+    <block>
+        <block_id>10</block_id>
+        <block_active>1</block_active>
+        <block_name>IP.Board CSS URL</block_name>
+        <block_description><![CDATA[Url to the CSS folder for the user&#39;s skin]]></block_description>
+        <block_key>ipb_css</block_key>
+        <block_type>custom</block_type>
+        <block_config><![CDATA[a:2:{s:4:"type";s:3:"php";s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content><![CDATA[echo $this->settings['css_base_url'] . 'style_css/' . $this->registry->getClass('output')->skin['_csscacheid'] .'/';]]></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>0</block_position>
+        <block_category>1</block_category>
+    </block>
+    <block>
+        <block_id>11</block_id>
+        <block_active>1</block_active>
+        <block_name>Articles/Media Link</block_name>
+        <block_description><![CDATA[Shows a link to articles section or media section, depending on where you are]]></block_description>
+        <block_key>artmedlink</block_key>
+        <block_type>custom</block_type>
+        <block_config><![CDATA[a:2:{s:4:"type";s:4:"html";s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content><![CDATA[<php>
+	$articlesDB	= 0;
+	$mediaDB	= 0;
+	
+	foreach( $this->caches['ccs_databases'] as $k => $v )
+	{
+		if( $v['database_is_articles'] )
+		{
+			$articlesDB	= $k;
+			continue;
+		}
+		
+		if( $v['database_key'] == 'media_demo' )
+		{
+			$mediaDB	= $k;
+			continue;
+		}
+	}
+</php>
+<div class='general_box clearfix'>
+	<h3>{$this->lang->words['ab__viewothercats']}</h3>
+	<div style='text-align: center;'>
+		<if test="strpos( $this->registry->ccsFunctions->getPageName(), 'media' ) !== false">
+			<a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $articlesDB )}'>{$this->lang->words['ab__viewourarticles']}</a>
+		<else />
+			<a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $mediaDB )}'>{$this->lang->words['ab__viewothermedia']}</a>
+		</if>
+	</div>
+</div>
+<br />]]></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>0</block_position>
+        <block_category>2</block_category>
+    </block>
+    <block>
+        <block_id>12</block_id>
+        <block_active>1</block_active>
+        <block_name>Recent Topics</block_name>
+        <block_description><![CDATA[Pull the most recent topics from your forums]]></block_description>
+        <block_key>portal_recent_topics</block_key>
+        <block_type>feed</block_type>
+        <block_template>18</block_template>
+        <block_config><![CDATA[a:8:{s:4:"feed";s:6:"forums";s:7:"content";s:6:"topics";s:7:"filters";a:11:{s:13:"filter_forums";s:0:"";s:12:"filter_perms";i:1;s:13:"filter_status";s:6:"either";s:17:"filter_visibility";s:8:"approved";s:13:"filter_pinned";s:6:"either";s:12:"filter_posts";i:0;s:14:"filter_starter";s:0:"";s:11:"filter_poll";s:6:"either";s:12:"filter_moved";i:1;s:13:"filter_attach";i:0;s:13:"filter_rating";i:0;}s:6:"sortby";s:10:"start_date";s:9:"sortorder";s:4:"desc";s:8:"offset_a";i:0;s:8:"offset_b";i:5;s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>1</block_position>
+        <block_category>10</block_category>
+    </block>
+    <block>
+        <block_id>13</block_id>
+        <block_active>1</block_active>
+        <block_name>Latest Gallery Images</block_name>
+        <block_description><![CDATA[Grab the latest IP.Gallery images into a slideshow block]]></block_description>
+        <block_key>latest_gallery_images</block_key>
+        <block_type>feed</block_type>
+        <block_template>14</block_template>
+        <block_config><![CDATA[a:8:{s:4:"feed";s:7:"gallery";s:7:"content";s:6:"images";s:7:"filters";a:6:{s:13:"filter_albums";s:0:"";s:17:"filter_inc_albums";i:0;s:17:"filter_visibility";s:4:"open";s:12:"filter_media";i:0;s:16:"filter_submitted";s:0:"";s:16:"filter_submitter";s:0:"";}s:6:"sortby";s:9:"submitted";s:9:"sortorder";s:4:"desc";s:8:"offset_a";i:0;s:8:"offset_b";i:10;s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>2</block_position>
+        <block_category>10</block_category>
+    </block>
+    <block>
+        <block_id>14</block_id>
+        <block_active>1</block_active>
+        <block_name>Recent Articles</block_name>
+        <block_description><![CDATA[Show the recent articles]]></block_description>
+        <block_key>portal_recent_articles</block_key>
+        <block_type>feed</block_type>
+        <block_template>19</block_template>
+        <block_config><![CDATA[a:8:{s:4:"feed";s:8:"articles";s:7:"content";s:4:"1;db";s:7:"filters";a:16:{s:13:"filter_status";s:6:"either";s:17:"filter_visibility";s:8:"approved";s:13:"filter_pinned";s:6:"either";s:14:"filter_starter";s:0:"";s:13:"filter_rating";i:0;s:15:"filter_category";i:0;s:11:"filter_ct_1";s:0:"";s:11:"filter_cv_1";s:0:"";s:11:"filter_ct_2";s:0:"";s:11:"filter_cv_2";s:0:"";s:11:"filter_ct_3";s:0:"";s:11:"filter_cv_3";s:0:"";s:11:"filter_ct_4";s:0:"";s:11:"filter_cv_4";s:0:"";s:11:"filter_ct_5";s:0:"";s:11:"filter_cv_5";s:0:"";}s:6:"sortby";s:12:"record_saved";s:9:"sortorder";s:4:"desc";s:8:"offset_a";i:0;s:8:"offset_b";i:5;s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>5</block_position>
+        <block_category>10</block_category>
+    </block>
+    <block>
+        <block_id>15</block_id>
+        <block_active>1</block_active>
+        <block_name>Recent Files</block_name>
+        <block_description><![CDATA[Show the most recent files]]></block_description>
+        <block_key>portal_recent_files</block_key>
+        <block_type>feed</block_type>
+        <block_template>19</block_template>
+        <block_config><![CDATA[a:8:{s:4:"feed";s:9:"downloads";s:7:"content";s:5:"files";s:7:"filters";a:9:{s:11:"filter_cats";s:0:"";s:17:"filter_visibility";s:4:"open";s:13:"filter_broken";s:6:"either";s:16:"filter_submitted";s:0:"";s:16:"filter_submitter";s:0:"";s:15:"filter_featured";i:0;s:13:"filter_pinned";i:0;s:11:"filter_paid";s:6:"either";s:13:"sortby_pinned";i:0;}s:6:"sortby";s:9:"submitted";s:9:"sortorder";s:4:"desc";s:8:"offset_a";i:0;s:8:"offset_b";i:5;s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>7</block_position>
+        <block_category>10</block_category>
+    </block>
+    <block>
+        <block_id>16</block_id>
+        <block_active>1</block_active>
+        <block_name>Recent Entries</block_name>
+        <block_description><![CDATA[Pull the most recent entries from your blogs]]></block_description>
+        <block_key>portal_recent_entries</block_key>
+        <block_type>feed</block_type>
+        <block_template>19</block_template>
+        <block_config><![CDATA[a:8:{s:4:"feed";s:5:"blogs";s:7:"content";s:7:"entries";s:7:"filters";a:5:{s:13:"filter_blogid";i:0;s:17:"filter_visibility";s:4:"open";s:15:"filter_featured";i:0;s:16:"filter_submitted";s:0:"";s:16:"filter_submitter";s:0:"";}s:6:"sortby";s:9:"submitted";s:9:"sortorder";s:4:"desc";s:8:"offset_a";i:0;s:8:"offset_b";i:5;s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>8</block_position>
+        <block_category>10</block_category>
+    </block>
+    <block>
+        <block_id>17</block_id>
+        <block_active>1</block_active>
+        <block_name>Mini-calendar</block_name>
+        <block_description><![CDATA[]]></block_description>
+        <block_key>portal_mini_calendar</block_key>
+        <block_type>plugin</block_type>
+        <block_template>0</block_template>
+        <block_config><![CDATA[a:3:{s:6:"plugin";s:13:"mini_calendar";s:6:"custom";a:1:{s:8:"calendar";i:1;}s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>4</block_position>
+        <block_category>10</block_category>
+    </block>
+    <block>
+        <block_id>18</block_id>
+        <block_active>1</block_active>
+        <block_name>Status Updates</block_name>
+        <block_description><![CDATA[]]></block_description>
+        <block_key>portal_status_updates</block_key>
+        <block_type>plugin</block_type>
+        <block_template>0</block_template>
+        <block_config><![CDATA[a:3:{s:6:"plugin";s:14:"status_updates";s:6:"custom";a:9:{s:6:"adsess";s:32:"a46c3f75a793887c5bd8ab67312880dd";s:3:"app";s:3:"ccs";s:6:"module";s:6:"blocks";s:7:"section";s:6:"wizard";s:2:"do";s:8:"continue";s:14:"wizard_session";s:32:"4d676a149b106e35ff401d67c134a5b4";s:4:"step";s:1:"4";s:14:"request_method";s:3:"get";s:11:"_isDatabase";s:0:"";}s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>6</block_position>
+        <block_category>10</block_category>
+    </block>
+    <block>
+        <block_id>19</block_id>
+        <block_active>1</block_active>
+        <block_name>Articles Link</block_name>
+        <block_description><![CDATA[Display a link to the articles section from the homepage]]></block_description>
+        <block_key>portal_articles_link</block_key>
+        <block_type>custom</block_type>
+        <block_template>0</block_template>
+        <block_config><![CDATA[a:2:{s:4:"type";s:4:"html";s:10:"hide_empty";s:1:"0";}]]></block_config>
+        <block_content><![CDATA[<php>
+        $articlesDB     = 0;
+        
+        foreach( $this->caches['ccs_databases'] as $k => $v )
+        {
+                if( $v['database_is_articles'] )
+                {
+                        $articlesDB     = $k;
+                        break;
+                }
+        }
+</php>
+<div class='general_box clearfix'>
+        <h3>{$this->lang->words['ab__viewothercats']}</h3>
+        <div style='text-align: center;' class='ipsPad'>
+                <a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $articlesDB )}'>{$this->lang->words['ab__viewourarticles']}</a>
+        </div>
+</div>
+<br />]]></block_content>
+        <block_cache_ttl>0</block_cache_ttl>
+        <block_cache_last>0</block_cache_last>
+        <block_cache_output></block_cache_output>
+        <block_position>3</block_position>
+        <block_category>10</block_category>
+    </block>
+  </ccs_blocks>
+  
+  
+  
+  <ccs_containers>
+  	<container>
+        <container_id>1</container_id>
+        <container_name><![CDATA[URLs &amp; Variables]]></container_name>
+        <container_type>block</container_type>
+        <container_order>100</container_order>
+ 	</container>
+  	<container>
+        <container_id>2</container_id>
+        <container_name>Article Blocks</container_name>
+        <container_type>block</container_type>
+        <container_order>100</container_order>
+ 	</container>
+  	<container>
+        <container_id>3</container_id>
+        <container_name>Demo Media System Blocks</container_name>
+        <container_type>block</container_type>
+        <container_order>100</container_order>
+ 	</container>
+  	<container>
+        <container_id>4</container_id>
+        <container_name>Database Templates</container_name>
+        <container_type>dbtemplate</container_type>
+        <container_order>1</container_order>
+ 	</container>
+  	<container>
+        <container_id>5</container_id>
+        <container_name>Frontpage Templates</container_name>
+        <container_type>arttemplate</container_type>
+        <container_order>100</container_order>
+ 	</container>
+  	<container>
+        <container_id>6</container_id>
+        <container_name>View Templates</container_name>
+        <container_type>arttemplate</container_type>
+        <container_order>100</container_order>
+ 	</container>
+  	<container>
+        <container_id>7</container_id>
+        <container_name>Archive Templates</container_name>
+        <container_type>arttemplate</container_type>
+        <container_order>100</container_order>
+ 	</container>
+  	<container>
+        <container_id>8</container_id>
+        <container_name>Category List Templates</container_name>
+        <container_type>arttemplate</container_type>
+        <container_order>100</container_order>
+ 	</container>
+  	<container>
+        <container_id>9</container_id>
+        <container_name>Demo Media System</container_name>
+        <container_type>dbtemplate</container_type>
+        <container_order>100</container_order>
+ 	</container>
+        <container>
+        <container_id>10</container_id>
+        <container_name>Homepage Blocks</container_name>
+        <container_type>block</container_type>
+        <container_order>100</container_order>
+        </container>
+  </ccs_containers>
+  
+  
+  
+  
+  
+  
+  <ccs_page_templates>
+  	<template>
+        <template_id>1</template_id>
+        <template_name>Database Listing</template_name>
+        <template_desc>Generic template to show contents in a database listing</template_desc>
+        <template_key>generic_database_listing</template_key>
+        <template_content><![CDATA[{ccs special_tag="navigation"}
+<if test="$data['database']['keyword']">
+    <p class='message'>
+        {$this->lang->words['your_search']} <em><strong>{$data['database']['keyword']}</strong></em> {$this->lang->words['your_search_returned']} <strong>{$data['database']['result_cnt']}</strong> {$this->lang->words['your_search_results']}
+    </p>
+</if>
+
+<if test="$this->memberData['member_id']">
+    {$data['follow_data']}
+</if>
+
+<h1 class='ipsType_pagetitle'><if test="$data['parent']['category_id']">{$data['parent']['category_name']}<else />{$data['database']['database_name']}</if></h1>
+
+<br />
+
+<if test="is_array($data['categories']) AND count($data['categories'])">
+    <div class='category_block block_wrap'>
+        <div class="maintitle">{$this->lang->words['cldt_categories']}</div>
+        <table class='ipb_table'>
+            <foreach loop="$data['categories'] as $category">
+                <tr class='<if test="$category['_has_unread']">unread</if>'>
+                    <td class='col_c_icon'>
+                        <if test="$category['_has_unread']">
+                            <a href="{parse url="app=ccs&amp;module=databases&amp;section=markasread&amp;database={$data['database']['database_id']}&amp;category={$category['category_id']}&amp;returnto={$data['parent']['category_id']}" base="public"}" data-tooltip="{$this->lang->words['ccscat_markread']}" class='forum_marker'><img src='{$this->settings['img_url']}/{$category['image']}.png' /></a>
+                        <else />
+                            <img src='{$this->settings['img_url']}/{$category['image']}.png' />
+                        </if>
+                    </td>
+                    <td class='col_c_forum'>
+                        <if test="$category['category_rss'] > 0">
+                            <div class='right'>
+                                <a href="{parse url="app=core&amp;module=global&amp;section=rss&amp;type=ccs&amp;id={$category['category_database_id']}c{$category['category_id']}" base="public" template="section=rss2" seotitle="{$category['category_furl_name']}"}"><img src='{$this->settings['img_url']}/feed.png' alt='{$this->lang->words['rss_feed']}' /></a>
+                            </div>
+                        </if>
+                        <h4><a href='{$category['category_link']}'>{$category['category_name']}</a></h4>
+                        <if test="count($category['children'])">
+                            <br />
+                            <ol class='ipsList_inline ipsType_small subforums'>
+                                <foreach loop="$category['children'] as $_data">
+                                    <if test="showSubForumsLit:|:$_data['_has_unread']"><li class='unread'><else /><li></if>
+                                        <a href='{$_data['category_link']}'>{$_data['category_name']}</a>
+                                    </li>
+                                </foreach>
+                            </ol>
+                        </if>
+                        <if test="$category['category_description']"><p class='desc __forum_desc ipsType_small'>{$category['category_description']}</p></if>                                                                          
+                        <if test="($data['database']['moderate_approve'] AND $category['category_records_queued']) OR ($data['database']['moderate_approvec'] AND $category['category_record_comments_queued'])">
+                            <em class='moderated'>
+                                <if test="$data['database']['moderate_approve'] AND $category['category_records_queued']">
+                                    <a href='{$category['category_link']}?view=archive&amp;sort=queued' title='{$this->lang->words['cat_viewmoderated']}'>{parse expression="sprintf( $this->lang->words['category_unapprovedlink'], $category['category_records_queued'] )"}</a>
+                                </if>
+                                <if test="($data['database']['moderate_approve'] AND $category['category_records_queued']) AND ($data['database']['moderate_approvec'] AND $category['category_record_comments_queued'])">
+                                    &nbsp;&nbsp;
+                                </if>
+                                <if test="$data['database']['moderate_approvec'] AND $category['category_record_comments_queued']">
+                                    <a href='{$category['category_link']}?view=archive&amp;sort=queuedc' title='{$this->lang->words['cat_viewmoderatedc']}'>{parse expression="sprintf( $this->lang->words['category_unapprovedclink'], $category['category_record_comments_queued'] )"}</a>
+                                </if>
+                            </em>
+                        </if>
+                    </td>
+                    <td class='col_c_stats ipsType_small'>
+                        <strong>{$category['category_records']}</strong> {$data['database']['database_lang_pu']}
+                    </td>
+                    <td class='col_c_post'>
+                        <ul class='last_post ipsType_small'>
+                            <if test="$category['category_last_record_id']">
+                                <li>
+                                    <a href='{$category['record_link']}'>{$category[ $data['database']['database_field_title'] . '_value' ]}</a>
+                                </li>
+                                <li>
+                                    {$this->lang->words['latestrecord_by']} {parse expression="IPSMember::makeProfileLink( $category['category_last_record_name'], $category['category_last_record_member'], $category['category_last_record_seo_name'] )"}
+                                </li>
+                                <li class='desc lighter blend_links'>
+                                    {parse date="$category['category_last_record_date']" format="DATE"}
+                                </li>
+                            <else />
+                                <li class='desc lighter'><em>{$this->lang->words['no_latest_record']}</em></li>
+                            </if>
+                        </ul>
+                    </td>
+                </tr>
+            </foreach>
+        </table>
+    </div>
+    <br /><br />
+</if>
+
+<if test="$data['show']">
+    <div class='topic_controls'>
+        {$data['pages']}
+        <ul class='topic_buttons'>
+            <if test="$data['database']['_can_add']">
+                <li><a href='{$data['database']['base_link']}do=add&amp;category={$this->request['category']}' title='{$this->lang->words['add_record_button']}' accesskey='s'>{$this->lang->words['add_record_button']}</a></li>
+                <else />
+                <li class='disabled'><span>{$this->lang->words['add_record_button_no']}</span></li>
+            </if>
+            <if test="$data['parent']['_has_unread']">
+                <li class='non_button'>
+                    <a href='{parse url="app=ccs&amp;module=databases&amp;section=markasread&amp;database={$data['database']['database_id']}&amp;category={$data['parent']['category_id']}&amp;returnto={$data['parent']['category_id']}" base="public"}' title='{$this->lang->words['ccscat_markread']}'><img src='{$this->settings['img_url']}/icon_check.png' /> &nbsp;{$this->lang->words['ccscat_markread']}</a>
+                </li>
+            </if>
+        </ul>
+    </div>
+    <br />
+    <if test="!empty($data['filter_box'])">
+        <div class='ipsLayout ipsLayout_withleft'>
+            <div class='ipsLayout_left'>
+                <div class='ipsBox'>
+                    <div class='ipsBox_container ipsSideMenu'>
+                        <foreach loop="$data['filter_box'] as $f">
+                            <h4>{$f['field_name']}</h4>
+                            <if test="count( $f['options'] ) < 15">
+                                <ul>
+                                    <foreach loop="$f['options'] as $k => $odata">
+                                        <if test="$this->_tempurl = str_replace( '&' . urlencode( "filters[{$f['field_id']}][{$k}]" ) . '=1', '', str_replace( '&' . urlencode( "filters[{$f['field_id']}][{$k}]" ) . '=0', '', $data['baseUrl'] ) )"></if>
+                                        <if test="$odata['active']">
+                                            <li class='active'>
+                                                <a href='{$this->_tempurl}&amp;filters[{$f['field_id']}][{$k}]=0'>{$odata['value']}</a>
+                                            </li>
+                                        <else />
+                                            <li>
+                                                <a href='{$this->_tempurl}&amp;filters[{$f['field_id']}][{$k}]=1'>{$odata['value']}</a>
+                                            </li>
+                                        </if>
+                                    </foreach>
+                                </ul>
+                            <else />
+                                <div class='ipsPad'>
+                                    <form action='{parse expression="preg_replace( '/&filters\[' . $f['field_id'] . '\]\[\d*?\]=(.+?)(&|$)/', "$2", urldecode( $data['baseUrl'] ) )"}' method='post'>
+                                        <input type='hidden' name='reverse_filters[{$f['field_id']}]' value='1' />
+                                        <select name='filters[{$f['field_id']}][]' multiple="multiple" style='max-width: 160px;'>
+                                            <foreach loop="$f['options'] as $k => $odata">
+                                                <option value='{$k}' <if test="$odata['active']">selected='selected'</if>>{$odata['value']}</option>
+                                            </foreach>
+                                        </select>
+                                        <br />
+                                        <input class='input_submit' type='submit' value='{$this->lang->words['filter_submit']}' />
+                                    </form>
+                                </div>
+                            </if>
+                        </foreach>
+                    </div>
+                </div>
+            </div>
+            <div class='ipsLayout_content'>
+    </if>
+                <div class='maintitle ipsFilterbar'>
+                    <ul class="ipsList_inline ipsType_small">
+                        <if test="( $this->request['sort_col'] == 'record_updated' and $this->request['sort_order'] == 'desc' ) or ( !$this->request['sort_col'] and $data['database']['database_field_sort'] == 'record_updated' and $data['database']['database_field_direction'] == 'desc' )">
+                            <li class="active"><a href='<if test="$data['parent']['category_link']">{$data['parent']['category_link']}?<else />{$data['database']['base_link']}</if>sort_col=record_updated&sort_order=desc'>{$this->lang->words['filter_last_updated']}</a></li>
+                            <li class=""><a href='<if test="$data['parent']['category_link']">{$data['parent']['category_link']}?<else />{$data['database']['base_link']}</if>sort_col=record_saved&sort_order=desc'>{$this->lang->words['filter_start_date']}</a></li>
+                            <li class=""><a href='<if test="$data['parent']['category_link']">{$data['parent']['category_link']}?<else />{$data['database']['base_link']}</if>sort_col=record_views&sort_order=desc'>{$this->lang->words['filter_most_views']}</a></li>
+                            <li class=""><a href='#cat_filter_menucontent' id='cat_filter'>{$this->lang->words['filter_custom']}</a></li>
+                        <else />
+                            <if test="( $this->request['sort_col'] == 'record_saved' and $this->request['sort_order'] == 'desc' ) or ( !$this->request['sort_col'] and $data['database']['database_field_sort'] == 'record_saved' and $data['database']['database_field_direction'] == 'desc' )">
+                                <li class=""><a href='<if test="$data['parent']['category_link']">{$data['parent']['category_link']}?<else />{$data['database']['base_link']}</if>sort_col=record_updated&sort_order=desc'>{$this->lang->words['filter_last_updated']}</a></li>
+                                <li class="active"><a href='<if test="$data['parent']['category_link']">{$data['parent']['category_link']}?<else />{$data['database']['base_link']}</if>sort_col=record_saved&sort_order=desc'>{$this->lang->words['filter_start_date']}</a></li>
+                                <li class=""><a href='<if test="$data['parent']['category_link']">{$data['parent']['category_link']}?<else />{$data['database']['base_link']}</if>sort_col=record_views&sort_order=desc'>{$this->lang->words['filter_most_views']}</a></li>
+                                <li class=""><a href='#cat_filter_menucontent' id='cat_filter'>{$this->lang->words['filter_custom']}</a></li>
+                            <else />
+                                <if test="( $this->request['sort_col'] == 'record_views' and $this->request['sort_order'] == 'desc' ) or ( !$this->request['sort_col'] and $data['database']['database_field_sort'] == 'record_views' and $data['database']['database_field_direction'] == 'desc' )">
+                                    <li class=""><a href='<if test="$data['parent']['category_link']">{$data['parent']['category_link']}?<else />{$data['database']['base_link']}</if>sort_col=record_updated&sort_order=desc'>{$this->lang->words['filter_last_updated']}</a></li>
+                                    <li class=""><a href='<if test="$data['parent']['category_link']">{$data['parent']['category_link']}?<else />{$data['database']['base_link']}</if>sort_col=record_saved&sort_order=desc'>{$this->lang->words['filter_start_date']}</a></li>
+                                    <li class="active"><a href='<if test="$data['parent']['category_link']">{$data['parent']['category_link']}?<else />{$data['database']['base_link']}</if>sort_col=record_views&sort_order=desc'>{$this->lang->words['filter_most_views']}</a></li>
+                                    <li class=""><a href='#cat_filter_menucontent' id='cat_filter'>{$this->lang->words['filter_custom']}</a></li>
+                                <else />
+                                    <li class=""><a href='<if test="$data['parent']['category_link']">{$data['parent']['category_link']}?<else />{$data['database']['base_link']}</if>sort_col=record_updated&sort_order=desc'>{$this->lang->words['filter_last_updated']}</a></li>
+                                    <li class=""><a href='<if test="$data['parent']['category_link']">{$data['parent']['category_link']}?<else />{$data['database']['base_link']}</if>sort_col=record_saved&sort_order=desc'>{$this->lang->words['filter_start_date']}</a></li>
+                                    <li class=""><a href='<if test="$data['parent']['category_link']">{$data['parent']['category_link']}?<else />{$data['database']['base_link']}</if>sort_col=record_views&sort_order=desc'>{$this->lang->words['filter_most_views']}</a></li>
+                                    <li class="active"><a href='#cat_filter_menucontent' id='cat_filter'>{$this->lang->words['filter_custom']}</a></li>
+                                </if>
+                            </if>
+                        </if>
+                    </ul>
+                </div>
+                <div id='cat_filter_menucontent' class='ipbmenu_content ipsPad' style='display: none'>
+                    <form id='filter_form' action="<if test="$data['parent']['category_link']">{$data['parent']['category_link']}<else />{$data['database']['base_link']}</if>" method="post">
+                        <strong>{$this->lang->words['db_records__sortby']}</strong><br />
+                        <select name='sort_col'>
+                            <option value='primary_id_field'<if test="$this->request['sort_col'] == 'primary_id_field'"> selected='selected'</if>>{$this->lang->words['field__id']}</option>
+                            <option value='member_id'<if test="$this->request['sort_col'] == 'member_id'"> selected='selected'</if>>{$this->lang->words['field__member']}</option>
+                            <option value='record_saved'<if test="$this->request['sort_col'] == 'record_saved'"> selected='selected'</if>>{$this->lang->words['field__saved']}</option>
+                            <option value='record_updated'<if test="$this->request['sort_col'] == 'record_updated'"> selected='selected'</if>>{$this->lang->words['field__updated']}</option>
+                            <option value='rating_real'<if test="$this->request['sort_col'] == 'rating_real'"> selected='selected'</if>>{$this->lang->words['field__rating']}</option>
+                            <option value='record_views'<if test="$this->request['sort_col'] == 'record_views'"> selected='selected'</if>>{$this->lang->words['field__views']}</option>
+                            <foreach loop="$data['fields'] as $field">
+                                <if test="in_array( $field['field_type'], array( 'input', 'textarea', 'radio', 'select' ) )">
+                                    <option value='field_{$field['field_id']}'<if test="$this->request['sort_col'] == 'field_' . $field['field_id']"> selected='selected'</if>>{$field['field_name']}</option>
+                                </if>
+                            </foreach>
+                        </select>
+                        <br /><br />
+                        <strong>{$this->lang->words['db_records__sortorder']}</strong><br />
+                        <select name='sort_order'>
+                                <option value='asc'<if test="$this->request['sort_order'] == 'asc'"> selected='selected'</if>>{$this->lang->words['db_records__asc']}</option>
+                                <option value='desc'<if test="$this->request['sort_order'] == 'desc'"> selected='selected'</if>>{$this->lang->words['db_records__desc']}</option>
+                        </select>
+                        <br /><br />
+                        <input type="submit" value="{$this->lang->words['dbrecord_resort']}" class="input_submit" />
+                    </form>
+                </div>
+                <script type='text/javascript'>
+                    new ipb.Menu( $('cat_filter'), $('cat_filter_menucontent'), { stopClose: true } );
+                </script>
+                <div class='ipsBox'>
+                    <div class='ipsBox_container'>
+                        <if test="count($data['records'])">
+                            <table class='ipb_table topic_list hover_rows'>
+                                <tr>
+                                    <th class='col_f_icon altrow short'>&nbsp;</th>
+                                    <if test="count($data['fields'])">
+                                        <foreach loop="$data['fields'] as $field">
+                                            <th>{$field['field_name']}</th>
+                                        </foreach>
+                                    </if>
+                                </tr>
+                                <foreach loop="$data['records'] as $record">
+                                    <if test="$record['record_approved'] < 1">
+                                        <tr class='__topic moderated'>
+                                    <else />
+                                        <tr class='__topic <if test="!$record['_isRead']">unread</if>'>
+                                    </if>                                                   
+                                    <td class='col_f_icon altrow short'>
+                                        <if test="!$record['_isRead']">
+                                            <if test="$record['_iPosted']">{parse replacement="t_unread_dot"}<else />{parse replacement="t_unread"}</if>
+                                        <else />
+                                            <if test="$record['_iPosted']">{parse replacement="t_read_dot"}<else />{parse replacement="t_read"}</if>
+                                        </if>
+                                    </td>
+                                    <if test="count($data['fields'])">
+                                        <if test="$this->didLink = false"></if>
+                                            <foreach loop="$data['fields'] as $field">
+                                                <td>
+                                                    <if test="!$this->didLink">
+                                                        <if test="$record['record_pinned']">{parse template="topicPrefixWrap" group="forum" params="$this->lang->words['pre_pinned']"}</if>
+                                                        <if test="!empty($record['tags']['formatted']['prefix'])">
+                                                            {$record['tags']['formatted']['prefix']}
+                                                        </if>
+                                                        <h4>
+                                                            <if test="$record['record_approved'] == 0">
+                                                                <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_queued_badge']}</span>
+                                                            <else />
+                                                                <if test="$record['record_approved'] == -1">
+                                                                    <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_deleted_badge']}</span>
+                                                                </if>
+                                                            </if>
+                                                            <a href='{$record['record_link']}'>{$record['field_' . $field['field_id'] . '_value']}</a>
+                                                            <if test="$record['record_comments_queued'] AND $data['database']['moderate_approvec']">
+                                                                <br /><em class='moderated'><a href='{$record['record_link']}?comments=unapproved#commentsStart' title='{$this->lang->words['comments_pending_app_title']}' class='comments'>{parse expression="sprintf( $this->lang->words['comments_queued_tooltip'], $record['record_comments_queued'] )"}</a></em>
+                                                            </if>
+                                                        </h4>
+                                                        <if test="$this->didLink = true"></if>
+                                                        <if test="isset($record['tags']) AND $record['tags']">
+                                                            &nbsp; <img src='{$this->settings['img_url']}/icon_tag.png' /> <span class='desc lighter blend_links'>{$record['tags']['formatted']['truncatedWithLinks']}</span>
+                                                        </if>
+                                                    <else />
+                                                        {$record['field_' . $field['field_id'] . '_value']}
+                                                    </if>
+                                                </td>
+                                            </foreach>
+                                        </if>
+                                    </tr>
+                                </foreach>
+                            </table>
+                        <else />
+                            <div class='no_messages'>{$this->lang->words['no_records_found']}</div>
+                        </if>
+                    </div>
+                </div>
+    <if test="!empty($data['filter_box'])">
+            </div>
+        </div>
+    </if>
+    <br />
+    <div class='topic_controls clear clearfix'>
+        {$data['pages']}
+    </div>
+    <br /><br />
+</if>]]></template_content>
+        <template_updated>{--time--}</template_updated>
+        <template_position>2</template_position>
+        <template_category>4</template_category>
+        <template_database>2</template_database>
+   </template>
+  	<template>
+        <template_id>2</template_id>
+        <template_name>Database Display</template_name>
+        <template_desc>Generic template to view a record in a custom database</template_desc>
+        <template_key>generic_database_view</template_key>
+        <template_content><![CDATA[{ccs special_tag="navigation"}
+{parse js_module="rating"}
+{parse template="include_lightbox" group="global" params=""} 
+{parse template="include_highlighter" group="global" params="1"}
+
+
+<php>
+    $data['record'] = IPSMember::buildDisplayData( $data['record'] );
+</php>
+<if test="$data['database']['database_rate']">
+    <div class='right'>
+        <if test="$this->memberData['member_id']">
+            {$data['follow_data']}
+        </if>
+        <div class='rating ipsType_smaller ipsPad_top_half right clear'>
+            <if test="$data['database']['_can_rate']">
+                    <a href='#' id='article_rate_1' title='{$this->lang->words['top_js_1star']}'>
+            </if>
+            <if test="rate1:|:$data['record']['rating_real'] >= 1">
+                    {parse replacement="rate_on"}
+            <else />
+                    {parse replacement="rate_off"}
+            </if>
+            <if test="$data['database']['_can_rate']">
+                    </a><a href='#' id='article_rate_2' title='{$this->lang->words['top_js_2star']}'>
+            </if>
+            <if test="rate2:|:$data['record']['rating_real'] >= 2">
+                    {parse replacement="rate_on"}
+            <else />
+                    {parse replacement="rate_off"}
+            </if>
+            <if test="$data['database']['_can_rate']">
+                    </a><a href='#' id='article_rate_3' title='{$this->lang->words['top_js_3star']}'>
+            </if>
+            <if test="rate3:|:$data['record']['rating_real'] >= 3">
+                    {parse replacement="rate_on"}
+            <else />
+                    {parse replacement="rate_off"}
+            </if>
+            <if test="$data['database']['_can_rate']">
+                    </a><a href='#' id='article_rate_4' title='{$this->lang->words['top_js_4star']}'>
+            </if>
+            <if test="rate4:|:$data['record']['rating_real'] >= 4">
+                    {parse replacement="rate_on"}
+            <else />
+                    {parse replacement="rate_off"}
+            </if>
+            <if test="$data['database']['_can_rate']">
+                    </a><a href='#' id='article_rate_5' title='{$this->lang->words['top_js_5star']}'>
+            </if>
+            <if test="rate5:|:$data['record']['rating_real'] >= 5">
+                    {parse replacement="rate_on"}
+            <else />
+                    {parse replacement="rate_off"}
+            </if>
+            <if test="$data['database']['_can_rate']">
+                    </a>
+                    <script type='text/javascript'>
+                                    rating = new ipb.rating( 'article_rate_', { 
+                                                                            url: ipb.vars['base_url'] + 'app=ccs&module=ajax&section=rate&id={$data['database']['database_id']}&record={$data['record']['primary_id_field']}&md5check=' + ipb.vars['secure_hash'],
+                                                                            cur_rating: <if test="isset($data['record']['rating_real'])">{$data['record']['rating_real']}<else />0</if>,
+                                                                            rated: null,
+                                                                            allow_rate: <if test="$data['database']['_can_rate']">1<else />0</if>,
+                                                                            show_rate_text: false
+                                                                      } );
+                    </script>
+            </if>
+        </div>
+    </div>
+<else />
+    <if test="$this->memberData['member_id']">
+        {$data['follow_data']}
+    </if>
+</if>
+{parse template="userSmallPhoto" group="global" params="array_merge( $data['record'], array( '_customClass' => 'ipsUserPhoto_medium' ) )"}
+<div class='ipsBox_withphoto'>
+    <h1 class='ipsType_pagetitle'>
+    <if test="$data['record']['record_approved'] == 0">
+        <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_queued_badge']}</span>
+    <else />
+        <if test="$data['record']['record_approved'] == -1">
+            <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_deleted_badge']}</span>
+        </if>
+    </if>
+    {$data['record'][$data['database']['database_field_title'] . '_value' ]}
+    </h1>
+
+    <div class='desc lighter blend_links'>
+        {$this->lang->words['submitted_by_record']} {parse template="userHoverCard" group="global" params="$data['record']"}, {parse date="$data['record']['record_saved']" format="SHORT"} | {$this->lang->words['last_updated_record']} {parse date="$data['record']['record_updated']" format="SHORT"}
+    </div>
+    <if test="hasTags:|:is_array($data['record']['tags'])">
+        {$data['record']['tags']['formatted']['parsedWithoutComma']}
+    </if>
+</div>
+<br />
+
+<div class="ipsBox">
+    <div class="ipsBox_container ipsPad ipsType_textblock">
+        {$data['record'][$data['database']['database_field_content'] . '_value' ]}
+        {parse template="repButtons" group="global_other" params="$data['record'], array_merge( $data['record'], array( 'primaryId' => $data['record']['primary_id_field'], 'domLikeStripId' => 'like_post_' . $data['record']['primary_id_field'], 'domCountId' => 'rep_post_' . $data['record']['primary_id_field'], 'app' => 'ccs', 'type' => 'record_id_' . $data['database']['database_id'], 'likeFormatted' => $data['record']['like']['formatted'] ) )"}
+        <br />
+        
+        <foreach loop="$data['fields'] as $field">
+            <if test="$field['field_type'] == 'attachments' AND $data['record']['field_' . $field['field_id'] . '_value']">
+                <div id='attach_wrap' class='rounded clearfix'>
+                    <h4>{$field['field_name']}</h4>
+                    <br />
+                    {$data['record']['field_' . $field['field_id'] . '_value']}
+                    <br /><br />
+                </div>
+            </if>
+        </foreach>
+        
+        <table class='ipb_table'>
+            <if test="count($data['fields'])">
+                <foreach loop="$data['fields'] as $field">
+                    <if test="'field_'.$field['field_id'] != $data['database']['database_field_title'] and 'field_'.$field['field_id'] != $data['database']['database_field_content'] and $field['field_type'] != 'attachments'">
+                        <tr>
+                            <td style='width: 20%; font-weight: bold; text-align: right; vertical-align: top;'>{$field['field_name']}:</td>
+                            <td>{$data['record']['field_' . $field['field_id'] . '_value']}</td>
+                        </tr>
+                    </if>
+                </foreach>
+            <else />
+                <tr>
+                    <td style='text-align: center;'><em>{$this->lang->words['record_not_found']}</em></td>
+                </tr>
+            </if>
+        </table>
+    </div>
+</div>
+
+<div class='ipsPad'>
+    <if test="$this->settings['sl_enable']">
+        <div style='float: left'>
+            {parse template="facebookLike" group="ccs_global" params="$data['record']['record_link']"}
+            {IPSLib::shareLinks( $data['record'][ $data['database']['database_field_title'] . '_value' ], array( 'overrideApp' => 'ccs' ) )}
+        </div>
+    </if>
+    <if test="$this->memberData['member_id']">
+        <div style='float: right'>
+            <ul class='post_controls'>
+                <if test="$data['database']['_can_edit']">
+                    <li><a href='{$data['record']['record_link']}do=edit' title='{$this->lang->words['edit_record_button']}' accesskey='s'>{$this->lang->words['edit_record_button']}</a></li>
+                <else />
+                    <li class='disabled'><span>{$this->lang->words['edit_record_button_no']}</span></li>
+                </if>
+                                
+                <if test="$data['record']['record_locked'] AND $data['database']['moderate_unlock']">
+                    <li><a href='{$data['record']['record_link']}do=unlock&amp;secure_key={$this->member->form_hash}' title='{$this->lang->words['unlock_record']}' accesskey='l'>{$this->lang->words['unlock_record']}</a></li>
+                <else />
+                    <if test="!$data['record']['record_locked'] AND $data['database']['moderate_lock']">
+                        <li><a href='{$data['record']['record_link']}do=lock&amp;secure_key={$this->member->form_hash}' title='{$this->lang->words['lock_record']}' accesskey='l'>{$this->lang->words['lock_record']}</a></li>
+                    </if>
+                </if>
+                
+                <if test="$data['database']['moderate_pin']">
+                    <if test="$data['record']['record_pinned']">
+                        <li><a href='{$data['record']['record_link']}do=unpin&amp;secure_key={$this->member->form_hash}' title='{$this->lang->words['unpin_record']}'>{$this->lang->words['unpin_record']}</a></li>
+                    <else />
+                        <li><a href='{$data['record']['record_link']}do=pin&amp;secure_key={$this->member->form_hash}' title='{$this->lang->words['pin_record']}'>{$this->lang->words['pin_record']}</a></li>
+                    </if>
+                </if>
+                
+                <if test="$data['database']['moderate_approve']">
+                    <if test="$data['record']['record_approved'] == 0">
+                        <li><a href='{$data['record']['record_link']}do=approve&amp;secure_key={$this->member->form_hash}' title='{$this->lang->words['approve_record']}'>{$this->lang->words['approve_record']}</a></li>
+                    </if>
+                </if>
+                    
+                <if test="$data['database']['moderate_delete']">
+                    <li><a href='{$data['record']['record_link']}do=delete' title='{$this->lang->words['delete_record']}'>{$this->lang->words['delete_record']}</a></li>
+
+                    <if test="$data['record']['record_approved'] == 1">
+                        <li><a href='{$data['record']['record_link']}do=unapprove&amp;secure_key={$this->member->form_hash}' title='{$this->lang->words['unapprove_record']}'>{$this->lang->words['unapprove_record']}</a></li>
+                    <else />
+                        <if test="$data['record']['record_approved'] == -1">
+                            <li><a href='{$data['record']['record_link']}do=approve&amp;secure_key={$this->member->form_hash}' title='{$this->lang->words['unhide_record']}'>{$this->lang->words['unhide_record']}</a></li>
+                        </if>
+                    </if>
+                </if>
+
+                <if test="$data['database']['moderate_restorer'] AND $data['database']['database_revisions']">
+                    <li><a href='{$data['record']['record_link']}do=revisions' title='{$this->lang->words['record_revisions']}' class='right'>{$this->lang->words['record_revisions']}</a></li>
+                </if>
+
+                <if test="$data['database']['_can_report']">
+                    <li class='report'>
+                        <a href='{parse url="app=core&amp;module=reports&amp;rcom=ccs&amp;database={$data['database']['database_id']}&amp;record={$data['record']['primary_id_field']}" base="public"}'>{$this->lang->words['report_record']}</a>
+                    </li>
+                </if>
+            </ul>
+        </div>
+    </if>
+</div>
+
+<br /><br />
+
+<if test="$data['database']['database_comments']">
+<div id='commentsStart' class='ipsBox'>
+    <div class='ipsBox_container ipsPad'>
+        <h2 class='ipsType_subtitle'>{$data['comments']['count']} {$this->lang->words['comment_block']}</h2>
+        <div class='comment_wrap'>
+            {$data['comments']['html']}
+        </div>
+    </div>
+</div>
+<br />
+</if>]]></template_content>
+        <template_updated>{--time--}</template_updated>
+        <template_position>3</template_position>
+        <template_category>4</template_category>
+        <template_database>3</template_database>
+   </template>
+  	<template>
+        <template_id>3</template_id>
+        <template_name>Database Categories</template_name>
+        <template_desc>Generic category display page for databases</template_desc>
+        <template_key>generic_database_categories</template_key>
+        <template_content><![CDATA[{ccs special_tag="navigation"}
+<if test="$data['database']['keyword']">
+    <p class='message'>
+        {$this->lang->words['your_search']} <em><strong>{$data['database']['keyword']}</strong></em> {$this->lang->words['your_search_returned']} <strong>{$data['database']['result_cnt']}</strong> {$this->lang->words['your_search_results']}
+    </p>
+</if>
+
+<h1 class='ipsType_pagetitle'>{$data['database']['database_name']}</h1>
+
+<br />
+
+<if test="is_array($data['categories']) AND count($data['categories'])">
+    <div class='category_block block_wrap'>
+        <div class="maintitle">{$this->lang->words['cldt_categories']}</div>
+        <table class='ipb_table'>
+            <foreach loop="$data['categories'] as $category">
+               <tr class='<if test="$category['_has_unread']">unread</if>'>
+                    <td class='col_c_icon'>
+                        <if test="$category['_has_unread']">
+                            <a href="{parse url="app=ccs&amp;module=databases&amp;section=markasread&amp;database={$data['database']['database_id']}&amp;category={$category['category_id']}&amp;i=1" base="public"}" data-tooltip="{$this->lang->words['ccscat_markread']}" class='forum_marker'><img src='{$this->settings['img_url']}/{$category['image']}.png' /></a>
+                        <else />
+                            <img src='{$this->settings['img_url']}/{$category['image']}.png' />
+                        </if>
+                    </td>
+                    <td class='col_c_forum'>
+                        
+                        <if test="$category['category_rss']">
+                            <div class='right'>
+                                <a href="{parse url="app=core&amp;module=global&amp;section=rss&amp;type=ccs&amp;id={$category['category_database_id']}c{$category['category_id']}" base="public" template="section=rss2" seotitle="{$category['category_furl_name']}"}"><img src='{$this->settings['img_url']}/feed.png' alt='{$this->lang->words['rss_feed']}' /></a>
+                            </div>
+                        </if>
+                        
+                        <h4><a href='{$category['category_link']}'>{$category['category_name']}</a></h4>
+                        
+                        <if test="count($category['children'])">
+                            <br />
+                            <ol class='ipsList_inline ipsType_small subforums'>
+                                <foreach loop="$category['children'] as $_data">
+                                    <if test="showSubForumsLit:|:$_data['_has_unread']"><li class='unread'><else /><li></if>
+                                        <a href='{$_data['category_link']}'>{$_data['category_name']}</a>
+                                    </li>
+                                </foreach>
+                            </ol>
+                        </if>
+                                                        
+                        <if test="$category['category_description']"><p class='desc __forum_desc ipsType_small'>{$forum_data['category_description']}</p></if>                                      
+                        
+                        <if test="($data['database']['moderate_approve'] AND $category['category_records_queued']) OR ($data['database']['moderate_approvec'] AND $category['category_record_comments_queued'])">
+                            <em class='moderated'>
+                                <if test="$data['database']['moderate_approve'] AND $category['category_records_queued']">
+                                    <a href='{$category['category_link']}?view=archive&amp;sort=queued' title='{$this->lang->words['cat_viewmoderated']}'>{parse expression="sprintf( $this->lang->words['category_unapprovedlink'], $category['category_records_queued'] )"}</a>
+                                </if>
+                                <if test="($data['database']['moderate_approve'] AND $category['category_records_queued']) AND ($data['database']['moderate_approvec'] AND $category['category_record_comments_queued'])">
+                                    &nbsp;&nbsp;
+                                </if>
+                                <if test="$data['database']['moderate_approvec'] AND $category['category_record_comments_queued']">
+                                    <a href='{$category['category_link']}?view=archive&amp;sort=queuedc' title='{$this->lang->words['cat_viewmoderatedc']}'>{parse expression="sprintf( $this->lang->words['category_unapprovedclink'], $category['category_record_comments_queued'] )"}</a>
+                                </if>
+                            </em>
+                        </if>
+                    </td>
+                    <td class='col_c_stats ipsType_small'>
+                        <strong>{$category['category_records']}</strong> {$data['database']['database_lang_pu']}
+                    </td>
+                    <td class='col_c_post'>
+                        <ul class='last_post ipsType_small'>
+                            <if test="$category['category_last_record_id']">
+                                <li>
+                                    <a href='{$category['record_link']}'>{$category[ $data['database']['database_field_title'] . '_value' ]}</a>
+                                </li>
+                                <li>
+                                    {$this->lang->words['latestrecord_by']} {parse expression="IPSMember::makeProfileLink( $category['category_last_record_name'], $category['category_last_record_member'], $category['category_last_record_seo_name'] )"}
+                                </li>
+                                <li class='desc lighter blend_links'>
+                                    {parse date="$category['category_last_record_date']" format="DATE"}
+                                </li>
+                            <else />
+                                <li class='desc lighter'><em>{$this->lang->words['no_latest_record']}</em></li>
+                            </if>
+                        </ul>
+                    </td>
+                </tr>
+            </foreach>
+        </table>
+    </div>
+</if>
+
+<br /><br />]]></template_content>
+        <template_updated>{--time--}</template_updated>
+        <template_position>1</template_position>
+        <template_category>4</template_category>
+        <template_database>1</template_database>
+   </template>
+  	<template>
+        <template_id>4</template_id>
+        <template_name>Front Page (1x2x2 Layout)</template_name>
+        <template_desc>Displays one large headline, two rows of two, then the remainder in a list. Suitable for main frontpage and category frontpage.</template_desc>
+        <template_key>frontpage</template_key>
+        <template_content><![CDATA[<php>
+        // Category or global?
+        if( isset( $data['category']['category_id'] ) ){
+                $rss = array( 
+                        'enabled' => ( $data['category']['category_rss'] && $data['category']['category_show_records'] ) ? 1 : 0,
+                        'type' => 'category',
+                        'id' => $data['database']['database_id'].'c'.$data['category']['category_id'],
+                        'name' => $data['category']['category_name']
+                );
+                $title = $data['category']['category_name'];
+                $this->settings['_active_cat'] = $data['category']['category_id'];
+        } else {
+                $rss = array( 
+                        'enabled' => $data['database']['database_rss'],
+                        'type' => 'global',
+                        'id' => $data['database']['database_id'],
+                        'name' => $data['database']['database_name']
+                );
+                $title = $this->lang->words['fpdt_latestnews'];
+        }
+</php>
+
+<if test="$data['database']['_can_add']">
+        <div class='right'>
+                <ul class='topic_buttons'>
+                        <li><a href='{$data['database']['base_link']}do=add&amp;category={$this->request['category']}' title='{$this->lang->words['add_record_button']}'>{$this->lang->words['add_record_button']}</a></li>
+                </ul>   
+        </div>
+</if>
+
+<if test="$this->request['category']">
+        {$data['follow_data']}
+</if>
+
+<h1 class='ipsType_pagetitle'>
+        {$title}
+        <if test="$data['category']['category_id']">
+                <a href='{$data['category']['category_link']}<if test="!$this->settings['use_friendly_urls']">&amp;view=archive<else />?view=archive</if>' title='{$this->lang->words['fpdt_viewarchives']}'><img src='{$this->settings['img_url']}/archive.png' alt='' /></a>
+        </if>
+        <if test="$rss['enabled']">
+                <a href='{parse url="app=core&amp;module=global&amp;section=rss&amp;type=ccs&amp;id={$rss['id']}" seotitle="{$rss['name']}" template="section=rss2" base="public"}'><img src='{$this->settings['img_url']}/feed.png' alt='' /></a>
+        </if>
+</h1>
+
+<br class='clear' />
+
+<if test="count( $data['records'] )">
+
+        <!-- START ARTICLE POSITION 1 -->
+        <if test="$data['records'][0]">
+        
+                <div class='ipsBox'>
+                        <div class='ipsBox_container ipsPad'>
+                                <if test="$data['records'][0]['article_image']">
+                                        <img src='{$data['records'][0]['article_image']}' class='photo left ipsPad' {parse resize_image="$data['records'][0]['article_image']" maxwidth="225"} alt='' />
+                                </if>
+                                <h2 class='ipsType_subtitle'>
+                                        <if test="$data['records'][0]['record_approved'] == 0">
+                                                <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_queued_badge']}</span>
+                                        <else />
+                                                <if test="$data['records'][0]['record_approved'] == -1">
+                                                        <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_deleted_badge']}</span>
+                                                </if>
+                                        </if>
+
+                                        <if test="$data['records'][0][ $data['special']['date'] ] > time()">
+                                                <span class='ipsBadge ipsBadge_lightgrey'>{$this->lang->words['article_unpublished']}</span>
+                                        </if>
+                                        <if test="$data['records'][0]['record_pinned']">{parse template="topicPrefixWrap" group="forum" params="$this->lang->words['pre_pinned']"}</if>
+                                        <if test="!empty($data['records'][0]['tags']['formatted']['prefix'])">
+                                                {$data['records'][0]['tags']['formatted']['prefix']}
+                                        </if>
+                                        <a href='{$data['records'][0]['record_link']}'>{$data['records'][0]['article_title']}</a>
+                                </h2>
+                                <div class="desc">{$data['records'][0]['article_date']} | {parse template="userHoverCard" group="global" params="$data['records'][0]"}<if test="$data['records'][0]['category_link']"> {$this->lang->words['fpdt_in']} <a href='{$data['records'][0]['category_link']}'>{$data['records'][0]['category_name']}</a></if></div>
+                                <br />
+                                <if test="$data['records'][0]['teaser_paragraph']">{$data['records'][0]['teaser_paragraph']}<else />{IPSText::truncate( strip_tags( IPSText::stripAttachTag( IPSText::getTextClass('bbcode')->stripAllTags( $data['records'][0]['article_body'] ) ), '<br>' ), 255 )}</if>
+                                <br /><br />
+                                <span class='links'>
+                                        <a href='{$data['records'][0]['record_link']}' class='read_more'>{$this->lang->words['fpdt_readstory']}</a>
+                                        &nbsp;&nbsp;
+                                        <a href='{$data['records'][0]['record_link']}#commentsStart' class='comments'>{$data['records'][0]['record_comments']} {$this->lang->words['fpdt_comments']}</a>
+                                        <if test="$data['records'][0]['record_comments_queued'] AND $data['database']['moderate_approvec']">
+                                                &nbsp;<em class='moderated'><a href='{$data['records'][0]['record_link']}?comments=unapproved#commentsStart' title='{$this->lang->words['comments_pending_app_title']}' class='comments' data-tooltip="{parse expression="sprintf( $this->lang->words['comments_queued_tooltip'], $data['records'][0]['record_comments_queued'])"}">{parse expression="sprintf( $this->lang->words['ccsc_queued_badge'], $data['records'][0]['record_comments_queued'] )"}</a></em>
+                                        </if>
+                                        &nbsp;&nbsp;
+                                        <if test="$data['database']['database_rate']">
+                                                <if test="$data['records'][0]['rating_real'] >= 1">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$data['records'][0]['rating_real'] >= 2">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$data['records'][0]['rating_real'] >= 3">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$data['records'][0]['rating_real'] >= 4">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$data['records'][0]['rating_real'] >= 5">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if>
+                                        </if>
+                                        <if test="isset($data['records'][0]['tags']) AND $data['records'][0]['tags']">
+                                                &nbsp;&nbsp; <img src='{$this->settings['img_url']}/icon_tag.png' /> <span class='desc lighter blend_links'>{$data['records'][0]['tags']['formatted']['truncatedWithLinks']}</span>
+                                        </if>
+                                </span>
+                                <br style='clear: both' />
+                        </div>
+                </div>
+        
+        </if>
+        
+        <br class="clear" />
+        
+        <!-- START ARTICLE POSITION 2 -->
+        <foreach loop="$data['records'] as $k => $record">
+                <if test="$k != 0">
+                        <div class='ipsBox <if test="$k % 2">left<else />right</if>'  style='width: 47%'>
+                                <div class='ipsBox_container ipsPad'>
+                                        <if test="$record['article_image']">
+                                                <img src='{$record['article_image']}' class='photo ipsPad' {parse resize_image="$record['article_image']" maxwidth="150"} alt='' style="float: right" />
+                                        </if>
+                                        <h2 class='ipsType_subtitle'>
+                                                <if test="$record['record_approved'] == 0">
+                                                        <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_queued_badge']}</span>
+                                                <else />
+                                                        <if test="$record['record_approved'] == -1">
+                                                                <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_deleted_badge']}</span>
+                                                        </if>
+                                                </if>
+                                                <if test="$record[ $data['special']['date'] ] > time()">
+                                                        <span class='ipsBadge ipsBadge_lightgrey'>{$this->lang->words['article_unpublished']}</span>
+                                                </if>
+                                                <if test="$record['record_pinned']">{parse template="topicPrefixWrap" group="forum" params="$this->lang->words['pre_pinned']"}</if>
+                                                <if test="!empty($record['tags']['formatted']['prefix'])">
+                                                        {$record['tags']['formatted']['prefix']}
+                                                </if>
+                                                <a href='{$record['record_link']}'>{$record['article_title']}</a>
+                                        </h2>
+                                        <div class="desc">{$record['article_date']} | {parse template="userHoverCard" group="global" params="$record"}<if test="$record['category_link']"> {$this->lang->words['fpdt_in']} <a href='{$record['category_link']}'>{$record['category_name']}</a></if></div>
+                                        <br />
+                                        <if test="$record['teaser_paragraph']">{$record['teaser_paragraph']}<else />{IPSText::truncate( strip_tags( IPSText::stripAttachTag( IPSText::getTextClass('bbcode')->stripAllTags( $record['article_body'] ) ), '<br>' ), 255 )}</if>
+                                        <br /><br />
+                                        <span class='links'>
+                                                <a href='{$record['record_link']}' class='read_more'>{$this->lang->words['fpdt_readstory']}</a>
+                                                &nbsp;&nbsp;
+                                                <a href='{$record['record_link']}#commentsStart' class='comments'>{$record['record_comments']} {$this->lang->words['fpdt_comments']}</a>
+                                                <if test="$record['record_comments_queued'] AND $data['database']['moderate_approvec']">
+                                                        &nbsp;<em class='moderated'><a href='{$record['record_link']}?comments=unapproved#commentsStart' title='{$this->lang->words['comments_pending_app_title']}' class='comments' data-tooltip="{parse expression="sprintf( $this->lang->words['comments_queued_tooltip'], $record['record_comments_queued'])"}">{parse expression="sprintf( $this->lang->words['ccsc_queued_badge'], $record['record_comments_queued'] )"}</a></em>
+                                                </if>
+                                                &nbsp;&nbsp;
+                                                <if test="$data['database']['database_rate']">
+                                                        <if test="$record['rating_real'] >= 1">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 2">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 3">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 4">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 5">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if>
+                                                </if>
+                                                <if test="isset($record['tags']) AND $record['tags']">
+                                                        &nbsp;&nbsp; <img src='{$this->settings['img_url']}/icon_tag.png' /> <span class='desc lighter blend_links'>{$record['tags']['formatted']['truncatedWithLinks']}</span>
+                                                </if>
+                                        </span>
+                                        <br style='clear: both' />
+                                </div>
+                        </div>
+                        <if test="!($k % 2)">
+                                <br class="clear" />
+                                <br class="clear" />
+                        </if>
+                </if>
+        </foreach>
+        
+<else />
+        {$this->lang->words['fpdt_noarticles']}
+        <if test="$data['database']['_can_add']">
+                <a href='{$data['database']['base_link']}do=add&amp;category={$this->request['category']}' title='{$this->lang->words['add_record_button']}'><strong>{$this->lang->words['fpdt_addone']}</strong></a>
+        </if>
+</if>
+
+<if test="$this->caches['ccs_frontpage']['paginate']">
+        <div class='pagelinks clear clearfix'>
+                <php>
+                        if( $data['category']['category_id'] )
+                        {
+                                if( $data['database']['moderate_approve'] )
+                                {
+                                        $_ttlPgs        = ( $data['category']['_category_records'] || $data['category']['_category_records_queued'] ) ? ceil( ( $data['category']['_category_records'] + $data['category']['_category_records_queued'] ) / $this->caches['ccs_frontpage']['limit'] ) : 0;
+                                }
+                                else
+                                {
+                                        $_ttlPgs        = $data['category']['_category_records'] ? ceil( $data['category']['_category_records'] / $this->caches['ccs_frontpage']['limit'] ) : 0;
+                                }
+                        }
+                        else
+                        {
+                                $_ttlPgs        = $data['database']['_fp_count'] ? ceil( $data['database']['_fp_count'] / $this->caches['ccs_frontpage']['limit'] ) : 0;
+                        }
+                        $_curPg         = $this->request['p'] ? $this->request['p'] : 1;
+                        $_nextPg        = $_curPg + 1;
+                </php>
+                <if test="$_curPg > 1">
+                        <div class='left'>
+                                <a href='<if test="$data['category']['category_id']">{$data['category']['category_link']}<if test="!$this->settings['use_friendly_urls']">&amp;p=<else />?p=</if><else />{$data['database']['base_link']}p=</if>{parse expression="intval($_curPg-1)"}'>{$this->lang->words['frontpage_previouspage']}</a>
+                        </div>
+                </if>
+
+                <if test="$_ttlPgs AND $_curPg < $_ttlPgs">
+                        <div class='right'>
+                                <a href='<if test="$data['category']['category_id']">{$data['category']['category_link']}<if test="!$this->settings['use_friendly_urls']">&amp;p=<else />?p=</if>{$_nextPg}<else />{$data['database']['base_link']}p={$_nextPg}</if>'>{$this->lang->words['frontpage_nextpage']}</a>
+                        </div>
+                </if>
+        </div>
+</if>
+
+<br class='clear' />]]></template_content>
+        <template_updated>{--time--}</template_updated>
+        <template_position>1</template_position>
+        <template_category>5</template_category>
+        <template_database>4</template_database>
+   </template>
+   <template>
+        <template_id>5</template_id>
+        <template_name>Article View</template_name>
+        <template_desc>Displays an article and comments.</template_desc>
+        <template_key>article_view</template_key>
+        <template_content><![CDATA[{parse js_module="rating"}
+{parse template="include_lightbox" group="global" params=""}
+{parse template="include_highlighter" group="global" params="1"}
+
+{$data['follow_data']}
+
+<if test="$data['database']['database_rate']">
+        <span class='rating ipsType_smaller ipsPad_top_half right clear'>
+                <if test="$data['database']['_can_rate']">
+                        <a href='#' id='article_rate_1' title='{$this->lang->words['xxxxx_js_1star']}'>
+                </if>
+                <if test="rate1:|:$data['record']['rating_real'] >= 1">
+                        {parse replacement="rate_on"}
+                <else />
+                        {parse replacement="rate_off"}
+                </if>
+                <if test="$data['database']['_can_rate']">
+                        </a><a href='#' id='article_rate_2' title='{$this->lang->words['xxxxx_js_2star']}'>
+                </if>
+                <if test="rate2:|:$data['record']['rating_real'] >= 2">
+                        {parse replacement="rate_on"}
+                <else />
+                        {parse replacement="rate_off"}
+                </if>
+                <if test="$data['database']['_can_rate']">
+                        </a><a href='#' id='article_rate_3' title='{$this->lang->words['xxxxx_js_3star']}'>
+                </if>
+                <if test="rate3:|:$data['record']['rating_real'] >= 3">
+                        {parse replacement="rate_on"}
+                <else />
+                        {parse replacement="rate_off"}
+                </if>
+                <if test="$data['database']['_can_rate']">
+                        </a><a href='#' id='article_rate_4' title='{$this->lang->words['xxxxx_js_4star']}'>
+                </if>
+                <if test="rate4:|:$data['record']['rating_real'] >= 4">
+                        {parse replacement="rate_on"}
+                <else />
+                        {parse replacement="rate_off"}
+                </if>
+                <if test="$data['database']['_can_rate']">
+                        </a><a href='#' id='article_rate_5' title='{$this->lang->words['xxxxx_js_5star']}'>
+                </if>
+                <if test="rate5:|:$data['record']['rating_real'] >= 5">
+                        {parse replacement="rate_on"}
+                <else />
+                        {parse replacement="rate_off"}
+                </if>
+                <if test="$data['database']['_can_rate']">
+                        </a>
+                        <script type='text/javascript'>
+                                        rating = new ipb.rating( 'article_rate_', { 
+                                                                                url: ipb.vars['base_url'] + 'app=ccs&module=ajax&section=rate&id={$data['database']['database_id']}&record={$data['record']['primary_id_field']}&md5check=' + ipb.vars['secure_hash'],
+                                                                                cur_rating: <if test="isset($data['record']['rating_real'])">{$data['record']['rating_real']}<else />0</if>,
+                                                                                rated: null,
+                                                                                allow_rate: <if test="$data['database']['_can_rate']">1<else />0</if>,
+                                                                                show_rate_text: false
+                                                                          } );
+                        </script>
+                </if>
+        </span>
+</if>
+<h1 class="ipsType_pagetitle">
+        <if test="$data['record']['record_approved'] == 0">
+                <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_queued_badge']}</span>
+        <else />
+                <if test="$data['record']['record_approved'] == -1">
+                        <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_deleted_badge']}</span>
+                </if>
+        </if>
+        {$data['record']['article_title']}
+</h1>
+<div class='desc lighter blend_links'>
+         {$data['record']['article_date']} | <if test="$data['record']['member_id']">{parse template="userHoverCard" group="global" params="$data['record']"}<else />{$data['record']['members_display_name']}</if> <if test="$data['record']['category_name']">{$this->lang->words['fpdt_in']} <a href='{$data['category']['category_link']}'>{$data['record']['category_name']}</a></if>
+</div>
+<if test="is_array($data['record']['tags'])">
+        {$data['record']['tags']['formatted']['parsedWithoutComma']}<br />
+</if>
+
+<br />
+
+<div class="ipsBox">
+        <div class="ipsBox_container ipsPad ipsType_textblock">
+                <if test="$data['record']['article_image']">
+                        <img src='{$data['record']['article_image']}' {parse resize_image="$data['record']['article_image']" maxwidth="225"} alt='' style="float: right; padding: 10px" />
+                </if>
+                <if test="$data['record']['teaser_paragraph']">
+                        <div class='teaser'>{$data['record']['teaser_paragraph']}</div>
+                </if>
+                {$data['record']['article_body']}
+                <if test="count($data['fields'])">
+                        <foreach loop="$data['fields'] as $field">
+                                <if test="$field['field_type'] != 'attachments' AND !in_array( $field['field_key'], array( 'article_title', 'article_body', 'teaser_paragraph', 'article_date', 'article_expiry', 'article_cutoff', 'article_homepage', 'article_comments', 'article_image' ) ) AND $data['record']['field_' . $field['field_id'] . '_value']">
+                                        <div style='width:100%;'>
+                                                <strong style='width: 20%; display: inline-block; font-weight: bold; text-align: right; vertical-align: top; margin-right: 10px;'>{$field['field_name']}:</strong>
+                                                {$data['record']['field_' . $field['field_id'] . '_value']}
+                                        </div>
+                                </if>
+                        </foreach>
+                </if>
+                <if test="$this->settings['reputation_enabled']">
+                        <br class='clear' />
+                        {parse template="repButtons" group="global_other" params="$data['record'], array_merge( $data['record'], array( 'primaryId' => $data['record']['primary_id_field'], 'domLikeStripId' => 'like_post_' . $data['record']['primary_id_field'], 'domCountId' => 'rep_post_' . $data['record']['primary_id_field'], 'app' => 'ccs', 'type' => 'record_id_' . $data['database']['database_id'], 'likeFormatted' => $data['record']['like']['formatted'] ) )"}
+                </if>
+                <br class='clear' />
+        </div>
+</div>
+
+<div class='ipsPad'>
+        <if test="$this->settings['sl_enable']">
+                <div style='float: left'>
+                        {parse template="facebookLike" group="ccs_global" params="$data['record']['record_link']"}
+                        {IPSLib::shareLinks( $data['record']['article_title'], array(  'overrideApp' => 'ccs' ) )}
+                </div>
+        </if>
+        <if test="$this->memberData['member_id']">
+                <div style='float: right'>
+                        <ul class='post_controls'>
+                                <if test="$data['database']['_can_edit']">
+                                        <li><a href='{$data['record']['record_link']}do=edit' title='{$this->lang->words['edit_record_button']}' accesskey='s' class='right'>{$this->lang->words['edit_record_button']}</a></li>
+                                </if>
+                                
+                                <if test="$data['record']['record_locked'] AND $data['database']['moderate_unlock']">
+                                        <li><a href='{$data['record']['record_link']}do=unlock&amp;secure_key={$this->member->form_hash}' title='{$this->lang->words['unlock_record']}' accesskey='l' class='right'>{$this->lang->words['unlock_record']}</a></li>
+                                <else />
+                                        <if test="!$data['record']['record_locked'] AND $data['database']['moderate_lock']">
+                                                <li><a href='{$data['record']['record_link']}do=lock&amp;secure_key={$this->member->form_hash}' title='{$this->lang->words['lock_record']}' accesskey='l' class='right'>{$this->lang->words['lock_record']}</a></li>
+                                        </if>
+                                </if>
+                                
+                                <if test="$data['database']['moderate_pin']">
+                                        <if test="$data['record']['record_pinned']">
+                                                <li><a href='{$data['record']['record_link']}do=unpin&amp;secure_key={$this->member->form_hash}' title='{$this->lang->words['unpin_record']}' class='right'>{$this->lang->words['unpin_record']}</a></li>
+                                        <else />
+                                                <li><a href='{$data['record']['record_link']}do=pin&amp;secure_key={$this->member->form_hash}' title='{$this->lang->words['pin_record']}' class='right'>{$this->lang->words['pin_record']}</a></li>
+                                        </if>
+                                </if>
+                                
+                                <if test="$data['database']['moderate_approve']">
+                                        <if test="$data['record']['record_approved'] == 0">
+                                                <li><a href='{$data['record']['record_link']}do=approve&amp;secure_key={$this->member->form_hash}' title='{$this->lang->words['approve_record']}'>{$this->lang->words['approve_record']}</a></li>
+                                        </if>
+                                </if>
+                                
+                                <if test="$data['database']['moderate_delete']">
+                                        <li><a href='{$data['record']['record_link']}do=delete' title='{$this->lang->words['delete_record']}' class='right'>{$this->lang->words['delete_record']}</a></li>
+
+                                        <if test="$data['record']['record_approved'] == 1">
+                                                <li><a href='{$data['record']['record_link']}do=unapprove&amp;secure_key={$this->member->form_hash}' title='{$this->lang->words['unapprove_record']}'>{$this->lang->words['unapprove_record']}</a></li>
+                                        <else />
+                                                <if test="$data['record']['record_approved'] == -1">
+                                                        <li><a href='{$data['record']['record_link']}do=approve&amp;secure_key={$this->member->form_hash}' title='{$this->lang->words['unhide_record']}'>{$this->lang->words['unhide_record']}</a></li>
+                                                </if>
+                                        </if>
+                                </if>
+
+                                <if test="$data['database']['moderate_restorer'] AND $data['database']['database_revisions']">
+                                        <li><a href='{$data['record']['record_link']}do=revisions' title='{$this->lang->words['record_revisions']}' class='right'>{$this->lang->words['record_revisions']}</a></li>
+                                </if>
+
+                                <if test="$data['database']['_can_report']">
+                                        <li class='report'>
+                                                <a href='{parse url="app=core&amp;module=reports&amp;rcom=ccs&amp;database={$data['database']['database_id']}&amp;record={$data['record']['primary_id_field']}" base="public"}'>{$this->lang->words['report_record']}</a>
+                                        </li>
+                                </if>
+                        </ul>
+                </div>
+        </if>
+        <br style="clear: both" />
+</div>
+
+<if test="$data['database']['database_comments']">
+<div id='commentsStart' class='ipsBox'>
+        <div class='ipsBox_container ipsPad'>
+                <h2 class='ipsType_subtitle'>{$data['comments']['count']} {$this->lang->words['comment_block']}</h2>
+                <div class='comment_wrap'>
+                        {$data['comments']['html']}
+                </div>
+        </div>
+</div>
+</if>]]></template_content>
+        <template_updated>{--time--}</template_updated>
+        <template_position>1</template_position>
+        <template_category>6</template_category>
+        <template_database>5</template_database>
+   </template>
+   <template>
+        <template_id>6</template_id>
+        <template_name>Front Page (Blog Format)</template_name>
+        <template_desc>Front page template display in a blog-style format, showing the full first page of each article. Suitable for main frontpage and category frontpage.</template_desc>
+        <template_key>frontpage_blog_format</template_key>
+        <template_content><![CDATA[<php>
+        // Category or global?
+        if( isset( $data['category']['category_id'] ) ){
+                $rss = array( 
+                        'enabled' => ( $data['category']['category_rss'] && $data['category']['category_show_records'] ) ? 1 : 0,
+                        'type' => 'category',
+                        'id' => $data['database']['database_id'].'c'.$data['category']['category_id'],
+                        'name' => $data['category']['category_name']
+                );
+                $title = $data['category']['category_name'];
+                $this->settings['_active_cat'] = $data['category']['category_id'];
+        } else {
+                $rss = array( 
+                        'enabled' => $data['database']['database_rss'],
+                        'type' => 'global',
+                        'id' => $data['database']['database_id'],
+                        'name' => $data['database']['database_name']
+                );
+                $title = $this->lang->words['fpdt_latestnews'];
+        }
+</php>
+
+<if test="$data['database']['_can_add']">
+        <div class='right'>
+                <ul class='topic_buttons'>
+                        <li><a href='{$data['database']['base_link']}do=add&amp;category={$this->request['category']}' title='{$this->lang->words['add_record_button']}'>{$this->lang->words['add_record_button']}</a></li>
+                </ul>   
+        </div>
+</if>
+
+<if test="$this->request['category']">
+        {$data['follow_data']}
+</if>
+
+<h1 class='ipsType_pagetitle'>
+        {$title}
+        <if test="$data['category']['category_id']">
+                <a href='{$data['category']['category_link']}<if test="!$this->settings['use_friendly_urls']">&amp;view=archive<else />?view=archive</if>' title='{$this->lang->words['fpdt_viewarchives']}'><img src='{$this->settings['img_url']}/archive.png' alt='' /></a>
+        </if>
+        <if test="$rss['enabled']">
+                <a href='{parse url="app=core&amp;module=global&amp;section=rss&amp;type=ccs&amp;id={$rss['id']}" seotitle="{$rss['name']}" template="section=rss2" base="public"}'><img src='{$this->settings['img_url']}/feed.png' alt='' /></a>
+        </if>
+</h1>
+
+<br class='clear' />
+
+<if test="count( $data['records'] )">
+        <!-- START ARTICLE POSITION 1 -->
+        <foreach loop="$data['records'] as $record">
+                <div class='ipsBox'>
+                        <div class='ipsBox_container ipsPad'>
+                                <if test="$record['article_image']">
+                                        <img src='{$record['article_image']}' class='photo' {parse resize_image="$record['article_image']" maxwidth="150"} alt='' style="float: right" />
+                                </if>
+                                <h2 class='ipsType_subtitle'>
+                                        <if test="$record['record_approved'] == 0">
+                                                <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_queued_badge']}</span>
+                                        <else />
+                                                <if test="$record['record_approved'] == -1">
+                                                        <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_deleted_badge']}</span>
+                                                </if>
+                                        </if>
+
+                                        <if test="$record[ $data['special']['date'] ] > time()">
+                                                <span class='ipsBadge ipsBadge_lightgrey'>{$this->lang->words['article_unpublished']}</span>
+                                        </if>
+                                        <if test="$record['record_pinned']">{parse template="topicPrefixWrap" group="forum" params="$this->lang->words['pre_pinned']"}</if>
+                                        <if test="!empty($record['tags']['formatted']['prefix'])">
+                                                {$record['tags']['formatted']['prefix']}
+                                        </if>
+                                        <a href='{$record['record_link']}'>{$record['article_title']}</a>
+                                </h2>
+                                <div class="desc">{$record['article_date']} | {parse template="userHoverCard" group="global" params="$record"}<if test="$record['category_link']"> {$this->lang->words['fpdt_in']} <a href='{$record['category_link']}'>{$record['category_name']}</a></if></div>
+                                <br />
+                                <if test="$record['teaser_paragraph']">{$record['teaser_paragraph']}<else />{$record['article_body']}</if>
+                                <br /><br />
+                                <span class='links'>
+                                        <a href='{$record['record_link']}' class='read_more'>{$this->lang->words['fpdt_readstory']}</a>
+                                        &nbsp;&nbsp;
+                                        <a href='{$record['record_link']}#commentsStart' class='comments'>{$record['record_comments']} {$this->lang->words['fpdt_comments']}</a>
+                                        <if test="$record['record_comments_queued'] AND $data['database']['moderate_approvec']">
+                                                &nbsp;<em class='moderated'><a href='{$record['record_link']}?comments=unapproved#commentsStart' title='{$this->lang->words['comments_pending_app_title']}' class='comments' data-tooltip="{parse expression="sprintf( $this->lang->words['comments_queued_tooltip'], $record['record_comments_queued'])"}">{parse expression="sprintf( $this->lang->words['ccsc_queued_badge'], $record['record_comments_queued'] )"}</a></em>
+                                        </if>
+                                        &nbsp;&nbsp;
+                                        <if test="$data['database']['database_rate']">
+                                                <if test="$record['rating_real'] >= 1">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 2">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 3">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 4">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 5">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if>
+                                        </if>
+                                        <if test="isset($record['tags']) AND $record['tags']">
+                                                &nbsp;&nbsp; <img src='{$this->settings['img_url']}/icon_tag.png' /> <span class='desc lighter blend_links'>{$record['tags']['formatted']['truncatedWithLinks']}</span>
+                                        </if>
+                                </span>
+                                <br style='clear: both' />
+                        </div>
+                </div>
+                <br />
+        </foreach>
+<else />
+        {$this->lang->words['fpdt_noarticles']}
+        <if test="$data['database']['_can_add']">
+                <a href='{$data['database']['base_link']}do=add&amp;category={$this->request['category']}' title='{$this->lang->words['add_record_button']}'><strong>{$this->lang->words['fpdt_addone']}</strong></a>
+        </if>
+</if>
+
+<if test="$this->caches['ccs_frontpage']['paginate']">
+        <div class='pagelinks clear clearfix'>
+                <php>
+                        if( $data['category']['category_id'] )
+                        {
+                                if( $data['database']['moderate_approve'] )
+                                {
+                                        $_ttlPgs        = ( $data['category']['_category_records'] || $data['category']['_category_records_queued'] ) ? ceil( ( $data['category']['_category_records'] + $data['category']['_category_records_queued'] ) / $this->caches['ccs_frontpage']['limit'] ) : 0;
+                                }
+                                else
+                                {
+                                        $_ttlPgs        = $data['category']['_category_records'] ? ceil( $data['category']['_category_records'] / $this->caches['ccs_frontpage']['limit'] ) : 0;
+                                }
+                        }
+                        else
+                        {
+                                $_ttlPgs        = $data['database']['_fp_count'] ? ceil( $data['database']['_fp_count'] / $this->caches['ccs_frontpage']['limit'] ) : 0;
+                        }
+                        $_curPg         = $this->request['p'] ? $this->request['p'] : 1;
+                        $_nextPg        = $_curPg + 1;
+                </php>
+                <if test="$_curPg > 1">
+                        <div class='left'>
+                                <a href='<if test="$data['category']['category_id']">{$data['category']['category_link']}<if test="!$this->settings['use_friendly_urls']">&amp;p=<else />?p=</if><else />{$data['database']['base_link']}p=</if>{parse expression="intval($_curPg-1)"}'>{$this->lang->words['frontpage_previouspage']}</a>
+                        </div>
+                </if>
+
+                <if test="$_ttlPgs AND $_curPg < $_ttlPgs">
+                        <div class='right'>
+                                <a href='<if test="$data['category']['category_id']">{$data['category']['category_link']}<if test="!$this->settings['use_friendly_urls']">&amp;p=<else />?p=</if>{$_nextPg}<else />{$data['database']['base_link']}p={$_nextPg}</if>'>{$this->lang->words['frontpage_nextpage']}</a>
+                        </div>
+                </if>
+        </div>
+</if>
+
+<br class='clear' />]]></template_content>
+        <template_updated>{--time--}</template_updated>
+        <template_position>0</template_position>
+        <template_category>5</template_category>
+        <template_database>4</template_database>
+   </template>
+   <template>
+        <template_id>7</template_id>
+        <template_name>Front Page (Single Column)</template_name>
+        <template_desc>Front page, displayed in a single column. Suitable for main frontpage and category frontpage.</template_desc>
+        <template_key>frontpage_single_column</template_key>
+        <template_content><![CDATA[<php>
+        // Category or global?
+        if( isset( $data['category']['category_id'] ) ){
+                $rss = array( 
+                        'enabled' => ( $data['category']['category_rss'] && $data['category']['category_show_records'] ) ? 1 : 0,
+                        'type' => 'category',
+                        'id' => $data['database']['database_id'].'c'.$data['category']['category_id'],
+                        'name' => $data['category']['category_name']
+                );
+                $title = $data['category']['category_name'];
+                $this->settings['_active_cat'] = $data['category']['category_id'];
+        } else {
+                $rss = array( 
+                        'enabled' => $data['database']['database_rss'],
+                        'type' => 'global',
+                        'id' => $data['database']['database_id'],
+                        'name' => $data['database']['database_name']
+                );
+                $title = $this->lang->words['fpdt_latestnews'];
+        }
+</php>
+
+<if test="$data['database']['_can_add']">
+        <div class='right'>
+                <ul class='topic_buttons'>
+                        <li><a href='{$data['database']['base_link']}do=add&amp;category={$this->request['category']}' title='{$this->lang->words['add_record_button']}'>{$this->lang->words['add_record_button']}</a></li>
+                </ul>   
+        </div>
+</if>
+
+<if test="$this->request['category']">
+        {$data['follow_data']}
+</if>
+
+<h1 class='ipsType_pagetitle'>
+        {$title}
+        <if test="$data['category']['category_id']">
+                <a href='{$data['category']['category_link']}<if test="!$this->settings['use_friendly_urls']">&amp;view=archive<else />?view=archive</if>' title='{$this->lang->words['fpdt_viewarchives']}'><img src='{$this->settings['img_url']}/archive.png' alt='' /></a>
+        </if>
+        <if test="$rss['enabled']">
+                <a href='{parse url="app=core&amp;module=global&amp;section=rss&amp;type=ccs&amp;id={$rss['id']}" seotitle="{$rss['name']}" template="section=rss2" base="public"}'><img src='{$this->settings['img_url']}/feed.png' alt='' /></a>
+        </if>
+</h1>
+
+<br class='clear' />
+
+<if test="count( $data['records'] )">
+        <!-- START ARTICLE POSITION 1 -->
+        <foreach loop="$data['records'] as $record">
+                <div class='ipsBox'>
+                        <div class='ipsBox_container ipsPad'>
+                                <if test="$record['article_image']">
+                                        <img src='{$record['article_image']}' class='photo' {parse resize_image="$record['article_image']" maxwidth="150"} alt='' style="float: right" />
+                                </if>
+                                <h2 class='ipsType_subtitle'>
+                                        <if test="$record['record_approved'] == 0">
+                                                <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_queued_badge']}</span>
+                                        <else />
+                                                <if test="$record['record_approved'] == -1">
+                                                        <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_deleted_badge']}</span>
+                                                </if>
+                                        </if>
+                                        <if test="$record[ $data['special']['date'] ] > time()">
+                                                <span class='ipsBadge ipsBadge_lightgrey'>{$this->lang->words['article_unpublished']}</span>
+                                        </if>
+                                        <if test="$record['record_pinned']">{parse template="topicPrefixWrap" group="forum" params="$this->lang->words['pre_pinned']"}</if>
+                                        <if test="!empty($record['tags']['formatted']['prefix'])">
+                                                {$record['tags']['formatted']['prefix']}
+                                        </if>
+                                        <a href='{$record['record_link']}'>{$record['article_title']}</a>
+                                </h2>
+                                <div class="desc">{$record['article_date']} | {parse template="userHoverCard" group="global" params="$record"}<if test="$record['category_link']"> {$this->lang->words['fpdt_in']} <a href='{$record['category_link']}'>{$record['category_name']}</a></if></div>
+                                <br />
+                                <if test="$record['teaser_paragraph']">{$record['teaser_paragraph']}<else />{IPSText::truncate( strip_tags( IPSText::getTextClass('bbcode')->stripAllTags( $record['article_body'] ) ), 255 )}</if>
+                                <br /><br />
+                                <span class='links'>
+                                        <a href='{$record['record_link']}' class='read_more'>{$this->lang->words['fpdt_readstory']}</a>
+                                        &nbsp;&nbsp;
+                                        <a href='{$record['record_link']}#commentsStart' class='comments'>{$record['record_comments']} {$this->lang->words['fpdt_comments']}</a>
+                                        <if test="$record['record_comments_queued'] AND $data['database']['moderate_approvec']">
+                                                &nbsp;<em class='moderated'><a href='{$record['record_link']}?comments=unapproved#commentsStart' title='{$this->lang->words['comments_pending_app_title']}' class='comments' data-tooltip="{parse expression="sprintf( $this->lang->words['comments_queued_tooltip'], $record['record_comments_queued'])"}">{parse expression="sprintf( $this->lang->words['ccsc_queued_badge'], $record['record_comments_queued'] )"}</a></em>
+                                        </if>
+                                        &nbsp;&nbsp;
+                                        <if test="$data['database']['database_rate']">
+                                                <if test="$record['rating_real'] >= 1">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 2">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 3">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 4">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 5">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if>
+                                        </if>
+                                        <if test="isset($record['tags']) AND $record['tags']">
+                                                &nbsp;&nbsp; <img src='{$this->settings['img_url']}/icon_tag.png' /> <span class='desc lighter blend_links'>{$record['tags']['formatted']['truncatedWithLinks']}</span>
+                                        </if>
+                                </span>
+                                <br style='clear: both' />
+                        </div>
+                </div>
+                <br />
+        </foreach>
+<else />
+        {$this->lang->words['fpdt_noarticles']}
+        <if test="$data['database']['_can_add']">
+                <a href='{$data['database']['base_link']}do=add&amp;category={$this->request['category']}' title='{$this->lang->words['add_record_button']}'><strong>{$this->lang->words['fpdt_addone']}</strong></a>
+        </if>
+</if>
+
+<if test="$this->caches['ccs_frontpage']['paginate']">
+        <div class='pagelinks clear clearfix'>
+                <php>
+                        if( $data['category']['category_id'] )
+                        {
+                                if( $data['database']['moderate_approve'] )
+                                {
+                                        $_ttlPgs        = ( $data['category']['_category_records'] || $data['category']['_category_records_queued'] ) ? ceil( ( $data['category']['_category_records'] + $data['category']['_category_records_queued'] ) / $this->caches['ccs_frontpage']['limit'] ) : 0;
+                                }
+                                else
+                                {
+                                        $_ttlPgs        = $data['category']['_category_records'] ? ceil( $data['category']['_category_records'] / $this->caches['ccs_frontpage']['limit'] ) : 0;
+                                }
+                        }
+                        else
+                        {
+                                $_ttlPgs        = $data['database']['_fp_count'] ? ceil( $data['database']['_fp_count'] / $this->caches['ccs_frontpage']['limit'] ) : 0;
+                        }
+                        $_curPg         = $this->request['p'] ? $this->request['p'] : 1;
+                        $_nextPg        = $_curPg + 1;
+                </php>
+                <if test="$_curPg > 1">
+                        <div class='left'>
+                                <a href='<if test="$data['category']['category_id']">{$data['category']['category_link']}<if test="!$this->settings['use_friendly_urls']">&amp;p=<else />?p=</if><else />{$data['database']['base_link']}p=</if>{parse expression="intval($_curPg-1)"}'>{$this->lang->words['frontpage_previouspage']}</a>
+                        </div>
+                </if>
+
+                <if test="$_ttlPgs AND $_curPg < $_ttlPgs">
+                        <div class='right'>
+                                <a href='<if test="$data['category']['category_id']">{$data['category']['category_link']}<if test="!$this->settings['use_friendly_urls']">&amp;p=<else />?p=</if>{$_nextPg}<else />{$data['database']['base_link']}p={$_nextPg}</if>'>{$this->lang->words['frontpage_nextpage']}</a>
+                        </div>
+                </if>
+        </div>
+</if>
+<br class='clear' />]]></template_content>
+        <template_updated>{--time--}</template_updated>
+        <template_position>0</template_position>
+        <template_category>5</template_category>
+        <template_database>4</template_database>
+   </template>
+   <template>
+        <template_id>8</template_id>
+        <template_name>Media System Categories</template_name>
+        <template_desc></template_desc>
+        <template_key>media_categories</template_key>
+        <template_content><![CDATA[<!-- 
+	This template is a sort of 'front page' template for the media section.
+	Rather than showing categories in the normal way, it actually shows blocks
+	such as Latest Video, Recent Videos and a category listing feed. -->
+
+<div id='videos_latest'>
+	{parse block="latest_video"}
+</div>
+<div id='videos_recent'>
+	{parse block="recent_videos"} 
+</div>]]></template_content>
+        <template_updated>{--time--}</template_updated>
+        <template_position>0</template_position>
+        <template_category>9</template_category>
+        <template_database>1</template_database>
+   </template>
+   <template>
+        <template_id>9</template_id>
+        <template_name>Media System Listing</template_name>
+        <template_desc></template_desc>
+        <template_key>media_listing</template_key>
+        <template_content><![CDATA[<h1 class="ipsType_pagetitle">{$data['parent']['category_name']}</h1>
+
+<br /><br />
+
+<div>{$data['pages']}</div>
+
+<div class='maintitle ipsFilterbar'>
+        <ul class="ipsList_inline ipsType_small">
+                <li <if test="$this->request['sort_col']=='record_saved'">class='active'</if>>
+                        <a href='{$data['parent']['category_link']}?{$this->_search}&amp;sort_col=record_saved&amp;sort_order=desc'>Most Recent</a>
+                </li>
+                <if test="$data['database']['database_rate']">
+                        <li <if test="$this->request['sort_col']=='rating_real'">class='active'</if>>
+                                <a href='{$data['parent']['category_link']}{$this->_search}&amp;sort_col=rating_real&amp;sort_order=desc'>Highest Rated</a>
+                        </li>
+                </if>
+                <li <if test="$this->request['sort_col']==$data['database']['database_field_title'] or !$this->request['sort_col']">class='active'</if>>
+                        <a href='{$data['parent']['category_link']}?{$this->_search}&amp;sort_col={$data['database']['database_field_title']}&amp;sort_order=asc'>Title</a>
+                </li>
+                <li <if test="$this->request['sort_col']=='record_views'">class='active'</if>>
+                        <a href='{$data['parent']['category_link']}?{$this->_search}&amp;sort_col=record_views&amp;sort_order=desc'>Most Viewed</a>
+                </li>
+        </ul>
+</div>
+<div class='ipsBox'>
+        <foreach loop="$data['records'] as $r">
+                <div class='ipsBox_container'>
+                        <table class='ipb_table'>
+                                <tr>
+                                        <td style='width: 140px'><a href='{$r['record_link']}'><img src='{$r['video_thumb']}' {parse resize_image="{$r['video_thumb']}" maxwidth="140"} /></a></td>
+                                        <td>
+                                                <h2 class='ipsType_subtitle'>
+                                                        <if test="hasPrefix:|:!empty($r['tags']['formatted']['prefix'])">
+                                                                {$r['tags']['formatted']['prefix']}
+                                                        </if>
+                                                        <a href='{$r['record_link']}'>{parse expression="IPSText::truncate( $r['video_title'], 60 )"}</a> <span class='desc'>{$r['video_length']}</span>
+                                                </h2>
+                                                <span class='desc'>{parse expression="IPSText::truncate( $r['video_description'], 255 )"}</span>
+                                                <if test="isset($r['tags']) AND $r['tags']">
+                                                        &nbsp; <img src='{$this->settings['img_url']}/icon_tag.png' /> <span class='desc lighter blend_links'>{$r['tags']['formatted']['truncatedWithLinks']}</span>
+                                                </if>
+                                        </td>
+                                        <td style='text-align: right'>
+                                                <if test="$r['rating_real'] >= 1">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$r['rating_real'] >= 2">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$r['rating_real'] >= 3">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$r['rating_real'] >= 4">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$r['rating_real'] >= 5">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if>
+                                        </td>
+                                </tr>
+                        </table>
+                </div>
+                <br />
+        </foreach>
+</div>
+
+<div>{$data['pages']}</div>]]></template_content>
+        <template_updated>{--time--}</template_updated>
+        <template_position>0</template_position>
+        <template_category>9</template_category>
+        <template_database>2</template_database>
+   </template>
+   <template>
+        <template_id>10</template_id>
+        <template_name>Archives</template_name>
+        <template_desc>Listing of archived articles</template_desc>
+        <template_key>article_archives</template_key>
+        <template_content><![CDATA[<php>
+        if( $this->request['do'] == 'search' ){
+                $this->_search = "&amp;do=search&amp;search_value=" . $this->request['search_value']; 
+        }
+        
+        //RSS
+        if( isset( $data['parent']['category_id'] ) ){
+                $rss = array( 
+                        'enabled' => ( $data['parent']['category_rss'] && $data['parent']['category_show_records'] ) ? 1 : 0,
+                        'type' => 'category',
+                        'id' => $data['database']['database_id'].'c'.$data['parent']['category_id'],
+                        'name' => $data['parent']['category_name']
+                );
+                $title = $data['parent']['category_name'];
+                $this->settings['_active_cat'] = $data['parent']['category_id'];
+        }
+</php>
+
+<h1 class='ipsType_pagetitle'>
+        <if test="!$this->_search">
+                {$data['parent']['category_name']} {$this->lang->words['archdt_archives']}
+        <else />
+                {$this->lang->words['archdt_searchresults']}
+        </if>
+        <if test="$rss['enabled']">
+                <a href='{parse url="app=core&amp;module=global&amp;section=rss&amp;type=ccs&amp;id={$rss['id']}" seotitle="{$rss['name']}" template="section=rss2" base="public"}'><img src='{$this->settings['img_url']}/feed.png' alt='' /></a>
+        </if>
+</h1>
+
+<div class='topic_controls'>
+        {$data['pages']}
+</div>
+
+<div class='ipsFilterbar maintitle'>            
+        <ul class='ipsList_inline ipsType_small'>
+                <li <if test="$this->request['sort_col']=='record_saved'">class='active'</if>>
+                        <a href='{$data['parent']['category_link']}{$this->_search}&amp;sort_col=record_saved&amp;sort_order=desc'>{$this->lang->words['archdt_mostrecent']}</a>
+                </li>
+                <if test="$data['database']['database_rate']">
+                <li <if test="$this->request['sort_col']=='rating_real'">class='active'</if>>
+                        <a href='{$data['parent']['category_link']}{$this->_search}&amp;sort_col=rating_real&amp;sort_order=desc'>{$this->lang->words['archdt_highrated']}</a>
+                </li>
+                </if>
+                <li <if test="$this->request['sort_col']==$data['special']['title']">class='active'</if>>
+                        <a href='{$data['parent']['category_link']}{$this->_search}&amp;sort_col={$data['special']['title']}&amp;sort_order=desc'>{$this->lang->words['archdt_title']}</a>
+                </li>
+                <li <if test="$this->request['sort_col']=='record_views'">class='active'</if>>
+                        <a href='{$data['parent']['category_link']}{$this->_search}&amp;sort_col=record_views&amp;sort_order=desc'>{$this->lang->words['archdt_mostviewed']}</a>
+                </li>
+        </ul>
+</div>
+
+<if test="count($data['records'])">
+        <div class='ipsBox'>
+                <foreach loop="$data['records'] as $record">
+                        <div class='ipsBox_container ipsPad'>
+                                <if test="$record['article_image']">
+                                        <img src='{$record['article_image']}' class='photo' {parse resize_image="$record['article_image']" maxwidth="150"} alt='' style="float: right" />
+                                </if>
+                                <h2 class='ipsType_subtitle'>
+                                        <if test="$record['record_approved'] == 0">
+                                                <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_queued_badge']}</span>
+                                        <else />
+                                                <if test="$record['record_approved'] == -1">
+                                                        <span class='ipsBadge ipsBadge_orange'>{$this->lang->words['f_deleted_badge']}</span>
+                                                </if>
+                                        </if>
+                                        <if test="$record[ $data['special']['date'] ] > time()">
+                                                <span class='ipsBadge ipsBadge_lightgrey'>{$this->lang->words['article_unpublished']}</span>
+                                        </if>
+                                        <if test="$record['record_pinned']">{parse template="topicPrefixWrap" group="forum" params="$this->lang->words['pre_pinned']"}</if>
+                                        <if test="!empty($record['tags']['formatted']['prefix'])">
+                                                {$record['tags']['formatted']['prefix']}
+                                        </if>
+                                        <a href='{$record['record_link']}'>{$record['article_title']}</a>
+                                </h2>
+                                <div class="desc">{$record['article_date']} | {parse template="userHoverCard" group="global" params="$record"} {$this->lang->words['fpdt_in']} <a href='{$record['category_link']}'>{$record['category_name']}</a></div>
+                                <br />
+                                <if test="$record['teaser_paragraph']">{$record['teaser_paragraph']}<else />{IPSText::truncate( strip_tags( IPSText::getTextClass('bbcode')->stripAllTags( $record['article_body'] ) ), 255 )}</if>
+                                <br /><br />
+                                <if test="count($data['fields'])">
+                                        <foreach loop="$data['fields'] as $field">
+                                                <if test="!in_array( $field['field_key'], array( 'article_title', 'article_body', 'teaser_paragraph', 'article_date', 'article_expiry', 'article_cutoff', 'article_homepage', 'article_comments', 'article_image' ) )">
+                                                        <div style='width:100%;'>
+                                                                <strong style='width: 20%; display: inline-block; font-weight: bold; text-align: right; vertical-align: top; margin-right: 10px;'>{$field['field_name']}:</strong>
+                                                                {$record['field_' . $field['field_id'] . '_value']}
+                                                        </div>
+                                                </if>
+                                        </foreach>
+                                </if>
+                                <span class='links'>
+                                        <a href='{$record['record_link']}' class='read_more'>{$this->lang->words['fpdt_readstory']}</a>
+                                        &nbsp;&nbsp;
+                                        <a href='{$record['record_link']}#commentsStart' class='comments'>{$record['record_comments']} {$this->lang->words['fpdt_comments']}</a>
+                                        <if test="$record['record_comments_queued'] AND $data['database']['moderate_approvec']">
+                                                &nbsp;<em class='moderated'><a href='{$record['record_link']}?comments=unapproved#commentsStart' title='{$this->lang->words['comments_pending_app_title']}' class='comments' data-tooltip="{parse expression="sprintf( $this->lang->words['comments_queued_tooltip'], $record['record_comments_queued'])"}">{parse expression="sprintf( $this->lang->words['ccsc_queued_badge'], $record['record_comments_queued'] )"}</a></em>
+                                        </if>
+                                        &nbsp;&nbsp;
+                                        <if test="$data['database']['database_rate']">
+                                                <if test="$record['rating_real'] >= 1">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 2">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 3">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 4">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$record['rating_real'] >= 5">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if>
+                                        </if>
+                                        <if test="isset($record['tags']) AND $record['tags']">
+                                                &nbsp;&nbsp; <img src='{$this->settings['img_url']}/icon_tag.png' /> <span class='desc lighter blend_links'>{$record['tags']['formatted']['truncatedWithLinks']}</span>
+                                        </if>
+                                </span>
+                                <br style='clear: both' />
+                        </div>
+                        <br />
+                </foreach>
+        </div>
+<else />
+        <div class='no_messages'>
+                <if test="!$this->_search">
+                        {$this->lang->words['fpdt_noarticles']}
+                        <if test="$data['database']['_can_add']">
+                                <a href='{$data['database']['base_link']}do=add&amp;category={$this->request['category']}' title='{$this->lang->words['add_record_button']}'><strong>{$this->lang->words['fpdt_addone']}</strong></a>
+                        </if>
+                <else />
+                        {$this->lang->words['archdt_nosearchresults']}
+                </if>
+        </div>
+</if>
+
+<div class='topic_controls'>
+        {$data['pages']}
+</div>
+<br class='clear' />]]></template_content>
+        <template_updated>{--time--}</template_updated>
+        <template_position>1</template_position>
+        <template_category>7</template_category>
+        <template_database>6</template_database>
+   </template>
+   <template>
+        <template_id>11</template_id>
+        <template_name>Category Listing</template_name>
+        <template_desc>List the article categories</template_desc>
+        <template_key>article_categories</template_key>
+        <template_content><![CDATA[<h1 class='ipsType_pagetitle'>
+        {$this->lang->words['cldt_categories']}
+</h1>
+
+<br />
+
+
+<div class='subcats'>
+        <if test="count( $data['categories'] )">
+                <foreach loop="$data['categories'] as $category">
+                        <div class='subcat'>
+                                <h2><a href='{$category['category_link']}' title='{$this->lang->words['archdt_viewcat']}'>{$category['category_name']}</a> 
+                                        <span class='desc'>
+                                                <if test="$category['category_rss']">
+                                                        <a href="{parse url="app=core&amp;module=global&amp;section=rss&amp;type=ccs&amp;id={$category['category_database_id']}c{$category['category_id']}" base="public" template="section=rss2" seotitle="{$category['category_furl_name']}"}"><img src='{$this->settings['img_url']}/feed.png' alt='{$this->lang->words['rss_feed']}' /></a>
+                                                </if>
+                                                {$category['category_records']} {$this->lang->words['archdt_articles']}
+                                        </span>
+                                </h2>
+                                <if test="count($category['children'])">
+                                        <div class='children'>
+                                                <span class='hide'>{$this->lang->words['ccs_subcats']}</span>
+                                                <ul class='bullets'>
+                                                        <foreach loop="$category['children'] as $_data">
+                                                                <li><a href='{$_data['category_link']}'>{$_data['category_name']}</a></li>
+                                                        </foreach>
+                                                </ul>
+                                        </div>
+                                </if>
+                                <div class='last_article'>
+                                        <if test="$category['category_last_record_id']">
+                                                <a href='{$category['record_link']}'>{$category['article_title']}</a>
+                                                <div class='excerpt'>
+                                                        <span class='desc'>{parse date="$category['category_last_record_date']" format="manual{%b %d %Y}"}</span>&nbsp;&nbsp;<if test="$category['teaser_paragraph']">{$category['teaser_paragraph']}<else />{IPSText::truncate( IPSText::getTextClass( 'bbcode' )->stripAllTags( IPSText::stripAttachTag( $category[ $data['database']['database_field_content'] ] ) ), 190 )}</if>
+                                                </div>
+                                        <else />
+                                                <p class='desc'>
+                                                        {$this->lang->words['fpdt_noarticles']}
+                                                </p>
+                                        </if>
+                                </div>
+                                <if test="($data['database']['moderate_approve'] AND $category['category_records_queued']) OR ($data['database']['moderate_approvec'] AND $category['category_record_comments_queued'])">
+                                        <em class='right moderated'>
+                                                <if test="$data['database']['moderate_approve'] AND $category['category_records_queued']">
+                                                        <a href='{$category['category_link']}?view=archive&amp;sort=queued' title='{$this->lang->words['cat_viewmoderated']}'>{parse expression="sprintf( $this->lang->words['category_unapprovedlink'], $category['category_records_queued'] )"}</a>
+                                                </if>
+                                                <if test="($data['database']['moderate_approve'] AND $category['category_records_queued']) AND ($data['database']['moderate_approvec'] AND $category['category_record_comments_queued'])">
+                                                        <br />
+                                                </if>
+                                                <if test="$data['database']['moderate_approvec'] AND $category['category_record_comments_queued']">
+                                                        <a href='{$category['category_link']}?view=archive&amp;sort=queuedc' title='{$this->lang->words['cat_viewmoderatedc']}'>{parse expression="sprintf( $this->lang->words['category_unapprovedclink'], $category['category_record_comments_queued'] )"}</a>
+                                                </if>
+                                        </em>
+                                </if>
+                        </div>
+                </foreach>
+        <else />
+                <div class='no_messages'>
+                        {$this->lang->words['no_cats_found']}
+                </div>
+        </if>
+</div>
+
+<br class='clear' />]]></template_content>
+        <template_updated>{--time--}</template_updated>
+        <template_position>0</template_position>
+        <template_category>8</template_category>
+        <template_database>7</template_database>
+   </template>
+   <template>
+        <template_id>12</template_id>
+        <template_name>Media System Display</template_name>
+        <template_desc></template_desc>
+        <template_key>media_display</template_key>
+        <template_content><![CDATA[{parse js_module="rating"}
+{parse template="include_lightbox" group="global" params=""}
+{parse template="include_highlighter" group="global" params="1"}
+
+<if test="$data['database']['database_rate']">
+        <span class='rating ipsType_smaller ipsPad_top_half right'>
+                <if test="$data['database']['_can_rate']">
+                        <a href='#' id='article_rate_1' title='{$this->lang->words['xxxxx_js_1star']}'>
+                </if>
+                <if test="rate1:|:$data['record']['rating_real'] >= 1">
+                        {parse replacement="rate_on"}
+                <else />
+                        {parse replacement="rate_off"}
+                </if>
+                <if test="$data['database']['_can_rate']">
+                        </a><a href='#' id='article_rate_2' title='{$this->lang->words['xxxxx_js_2star']}'>
+                </if>
+                <if test="rate2:|:$data['record']['rating_real'] >= 2">
+                        {parse replacement="rate_on"}
+                <else />
+                        {parse replacement="rate_off"}
+                </if>
+                <if test="$data['database']['_can_rate']">
+                        </a><a href='#' id='article_rate_3' title='{$this->lang->words['xxxxx_js_3star']}'>
+                </if>
+                <if test="rate3:|:$data['record']['rating_real'] >= 3">
+                        {parse replacement="rate_on"}
+                <else />
+                        {parse replacement="rate_off"}
+                </if>
+                <if test="$data['database']['_can_rate']">
+                        </a><a href='#' id='article_rate_4' title='{$this->lang->words['xxxxx_js_4star']}'>
+                </if>
+                <if test="rate4:|:$data['record']['rating_real'] >= 4">
+                        {parse replacement="rate_on"}
+                <else />
+                        {parse replacement="rate_off"}
+                </if>
+                <if test="$data['database']['_can_rate']">
+                        </a><a href='#' id='article_rate_5' title='{$this->lang->words['xxxxx_js_5star']}'>
+                </if>
+                <if test="rate5:|:$data['record']['rating_real'] >= 5">
+                        {parse replacement="rate_on"}
+                <else />
+                        {parse replacement="rate_off"}
+                </if>
+                <if test="$data['database']['_can_rate']">
+                        </a>
+                        <script type='text/javascript'>
+                                rating = new ipb.rating( 'article_rate_', { 
+                                                                        url: ipb.vars['base_url'] + 'app=ccs&module=ajax&section=rate&id={$data['database']['database_id']}&record={$data['record']['primary_id_field']}&md5check=' + ipb.vars['secure_hash'],
+                                                                        cur_rating: <if test="isset($data['record']['rating_real'])">{$data['record']['rating_real']}<else />0</if>,
+                                                                        rated: null,
+                                                                        allow_rate: <if test="$data['database']['_can_rate']">1<else />0</if>,
+                                                                        show_rate_text: false
+                                                                  } );
+                        </script>
+                </if>
+        </span>
+</if>
+<h1 class="ipsType_pagetitle">{$data['record'][$data['database']['database_field_title'] . '_value' ]}</h1>
+<div class='desc'>
+        {$data['record']['video_description']}
+</div>
+<if test="is_array($data['record']['tags'])">
+        {$data['record']['tags']['formatted']['parsedWithoutComma']}
+</if>
+
+<br /><br />
+
+<div class='ipsPad' style='text-align: center'>
+        <object width="660" height="392"><param name="movie" value="http://www.youtube.com/v/{$data['record']['video_id']}"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/{$data['record']['video_id']}" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="660" height="392"></embed></object>
+</div>
+
+<if test="$data['database']['database_comments']">
+<div id='commentsStart' class='ipsBox'>
+        <div class='ipsBox_container ipsPad'>
+                <h2 class='ipsType_subtitle'>{$data['comments']['count']} {$this->lang->words['comment_block']}</h2>
+                <div class='comment_wrap'>
+                        {$data['comments']['html']}
+                </div>
+        </div>
+</div>
+</if>]]></template_content>
+        <template_updated>{--time--}</template_updated>
+        <template_position>0</template_position>
+        <template_category>9</template_category>
+        <template_database>3</template_database>
+   </template>
+  </ccs_page_templates>
+  
+  
+  
+  <ccs_pages>
+   <page>
+        <page_name>Articles</page_name>
+        <page_seo_name>articles.html</page_seo_name>
+        <page_folder></page_folder>
+        <page_type>html</page_type>
+        <page_last_edited>{--time--}</page_last_edited>
+        <page_template_used>0</page_template_used>
+        <page_content><![CDATA[{ccs special_tag="navigation"}
+<div class='ipsLayout ipsLayout_withright ipsLayout_largeright'>
+    <div class='ipsLayout_right'>
+        {parse block="artmedlink"} 
+        {parse block="articles_menu"}
+        {parse block="recent_articles"}
+        {parse block="recent_comments"}
+    </div>
+    <div class='ipsLayout_content'>
+        {parse articles}
+    </div>
+</div>]]></page_content>
+        <page_cache></page_cache>
+        <page_view_perms>*</page_view_perms>
+        <page_cache_ttl>0</page_cache_ttl>
+        <page_cache_last>0</page_cache_last>
+        <page_content_only>1</page_content_only>
+        <page_meta_keywords></page_meta_keywords>
+        <page_meta_description></page_meta_description>
+        <page_content_type>page</page_content_type>
+        <page_ipb_wrapper>1</page_ipb_wrapper>
+        <page_quicknav>1</page_quicknav>
+   </page>
+   <page>
+        <page_name>Media</page_name>
+        <page_seo_name>media.html</page_seo_name>
+        <page_folder></page_folder>
+        <page_type>html</page_type>
+        <page_last_edited>{--time--}</page_last_edited>
+        <page_template_used>0</page_template_used>
+        <page_content><![CDATA[{ccs special_tag="navigation"}
+<div class='ipsLayout ipsLayout_withright ipsLayout_largeright'>
+        <div class='ipsLayout_right'>
+                {parse block="artmedlink"} 
+                {parse block="media_categories"}
+                {parse block="top_videos"} 
+        </div>
+        <div class='ipsLayout_content'>
+                {parse database="media_demo"}
+        </div>
+</div>]]></page_content>
+        <page_cache></page_cache>
+        <page_view_perms>*</page_view_perms>
+        <page_cache_ttl>0</page_cache_ttl>
+        <page_cache_last>0</page_cache_last>
+        <page_content_only>1</page_content_only>
+        <page_meta_keywords></page_meta_keywords>
+        <page_meta_description></page_meta_description>
+        <page_content_type>page</page_content_type>
+        <page_ipb_wrapper>1</page_ipb_wrapper>
+        <page_quicknav>1</page_quicknav>
+    </page>
+   <page>
+        <page_name>Homepage</page_name>
+        <page_seo_name>index.html</page_seo_name>
+        <page_folder></page_folder>
+        <page_type>html</page_type>
+        <page_last_edited>{--time--}</page_last_edited>
+        <page_template_used>0</page_template_used>
+        <page_content><![CDATA[{ccs special_tag="navigation"}
+<div class='ipsLayout ipsLayout_withright ipsLayout_largeright'>
+    <div class='ipsLayout_right'>
+        {parse block="portal_articles_link"} 
+        {parse block="portal_mini_calendar"}
+        {parse block="portal_recent_articles"}<br />
+        {parse block="portal_status_updates"}
+        {parse block="portal_recent_files"}<br />
+        {parse block="portal_recent_entries"}
+    </div>
+    <div class='ipsLayout_content'>
+        {parse block="latest_gallery_images"}<br />
+        {parse block="portal_recent_topics"}
+    </div>
+</div>]]></page_content>
+        <page_cache></page_cache>
+        <page_view_perms>*</page_view_perms>
+        <page_cache_ttl>0</page_cache_ttl>
+        <page_cache_last>0</page_cache_last>
+        <page_content_only>1</page_content_only>
+        <page_meta_keywords></page_meta_keywords>
+        <page_meta_description></page_meta_description>
+        <page_content_type>page</page_content_type>
+        <page_ipb_wrapper>1</page_ipb_wrapper>
+        <page_quicknav>1</page_quicknav>
+    </page>
+  </ccs_pages>
+ 
+  
+  
+  <ccs_template_blocks>
+  	<tblock>
+        <tpb_name>block__custom_1</tpb_name>
+        <tpb_params></tpb_params>
+        <tpb_content><![CDATA[<php>ob_start();
+include( DOC_IPS_ROOT_PATH . "media_path.php" );
+echo CCS_MEDIA_URL;
+$IPBHTML .= ob_get_contents();
+ob_end_clean();</php>]]></tpb_content>
+ 	</tblock>
+  	<tblock>
+        <tpb_name>feed__generic_2</tpb_name>
+        <tpb_params><![CDATA[$title='', $records=array()]]></tpb_params>
+        <tpb_content><![CDATA[<php>
+	// Modify the array so that categories are hierarchical
+	$this->_categories = array();
+	
+	foreach( $records as $r ){
+		$this->_categories[ $r['category']['category_parent_id'] ][ $r['category']['category_id'] ] = $r['category'];
+	}
+	
+	$this->_database_url = ( $records[0] ) ? $this->registry->ccsFunctions->returnDatabaseUrl( $records[0]['category']['category_database_id'] ) : false;
+	//print_r( $this->_database_url );
+</php>
+
+<div id='category_list' class='general_box clearfix'>
+	<h3>{$this->lang->words['ab__categories']} <a href='{$this->_database_url}?view=categories'>{$this->lang->words['ab__seealllink']}</a></h3>
+	<ul>
+		<if test="is_array( $this->_categories ) && count( $this->_categories )">
+			<foreach loop="$this->_categories[0] as $r">
+				<li>
+					<a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $r['category_database_id'], $r['category_id'] )}'>{$r['category_name']}</a>
+					<if test="count( $this->_categories[ $r['category_id'] ] )">
+						<ul>
+							<foreach loop="$this->_categories[ $r['category_id'] ] as $sub">
+								<li>
+									<a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $sub['category_database_id'], $sub['category_id'] )}'>{$sub['category_name']}</a>
+								</li>
+							</foreach>
+						</ul>
+					</if>
+				</li>
+			</foreach>
+		</if>
+	</ul>
+</div>
+<br />
+<if test="$this->_database_url">
+	<div class='general_box clearfix' id='article_search'>
+		<h3>{$this->lang->words['ab__searcharticles']}</h3>
+		<form method='post' action='{$this->_database_url}' class='ipsPad'>
+			<input type='hidden' name='do' value='search' />
+			<input type='text' name='search_value' class='input_text' />
+			<input type='submit' value='{$this->lang->words['ab__searchbutton']}' class='input_submit' />
+		</form>
+	</div>
+	<br />
+</if>
+]]></tpb_content>
+ 	</tblock>
+  	<tblock>
+        <tpb_name>feed__generic_3</tpb_name>
+        <tpb_params><![CDATA[$title='', $records=array()]]></tpb_params>
+        <tpb_content><![CDATA[<if test="is_array( $records ) && count( $records )">
+<div class='ipsSideBlock clearfix' id='recent_articles'>
+    <h3>{$title}</h3>
+    <ul class='block_list'>
+        <foreach loop="$records as $r">
+            <li>
+	        <a href='{$r['url']}'>{parse expression="IPSText::truncate( $r['field_1_value'], 30 )"}</a>
+	    </li>
+        </foreach>
+    </ul>
+</div>
+<br />
+</if>]]></tpb_content>
+ 	</tblock>
+  	<tblock>
+        <tpb_name>feed__generic_4</tpb_name>
+        <tpb_params><![CDATA[$title='', $records=array()]]></tpb_params>
+        <tpb_content><![CDATA[<h2>{$this->lang->words['ab__ourlatestvideo']}</h2>
+<div style='padding: 10px; text-align: center'>
+<object width="660" height="392"><param name="movie" value="http://www.youtube.com/v/{$records[0]['video_id']}&hl=en_US&fs=1&color1=0x3a3a3a&color2=0x999999&border=0&showinfo=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/{$records[0]['video_id']}&hl=en_US&fs=1&color1=0x3a3a3a&color2=0x999999&border=0&showinfo=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="660" height="392"></embed></object>
+</div>]]></tpb_content>
+ 	</tblock>
+  	<tblock>
+        <tpb_name>feed__generic_5</tpb_name>
+        <tpb_params><![CDATA[$title='', $records=array()]]></tpb_params>
+        <tpb_content><![CDATA[<php>
+	// Modify the array so that categories are hierarchical
+	$this->_categories = array();
+	
+	foreach( $records as $r ){
+		$this->_categories[ $r['category']['category_parent_id'] ][ $r['category']['category_id'] ] = $r['category'];
+	}
+	
+	//print_r( $this->_categories );
+</php>
+
+<div id='category_list' class='ipsSideBlock clearfix'>
+	<h3>{$title}</h3>
+	<ul>
+		<if test="is_array( $this->_categories ) && count( $this->_categories )">
+			<foreach loop="$this->_categories[0] as $r">
+				<li>
+					<a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $r['category_database_id'], $r['category_id'] )}'>{$r['category_name']}</a>
+					<if test="count( $this->_categories[ $r['category_id'] ] )">
+						<ul>
+							<foreach loop="$this->_categories[ $r['category_id'] ] as $sub">
+								<li>
+									<a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $sub['category_database_id'], $sub['category_id'] )}'>{$sub['category_name']}</a>
+								</li>
+							</foreach>
+						</ul>
+					</if>
+				</li>
+			</foreach>
+		</if>
+	</ul>
+</div>
+<br />]]></tpb_content>
+ 	</tblock>
+  	<tblock>
+        <tpb_name>feed__generic_7</tpb_name>
+        <tpb_params><![CDATA[$title='', $records=array()]]></tpb_params>
+        <tpb_content><![CDATA[<div id='videos_recent'>
+	<h2>{$this->lang->words['ab__recent_videos']}</h2>
+	<if test="is_array( $records ) && count( $records )">
+		<foreach loop="$records as $r">
+			<div class='video_thumb'>
+				<a href='{$r['url']}'><img src='{$r['video_thumb']}' {parse resize_image="{$r['video_thumb']}" maxwidth="140"} /></a>
+			</div>
+		</foreach>
+	</if>
+</div>]]></tpb_content>
+ 	</tblock>
+  	<tblock>
+        <tpb_name>feed__generic_9</tpb_name>
+        <tpb_params><![CDATA[$title='', $records=array()]]></tpb_params>
+        <tpb_content><![CDATA[<if test="is_array( $records ) && count( $records )">
+<div class='ipsSideBlock clearfix' id='recent_comments'>
+    <h3>{$title}</h3>
+    <ul class='ipsList_withminiphoto'>
+        <foreach loop="$records as $r">
+			<li class='clearfix'>
+				<a href='{parse url="showuser={$r['member_id']}" seotitle="{$r['members_seo_name']}" template="showuser" base="public"}' title='{$this->lang->words['view_profile']}' class='ipsUserPhoto_link left'><img src='{$r['pp_mini_photo']}' width='{$r['pp_mini_width']}' height='{$r['pp_mini_height']}' alt="{parse expression="sprintf($this->lang->words['users_photo'],$r['members_display_name'])"}" class='ipsUserPhoto ipsUserPhoto_mini' /></a>
+				<div class='list_content'>
+					<a href="{$r['url']}" rel='bookmark' class='ipsType_small'>{parse expression="IPSText::truncate( $r['field_1_value'], 30 )"}</a>
+					<p class='desc ipsType_smaller'>
+						<if test="$r['members_display_name_short']">{parse template="userHoverCard" group="global" params="$r"}<else />{$this->settings['guest_name_pre']}{$r['starter_name']}{$this->settings['guest_name_suf']}</if>
+						- {parse date="$r['date']" format="short"}
+					</p>
+				</div>
+			</li>
+        </foreach>
+    </ul>
+</div>
+<br />
+</if>]]></tpb_content>
+ 	</tblock>
+  	<tblock>
+        <tpb_name>feed__generic_8</tpb_name>
+        <tpb_params><![CDATA[$title='', $records=array()]]></tpb_params>
+        <tpb_content><![CDATA[<div class='general_box' id='recent_comments'>
+	<h3>{$this->lang->words['ab__hotvideos']}</h3>
+	<ul class='block_list'>
+		<if test="is_array( $records ) && count( $records )">
+		{parse striping="feed_striping" classes="row1,row2 altrow"}
+			<foreach loop="$records as $r">
+				<li class='{parse striping="feed_striping"} clearfix'>
+					<a href='{$r['url']}' style='float: left; padding: 2px;'><img src='{$r['video_thumb']}' {parse resize_image="{$r['video_thumb']}" maxwidth="40"} /></a>
+					<p style='margin-left: 48px;'>
+						<a href='{$r['url']}'>{parse expression="IPSText::truncate( $r['video_title'], 60 )"}</a><br />
+						<span class='rating'>
+							<if test="$r['rating_real'] >= 1">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$r['rating_real'] >= 2">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$r['rating_real'] >= 3">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$r['rating_real'] >= 4">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if><if test="$r['rating_real'] >= 5">{parse replacement="rate_on"}<else />{parse replacement="rate_off"}</if>
+						</span>
+					</p>
+				</li>
+			</foreach>
+		</if>
+	</ul>
+</div>]]></tpb_content>
+ 	</tblock>
+ 	<tblock>
+        <tpb_name>block__custom_10</tpb_name>
+        <tpb_params><![CDATA[$title="",$content=""]]></tpb_params>
+        <tpb_content><![CDATA[<php>ob_start();
+echo $this->settings['css_base_url'] . 'style_css/' . $this->registry->getClass('output')->skin['_csscacheid'] .'/';
+$IPBHTML .= ob_get_contents();
+ob_end_clean();</php>]]></tpb_content>
+ 	</tblock>
+ 	<tblock>
+        <tpb_name>block__custom_11</tpb_name>
+        <tpb_params><![CDATA[$title="",$content=""]]></tpb_params>
+        <tpb_content><![CDATA[<php>
+	$articlesDB	= 0;
+	$mediaDB	= 0;
+	
+	foreach( $this->caches['ccs_databases'] as $k => $v )
+	{
+		if( $v['database_is_articles'] )
+		{
+			$articlesDB	= $k;
+			continue;
+		}
+		
+		if( $v['database_key'] == 'media_demo' )
+		{
+			$mediaDB	= $k;
+			continue;
+		}
+	}
+</php>
+<div class='ipsSideBlock clearfix'>
+	<h3>{$this->lang->words['ab__viewothercats']}</h3>
+	<div style='text-align: center;' class='ipsPad'>
+		<if test="strpos( $this->registry->ccsFunctions->getPageName(), 'media' ) !== false">
+			<a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $articlesDB )}'>{$this->lang->words['ab__viewourarticles']}</a>
+		<else />
+			<a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $mediaDB )}'>{$this->lang->words['ab__viewothermedia']}</a>
+		</if>
+	</div>
+</div>
+<br />]]></tpb_content>
+ 	</tblock>
+
+        <tblock>
+        <tpb_name>block__mini_calendar_17</tpb_name>
+        <tpb_params><![CDATA[$content=""]]></tpb_params>
+        <tpb_content><![CDATA[<div class='general_box'>
+{$content}
+</div>
+<br />]]></tpb_content>
+        </tblock>
+        <tblock>
+        <tpb_name>block__status_updates_18</tpb_name>
+        <tpb_params><![CDATA[$title="",$output='']]></tpb_params>
+        <tpb_content><![CDATA[<script type="text/javascript" src='{$this->settings['cache_dir']}lang_cache/{$this->lang->lang_id}/ipb.lang.js' charset='{$this->settings['gb_char_set']}'></script>
+{$output}
+<br />]]></tpb_content>
+        </tblock>
+        <tblock>
+        <tpb_name>block__custom_19</tpb_name>
+        <tpb_params><![CDATA[$title="",$content='']]></tpb_params>
+        <tpb_content><![CDATA[<php>
+        $articlesDB     = 0;
+        
+        foreach( $this->caches['ccs_databases'] as $k => $v )
+        {
+                if( $v['database_is_articles'] )
+                {
+                        $articlesDB     = $k;
+                        break;
+                }
+        }
+</php>
+<div class='general_box clearfix'>
+        <h3>{$this->lang->words['ab__viewothercats']}</h3>
+        <div style='text-align: center;' class='ipsPad'>
+                <a href='{$this->registry->ccsFunctions->returnDatabaseUrl( $articlesDB )}'>{$this->lang->words['ab__viewourarticles']}</a>
+        </div>
+</div>
+<br />]]></tpb_content>
+        </tblock>
+  </ccs_template_blocks>
+</demosite>

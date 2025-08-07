@@ -1,0 +1,1709 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_visibility_enabled_desc</word_key>
+      <word_default>Is group visibility enabled</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_use_image_as_title</word_key>
+      <word_default>Use image as title</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_url_to_image</word_key>
+      <word_default>URL to image</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_update_available</word_key>
+      <word_default>Update Available</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_up_to_date</word_key>
+      <word_default>Up-to-Date</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_url_desc</word_key>
+      <word_default>Leave Blank if you do not want this to be clickable</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_to_which_group</word_key>
+      <word_default>To Which Group</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_to_which_group_desc</word_key>
+      <word_default>Name for Menu item</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_to_image</word_key>
+      <word_default>to image</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_to_group</word_key>
+      <word_default>to group</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_top_offset_limit_desc</word_key>
+      <word_default>Change the offset sub-children have from their parent</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_top_offset_limit</word_key>
+      <word_default>Top Offset</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_title_img_icon_width_only_numeric</word_key>
+      <word_default>Title Image Icon Width can only be numeric</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_title_img_icon_height_only_numeric</word_key>
+      <word_default>Title Image Icon Height can only be numeric</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_title_image</word_key>
+      <word_default>Title Image</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_this_time</word_key>
+      <word_default>this time</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_speed_of_open_desc</word_key>
+      <word_default>Speed of animation on opening of menus</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_speed_of_close_desc</word_key>
+      <word_default>Speed of animation on closing of menus</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_speed_of_animation</word_key>
+      <word_default>Speed Of Animation</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_speed_of</word_key>
+      <word_default>Speed Of</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_slide_up</word_key>
+      <word_default>Slide Up</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_slide_down</word_key>
+      <word_default>Slide Down</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_skin_menus_edit_menu</word_key>
+      <word_default>Editing Menu Item</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_show_default</word_key>
+      <word_default>Show (Default)</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_select_one</word_key>
+      <word_default>Select one</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_select_easypage_page</word_key>
+      <word_default>You need to select a Easypage Page from the drop down.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_select_content_page</word_key>
+      <word_default>You need to select a Content Page from the drop down.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_save_reload</word_key>
+      <word_default><![CDATA[Save & Reload]]></word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_riot_slow</word_key>
+      <word_default>User Riot Slow!</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_remote_use_desc</word_key>
+      <word_default>You can use this code on any site, even the one promenu is installed to, just place it wherever you would like for the menu to appear in the html or template.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_remote_use</word_key>
+      <word_default>Remote Use</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_refresh_cache</word_key>
+      <word_default>Refresh Cache</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_really_slow</word_key>
+      <word_default>Really Slow</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_really_fast</word_key>
+      <word_default>Really Fast</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_raw_html_block</word_key>
+      <word_default>Raw HTML Block</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_promenu_is_vertical_desc</word_key>
+      <word_default>If this menu is going to be vertical, enable this setting.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_promenu_is_vertical</word_key>
+      <word_default>Is menu vertical</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_promenu_border_jumper_desc</word_key>
+      <word_default>How you want to handle menus that hit the border?</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_promenu_border_jumper</word_key>
+      <word_default>Border Handling</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_promenu_activation</word_key>
+      <word_default>Enable ProMenu Activation</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_plugin_no_custom</word_key>
+      <word_default>No custom groups, Please create at least 1 custom group in promenu.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_plugin_label_desc</word_key>
+      <word_default>Select group to use for this block</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_plugin_label</word_key>
+      <word_default>Please Select Group</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_plugin_desc</word_key>
+      <word_default>display menus on wrapped or wrapperless pages generated by promenu.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_php_code_not_valid</word_key>
+      <word_default>PHP code is not valid</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_php_block</word_key>
+      <word_default>PHP Block</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_parent_menu</word_key>
+      <word_default>Parent Menu</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_opening_animation</word_key>
+      <word_default>Opening Animation</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_only_numeric</word_key>
+      <word_default>can only be numeric</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_of_image</word_key>
+      <word_default>of image in pixels (do not include px)</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_number_rows_desc</word_key>
+      <word_default>This is the number of menus to display before starting another row</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_number_rows</word_key>
+      <word_default>Number of columns before starting new row</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_number_columns_only_numeric</word_key>
+      <word_default>Number of columns before starting new row can only be numeric</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_number_columns_desc</word_key>
+      <word_default>This is the number of parent menus to display before starting another row</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_number_columns</word_key>
+      <word_default>Number of columns</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_no_title_img_url_blank</word_key>
+      <word_default>Title Image URL can not be blank</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_no_title_img_icon_width_blank</word_key>
+      <word_default>Title Image Icon Width can not be blank</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_no_title_img_icon_height_blank</word_key>
+      <word_default>Title Image Icon Height can not be blank</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_no_title_blank</word_key>
+      <word_default>Menu Title can not be blank</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_no_number_columns_blank</word_key>
+      <word_default>Number of columns before starting new row can not be blank</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_no_icon_width_blank</word_key>
+      <word_default>Icon Width can not be blank</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_no_icon_url_blank</word_key>
+      <word_default>Icon URL can not be blank</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_no_icon_height_blank</word_key>
+      <word_default>Icon Height can not be blank</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_no_blank</word_key>
+      <word_default>can not be blank</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_no_block_code_blank</word_key>
+      <word_default>Block Code can not be blank</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_not_valid</word_key>
+      <word_default>is not valid</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_not_contain_php</word_key>
+      <word_default>Can not contain PHP</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_not_contain</word_key>
+      <word_default>Can not contain</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_non_click</word_key>
+      <word_default>Non-Clickable (Default)</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_nonpromenu_activation</word_key>
+      <word_default>Enable Menu Activation</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_must_be_numeric</word_key>
+      <word_default>this must be a numerical value</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_more_options</word_key>
+      <word_default>More options</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_menu_item_saved</word_key>
+      <word_default>Menu Item Saved</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_menu_name</word_key>
+      <word_default>Menu Name</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_menu_item_cancelled</word_key>
+      <word_default>Menu Item Cancelled</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_menu_groups</word_key>
+      <word_default>Menu Groups</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_menu_group</word_key>
+      <word_default>Menu Group</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_menu_deleted</word_key>
+      <word_default>Menu Deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_menus_manage_groups</word_key>
+      <word_default>Manage Groups</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_menus_export_group</word_key>
+      <word_default>Export Group</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_menus_edit_menu</word_key>
+      <word_default>Edit Menu</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_menus_deleted</word_key>
+      <word_default>Menus Deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_menus_cloning</word_key>
+      <word_default>Cloning Menus</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_menus_cache_refresh</word_key>
+      <word_default>Cache Refreshed</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_menus_add_menu</word_key>
+      <word_default>Add Menus</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_member_group</word_key>
+      <word_default>Member Group</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_mega_menu_settings</word_key>
+      <word_default>Mega Menu Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_mega_menu_desc</word_key>
+      <word_default>If enabled, Children menus will be displayed in mega menu layout.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_mega_menu</word_key>
+      <word_default>Treat as a mega menu</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_managment</word_key>
+      <word_default><![CDATA[Group & Menu Managment]]></word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_link_type_desc</word_key>
+      <word_default>Select type of menu this will be</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_link_type</word_key>
+      <word_default>Link Type</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_latest_news</word_key>
+      <word_default>Latest News</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_ipc_blocks_desc</word_key>
+      <word_default>Select the IP.Content block(s) you wish to display</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_ipc_blocks</word_key>
+      <word_default>IPC Blocks</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_ipc_block</word_key>
+      <word_default>IP Content Block</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_insert_url</word_key>
+      <word_default>Insert URL</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_index_limit_desc</word_key>
+      <word_default><![CDATA[Change this value only if the menus are unable to "cast" over any part of the page they are on]]></word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_insert_tag</word_key>
+      <word_default>Insert Tag</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_index_limit</word_key>
+      <word_default>Z-Index</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_import_menus</word_key>
+      <word_default>Import Applications</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_import_menus_alert</word_key>
+      <word_default>By running this, all applications installed will be imported as menu items, even if they already exist. Do you wish to continue?</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_import_group_alert</word_key>
+      <word_default>Are you sure you want to delete this group?</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_if_statement</word_key>
+      <word_default>if statement</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_if_checked_alert</word_key>
+      <word_default>If this is checked, menu name(s) will be ignored on the front end</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_icon_width_only_numeric</word_key>
+      <word_default>Icon Width can only be numeric</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_icon_placement_alert</word_key>
+      <word_default>Icon for menu item, will display to the left of the menu name</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_icon_height_only_numeric</word_key>
+      <word_default>Icon Height can only be numeric</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hover_speed_desc</word_key>
+      <word_default>Speed of the hover intent, how long from hovering over item, before it opens, or hovering off item before it auto closes (in milliseconds, 500 ms = half second)</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hover_default</word_key>
+      <word_default>Hover (Default)</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hover</word_key>
+      <word_default>Hover Speed</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hooks_skin_group</word_key>
+      <word_default>The skin group this hook is in</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hooks_title</word_key>
+      <word_default>Group Exporting</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hooks_type</word_key>
+      <word_default>Type of template hook</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hooks_skin_function</word_key>
+      <word_default>The skin function this hook is in</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hooks_position</word_key>
+      <word_default>Position of template hook</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hooks_id</word_key>
+      <word_default><![CDATA[The hook 'ID']]></word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hide_selected_desc</word_key>
+      <word_default><![CDATA[Chosen groups won't see this menu on the public side, but will still be able to access the application (depending on the applications permissions access) regardless. This setting does not apply if you have selected the setting above as 'Yes']]></word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hide_selected</word_key>
+      <word_default>Hide menu for group</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hide_default</word_key>
+      <word_default>Hide (Default)</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hide_on_skin</word_key>
+      <word_default>Hide menu on skin</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hide_on_skin_desc</word_key>
+      <word_default>Hide on these skins, hold down ctrl to select multiple</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hide_all_desc</word_key>
+      <word_default>If enabled, this will hide this menu for all current groups or any groups created in the future</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_hide_all</word_key>
+      <word_default>Hide for all current and future groups</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_height_of_image</word_key>
+      <word_default>Height of image</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_group_template_desc</word_key>
+      <word_default>Select the template this group will use</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_group_template</word_key>
+      <word_default>Group Template</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_group_name_desc_new</word_key>
+      <word_default><![CDATA[Enter New Group name here, must be unique, any non alphanumeric characters will be stripped out upon save. Any group begining with a number 'Pro' will be prefixed to it, to allow css to work correctly.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_group_name_desc</word_key>
+      <word_default>Group Name are locked and can not be changed. Any alteration thru the database, could render them unusable.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_group_exists</word_key>
+      <word_default>This Group Already exist</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_group_name</word_key>
+      <word_default>Group Name</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_group_enabled_desc</word_key>
+      <word_default>Is this group enabled</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_global_settings</word_key>
+      <word_default>Global Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_foreach_loop</word_key>
+      <word_default>foreach loop</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_fade_out</word_key>
+      <word_default>Fade Out</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_fly_apart</word_key>
+      <word_default>Fly Her Apart Fast</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_fade_in</word_key>
+      <word_default>Fade In</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_export_as_hook</word_key>
+      <word_default>Export as Hook</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_error_security</word_key>
+      <word_default>Invalid security code sent, please try again later</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_error_blank_group</word_key>
+      <word_default>Group name can not be blank.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_error_numeric</word_key>
+      <word_default>%s must be a numerical value, please go back and correct</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_enable_menu_active_desc2</word_key>
+      <word_default><![CDATA[Highlight any menu item that has not been built using Promenu, This will activate any Menu and its parent items, if the URL's match. (mainly will be used for links created inside blocks)]]></word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_enable_menu_active_desc</word_key>
+      <word_default>Highlight any menu item that has been built using Promenu, this does not handle url activation inside any of the blocks.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_enable_menu_active</word_key>
+      <word_default>Enable Menu Activation</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_enable_alt_lang_string</word_key>
+      <word_default>Enable Alternate Language Strings</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_enable_arrows</word_key>
+      <word_default>Enable Sub Menu Indication Arrows</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_enable_arrows_desc</word_key>
+      <word_default>Disable sub menu indication arrows. (Note: Behavoir is only acknowledged when set to default hover)</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_enable_group</word_key>
+      <word_default>Enable Group</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_enable_group_visibility</word_key>
+      <word_default>Enable Group Visibility</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_edit_group</word_key>
+      <word_default>Edit Group</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_editing_group</word_key>
+      <word_default>Editing Group</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_easy_page_block</word_key>
+      <word_default>Easy Page Block</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_easypages_page_desc</word_key>
+      <word_default>Select content page to link too</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_easypages_page</word_key>
+      <word_default>Easypages Page</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_easypages_block</word_key>
+      <word_default>Easypages Blocks</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_easypages_block_desc</word_key>
+      <word_default>Select the EasyPages block(s) you wish to display</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_delete_group</word_key>
+      <word_default>Delete Group</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_delete_group_alert</word_key>
+      <word_default>Deleting this group %s, will erase all its settings and menus associated with it. This action can not be reversed, click OK to continue.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_default_fast</word_key>
+      <word_default>Default (Fast)</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_delete_alert</word_key>
+      <word_default>Deleting this Menu will delete all sub-menus and items associated with it. This action is irreversable. Click okay to proceed.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_default_css</word_key>
+      <word_default>Default CSS</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_currently_no_menus</word_key>
+      <word_default>There are currently no menus</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_current_version</word_key>
+      <word_default>Current Version</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_currently_no</word_key>
+      <word_default>There are currently no</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_content_page_desc</word_key>
+      <word_default>Select content page to link too</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_correct_error</word_key>
+      <word_default>Please go back and correct this error</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_created_by</word_key>
+      <word_default>Menu Software Created by</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_content_page_blank</word_key>
+      <word_default>You need to select a Content Page from the drop down.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_content_page</word_key>
+      <word_default>Content Page</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_closing_animation</word_key>
+      <word_default>Closing Animation</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_cloning_cancelled</word_key>
+      <word_default>Cloning Cancelled</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_clone_to_which_group_desc</word_key>
+      <word_default>This will select which group you are wanting to clone menus.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_clone_to_which_group</word_key>
+      <word_default>Clone To Which Group</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_click_only</word_key>
+      <word_default>Click Only</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_click_to</word_key>
+      <word_default>Click to</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_click_hover</word_key>
+      <word_default>Click Then Hover</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_click_custom_group_options</word_key>
+      <word_default>Click For Custom Group Options</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_choose_icon</word_key>
+      <word_default>Choose Icon</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_can_lead</word_key>
+      <word_default>can lead to extremely long opening and closing times</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_blue_hair_pass</word_key>
+      <word_default><![CDATA[Blue Hair's Passing You Slow]]></word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_block_desc</word_key>
+      <word_default>Add your HTML or BBCode here</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_block_code</word_key>
+      <word_default>Block Code</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_blank_blank_blank</word_key>
+      <word_default>You need to select a Content Page from the drop down.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_behavior_desc</word_key>
+      <word_default><![CDATA[Change the behavior how the menu bar act. Hover: selecting hover all menus open on mouse over and close on mouse leave. Click: The menu bar opens and close's on a click and the sub menu's and their descendants are opened by hovering. IMPORTANT: This option deactivates the main parent menu links (Main Parent Menu's without Subs are unaffected)]]></word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_been_cloned</word_key>
+      <word_default>have been cloned</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_basic_settings</word_key>
+      <word_default>Basics Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_attribute_desc</word_key>
+      <word_default><![CDATA[This box is to be used for any additional class, style, attribute you want to add to this menu item. It will only effect this menu item. use class="<example>" to add a class, use style="<example>" to add a style, for any additonal attributes, properly format them. if you want the description or the title for the menu item to display in a tooltip or title box, do the following: title="{promenu_title}" or data-tooltip="{promenu_title}", for descriptions, title="{promenu_desc}" or data-tooltip="{promenu_desc}".]]></word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_attach_forums_desc</word_key>
+      <word_default>If yes, this menu will query and build a list of your forums and their children</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_attach_forums</word_key>
+      <word_default>Attatch Forums</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_app_link_desc</word_key>
+      <word_default>Select which installed application menu can be linked to. If the application is disabled or the tab is hidden in the application and modules section, the application might not be directly accessible from the front end. Promenu itself will not show up in this list.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_app_link</word_key>
+      <word_default>App Link</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_alt_lang_string_desc</word_key>
+      <word_default>Your site in multiple languages? Enabling this setting will allow you to add multiple titles to the menus, and will read the site default or users current language set to display the appropriate name of the menu</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_alt_lang_string</word_key>
+      <word_default>Alternate Language Strings</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_admin_menu_edited</word_key>
+      <word_default>Menu %s has been edited</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_admin_menu_deleted</word_key>
+      <word_default>Menu %s has been deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_admin_menu_added</word_key>
+      <word_default>Menu %s has been added</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_admin_menu_cloned</word_key>
+      <word_default>Menu %s has been cloned to %s</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_admin_group_export</word_key>
+      <word_default>Group %s has been exported as hook</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_admin_group_edit</word_key>
+      <word_default>Group %s has been edited.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_admin_group_deleted</word_key>
+      <word_default>Group %s has been deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_admin_group_add</word_key>
+      <word_default>Group %s has been added</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_add_sub_menu</word_key>
+      <word_default>Add Submenu</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_add_menu</word_key>
+      <word_default>Add Menu</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_add_new_menu_item</word_key>
+      <word_default>Add New Menu Item</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_add_group</word_key>
+      <word_default>Add Group</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_went_wrong</word_key>
+      <word_default>Something went wrong</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_which_group</word_key>
+      <word_default>Select Menu Group this menu item will belong to.</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_width_of_image</word_key>
+      <word_default>Width of image</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_add</word_key>
+      <word_default>Add</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_added</word_key>
+      <word_default>Added</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_and</word_key>
+      <word_default>and</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_animation</word_key>
+      <word_default>Animation</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_application</word_key>
+      <word_default>Application</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_arcade</word_key>
+      <word_default>Arcade</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_attributes</word_key>
+      <word_default>Attributes</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_behavior</word_key>
+      <word_default>Behavior</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_block</word_key>
+      <word_default>Block</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_blog</word_key>
+      <word_default>Blog</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_calendar</word_key>
+      <word_default>Calendar</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_cancel</word_key>
+      <word_default>Cancel</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_cancelled</word_key>
+      <word_default>Cancelled</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_cart</word_key>
+      <word_default>Cart</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_changed</word_key>
+      <word_default>Changed</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_chat</word_key>
+      <word_default>Chat</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_children</word_key>
+      <word_default>children</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_clone</word_key>
+      <word_default>Clone</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_cloning</word_key>
+      <word_default>Cloning</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_close</word_key>
+      <word_default>close</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_code</word_key>
+      <word_default>Code</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_custom</word_key>
+      <word_default>Custom</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_delete</word_key>
+      <word_default>Delete</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_deleted</word_key>
+      <word_default>Deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_descriptions</word_key>
+      <word_default>Descriptions</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_disabled</word_key>
+      <word_default>Disabled</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_display</word_key>
+      <word_default>display</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_download</word_key>
+      <word_default>Download</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_edit</word_key>
+      <word_default>Edit</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_editing</word_key>
+      <word_default>Editing</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_enable</word_key>
+      <word_default>Enable</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_export</word_key>
+      <word_default>Export</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_forums</word_key>
+      <word_default>Forums</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_gallery</word_key>
+      <word_default>Gallery</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_group</word_key>
+      <word_default>Group</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_height</word_key>
+      <word_default>Height</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_help</word_key>
+      <word_default>Help</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_hidden</word_key>
+      <word_default>Hidden</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_hide</word_key>
+      <word_default>Hide</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_hiding</word_key>
+      <word_default>Hiding</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_home</word_key>
+      <word_default>Home</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_icon</word_key>
+      <word_default>Icon</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_image</word_key>
+      <word_default>Image</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_info</word_key>
+      <word_default>Info</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_item</word_key>
+      <word_default>Item</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_media</word_key>
+      <word_default>Media</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_medium</word_key>
+      <word_default>Medium</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_members</word_key>
+      <word_default>Members</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_menu</word_key>
+      <word_default>Menu</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_menus</word_key>
+      <word_default>Menus</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_more</word_key>
+      <word_default>More</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_name</word_key>
+      <word_default>name</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_new</word_key>
+      <word_default>New</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_news</word_key>
+      <word_default>News</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_none</word_key>
+      <word_default>None</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_opening</word_key>
+      <word_default>Opening</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_options</word_key>
+      <word_default>Options</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_or</word_key>
+      <word_default>or</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_parent</word_key>
+      <word_default>Parent</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_php</word_key>
+      <word_default>PHP</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_preview</word_key>
+      <word_default>PREVIEW</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_previewl</word_key>
+      <word_default>Preview</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_save</word_key>
+      <word_default>Save</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_saved</word_key>
+      <word_default>Saved</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_shoutbox</word_key>
+      <word_default>Shoutbox</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_show</word_key>
+      <word_default>Show</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_showing</word_key>
+      <word_default>Showing</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_slow</word_key>
+      <word_default>Slow</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_slower</word_key>
+      <word_default>Slower</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_sub</word_key>
+      <word_default>Sub</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_tags</word_key>
+      <word_default>tags</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_title</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_update</word_key>
+      <word_default>Update</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_url</word_key>
+      <word_default>URL</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_visibility</word_key>
+      <word_default>Visibility</word_default>
+    </lang>
+    <lang>
+      <word_app>promenu</word_app>
+      <word_pack>admin_promenu</word_pack>
+      <word_key>promenu_word_width</word_key>
+      <word_default>Width</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<information>
+  <data>
+    <name>ProMenu</name>
+    <public_name>ProMenu</public_name>
+    <hide_tab>1</hide_tab>
+    <author><![CDATA[Provisionist &amp; CodingJungle]]></author>
+    <description>A complete menu managment system.</description>
+    <disabledatinstall>0</disabledatinstall>
+    <global_caches>ccs_databases</global_caches>
+    <website/>
+    <update_check><![CDATA[http://provisionists.org/index.php?app=froggy&amp;module=versions&amp;section=versions&amp;app_key=promenu]]></update_check>
+    <templategroups>
+        <template match="exact">skin_promenu_plus</template>
+        <template match="loose">skin_promenuplus</template>
+    </templategroups>
+  </data>
+</information>

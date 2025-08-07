@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>Пользовательские блоки боковой панели</grouptitle>
+		<items>
+			<item>
+				<key>customSideBarBlocks_settings</key>
+				<string>Может изменять настройки?</string>
+			</item>
+			<item>
+				<key>customSideBarBlocks_add</key>
+				<string>Может добавлять / редактировать блоки</string>
+			</item>
+			<item>
+				<key>customSideBarBlocks_delete</key>
+				<string>Может удалить блоки?</string>
+			</item>
+			<item>
+				<key>customSideBarBlocks_view</key>
+				<string>Может просматривать блоки?</string>
+			</item>	
+		</items>
+	</group>
+</permissions>

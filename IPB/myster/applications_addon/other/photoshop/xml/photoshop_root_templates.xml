@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="photoshop" templategroups="a:1:{s:11:&quot;skin_photoshop&quot;;s:5:&quot;exact&quot;;}">
+  <templategroup group="skin_photoshop">
+    <template>
+      <template_group>skin_photoshop</template_group>
+      <template_content><![CDATA[<iframe id="pixlr" type="text/html" width="1500px" height="1000px" src="http://pixlr.com/editor/" frameborder="0"></iframe> 
+]]></template_content>
+      <template_name>show_page</template_name>
+      <template_data></template_data>
+      <template_updated>1291215887</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

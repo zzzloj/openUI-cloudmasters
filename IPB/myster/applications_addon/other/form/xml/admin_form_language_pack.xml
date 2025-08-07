@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_external</word_pack>
+      <word_key>no_fields_display</word_key>
+      <word_default>There are currently no fields to display.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_external</word_pack>
+      <word_key>g_fs_moderate_logs</word_key>
+      <word_default>Can moderate form submissions?</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_external</word_pack>
+      <word_key>g_fs_view_logs</word_key>
+      <word_default>Can view form submissions?</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_external</word_pack>
+      <word_key>g_fs_allow_attach</word_key>
+      <word_default>Can upload attachments?</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_external</word_pack>
+      <word_key>seconds</word_key>
+      <word_default>seconds</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_external</word_pack>
+      <word_key>g_fs_bypass_captcha</word_key>
+      <word_default>Bypass captcha checks?</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_external</word_pack>
+      <word_key>enter_zero_disable</word_key>
+      <word_default>Enter zero to disable!</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_external</word_pack>
+      <word_key>g_fs_view_offline</word_key>
+      <word_default>Can view offline form manager?</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_external</word_pack>
+      <word_key>g_fs_submit_wait</word_key>
+      <word_default>Time before can resubmit form?</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_external</word_pack>
+      <word_key>basic_permissions</word_key>
+      <word_default>Basic Permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_external</word_pack>
+      <word_key>view_form</word_key>
+      <word_default>View Form</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_external</word_pack>
+      <word_key>submit_form</word_key>
+      <word_default>Submit Form</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_external</word_pack>
+      <word_key>view_logs</word_key>
+      <word_default>View Logs</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>confirm_data</word_key>
+      <word_default>Confirm Data</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>confirm_data_desc</word_key>
+      <word_default><![CDATA[If you choose to display a message, enter it here. (If left empty, the default thank you message will be displayed.)<br />If you choose a redirect url, enter the full url (including http://) where you want to redirect users to. e.g. http://www.devfuse.com]]></word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_required_desc</word_key>
+      <word_default>Form will require this field before submitting.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_required</word_key>
+      <word_default>Field Required</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_type</word_key>
+      <word_default>Field Type</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_description</word_key>
+      <word_default>Field Description</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>selected_value_desc_multi</word_key>
+      <word_default>You have selected a multiple choice field type. If you want several values to be selected, then separate each value with a comma.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>selected_value_desc</word_key>
+      <word_default>What value will be selected or entered into the field on page load?</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_title</word_key>
+      <word_default>Field Title</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>selected_value</word_key>
+      <word_default>Selected Value</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>manage_fields</word_key>
+      <word_default>Manage Fields</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>topic_forum</word_key>
+      <word_default>Topic Forum</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>topic_post_desc</word_key>
+      <word_default>Fill in the topic post that the topic alert will use.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>topic_post</word_key>
+      <word_default>Topic Post</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>topic_title_desc</word_key>
+      <word_default>Fill in the topic title that the topic alert will use.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>topic_title</word_key>
+      <word_default>Topic Title</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>topic_author_desc</word_key>
+      <word_default>Fill in the member id of the topic author.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>topic_author</word_key>
+      <word_default>Topic Author</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>topic_settings</word_key>
+      <word_default>Topic Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>enable_topic</word_key>
+      <word_default>Enable Topic</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>email_message_desc</word_key>
+      <word_default>Fill in the email message that email alerts will use.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>email_message</word_key>
+      <word_default>Email Message</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>individual_email_desc</word_key>
+      <word_default><![CDATA[If you wish to receive an email alert when this form is submitted, fill in your email address.<br />Send to multiple addresses by separating each address with a comma!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>email_subject_desc</word_key>
+      <word_default>Fill in the email subject that email alerts will use.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>enable_email</word_key>
+      <word_default>Enable Email</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>email_subject</word_key>
+      <word_default>Email Subject</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>email_settings</word_key>
+      <word_default>Email Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>pm_message</word_key>
+      <word_default>PM Message</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>pm_message_desc</word_key>
+      <word_default>Fill in the personal message post that pm alerts will use.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>groups_desc_ctrl</word_key>
+      <word_default>Use Ctrl key to select more than one.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>groups_desc</word_key>
+      <word_default>Select the groups you want to send this alert to.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>groups</word_key>
+      <word_default>Groups</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>individual_desc</word_key>
+      <word_default>Fill in the member id of the individual who will receive this alert.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>individual</word_key>
+      <word_default>Individual</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>send_method_desc</word_key>
+      <word_default>Which method would you like to send this alert?</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>send_method</word_key>
+      <word_default>Send Method</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>sender_desc</word_key>
+      <word_default>Who will appear as the sender?</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>sender_disable</word_key>
+      <word_default>Enter -1 to use form submitter.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>pm_subject</word_key>
+      <word_default>PM Subject</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>pm_subject_desc</word_key>
+      <word_default>Subject title of personal message.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>sender</word_key>
+      <word_default>Sender</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>pm_settings</word_key>
+      <word_default>PM Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>enable_pm</word_key>
+      <word_default>Enable PM</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>form_rules</word_key>
+      <word_default>Form Rules</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>form_rules_desc</word_key>
+      <word_default>Add if you have any form rules or instructions.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>confirm_email_no_fields</word_key>
+      <word_default>There are currently no custom fields for this form.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>confirm_email_desc</word_key>
+      <word_default>If you want to send a confirmation email that the form was submitted. Select the custom field that members fill in with their email address. (Leave alone to use members email address.)</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>confirm_email</word_key>
+      <word_default>Confirm Email</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>confirmation_settings</word_key>
+      <word_default>Confirmation Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>attachments_desc</word_key>
+      <word_default>Allow attachments for this form?</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>enable_logs_rss_desc</word_key>
+      <word_default>Enable rss feed of form submission logs?</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>attachments</word_key>
+      <word_default>Attachments</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>enable_logs_rss</word_key>
+      <word_default>Enable Logs (RSS)</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>log_message_desc</word_key>
+      <word_default>Template used for logging form submissions.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>description</word_key>
+      <word_default>Description</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>log_message</word_key>
+      <word_default>Log Message</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>form_name</word_key>
+      <word_default>Form Name</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>general_settings</word_key>
+      <word_default>General Settings</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tab_permissions</word_key>
+      <word_default>Permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tab_topic</word_key>
+      <word_default>Topic</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tab_general</word_key>
+      <word_default>General</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tab_pm</word_key>
+      <word_default>PM</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tab_email</word_key>
+      <word_default>Email</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>delete_form</word_key>
+      <word_default>Delete Form</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>manage_forms</word_key>
+      <word_default>Manage Forms</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>fields</word_key>
+      <word_default>Fields</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>delete_field</word_key>
+      <word_default>Delete Field</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>view_example</word_key>
+      <word_default>View Example</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>view_quick_tags</word_key>
+      <word_default>View Quick Tags</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>quick_tags</word_key>
+      <word_default>Quick Tags</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>rebuild_cache</word_key>
+      <word_default>Rebuild Cache</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>converter_step2_done</word_key>
+      <word_default>Custom fields have been converted, moving onto contact logs.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>converter_step1_done</word_key>
+      <word_default>Subjects have been converted, moving onto fields.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>converter_missing_tables</word_key>
+      <word_default>You need both the Form Manager and Contact System installed on the same forums. The following database tables are missing: </word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_deleted</word_key>
+      <word_default>Field has been deleted.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_updated</word_key>
+      <word_default>Field has been updated.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>form_field_cache_rebuilt</word_key>
+      <word_default>Form and field cache has been rebuilt.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_added</word_key>
+      <word_default>Field has been added.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>password</word_key>
+      <word_default>Password</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_title_required</word_key>
+      <word_default>Please go back and make sure the field title field is filled in.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>text_area</word_key>
+      <word_default>Text Area</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>full_editor</word_key>
+      <word_default>Full Editor</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>radio_buttons</word_key>
+      <word_default>Radio Buttons</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>check_boxes</word_key>
+      <word_default>Check Boxes</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>dropdown_multiselect</word_key>
+      <word_default>Dropdown (Multiselect)</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>input_text</word_key>
+      <word_default>Input Text</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>dropdown</word_key>
+      <word_default>Dropdown</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>no_fields_id_match</word_key>
+      <word_default>No fields match the id provided.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>edit_field</word_key>
+      <word_default>Edit Field</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>default_field_values_3</word_key>
+      <word_default>Option3</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>default_field_text</word_key>
+      <word_default>Example field description.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>default_field_values_1</word_key>
+      <word_default>Option1</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>default_field_values_2</word_key>
+      <word_default>Option2</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>add_field</word_key>
+      <word_default>Add Field</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>default_field_title</word_key>
+      <word_default>Example Field</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>default_field_value</word_key>
+      <word_default>Option1</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>secure_key_error</word_key>
+      <word_default>Problem with authorization key, please try again.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>form_deleted</word_key>
+      <word_default>Form has been deleted.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>form_added</word_key>
+      <word_default>Form has been added.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>form_updated</word_key>
+      <word_default>Form has been updated.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>topic_fields_required</word_key>
+      <word_default>If you enable the topic alert, please make sure topic author, title, post and topic forum fields are filled in.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>email_subject_required</word_key>
+      <word_default>If you enable email alerts, please make sure subjects and message fields are filled in.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>email_groups_required</word_key>
+      <word_default>Please make sure the email group field is filled in.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>email_format_issue</word_key>
+      <word_default>Please go back and check the format of all email addresses.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>pm_group_required</word_key>
+      <word_default>Please make sure the pm group field is filled in.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>pm_subject_required</word_key>
+      <word_default>If you enable pm alerts, please make sure subject and message fields are filled in.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>pm_receiver_required</word_key>
+      <word_default>Please make sure the pm receiver field is filled in.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>redirect_url</word_key>
+      <word_default>Redirect URL</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>form_name_required</word_key>
+      <word_default>Please go back and fill in the form name field.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>message</word_key>
+      <word_default>Message</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>type_individual</word_key>
+      <word_default>Individual</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>type_groups</word_key>
+      <word_default>Groups</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>staff</word_key>
+      <word_default>STAFF</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>select_field</word_key>
+      <word_default>Select Field</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>edit_form</word_key>
+      <word_default>Edit Form</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>no_forms_id_match</word_key>
+      <word_default>No forms match the id provided.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>default_log_message</word_key>
+      <word_default><![CDATA[New form submission from [b]{form_name}[/b].<br /><br />{field_list}]]></word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>default_topic_post</word_key>
+      <word_default><![CDATA[New form submission has been received. View form [url={form_url}]here[/url]: <br /><br />Name: [b]{member_name}[/b]<br />Email: [b]{member_email}[/b]<br />Form: [b]{form_name}[/b]<br /><br />[quote]{field_list}[/quote]]]></word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>default_topic_title</word_key>
+      <word_default>New Form Submission ({form_name})</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>default_email_message</word_key>
+      <word_default><![CDATA[New form submission has been received. View form [url={form_url}]here[/url]: <br /><br />Name: [b]{member_name}[/b]<br />Email: [b]{member_email}[/b]<br />Form: [b]{form_name}[/b]<br /><br />{field_list}]]></word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>default_email_subject</word_key>
+      <word_default>New Form Submission</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>default_pm_message</word_key>
+      <word_default><![CDATA[New form submission has been received. View form [url={form_url}]here[/url]: <br /><br />Name: [b]{member_name}[/b]<br />Email: [b]{member_email}[/b]<br />Form: [b]{form_name}[/b]<br /><br />[quote]{field_list}[/quote]]]></word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>default_pm_subject</word_key>
+      <word_default>New Form Submission</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>add_form</word_key>
+      <word_default>Add Form</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>no_field_id_match</word_key>
+      <word_default>No fields match the id provided.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>confirm_type</word_key>
+      <word_default>Confirm Type</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>confirm_type_desc</word_key>
+      <word_default>What will the member be presented with after a form is submitted?</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>permissions</word_key>
+      <word_default>Permissions</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_extras</word_key>
+      <word_default>Field Extras</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_options</word_key>
+      <word_default>Field Options</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>add_option</word_key>
+      <word_default>Add Option</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>please_confirm</word_key>
+      <word_default>Please confirm this action?</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>remove_option</word_key>
+      <word_default>Remove Option</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>size</word_key>
+      <word_default>Size</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>multiselect_size</word_key>
+      <word_default>Multiselect Size</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>rows</word_key>
+      <word_default>Rows</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>columns</word_key>
+      <word_default>Columns</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>html</word_key>
+      <word_default>HTML</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>html_desc</word_key>
+      <word_default>Real time preview of custom field.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>code</word_key>
+      <word_default>CODE</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>code_desc</word_key>
+      <word_default>Raw html field code.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tag_member_name</word_key>
+      <word_default>Members Display Name</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tag_member_id</word_key>
+      <word_default>Members ID</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tag_member_email</word_key>
+      <word_default>Members Email</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tag_member_ip</word_key>
+      <word_default>Members IP Address</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tag_board_name</word_key>
+      <word_default>Board Name</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tag_board_url</word_key>
+      <word_default>Board URL</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tag_form_id</word_key>
+      <word_default>Form ID (Current form)</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tag_form_name</word_key>
+      <word_default>Form Name (Current form)</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tag_form_url</word_key>
+      <word_default>Form URL (Current form)</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tag_field_name</word_key>
+      <word_default>Field Name (Selected field)</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tag_field_value</word_key>
+      <word_default>Field Value (Selected field)</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>tag_field_list</word_key>
+      <word_default>Field List (When submitted)</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>converter_title</word_key>
+      <word_default>Contact System Converter</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>convert_forms</word_key>
+      <word_default>Convert Forms</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>convert_forms_desc</word_key>
+      <word_default>Choose this option if you would like to convert each subject into an individual form.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>convert_forms_desc2</word_key>
+      <word_default>This is useful if you were already using subjects for multiple forms.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>convert_contact_form</word_key>
+      <word_default>Convert Contact Form</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>convert_contact_form_desc</word_key>
+      <word_default>Choose this option if you would like to mimic the setup of the Contact System.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>convert_contact_form_desc2</word_key>
+      <word_default>This is useful if you would just like to continue using as a basic single contact form with subjects.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>converter_warning</word_key>
+      <word_default>Please note that all form data will be deleted during each conversion.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>start_conversion</word_key>
+      <word_default>Start Conversion</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>converter_finished</word_key>
+      <word_default>Convert has finished...</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>converter_finished_desc</word_key>
+      <word_default>Subjects, fields and logs have been converted for use in the Form Manager. You can run the converter again but please be aware that each conversion will remove any Form data again.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_size_required</word_key>
+      <word_default><![CDATA[Please go back and make sure the 'size' field is filled in.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_columns_required</word_key>
+      <word_default><![CDATA[Please go back and make sure the 'columns' field is filled in.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_rows_required</word_key>
+      <word_default><![CDATA[Please go back and make sure the 'rows' field is filled in.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_options_required</word_key>
+      <word_default>You have chosen a field type that supports options, please go back and add an option by clicking the Add Option link.</word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_value_no_match</word_key>
+      <word_default><![CDATA[The selected value you entered <strong><#EXTRA#></strong> is not a field option. Please go back and correct this.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>form</word_app>
+      <word_pack>admin_form</word_pack>
+      <word_key>field_empty_option</word_key>
+      <word_default>Please go back and check for an empty field option.</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

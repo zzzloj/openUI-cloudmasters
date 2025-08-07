@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>last_reply_by</word_key>
+      <word_default>Последний ответ от</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>replies</word_key>
+      <word_default>Ответов</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>aff_title</word_key>
+      <word_default>Рекомендуемые сайты</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>online_title</word_key>
+      <word_default>Онлайн пользователи</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>portal_title</word_key>
+      <word_default>Портал</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>photo</word_key>
+      <word_default>Аватар</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>online_breakdown</word_key>
+      <word_default><![CDATA[Есть <strong>%s</strong> просматривающих онлайн пользователей:]]></word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>discuss_title</word_key>
+      <word_default>Последние темы</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>online_split</word_key>
+      <word_default>%s пользователей, %s гостей и %s анонимных пользователей</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>poll_title</word_key>
+      <word_default>Опрос</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>in</word_key>
+      <word_default>в</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>views</word_key>
+      <word_default>Просмотров</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>posts</word_key>
+      <word_default>сообщений</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>top_posters</word_key>
+      <word_default>Самые активные</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>joined</word_key>
+      <word_default>Регистрация</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>newest_members</word_key>
+      <word_default>Новые пользователи</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>posted_by</word_key>
+      <word_default>Создал тему</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>newest_posts</word_key>
+      <word_default>Последние сообщения</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>view_topic</word_key>
+      <word_default>Просмотр темы</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>in_topic</word_key>
+      <word_default>В тему</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>norecent_posts</word_key>
+      <word_default>Нету последних сообщений для отображения</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>posted_by</word_key>
+      <word_default>Создал тему</word_default>
+    </lang>
+    <lang>
+      <word_app>portal</word_app>
+      <word_pack>public_portal</word_pack>
+      <word_key>links_title</word_key>
+      <word_default>Навигация сайта</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

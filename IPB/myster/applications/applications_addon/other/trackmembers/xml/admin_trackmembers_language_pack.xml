@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>upgrade_history</word_key>
+      <word_default>Update History</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>upgrade_date</word_key>
+      <word_default>Date</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>stats_visible</word_key>
+      <word_default>Tracked Members</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>stats_value</word_key>
+      <word_default>Value</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>stats_stats</word_key>
+      <word_default>Stats</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>stats_invisible</word_key>
+      <word_default>Tracked Actions</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>site</word_key>
+      <word_default>Site</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>quick_stats</word_key>
+      <word_default>Quick Stats</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>overview_title</word_key>
+      <word_default>Overview</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>mod</word_key>
+      <word_default>About</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>autor</word_key>
+      <word_default>Author</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>app_general_title</word_key>
+      <word_default>Track Members</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>upgrade_version</word_key>
+      <word_default>Version</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>versao</word_key>
+      <word_default>Version</word_default>
+    </lang>
+    <lang>
+      <word_app>trackmembers</word_app>
+      <word_pack>admin_trackmembers</word_pack>
+      <word_key>visao_geral</word_key>
+      <word_default>Overview</word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

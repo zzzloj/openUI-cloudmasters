@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates application="gsidebars" templategroups="a:1:{s:14:&quot;skin_gsidebars&quot;;s:5:&quot;exact&quot;;}">
+  <templategroup group="skin_gsidebars">
+    <template>
+      <template_group>skin_gsidebars</template_group>
+      <template_content><![CDATA[<if test="$separate">
+	<foreach loop="$adverts as $id => $advert">
+		<div class='ipsSideBlock clearfix'>
+			<h3>{$advert['title']}</h3>
+			<div class='_sbcollapsable'>{$advert['advert']}</div> 
+		</div>	
+	</foreach>
+<else />
+	<div class='ipsSideBlock clearfix'>
+		<h3>{$title}</h3>
+		<div class='_sbcollapsable'>{parse expression="implode( $this->settings['dp3_gsidebars_sep'], $adverts )"}</div> 
+	</div>
+</if>]]></template_content>
+      <template_name>showAdverts</template_name>
+      <template_data>$adverts, $title, $separate</template_data>
+      <template_updated>1319837014</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_gsidebars</template_group>
+      <template_content><![CDATA[<div class='ipsLayout clearfix <if test="IPSCookie::get('hide_sidebar') == '0'">ipsLayout_with{$this->settings['dp3_gs_side']} ipsLayout_{$this->settings['dp3_gs_sidebar_width']}{$this->settings['dp3_gs_side']}</if>' <if test="$customWidth">style='padding-{$this->settings['dp3_gs_side']}:{$this->settings['dp3_gsidebars_sidebar_custom_width']}px;'</if>>
+	<div class='ipsLayout_{$this->settings['dp3_gs_side']} clearfix' style='margin-{$sidebarPosition}: -<if test="$customWidth">{parse expression="($sidebarWidth + 10)"}<else />{parse expression="($sidebarWidth + 5)"}</if>px; width: {$sidebarWidth}px;<if test="IPSCookie::get('hide_sidebar') == '1'">display: none;</if>'>
+	<div id="index_stats">
+		{$sidebar}
+	</div>
+	</div>
+	<div class='ipsLayout_content'>
+		{$html}
+	</div>
+</div>]]></template_content>
+      <template_name>showHTML</template_name>
+      <template_data>$html, $sidebar, $sidebarWidth, $sidebarPosition, $customWidth</template_data>
+      <template_updated>1319837014</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+    <template>
+      <template_group>skin_gsidebars</template_group>
+      <template_content><![CDATA[{parse js_module="board"}
+<div id="index_stats">{$html}</div>
+<a href='#' id='toggle_sidebar' style='display:none;'></a>]]></template_content>
+      <template_name>standardSidebar</template_name>
+      <template_data>$html</template_data>
+      <template_updated>1319837014</template_updated>
+      <template_removable>0</template_removable>
+      <template_user_added>0</template_user_added>
+      <template_user_edited>0</template_user_edited>
+      <template_master_key>root</template_master_key>
+    </template>
+  </templategroup>
+</templates>

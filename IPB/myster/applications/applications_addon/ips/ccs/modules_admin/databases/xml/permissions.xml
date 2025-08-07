@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<group>
+		<grouptitle>CCS Databases</grouptitle>
+		<grouplang>ccs_databases</grouplang>
+		<items>
+			<item>
+				<key>ccs_manage_dbs</key>
+				<string>Can add, edit and remove databases?</string>
+			</item>
+		</items>
+	</group>
+</permissions>

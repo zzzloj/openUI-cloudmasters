@@ -1,0 +1,1229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languageexport>
+  <languagegroup>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_errors</word_pack>
+      <word_key>testimonials_rate_locked</word_key>
+      <word_default>You are not allowed to rate testimonials that are locked.</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_errors</word_pack>
+      <word_key>testimonial_no_tid</word_key>
+      <word_default>We could not determine which testimonial you were attempting to view.</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_errors</word_pack>
+      <word_key>testimonials_rated_already</word_key>
+      <word_default>You have already rated this testimonial and you are not allowed to change your rating.</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_errors</word_pack>
+      <word_key>testimonials_not_approved</word_key>
+      <word_default>You are not allowed to rate testimonials that are locked.</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_errors</word_pack>
+      <word_key>testemunhos_offline</word_key>
+      <word_default>Testimonials System is offline!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_errors</word_pack>
+      <word_key>no_testemunho_error</word_key>
+      <word_default><![CDATA[We couldn't find the testimonial you are trying to edit!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_errors</word_pack>
+      <word_key>testemunhos_nopermission</word_key>
+      <word_default>You have no permission to use the Testimonials System!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_errors</word_pack>
+      <word_key>testemunhos_dontcreatenewtestemunho</word_key>
+      <word_default><![CDATA[You can't create a new testimonial!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_errors</word_pack>
+      <word_key>testemunhos_userbanned</word_key>
+      <word_default>You are banned from Testimonials System!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_errors</word_pack>
+      <word_key>no_testimonialcats</word_key>
+      <word_default>There are no categories to display.</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testi</word_key>
+      <word_default>Testimonials</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testimonials_hot</word_key>
+      <word_default>HOT</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>no_com</word_key>
+      <word_default>No comments to view</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>pending_testemunhos</word_key>
+      <word_default>Pending Testimonials List</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>no_tes</word_key>
+      <word_default>No testimonials to view</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>lastc_tes</word_key>
+      <word_default>Last Comment</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>new_test</word_key>
+      <word_default>New Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_cats</word_key>
+      <word_default>Testimonials Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>followed_type__comments</word_key>
+      <word_default>Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>total_testemunhos_cats</word_key>
+      <word_default>Categories</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>last_por</word_key>
+      <word_default>New Testimonial by</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_com</word_key>
+      <word_default>comment on this testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>tes_s_votes</word_key>
+      <word_default>Votes</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testimonials_rating_done</word_key>
+      <word_default>Your rating has been added!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testimonials_rated_already</word_key>
+      <word_default>You have already rated this testimonial and you are not allowed to change your rating.</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testimonials_rating_changed</word_key>
+      <word_default>Your rating has been changed!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_no_coms</word_key>
+      <word_default>No comments on this testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_coms</word_key>
+      <word_default>comments on this testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>followed_type__testimonials</word_key>
+      <word_default>Testimonials</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>like_ucfirst_follow_testimonials</word_key>
+      <word_default>Follow this testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>like_ucfirst_unfollow_testimonials</word_key>
+      <word_default>Unfollow this testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>like_ucfirst_unfollow</word_key>
+      <word_default>Unfollow</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>subject_email_newcomment</word_key>
+      <word_default>New comment notification!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>err_no_testemunhos_to_show</word_key>
+      <word_default>This user has no Testimonial!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_started</word_key>
+      <word_default>Testimonials</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>profile_read_testemunho</word_key>
+      <word_default>View the testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>messsage_email_newcomment</word_key>
+      <word_default><![CDATA[Hi <#NAME#>!
+	  
+	  User <#POSTER#> has just posted a new comment in a testimonial that you are subscribed to.
+	  
+----------------------------------------------------------------------
+Title: <#TITLE#>
+Link: <#POST#>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>like_follow_testimonial</word_key>
+      <word_default>follow this testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>comments_lower</word_key>
+      <word_default>comments</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>editedby</word_key>
+      <word_default><![CDATA[<b>Edited by:</b>]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>por</word_key>
+      <word_default>By</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>editedin</word_key>
+      <word_default>on</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>view_previous</word_key>
+      <word_default>Previous</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>view_next</word_key>
+      <word_default>Next</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>no_older</word_key>
+      <word_default>There are no older testimonials</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>no_newer</word_key>
+      <word_default>There are no newer testimonials</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_rand</word_key>
+      <word_default>Random Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_recentes</word_key>
+      <word_default>Recent Testimonials</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>rss_readmore</word_key>
+      <word_default>Read more...</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>rss_none</word_key>
+      <word_default>No Testimonial RSS Feed found</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>rss_desc</word_key>
+      <word_default>Most Recent Testimonials</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>reputation</word_key>
+      <word_default>Points</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>adv_stats</word_key>
+      <word_default>Advanced Statistics</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>adv_stats_page</word_key>
+      <word_default>Statistics</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>stats_newest</word_key>
+      <word_default>Newest Testimonials</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>date_added</word_key>
+      <word_default>Date</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>stats_noadded</word_key>
+      <word_default>No testimonials were found!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>stats_mostviewed</word_key>
+      <word_default>Testimonials Most Viewed</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>stats_morecomm</word_key>
+      <word_default>Testimonials Most Replied</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>stats_comm</word_key>
+      <word_default>Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>rank</word_key>
+      <word_default>Rank</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>no_edit_closed</word_key>
+      <word_default><![CDATA[This testimonial is closed and you can't edit it anymore!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>rss_title</word_key>
+      <word_default>Last %s Testimonials</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_post_editcomment_title</word_key>
+      <word_default>Editing Comment</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>banir</word_key>
+      <word_default>Ban Member</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>banir_desc</word_key>
+      <word_default>Ban this member from Testimonials System</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>ban_noid</word_key>
+      <word_default><![CDATA[You didn't specify which user to ban from Testimonials System]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>ban_sameuser</word_key>
+      <word_default><![CDATA[You can't ban yourself from Testimonials System!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>banir_membro_confirm</word_key>
+      <word_default><![CDATA[Only continue if you really wish to ban <b>%s</b> from Testimonials System. This user will not be able use the Testimonials System. You can unban this user in the Admin CP!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>membro_banido</word_key>
+      <word_default>This user is banned from Testimonials System!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>ban_alreadybanned</word_key>
+      <word_default>This user is already banned from Testimonials System!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>cant_edit</word_key>
+      <word_default><![CDATA[You can't edit a closed Testimonial!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>queued_items_testemunhos</word_key>
+      <word_default>pending testimonial(s)</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>delete_comment_confirm</word_key>
+      <word_default>Do you really want to delete this comment ?</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_post_edit_title</word_key>
+      <word_default>Editing Testimonial: %s</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_post_addcomment_title</word_key>
+      <word_default>New Comment</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>WHERE_testemunho_edit</word_key>
+      <word_default>Editing Testimonial:</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>WHERE_testemunho_noid</word_key>
+      <word_default>Viewing a Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>WHERE_testemunho_new</word_key>
+      <word_default>Posting a new Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>WHERE_testemunho_newcomment</word_key>
+      <word_default>Posting a comment on Testimonial:</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>WHERE_testemunho_editcomment</word_key>
+      <word_default>Editing a comment on Testimonial:</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>WHERE_testemunho</word_key>
+      <word_default>Viewing testimonial:</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>WHERE_testemunhos</word_key>
+      <word_default>Viewing the Testimonials System</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>titulo</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_mark_all_as_read</word_key>
+      <word_default>Mark all testimonials as read</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>multi_quote</word_key>
+      <word_default>Quote</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>reply</word_key>
+      <word_default>Reply</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>comment</word_key>
+      <word_default>Comment</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_warnoffline</word_key>
+      <word_default><![CDATA[[OFFLINE]]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_title</word_key>
+      <word_default>Testimonials System</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos</word_key>
+      <word_default>Testimonials List</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>novo_testemunho</word_key>
+      <word_default>New Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>autor</word_key>
+      <word_default>Author</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>info_data</word_key>
+      <word_default>Last Post</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>comentarios</word_key>
+      <word_default>Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>total_testemunhos</word_key>
+      <word_default>Testimonials</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>total_views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>total_comentarios</word_key>
+      <word_default>Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>last_info</word_key>
+      <word_default>Last Testimonial by</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>no_testemunhos</word_key>
+      <word_default>No testimonials were found</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_show_filters</word_key>
+      <word_default>Click here to show filter options</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>estatisticas</word_key>
+      <word_default>Testimonials Statistics</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>opcoes_filtrar</word_key>
+      <word_default>Click here to show filter options</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_post_add_title</word_key>
+      <word_default>Posting a new testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_post_add_button</word_key>
+      <word_default>Save Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_post_add_info</word_key>
+      <word_default>Testimonial Information</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>topic_title_long</word_key>
+      <word_default>Testimonail title is too long. Please go back and shorten it a little</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>post_too_long</word_key>
+      <word_default>Your testimonial is too big. Please go back and shorten it a little</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_post_add_avaliacao</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_post_add_titulo</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_post_add_content</word_key>
+      <word_default>Testimonial Content</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>comment_post_add_content</word_key>
+      <word_default>Comment Content</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>comment_post_add_preview</word_key>
+      <word_default>Preview Comment</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_post_add_preview</word_key>
+      <word_default>Preview Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_name_empty</word_key>
+      <word_default>You must enter a testimonial title</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_content_empty</word_key>
+      <word_default>You must enter your testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_lista</word_key>
+      <word_default>Testimonials</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>bad_md5_hash</word_key>
+      <word_default>Invalid security code</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>thankyou</word_key>
+      <word_default>Thank you for posting your testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_author</word_key>
+      <word_default>Author</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_date</word_key>
+      <word_default>Date</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>thankyou_mod</word_key>
+      <word_default>Thank you for posting your testimonial. A moderator will review its content before it is available to other users!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>thankyou_edit</word_key>
+      <word_default>Your testimonial was edited</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_views</word_key>
+      <word_default>Views</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_title</word_key>
+      <word_default>Title</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_comments</word_key>
+      <word_default>Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>comments</word_key>
+      <word_default>Comments</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>comments_none</word_key>
+      <word_default>No comments were found for this testimonial!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_rating</word_key>
+      <word_default>Rating</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_state_open</word_key>
+      <word_default>Open</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_state_closed</word_key>
+      <word_default>Closed</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_order_asc</word_key>
+      <word_default>ASC</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_sortorder</word_key>
+      <word_default>Sort direction</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_order_desc</word_key>
+      <word_default>DESC</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_sortby</word_key>
+      <word_default>Sort by</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_results</word_key>
+      <word_default>Testimonials per page</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_abrir</word_key>
+      <word_default>Open Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_unpin</word_key>
+      <word_default>Unpin Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_pin</word_key>
+      <word_default>Pin Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_aprovar</word_key>
+      <word_default>Approve testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_default</word_key>
+      <word_default>Default</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_remember</word_key>
+      <word_default>Remember filters</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunhos_filter_do</word_key>
+      <word_default>Go</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_deletar</word_key>
+      <word_default>Delete Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_deletar_confirm</word_key>
+      <word_default>Only continue if you wish to delete this testimonial, there will be no other confirmation screens..</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_deletar_confirm_comms</word_key>
+      <word_default><![CDATA[<br /><br /><b>%s comments will also be deleted</b>!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_deletar_confirm_comm</word_key>
+      <word_default><![CDATA[<br /><br /><b>1 comment will also be deleted</b>!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_desaprovar</word_key>
+      <word_default>Unapprove Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_fechar</word_key>
+      <word_default>Close Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_no_staff</word_key>
+      <word_default>You have no moderator permission on Testimonials System</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_alreadyopened</word_key>
+      <word_default>This testimonial is already open!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_alreadyclosed</word_key>
+      <word_default>This testimonial is already closed!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>missing_files</word_key>
+      <word_default>Fatal Error: Unable to proceed!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_opened</word_key>
+      <word_default>Testimonial opened!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_closed</word_key>
+      <word_default>This testimonial is closed and you cannot add new comments!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_alreadyapproved</word_key>
+      <word_default>This testimonial has already been approved!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_modlog_close</word_key>
+      <word_default>Testimonial closed!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_modlog_ban</word_key>
+      <word_default><![CDATA[User <b>%s</b> banned]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_modlog_open</word_key>
+      <word_default>Testimonial Opened</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_modlog_approved</word_key>
+      <word_default>Testimonial Approved</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_alreadyunapproved</word_key>
+      <word_default>This testimonial is already unapproved!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_aprovado</word_key>
+      <word_default>Testimonial approved!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_modlog_unapproved</word_key>
+      <word_default>Testimonial Unapproved</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_desaprovado_index</word_key>
+      <word_default>Testimonial unapproved!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_alreadypinned</word_key>
+      <word_default>This testimonial is already pinned!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_modlog_pinned</word_key>
+      <word_default>Testimonial Pinned</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_modlog_unpinned</word_key>
+      <word_default>Testimonial Unpinned</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_alreadyunapinned</word_key>
+      <word_default>This testimonial is already unpinned!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_destacado</word_key>
+      <word_default>Testimonial pinned!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_semdestaque</word_key>
+      <word_default>Testimonial unpinned!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_destaque</word_key>
+      <word_default>Pinned</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_excluido</word_key>
+      <word_default>This testimonial and its comments were deleted!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>no_rating</word_key>
+      <word_default><![CDATA[Don't Rate]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_modlog_commentremoved</word_key>
+      <word_default>Comment deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_modlog_removed</word_key>
+      <word_default>Testimonial and Comments deleted</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>comentario_excluido</word_key>
+      <word_default>This comment was deleted!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>visualizar_testemunho</word_key>
+      <word_default>View Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>testemunho_no_tid</word_key>
+      <word_default>We could not find that Testimonial!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>viewing_testemunho</word_key>
+      <word_default>Viewing Testimonial</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>avaliacao_dada</word_key>
+      <word_default>Rate</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>not_approved</word_key>
+      <word_default>This testimonial needs to be approved by a moderator</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>denunciar_testemunho</word_key>
+      <word_default>Report this Testimonial to the Moderation Team</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>denunciar_comentario</word_key>
+      <word_default>Report this Comment to Moderation Team</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>submitting_report</word_key>
+      <word_default>Sending report.</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>aviso_desaprovado</word_key>
+      <word_default><![CDATA[Your testimonail needs to be approved by a moderator before it's availale to other users!]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>ip</word_key>
+      <word_default>IP</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>cancel</word_key>
+      <word_default>Cancel</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>ip_private</word_key>
+      <word_default>Private</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>add_comment</word_key>
+      <word_default>Comment</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>or</word_key>
+      <word_default>or</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>error_comment</word_key>
+      <word_default>Your comment must have a minimum of 3 characters.</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>no_submit_comments</word_key>
+      <word_default>You cannot use the Comments feature!</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>missing_cid_find</word_key>
+      <word_default><![CDATA[We couldn't find the comment to redirect you.]]></word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>aprovar</word_key>
+      <word_default>Approve</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>desaprovar</word_key>
+      <word_default>Unapprove</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>editar</word_key>
+      <word_default>Edit</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>excluir</word_key>
+      <word_default>Delete</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>fechar</word_key>
+      <word_default>Close</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>nodestacar</word_key>
+      <word_default>Unpin</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>abrir</word_key>
+      <word_default>Open</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>destacar</word_key>
+      <word_default>Pin</word_default>
+    </lang>
+    <lang>
+      <word_app>testimonials</word_app>
+      <word_pack>public_testemunhos</word_pack>
+      <word_key>reports_no_testemunho</word_key>
+      <word_default><![CDATA[We couldn't find the testimonial you are trying to report]]></word_default>
+    </lang>
+  </languagegroup>
+</languageexport>

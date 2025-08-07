@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Custom Fields</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Custom Fields</subitemtitle>
+					<subitemlang>idm_cfields</subitemlang>
+					<subsection>cfields</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Mime Types</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Mime Types</subitemtitle>
+					<subitemlang>idm_mimetypes</subitemlang>
+					<subsection>mimetypes</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>			
+	</tabitems>
+</menu>
