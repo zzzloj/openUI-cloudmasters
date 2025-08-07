@@ -40,7 +40,7 @@ export default function AdminDashboard() {
         const data = await response.json();
         
         // Проверяем права доступа к админ-панели
-        if (!data.user.isAdmin) {
+        if (data.user.member_group_id !== 4) {
           // Не админ - перенаправляем в профиль
           router.push("/profile");
           return;

@@ -61,9 +61,17 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
       if (protectedRoutes[pathname as keyof typeof protectedRoutes]) {
         setIsPasswordRequired(true);
 
-        const response = await fetch("/api/check-auth");
-        if (response.ok) {
-          setIsAuthenticated(true);
+        // Проверяем токен из localStorage
+        const token = localStorage.getItem('authToken');
+        if (token) {
+          const response = await fetch("/api/check-auth", {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          });
+          if (response.ok) {
+            setIsAuthenticated(true);
+          }
         }
       }
 
@@ -74,17 +82,36 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
   }, [pathname]);
 
   const handlePasswordSubmit = async () => {
-    const response = await fetch("/api/authenticate", {
+    // Для защищенных страниц используем простую аутентификацию
+    if (protectedRoutes[pathname as keyof typeof protectedRoutes]) {
+      const correctPassword = process.env.NEXT_PUBLIC_PAGE_PASSWORD || 'admin123';
+      
+      if (password === correctPassword) {
+        setIsAuthenticated(true);
+        setError(undefined);
+        return;
+      } else {
+        setError("Неверный пароль");
+        return;
+      }
+    }
+
+    // Для обычной авторизации через email/password
+    const response = await fetch("/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password }),
+      body: JSON.stringify({ email: "admin@example.com", password }),
     });
 
     if (response.ok) {
+      const data = await response.json();
+      if (data.token) {
+        localStorage.setItem('authToken', data.token);
+      }
       setIsAuthenticated(true);
       setError(undefined);
     } else {
-      setError("Incorrect password");
+      setError("Неверный пароль");
     }
   };
 

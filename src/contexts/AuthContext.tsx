@@ -75,16 +75,18 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ emailOrUsername, password }),
+        body: JSON.stringify({ username: emailOrUsername, password }),
       });
 
       if (response.ok) {
         const data = await response.json();
+        console.log('Успешный ответ от API:', data);
         localStorage.setItem('authToken', data.token);
         setUser(data.user);
       } else {
         const error = await response.json();
-        throw new Error(error.message || 'Ошибка входа');
+        console.log('Ошибка от API:', error);
+        throw new Error(error.error || error.message || 'Ошибка входа');
       }
     } catch (error) {
       console.error('Ошибка входа:', error);
@@ -108,7 +110,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         await login(email, password);
       } else {
         const error = await response.json();
-        throw new Error(error.message || 'Ошибка регистрации');
+        throw new Error(error.error || error.message || 'Ошибка регистрации');
       }
     } catch (error) {
       console.error('Ошибка регистрации:', error);
@@ -139,7 +141,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setUser(updatedUser.user);
       } else {
         const error = await response.json();
-        throw new Error(error.message || 'Ошибка обновления профиля');
+        throw new Error(error.error || error.message || 'Ошибка обновления профиля');
       }
     } catch (error) {
       console.error('Ошибка обновления профиля:', error);
@@ -161,7 +163,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       if (!response.ok) {
         const error = await response.json();
-        throw new Error(error.message || 'Ошибка смены пароля');
+        throw new Error(error.error || error.message || 'Ошибка смены пароля');
       }
     } catch (error) {
       console.error('Ошибка смены пароля:', error);

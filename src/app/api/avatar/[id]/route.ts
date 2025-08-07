@@ -20,14 +20,15 @@ export async function GET(
     // Получаем данные пользователя из IPB структуры
     const [members] = await connection.execute(`
       SELECT 
-        member_id,
-        name,
-        members_display_name,
-        avatar_type,
-        avatar_location,
-        avatar_size
-      FROM cldmembers
-      WHERE member_id = ?
+        m.member_id,
+        m.name,
+        m.members_display_name,
+        p.avatar_type,
+        p.avatar_location,
+        p.avatar_size
+      FROM cldmembers m
+      LEFT JOIN cldprofile_portal p ON m.member_id = p.pp_member_id
+      WHERE m.member_id = ?
     `, [id]) as [any[], any];
 
     await connection.end();
@@ -41,15 +42,21 @@ export async function GET(
     // Проверяем, есть ли у пользователя кастомный аватар
     if (member.avatar_type && member.avatar_location && member.avatar_type !== 'none') {
       // Если есть кастомный аватар, возвращаем его
-      return NextResponse.redirect(`https://89.111.170.207/uploads/avatars/${member.avatar_location}`);
+      return NextResponse.json({ 
+        avatar_url: `http://89.111.170.207/uploads/avatars/${member.avatar_location}` 
+      });
     } else {
       // Возвращаем дефолтный аватар
-      return NextResponse.redirect('https://89.111.170.207/images/default-avatar.svg');
+      return NextResponse.json({ 
+        avatar_url: 'http://89.111.170.207/images/default-avatar.svg' 
+      });
     }
 
   } catch (error) {
     console.error('Ошибка получения аватара:', error);
     // В случае ошибки возвращаем дефолтный аватар
-    return NextResponse.redirect('https://89.111.170.207/images/default-avatar.svg');
+    return NextResponse.json({ 
+      avatar_url: 'http://89.111.170.207/images/default-avatar.svg' 
+    });
   }
 }

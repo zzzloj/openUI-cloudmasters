@@ -24,16 +24,17 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       success: true,
       user: {
-        id: user.id,
+        id: user.member_id,
         name: user.name,
         email: user.email,
-        display_name: user.members_display_name,
+        members_display_name: user.members_display_name,
         seo_name: user.members_seo_name,
         member_group_id: user.member_group_id,
         posts: user.posts,
         joined: user.joined,
         last_activity: user.last_activity,
-        last_visit: user.last_visit
+        last_visit: user.last_visit,
+        is_activated: user.member_group_id > 0
       }
     });
   } catch (error) {

@@ -1,9 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Card, Text, Flex, Button, Avatar, Line } from '@once-ui-system/core';
+import { Card, Text, Flex, Button, Avatar, Line, Column, Heading, Badge } from '@once-ui-system/core';
+import AvatarWithAPI from '@/components/AvatarWithAPI';
+import UserStats from '@/components/UserStats';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import styles from './forum-topic.module.css';
 
 interface ForumPost {
   id: number;
@@ -182,53 +185,98 @@ export default function TopicPage() {
           </div>
         ) : (
           posts.map((post, index) => (
-            <div key={post.id} className="forum-topic">
-              <div className="forum-topic-icon">
-                <i>👤</i>
-              </div>
-              <div className="forum-topic-info">
-                <div className="forum-topic-title">
-                  <Link 
-                    href={`/profile/${post.author_id}`}
-                    style={{
-                      color: 'var(--brand-background-strong)',
-                      textDecoration: 'none',
-                      fontWeight: 'bold'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.textDecoration = 'underline';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.textDecoration = 'none';
-                    }}
-                  >
-                    {post.author_name}
-                  </Link>
-                  {post.is_first_post && (
-                    <span style={{ 
-                      marginLeft: '8px', 
-                      fontSize: '12px', 
-                      color: 'var(--brand-background-strong)',
-                      fontWeight: 'bold'
-                    }}>
-                      (Автор темы)
-                    </span>
-                  )}
+            <Card key={post.id} style={{ marginBottom: '20px', overflow: 'hidden', width: '100%' }}>
+              <div className={styles.postContainer}>
+                {/* Левая панель с информацией о пользователе */}
+                <div className={styles.userPanel}>
+                  {/* Аватар и основная информация */}
+                  <div className={styles.userInfo}>
+                    {/* Аватар */}
+                    <div className={styles.avatarContainer}>
+                      <AvatarWithAPI userId={post.author_id} size="m" />
+                    </div>
+                    
+                    {/* Имя пользователя */}
+                    <div className={styles.userNameContainer}>
+                      <Link 
+                        href={`/profile/${post.author_id}`}
+                        className={styles.userName}
+                      >
+                        {post.author_name}
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Статус и статистика */}
+                  <div className={styles.userStats}>
+                    {/* Статус пользователя */}
+                    <div className={styles.statusContainer}>
+                      {post.is_first_post && (
+                        <Badge background="brand-medium" className={styles.badgeWithMargin}>
+                          Автор темы
+                        </Badge>
+                      )}
+                      <Badge background="neutral-medium" className={styles.badge}>
+                        Пользователь
+                      </Badge>
+                    </div>
+
+                    {/* Дополнительная информация */}
+                    <div className={styles.statsContainer}>
+                      <UserStats userId={post.author_id} />
+                    </div>
+                  </div>
                 </div>
-                <div className="forum-topic-meta">
-                  <span>{formatDate(post.created_at)}</span>
-                  <span>#{index + 1}</span>
-                </div>
-                <div 
-                  style={{ 
-                    marginTop: '10px', 
+
+                {/* Правая панель с контентом сообщения */}
+                <div className={styles.contentPanel}>
+                  {/* Заголовок сообщения */}
+                  <div style={{ 
+                    display: 'flex', 
+                    justifyContent: 'space-between', 
+                    alignItems: 'center',
+                    marginBottom: '15px',
+                    paddingBottom: '10px',
+                    borderBottom: '1px solid var(--neutral-alpha-medium)'
+                  }}>
+                    <div style={{ fontSize: '14px', color: 'var(--neutral-on-background-weak)' }}>
+                      {formatDate(post.created_at)}
+                    </div>
+                    <div style={{ fontSize: '14px', color: 'var(--neutral-on-background-weak)' }}>
+                      #{index + 1}
+                    </div>
+                  </div>
+
+                  {/* Контент сообщения */}
+                  <div style={{ 
                     lineHeight: '1.6',
-                    color: 'var(--neutral-on-background-strong)'
-                  }}
-                  dangerouslySetInnerHTML={{ __html: post.content }}
-                />
+                    color: 'var(--neutral-on-background-strong)',
+                    fontSize: '14px'
+                  }}>
+                    <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                  </div>
+
+                  {/* Действия с сообщением */}
+                  <div style={{ 
+                    marginTop: '15px',
+                    paddingTop: '10px',
+                    borderTop: '1px solid var(--neutral-alpha-medium)',
+                    display: 'flex',
+                    gap: '10px'
+                  }}>
+                    <Button size="s" variant="secondary">
+                      Цитировать
+                    </Button>
+                    <Button size="s" variant="secondary">
+                      Ответить
+                    </Button>
+                    <Button size="s" variant="secondary">
+                      Пожаловаться
+                    </Button>
+                  </div>
+                </div>
               </div>
-            </div>
+            </Card>
           ))
         )}
       </div>

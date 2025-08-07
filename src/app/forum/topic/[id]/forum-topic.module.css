@@ -1,0 +1,160 @@
+.postContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .postContainer {
+    flex-direction: row;
+  }
+}
+
+.userPanel {
+  width: 100%;
+  min-width: 100%;
+  padding: 15px;
+  background-color: var(--surface-background-weak);
+  border-bottom: 1px solid var(--neutral-alpha-medium);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .userPanel {
+    width: 220px;
+    min-width: 220px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: none;
+    border-right: 1px solid var(--neutral-alpha-medium);
+    padding: 20px;
+  }
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .userInfo {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 15px;
+  }
+}
+
+.avatarContainer {
+  /* Default mobile styles */
+}
+
+@media (min-width: 768px) {
+  .avatarContainer {
+    margin-bottom: 15px;
+  }
+}
+
+.userNameContainer {
+  /* Default mobile styles */
+}
+
+@media (min-width: 768px) {
+  .userNameContainer {
+    margin-bottom: 10px;
+  }
+}
+
+.userName {
+  color: var(--brand-background-strong);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .userName {
+    font-size: 16px;
+  }
+}
+
+.userName:hover {
+  text-decoration: underline;
+}
+
+.userStats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+@media (min-width: 768px) {
+  .userStats {
+    align-items: center;
+    margin-bottom: 15px;
+  }
+}
+
+.statusContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+@media (min-width: 768px) {
+  .statusContainer {
+    align-items: center;
+    margin-bottom: 15px;
+  }
+}
+
+.badge {
+  font-size: 10px;
+}
+
+@media (min-width: 768px) {
+  .badge {
+    font-size: 12px;
+  }
+}
+
+.badgeWithMargin {
+  font-size: 10px;
+}
+
+@media (min-width: 768px) {
+  .badgeWithMargin {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+}
+
+.statsContainer {
+  font-size: 10px;
+}
+
+@media (min-width: 768px) {
+  .statsContainer {
+    font-size: 12px;
+  }
+}
+
+.contentPanel {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .contentPanel {
+    padding: 20px;
+  }
+} 

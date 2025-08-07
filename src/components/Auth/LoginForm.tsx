@@ -24,9 +24,32 @@ export function LoginForm() {
     setError('');
 
     try {
-      await login(email, password);
-      // Если login не выбросил ошибку, значит авторизация успешна
-      window.location.href = '/';
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username: email, password }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Успешный ответ от API:', data);
+        localStorage.setItem('authToken', data.token);
+        
+        // Редирект в профиль пользователя
+        if (data.user && data.user.id) {
+          console.log('Редирект в профиль:', data.user.id);
+          window.location.href = `/profile/${data.user.id}`;
+        } else {
+          console.log('ID пользователя не найден, редирект на главную');
+          window.location.href = '/';
+        }
+      } else {
+        const error = await response.json();
+        console.log('Ошибка от API:', error);
+        throw new Error(error.error || error.message || 'Ошибка входа');
+      }
     } catch (error) {
       setError(error instanceof Error ? error.message : 'Произошла ошибка при авторизации');
     } finally {
@@ -63,14 +86,14 @@ export function LoginForm() {
           <Flex direction="column" gap="m">
             <div>
               <Text variant="body-strong-s" marginBottom="xs">
-                Email
+                Email или имя пользователя
               </Text>
               <Input
                 id="email"
-                type="email"
+                type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Введите ваш email"
+                placeholder="Введите ваш email или имя пользователя"
                 required
                 disabled={loading}
               />

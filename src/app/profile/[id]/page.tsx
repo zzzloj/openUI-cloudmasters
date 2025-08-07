@@ -15,6 +15,7 @@ import {
   Grid,
   Avatar
 } from "@once-ui-system/core";
+import AvatarWithAPI from "@/components/AvatarWithAPI";
 
 interface ProfileData {
   id: number;
@@ -157,7 +158,7 @@ export default function ProfilePage() {
                 {profile.title}
               </Text>
             </Column>
-            <Avatar size="xl" src={`/api/avatar/${profile.id}`} />
+            <AvatarWithAPI userId={profile.id} size="xl" />
           </Flex>
           
           <Flex gap="m" vertical="center">

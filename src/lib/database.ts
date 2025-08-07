@@ -54,14 +54,14 @@ export async function query(sql: string, params?: any[]) {
 
 // Утилита для получения одного пользователя
 export async function getUserByEmail(email: string): Promise<Member | null> {
-  const sql = 'SELECT * FROM members WHERE email = ?';
+  const sql = 'SELECT * FROM cldmembers WHERE email = ?';
   const result = await query(sql, [email]) as Member[];
   return result.length > 0 ? result[0] : null;
 }
 
 // Утилита для получения пользователя по username
 export async function getUserByUsername(username: string): Promise<Member | null> {
-  const sql = 'SELECT * FROM members WHERE name = ?';
+  const sql = 'SELECT * FROM cldmembers WHERE name = ?';
   const result = await query(sql, [username]) as Member[];
   return result.length > 0 ? result[0] : null;
 }
@@ -83,7 +83,7 @@ export async function createUser(userData: {
   is_activated?: number;
 }) {
   const sql = `
-    INSERT INTO members (
+    INSERT INTO cldmembers (
       name, email, members_pass_hash, members_pass_salt, ip_address, 
       joined, members_display_name, members_seo_name, 
       members_l_display_name, members_l_username,
@@ -129,20 +129,20 @@ export async function createUser(userData: {
 
 // Утилита для обновления последнего визита
 export async function updateLastVisit(memberId: number) {
-  const sql = 'UPDATE members SET last_visit = ?, last_activity = ? WHERE member_id = ?';
+  const sql = 'UPDATE cldmembers SET last_visit = ?, last_activity = ? WHERE member_id = ?';
   const now = Math.floor(Date.now() / 1000);
   await query(sql, [now, now, memberId]);
 }
 
 // Утилита для обновления неудачных попыток входа
 export async function updateFailedLogins(memberId: number, failedLogins: string, failedLoginCount: number) {
-  const sql = 'UPDATE members SET failed_logins = ?, failed_login_count = ? WHERE member_id = ?';
+  const sql = 'UPDATE cldmembers SET failed_logins = ?, failed_login_count = ? WHERE member_id = ?';
   await query(sql, [failedLogins, failedLoginCount, memberId]);
 }
 
 // Утилита для сброса неудачных попыток входа
 export async function resetFailedLogins(memberId: number) {
-  const sql = 'UPDATE members SET failed_logins = NULL, failed_login_count = 0 WHERE member_id = ?';
+  const sql = 'UPDATE cldmembers SET failed_logins = NULL, failed_login_count = 0 WHERE member_id = ?';
   await query(sql, [memberId]);
 }
 

@@ -288,7 +288,7 @@ export const Header = () => {
                       <Button 
                         variant="secondary" 
                         size="s"
-                        href={`/profile/${user.id}`}
+                        href={`/profile/${user.id || user.member_id}`}
                         prefixIcon="user"
                       >
                         Профиль
@@ -315,7 +315,7 @@ export const Header = () => {
                       <Button 
                         variant="secondary" 
                         size="s"
-                        href={`/profile/${user.id}`}
+                        href={`/profile/${user.id || user.member_id}`}
                         prefixIcon="user"
                       />
                       <Button 
@@ -343,7 +343,7 @@ export const Header = () => {
                         variant="primary" 
                         size="s"
                         href="/auth/register"
-                        prefixIcon="user-plus"
+                        prefixIcon="userPlus"
                       >
                         Регистрация
                       </Button>

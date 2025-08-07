@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Card, Text, Flex, Button, Avatar, Line, Column, Heading, Badge, Grid } from '@once-ui-system/core';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import styles from './forum-category.module.css';
 
 interface ForumTopic {
   id: number;
@@ -100,33 +101,31 @@ export default function CategoryPage() {
   return (
     <Column maxWidth="xl" gap="xl" horizontal="center" paddingY="xl">
       {/* Хлебные крошки */}
-      <Flex gap="s" vertical="center">
-        <Link href="/forum">
-          <Text variant="body-strong-s">Форум</Text>
+      <div className={styles.breadcrumb}>
+        <Link href="/forum" className={styles.breadcrumbLink}>
+          Форум
         </Link>
-        <Text variant="body-default-s">→</Text>
-        <Text variant="body-strong-s">{category.name}</Text>
-      </Flex>
+        <span className={styles.breadcrumbSeparator}>→</span>
+        <span className={styles.breadcrumbCurrent}>{category.name}</span>
+      </div>
 
       {/* Заголовок категории */}
-      <Card padding="xl" radius="l" shadow="l">
-        <Column gap="m">
-          <Heading variant="display-strong-l">{category.name}</Heading>
-          {category.description && (
-            <Text variant="body-default-m" color="secondary">
-              {category.description}
-            </Text>
-          )}
-          <Flex gap="l" vertical="center">
-            <Badge>
-              Тем: {category.topics_count}
-            </Badge>
-            <Badge>
-              Сообщений: {category.posts_count}
-            </Badge>
-          </Flex>
-        </Column>
-      </Card>
+      <div className={styles.categoryHeader}>
+        <div className={styles.categoryTitle}>{category.name}</div>
+        {category.description && (
+          <div className={styles.categoryDescription}>
+            {category.description}
+          </div>
+        )}
+        <div className={styles.categoryStats}>
+          <span className={styles.categoryBadge}>
+            Тем: {category.topics_count}
+          </span>
+          <span className={styles.categoryBadge}>
+            Сообщений: {category.posts_count}
+          </span>
+        </div>
+      </div>
 
       {/* Темы в категории */}
       <Card padding="xl" radius="l" shadow="l">
@@ -140,112 +139,81 @@ export default function CategoryPage() {
               В этой категории пока нет тем
             </Text>
           ) : (
-            <Column gap="m">
+            <div>
               {topics.map((topic) => (
-                <Card key={topic.id} padding="m" radius="m" shadow="s">
-                  <Grid columns={4} gap="m">
-                    <Flex gap="s" vertical="center">
-                      <Text variant="body-default-l">
-                        {topic.is_pinned ? '📌' : topic.is_locked ? '🔒' : '💬'}
-                      </Text>
-                    </Flex>
+                <div key={topic.id} className={styles.topicCard}>
+                  <div className={styles.topicContainer}>
+                    {/* Иконка темы */}
+                    <div className={styles.topicIcon}>
+                      {topic.is_pinned ? '📌' : topic.is_locked ? '🔒' : '💬'}
+                    </div>
                     
-                    <Column gap="xs" style={{ gridColumn: 'span 2' }}>
-                      <Link href={`/forum/topic/${topic.id}`}>
-                        <Text variant="body-strong-m" color="primary">
-                          {topic.title}
-                        </Text>
+                    {/* Основной контент темы */}
+                    <div className={styles.topicContent}>
+                      <Link href={`/forum/topic/${topic.id}`} className={styles.topicTitle}>
+                        {topic.title}
                       </Link>
-                      <Flex gap="m" vertical="center">
-                        <Text variant="body-default-s" color="secondary">
+                      <div className={styles.topicMeta}>
+                        <span>
                           Автор: <Link 
                             href={`/profile/${topic.author_id}`}
-                            style={{
-                              color: 'var(--brand-background-strong)',
-                              textDecoration: 'none',
-                              fontWeight: 'bold'
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.textDecoration = 'underline';
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.textDecoration = 'none';
-                            }}
+                            className={styles.authorLink}
                           >
                             {topic.author_name}
                           </Link>
-                        </Text>
-                        <Text variant="body-default-s" color="secondary">
-                          {formatDate(topic.created_at)}
-                        </Text>
-                      </Flex>
-                    </Column>
+                        </span>
+                        <span>{formatDate(topic.created_at)}</span>
+                      </div>
+                    </div>
                     
-                    <Column gap="xs">
-                      <Text variant="body-default-s" color="secondary">
-                        Ответов: {topic.posts_count}
-                      </Text>
-                      <Text variant="body-default-s" color="secondary">
-                        Просмотров: {topic.views_count}
-                      </Text>
-                    </Column>
-                  </Grid>
+                    {/* Статистика темы */}
+                    <div className={styles.topicStats}>
+                      <div>Ответов: {topic.posts_count}</div>
+                      <div>Просмотров: {topic.views_count}</div>
+                    </div>
+                  </div>
                   
+                  {/* Информация о последнем сообщении */}
                   {topic.last_post_date && (
-                    <>
-                      <Line marginTop="m" />
-                      <Flex gap="m" vertical="center">
-                        <Text variant="body-default-s" color="secondary">
+                    <div className={styles.lastPostSection}>
+                      <div className={styles.lastPostInfo}>
+                        <span>
                           Последнее сообщение от <Link 
                             href={`/profile/${topic.last_poster_id || topic.author_id}`}
-                            style={{
-                              color: 'var(--brand-background-strong)',
-                              textDecoration: 'none',
-                              fontWeight: 'bold'
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.textDecoration = 'underline';
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.textDecoration = 'none';
-                            }}
+                            className={styles.authorLink}
                           >
                             {topic.last_poster_name}
                           </Link>
-                        </Text>
-                        <Text variant="body-default-s" color="secondary">
-                          {formatDate(topic.last_post_date)}
-                        </Text>
-                      </Flex>
-                    </>
+                        </span>
+                        <span>{formatDate(topic.last_post_date)}</span>
+                      </div>
+                    </div>
                   )}
-                </Card>
+                </div>
               ))}
-            </Column>
+            </div>
           )}
         </Column>
       </Card>
 
       {/* Пагинация */}
       {totalPages > 1 && (
-        <Card padding="m" radius="m" shadow="s">
-          <Flex gap="s" vertical="center">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
-              <Button
-                key={pageNum}
-                variant={pageNum === page ? "primary" : "secondary"}
-                size="s"
-                onClick={() => setPage(pageNum)}
-              >
-                {pageNum}
-              </Button>
-            ))}
-          </Flex>
-        </Card>
+        <div className={styles.paginationContainer}>
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+            <Button
+              key={pageNum}
+              variant={pageNum === page ? "primary" : "secondary"}
+              size="s"
+              onClick={() => setPage(pageNum)}
+            >
+              {pageNum}
+            </Button>
+          ))}
+        </div>
       )}
 
       {/* Действия */}
-      <Flex gap="l" vertical="center" fillWidth>
+      <div className={styles.actionsContainer}>
         <Link href="/forum">
           <Button variant="secondary" size="m">
             ← Назад к форуму
@@ -256,7 +224,7 @@ export default function CategoryPage() {
             Создать тему
           </Button>
         </Link>
-      </Flex>
+      </div>
     </Column>
   );
 } 

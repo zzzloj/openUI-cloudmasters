@@ -1,0 +1,269 @@
+.topicCard {
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+  .topicCard {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.topicContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .topicContainer {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+.topicIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  .topicIcon {
+    font-size: 20px;
+  }
+}
+
+.topicContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .topicContent {
+    gap: 12px;
+  }
+}
+
+.topicTitle {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--brand-background-strong);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .topicTitle {
+    font-size: 16px;
+  }
+}
+
+.topicTitle:hover {
+  text-decoration: underline;
+}
+
+.topicMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--neutral-on-background-weak);
+}
+
+@media (min-width: 768px) {
+  .topicMeta {
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    font-size: 14px;
+  }
+}
+
+.authorLink {
+  color: var(--brand-background-strong);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.authorLink:hover {
+  text-decoration: underline;
+}
+
+.topicStats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--neutral-on-background-weak);
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  .topicStats {
+    text-align: left;
+    font-size: 14px;
+  }
+}
+
+.lastPostSection {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--neutral-alpha-medium);
+  font-size: 12px;
+  color: var(--neutral-on-background-weak);
+}
+
+@media (min-width: 768px) {
+  .lastPostSection {
+    margin-top: 16px;
+    padding-top: 16px;
+    font-size: 14px;
+  }
+}
+
+.lastPostInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+@media (min-width: 768px) {
+  .lastPostInfo {
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+.categoryHeader {
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .categoryHeader {
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+.categoryTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+  .categoryTitle {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+}
+
+.categoryDescription {
+  font-size: 14px;
+  color: var(--neutral-on-background-weak);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .categoryDescription {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.categoryStats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.categoryBadge {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background-color: var(--surface-background-weak);
+  color: var(--neutral-on-background-strong);
+}
+
+@media (min-width: 768px) {
+  .categoryBadge {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .breadcrumb {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+}
+
+.breadcrumbLink {
+  color: var(--brand-background-strong);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.breadcrumbLink:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbSeparator {
+  color: var(--neutral-on-background-weak);
+}
+
+.breadcrumbCurrent {
+  color: var(--neutral-on-background-strong);
+  font-weight: bold;
+}
+
+.actionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .actionsContainer {
+    flex-direction: row;
+    gap: 16px;
+    justify-content: space-between;
+  }
+}
+
+.paginationContainer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .paginationContainer {
+    gap: 12px;
+  }
+} 

@@ -160,5 +160,5 @@ export default async function RootLayout({
           </AuthProvider>
         </Providers>
       </Flex>
-  );
-}
+    );
+  }

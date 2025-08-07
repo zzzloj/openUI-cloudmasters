@@ -1,9 +1,11 @@
 import { query } from './database';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
+import mysql from 'mysql2/promise';
+import crypto from 'crypto';
 
 export interface User {
-  id: number;
+  member_id: number;
   name: string;
   email: string;
   members_display_name: string;
@@ -11,12 +13,12 @@ export interface User {
   member_group_id: number;
   posts: number;
   joined: number;
-  is_activated: number;
   last_activity: number;
   last_visit: number;
   ip_address: string;
   members_pass_hash: string;
   members_pass_salt: string;
+  member_banned: number;
 }
 
 export interface AuthResult {
@@ -42,7 +44,7 @@ export interface LoginData {
 export function generateToken(user: User): string {
   return jwt.sign(
     { 
-      id: user.id, 
+      id: user.member_id, 
       email: user.email, 
       display_name: user.members_display_name,
       group_id: user.member_group_id 
@@ -61,25 +63,23 @@ export function verifyToken(token: string): any {
   }
 }
 
-// Регистрация пользователя (IPS4 style)
+// Регистрация пользователя (IPB style)
 export async function registerUser(data: RegisterData): Promise<AuthResult> {
   try {
     // Проверяем, существует ли пользователь
     const existingUser = await query(`
-      SELECT id FROM members WHERE email = ? OR name = ?
+      SELECT member_id FROM cldmembers WHERE email = ? OR name = ?
     `, [data.email, data.name]) as any[];
 
     if (existingUser.length > 0) {
       return { success: false, error: 'Пользователь с таким email или именем уже существует' };
     }
 
-    // Хешируем пароль
-    const saltRounds = 12;
-    const hashedPassword = await bcrypt.hash(data.password, saltRounds);
-    
-    // Генерируем соль для совместимости с IPB
-    const salt = Math.random().toString(36).substring(2, 15);
-    const ipbHash = require('crypto').createHash('md5').update(hashedPassword + salt).digest('hex');
+    // Генерируем соль для IPB
+    const salt = Math.random().toString(36).substring(2, 7);
+    const md5Password = crypto.createHash('md5').update(data.password).digest('hex');
+    const md5Salt = crypto.createHash('md5').update(salt).digest('hex');
+    const ipbHash = crypto.createHash('md5').update(md5Salt + md5Password).digest('hex');
 
     const now = Math.floor(Date.now() / 1000);
     const displayName = data.display_name || data.name;
@@ -87,12 +87,12 @@ export async function registerUser(data: RegisterData): Promise<AuthResult> {
 
     // Создаем пользователя
     const result = await query(`
-      INSERT INTO members (
+      INSERT INTO cldmembers (
         name, email, members_pass_hash, members_pass_salt,
         members_display_name, members_seo_name, member_group_id,
         joined, last_activity, last_visit, ip_address,
-        posts, is_activated
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 1)
+        posts, member_banned
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0)
     `, [
       data.name, data.email, ipbHash, salt,
       displayName, seoName, 2, // 2 = обычный пользователь
@@ -103,7 +103,7 @@ export async function registerUser(data: RegisterData): Promise<AuthResult> {
 
     // Получаем созданного пользователя
     const user = await query(`
-      SELECT * FROM members WHERE id = ?
+      SELECT * FROM cldmembers WHERE member_id = ?
     `, [userId]) as User[];
 
     if (user.length === 0) {
@@ -123,46 +123,63 @@ export async function registerUser(data: RegisterData): Promise<AuthResult> {
   }
 }
 
-// Авторизация пользователя (IPS4 style)
+// Авторизация пользователя (IPB style)
 export async function loginUser(data: LoginData): Promise<AuthResult> {
   try {
-    // Ищем пользователя по email
-    const users = await query(`
-      SELECT * FROM members WHERE email = ?
-    `, [data.email]) as User[];
-
-    if (users.length === 0) {
-      return { success: false, error: 'Пользователь не найден' };
-    }
-
-    const user = users[0];
-
-    // Проверяем активацию
-    if (user.is_activated !== 1) {
-      return { success: false, error: 'Аккаунт не активирован' };
-    }
-
-    // Проверяем пароль (IPB style)
-    const salt = user.members_pass_salt;
-    const hashedPassword = require('crypto').createHash('md5').update(data.password + salt).digest('hex');
-
-    if (hashedPassword !== user.members_pass_hash) {
-      return { success: false, error: 'Неверный пароль' };
-    }
-
-    // Обновляем последнюю активность
-    const now = Math.floor(Date.now() / 1000);
-    await query(`
-      UPDATE members SET last_activity = ?, last_visit = ? WHERE id = ?
-    `, [now, now, user.id]);
-
-    const token = generateToken(user);
-
-    return {
-      success: true,
-      user,
-      token
+    // Используем прямое подключение к БД
+    const dbConfig = {
+      host: 'localhost',
+      user: 'root',
+      password: 'Admin2024@',
+      database: 'cloudmasters',
+      charset: 'utf8mb4'
     };
+    
+    const connection = await mysql.createConnection(dbConfig);
+    
+    try {
+      // Ищем пользователя по email
+      const [users] = await connection.execute(`
+        SELECT * FROM cldmembers WHERE email = ?
+      `, [data.email]) as [User[], any];
+
+      if (users.length === 0) {
+        return { success: false, error: 'Пользователь не найден' };
+      }
+
+      const user = users[0];
+
+      // Проверяем, не забанен ли пользователь
+      if (user.member_banned === 1) {
+        return { success: false, error: 'Аккаунт заблокирован' };
+      }
+
+      // Проверяем пароль по алгоритму IPB 3.4
+      const salt = user.members_pass_salt;
+      const md5Password = crypto.createHash('md5').update(data.password).digest('hex');
+      const md5Salt = crypto.createHash('md5').update(salt).digest('hex');
+      const finalHash = crypto.createHash('md5').update(md5Salt + md5Password).digest('hex');
+
+      if (finalHash !== user.members_pass_hash) {
+        return { success: false, error: 'Неверный пароль' };
+      }
+
+      // Обновляем последнюю активность
+      const now = Math.floor(Date.now() / 1000);
+      await connection.execute(`
+        UPDATE cldmembers SET last_activity = ?, last_visit = ? WHERE member_id = ?
+      `, [now, now, user.member_id]);
+
+      const token = generateToken(user);
+
+      return {
+        success: true,
+        user,
+        token
+      };
+    } finally {
+      await connection.end();
+    }
   } catch (error) {
     console.error('Login error:', error);
     return { success: false, error: 'Ошибка авторизации' };
@@ -176,7 +193,7 @@ export async function getUserFromToken(token: string): Promise<User | null> {
     if (!decoded) return null;
 
     const users = await query(`
-      SELECT * FROM members WHERE id = ?
+      SELECT * FROM cldmembers WHERE member_id = ?
     `, [decoded.id]) as User[];
 
     return users.length > 0 ? users[0] : null;
@@ -209,12 +226,12 @@ export async function updateUserProfile(userId: number, data: Partial<User>): Pr
     values.push(userId);
 
     await query(`
-      UPDATE members SET ${updates.join(', ')} WHERE id = ?
+      UPDATE cldmembers SET ${updates.join(', ')} WHERE member_id = ?
     `, values);
 
     // Получаем обновленного пользователя
     const users = await query(`
-      SELECT * FROM members WHERE id = ?
+      SELECT * FROM cldmembers WHERE member_id = ?
     `, [userId]) as User[];
 
     if (users.length === 0) {
@@ -239,7 +256,7 @@ export async function changePassword(userId: number, oldPassword: string, newPas
   try {
     // Получаем пользователя
     const users = await query(`
-      SELECT * FROM members WHERE id = ?
+      SELECT * FROM cldmembers WHERE member_id = ?
     `, [userId]) as User[];
 
     if (users.length === 0) {
@@ -257,12 +274,12 @@ export async function changePassword(userId: number, oldPassword: string, newPas
     }
 
     // Хешируем новый пароль
-    const newSalt = Math.random().toString(36).substring(2, 15);
+    const newSalt = Math.random().toString(36).substring(2, 7);
     const newHash = require('crypto').createHash('md5').update(newPassword + newSalt).digest('hex');
 
     // Обновляем пароль
     await query(`
-      UPDATE members SET members_pass_hash = ?, members_pass_salt = ? WHERE id = ?
+      UPDATE cldmembers SET members_pass_hash = ?, members_pass_salt = ? WHERE member_id = ?
     `, [newHash, newSalt, userId]);
 
     return { success: true };
