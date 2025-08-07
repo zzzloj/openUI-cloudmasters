@@ -16,6 +16,7 @@ const routes = {
   "/admin": true,
   "/admin/users": true,
   "/admin/forums": true,
+  "/admin/logs": true,
   "/admin/system": true,
   "/admin/tools": true,
   "/admin/content": true,

@@ -12,7 +12,8 @@ import {
   FaSignOutAlt,
   FaUser,
   FaShieldAlt,
-  FaChartLine
+  FaChartLine,
+  FaHistory
 } from 'react-icons/fa';
 
 interface AdminLayoutProps {
@@ -81,6 +82,12 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       href: '/admin/forums',
       icon: FaComments,
       description: 'Управление разделами'
+    },
+    {
+      name: 'Логи',
+      href: '/admin/logs',
+      icon: FaHistory,
+      description: 'История действий'
     },
     {
       name: 'Система',
