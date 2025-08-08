@@ -5,7 +5,7 @@ import crypto from 'crypto';
 const dbConfig = {
   host: process.env.DB_HOST || 'localhost',
   user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || '',
+  password: process.env.DB_PASSWORD || 'Admin2024@',
   database: process.env.DB_NAME || 'cloudmasters',
   charset: process.env.DB_CHARSET || 'utf8mb4'
 };

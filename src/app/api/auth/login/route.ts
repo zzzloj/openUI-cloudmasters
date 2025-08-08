@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
       const dbConfig = {
         host: process.env.DB_HOST || 'localhost',
         user: process.env.DB_USER || 'root',
-        password: process.env.DB_PASSWORD || '',
+        password: process.env.DB_PASSWORD || 'Admin2024@',
         database: process.env.DB_NAME || 'cloudmasters',
         charset: process.env.DB_CHARSET || 'utf8mb4'
       };
@@ -102,7 +102,7 @@ export async function POST(request: NextRequest) {
             display_name: user.members_display_name,
             group_id: user.member_group_id 
           },
-          process.env.JWT_SECRET as string,
+          process.env.JWT_SECRET || 'cloudmasters-secret-key-2024',
           { expiresIn: '7d' }
         );
 

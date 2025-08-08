@@ -38,7 +38,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       });
 
       if (!response.ok) {
-        router.push('/login');
+        router.push('/auth/login');
         return;
       }
 
@@ -53,7 +53,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       setUser(data.user);
     } catch (error) {
       console.error('Ошибка проверки авторизации:', error);
-      router.push('/login');
+      router.push('/auth/login');
     } finally {
       setLoading(false);
     }

@@ -49,7 +49,7 @@ export function generateToken(user: User): string {
       display_name: user.members_display_name,
       group_id: user.member_group_id 
     },
-    process.env.JWT_SECRET as string,
+    process.env.JWT_SECRET || 'cloudmasters-secret-key-2024',
     { expiresIn: '7d' }
   );
 }
@@ -57,7 +57,12 @@ export function generateToken(user: User): string {
 // Верификация JWT токена
 export function verifyToken(token: string): any {
   try {
-    return jwt.verify(token, process.env.JWT_SECRET as string);
+    const decoded: any = jwt.verify(token, process.env.JWT_SECRET || 'cloudmasters-secret-key-2024');
+    // Совместимость: нормализуем member_group_id
+    if (decoded && decoded.group_id !== undefined && decoded.member_group_id === undefined) {
+      decoded.member_group_id = decoded.group_id;
+    }
+    return decoded;
   } catch (error) {
     return null;
   }
@@ -267,7 +272,10 @@ export async function changePassword(userId: number, oldPassword: string, newPas
 
     // Проверяем старый пароль
     const salt = user.members_pass_salt;
-    const oldHash = require('crypto').createHash('md5').update(oldPassword + salt).digest('hex');
+    // IPB 3.4 проверка старого пароля: md5(md5(salt) + md5(password))
+    const oldMd5Password = crypto.createHash('md5').update(oldPassword).digest('hex');
+    const oldMd5Salt = crypto.createHash('md5').update(salt).digest('hex');
+    const oldHash = crypto.createHash('md5').update(oldMd5Salt + oldMd5Password).digest('hex');
 
     if (oldHash !== user.members_pass_hash) {
       return { success: false, error: 'Неверный текущий пароль' };
@@ -275,7 +283,9 @@ export async function changePassword(userId: number, oldPassword: string, newPas
 
     // Хешируем новый пароль
     const newSalt = Math.random().toString(36).substring(2, 7);
-    const newHash = require('crypto').createHash('md5').update(newPassword + newSalt).digest('hex');
+    const newMd5Password = crypto.createHash('md5').update(newPassword).digest('hex');
+    const newMd5Salt = crypto.createHash('md5').update(newSalt).digest('hex');
+    const newHash = crypto.createHash('md5').update(newMd5Salt + newMd5Password).digest('hex');
 
     // Обновляем пароль
     await query(`
