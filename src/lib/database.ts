@@ -3,11 +3,11 @@ import crypto from 'crypto';
 
 // Конфигурация базы данных
 const dbConfig = {
-  host: 'localhost',
-  user: 'root',
-  password: 'Admin2024@', // Пароль root пользователя MySQL
-  database: 'cloudmasters',
-  charset: 'utf8mb4'
+  host: process.env.DB_HOST || 'localhost',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME || 'cloudmasters',
+  charset: process.env.DB_CHARSET || 'utf8mb4'
 };
 
 // Тип для пользователя
@@ -41,10 +41,12 @@ const pool = mysql.createPool(dbConfig);
 // Утилита для выполнения запросов
 export async function query(sql: string, params?: any[]) {
   try {
-    console.log('Executing SQL:', sql);
-    console.log('With params:', params);
+    // При необходимости можно включить логирование SQL в DEV-режиме
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Executing SQL:', sql);
+      console.log('With params:', params);
+    }
     const [rows] = await pool.execute(sql, params);
-    console.log('Query result:', rows);
     return rows;
   } catch (error) {
     console.error('Database error:', error);
@@ -158,7 +160,10 @@ export function generateSalt(): string {
 
 // Утилита для хеширования пароля с солью
 export function hashPassword(password: string, salt: string): string {
-  return crypto.createHash('md5').update(password + salt).digest('hex');
+  // IPB 3.4: md5(md5(salt) + md5(password))
+  const md5Password = crypto.createHash('md5').update(password).digest('hex');
+  const md5Salt = crypto.createHash('md5').update(salt).digest('hex');
+  return crypto.createHash('md5').update(md5Salt + md5Password).digest('hex');
 }
 
 // Утилита для проверки пароля

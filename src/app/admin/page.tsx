@@ -48,7 +48,7 @@ export default function AdminDashboard() {
       // Загружаем статистику
       const statsResponse = await fetch('/api/admin/forum/stats', {
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
+          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         }
       });
 

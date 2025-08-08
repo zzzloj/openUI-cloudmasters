@@ -36,7 +36,7 @@ export default function ForumsAdminPage() {
     try {
       const response = await fetch('/api/admin/forum/categories', {
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
+          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         }
       });
 

@@ -1,7 +1,7 @@
 import { home } from "./content";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://demo.magic-portfolio.com";
+const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "https://demo.magic-portfolio.com";
 
 const routes = {
   "/": true,
@@ -79,7 +79,18 @@ const display = {
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
+  "/admin": true,
+  "/admin/users": true,
+  "/admin/forums": true,
+  "/admin/logs": true,
+  "/admin/system": true,
+  "/admin/tools": true,
+  "/admin/content": true,
+  "/admin/seo": true,
+  "/admin/settings": true,
+  "/admin/forum": true,
+  "/admin/forum/users": true,
+  "/admin/forum/categories": true,
 };
 
 // Import and set font for each variant

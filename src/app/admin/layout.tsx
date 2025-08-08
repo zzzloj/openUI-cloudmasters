@@ -33,7 +33,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     try {
       const response = await fetch('/api/auth/me', {
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
+          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         }
       });
 
@@ -60,7 +60,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   };
 
   const handleLogout = async () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem('authToken');
     router.push('/login');
   };
 

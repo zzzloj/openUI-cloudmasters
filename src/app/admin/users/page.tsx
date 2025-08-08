@@ -64,7 +64,7 @@ export default function UsersAdminPage() {
     try {
       const response = await fetch('/api/admin/forum/users', {
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
           'Cache-Control': 'no-cache'
         }
       });
@@ -116,7 +116,7 @@ export default function UsersAdminPage() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
+          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         },
         body: JSON.stringify({ banned: !banned })
       });
@@ -140,7 +140,7 @@ export default function UsersAdminPage() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
+          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         },
         body: JSON.stringify({ groupId: newGroupId })
       });
@@ -171,7 +171,7 @@ export default function UsersAdminPage() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
+          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         },
         body: JSON.stringify({
           displayName: selectedUser.members_display_name,
@@ -381,3 +381,4 @@ export default function UsersAdminPage() {
     </Column>
   );
 }
+

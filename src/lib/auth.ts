@@ -49,7 +49,7 @@ export function generateToken(user: User): string {
       display_name: user.members_display_name,
       group_id: user.member_group_id 
     },
-    process.env.JWT_SECRET || 'cloudmasters-secret-key-2024',
+    process.env.JWT_SECRET as string,
     { expiresIn: '7d' }
   );
 }
@@ -57,7 +57,7 @@ export function generateToken(user: User): string {
 // Верификация JWT токена
 export function verifyToken(token: string): any {
   try {
-    return jwt.verify(token, process.env.JWT_SECRET || 'cloudmasters-secret-key-2024');
+    return jwt.verify(token, process.env.JWT_SECRET as string);
   } catch (error) {
     return null;
   }
@@ -128,11 +128,11 @@ export async function loginUser(data: LoginData): Promise<AuthResult> {
   try {
     // Используем прямое подключение к БД
     const dbConfig = {
-      host: 'localhost',
-      user: 'root',
-      password: 'Admin2024@',
-      database: 'cloudmasters',
-      charset: 'utf8mb4'
+      host: process.env.DB_HOST || 'localhost',
+      user: process.env.DB_USER || 'root',
+      password: process.env.DB_PASSWORD || '',
+      database: process.env.DB_NAME || 'cloudmasters',
+      charset: process.env.DB_CHARSET || 'utf8mb4'
     };
     
     const connection = await mysql.createConnection(dbConfig);

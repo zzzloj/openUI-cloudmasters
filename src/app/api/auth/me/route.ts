@@ -25,6 +25,7 @@ export async function GET(request: NextRequest) {
       success: true,
       user: {
         id: user.member_id,
+        member_id: user.member_id,
         name: user.name,
         email: user.email,
         members_display_name: user.members_display_name,
